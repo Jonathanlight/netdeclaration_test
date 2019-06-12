@@ -1,0 +1,29 @@
+<div class="table">
+  <main class="table-cell table-padding-right table-cell--main block  wrapper__footer-padding-bottom">
+    <?= H::breadcrumb($_breadcrumb) ?>
+    <h1 class="font--darkblue font-size-big font-family--georgia"><?= c(l('articles.title')) ?></h1>
+    <div class="block__content">
+    <?php foreach ($articles as $article): ?>
+      <div class="box-content">
+        <p class="color--red margin-bottom-5 font-size--12px"><?= c(H::datenice($article->published_at) )?></p>
+        <h2 class="color--darkgrey  margin-bottom font-family--georgia  font-size--22px  font-weight-bold"><?= $article->name ?></h2>
+        <p class="color--darkblue"><?= $article->description ?></p>
+        <a href="<?= $article->asUrl() ?>" class="link--background-blue margin-top--10"><?= c(l('articles.link')) ?></a>
+      </div>
+    <?php endforeach; ?>
+    </div>
+    </main>
+    <aside class="table-cell  table-cell--aside  wrapper__footer-padding-bottom">
+      <div class="block__height">&nbsp;</div>
+      <?php /*<div class="flashinfo">
+        <span class="title-flashinfo font-family--georgia">Flash Info:</span>  
+        <p>Il ne vous reste plus que 10 jours pour déclarer votre liasse fiscale.<br>
+        Date limite du dossier 12 novembre 2014.
+        </p>
+
+      </div>*/ ?>
+      <div class="logo-edi">
+        <img src="/app/ntd/pix/general/logo_partenaire_edi.png" alt="Partenaire edi - Logo">
+      </div>
+    </aside>
+</div>

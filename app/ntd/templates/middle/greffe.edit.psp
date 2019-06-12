@@ -1,0 +1,147 @@
+<div data-on-load="new ntd.middle.greffe(this)" class="margin-top-30">
+  <h1 class="block__middle-title">Dépôt</h1>
+
+  <?=H::inc('ntd:_greffe.documents', array('greffe' => $greffe, 'documents' => $reponse_documents)) ?>
+
+  <form action="/middle/greffe.save" class="form--ntd form--ntd--label-inline ">
+    <?php if ($greffe->getId() > 0) : ?>
+      <input type="hidden" name="id" value="<?=$greffe->getId() ?>" />
+    <?php endif ?>
+    <input type="hidden" name="greffe[greffedossier_id]" value="<?=$fields['greffedossier_id'] ?>" />
+    <input type="hidden" name="adherent_id" value="<?=$adherent->getId() ?>" />
+    <input type="hidden" name="is_entreprise" value="<?=in_array($adherent->type,  array(Adherent::TYPE_ENTREPRISE, Adherent::TYPE_INTERNATIONAL, Adherent::TYPE_PRO_SANTE)) ? 1 : 0 ?>" />
+    <h2 class="block__title">Coordonnées</h2>
+
+    <?=Elt::text(array('name'     => 'adherent[siren]',
+                       'label'    => 'N° RCS de l\'entreprise (SIREN)',
+                       'required' => true,
+                       'disabled' => !$greffe->isEditable(),
+                       'value'    => $fields['siren'])) ?>
+    <?=Elt::text(array('name'     => 'adherent[company]',
+                       'label'    => 'Dénomination de l’entreprise',
+                       'required' => true,
+                       'disabled' => !$greffe->isEditable(),
+                       'value'    => $fields['company'])) ?>
+
+    <?=Elt::text(array('name'     => 'adherent[address]',
+                       'label'    => 'Adresse',
+                       'required' => true,
+                       'disabled' => !$greffe->isEditable(),
+                       'value'    => $fields['address'])) ?>
+
+    <?=Elt::text(array('name'     => 'adherent[address_1]',
+                       'label'    => 'Complément Adresse',
+                       'disabled' => !$greffe->isEditable(),
+                       'value'    => $fields['address_1'])) ?>
+
+    <div data-on-load="new ntd.middle.greffecommune(this)">
+      <?=Elt::text(array('name'     => 'adherent[zipcode]',
+                         'label'    => 'Code postale',
+                         'required' => true,
+                         'disabled' => !$greffe->isEditable(),
+                         'value'    => $fields['zipcode'])) ?>
+
+      <?=Elt::select(array('name'     => 'adherent[greffecommune_id]',
+                           'label'    => 'Code INSEE',
+                           'options'  => $codes_insee,
+                           'required' => true,
+                           'disabled' => !$greffe->isEditable(),
+                           'value'    => $fields['greffecommune_id'])) ?>
+    </div>
+
+    <?=Elt::text(array('name'     => 'adherent[city]',
+                       'label'    => 'Ville',
+                       'required' => true,
+                       'disabled' => !$greffe->isEditable(),
+                       'value'    => $fields['city'])) ?>
+
+    <?=Elt::select(array('name'     => 'adherent[country_id]',
+                         'label'    => 'Pays',
+                         'options'  => $countries,
+                         'required' => true,
+                         'disabled' => !$greffe->isEditable(),
+                         'value'    => $fields['country_id'])) ?>
+
+    <hr class="margin-top-30" />
+    <br />
+
+    <?=Elt::text(array('name'     => 'greffe[email_deposit]',
+                       'label'    => 'Email (personne en charge du dépôt)',
+                       'required' => true,
+                       'disabled' => !$greffe->isEditable(),
+                       'value'    => $fields['email_deposit'])) ?>
+
+    <?=Elt::date(array('name'     => 'greffe[start_at]',
+                       'label'    => 'Date de début de l’exercice',
+                       'required' => true,
+                       'disabled' => !$greffe->isEditable(),
+                       'value'    => $fields['start_at'])) ?>
+
+    <?=Elt::date(array('name'     => 'greffe[closed_at]',
+                       'label'    => 'Date de clôture des comptes',
+                       'tooltip'  => l('snippet:greffe.tooltip.cloture_compte'),
+                       'required' => true,
+                       'disabled' => !$greffe->isEditable(),
+                       'value'    => $fields['closed_at'])) ?>
+
+    <?=Elt::text(array('name'     => 'greffe[numero_gestion]',
+                       'label'    => 'Numéro de gestion',
+                       'tooltip'  => l('snippet:greffe.tooltip.numero_gestion'),
+                       'required' => true,
+                       'disabled' => !$greffe->isEditable(),
+                       'value'    => $fields['numero_gestion'])) ?>
+
+    <?=Elt::select(array('name'     => 'greffe[compte_type]',
+                         'label'    => 'Objet du dépôt',
+                         'options'  => GreffeManager::$types_compte,
+                         'required' => true,
+                         'disabled' => !$greffe->isEditable(),
+                         'value'    => $fields['compte_type'])) ?>
+
+    <?=Elt::select(array('name'     => 'greffe[forme_juridique]',
+                         'label'    => 'Forme juridique',
+                         'options'  => GreffeManager::$formes_juridique,
+                         'required' => true,
+                         'disabled' => !$greffe->isEditable(),
+                         'value'    => $fields['forme_juridique'])) ?>
+
+    <div data-compte="<?=GreffeManager::COMPTE_SOCIAUX ?>" data-formes="<?=GreffeManager::FJ_EURL ?>">
+      <hr class="margin-top-30" />
+      <?=Elt::yesno(array('name'     => 'greffe[is_gerant]',
+                          'label'    => 'L\'associé unique, personne physique est il gérant ?',
+                          'required' => true,
+                          'disabled' => !$greffe->isEditable(),
+                          'value'    => (int)$fields['is_gerant'])) ?>
+    </div>
+
+    <div data-compte="<?=GreffeManager::COMPTE_SOCIAUX ?>" data-formes="<?=GreffeManager::FJ_SA ?>,<?=GreffeManager::FJ_SELAFA ?>">
+      <hr class="margin-top-30" />
+      <?=Elt::radio(array('name'     => 'greffe[mode_direction]',
+                          'label'    => 'Quel est le mode de direction ?',
+                          'options'  => GreffeManager::$modes_direction,
+                          'required' => true,
+                          'disabled' => !$greffe->isEditable(),
+                          'value'    => (int)$fields['mode_direction'])) ?>
+    </div>
+
+    <hr class="margin-top-30" />
+
+    <?=Elt::radio(array('name'     => 'greffe[is_public]',
+                        'label'    => 'Souhaitez vous rendre vos comptes non publics (article L.232-25 du code de commerce)',
+                        'required' => true,
+                        'options'  => array(0 => 'Oui', 1 => 'Non'),
+                        'disabled' => !$greffe->isEditable(),
+                        'value'    => (int)$fields['is_public'])) ?>
+
+    <hr class="margin-top-30" />
+
+    <h2 class="block__title">Pièces à fournir</h2>
+    <div id="document-list"></div>
+
+    <hr />
+
+    <?php if ($greffe->isEditable()) : ?>
+      <button type="submit" class="btn btn--color-red margin-top-30">Enregistrer</button>
+    <?php endif ?>
+  </form>
+</div>

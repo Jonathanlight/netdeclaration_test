@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+<fieldset label="$fieldset_label">
+
+<notebook>
+<page label="définition">
+ <form>
+  <hbox>
+   <vbox width="33%">
+    <elem field="name" />
+    <hbox>
+     <vbox><elem field="status" /></vbox>
+     <vbox><elem field="flags" /></vbox>
+    </hbox>
+    <elem field="app" label="application associée" />
+    <elem field="extension" label="extension associée" precision="facultatif" />
+    <elem field="description" rows="3" />
+   </vbox>
+   <vbox localized="true">
+    <elem field="label" label="message" />
+   </vbox>
+  </hbox>
+  <launcher/>
+ </form>
+</page>
+<page label="opérations" built="$is_loaded">
+ <hbox>
+  <vbox width="10%">
+   <box label="actions">
+    <link icon="details" />
+   </box>
+  </vbox>
+  <vbox><deck /></vbox>
+ </hbox> 
+</page>
+</notebook>
+
+</fieldset>
+</kwo-interface>

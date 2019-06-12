@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+ <fieldset>
+
+  <notebook>
+   <page>
+    <form>
+     <hbox>
+      <vbox>
+       <box label="Général">
+        <elem field="name" editable="false"/>
+        <elem field="status"/>
+        <elem field="flags"/>
+       </box>
+       <box label="Configuration">
+        <elem field="type"/>
+        <elem field="method_args_formula" label="Formule" rows="3"/>
+        <elem field="method_args_result" label="Champ résultat" prevision="seulement pour un Calcul" built="$is_calcul" />
+       </box>
+      </vbox>
+      <vbox>
+       <box label="Méthode JS/PHP">
+        <elem field="method_name" editable="false" label="Nom"/>
+        <grid value="$method_args" label="Arguments"/>
+       </box>
+       <elem field="millesimes" options="Millesime::collect()" type="checkbox"/>
+      </vbox>
+     </hbox>
+     <launcher/>
+    </form>
+   </page>
+   <page>
+    <hbox>
+     <vbox width="150px">
+      <box label="actions">
+       <link icon="details"/>
+      </box>
+     </vbox>
+     <vbox>
+      <deck/>
+     </vbox>
+    </hbox>
+   </page>
+  </notebook>
+
+ </fieldset>
+</kwo-interface>

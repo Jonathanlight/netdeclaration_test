@@ -1,0 +1,54 @@
+<div id="kwo-file-dialog">
+  <div id="toolbar">
+    <a href="javascript:void(0)" style="float:right"
+       onclick="$('files').hide(); $('upload').show();"><?=l('upload')?></a>
+    <a href="javascript:void(0)"
+       onclick="$('upload').hide(); $('files').show();"><?=l('my_files')?></a>
+  </div>
+
+  <table class="fixed" id="files" style="display:none;">
+    <tr>
+      <td>
+        <div id="listing">
+          <?php foreach ($files as $file): ?>
+            <div class="file">
+              <a href="javascript:void(0)" style="float:right;"
+                 onclick="Kwo.getDialog().preview('<?=$file['path']?>')"><?=l('preview')?></a>
+              <a href="javascript:void(0)"
+                 onclick="Kwo.getDialog().apply('<?=$file['path']?>')"><?=$file['name']?></a>
+            </div>
+          <?php endforeach; ?>
+        </div>
+      </td>
+      <td id="preview"></td>
+    </tr>
+  </table>
+
+  <div id="upload" style="display:none;">
+    <form enctype="multipart/form-data" method="post" id="form_upload"
+          action="/community/upload" target="upload-box"
+          onsubmit="$('form_upload', 'loading-box').invoke('toggle');">
+      <input type="file" name="user_file" accept="image/*" />
+      <input type="submit" value="<?=l('send')?>" class="button" />
+    </form>
+    <div class="message">
+      <?=l('snippet:upload.info', array('used_space' => $user->getUsedSpace(),
+                                        'quota' => $user->getQuota()))?>
+    </div>
+    <div id="loading-box"></div>
+    <iframe frameborder="no" name="upload-box" id="upload-box" src="about:blank" style="display:none;"></iframe>
+  </div>
+
+  <script>
+    dimensions = Kwo.getDialog().support.getDimensions();
+    $("listing").setStyle({"height": (dimensions.height - 20) + "px",
+                           "max-height": (dimensions.height - 20) + "px"});
+    $("preview").insert(new Element("img", {"src": "/<?=PIX_PATH?>/empty.gif", "id": "thumb"}));
+    if (Kwo.getDialog().opts["mode"] === "upload") {
+      $("upload").show();
+    }
+    else {
+      $("files").show();
+    }
+    </script>
+</div>

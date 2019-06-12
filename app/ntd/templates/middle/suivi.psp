@@ -1,0 +1,137 @@
+<div data-on-load="new ntd.middle.suivi.Home(this);">
+
+
+  <form action="/middle/suivi.results"
+        method="post"
+        class="form--suivi"
+        data-action_csv="/middle/suivi.csv"
+        data-results_container="account-suivi-result-id">
+    <input type="hidden"
+           name="form[offset]"
+           value="<?= $form['offset'] ?>"/>
+    <input type="hidden"
+           name="form[limit]"
+           value="<?= $form['limit'] ?>"/>
+
+    <div class="table "
+         data-on-load="new ntd.middle.tabs(this)">
+      <nav class="table-cell form--suivi__nav" style="width: 100px" data-tab-nav="suivi-form">
+        <a href="#fieldset--declarant" class="form--suivi__nav__item active">Déclarant <i class="fa fa-caret-right"></i></a>
+        <a href="#fieldset--emetteur" class="form--suivi__nav__item">Émetteur <i class="fa fa-caret-right"></i></a>
+        <a href="#fieldset--destinataire" class="form--suivi__nav__item">Destinataire <i class="fa fa-caret-right"></i></a>
+      </nav>
+      <div class="table-cell" data-tabs="suivi-form">
+        <fieldset id="fieldset--declarant" class="form--suivi__fieldset selected">
+
+          <div class="block__suivi container--elt-date">
+          <?=
+          Elt::date(array('name' => 'form[periode_from]',
+                          'label' => 'Période', //c(l('account.suivi.du')),
+                          'value' => $form['periode_from'],
+                          'class' => 'elt-date--first',
+                          'placeholder' => 'Du',
+                          'btn_calendar' => false))?>
+
+          <?=
+          Elt::date(array('name' => 'form[periode_to]',
+                          //'label' => c(l('account.suivi.au')),
+                          'value' => $form['periode_to'],
+                          'placeholder' => 'Au',
+                          'class' => 'elt-date--second',
+                          'btn_calendar' => false))?>
+          </div>
+          <div class="block__suivi">              
+          <?=
+          Elt::select(array('name' => 'form[type_doc]',
+                            'options' => $fields_options['type_doc'],
+                            //'label' => 'Document', //c(l('account.suivi.type.doc')),
+                            'first' => 'Document',
+                            'value' => $form['type_doc']))?>
+          <?=
+          Elt::select(array('name' => 'form[type_decl]',
+                            'options' => $fields_options['type_decl'],
+                            //'label' => 'déclaration', //c(l('account.suivi.type.decl')),
+                            'first' => 'Déclaration',
+                            'value' => $form['type_decl']))?>
+          </div>
+          <div class="block__suivi"> 
+          <?=
+          Elt::select(array('name' => 'form[siret_declarant]',
+                            'options' => $fields_options['siret_decl'],
+                            //'label' => 'SIRET Déclarant', //c(l('account.suivi.sirets_declarants')),
+                            'first' => 'SIRET',
+                            'value' => $form['siret_declarant']))?>
+          <?=
+          Elt::text(array('name' => 'form[declarant_name]',
+                          'placeholder' => 'Nom Déclarant',
+                          //'label' => 'Nom Déclarant', //c(l('account.suivi.sirets_declarants')),
+                          'value' => $form['declarant_name']))?>
+        </div>
+       
+
+        </fieldset>
+        <fieldset id="fieldset--emetteur" class="form--suivi__fieldset">
+          <div class="block__suivi container--elt-date">
+            <?=
+            Elt::date(array('name' => 'form[date_depot_from]',
+                            'label' => 'Période', //c(l('account.suivi.du')),
+                            'value' => $form['date_depot_from'],
+                            'class' => 'elt-date--first',
+                            'placeholder' => 'Du',
+                            'btn_calendar' => false))?>
+            <?=
+            Elt::date(array('name' => 'form[date_depot_to]',
+                            //'label' => c(l('account.suivi.au')),
+                            'value' => $form['date_depot_to'],
+                            'class' => 'elt-date--second',
+                            'placeholder' => 'Au',
+                            'btn_calendar' => false))?>
+          </div>
+          <?=
+          Elt::select(array('name' => 'form[siret_emetteur]',
+                            'options' => $fields_options['siret_emetteur'],
+                            'placeholder' => c(l('account.suivi.sirets_emetteurs')),
+                            'first' => 'SIRET',
+                            'value' => $form['siret_emetteur']))?>
+
+
+        </fieldset>
+        <fieldset id="fieldset--destinataire" class="form--suivi__fieldset form__destinataire">
+          <?=
+          Elt::select(array('name' => 'form[type_dest]',
+                            'options' => Destinataire::$types,
+                            //'label' => 'Destinataire',
+                            'first' => 'Destinataire',
+                            'value' => $form['type_dest']))?>
+          <?=
+          Elt::select(array('name' => 'form[sens]',
+                            'options' => Destinataire::$sens,
+                            'first' => c(l('account.suivi.sens')),
+                            'value' => $form['sens'],
+//                            'label' => c(l('account.suivi.sens')),
+                      ))?>
+          <?=
+          Elt::select(array('name' => 'form[status]',
+                            'options' => Destinataire::$statuses,
+                            //'label' => 'État', //c(l('account.suivi.status')),
+                            'first' => 'État',
+                            'value' => $form['status']))?>
+        </fieldset>
+
+      </div>
+      <div class="table-cell block__btn-suivi">
+        <div class="border--left block__padding" >
+          <button type="submit"
+                  class="btn btn--color-dark-blue btn--big-big">
+            <i class="fa fa-search fa-"></i> <i class="fa fa-refresh fa-spin throbber" style="display: none"></i>
+          </button>
+          <a class="btn btn--link"
+             href="/middle/suivi"><?= c(l('account.suivi.search.reset')) ?></a>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+  <div id="account-suivi-result-id"></div>
+</div>

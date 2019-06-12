@@ -1,0 +1,85 @@
+<div class="dialog-content">
+  <h1>Donnés ligne</h1>
+  <br/>
+
+  <form onsubmit="declaration.EditorObj.onModelDataInsert(this); return false;">
+    <input type="hidden" name="model_id" value="<?=$model_id?>"/>
+    <div>
+    <?php foreach ($cols as $i => $_col) : ?>
+    <?php $col = explode('&', $_col); ?>
+      <div style="<?=$i == 0 ? '' : 'display:none'?>" class="editor-fields" id="editor-fields-<?=$i?>">
+      <?php foreach ($fields as $field) : ?>
+        <a href="javascript:void(0)" data-item="<?=$field->name?>" class="<?=in_array($field->name, $used_field) ? 'used' : ' '?>"
+           onclick="$('field-data-<?=$i?>').value = '<?=$col[0] == Imodel::TYPE_LABEL ? addslashes($field->label) : $field->name ?>';" title="<?=$field->label?>">
+        <?=$field->name?>
+        </a>
+      <?php endforeach;?>
+      </div>
+    <?php endforeach;?>
+    </div>
+    <table id="model-data">
+      <tr>
+
+      <?php $index = 1; foreach ($cols as $i => $_col) : ?>
+      <?php $col = explode('&', $_col);
+      $j = 0;
+      //$col_data = $data ? Imodel::parseStr($data[$i]) : array();
+      // Remplacé par ci-dessous : pour pouvoir exploiter des options en array()
+      list($value, $options) = explode('&', $data[$i], 2);
+      parse_str((string) $options, $options);
+      ?>
+        <td>
+          <div class="field">
+            <label><?=$col[0] != Imodel::TYPE_EMPTY ? c(Imodel::$types[$col[0]]) : 'Vide' ?></label>
+          <?php if ($col[0] != Imodel::TYPE_EMPTY) : ?>
+            <input type="text" name="data[<?=$i?>][value]"
+                   tabindex="<?=$index?>"
+                   value="<?=$value?>"
+                   onfocus="$$('.editor-fields').invoke('hide'); $('editor-fields-<?=$i?>').show()"
+                   id="field-data-<?=$i?>"
+                   class="<?= $col[0] != Imodel::TYPE_LABEL ? 'upper' : ''?> "/>
+          <?php $index++ ?>
+          <?php endif;?>
+          </div>
+          <div class="options">
+          <?php foreach (Imodel::$data_options as $code => $name) : ?>
+          <?php if (in_array($code, array(Imodel::OPT_COLSPAN, Imodel::OPT_ROWSPAN))) : ?>
+            <input name="data[<?=$i?>][options][<?=$code?>]"
+                   type="number"
+                   placeholder="<?=c($name)?>"
+                   value="<?=$options[$code] ? $options[$code] : ''?>"
+                   id="opt-<?=$i?>-<?=$j?>"/>
+          <?php elseif ($code == Imodel::OPT_CLASS) : ?>
+          <?=Elt::checkbox(array('name' => 'data[' . $i . '][options][' . $code . ']',
+                                 'id' => 'opt-' . $i . '-' . $j,
+                                 'options' => Imodel::$classes,
+                                 'values' => $options[$code]))?>
+          <?php endif; ?>
+            <br/>
+          <?php $j++ ?>
+          <?php endforeach;?>
+          </div>
+        </td>
+      <?php endforeach;?>
+    </table>
+    <br/>
+    <div class="model-opts">
+      <h2>Options pour cette ligne : </h2>
+      <?php foreach(Imodel::$row_options as $code => $label) : ?>
+        <?php if($code == Imodel::OPT_ROW_EXTENSIBLE_CODE): ?>
+        <?=Elt::text(array('name' => 'opts['.$code.']',
+                           'label' => $label,
+                           'value' => (int) $opts[$code]))?>
+    <?php else: ?>
+    <?=Elt::checkbox(array('name' => 'opts['.$code.']',
+                           'label' => $label,
+                           'value' => (int) $opts[$code]))?>
+    <?php endif; ?>
+
+    <?php endforeach; ?>
+
+    </div>
+    <input type="submit" value="Insérer"/>
+  </form>
+</div>
+<img onload="$('model-data').select('input[type=text]')[0].focus();" src="/<?=PIX_PATH?>/empty.gif"/>

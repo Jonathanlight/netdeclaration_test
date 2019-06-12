@@ -1,0 +1,287 @@
+<div class="account-declaration-edit-box">
+  <div class="button-back">
+    <?php if ($declaration->id): ?>
+      <input type="button" class="ntd-button white" value="Télécharger la déclaration" onclick="ntd.declaration.onPrint(this)" data-key="<?=$declaration->getKey()?>" style="float:right;"/>
+    <?php endif; ?>
+  <?php if ($declaration->status == Declaration::STATUS_EDITABLE): ?>
+    <input type="button" class="ntd-button white cancel" value="Annuler la déclaration"
+           onclick="if(confirm('Êtes-vous sûr de vouloir annuler cette déclaration ? \nLes modifications ne seront pas enregistrées.')) Kwo.go('<?=$return_link?>') "/>
+  <?php else: ?>
+    <input type="button" class="ntd-button white" value="Revenir à la liste" onclick="Kwo.go('<?=$return_link?>') "/>
+  <?php if ($declaration->canDuplicate()): ?>
+    <input type="button" class="ntd-button white fleft" value="Modifier" onclick="ntd.declaration.onDuplicate('<?=$declaration->getId()?>')"/>
+  <?php endif; ?>
+  <?php endif; ?>
+
+  </div>
+
+  <h1 class="name-form">Déclaration : <?=$declaration_dectype->name?></h1>
+
+  <div class="declaration-steps" id="declaration-steps-box"></div>
+
+    <?php foreach ($ftypesForm as $ftypeForm):
+        if ($ftypeForm['repetable']) :
+            $options = array(
+                    0 => 'Occurence N° 1',
+            );
+            foreach ($formulairesArray as $form) {
+                if ($form['formulairetype_id'] == $ftypeForm['ftype']->id) {
+                    $companyName = isset($form['companyName']) ? $form['companyName'] . ' - ' : '';
+                    $options[$form['position']] = $companyName . 'Occurence N°' . ($form['position'] + 1);
+                }
+            } ?>
+            <div class="imprime-page formulaire-repetable <?=$ftypeForm['ftype']->code?>"
+                 data-code="<?=$ftypeForm['ftype']->code?>"
+                 style="display: none;">
+                <div class="formulaire-repetable-select">
+                    <?=Elt::select(array('options' => $options,
+                        'value' => -1,
+                        'class' => 'select-occurence',
+                        'label' => 'Formulaires répétables : ',
+                        'onchange' => 'ntd.declaration.pagination.changeOccurence(this)'))?>
+                    <a href="javascript:void(0)" onclick="ntd.declaration.pagination.addOccurence(this)" class="btn-add ntd-button white"><span>Ajouter</span></a>
+                    <a href="javascript:void(0)" onclick="ntd.declaration.pagination.deleteOccurence(this)" class="btn-delete ntd-button white"
+                       data-declaration_id="<?=$declaration->getId()?>"
+                       data-formulairetype_id="<?=$ftypeForm['ftype']->getId()?>"
+                       style="<?=!count($options) || count($options) == 1 ? 'display:none;' : ''?>"
+                    ><span>Supprimer</span></a>
+                </div>
+            </div>
+        <?php endif; ?>
+    <?php endforeach; ?>
+
+
+    <form action="javascript:void(0)" class="form-ntd" onsubmit="ntd.declaration.onSubmit(this)" id="form-declaration-edit" data-confirm="<?=l('account.declaration.edit.declaration.submit')?>">
+
+    <input type="hidden" value="<?=$declaration->status?>" id="declaration-status" />
+    <input type="hidden" name="id" value="<?=$declaration->isLoaded() ? $declaration->getId() : 0?>"/>
+    <input type="hidden" name="adherent_id" value="<?=$adherent->getId()?>"/>
+    <input type="hidden" name="declaration[dectype_id]" value="<?=$declaration_dectype->getId()?>"/>
+
+    <table class="buttons-container" style="margin-bottom:9px;">
+      <col width="50%">
+      <col width="50%">
+      <tbody>
+        <tr>
+          <td>
+            <input type="button" class="ntd-button pagination-previous" value="Revenir à l'étape précédente" onclick="ntd.declaration.pagination.previous()"/>
+          </td>
+          <td align="right">
+            <input type="button" class="ntd-button pagination-next" value="Passer à l'étape suivante" onclick="ntd.declaration.pagination.next()"/>
+          <?php if ($declaration->status == Declaration::STATUS_EDITABLE): ?>
+            <input type="submit" class="ntd-button submit red" value="Valider la déclaration" data-confirm="<?=c(l('valid.declaration'))?>" id="confirm_declaration"/>
+            <input type="button" class="ntd-button white cancel" value="Annuler la déclaration"
+                   onclick="if(confirm('Êtes-vous sûr de vouloir annuler cette déclaration ? \nLes modifications ne seront pas enregistrées.')) Kwo.go('<?=$return_link?>') "/>
+
+          <?php else: ?>
+            <input type="button" class="ntd-button white cancel" value="Revenir à la liste" onclick="Kwo.go('<?=$return_link?>') "/>
+          <?php endif; ?>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <div class="formulaires-pagines">
+
+    <?php if (sizeof($formulaires_data[Dectype::RELATION_TYPE_ANNEXE]) > 0): ?>
+      <div class="formulaire-page page-form formulaire-annexes" data-label="<?=in_array($declaration_dectype->code, Dectype::$v2tov1) ? 'Choix des formulaires' : 'Choix des annexes'?>">
+        <h2 class="no-print"><?=in_array($declaration_dectype->code, Dectype::$v2tov1) ? 'Choix des formulaires' : 'Choix des annexes'?></h2>
+
+        <div class="toolbar-panel" id="formulairetype-annexes-box">
+          <div class="primary">
+          <?php foreach ($formulaires_data[Dectype::RELATION_TYPE_ANNEXE] as $formulairetype_id => $formulaire_annexe_data): ?>
+            <a class="<?=!$key ? 'selected' : ''?>" href="javascript:void(0)" onclick="ntd.formulaire.onShow(this)" data-item="formulaire-visibility-<?=$formulairetype_id?>">
+                <span>
+                  <?=$formulaire_annexe_data['formulairetype']->title_code?>
+                    <input type="checkbox" value="<?=$formulairetype_id?>" id="elt-annexe-<?=$formulairetype_id?>"
+                           name="check_name[]" <?=in_array($formulairetype_id, $formulaireTypesId) ? 'checked' : ' '?>
+                           onclick="$(this).checked ? ntd.formulaire.onShowAndEnabled(this, 'formulaire-visibility-<?=$formulairetype_id?>') : ntd.formulaire.onHideAndDisabled(this, 'formulaire-visibility-<?=$formulairetype_id?>')">
+                  inclure
+                </span>
+            </a>
+          <?php $key++; endforeach;?>
+            <div class="clear">&nbsp;</div>
+          </div>
+        </div>
+
+
+        <div class="formulaires-annexes-no-required" id="formulaires-annexes-no-required">
+        <?php foreach ($formulaires_data[Dectype::RELATION_TYPE_ANNEXE] as $formulairetype_id => $formulaire_annexe_data): ?>
+          <div class="formulaire-visibility formulaire-page <?=$formulaire_annexe_data['formulairetype']->code?> page-form" id="formulaire-visibility-<?=$formulairetype_id?>" data-code="<?=$formulaire_annexe_data['formulairetype']->code?>">
+      <div class="formulaire-header">
+        <div class="row">
+          <p class="big-text millesime"><?=$declaration_dectype->getFtypeMillesime($formulaire_annexe_data['formulairetype'])->name?></p>
+
+          <p class="big-text ftype-code">
+            <?php if($formulaire_annexe_data['formulairetype']->help_file): ?>
+            <a style="text-transform: none; font-size: 12px; font-family: arial; text-decoration: underline; margin-right: 10px; color: rgb(180, 0, 21);"
+               href="<?= $formulaire_annexe_data['formulairetype']->help_file ?>"
+               target="_blank">Télécharger l'aide en ligne</a>
+            <?php endif; ?>
+            <?=$formulaire_annexe_data['formulairetype']->code?>
+          </p>
+        </div>
+        <div class="row" style="border-top: 1px solid #dfe2ec;">
+          <p class="big-text ftype-title"><?=$formulaire_annexe_data['formulairetype']->title?></p>
+        </div>
+      </div>
+        <?php if (count($formulaire_annexe_data['forms'])): ?>
+         <?php foreach ($formulaire_annexe_data['forms'] as $k => $form): ?>
+            <?=H::get('/account/ntd/account.formulaire.edit', array('formulaire_type' => $formulaire_annexe_data['formulairetype']->getId(),
+                                                                  'id' => (int) $form['id'],
+                                                                  'occurence' => (int) $form['position'],
+                                                                  'adherent_id' => $adherent->getId(),
+                                                                  'declaration_dectype_id' => $declaration_dectype->getId())) ?>
+         <?php endforeach; ?>
+        <?php else: ?>
+            <?=H::get('/account/ntd/account.formulaire.edit', array('formulaire_type' => $formulaire_annexe_data['formulairetype']->getId(),
+                'id' => 0,
+                'occurence' => 0,
+                'adherent_id' => $adherent->getId(),
+                'declaration_dectype_id' => $declaration_dectype->getId())) ?>
+        <?php endif; ?>
+          </div>
+        <?php $_key++; endforeach; ?>
+        </div>
+      </div>
+    <?php endif; ?>
+
+    <?php $index = 0; ?>
+    <?php foreach ($formulaires_data[Dectype::RELATION_TYPE_OBLIGATOIRE] as $formulaire_type_id => $formulaire_data): ?>
+      <div class="formulaire-block <?=$formulaire_data['formulairetype']->code?>" data-code="<?=$formulaire_data['formulairetype']->code?>">
+        <div class="formulaire-header">
+          <div class="row">
+            <p class="big-text millesime"><?=$declaration_dectype->getFtypeMillesime($formulaire_data['formulairetype'])->name?></p>
+            <p class="big-text ftype-code">
+              <?php if($formulaire_data['formulairetype']->help_file): ?>
+                <a style="text-transform: none; font-size: 12px; font-family: arial; text-decoration: underline; margin-right: 10px; color: rgb(180, 0, 21);"
+                   href="<?= $formulaire_data['formulairetype']->help_file ?>"
+                   target="_blank">Télécharger l'aide en ligne</a>
+              <?php endif; ?>
+              <?=$formulaire_data['formulairetype']->code?>
+            </p>
+          </div>
+          <div class="row" style="border-top: 1px solid #dfe2ec;">
+            <p class="big-text ftype-title"><?=$formulaire_data['formulairetype']->title?></p>
+          </div>
+        </div>
+          <?php if (count($formulaire_data['forms'])): ?>
+            <?php foreach ($formulaire_data['forms'] as $k => $form): ?>
+
+                <?=H::get('/account/ntd/account.formulaire.edit', array('formulaire_type' => $formulaire_data['formulairetype']->getId(),
+                                                                    'id' => (int) $form['id'],
+                                                                    'adherent_id' => $adherent->getId(),
+                                                                    'occurence' => $form['position'],
+                                                                    'declaration_dectype_id' => $declaration_dectype->getId())) ?>
+            <?php endforeach; ?>
+        <?php else: ?>
+              <?=H::get('/account/ntd/account.formulaire.edit', array('formulaire_type' => $formulaire_data['formulairetype']->getId(),
+                  'id' => 0,
+                  'adherent_id' => $adherent->getId(),
+                  'occurence' => 0,
+                  'declaration_dectype_id' => $declaration_dectype->getId())) ?>
+        <?php endif; ?>
+      </div>
+      <?php if (count($formulaires_data[Dectype::RELATION_TYPE_OBLIGATOIRE]) > $index + 1): ?>
+        <div class="break"></div>
+      <?php endif; ?>
+    <?php $index++; endforeach; ?>
+
+    </div>
+
+
+    <table class="buttons-container hide-on-last-page">
+      <col width="50%">
+      <col width="50%">
+      <tbody>
+        <tr>
+          <td>
+            <input type="button" class="ntd-button pagination-previous" value="Revenir à l'étape précédente" onclick="ntd.declaration.pagination.previous()"/>
+          </td>
+          <td align="right">
+            <input type="button" class="ntd-button pagination-next" value="Passer à l'étape suivante" onclick="ntd.declaration.pagination.next()"/>
+          <?php if ($declaration->status == Declaration::STATUS_EDITABLE): ?>
+            <input type="submit" class="ntd-button submit red" value="Valider la déclaration" data-confirm="<?=c(l('valid.declaration'))?>" id="confirm_declaration"/>
+            <input type="button" class="ntd-button white cancel" value="Annuler la déclaration"
+                   onclick="if(confirm('Êtes-vous sûr de vouloir annuler cette déclaration ? \nLes modifications ne seront pas enregistrées.')) Kwo.go('<?=$return_link?>') "/>
+
+          <?php else: ?>
+            <input type="button" class="ntd-button white cancel" value="Revenir à la liste" onclick="Kwo.go('<?=$return_link?>') "/>
+          <?php endif; ?>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </form>
+
+  <div class="print-footer">
+    <span class="declaration-number">Declaration N°<?=$declaration->getId()?></span> -
+    <span class="adherent-company"><?=$adherent->company?></span> -
+    <span class="adherent-siret">N° SIRET : <?=$adherent->siret?></span> -
+    <span class="exercice-dates"></span>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  document.observe('dom:loaded', function() {
+    ntd.declaration.pagination.init($('form-declaration-edit').down('.formulaires-pagines'), $('form-declaration-edit'));
+    <?php foreach ($formulaires_data[Dectype::RELATION_TYPE_ANNEXE] as $formulairetype_id => $formulaire_annexe_data): ?>
+    <?php if (!array_key_exists($formulairetype_id, $formulaires)) : ?>
+      ntd.formulaire.onHideAndDisabled.defer(null, 'formulaire-visibility-<?=$formulairetype_id?>');
+    <?php else: ?>
+      <?php if ($declaration->status != Declaration::STATUS_EDITABLE): ?>
+        ntd.formulaire.onShowAndEnabled.defer(null, 'formulaire-visibility-<?=$formulairetype_id?>', true);
+      <?php else: ?>
+        ntd.formulaire.onShowAndEnabled.defer(null, 'formulaire-visibility-<?=$formulairetype_id?>');
+      <?php endif; ?>
+    <?php endif; ?>
+    <?php endforeach;?>
+    <?php if ($declaration->status == Declaration::STATUS_EDITABLE): ?>
+    NTD.Control.linkedEvents.defer();
+    <?php else: ?>
+    ntd.declaration.onDisabled();
+    <?php endif;?>
+  });
+</script>
+
+
+<style type="text/css">
+  .form-ntd table.buttons-container {
+    border: 0 none;
+  }
+
+  .form-ntd table.buttons-container  tr td {
+    padding: 5px;
+    border: 0 none;
+  }
+
+  .form-ntd table.buttons-container  tr td .buttons-box {
+    overflow: hidden;
+  }
+
+  .form-ntd table.buttons-container  tr td .buttons-box .ntd-button {
+    float: left;
+  }
+
+  .formulairetype-annexes-box {
+    background-color: #EFF0F5;
+  }
+
+  .account-declaration-edit-box .cancel {
+    float: right;
+    margin-right: 10px;
+  }
+
+  .account-declaration-edit-box .submit {
+    float: right;
+  }
+
+  .account-declaration-edit-box .button-back .cancel {
+    float: none;
+  }
+
+</style>

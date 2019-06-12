@@ -1,0 +1,290 @@
+.print-only, .hidden {
+  display: block !important; }
+
+.no-print {
+  display: none; }
+
+.print-footer {
+  display: inline-block;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 10px; }
+
+.wrapper-header,
+.wrapper-footer,
+.account-wrapper-left,
+.wrapper-facture-box .btn-back,
+.wrapper-facture-box .button-print {
+  display: none; }
+
+#debug {
+  display: none !important; }
+
+.wrapper .wrapper-content {
+  width: auto; }
+
+.account-wrapper .account-panel .body-panel.no-toolbar-panel {
+  border: 0; }
+
+body {
+  color: black;
+  background: white;
+  font-size: 10pt; }
+
+.wrapper-content-left {
+  display: none; }
+
+.wrapper-content-right {
+  display: none; }
+
+.wrapper-facture-box h1 {
+  color: black; }
+.wrapper-facture-box .wrapper-facture-header .col-left {
+  width: 210pt; }
+.wrapper-facture-box .wrapper-facture-header .col-right {
+  width: 210pt; }
+.wrapper-facture-box .wrapper-facture-header .content {
+  padding: 0; }
+.wrapper-facture-box table.ntd-table td,
+.wrapper-facture-box table.ntd-table th {
+  font-size: 1em;
+  background: white;
+  color: black; }
+.wrapper-facture-box h3 {
+  color: black;
+  background: white;
+  font-weight: bold;
+  font-size: 1em;
+  line-height: 1.75em;
+  font-family: arial;
+  padding: 0; }
+.wrapper-facture-box .snippet-content,
+.wrapper-facture-box p {
+  color: black;
+  line-height: 1.3em;
+  font-size: 1em;
+  padding: 0;
+  margin: 0; }
+.wrapper-facture-box .wrapper-facture-content {
+  border-top: 1pt solid black;
+  border-bottom: 1pt solid black; }
+
+table.ntd-table,
+table.ntd-table td,
+table.ntd-table th {
+  border-width: 1pt;
+  border-color: black !important; }
+
+.account-wrapper .account-panel .body-panel.no-toolbar-panel {
+  padding: 0; }
+
+.break-avoid {
+  page-break-after: avoid;
+  height: 0; }
+
+.page-break {
+  page-break-after: always;
+  height: 0; }
+
+.formulaires-pagines .toolbar-panel .primary {
+  display: none; }
+
+.account-declaration-edit-box h1 {
+  margin-top: 0; }
+.account-declaration-edit-box .ntd-button {
+  display: none; }
+.account-declaration-edit-box .form-ntd {
+  padding: 0; }
+  .account-declaration-edit-box .form-ntd table {
+    width: 99%; }
+    .account-declaration-edit-box .form-ntd table tr td, .account-declaration-edit-box .form-ntd table tr.elt td.libelle {
+      border: 1pt black solid; }
+    .account-declaration-edit-box .form-ntd table tr td, .account-declaration-edit-box .form-ntd table tr.elt td.input, .account-declaration-edit-box .form-ntd table tr.elt td.input_35 {
+      color: black;
+      padding: 1pt !important; }
+    .account-declaration-edit-box .form-ntd table tr.elt td.input input,
+    .account-declaration-edit-box .form-ntd table tr.elt td.input_35 input,
+    .account-declaration-edit-box .form-ntd table tr.elt td.input_35 select,
+    .account-declaration-edit-box .form-ntd table tr.elt td.input select {
+      border: 0 black solid;
+      color: black; }
+    .account-declaration-edit-box .form-ntd table tr.elt td.input_35 input {
+      text-align: right; }
+    .account-declaration-edit-box .form-ntd table tr.elt td.input_70 input {
+      width: 400px;
+      text-align: right; }
+    .account-declaration-edit-box .form-ntd table tr.elt td.input_60 input {
+      width: 300px;
+      text-align: right; }
+    .account-declaration-edit-box .form-ntd table tr.elt td.td-3-cols {
+      width: auto; }
+  .account-declaration-edit-box .form-ntd .ts2502_2013 tr.tab-title th {
+    font-size: 8pt; }
+  .account-declaration-edit-box .form-ntd .ts2502_2013 h2 {
+    font-size: 13pt;
+    line-height: 1.2em; }
+.account-declaration-edit-box .img-tooltip,
+.account-declaration-edit-box .declaration-steps {
+  display: none; }
+.account-declaration-edit-box .formulaire-page {
+  display: block !important; }
+.account-declaration-edit-box .break {
+  page-break-after: always; }
+.account-declaration-edit-box .formulaire-annexes {
+  page-break-after: avoid; }
+
+.form-ntd #exportateur-tva3519 table tr.elt td.input {
+  width: 80px; }
+  .form-ntd #exportateur-tva3519 table tr.elt td.input input {
+    width: 80px; }
+
+.form-ntd table.is2571 tr.elt td.input input {
+  width: 60px !important; }
+
+.form-ntd table.is2571 tr.elt td.center {
+  text-align: center; }
+
+.form-ntd table.is2572_2014 tr.tab-title th.title {
+  font-size: 11px !important;
+  padding: 3px 0; }
+
+.form-ntd table.is2572_2014 tr.elt td.libelle {
+  font-size: 11px; }
+
+.form-ntd table.is2572_2014 tr.elt td.input,
+.form-ntd table.is2572_2014 tr.elt td.input input {
+  width: 80px !important; }
+
+.form-ntd table.is2573sd tr.elt td.small-input select {
+  width: 50px; }
+
+.form-ntd table.is2573sd tr.elt td.small-input input {
+  width: 60px !important; }
+
+.form-ntd table.is2573sd tr.elt td.small-input {
+  width: 50px !important; }
+
+.form-ntd table tr.paiement-box-tlra td {
+  text-align: left !important; }
+
+.form-ntd table tr.paiement-box-tlra td.input_35,
+.form-ntd table tr.paiement-box-tlra td.input_35 input {
+  width: 170px !important; }
+
+.form-ntd table tr.paiement-box-tlra td.input_35 select {
+  width: 280px !important; }
+
+.form-ntd table tr.paiement-box-tlra td.input,
+.form-ntd table tr.paiement-box-tlra td.input input {
+  width: 80px !important; }
+
+.form-ntd table.cvae1330ee tr.elt td.small-input,
+.form-ntd table.cvae1330epe tr.elt td.small-input {
+  width: 40px;
+  max-width: 40px;
+  padding: 0 5px; }
+
+.form-ntd table.cvae1330ee tr.elt td.input_35 input,
+.form-ntd table.cvae1330epe tr.elt td.input_35 input {
+  width: 100px;
+  max-width: 100px;
+  padding: 0 5px; }
+
+.form-ntd table.cvae1330ee tr.elt td.input_35 select,
+.form-ntd table.cvae1330epe tr.elt td.input_35 select {
+  width: 100px;
+  max-width: 100px;
+  padding: 0 5px; }
+
+.form-ntd table.cvae1330ee tr.elt td.input select,
+.form-ntd table.cvae1330epe tr.elt td.input select {
+  width: 60px;
+  max-width: 60px;
+  padding: 0 5px; }
+
+.account-declaration-edit-box .formulaire-page h3 {
+  display: inline-block;
+  clear: both; }
+.account-declaration-edit-box .formulaire-page .right {
+  width: 270px;
+  float: right; }
+  .account-declaration-edit-box .formulaire-page .right .field-container input {
+    width: 150px;
+    font-size: 11px; }
+  .account-declaration-edit-box .formulaire-page .right .field-container select {
+    width: 155px;
+    font-size: 11px; }
+.account-declaration-edit-box .formulaire-page .left {
+  width: 385px;
+  float: left; }
+  .account-declaration-edit-box .formulaire-page .left .field-container input {
+    width: 265px;
+    font-size: 11px; }
+  .account-declaration-edit-box .formulaire-page .left .field-container select {
+    width: 270px;
+    font-size: 11px; }
+.account-declaration-edit-box .formulaire-page:last-child {
+  page-break-after: avoid; }
+.account-declaration-edit-box .formulaire-page table {
+  page-break-inside: avoid; }
+.account-declaration-edit-box .formulaire-fieldset {
+  padding: 2px; }
+  .account-declaration-edit-box .formulaire-fieldset .field-container label {
+    font-weight: normal;
+    font-size: 11px;
+    width: 110px; }
+.account-declaration-edit-box .form-ntd {
+  border: 0; }
+.account-declaration-edit-box .textarea-split-comments {
+  width: 350pt;
+  border: 1pt solid black; }
+
+.account-bulletin-adhesion-box strong {
+  font-weight: bold; }
+.account-bulletin-adhesion-box .logo {
+  float: left; }
+.account-bulletin-adhesion-box h2 {
+  text-align: center;
+  padding-top: 5pt; }
+.account-bulletin-adhesion-box .ntd-table {
+  margin-top: 20pt;
+  page-break-inside: avoid; }
+  .account-bulletin-adhesion-box .ntd-table,
+  .account-bulletin-adhesion-box .ntd-table th,
+  .account-bulletin-adhesion-box .ntd-table td {
+    border-color: black !important;
+    color: black; }
+  .account-bulletin-adhesion-box .ntd-table td {
+    padding: 5px;
+    vertical-align: top; }
+    .account-bulletin-adhesion-box .ntd-table td p {
+      line-height: 1.3em;
+      font-size: 10pt; }
+  .account-bulletin-adhesion-box .ntd-table .label {
+    background-color: gainsboro;
+    text-align: right; }
+.account-bulletin-adhesion-box .bulletin-adhesion-footer {
+  overflow: hidden;
+  margin-top: 20pt; }
+  .account-bulletin-adhesion-box .bulletin-adhesion-footer .left {
+    float: left;
+    width: 50%; }
+  .account-bulletin-adhesion-box .bulletin-adhesion-footer .right {
+    float: left;
+    width: 50%; }
+  .account-bulletin-adhesion-box .bulletin-adhesion-footer p {
+    font-size: 1.2em;
+    line-height: 2.3em;
+    font-weight: bold; }
+.account-bulletin-adhesion-box .account-bulletin-adhesion-header {
+  display: none; }
+
+.account-declaration-edit-box .formulaire-page .formulaire-fieldset {
+  width: 49%; }
+  .account-declaration-edit-box .formulaire-page .formulaire-fieldset .field-container input,
+  .account-declaration-edit-box .formulaire-page .formulaire-fieldset .field-container select {
+    width: 200px; }
+  .account-declaration-edit-box .formulaire-page .formulaire-fieldset .field-container .field-type-checkbox {
+    width: 50px; }

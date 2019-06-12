@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+ <fieldset>
+
+  <notebook>
+   <page>
+    <form>
+     <hbox>
+      <vbox>
+       <elem field="millesime_id" label="Millesime"/>
+       <elem field="name" label="Titre"/>
+       <elem field="code" label="Code" precision="Export->TypeDeclaration"/>
+       <elem field="position" label="Position"/>
+       <elem field="service_id" />
+       <elem field="document_code" options="Formulairetype::$document_codes"
+             addfirst="-" label="Code de document" precision="liaison avec les Services"/>
+       <elem field="document_code_export" options="Formulairetype::$document_codes"
+             addfirst="-" label="Code de document" precision="Export Tradexpress"/>
+       <elem field="status"/>
+       <elem field="flags"/>
+        <box localized="true">
+          <elem field="title"/>
+          <elem field="description"/>
+        </box>
+      </vbox>
+      <vbox>
+       <elem type="relations"
+             label="Formulaires associés"
+             model="formulairetype"
+             editable="true" height="500px"/>
+
+      </vbox>
+      <vbox>
+       <elem field="default_values"
+             label="Valeur par défaut" precision="une valeur par ligne, FORMCODE_FIELDCODE=VALUE"
+             rows="5"/>
+       <elem field="required_fields"
+             label="Champs obligatoires" precision="un champ par ligne, FORMCODE_FIELDCODE=VALUE"
+             rows="5"/>
+       <elem field="destinataires"
+             label="Destinataires possibles"
+             options="Destinataire::$types"
+             type="checkbox"
+             cols="3"/>
+       <elem field="ref_paiement_type_echeance" precision="utilisé dans le calcul de la référence paiement"
+             options="Dectype::$ref_paiement_type_echeance"
+             addfirst="-"/>
+      </vbox>
+     </hbox>
+     <launcher/>
+    </form>
+   </page>
+   <page>
+    <hbox>
+     <vbox width="150px">
+      <box label="actions">
+       <link icon="details"/>
+       <link icon="duplicate"/>
+      </box>
+     </vbox>
+     <vbox>
+      <deck/>
+     </vbox>
+    </hbox>
+   </page>
+  </notebook>
+
+ </fieldset>
+</kwo-interface>

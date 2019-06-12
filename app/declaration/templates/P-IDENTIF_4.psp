@@ -1,0 +1,215 @@
+  <div>
+    <div data-position="first" class="formulaire-page">
+      <br />
+      <br />
+      <table>
+        <tbody>
+          <tr class="elt">
+            <td class="libelle title" colspan="5">
+              <label>IDENTIFICATION DU REDEVABLE</label>
+            </td>
+          </tr>
+          <tr class="elt">
+            <td class="libelle">
+              <label>Référence obligatoire fiscale</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("KD"); ?>
+            </td>
+            <td class="libelle empty" rowspan="5"></td>
+            <td class="libelle">
+              <label>Forme juridique ou titre</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("AA04"); ?>
+            </td>
+          </tr>
+          <tr class="elt">
+            <td class="libelle">
+              <label>N° SIRET ou SIREN</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("AA01"); ?>
+            </td>
+            <td class="libelle">
+              <label>Adresse</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("AA05"); ?>
+            </td>
+          </tr>
+          <tr class="elt">
+            <td class="libelle">
+              <label>Nom, prénom ou désignation</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("AA02"); ?>
+            </td>
+            <td class="libelle">
+              <label>Complément de distribution</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("AA06"); ?>
+            </td>
+          </tr>
+          <tr class="elt">
+            <td class="libelle">
+              <label>Qualité , profession ou complément de désignation</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("AA03"); ?>
+            </td>
+            <td class="libelle">
+              <label>Code postal</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("AA09"); ?>
+            </td>
+          </tr>
+          <tr class="elt">
+            <td class="libelle empty" colspan="2"></td>
+            <td class="libelle">
+              <label>Localité</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("AA08"); ?>
+            </td>
+          </tr>
+        </tbody>
+      </table><br />
+      <table>
+        <tbody>
+          <tr class="elt">
+            <td class="libelle title" colspan="2">
+              <label>EVENEMENTS IMPACTANT LA PERIODE DE DEPOT</label>
+            </td>
+          </tr>
+          <tr class="elt">
+            <td class="libelle">
+              <label>Date de cession/ cessation</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("BB"); ?>
+            </td>
+          </tr>
+        </tbody>
+      </table><br />
+      <br />
+      <table>
+        <tbody>
+          <tr class="elt">
+            <td class="libelle title" colspan="4">
+              <label>PERIODE DU DEPOT</label>
+            </td>
+          </tr>
+          <tr class="elt">
+            <td class="libelle">
+              <label>Début période déclaration:</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("CA"); ?>
+            </td>
+            <td class="libelle">
+              <label>Échéance</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("KF"); ?>
+            </td>
+          </tr>
+          <tr class="elt">
+            <td class="libelle">
+              <label>Fin période déclaration:</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("CB"); ?>
+            </td>
+            <td class="libelle empty" colspan="2"></td>
+          </tr>
+        </tbody>
+      </table><br />
+      <br />
+    </div>
+    <div data-position="last" class="formulaire-page">
+      <br />
+      <br />
+      <table>
+        <tbody>
+          <tr class="elt">
+            <td class="libelle title">
+              <label>PAIEMENT :</label>
+            </td>
+          </tr>
+          <tr class="elt">
+            <td class="libelle bold">
+              <label>Télérèglement A :</label>
+            </td>
+          </tr>
+          <tr class="elt">
+            <td class="libelle">
+              <label>Veuillez indiquer le montant du (des) prélèvement(s), l'identification du compte bancaire ainsi que la référence du paiement.</label>
+            </td>
+          </tr>
+        </tbody>
+      </table><br />
+      <table>
+        <tbody>
+          <tr class="elt">
+            <td class="libelle title">
+              <label>Compte Bancaire</label>
+            </td>
+            <td class="libelle title">
+              <label>Référence IBAN</label>
+            </td>
+            <td class="libelle title">
+              <label>Montant du prélèvement</label>
+            </td>
+            <td class="libelle title">
+              <label>Référence paiement</label>
+            </td>
+          </tr>
+          <tr class="elt">
+            <td class="libelle">
+              <label>1er compte bancaire à débiter</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("GA"); ?>
+            </td>
+            <td>
+              <?= $imprime->renderField("HA"); ?>
+            </td>
+            <td>
+              <?= $imprime->renderField("KA"); ?>
+            </td>
+          </tr>
+          <tr class="elt">
+            <td class="libelle">
+              <label>2ème compte bancaire à débiter</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("GB"); ?>
+            </td>
+            <td>
+              <?= $imprime->renderField("HB"); ?>
+            </td>
+            <td>
+              <?= $imprime->renderField("KB"); ?>
+            </td>
+          </tr>
+          <tr class="elt">
+            <td class="libelle">
+              <label>3ème compte bancaire à débiter</label>
+            </td>
+            <td>
+              <?= $imprime->renderField("GC"); ?>
+            </td>
+            <td>
+              <?= $imprime->renderField("HC"); ?>
+            </td>
+            <td>
+              <?= $imprime->renderField("KC"); ?>
+            </td>
+          </tr>
+        </tbody>
+      </table><br />
+    </div>
+  </div>

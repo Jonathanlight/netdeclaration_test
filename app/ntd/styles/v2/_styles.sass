@@ -1,0 +1,156 @@
+.nowrap
+  white-space: nowrap
+
+// ----- float
+.float-right
+  float: right
+.float-left
+  float: left
+
+.clear-float
+  @include clearFloat()
+
+// ----- font color
+.color--darkblue
+  color: $color--darkblue
+
+.color--lightblue
+  color: $color--lightblue
+
+.color--red
+  color: $color--red
+
+.color--darkgrey
+  color: $color--darkgrey
+
+.color--green
+  color: $color--green
+
+.color--orange
+  color: $color--orange
+
+// ----- font Styles
+.font-family--georgia
+  @include font-family--georgia()
+
+.font--darkblue
+  @include font--darkblue()
+
+.font--lightblue
+  @include font--lightblue()
+
+.font-size-big
+  @include font-size-big()
+
+.font-size-small
+  @include font-size-small()
+
+.font-size--22px
+  font-size: 22px
+
+.font-size--28px
+  font-size: 28px
+  
+.font-size--11px
+  font-size: 11px
+
+.font-size--12px
+  font-size: 12px
+
+.font-size--18px
+  font-size: 18px
+
+.font-size--icon-small
+  font-size: 14px
+
+.font-style--italic
+  font-style: italic
+
+.font-weight-bold
+  font-weight: bold
+
+.text-transform--uppercase
+  text-transform: uppercase
+
+.text-decoration--none
+  text-decoration: none
+  &:hover
+    text-decoration: none
+
+// ----- Margins
+.margin-top,
+.margin-top--10
+  margin-top: 10px
+
+.margin-top-13
+  margin-top: 15px
+
+.margin-top-15
+  margin-top: 15px 
+
+.margin-top-20
+  margin-top: 20px 
+
+.margin-top-25
+  margin-top: 25px
+
+.margin-top-30
+  margin-top: 30px
+
+.margin-top-75
+  margin-top: 75px
+
+.margin-bottom
+  margin-bottom: 10px !important
+
+.margin-bottom-15
+  margin-bottom: 15px
+
+.margin-bottom-5
+  margin-bottom: 5px
+
+.margin-bottom-13
+  margin-bottom: 13px
+
+.margin-bottom-20
+  margin-bottom: 20px
+
+.margin-left
+  margin-left: 35px
+
+.margin-left--20
+  margin-left: 20px
+
+.margin-right--10
+  margin-right: 10px
+
+.margin-left-185
+  margin-left: 185px
+// ----- Padding
+.padding-top-75
+  padding-top: 75px
+
+// ----- Others
+.col--2
+  width: 50%
+
+.border--left
+  border-left: 1px solid $color--bordergrey
+
+.border--right
+  border-right: 1px solid $color--bordergrey
+
+.border--bottom
+  border-bottom: 1px solid $color--bordergrey
+
+.border--bottom--dashed--darkblue
+  border-bottom: 1px dashed $color--darkblue
+  &:hover
+    border-bottom-style: solid
+
+.border--left--big--darkblue
+  border-left: 3px solid $color--darkblue
+
+// -----
+.width-300
+  width: 300px

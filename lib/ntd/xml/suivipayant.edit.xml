@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+<fieldset>
+
+<notebook>
+<page>
+ <form>
+  <hbox>
+   <vbox>
+    <elem field="edimessagetype_id" label="Message EDI concerné" />
+    <elem field="adherent_type" type="radio" options="Adherent::$types" label="Type adherent" required="true" />
+    <elem field="destinataire" type="select" options="Suivipayant::$destinataires" label="Destinataire" required="true" />
+    <elem field="type_doc" type="select" options="Suivipayant::$types_doc" label="Type document" required="true" />
+   </vbox>
+   <vbox>
+    <elem field="sens" type="radio" options="Suivipayant::$sens" label="Sens" required="true" />
+    <elem field="status" />
+   </vbox>
+  </hbox>
+  <launcher/>
+ </form>
+</page>
+<page>
+ <hbox>
+  <vbox width="150px">
+   <box label="actions">
+    <link icon="details" />
+   </box>
+  </vbox>
+  <vbox><deck /></vbox>
+ </hbox> 
+</page>
+</notebook>
+
+</fieldset>
+</kwo-interface>

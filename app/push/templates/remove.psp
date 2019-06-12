@@ -1,0 +1,26 @@
+<div class="table">
+  <main class="table-cell table-padding-right table-cell--main block  wrapper__footer-padding-bottom">
+    <h1 class="font--darkblue font-size-big font-family--georgia">Désabonnement</h1>
+
+    <div style="margin-top:10px;">
+      <?php if ($is_removed == 1) : ?>
+        <p>
+          L&rsquo;adresse email <strong><?=$email?></strong> a bien
+          été supprimée.
+        </p>
+      <?php else : ?>
+        <p>
+          Pour ne plus recevoir de message à l&rsquo;adresse
+          <strong><?=$email?></strong>,
+          veuillez valider votre désabonnement :
+        </p>
+
+        <div class="remove-button" style="margin-top:10px;">
+          <input type="button" class="btn btn--color-light-blue btn-infos"
+                value="Valider votre désabonnement"
+                onclick="window.location.href=window.location.href+'&confirm=1'" />
+        </div>
+      <?php endif ?>
+    </div>
+  </main>
+</div>

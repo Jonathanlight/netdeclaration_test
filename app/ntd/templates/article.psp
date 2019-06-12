@@ -1,0 +1,70 @@
+<div class="table">
+  <main class="table-cell table-padding-right table-cell--main block  wrapper__footer-padding-bottom">
+    <?= H::breadcrumb($_breadcrumb) ?>
+    <h1 class="color--darkgrey font-family--georgia  font-size--28px  font-weight-bold margin-bottom">
+      <?= $article->name ?>
+    </h1>
+    <p class="color--red"><?= c(H::datenice($article->published_at)) ?></p>
+
+    <div class="wysiwyg box-content-article">
+      <?= $article->content ?>
+    </div>
+
+    <table class="navigation">
+      <tr>
+        <td class="prev">
+          <? S('dbo')->monitor()?>
+          <?php if ($article->hasPrev()): ?>
+            <i class="fa fa-long-arrow-left"></i>
+            <a href="<?= $article->getPrev()->asUrl() ?>"><?= l('navigation.prev') ?></a>
+          <?php endif; ?>
+        </td>
+        <td class="list">
+          <i class="fa fa-th-list "></i>
+          <a href="/articles"><?= l('navigation.list') ?></a>
+        </td>
+        <td class="next">
+          <?php if ($article->hasNext()): ?>
+            <a href="<?= $article->getNext()->asUrl() ?>"><?= l('navigation.next') ?></a>
+            <i class="fa fa-long-arrow-right"></i>
+          <?php endif; ?>
+        </td>
+      </tr>
+      <? S('dbo')->monitor()?>
+    </table>
+  </main>
+
+  <aside class="table-cell  table-cell--aside  wrapper__footer-padding-bottom">
+    <div class="block__height">&nbsp;</div>
+    <div>
+      <h2>
+        <div class="aside__title">
+          <span class="aside__title__left  aside__title__left--red"></span>
+            <span class="aside__title__center  aside__title__center--red">
+                 <i class="fa fa-th-list aside__title__center__icon"></i>
+                  Dernière Actualité
+            </span>
+          <span class="aside__title__right  aside__title__right--red"></span>
+        </div>
+      </h2>
+      <div class="wysiwyg wysiwyg--aside">
+        <?php foreach ($last_articles as $i => $last_article) : ?>
+          <div class="wysiwyg--aside__list-item__actu">
+            <p class="color--red font-size--11px margin-bottom"><?= H::datenice($last_article->published_at) ?></p>
+            <h2 class="color--darkgrey  font-family--georgia  font-size--16px  font-weight-bold">
+              <?= $last_article->name ?>
+            </h2>
+            <span class="wysiwyg--aside__list-item__content__actu"><?= $last_article->description ?></span>
+            <a href="<?=$last_article->asUrl()?>" class="link--background-blue">Voir</a>
+          </div>
+          <?php if ($i < $last_articles->count() - 1) : ?>
+            <hr>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </div>
+    </div>
+    <div class="logo-edi">
+      <img src="/app/ntd/pix/general/logo_partenaire_edi.png" alt="Partenaire edi - Logo">
+    </div>
+  </aside>
+</div>

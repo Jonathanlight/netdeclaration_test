@@ -1,0 +1,9 @@
+<div class="aside__title">
+  <span class="aside__title__left  aside__title__left--<?=$color?>"></span>
+  <span class="aside__title__center  aside__title__center--<?=$color?>">
+    <?php if(!empty($icon)): ?>
+    <i class="fa <?=$icon?>  aside__title__center__icon"></i>
+    <?php endif; ?>
+    <?=$label?></span>
+  <span class="aside__title__right  aside__title__right--<?=$color?>"></span>
+</div>

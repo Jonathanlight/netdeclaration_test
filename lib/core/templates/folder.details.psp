@@ -1,0 +1,6 @@
+<fieldset class="list"><legend>Répertoire <b><?=$folder->getPath()?></b></legend>
+<table class="grid auto">
+<tr><td>Nombre de fichiers : </td><td><?=$folder->getNbFiles()?></td></tr>
+<tr><td>Taille : </td><td><?=$folder->getUsedSpace()?> M</td></tr>
+</table>
+</fieldset>

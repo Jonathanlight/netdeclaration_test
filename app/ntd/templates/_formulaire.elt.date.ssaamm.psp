@@ -1,0 +1,13 @@
+<div class="elt-ssaamm-container" id="<?=$elt['id']?>-controls-container" onmouseover="<?=$elt['onmouseover']?>" onmouseout="<?=$elt['onmouseout']?>">
+<?=Elt::select(array('id' => $elt['id'] . "-year",
+                     'options' => $years,
+                     'first' => '-',
+                     'value' => $value_year,
+                     'events' => array('change' => "NTD.Generic.date_ssaamm.onSelectChange($('" . $elt['id'] . "'), $('" . $elt['id'] . "-month'), $('" . $elt['id'] . "-year'))")));?>
+
+<?=Elt::select(array('id' => $elt['id'] . "-month",
+                     'options' => I18n::$months[S('req')->getLocale()]['long'],
+                     'first' => '-',
+                     'value' => $value_month,
+                     'events' => array('change' => "NTD.Generic.date_ssaamm.onSelectChange($('" . $elt['id'] . "'), $('" . $elt['id'] . "-month'), $('" . $elt['id'] . "-year'))")));?>
+</div>

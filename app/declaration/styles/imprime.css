@@ -1,0 +1,126 @@
+.formulaire-page i { font-style:italic; }
+.formulaire-page b { font-weight:bold; }
+.formulaire-page span.br { display:block; }
+
+.formulaire-page-buttons { padding: 10px; overflow:hidden; }
+.formulaire-page-buttons > * { float: left; margin-right: 10px; border:1px solid #FFFFFF; }
+.formulaire-page-buttons > *.selected { border-color:#465779; }
+
+.imprime-box .load-infos { display:none; background:#FFFFFF; z-index:100; }
+.imprime-box.status-preparation { position:relative; }
+.imprime-box.status-preparation .load-infos { display:block; border:1px solid #7989AA; height:30px; color:#000000; position:fixed; top:100px; left:100px; right:100px; text-align:left; width:auto; zoom:1; }
+.imprime-box.status-preparation .load-infos .background { background:#dcdcdc; height:100%; }
+.imprime-box.status-preparation .load-infos .content { line-height:30px; margin-top:-30px; text-align:center }
+.imprime-box.status-preparation .formulaire-page {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+  filter: alpha(opacity=30);
+  zoom: 1;
+  -moz-opacity: 0.3;
+  -khtml-opacity: 0.3;
+  opacity: 0.3;
+}
+/*'new', 'required', 'saved', 'saving', 'validating', 'errors', 'changed'*/
+.formulaire-state { font-size: 13px; font-weight: bold; line-height: 30px; padding: 0 10px; text-align: center; width: 240px; display:block; color:#000000; }
+.imprime-box .formulaire-state {float: left !important; }
+.formulaire-state.new { background:#dcdcdc; }
+.formulaire-state.saved { background: #009933; color:#FFFFFF; }
+.formulaire-state.changed { background: #FFEB9D; }
+.formulaire-state.errors { background:#F2DDDD; }
+
+.imprime-page .imprime-box h2 { padding:0 10px; }
+
+.formulaire-page table { width:100%; margin-bottom:10px; }
+.pulsar .formulaire-page table { border: 5px solid #7989AA; border-collapse:separate; }
+
+.formulaire-page.force-hidden { display:none !important; }
+.formulaire-page table th,
+.formulaire-page table td { border:1px solid #7989AA; vertical-align:middle; }
+
+.formulaire-page td.title { background-color:#EFF0F5; color:#666666; font-weight:bold; line-height:1.3em; padding:7px;}
+.formulaire-page td.h2 { background-color:#475779; color:#FFFFFF; text-transform:uppercase; font-size:16px; text-align:center; }
+.formulaire-page td.h3 { background-color:#93A1BB; color:#333333; font-size:13px; }
+.formulaire-page td.empty { background:#7989AA; }
+.formulaire-page td.ta-left { text-align:left; }
+.formulaire-page td.ta-center { text-align:center; }
+.formulaire-page td.ta-right { text-align:right; }
+.formulaire-page td.bold { font-weight:bold; }
+.formulaire-page td.small-size { font-size:10px; }
+.formulaire-page td.small-size.impot_field,
+.formulaire-page td.small-size > label { padding:0px; }
+.formulaire-page td.small-size input { font-size:12px; }
+
+.formulaire-page td.impot_field { padding:5px; text-align:center; background-color:#EFF0F5; color:#666666; }
+.formulaire-page td label { padding:5px; color:#666666; line-height:1.3em; display:block; }
+.formulaire-page td.impot_row { background:none repeat scroll 0 0 #475779; color:#FFFFFF; font-size:13px; font-weight:bold; text-align:center; }
+.formulaire-page td.empty { background:#FFFFFF; border-width:0; }
+
+.formulaire-page .imprime-field { padding:5px; text-align:center; }
+.formulaire-page .imprime-field select[readonly],
+.formulaire-page .imprime-field input.text[readonly] { background-color:#dcdcdc; }
+.formulaire-page .imprime-field .elt-field { border:1px solid #7989AA; padding:0 5px; }
+.formulaire-page .imprime-field .elt-field input.text { width:100%; color:#465779; border:0 none; padding:0; line-height:21px; height:21px; }
+.formulaire-page .imprime-field .elt-field input.text[readonly] { background-color:#dcdcdc; margin:0 -5px; padding:0 5px; }
+.formulaire-page .imprime-field input.type-moa { text-align:right;  }
+.formulaire-page .imprime-field input.type-pcd { text-align:right;  }
+.formulaire-page .imprime-field input.type-qty { text-align:right;  }
+.formulaire-page .imprime-field.has-error .elt-field,
+.formulaire-page .imprime-field.has-error select,
+.formulaire-page .imprime-field.has-error input.text,
+.formulaire-page .imprime-field.has-error input.text[readonly] { background-color:#ffff99; border-color:#FF0000; }
+.formulaire-page .imprime-field.has-error[data-imprime_code="P-IDENTIF"] p { background:#FFCCAA; }
+.formulaire-page .imprime-field.has-error[data-imprime_code="P-IDENTIF"] .elt-tooltip-content p { background:none; }
+.formulaire-page .imprime-field select { border:1px solid #7989AA; color:#465779; height:23px; width:100%; }
+.formulaire-page .little-width { width:50px; }
+.formulaire-page .medium-width { width:100px; }
+.formulaire-page .large-width { width:200px; }
+
+.formulaire-page .merged_tds .merged_td { float:left; }
+.formulaire-page .merged_tds .merged_td,
+.formulaire-page .merged_tds .merged_td label { display:inline; }
+
+.btn-add { display:block; line-height:30px; background:transparent none; text-align:center; color:#7889AA; font-size:1.2em; text-decoration:none; }
+.pulsar .btn-add { background-color: #7889AA; color: #FFFFFF; font-weight: bold; text-transform: uppercase; }
+.btn-add:hover { color:#e73348; }
+.btn-add:active { color:#002d62; }
+.btn-remove-container { width:31px; }
+.btn-remove { background:url("/app/ntd/pix/style/link_logout.png") no-repeat scroll center center transparent; display:block; height:9px; padding:11px; text-decoration:none; width:9px; opacity:0.5; }
+.btn-remove:hover { opacity:1; }
+
+.formulaire-repetable > .tabs { overflow:hidden; }
+.formulaire-repetable > .tabs > li { float:left; border:1px solid #CDCED2; border-bottom:0; margin-right:5px; }
+.formulaire-repetable > .tabs > li > .label { float:left; padding:10px 10px; cursor:pointer; }
+.formulaire-repetable > .tabs > li > .btn-remove { float:left; background:url("/app/ntd/pix/style/link_logout.png") no-repeat scroll center center transparent; height:10px; padding:11px; text-decoration:none; width:9px; opacity:0.5; cursor:pointer; font-size:0;  }
+.formulaire-repetable > .tabs > li > .btn-remove:hover { opacity:1; background-color:#FFFFFF; }
+.formulaire-repetable > .tabs > li.selected  { background:#959595; color:#FFFFFF; }
+
+.pulsar .extensible-row { background: #ffffcc; }
+.pulsar table tr[data-extensible-fields]:hover:after { position:fixed; bottom:0; left: 0px; padding:10px;   border: 3px solid #4A525E; content: "Ext - FIELDS[" attr(data-extensible-fields) "] - INDEX [" attr(data-index) "]"; display: block; text-align: center; vertical-align: middle; color: #FF0000; text-transform: uppercase; font-size:17px;}
+.pulsar .imprime-field { background-color:#F5CEF2; }
+.pulsar .imprime-field[data-required="1"] { background-color:#F59F9F; }
+.pulsar .imprime-field .elt-field { background-color:#FFFFFF; border:1px dotted #8398C5; }
+.pulsar .imprime-field:hover { background-color: #e6b5b5 !important; }
+.pulsar .imprime-field:hover:after { width:300px; position:fixed; bottom:40px; left: 0px; padding:10px;   border: 3px solid #4A525E; content: "Field - extensible="attr(data-extensible)" data-index="attr(data-index)" data-name="attr(data-name); display: block; color: #000000; font-size:17px; text-align:left; }
+.pulsar .formulaire-page td.empty { background: #7989AA !important; border-width:1px !important; }
+.pulsar .formulaire-page .imprime-field select { border-style :dotted; }
+
+
+.fidentif-rof {  }
+.fidentif-rof:after { content:""; display:table; clear:both; }
+.fidentif-rof > select { float: left; margin-right: 5px; width: 30% !important; }
+.fidentif-rof > .elt-field { overflow:hidden; width: 30%; float:left; }
+.fidentif-rof > p { color: #666666; display: block; line-height: 1.3em; text-align: left; margin-bottom:5px; }
+.fidentif-rof > label.click-label { line-height: 23px ; overflow: hidden; padding: 0 0 0 15px; text-align: left;  }
+.fidentif-rof > label.click-label input { margin: 0 5px 0 0 ; vertical-align: sub; }
+
+.formulaire-page .imprime-field .elt-dtm-ssaamm { overflow:hidden; }
+.formulaire-page .imprime-field .elt-dtm-ssaamm select.month { float:left; width:110px; }
+.formulaire-page .imprime-field .elt-dtm-ssaamm select.year { float:left; width:60px; margin-left:5px; }
+
+.formulaire-page .imprime-field .elt-dtm-mmjj { overflow:hidden; }
+.formulaire-page .imprime-field .elt-dtm-mmjj select.day { float:left; width:60px; margin: 0 5px 0 5px; }
+.formulaire-page .imprime-field .elt-dtm-mmjj select.month { float:left; width:110px; }
+
+.imprime-page.home {}
+.imprime-page.home table.ntd-table td,
+.imprime-page.home table.ntd-table th { padding:2px; }
+.imprime-page.home .formulaire-single .formulaire-state { float:right; }

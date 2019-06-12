@@ -1,0 +1,28 @@
+<html>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <script src="<?=H::url('/app/core/scripts/prototype.js')?>" type="text/javascript"></script>
+  <link rel="stylesheet" href="<?=H::url('/app/ntd/styles/vendor/font-awesome.css') ?>" type="text/css" />
+  <link rel="stylesheet" href="<?=H::url('/app/ntd/styles/v2/reset.css') ?>" type="text/css" />
+  <link rel="stylesheet" href="<?=H::url('/app/ntd/styles/v2/master.css') ?>" type="text/css" />
+  <style>
+  .no-print, .no-print * {
+    display: none !important;
+  }
+  body {
+    background: none;
+  }
+  .greffe-content {
+    padding: 0;
+    margin: 0;
+  }
+  </style>
+</head>
+<body>
+  <div class="wrapper pdf-content">
+    <div class="greffe-content block block--middle-content">
+      <?=$_content ?>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<section class="block block--middle-home">
+  <header class="block--middle-home__header">
+    <a href="/middle/declarations"
+       class="block--middle-home__link">
+      Déclarations <i class="fa fa-caret-right color--red"></i>
+    </a>
+    <h2 class="block--middle-home__title">Déclarations</h2>
+  </header>
+  <ul class="block--middle-home__list">
+    <?php foreach ($declarations as $i => $declaration): ?>
+      <li class="block--middle-home__list__item">
+        <div class="table">
+          <div class="block--middle-home__list__item__content table-cell">
+
+            <p class="font-weight-bold color--darkblue float-right ">
+              <?= Declaration::$statuses_front[$declaration->status] ?>
+            </p>
+            <p>
+              <span class="font-weight-bold color--darkblue width-300"><?= $declaration->getDectype()->name ?></span>
+            </p>
+            <p>
+              <span class="color--darkblue font-size--11px font-style--italic">
+                <i class="fa fa-edit font-size--icon-small"></i>
+                Dernière modification <?= NetDeclaration::datetime($declaration->getMeta('updated_at')) ?>
+              </span>
+            </p>
+
+          </div>
+          <div class="table-cell">
+            <a class="block--middle-home__list__item__btn btn btn--color-light-blue btn--smaller"
+               href="/account/ntd/account.declaration.edit/-/declaration_id/<?= $declaration->getId() ?>"
+               onclick="ntd.displayLoader(this)">
+               <span class="text-spin">Éditer</span>
+               <i class="fa fa-spinner fa-spin"></i>
+            </a>
+          </div>
+        </div>
+
+      </li>
+    <?php endforeach; ?>
+    <?php foreach ($declarations_suivi_error as $i => $declaration): ?>
+      <li class="block--middle-home__list__item">
+        <div class="table">
+          <div class="block--middle-home__list__item__content table-cell">
+
+            <p class="font-weight-bold color--red float-right width-300">
+              <?= $declaration->destinataire_message ?>
+            </p>
+            <p>
+              <span class="font-weight-bold color--darkblue"><?= $declaration->getDectype()->name ?></span>
+            </p>
+            <p>
+              <span class="color--darkblue font-size--11px font-style--italic">
+                <i class="fa fa-send font-size--icon-small"></i>
+                Envoyé le <?= NetDeclaration::datetime($declaration->suivi_date_depot) ?>
+              </span>
+            </p>
+
+          </div>
+          <div class="table-cell">
+            <a class="block--middle-home__list__item__btn btn btn--color-red btn--smaller"
+               href="<?= $declaration->getId() ?>">Voir</a>
+          </div>
+        </div>
+
+      </li>
+    <?php endforeach; ?>
+  </ul>
+</section>
+
+<section class="block block--middle-home">
+  <header class="block--middle-home__header">
+    <a href="/middle/factures"
+       class="block--middle-home__link">
+      Factures <i class="fa fa-caret-right color--red"></i>
+    </a>
+    <h2 class="block--middle-home__title">Factures</h2>
+  </header>
+  <ul class="block--middle-home__list">
+    <?php foreach ($factures as $facture): ?>
+      <li class="block--middle-home__list__item">
+        <div class="table">
+          <div class="block--middle-home__list__item__content table-cell">
+            <p class="color--darkblue float-right" style="text-align: right">
+              <span class="font-size--11px font-style--italic"> <?= c(Facture::$statuses[$facture->status]) ?></span>
+              <br>
+              <span class="font-weight-bold"><?= H::amount($facture->price_ttc) ?></span>
+            </p>
+            <p>
+              <span class="color--darkblue font-weight-bold">Facture N°<?= $facture->getId() ?></span>
+              <span class="font-size--11px color--lightblue"> <?= H::date($facture->getMeta('created_at')) ?></span>
+              <?php if ($facture->hasFlag(Facture::FLAG_RAPPEL_3)): ?>
+                <span class="font-size--11px color--red text-transform--uppercase">Derniere Relance</span>
+              <?php endif; ?>
+            </p>
+            <p>
+          <span class="font-size--11px color--darkblue">
+            <?= implode(', ', $facture->getSouscriptions(array('include' => array('service')))->asSet('service_name')) ?></span>
+            </p>
+            <p class="color--darkblue">
+              <a href="<?= $facture->asUrl() ?>" class="text-decoration--none">
+                <i class="fa fa-file-text font-size--icon-small"></i>
+                <span class="border--bottom--dashed--darkblue font-size--11px ">Voir la facture</span>
+              </a>
+            </p>
+          </div>
+          <div class="table-cell">
+            <a class="block--middle-home__list__item__btn btn btn--color-red btn--smaller"
+               href="<?= $facture->asUrl() ?>">Payer</a>
+          </div>
+        </div>
+      </li>
+    <?php endforeach; ?>
+  </ul>
+</section>
+
+<section class="block block--middle-home">
+  <header class="block--middle-home__header">
+    <a href="/middle/services"
+       class="block--middle-home__link">
+      Services <i class="fa fa-caret-right color--red"></i>
+    </a>
+    <h2 class="block--middle-home__title">Services</h2>
+  </header>
+  <ul class="block--middle-home__list">
+    <?php foreach ($souscriptions as $souscription): ?>
+      <li class="block--middle-home__list__item ">
+        <div class="table">
+
+          <div class="block--middle-home__list__item__content table-cell">
+
+            <p>Votre souscription au service
+              <span class="font-weight-bold"> <?= $souscription->getService()->getProperty('title') ?></span>
+               arrive à écheance le <?= H::datenice($souscription->finish_at) ?>.
+              <?php if ($souscription->is_renewable): ?>
+                Elle sera automatiquement renouvellée pour une période de 1 an.
+              <?php else: ?>
+                Elle ne sera pas renouvellée.
+              <?php endif; ?>
+            </p>
+
+          </div>
+
+          <div class="table-cell">
+            <a class="block--middle-home__list__item__btn  btn btn--color-light-blue btn--smaller"
+               href="/middle/services">Gérer</a>
+          </div>
+        </div>
+
+      </li>
+    <?php endforeach; ?>
+    <li class="block--middle-home__list__item ">
+      <a href="/middle/services.purchasables" class="btn btn--color-red ">Souscrire à un nouveau service</a>
+    </li>
+  </ul>
+</section>

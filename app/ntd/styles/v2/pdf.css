@@ -1,0 +1,436 @@
+/* ==========================================================================
+   Commons
+   ========================================================================== */
+
+
+body {
+  background: #f7f7fa;
+  color: #000;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+}
+
+h1,h2,h3,h4 {
+  color: #002e60;
+  font-family: Georgia, serif;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+dl {
+  margin: 16px 0 0;
+  overflow: hidden;
+  width: 282px;
+}
+
+dt {
+  color: #828282;
+  float: left;
+  font-size: 9px;
+  margin-top: 2px;
+  padding-right: 15px;
+  text-align: right;
+  text-transform: uppercase;
+  width: 100px;
+}
+
+dd {
+  float: left;
+  margin: 0;
+  width: 164px;
+  min-height: 15px;
+}
+
+dd a {
+  color: #000;
+  text-decoration: none;
+}
+
+small,
+small a {
+  color: #8d8d8d;
+  font-size: 9px;
+}
+
+.inner {
+  width: 638px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+header {
+  background: #fff;
+  height: 136px;
+}
+
+.page-title {
+  float: right;
+  font-size: 30px;
+  margin: 54px 0 0;
+}
+.pagination {
+  float: right;
+  font-family: Arial;
+  font-size: 12px;
+  margin-top: 4px;
+  margin-right: 2px;
+  font-weight: normal;
+}
+
+.logo {
+  margin-top: 34px;
+}
+
+/* ==========================================================================
+   Content
+   ========================================================================== */
+
+.main-content {
+  padding: 40px 0;
+}
+
+.generic-block {
+  background: #fff;
+  border: 1px solid #dfdfe4;
+  border-bottom-width: 3px;
+  overflow: hidden;
+  padding: 42px 34px 36px 34px;
+}
+
+.generic-block .title {
+  border-bottom: 1px solid #dedee1;
+  clear: both;
+  margin: 0;
+  padding: 5px 0 12px 5px;
+}
+
+.generic-block .title-facturation {
+  padding-top: 39px;
+}
+
+.generic-block-small {
+  margin-top: 25px;
+}
+
+.generic-block-small {
+  float: left;
+  width: 230px;
+  height: 160px;
+}
+
+.block-conditions {
+  float: left;
+}
+
+.block-signature {
+  float: right;
+}
+
+.first-list, .second-list {
+  float: left;
+  position: relative;
+}
+
+.first-list {
+  left: -10px;
+}
+
+.second-list {
+  right: -23px;
+}
+
+.n-adherent {
+  border: 1px solid #002e60;
+  color: #002e60;
+  float: right;
+  margin: 26px 36px 0 0;
+  padding-bottom: 3px;
+  text-align: center;
+  width: 171px;
+  height: 46px;
+}
+
+.block-conditions label {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 25px;
+}
+
+.block-conditions input {
+  float: left;
+}
+
+.block-conditions span {
+  display: block;
+  float: left;
+  font-style: italic;
+  margin: 0 0 0 10px;
+  width: 200px;
+}
+
+.block-signature {
+  background: #fff url(/app/ntd/pix/print/stamp.png) 96% 96% no-repeat;
+}
+
+.block-signature p:first-child {
+  background: url(/app/ntd/pix/print/pen.png) 0 0 no-repeat;
+}
+
+.block-signature p:first-child span {
+  color: #002e60;
+  font-weight: bold;
+}
+
+.block-signature p {
+  margin: 0 0 0 -4px;
+  padding-left: 23px;
+}
+
+/* Page facture */
+
+.main-content {
+
+}
+
+.block-summary {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  padding-top: 26px;
+}
+
+.block-summary div {
+  float: left;
+  width: 189px;
+}
+
+.main-content--devis .block-summary div {
+  width: inherit;
+  float: inherit;
+}
+.main-content--devis .row {
+  overflow: hidden;
+}
+.main-content--devis div.col-6 {
+  width: 50%;
+  float: left;
+}
+
+.block-summary .last {
+  width: auto;
+}
+
+.block-summary span {
+  color: #898989;
+  text-transform: uppercase;
+}
+
+.block-facture {
+  padding: 18px 22px 36px 22px;
+}
+
+.facturation-table {
+  color: #002e60;
+  width: 100%;
+  font-size: 12px;
+}
+
+.facturation-table thead th {
+  background-color: #e9edf6;
+  color: #002e60;
+  font-weight: normal;
+  line-height: 40px;
+  height: 40px;
+}
+
+.facturation-table td,
+.facturation-table th {
+  border-bottom: 1px solid #dadee6;
+  border-right: 1px solid #dadee6;
+  height: 60px;
+}
+
+.facturation-table td.col-5,
+.facturation-table th.col-5 {
+  border-right: none;
+}
+
+.facturation-table td.col-1 {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.facturation-table .col-1,
+.facturation-table .col-2 {
+  text-align: left;
+  padding-left: 12px;
+}
+
+.facturation-table .col-1 {
+  width: 242px;
+}
+
+.facturation-table .col-2 {
+  width: 92px;
+}
+
+.facturation-table .col-3 {
+  text-align: center;
+  width: 54px;
+}
+
+.facturation-table .col-4,
+.facturation-table .col-5 {
+  text-align: right;
+  padding-right: 12px;
+}
+
+.facturation-table .col-4 {
+  width: 78px;
+}
+
+.facture-info {
+  float: left;
+  margin-top: 16px;
+  padding-left: 12px;
+}
+
+.facture-info p {
+  margin: 0;
+}
+
+.facture-info span {
+  color: #e17b03;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.facture-total {
+  color: #002e60;
+  float: right;
+  margin-top: 16px;
+  width: 230px;
+}
+
+.facture-total span {
+  float: right;
+}
+
+.facture-total p {
+  margin: 0;
+  padding: 0 12px 10px 12px;
+}
+
+.facture-total .total {
+  border-top: 1px solid #dadee6;
+  font-family: Georgia, serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 12px;
+}
+
+.facture-note {
+  clear: both;
+  padding-top: 57px;
+}
+
+.facture-note small {
+  color: #002e60;
+  font-size: 10px;
+}
+
+.facture-note .note-text {
+  color: #8d8d8d;
+}
+
+.actions {
+  margin-top:15px;
+  text-align:right;
+}
+
+ /* ==========================================================================
+   Message EDI
+   ========================================================================== */
+
+.edi-message table {
+  display: table;
+  padding: 0;
+  width: 100%;
+}
+
+.edi-message tr {
+  border-bottom: 1px solid #dfdfe4;
+}
+
+.edi-message .table--suivi-details.table--ntd td, .table--suivi-details.table--ntd th {
+  padding: 5px 4px;
+}
+
+.edi-message .table--ntd th {
+  background: #e9edf6 none repeat scroll 0 0;
+  color: #002e60;
+  text-align: left;
+  width: 250px;
+}
+
+.edi-message .block-summary-edi {
+  color: black;
+  font-size: 12px;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  padding-top: 23px;
+}
+
+.edi-message .generic-block-edi {
+  background: white none repeat scroll 0 0;
+  border-color: #dfdfe4;
+  border-image: none;
+  border-style: solid;
+  border-width: 1px 1px 3px;
+  overflow: hidden;
+  padding: 42px 34px 36px;
+}
+
+.edi-message #local .generic-block-edi {
+  margin-top: 20px;
+}
+
+.edi-message h2,
+.edi-message .tabs-nav,
+.edi-message .page-selector {
+  display: none;
+}
+
+.edi-message .page-break {
+  page-break-after: always;
+}
+
+ /* ==========================================================================
+   Footer
+   ========================================================================== */
+
+footer {
+  background: #fff;
+  clear: both;
+  font-size: 9px;
+  height: 64px;
+  padding-top: 23px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #000;
+  text-decoration: none;
+}
+
+footer small a {
+  color: #8d8d8d;
+}

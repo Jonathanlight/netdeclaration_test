@@ -1,0 +1,41 @@
+<table class="table table--ntd">
+  <colgroup>
+    <col width="*">
+  </colgroup>
+  <?php foreach ($adherents as $adherent) : ?>
+    <tr>
+      <th>
+        <?= c(l('account.services.subscribe.adherent')) ?> : <?= $adherent['adherent']->company ?>
+      </th>
+      <th>
+        <?php if ($adherent['facture']): ?>
+          Facture N°<?= $adherent['facture']->getId() ?>
+        <?php endif; ?>
+      </th>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <ul>
+          <?php foreach ($adherent['souscriptions'] as $souscription) : ?>
+            <li style="list-style: disc inside">Service <?= $souscription->getService()->name ?></li>
+          <?php endforeach; ?>
+          <?php if ($adherent['facture']): ?>
+            <p class="margin-top--10"><?= c(l('account.services.subscribe.price')) ?> :
+              <?= H::amount($adherent['facture']->data_prices['price_ht']) ?> HT
+            </p>
+            <p><?= l('snippet:ntd.service.subscription') ?></p>
+          <?php endif; ?>
+        </ul>
+
+      </td>
+    </tr>
+  <?php endforeach; ?>
+</table>
+
+
+<p class="margin-top-30">
+  <a href="/middle/services"
+     class="btn btn--color-light-blue ">
+    <?= c(l('go.back.services.list')) ?>
+  </a>
+</p>

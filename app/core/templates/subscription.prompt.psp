@@ -1,0 +1,20 @@
+<h1>
+ <img src="/app/alert/pix/alert.title.png" />
+ Newsletter &middot; <?=$item?>
+</h1>
+
+<div class="layout-hbox-content">
+
+<?=H::identity($item)?>
+
+<div class="text-block">
+ Inscrivez vous pour être automatiquement informé d’une mise à jour.
+</div>
+
+<form onsubmit="Kwo.getDialog().onSave(this); return false;" style="margin-top:10px;">
+<ul>
+ <li><?=Elt::button(array('label' => 'confirmer mon inscription'))?></li>
+<ul>
+</form>
+
+</div> 

@@ -1,0 +1,46 @@
+<div style="width: 500px">
+  <table class="table">
+    <tr>
+      <th></th>
+
+      <?php //foreach (array('count', 'metas_count', 'last_updated_at') as $field): ?>
+      <?php foreach ($apps as $name => $app): ?>
+        <th><?= $name//$field     ?></th>
+      <?php endforeach; ?>
+    </tr>
+    <?php foreach (array('millesime',
+                         'dicoedi',
+                         'rof',
+                         'imodel',
+                         '--',
+                         'formulairetype',
+                         '--',
+                         'ifield',
+                         'itemplate',
+                         'operation',
+                         '--',
+                         'dectype',
+                         '--',
+                         'service') as $model): ?>
+      <?php if ($model == '--'): ?>
+        <tr>
+          <td colspan="5">
+            <hr>
+          </td>
+        </tr>
+        <?php continue; ?>
+      <?php endif; ?>
+      <tr>
+        <th rowspan="2"><a href="/decbdd.diff.item/-/model/<?= $model ?>"><?= $model ?></a></th>
+      </tr>
+      <?php foreach (array('count') as $field): ?>
+        <tr>
+
+        <?php foreach ($apps as $app): ?>
+          <td><?= $app[$model][$field] ?>&nbsp;</td>
+        <?php endforeach; ?>
+      <?php endforeach; ?>
+      </tr>
+    <?php endforeach; ?>
+  </table>
+</div>

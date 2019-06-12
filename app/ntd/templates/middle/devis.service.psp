@@ -1,0 +1,83 @@
+<?php
+$prices = array();
+$tips = array();
+$main_adherent = array('level' => 1, 'type' => Adherent::TYPE_CEC);
+$current_company = Adherent::$types_shorts[$current_adherent['type']];
+
+if ($service->service_id > 0) {
+  $required_service = $service->getService();
+  if ($required_service->hasFlag(Service::FLAG_ONLY_ONE_BY_USER)) {
+    $tarif_forfait = $required_service->getTarif($main_adherent, Tarif::PRICE_TYPE_FORFAIT);
+  }
+}
+else {
+  $tarif_forfait = $service->getTarif($current_adherent, Tarif::PRICE_TYPE_FORFAIT);
+} ?>
+<div class="table">
+  <div class="table-cell block--middle-service-purchasable__content--left">
+    <?php if ($tarif_forfait) : ?>
+      <p>Forfait annuel pour <span class="color--darkblue font-weight-bold"> <?= $current_company ?></span>
+      </p>
+      <?php if ($tarif_forfait->price > 0) $prices[] = H::amount($tarif_forfait->price); ?>
+    <?php endif; ?>
+
+    <?php if ($service->hasFlag(Service::FLAG_MANY_SOUSCRIPTIONS_PROCESS)): ?>
+      <?php $prices[] = H::amount($service->getTarif($main_adherent, Tarif::PRICE_TYPE_UNITAIRE, 1)->price) . ' / Adhérent *' ?>
+      <?php $tips[] = '* tarif dégressif en fonction du nombre d\'adhérents' ?>
+      <?=
+      Elt::text(array('name' => 'form[services][' . $service->getId() . '][adherents]',
+                      'label' => 'Indiquez le nombre d\'adhérents',
+                )) ?>
+
+    <?php elseif ($service->hasTarif($current_adherent, Tarif::PRICE_TYPE_UNITAIRE)): ?>
+      <?=
+      Elt::text(array('name' => 'form[services][' . $service->getId() . '][quantity]',
+                      'label' => 'Nombre de ' . ($service->isDossier() ? 'dossiers' : 'télétransmissions') . ' prévues par an pour <span class="color--darkblue font-weight-bold">' . $current_company . '</span>',
+                )) ?>
+      <?php $prices[] = 'à partir de ' . H::amount($service->getTarif($current_adherent, Tarif::PRICE_TYPE_UNITAIRE)->price) . ' / ' . ($service->isDossier() ? 'Dossier' : 'Télétransmission'); ?>
+    <?php endif; ?>
+
+    <?php if ($service->hasTarif($current_adherent, Tarif::PRICE_TYPE_SIRET)): ?>
+      <?=
+      Elt::text(array('name' => 'form[services][' . $service->getId() . '][quantity]',
+                      'label' => 'Nombre de SIRET prévus par an pour <span class="color--darkblue font-weight-bold">' . $current_company . '</span>',
+                )) ?>
+      <?php $prices[] = H::amount($service->getTarif($current_adherent, Tarif::PRICE_TYPE_SIRET)->price)
+        . ' / ' . ($service->isDossier() ? 'Dossier' : 'SIRET / An'); ?>
+    <?php endif; ?>
+
+    <?php if ($service->hasTarif($current_adherent, Tarif::PRICE_TYPE_SIREN)): ?>
+      <?=
+      Elt::text(array('name' => 'form[services][' . $service->getId() . '][quantity]',
+                      'label' => 'Nombre de SIREN prévus par an pour <span class="color--darkblue font-weight-bold">' . $current_company . '</span>',
+                )) ?>
+      <?php $prices[] = H::amount($service->getTarif($current_adherent, Tarif::PRICE_TYPE_SIREN)->price)
+        . ' / ' . ($service->isDossier() ? 'Dossier' : 'SIREN / An'); ?>
+    <?php endif; ?>
+
+    <?php if ($service->hasTarif($current_adherent, Tarif::PRICE_TYPE_NO_FISCAL)): ?>
+      <?=
+      Elt::text(array('name' => 'form[services][' . $service->getId() . '][quantity]',
+                      'label' => 'Nombre de N° fiscaux prévus par an pour <span class="color--darkblue font-weight-bold">' . $current_company . '</span>',
+                )) ?>
+      <?php $prices[] = H::amount($service->getTarif($current_adherent, Tarif::PRICE_TYPE_NO_FISCAL)->price)
+        . ' / ' . ($service->isDossier() ? 'Dossier' : 'N° fiscal / An'); ?>
+    <?php endif; ?>
+
+    <?php if ($service->hasTarif($current_adherent, Tarif::PRICE_TYPE_LOYER)): ?>
+      <?=
+      Elt::text(array('name' => 'form[services][' . $service->getId() . '][quantity]',
+                      'label' => 'Nombre de loyer déclarés prévus par an pour <span class="color--darkblue font-weight-bold">' . $current_company . '</span>',
+                )) ?>
+      <?php $prices[] = H::amount($service->getTarif($current_adherent, Tarif::PRICE_TYPE_LOYER)->price) . ' / Loyer' ?>
+    <?php endif; ?>
+
+
+  </div>
+  <div class="table-cell block--middle-service-purchasable__content--right">
+    <p class="color--darkblue font-weight-bold"><?= implode('<br>+<br>', $prices) ?></p>
+    <?php if (count($tips) > 0) : ?>
+      <p class="color--darkblue font-size--11px"><?= implode('<br>', $tips) ?></p>
+    <?php endif; ?>
+  </div>
+</div>

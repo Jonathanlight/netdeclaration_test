@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="id desc">
+ <filters>
+  <filter name="id" />
+  <filter name="name" />
+  <filter name="zipcode" label="code postal" />
+  <filter name="code_insee" label="code INSEE" />
+  <filter name="code_greffe" label="code Greffe" />
+  <filter name="status" />
+ </filters>
+ <cols>
+  <col name="name" />
+  <col name="zipcode" label="code postal" />
+  <col name="code_insee" label="code INSEE" />
+  <col name="code_greffe" label="code Greffe" />
+ </cols>
+</finder>
+
+</kwo-interface>

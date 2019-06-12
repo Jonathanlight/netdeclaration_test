@@ -1,0 +1,56 @@
+<h1>Sélectionner une image</h1>
+
+<div style="padding:6px 8px 4px 4px;">
+<table class="fixed"><tbody><tr class="hbox">
+ <td style="height:410px; padding-right:0;">
+  <div id="file-panel" style="overflow-y:auto; height:380px;"></div>
+  <table class="fixed"><tbody><tr><td><div class="dropzone"></div></td><td>
+  <div class="launcher" style="padding-right:6px;">
+   <img src="/<?=PIX_PATH?>/action/folder_add.png" id="create-folder-button" class="button" />
+  </div></td></tr></tbody></table>
+ </td>
+ <td>
+  <img src="/app/core/pix/empty.gif" id="image-preview" onclick="new Kwo.Class.BitmapEditor(this)"
+       style="max-width:280px; max-height:380px; margin-top:8px;" />
+ </td>
+ <td class="attributes-column">
+  <input type="hidden" id="image-path" />
+  <form>
+
+   <div class="hbox"><table class="hbox"><tbody><tr class="hbox">
+    <td>
+     <div class="elem elem-text">
+      <label>Largeur</label>
+      <input type="text" id="image-width" />
+     </div>
+    </td>
+    <td>
+     <div class="elem elem-text">
+      <label>Hauteur</label>
+      <input type="text" id="image-height" />
+     </div>
+    </td>
+   </tr>
+   </tbody></table></div>
+   <div class="elem elem-text">
+    <label>Alignement</label>
+    <select id="image-float">
+     <option value="">-</option>
+     <option value="right">droite</option>
+     <option value="left">gauche</option>
+    </select>
+   </div>
+   <div class="elem elem-text">
+    <label>Texte alternatif</label>
+    <input type="text" id="image-alt" />
+   </div>
+   <div class="launcher">
+    <input type="button" value="Sélectionner" id="image-select-button"
+           style="display:none;" />
+   </div>
+  </form>
+ </td>
+</tr></tbody></table>
+</div>
+
+

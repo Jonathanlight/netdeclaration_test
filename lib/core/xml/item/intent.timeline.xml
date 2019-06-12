@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+<form>
+<elem type="hidden" value="$model_id" name="model_id" />
+<elem type="hidden" value="$record_id" name="record_id" />
+<box label="timeline">
+ <hbox>
+  <vbox width="50%"><grid value="$dates" /></vbox>
+  <vbox>
+   <launcher>
+    <button icon="export" tooltip="exporter" action=".go('intent.export', this)" />
+   </launcher>
+  </vbox>
+ </hbox>
+</box>
+</form>
+</kwo-interface>

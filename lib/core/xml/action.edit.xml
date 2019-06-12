@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+<fieldset label="$fieldset_label">
+<notebook>
+
+ <page label="définition">
+  <form>
+   <hbox>
+    <vbox>
+     <elem field="name" label="action" />
+     <elem field="app" />
+     <elem field="extension_id" options="Action::extensions()" label="extension" />
+    </vbox>
+    <vbox>
+     <elem field="description" />
+    </vbox>
+   </hbox>
+   <launcher/>
+  </form>
+ </page>
+
+ <page label="opérations" built="$is_loaded">
+  <hbox>
+   <vbox width="10%">
+    <box label="actions">
+     <link icon="details" />
+     <link icon="seo" />
+    </box>
+   </vbox>
+   <vbox><deck /></vbox>
+  </hbox> 
+ </page>
+
+</notebook>
+</fieldset>
+</kwo-interface>

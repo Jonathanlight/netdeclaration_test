@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+<fieldset label="$fieldset_label">
+
+<notebook>
+
+<page label="définition">
+ <form>
+  <hbox>
+   <vbox width="40%">
+    <elem field="name" precision="pour les listes" />
+    <elem field="heading_id" />
+    <hbox>
+     <vbox><elem field="code" /></vbox>
+     <vbox><elem field="locale" /></vbox>
+     <vbox><elem field="status" type="yesno" /></vbox>
+    </hbox>
+    <hbox>
+     <vbox>
+     </vbox>
+     <vbox>
+     </vbox>
+    </hbox>
+   </vbox>
+   <vbox>
+    <elem field="title" />
+    <elem field="description" rows="4" label="préambule" />
+    <elem field="content" rows="14" label="contenu" />
+   </vbox>
+  </hbox>
+  <launcher/>
+ </form>
+</page>
+
+<page label="paragraphes" built="$is_loaded">
+ <hbox class="paragraph-box workspace-box">
+  <vbox width="40%">
+   <box class="paragraph-home-box columns" value="$columnview" />
+  </vbox>
+  <vbox>
+   <box class="paragraph-edit-box"/>
+  </vbox>
+ </hbox>
+</page>
+
+<page label="opérations" built="$is_loaded">
+ <hbox>
+  <vbox width="10%">
+   <box label="actions">
+    <link icon="details" />
+    <link icon="preview" />
+    <link icon="seo" />
+   </box>
+  </vbox>
+  <vbox><deck /></vbox>
+ </hbox> 
+</page>
+
+</notebook>
+
+</fieldset>
+</kwo-interface>

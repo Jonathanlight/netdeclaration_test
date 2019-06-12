@@ -1,0 +1,35 @@
+<div data-on-load="new ntd.middle.devis(this)" class="margin-top-30">
+  <form action="/middle/core/devis.create"
+        class="form--ntd form--ntd--label-inline ">
+
+    <h2 class="block__title">Informations générales - <?= $_current_adherent->company ?></h2>
+    <?= Elt::text(array('name'     => 'form[demandeur_name]',
+                        'required' => true,
+                        'label'    => 'Nom du demandeur')) ?>
+    <?= Elt::text(array('name'     => 'form[demandeur_details]',
+                        'label'    => 'Informations du demandeur',
+                        'required' => true,
+                        'rows'     => 5)) ?>
+    <?= Elt::date(array('name'     => 'form[expire_at]',
+                        'required' => true,
+                        'label'    => 'Date de validité maximum')) ?>
+    <?= Elt::select(array('name'    => 'form[country_id]',
+                          'label'   => 'Pays (pour la TVA)',
+                          'value'   => Country::FR,
+                          'options' => Country::collect(array('status' => 1))->asHash('id', 'name'))) ?>
+    <hr class="margin-top-30">
+    <h2 class="block__title">Choix des services</h2>
+    <?= Elt::select(array('name'    => 'form[adherent_type]',
+                          'first'   => ' --- ',
+                          'value'   => '',
+                          'class'   => 'margin-top-30',
+                          'options' => Adherent::$types,
+                          'label'   => 'Type d\'adhérent')) ?>
+    <?= Elt::select(array('name'    => 'form[adherent_level]',
+                          'options' => Adherent::$levels,
+                          'label'   => 'Niveau tarifaire')) ?>
+    <div class="container-services" class="margin-top-30"></div>
+    <hr>
+    <button type="submit" class="btn btn--color-red margin-top-30">Générer le devis</button>
+  </form>
+</div>

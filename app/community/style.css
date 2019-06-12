@@ -1,0 +1,36 @@
+.kwo-login { margin:0px auto; width:auto; padding:10px; }
+.kwo-login A { color:black; text-decoration:underline; }
+.kwo-login H2 { font-size:1.3em; color:#555; border-bottom:1px solid #ccc;
+                 margin-bottom:10px; padding-bottom:6px; }
+.kwo-login .login-panel,
+.kwo-login .signup-panel { width:100%; }
+.kwo-login LI { padding:4px 0; border-bottom:1px dotted #ddd; }
+.kwo-login LI LABEL { width:168px; vertical-align:top; zoom:1;
+                       display:-moz-inline-stack; display:inline-block; *display:inline; text-align:right; }
+.kwo-login LI:last-child { border-bottom:none; }
+.kwo-login LABEL.required { color:#F82D01; }
+.kwo-login .text { vertical-align:top; }
+.kwo-login .padded-left { padding-left:170px; }
+.kwo-login .options DIV { display:inline; }
+.kwo-login .options DIV LABEL { width:auto; text-align:left; display:inline; cursor:pointer; }
+.kwo-login .kwo-login-box { width:49%; padding-right:10px; }
+.kwo-login .kwo-login-box LI LABEL { width:100px; }
+.kwo-login .kwo-login-box .padded-left { padding-left:104px; }
+.kwo-login .kwo-signup-box { border-left:1px dotted #ccc; padding-left:10px; }
+.kwo-login .kwo-signup-button { margin-top:10px; }
+
+#kwo-file-dialog A,
+#kwo-file-dialog A:link,
+#kwo-file-dialog A:visited { text-decoration:none; color:#666; }
+#kwo-file-dialog #toolbar { height:19px; background:#eee; border-bottom:1px solid #aaa; padding:0 4px; }
+#kwo-file-dialog #files #listing { overflow-y:auto; }
+#kwo-file-dialog #files #preview { width:40%; border-left:1px solid #ccc; padding:16px 10px; text-align:center; }
+#kwo-file-dialog #files .file { border-bottom:1px solid #ccc; padding:2px 2px; }
+#kwo-file-dialog #upload { padding:26px 20px; }
+#kwo-file-dialog #upload .message { padding:10px; background:#fafafa; color:#777; 
+                                    border:1px solid #bbb; padding:6px; margin-top:20px; }
+
+
+.kwo-moderator-actions { margin:6px 3px 3px 0; padding:2px; background:#FAF4C8; text-align:center; clear:both;}
+.kwo-moderator-actions A { text-transform:uppercase; text-decoration:none; }
+

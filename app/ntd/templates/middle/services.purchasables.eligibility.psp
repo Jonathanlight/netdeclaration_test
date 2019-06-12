@@ -1,0 +1,34 @@
+<h2 class="font--darkblue font-family--georgia font-size-big">Éligibilité au Greffe</h2>
+<div class="margin-top-30" data-on-load="new ntd.middle.greffeEligibility(this)">
+  <form action="/middle/services.purchasables.eligibility.check" method="post" class="form--ntd form--ntd--label-inline">
+    <div data-on-load="new ntd.middle.greffecommune(this)" data-greffe-commune-all="1">
+      <?=Elt::text(array('name'     => 'adherent[zipcode]',
+                         'events'   => array('keydown' => 'if (event.keyCode == 13) { return false; }'),
+                         'label'    => 'Code postale',
+                         'autocomplete' => false,
+                         'required' => true)) ?>
+      <?=Elt::select(array('name'     => 'adherent[greffecommune_id]',
+                           'label'    => 'Code INSEE',
+                           'options'  => array())) ?>
+    </div>
+
+    <div class="float-right">
+      <div class="margin-left float-right"></div>
+      <div class="margin-left float-right"></div>
+      <div class="margin-left--20 float-right"></div>
+      <button type="submit" class="btn btn--color-red"><?=c(l('greffe.service.btn.check')) ?></button>
+    </div>
+
+    <div class="clear-float"></div>
+
+    <div>
+      <div class="elt elt-label">&nbsp;</div>
+      <div data-not-eligible="" class="color--red" style="display:none">
+        <?=c(l('greffe.service.eligibility.fail')) ?>
+      </div>
+      <div data-is-eligible="" class="color--green" style="display:none">
+        <?=c(l('greffe.service.eligibility.success')) ?>
+      </div>
+    </div>
+  </form>
+</div>

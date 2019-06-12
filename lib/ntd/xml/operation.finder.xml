@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="id desc">
+ <filters>
+  <filter name="id" />
+  <filter name="|%%|name" label="Nom" />
+  <filter name="type" />
+  <filter name="status" />
+  <filter name="millesimes" type="select" label="Millésimes" options="Millesime::collect()->asHash('id', 'name')" />
+ </filters>
+ <cols>
+  <col name="name" />
+  <col name="type" />
+  <col name="method_name" />  
+  <col name="flag_need_other_formulaire" label="nécessite d'autres formulaires" />
+  <col name="millesimes" label="Millésimes" />
+ </cols>
+</finder>
+
+</kwo-interface>

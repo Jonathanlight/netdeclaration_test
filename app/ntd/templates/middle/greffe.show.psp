@@ -1,0 +1,163 @@
+<div class="margin-top-30">
+  <h1 class="block__middle-title">Dépôt</h1>
+
+  <div class="float-right no-print">
+    <a href="/middle/greffe.print/-/id/<?=$greffe->getId() ?>" target="_blank">
+      <span class="fa fa-print"></span>
+      Imprimer
+    </a>
+  </div>
+  <div class="clear-float"></div>
+
+  <?=Snippet::content('greffe.resume.infos') ?>
+  <div class="margin-top-30"></div>
+
+  <h2 class="block__title">Coordonnées</h2>
+  <table class="table table--ntd table--ntd--even-odd">
+    <colgroup>
+      <col width="*"></col>
+      <col width="275"></col>
+    </colgroup>
+    <tbody>
+      <tr>
+        <td>N° RCS de l'entreprise (SIREN)</td>
+        <td><?=$fields['siren'] ?></td>
+      </tr>
+      <tr>
+        <td>Dénomination de l'entreprise</td>
+        <td><?=$fields['company'] ?></td>
+      </tr>
+      <tr>
+        <td>Adresse</td>
+        <td><?=$fields['address'] ?></td>
+      </tr>
+      <tr>
+        <td>Complément Adresse</td>
+        <td><?=$fields['address_1'] ?></td>
+      </tr>
+      <tr>
+        <td>Code postale</td>
+        <td><?=$fields['zipcode'] ?></td>
+      </tr>
+      <tr>
+        <td>Code INSEE</td>
+        <td><?=$codes_insee[$fields['greffecommune_id']] ?></td>
+      </tr>
+      <tr>
+        <td>Ville</td>
+        <td><?=$fields['city'] ?></td>
+      </tr>
+      <tr>
+        <td>Pays</td>
+        <td>
+          <?php $countries_hash = $countries->asHash('id', 'name') ?>
+          <?=$countries_hash[$fields['country_id']] ?>
+        </td>
+      </tr>
+      <tr>
+        <td>Email (personne en charge du dépôt)</td>
+        <td><?=$fields['email_deposit'] ?></td>
+      </tr>
+      <tr>
+        <td>Date de début de l'exercice</td>
+        <td><?=H::datenice($fields['start_at']) ?></td>
+      </tr>
+      <tr>
+        <td>Date de clôture des comptes</td>
+        <td><?=H::datenice($fields['closed_at']) ?></td>
+      </tr>
+      <tr>
+        <td>Numéro de gestion</td>
+        <td><?=$fields['numero_gestion'] ?></td>
+      </tr>
+      <tr>
+        <td>Objet du dépôt</td>
+        <td><?=GreffeManager::$types_compte[$fields['compte_type']] ?></td>
+      </tr>
+      <tr>
+        <td>Forme juridique</td>
+        <td><?=GreffeManager::$formes_juridique[$fields['forme_juridique']] ?></td>
+      </tr>
+      <?php if ($fields['compte_type'] == GreffeManager::COMPTE_SOCIAUX
+                && $fields['forme_juridique'] == GreffeManager::FJ_EURL) : ?>
+        <tr>
+          <td>L'associé unique, personne physique est il gérant ?</td>
+          <td><?=(int)$fields['is_gerant'] ? 'Oui' : 'Non' ?></td>
+        </tr>
+      <?php endif ?>
+      <?php if ($fields['compte_type'] == GreffeManager::COMPTE_SOCIAUX
+                && in_array($fields['forme_juridique'], array(GreffeManager::FJ_SA, GreffeManager::FJ_SELAFA))) : ?>
+        <tr>
+          <td>Quel est le mode de direction ?</td>
+          <td><?=GreffeManager::$modes_direction[$fields['mode_direction']] ?></td>
+        </tr>
+      <?php endif ?>
+      <tr>
+        <td>Souhaitez vous rendre vos comptes non publics (article L.232-25 du code de commerce)</td>
+        <td><?=!(int)$fields['is_public'] ? 'Oui' : 'Non' ?></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="margin-top-30"></div>
+
+  <h2 class="block__title">Pièces à fournir</h2>
+  <div>
+    <table class="table table--ntd table--ntd--even-odd">
+      <colgroup>
+        <col width="*"></col>
+        <col width="275"></col>
+      </colgroup>
+      <tbody>
+        <tr>
+          <td><?=GreffeManager::$docs[GreffeManager::DOC_MANDAT_DEPOT] ?></td>
+          <td>
+            <div class="color--green">
+              Document enregistré
+            </div>
+            <em>(<?=H::datenice($registered_documents[GreffeManager::DOC_MANDAT_DEPOT]['register_at']) ?>)</em>
+          </td>
+        </tr>
+        <?php $accept_formats = array() ?>
+        <?php foreach (GreffeManager::$authorized_doc_formats as $format) : ?>
+          <?php $accept_formats[] = '.'.$format ?>
+        <?php endforeach ?>
+        <?php foreach ($documents as $key => $document) : ?>
+          <tr>
+            <td><?=$document ?></td>
+            <td>
+              <?php if (isset($registered_documents[$key])) : ?>
+                <div class="color--green">
+                  Document enregistré
+                </div>
+                <em>(<?=H::datenice($registered_documents[$key]['register_at']) ?>)</em>
+              <?php endif ?>
+            </td>
+          </tr>
+        <?php endforeach ?>
+        <?php if ($greffe->link_liasse_declaration && $liasse_declaration) : ?>
+          <tr>
+            <td><?=GreffeManager::$docs[GreffeManager::DOC_LIASSE] ?></td>
+            <td>
+              <div class="color--green">
+                <a href="/declaration.pdf/-/key/<?=$liasse_declaration->getKey() ?>" target="_blank">Liasse Netdeclaration</a>
+              </div>
+            </td>
+          </tr>
+        <?php elseif (isset($registered_documents[GreffeManager::DOC_LIASSE])) : ?>
+          <tr>
+            <td><?=GreffeManager::$docs[GreffeManager::DOC_LIASSE] ?></td>
+            <td>
+              <div class="color--green">
+                Document enregistré
+              </div>
+              <em>(<?=H::datenice($registered_documents[GreffeManager::DOC_LIASSE]['register_at']) ?>)</em>
+            </td>
+          </tr>
+        <?php endif ?>
+      </tbody>
+    </table>
+  </div>
+
+  <?=H::inc('ntd:_greffe.documents', array('greffe' => $greffe, 'documents' => $reponse_documents)) ?>
+</div>

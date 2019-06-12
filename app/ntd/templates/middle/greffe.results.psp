@@ -1,0 +1,106 @@
+<?php foreach ($dossiers as $dossier) : ?>
+  <?php $greffes = $dossier->getGreffes(); ?>
+  <table class="table  table--ntd table--ntd--even-odd margin-top-30">
+    <colgroup>
+      <col width="110">
+      <col width="220">
+      <col width="*">
+      <col width="120">
+    </colgroup>
+    <thead>
+      <tr>
+        <th colspan="1"><?=$dossier->name ?></th>
+        <th colspan="2">Créé le <?=H::datenice($dossier->getMeta('created_at')) ?></th>
+        <th colspan="1"><?=Greffedossier::$statuses[$dossier->status] ?></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <?php if (count($greffes) < 1) : ?>
+        <tr>
+          <td colspan="4" align="center"><?=c(l('greffe.depot.none')) ?></td>
+        </tr>
+      <?php else : ?>
+        <tr>
+          <td>REF</td>
+          <td>Date du dépôt</td>
+          <td><?= c(l('account.suivi.status')) ?></td>
+          <td><?= c(l('account.declarer.action')) ?></td>
+        </tr>
+        <?php foreach ($greffes as $greffe) : ?>
+          <tr>
+            <td><?=$greffe->getId() ?></td>
+            <td><?=c(H::datenice($greffe->getMeta('created_at'))) ?></td>
+            <td>
+              <span class="<?=$greffe->isEditable() ? 'color--orange' : 'color--green' ?>">
+                <?=c(l(Greffe::$statuses[$greffe->status])) ?>
+              </span>
+            </td>
+            <td>
+              <?php if ($greffe->isEditable()) : ?>
+                <a href="/middle/greffe.edit/-/id/<?=$greffe->getId() ?>"
+                   title="<?=c(l('greffe.edit')) ?>"
+                   class="btn btn--color-light-blue  btn--square">
+                  <i class="fa fa-user"></i>
+                </a>
+                <a href="/middle/greffe.edit.documents/-/id/<?=$greffe->getId() ?>"
+                   title="<?=c(l('greffe.document.edit')) ?>"
+                   class="btn btn--color-light-blue  btn--square">
+                  <i class="fa fa-file"></i>
+                </a>
+              <?php endif ?>
+              <?php if ($greffe->status == Greffe::STATUS_COMPLETED) : ?>
+                <a href="/middle/greffe.validate/-/id/<?=$greffe->getId() ?>"
+                   title="<?=c(l('greffe.document.validate')) ?>"
+                   class="btn btn--color-light-blue  btn--square">
+                  <i class="fa fa-send"></i>
+                </a>
+              <?php elseif (!$greffe->isEditable()) : ?>
+                <a href="/middle/greffe.edit/-/id/<?=$greffe->getId() ?>"
+                   title="<?=c(l('greffe.validate')) ?>"
+                   class="btn btn--color-light-blue  btn--square">
+                  <i class="fa fa-eye"></i>
+                </a>
+              <?php endif ?>
+              <?php if ($greffe->status == Greffe::STATUS_ACCEPTED || $greffe->status == Greffe::STATUS_REFUSED) : ?>
+                <a href="/middle/greffe.edit/-/id/<?=$greffe->getId() ?>#documents-reponse"
+                  title="<?=c(l('greffe.validate.documents.reponse')) ?>"
+                  class="btn btn--color-light-blue  btn--square">
+                  <i class="fa fa-file"></i>
+                </a>
+              <?php endif ?>
+            </td>
+          </tr>
+        <?php endforeach ?>
+      <?php endif ?>
+      <?php if (GreffeManager::canRegisterGreffe($dossier)) : ?>
+        <tr>
+          <td colspan="4">
+            <div class="pull-right">
+              <?php if ($facture) : ?>
+                <a href="/middle/payment/-/facture_id/<?=$facture->getId() ?>" class="btn btn--color-red margin-top-30"><?= c(l('pay.now')) ?></a>
+              <?php else: ?>
+                <?php if (!$souscription) : ?>
+                  <a href="/middle/greffe.edit" class="btn btn--color-red margin-top-30"><?=c(l('greffe.declarer.purchase')) ?></a>
+                <?php else : ?>
+                  <a href="/middle/greffe.edit" class="btn btn--color-red margin-top-30"><?=c(l('greffe.declarer')) ?></a>
+                <?php endif ?>
+              <?php endif ?>
+            </div>
+          </td>
+        </tr>
+      <?php endif ?>
+    </tbody>
+  </table>
+<?php endforeach ?>
+<?php if ($dossiers->hasPagination()): ?>
+  <div class="pagination-container margin-top-30">
+    <?=$dossiers->getPagination()->asHtml(array('href'        => '/middle/greffe/-/offset/((offset))',
+                                                'window_size' => 6,
+                                                'first'       => '<span class="fa fa-caret-left"></span><span class="fa fa-caret-left"></span>',
+                                                'last'        => '<span class="fa fa-caret-right"></span><span class="fa fa-caret-right"></span>',
+                                                'prev'        => '<span class="fa fa-caret-left"></span>',
+                                                'next'        => '<span class="fa fa-caret-right"></span>',
+                                                'sep'         => '&nbsp;')) ?>
+  </div>
+<?php endif ?>

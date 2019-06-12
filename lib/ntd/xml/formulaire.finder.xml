@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="formulairetype_id asc, position asc">
+ <filters>
+  <filter name="id" />
+ </filters>
+ <cols>
+  <col name="formulairetype_id" />
+  <col name="updated_at"/>
+  <col name="status"/>
+  <col name="position"/>
+ </cols>
+</finder>
+
+</kwo-interface>

@@ -1,0 +1,67 @@
+<div class="margin-top-30">
+  <h2 class="block__middle-title">Greffes - <?= $_current_adherent->company ?></h2>
+  <div class="margin-bottom-20">
+    <div>
+      <?=Snippet::content('greffe.depot', 'content') ?>
+    </div>
+    <br />
+    <div class="pull-right">
+      <?php if (!GreffeManager::getCurrentDossier()) : ?>
+        <span data-on-load="new ntd.middle.greffeDossierDialog(this)">
+          <a href="/middle/greffe.folder" class="btn btn--color-red margin-top-30"><?=c(l('greffe.folder.new')) ?></a>
+        </span>
+      <?php else : ?>
+        <div class="btn btn--color-red disabled margin-top-30"><?=c(l('greffe.folder.open')) ?></div>
+      <?php endif ?>
+    </div>
+    <br />
+  </div>
+
+  <h2 class="block__middle-title">Vos greffes</h2>
+
+  <div data-on-load="new ntd.middle.greffeFilters(this)">
+    <form action="/middle/greffe" method="post" class="form--suivi" data-results_container="greffe-results">
+      <input type="hidden" name="search[offset]" value="<?=$search['offset'] ?>" />
+
+      <div class="table">
+        <div class="table-cell">
+          <fieldset id="fieldset--declarant" class="form--suivi__fieldset selected margin-left">
+            <div class="block__suivi container--elt-date">
+              <?=Elt::date(array('name'         => 'search[periode_from]',
+                                 'label'        => 'Période',
+                                 'value'        => $search['periode_from'],
+                                 'class'        => 'elt-date--first',
+                                 'placeholder'  => 'Du',
+                                 'btn_calendar' => false))?>
+
+              <?=Elt::date(array('name'         => 'search[periode_to]',
+                                 'value'        => $search['periode_to'],
+                                 'placeholder'  => 'Au',
+                                 'class'        => 'elt-date--second',
+                                 'btn_calendar' => false))?>
+            </div>
+            <div class="block__suivi margin-top-13">
+              <?=Elt::select(array('name'    => 'search[status]',
+                                   'first'   => 'Statut',
+                                   'value'   => is_null($search['status']) ? '-9999' : $search['status'],
+                                   'options' => Greffedossier::$statuses)) ?>
+            </div>
+          </fieldset>
+        </div>
+        <div class="table-cell block__btn-suivi">
+          <div class="border--left block__padding">
+            <button type="submit" class="btn btn--color-dark-blue">
+              <i style="" class="fa fa-search font-size--icon-small"></i>
+              <i class="fa fa-refresh fa-spin throbber font-size--icon-small" style="display: none;"></i>
+            </button>
+            <a class="btn btn--link" href="/middle/greffe"><?=c(l('account.suivi.search.reset')) ?></a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="margin-top-30"></div>
+
+  <div id="greffe-results"></div>
+</div>

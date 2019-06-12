@@ -1,0 +1,181 @@
+<form action="/middle/declaration.validate"
+      class=""
+      onsubmit="ntd.middle.declarations.validateDeclaration(this); return false;">
+  <input type="hidden" name="id" value="<?= $declaration->getId() ?>"/>
+
+  <?php if (count($missing_requireds) > 0) : ?>
+    <div class="flashinfo flashinfo--yellow" style="margin-bottom: 20px; padding: 20px">
+      <p class="color--red">Attention, vous ne pouvez pas valider votre déclaration.</p>
+      Cette déclaration semble incomplète, des formulaires sont manquants et ne seront pas transmis :
+      <br/><br/>
+      <ul style="list-style: inside none disc">
+        <?php foreach ($missing_requireds as $missing_required): ?>
+          <li><?= $missing_required ?></li>
+        <?php endforeach; ?>
+      </ul>
+
+    </div>
+  <?php endif; ?>
+
+  <?php if (empty($dectype_destinataires)) : ?>
+    <p>Votre déclaration sera transmise à la DGFiP.</p>
+
+
+  <?php else: ?>
+    <strong>Sélectionnez les destinataires auxquels vous souhaitez transmettre votre déclaration</strong>
+    <br />
+    <br />
+    <?php foreach ($dectype_destinataires as $type): ?>
+      <div class="margin-bottom-5">
+        <?php if ($type == Destinataire::TYPE_OGA): ?>
+          <?=
+          Elt::checkbox(array('name' => 'destinataires[' . $type . '][checked]',
+                              'value' => 0,
+                              'label' => ' ' . Destinataire::$types[$type],
+                              'class' => 'margin-left--20',
+                              'events' => array('click' => "ntd.middle.declarations.toggleOgaDetails(this)"))) ?>
+          <div class="oga-details form--ntd form--ntd--label-inline"
+               style="overflow: hidden;  padding-left: 20px; display: none">
+            <hr/>
+
+            <div class="elt elt-select">
+              <label class="elt elt-label">Sélectionnez un OGA <span title="champs obligatoire" class="star-required">*</span></label>
+              <div class="elt-control elt-required">
+                <select onchange="ntd.middle.declarations.onSelectOGAChange(this)" name="destinataires[OGA][siretoga]"
+                        disabled="true">
+                  <option value=""> -</option>
+                  <?php foreach ($ogas as $oga) : ?>
+                    <option value="<?= $oga->siret ?>"><?= $oga->company ?></option>
+                  <?php endforeach; ?>
+                </select>
+                <div class="clear"></div>
+              </div>
+            </div>
+
+            <?=
+            Elt::text(array('label' => 'Siret de l\'OGA',
+                            'id' => 'input-siretoga',
+                            'disabled' => true,
+                            'required' => true)) ?>
+            <?=
+            Elt::text(array('name' => 'destinataires[' . $type . '][idoga]',
+                            'label' => 'N° Identification à l\'OGA',
+                            'id' => 'input-idoga',
+                            'required' => true,
+                            'disabled' => true)) ?>
+            <hr/>
+          </div>
+        <?php elseif ($type == Destinataire::TYPE_CEC): ?>
+          <div class="margin-bottom-5">
+            <?=
+            Elt::checkbox(array('name' => 'destinataires[' . Destinataire::TYPE_CEC . '][checked]',
+                                'value' => 0,
+                                'label' => ' ' . Destinataire::$types[Destinataire::TYPE_CEC],
+                                'class' => 'margin-left--20',
+                                'events' => array('click' => "ntd.middle.declarations.toggleCECDetails(this)"))) ?>
+            <div class="cec-details form--ntd form--ntd--label-inline"
+                 style="overflow: hidden;  padding-left: 20px; display: none">
+              <hr/>
+
+              <?=
+              Elt::text(array('label' => 'N° de référence',
+                              'name' => 'destinataires[' . Destinataire::TYPE_CEC . '][no_ref_interne_cec]',
+                              'disabled' => true,
+                              'required' => true,
+                              'maxlength' => 70)) ?>
+              <?=
+              Elt::text(array('label' => 'Siret',
+                              'name' => 'destinataires[' . Destinataire::TYPE_CEC . '][siret]',
+                              'disabled' => true,
+                              'required' => true,
+                              'maxlength' => 35)) ?>
+              <?=
+              Elt::text(array('label' => 'Nom 1',
+                              'name' => 'destinataires[' . Destinataire::TYPE_CEC . '][nom_1]',
+                              'disabled' => true,
+                              'required' => true,
+                              'maxlength' => 35)) ?>
+              <?=
+              Elt::text(array('label' => 'Nom 2',
+                              'name' => 'destinataires[' . Destinataire::TYPE_CEC . '][nom_2]',
+                              'disabled' => true,
+                              'maxlength' => 35)) ?>
+              <?=
+              Elt::text(array('label' => 'Rue 1',
+                              'name' => 'destinataires[' . Destinataire::TYPE_CEC . '][rue_1]',
+                              'disabled' => true,
+                              'required' => true,
+                              'maxlength' => 35)) ?>
+              <?=
+              Elt::text(array('label' => 'Rue 2',
+                              'name' => 'destinataires[' . Destinataire::TYPE_CEC . '][rue_2]',
+                              'disabled' => true,
+                              'maxlength' => 35)) ?>
+              <?=
+              Elt::text(array('label' => 'Rue 3',
+                              'name' => 'destinataires[' . Destinataire::TYPE_CEC . '][rue_3]',
+                              'disabled' => true,
+                              'maxlength' => 35)) ?>
+              <?=
+              Elt::text(array('label' => 'Ville',
+                              'name' => 'destinataires[' . Destinataire::TYPE_CEC . '][ville]',
+                              'disabled' => true,
+                              'required' => true,
+                              'maxlength' => 35)) ?>
+              <?=
+              Elt::text(array('label' => 'Code postal',
+                              'name' => 'destinataires[' . Destinataire::TYPE_CEC . '][code_postal]',
+                              'disabled' => true,
+                              'required' => true,
+                              'maxlength' => 5)) ?>
+
+              <?=
+              Elt::select(array('name' => 'destinataires[' . Destinataire::TYPE_CEC . '][pays]',
+                                'label' => 'Pays',
+                                'value' => Country::FR,
+                                'options' => Country::collect(array('filters' => array('|>|continent_id' => 0),
+                                                                    'order' => array('name_fr' => 'ASC')))->asHash('id', 'name_fr'),
+                                'disabled' => true)) ?>
+              <p style="padding-left: 185px;"><span title="champs obligatoire" class="star-required">*</span> Champ
+                                                                                                              obligatoire
+              </p>
+              <hr/>
+            </div>
+          </div>
+
+        <?php else: ?>
+          <?=
+          Elt::checkbox(array('name' => 'destinataires[' . $type . '][checked]',
+                              'value' => 0,
+                              'class' => 'margin-left--20',
+                              'label' => ' ' . Destinataire::$types[$type] . ($type == Destinataire::TYPE_BDF ?
+                                  ' <span style="font-size:12px;">(Uniquement si CA > 750 K€)</span>' : ''))) ?>
+        <?php endif; ?>
+      </div>
+    <?php endforeach; ?>
+  <?php endif; ?>
+
+  <?php foreach ($dectype_destinataires as $type): ?>
+    <?php if ($type == Destinataire::TYPE_CEC): ?>
+      <div class="margin-top-30 margin-bottom-20">
+        Vous avez la possibilité d'envoyer une copie de votre déclaration vers un Cabinet d’Expertise Comptable*.<br>
+        Veuillez alors cocher la case correspondante CEC et saisir les informations demandées.<br>
+        * Si adhérent à NET DECLARATION
+      </div>
+    <?php endif ?>
+  <?php endforeach ?>
+
+  <div class=" margin-top-25">
+    <div>
+      <?=c(l('snippet:declaration.transmission.infos')) ?>
+    </div>
+
+    <div class=" margin-top-25">
+      <?php if (count($missing_requireds) <= 0) : ?>
+        <button type="submit" class="btn btn--color-red">Transmettre</button>
+      <?php endif; ?>
+
+      <a href="/middle/declarations" class="btn  btn--color-grey">Annuler</a>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kwo-interface>
+  <finder order="app, extension_id, name">
+    <filters>
+      <filter name="id" />
+      <filter type="radio" options="Action::extensions(true)" name="extension_id" label="extension"/>
+    </filters>
+    <cols>
+      <col name="app" />
+      <col name="extension_id" />
+      <col name="name" label="action"/>
+      <col name="description" />
+      <col name="created_at" />
+    </cols>
+  </finder>
+</kwo-interface>

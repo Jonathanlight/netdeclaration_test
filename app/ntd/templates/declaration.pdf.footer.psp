@@ -1,0 +1,24 @@
+<html>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link rel="stylesheet" href="<?=H::url('/app/ntd/styles/declaration/master.css')?>" type="text/css" />
+  <link rel="stylesheet" href="<?=H::url('/app/ntd/styles/declaration/declaration.pdf.css')?>" type="text/css" />
+</head>
+<body>
+  <div class="pdf-footer">
+    Déclaration N°<?=$declaration->id?> - <?=$adherent->company?> - N° SIRET : <?=$adherent->siret?>
+    <?php if (is_array($datas)): ?>
+      <?php if (!empty($datas['CA']) && strtotime($datas['CA']) !== false): ?>
+        - Début : <?=date("d/m/Y", strtotime($datas['CA']))?>
+      <?php elseif (!empty($datas['BB']) && strtotime($datas['BB']) !== false): ?>
+        - Début : <?=date("d/m/Y", strtotime($datas['BB']))?>
+      <?php endif; ?>
+      <?php if (!empty($datas['CB']) && strtotime($datas['CB']) !== false): ?>
+        - Fin : <?=date("d/m/Y", strtotime($datas['CB']))?>
+      <?php elseif (!empty($datas['BC']) && strtotime($datas['BC']) !== false): ?>
+        - Fin : <?=date("d/m/Y", strtotime($datas['BC']))?>
+      <?php endif; ?>
+    <?php endif; ?>
+  </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<div class="hbox renew-form-box">
+
+  <form>
+    <table class="hbox " style="width:400px">
+      <tbody>
+        <tr>
+          <td>
+
+            <fieldset>
+              <legend>Renouvelement des souscriptions</legend>
+              <div class="box">
+                <div class="elem elem-radio">
+                  <label>Action</label>
+                  <div class="options">
+                    <label class="click"><input type="radio" value="1" name="view_only" checked="checked">Seulement voir le rapport</label>
+                    <label class="click"><input type="radio" value="0" name="view_only">Renouveller les services et générer une facture</label>
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="elem elem-radio">
+                    <label>Forfait Dossier</label>
+                    <div class="options">
+                      <label class="click"><input type="radio" value="1" name="include_forfait" checked="checked">Inclure les Dossiers</label>
+                      <label class="click"><input type="radio" value="0" name="include_forfait">Ne pas inclure les Dossiers</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="elem elem-radio">
+                    <label>Vérifier si des souscriptions existent déjà (Il n'y a pas de renouvellement avec cette option)</label>
+                    <div class="options">
+                      <label class="click"><input type="radio" value="1" name="check_souscription_already_created" checked="checked">Vérifier</label>
+                      <label class="click"><input type="radio" value="0" name="check_souscription_already_created">Ne pas vérifier</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="box">
+                  <div class="elem elem-date">
+                    <label>Date du renouvellement</label>
+                    <div class="input-selector">
+                      <a onclick="kwo.ux.onInputReset(this)" href="javascript:void(0)" tabindex="-1" title="vider">x</a>
+                      <input type="text" value="<?=H::date(Date::today())?>" name="date">
+                      <a onclick="new Kwo.Datepicker($(this).previous(), {scope: 'back'})" tabindex="-1" href="javascript:void(0)">·</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="launcher" style="margin-top:30px">
+                  <input type="image" title="Renouveller" src="/app/core/pix/action/view.png"
+                         onclick="Kwo.F('adherent').onExec('souscriptions.renew', this, {container:$(this).up('.renew-form-box').down('.result-box')}); return false;"/>
+                </div>
+
+            </fieldset>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+
+    <fieldset>
+      <legend>Résultat du renouvellement</legend>
+      <div class="result-box"></div>
+    </fieldset>
+  </form>
+</div>

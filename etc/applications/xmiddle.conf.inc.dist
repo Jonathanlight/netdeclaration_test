@@ -1,0 +1,40 @@
+<?php
+
+$register['app.name'] = 'declaration';
+$register['app.label'] = 'Espace protégé';
+$register['app.domain'] = 'middle.ntd.109.kernix.biz';
+$register['app.regex'] = '/middle/';
+$register['app.extension'] = 'declaration';
+$register['app.manager'] = 'DeclarationManager';
+$register['app.locales'] = array(I18N::LOCALE_FR);
+$register['app.scopes'] = array('middle' ,'front');
+$register['app.head.version'] = '13-10-24';
+$register['app.state'] = 'test';
+$register['app.url.secure'] = false;
+
+$register['auth.login'] = 'editor';
+$register['auth.password'] = 'admineditorpass';
+
+$register['front.template'] = 'declaration:skeleton.front';
+$register['front.home'] = 'home';
+
+$register['middle.template'] = 'declaration:skeleton.middle';
+$register['middle.home'] = 'home';
+$register['middle.modules'] = array('home' => array('label' => 'Accueil',
+                                                    'action' => 'home'),
+                                    'editor' => array('label' => 'Editeur de formulaire',
+                                                      'action' => 'editor'));
+
+
+$register['mail.template'] = 'ntd:skeleton.mail';
+$register['mail.smtp.default'] = 'localhost';
+$register['mail.from.email'] = 'npinchon@kernix.com';
+$register['mail.from.name'] = 'NET DECLARATION - Middle';
+
+$register['auth.level'] = 1;
+$register['auth.sso'] = true;
+
+$register['contact.admin'] = 'npinchon+admin-ntd-middle@kernix.com';
+$register['contact.devel'] = 'npinchon+devel-ntd-middle@kernix.com';
+$register['contact.bounce'] = 'npinchon+bounce-ntd-middle@kernix.com';
+

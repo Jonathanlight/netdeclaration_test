@@ -1,0 +1,42 @@
+<div class="table">
+  <main class="table-cell  table-cell--main block  table-padding-right wrapper__footer-padding-bottom">
+
+    <?=H::breadcrumb(array('separator' => '<i class="fa fa-angle-right breadcrumb__separator"></i>')) ?>
+
+    <h1 class="font--darkblue font-size-big font-family--georgia margin-bottom">
+      <?=$service->getProperty('title') ?>
+    </h1>
+    <!-- <div class="block__description">
+      <?=$service->getProperty('description') ?>
+    </div> -->
+    <div class="wysiwyg">
+      <?=$service->getProperty('content') ?>
+    </div>
+
+  </main>
+  <aside class="table-cell  table-cell--aside  wrapper__footer-padding-bottom">
+    <div class="block__height">&nbsp;</div>
+    <?php if (strlen(trim($service->getProperty('aside_content'))) > 0): ?>
+      <h2>
+        <?=H::inc('ntd:_aside__title', array('label' => 'À retenir', 'icon' => 'fa-pencil', 'color' => 'red')) ?>
+      </h2>
+      <div class="wysiwyg wysiwyg--aside">
+        <?php $rows = explode('<br />', nl2br($service->getProperty('aside_content'))); ?>
+        <?php foreach ($rows as $index => $row) : ?>
+          <p class="wysiwyg--aside__list-item">
+            <i class="fa fa-caret-right wysiwyg--aside__list-item__icon">
+            </i>
+            <span class="wysiwyg--aside__list-item__content">
+              <?=trim($row) ?>
+            </span>
+          </p>
+          <?php if ($index < count($rows) - 1): ?>
+            <hr>
+          <?php endif; ?>
+        <?php endforeach; ?>
+      </div>
+    <?php endif; ?>
+    <?=H::inc('snippet.avantages') ?>
+
+  </aside>
+</div>

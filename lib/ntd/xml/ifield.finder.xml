@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="name asc, type_simple asc, no_donnee_simple asc">
+ <filters>
+  <filter name="id" />
+  <filter name="|%%|name" label="Code" />
+  <filter name="|%%|label" label="Label" />
+  <filter name="type" type="select" options="Ifield::$types" />
+  <filter name="flag_4" type="yesno" label="Exportable" />
+  <filter name="flag_1" type="yesno" label="Obligatoire" />
+  <filter name="repetable" type="yesno" label="Répétable" />
+  <filter name="millesimes" type="select" label="Millésimes" options="Millesime::collect()->asHash('id', 'name')" />
+  <filter name="table_edi"  />
+ </filters>
+ <cols>
+  <col name="name" label="Code" width="60px" />  
+  <col name="formulairetype_id" />
+  <col name="type" label="Type de champ" width="200px" />
+  <col name="exportable" width="100px" />
+  <col name="obligatoire"  width="100px" />
+  <col name="is_extensible" label="Répétable"  width="100px" />
+  <col name="default_value" label="valeur par défaut" />
+  <col name="millesimes" label="Millésimes" />
+  <col name="table_edi" label="Table EDI" />
+ </cols>
+</finder>
+
+</kwo-interface>

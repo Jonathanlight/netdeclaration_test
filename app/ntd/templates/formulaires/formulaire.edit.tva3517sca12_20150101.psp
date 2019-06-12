@@ -1,0 +1,1452 @@
+<div class="formulaire-page" data-label="Partie I">
+<div style="display:none">
+<?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA1', 'value' => $tva3517sca12_20150101['CA1']))?>
+<?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA2', 'value' => $tva3517sca12_20150101['CA2']))?>
+<?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA3', 'value' => $tva3517sca12_20150101['CA3']))?>
+<?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA4', 'value' => $tva3517sca12_20150101['CA4']))?>
+<?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA5', 'value' => $tva3517sca12_20150101['CA5']))?>
+</div>
+
+<table id="ancre-1">
+
+
+  <tr class="elt">
+    <td class="libelle">
+      <label for="tva3517sca12_20150101_vl">Paiement par imputation :</label>
+    </td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VL',
+                                                        'value' => $tva3517sca12_20150101['VL']))?>
+    </td>
+  </tr>
+
+
+  <tr class="tab-title">
+    <th class="maintitle" colspan="5">COMMENTAIRES</th>
+  </tr>
+  <tr class="tab-title">
+    <th class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA',
+                                                        'value' => $tva3517sca12_20150101['CA1'].$tva3517sca12_20150101['CA2'].$tva3517sca12_20150101['CA3'].$tva3517sca12_20150101['CA4'].$tva3517sca12_20150101['CA5']))?>
+    </th>
+    <th class="subtitle">
+      <label for="tva3517sca12_20150101_vk">Mention expresse</label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VK', 'value' => $tva3517sca12_20150101['VK']))?>
+    </th>
+  </tr>
+</table>
+
+<table>
+  <tr class="tab-title">
+    <th class="maintitle" colspan="10">I - TVA BRUTE</th>
+  </tr>
+
+  <tr class="tab-title">
+    <th class="subtitle" colspan="4">OPERATIONS NON IMPOSABLES</th>
+    <th class="subtitle">Base hors taxes</th>
+    <th class="subtitle" colspan="4">OPERATIONS NON IMPOSABLES</th>
+    <th class="subtitle">Base hors taxes</th>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">01</td>
+    <td class="libelle" colspan="2">
+      <label for="tva3517sca12_20150101_ea">Achats en franchise</label>
+    </td>
+    <td class="line_impot">0037</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EA',
+                                                        'value' => $tva3517sca12_20150101['EA']))?>
+    </td>
+
+    <td class="line_id" rowspan="2">4B</td>
+    <td class="libelle" colspan="2" rowspan="2">
+      <label for="tva3517sca12_20150101_vm">Ventes de biens ou prestations de services réalisées par un assujetti non établi en France (article 283-1 du CGI)</label>
+    </td>
+    <td class="line_impot" rowspan="2">0043</td>
+    <td class="input" rowspan="2">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VM',
+                                                        'value' => $tva3517sca12_20150101['VM']))?>
+    </td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">02</td>
+    <td class="libelle" colspan="2">
+      <label for="tva3517sca12_20150101_eb">Exportations hors CE</label>
+    </td>
+    <td class="line_impot">0032</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EB',
+                                                        'value' => $tva3517sca12_20150101['EB']))?>
+    </td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">03</td>
+    <td class="libelle" colspan="2">
+      <label for="tva3517sca12_20150101_ec">Autres opérations non imposables</label>
+    </td>
+    <td class="line_impot">0033</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EC',
+                                                        'value' => $tva3517sca12_20150101['EC']))?>
+    </td>
+
+    <td class="line_id" rowspan="2">4D</td>
+    <td class="libelle" colspan="2" rowspan="2">
+      <label for="tva3517sca12_20150101_ex">Livraisons d’électricité, de gaz naturel, de chaleur ou de froid non imposables en France</label>
+    </td>
+    <td class="line_impot" rowspan="2">0029</td>
+    <td class="input" rowspan="2">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EX',
+                                                        'value' => $tva3517sca12_20150101['EX']))?>
+    </td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">04</td>
+    <td class="libelle" colspan="2">
+      <label for="tva3517sca12_20150101_ed">Livraisons intracommunautaires</label>
+    </td>
+    <td class="line_impot">0034</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ED',
+                                                        'value' => $tva3517sca12_20150101['ED']))?>
+    </td>
+  </tr>
+
+</table>
+<table>
+
+<tr class="tab-title">
+  <th class="subtitle" colspan="3">OPERATIONS IMPOSABLES</th>
+  <th class="subtitle">Base hors taxe</th>
+  <th class="subtitle">Taxe due</th>
+</tr>
+
+<tr class="tab-title">
+  <th colspan="3">réalisées en France métropolitaine</th>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">5A</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_ew">Taux normal 20 %</label>
+  </td>
+  <td class="line_impot">0207</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EW',
+                                                      'value' => $tva3517sca12_20150101['EW']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FW',
+                                                      'value' => $tva3517sca12_20150101['FW']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">06</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_ef">Taux réduit 5,5 %</label>
+  </td>
+  <td class="line_impot">0105</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EF',
+                                                      'value' => $tva3517sca12_20150101['EF']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FF',
+                                                      'value' => $tva3517sca12_20150101['FF']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">6C</td>
+  <td class="libelle"><label for="tva3517sca12_20150101_GF">Taux réduit 10 %</label></td>
+  <td class="line_impot">0151</td>
+  <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GF', 'value' => $tva3517sca12_20150101['GF']))?></td>
+  <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GH', 'value' => $tva3517sca12_20150101['GH']))?></td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">6D</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_fa">Ligne utilisable pour un nouveau taux en métropole</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FA',
+                                                      'value' => $tva3517sca12_20150101['FA']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FB',
+                                                      'value' => $tva3517sca12_20150101['FB']))?>
+  </td>
+</tr>
+
+<tr class="tab-title">
+  <th></th>
+  <th colspan="2">réalisées dans les DOM</th>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">07</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_eu">Taux normal 8,5 %</label>
+  </td>
+  <td class="line_impot">0201</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EU',
+                                                      'value' => $tva3517sca12_20150101['EU']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FU',
+                                                      'value' => $tva3517sca12_20150101['FU']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">08</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_ev">Taux réduit 2,1 %</label>
+  </td>
+  <td class="line_impot">0100</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EV',
+                                                      'value' => $tva3517sca12_20150101['EV']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FV',
+                                                      'value' => $tva3517sca12_20150101['FV']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">8B</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_fc">Ligne utilisable pour un nouveau taux dans les DOM</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FC',
+                                                      'value' => $tva3517sca12_20150101['FC']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FD',
+                                                      'value' => $tva3517sca12_20150101['FD']))?>
+  </td>
+</tr>
+
+<tr class="tab-title">
+  <th></th>
+  <th colspan="2">à un autre taux (France Métropolitaine ou DOM)</th>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">09</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_ej">Opérations imposables à un taux particulier</label>
+  </td>
+  <td class="line_impot">0950</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EJ',
+                                                      'value' => $tva3517sca12_20150101['EJ']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FJ',
+                                                      'value' => $tva3517sca12_20150101['FJ']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">10</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_eg">Anciens taux</label>
+  </td>
+  <td class="line_impot">0900</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EG',
+                                                      'value' => $tva3517sca12_20150101['EG']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FG',
+                                                      'value' => $tva3517sca12_20150101['FG']))?>
+  </td>
+</tr>
+
+<tr class="tab-title">
+  <th></th>
+  <th colspan="2">autres opérations</th>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">AA</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_ey">Livraisons d’électricité, de gaz naturel, de chaleur ou de froid imposables en Franc</label>
+  </td>
+  <td class="line_impot">0030</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EY',
+                                                      'value' => $tva3517sca12_20150101['EY']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FY',
+                                                      'value' => $tva3517sca12_20150101['FY']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">AB</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_vn">Achats de biens ou de prestations de services réalisés auprès d’un assujetti</label>
+  </td>
+  <td class="line_impot">0040</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VN',
+                                                      'value' => $tva3517sca12_20150101['VN']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VP',
+                                                      'value' => $tva3517sca12_20150101['VP']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">AC</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_eh">Achats de prestations de services intracommunautaires (art 283-2 du code général des impôts)</label>
+  </td>
+  <td class="line_impot">0044</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EH',
+                                                      'value' => $tva3517sca12_20150101['EH']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EZ',
+                                                      'value' => $tva3517sca12_20150101['EZ']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">11</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_el">Cessions d’immobilisations</label>
+  </td>
+  <td class="line_impot">0970</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EL',
+                                                      'value' => $tva3517sca12_20150101['EL']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FL',
+                                                      'value' => $tva3517sca12_20150101['FL']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">12</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_em">Livraisons à soi-même</label>
+  </td>
+  <td class="line_impot">0980</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EM',
+                                                      'value' => $tva3517sca12_20150101['EM']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FM',
+                                                      'value' => $tva3517sca12_20150101['FM']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">13</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_en">Autres opérations imposables</label>
+  </td>
+  <td class="line_impot">0981</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EN',
+                                                      'value' => $tva3517sca12_20150101['EN']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FN',
+                                                      'value' => $tva3517sca12_20150101['FN']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">14</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_ep">Acquisitions intracommunautaires</label>
+  </td>
+  <td class="line_impot">0031</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EP',
+                                                      'value' => $tva3517sca12_20150101['EP']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FP',
+                                                      'value' => $tva3517sca12_20150101['FP']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">15</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_eq">Dont TVA / immobilisations</label>
+  </td>
+  <td class="line_impot">0982</td>
+  <td class="input">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EQ',
+                                                      'value' => $tva3517sca12_20150101['EQ']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">16</td>
+  <td class="libelle">
+    <label class="bold" for="tva3517sca12_20150101_fr">TOTAL DE LA TAXE DUE (lignes 5A à 14)</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FR',
+                                                      'value' => $tva3517sca12_20150101['FR']))?>
+  </td>
+</tr>
+
+<tr class="tab-title">
+  <th></th>
+  <th colspan="2">AUTRE TVA DUE</th>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">17</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_ga">Remboursements provisionnels obtenus en cours d’année ou d’exercice "Taxe due"</label>
+  </td>
+  <td class="line_impot">0983</td>
+  <td class="input">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GA',
+                                                      'value' => $tva3517sca12_20150101['GA']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">18</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_gb">TVA antérieurement déduite à reverser "Taxe due"</label>
+  </td>
+  <td class="line_impot">0600</td>
+  <td class="input">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GB',
+                                                      'value' => $tva3517sca12_20150101['GB']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">AD</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_vs">Sommes à ajouter</label>
+  </td>
+  <td class="line_impot">0602</td>
+  <td class="input">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VS',
+                                                      'value' => $tva3517sca12_20150101['VS']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">19</td>
+  <td class="libelle">
+    <label class="bold" for="tva3517sca12_20150101_gc">TOTAL DE LA TVA BRUTE DUE (lignes 16 + 17 + 18 + AD)</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GC',
+                                                      'value' => $tva3517sca12_20150101['GC']))?>
+  </td>
+</tr>
+
+</table>
+
+</div>
+<div class="formulaire-page" data-label="Partie II">
+
+
+  <table>
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">II - TVA DEDUCTIBLE</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th></th>
+      <th colspan="2">AUTRES BIENS ET SERVICES</th>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">20</td>
+      <td class="libelle">
+        <label for="tva3517sca12_20150101_ha">Déductions sur factures</label>
+      </td>
+      <td class="line_impot">0702</td>
+      <td class="input">
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HA',
+                                                          'value' => $tva3517sca12_20150101['HA']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">21</td>
+      <td class="libelle">
+        <label for="tva3517sca12_20150101_hb">Déductions forfaitaires</label>
+      </td>
+      <td class="line_impot">0704</td>
+      <td class="input">
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HB',
+                                                          'value' => $tva3517sca12_20150101['HB']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">22</td>
+      <td class="libelle">
+        <label class="bold" for="tva3517sca12_20150101_hc">TOTAL (lignes 20 + 21)</label>
+      </td>
+      <td class="line_impot">&nbsp;</td>
+      <td class="input">
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HC',
+                                                          'value' => $tva3517sca12_20150101['HC']))?>
+      </td>
+    </tr>
+
+    <tr class="tab-title">
+      <th></th>
+      <th colspan="2">IMMOBILISATIONS</th>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">23</td>
+      <td class="libelle">
+        <label for="tva3517sca12_20150101_ja">TVA déductible sur immobilisations</label>
+      </td>
+      <td class="line_impot">0703</td>
+      <td class="input">
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JA',
+                                                          'value' => $tva3517sca12_20150101['JA']))?>
+      </td>
+    </tr>
+
+    <tr class="tab-title">
+      <th></th>
+      <th colspan="2">AUTRE TVA A DEDUIRE</th>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">24</td>
+      <td class="libelle">
+        <label for="tva3517sca12_20150101_ka">Crédit antérieur non imputé et non remboursé</label>
+      </td>
+      <td class="line_impot">0058</td>
+      <td class="input">
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KA',
+                                                          'value' => $tva3517sca12_20150101['KA']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">25</td>
+      <td class="libelle">
+        <label for="tva3517sca12_20150101_kb">Omissions ou compléments de déductions</label>
+      </td>
+      <td class="line_impot">0059</td>
+      <td class="input">
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KB',
+                                                          'value' => $tva3517sca12_20150101['KB']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">25A</td>
+      <td class="libelle">
+        <label for="tva3517sca12_20150101_jb">Compte-tenu le cas échéant du pourcentage de déduction</label>
+      </td>
+      <td class="line_impot">&nbsp;</td>
+      <td class="input">
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JB',
+                                                          'value' => $tva3517sca12_20150101['JB']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">AE</td>
+      <td class="libelle">
+        <label for="tva3517sca12_20150101_vt">Sommes à imputer</label>
+      </td>
+      <td class="line_impot">0603</td>
+      <td class="input">
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VT',
+                                                          'value' => $tva3517sca12_20150101['VT']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">26</td>
+      <td class="libelle">
+        <label class="bold" for="tva3517sca12_20150101_kd">TOTAL DE LA TVA DEDUCTIBLE (lignes 22 + 23 + 24 + 25 + AE)</label>
+      </td>
+      <td class="line_impot">&nbsp;</td>
+      <td class="input">
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KD',
+                                                          'value' => $tva3517sca12_20150101['KD']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">27</td>
+      <td class="libelle">
+        <label for="tva3517sca12_20150101_fe">Dont TVA non perçue récupérable par les assujettis disposant d'un établissement stable dans les DOM (Art 295-1-5° et 295A du CGI)</label>
+      </td>
+      <td class="line_impot">0709</td>
+      <td class="input">
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FE',
+                                                          'value' => $tva3517sca12_20150101['FE']))?>
+      </td>
+    </tr>
+
+  </table>
+
+</div>
+<div class="formulaire-page" data-label="Partie III">
+
+
+<table id="ancre-4">
+
+  <tr class="tab-title">
+    <th class="maintitle" colspan="5">III - TVA NETTE</th>
+  </tr>
+
+  <tr class="tab-title">
+    <th></th>
+    <th colspan="3">RESULTAT DE LA LIQUIDATION</th>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">28</td>
+    <td class="libelle" colspan="2">
+      <label for="tva3517sca12_20150101_la">TVA due : (ligne 19 - ligne 26)</label>
+    </td>
+    <td class="line_impot">&nbsp;</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LA',
+                                                        'value' => $tva3517sca12_20150101['LA']))?>
+    </td>
+  </tr>
+
+  <tr class="elt">
+    <td></td>
+    <td class="libelle" colspan="3">ou</td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">29</td>
+    <td class="libelle" colspan="2">
+      <label for="tva3517sca12_20150101_lb">CREDIT : (ligne 26 - ligne 19)</label>
+    </td>
+    <td class="line_impot">0705</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LB',
+                                                        'value' => $tva3517sca12_20150101['LB']))?>
+    </td>
+  </tr>
+
+</table>
+<table>
+
+  <tr class="tab-title">
+    <th colspan="7">IMPUTATIONS / REGULARISATIONS</th>
+  </tr>
+  <tr class="tab-title elt">
+    <th>&nbsp;</th>
+    <th>Col 1 : Montant effectivement payé</th>
+    <th>Col 2 : Montant restant à payer</th>
+    <td class="line_id">30</td>
+    <td class="libelle" rowspan="3">
+      <label>Acomptes payés et/ou restants dus (Total.1 + Total.2)</label>
+    </td>
+    <td class="line_impot" rowspan="3">0018</td>
+    <td class="input" rowspan="3">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MA',
+                                                        'value' => $tva3517sca12_20150101['MA']))?>
+    </td>
+  </tr>
+
+  <tr class="tab-title elt">
+    <th>Acompte 1</th>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MD',
+                                                        'value' => $tva3517sca12_20150101['MD']))?>
+    </td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ME',
+                                                        'value' => $tva3517sca12_20150101['ME']))?>
+    </td>
+    <td class="line_id">&nbsp;</td>
+  </tr>
+
+  <tr class="tab-title elt">
+    <th>Acompte 2</th>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MF',
+                                                        'value' => $tva3517sca12_20150101['MF']))?>
+    </td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MG',
+                                                        'value' => $tva3517sca12_20150101['MG']))?>
+    </td>
+    <td class="line_id">&nbsp;</td>
+  </tr>
+
+  <tr class="tab-title elt">
+    <th>Acompte 3</th>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MH',
+                                                        'value' => $tva3517sca12_20150101['MH']))?>
+    </td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MJ',
+                                                        'value' => $tva3517sca12_20150101['MJ']))?>
+    </td>
+  </tr>
+
+  <tr class="tab-title elt">
+    <th>Acompte 4</th>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MK',
+                                                        'value' => $tva3517sca12_20150101['MK']))?>
+    </td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ML',
+                                                        'value' => $tva3517sca12_20150101['ML']))?>
+    </td>
+  </tr>
+
+  <tr class="tab-title elt">
+    <th>&nbsp;</th>
+    <td class="input"><label class="big">Total. 1</label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MM',
+                                                        'value' => $tva3517sca12_20150101['MM']))?>
+    </td>
+    <td class="input"><label class="big">Total. 2</label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MN',
+                                                        'value' => $tva3517sca12_20150101['MN']))?>
+    </td>
+  </tr>
+</table>
+<table>
+
+
+  <tr class="tab-title">
+    <th></th>
+    <th colspan="3">RESULTAT NET</th>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">33</td>
+    <td class="libelle" colspan="2">
+      <label for="tva3517sca12_20150101_na">SOLDE A PAYER si ligne 28 - (lignes 29 + 30) > ou = 0</label>
+    </td>
+    <td class="line_impot">&nbsp;</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NA',
+                                                        'value' => $tva3517sca12_20150101['NA']))?>
+    </td>
+  </tr>
+
+  <tr class="elt">
+    <td></td>
+    <td class="libelle" colspan="3">ou</td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">34</td>
+    <td class="libelle" colspan="2">
+      <label for="tva3517sca12_20150101_nb">EXCEDENT DE VERSEMENT si ligne 30 - ligne 28 > ou = 0</label>
+    </td>
+    <td class="line_impot">&nbsp;</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NB',
+                                                        'value' => $tva3517sca12_20150101['NB']))?>
+    </td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">35</td>
+    <td class="libelle" colspan="2">
+      <label for="tva3517sca12_20150101_nc">SOLDE EXCEDENTAIRE (lignes 29 + 34) ou (lignes 29 + 30)</label>
+    </td>
+    <td class="line_impot">0020</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NC',
+                                                        'value' => $tva3517sca12_20150101['NC']))?>
+    </td>
+  </tr>
+
+</table>
+
+<table>
+
+<tr class="tab-title">
+  <th class="maintitle" colspan="5">IV - DECOMPTE DES TAXES ASSIMILEES</th>
+</tr>
+
+<tr class="tab-title">
+  <th></th>
+  <th>Nature des taxes</th>
+  <th>Taxe brute</th>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">36</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_qa">Taxe sur les retransmissions sportives (CGI, art 302 bis ZE)</label>
+  </td>
+  <td class="line_impot">4215</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QA',
+                                                      'value' => $tva3517sca12_20150101['QA']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">37</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_qs">Taxe sur le chiffre d’affaires des exploitants agricoles</label>
+  </td>
+  <td class="line_impot">4220</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QS',
+                                                      'value' => $tva3517sca12_20150101['QS']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">39</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_qd">Taxe sur l’édition des ouvrages de librairie (CGI, art 1609 undecies et suiv)</label>
+  </td>
+  <td class="line_impot">3510</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QD',
+                                                      'value' => $tva3517sca12_20150101['QD']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">40</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_qe">Taxe sur les appareils de reproduction ou d’impression (CGI, art 1609 undecies et suiv)</label>
+  </td>
+  <td class="line_impot">3520</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QE',
+                                                      'value' => $tva3517sca12_20150101['QE']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">41</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_qf">Taxe sur les huiles alimentaires FIPSA (CGI, art 1609 vicies)</label>
+  </td>
+  <td class="line_impot">3240</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QF',
+                                                      'value' => $tva3517sca12_20150101['QF']))?>
+  </td>
+
+</tr>
+<tr class="elt">
+  <td class="line_id"></td>
+  <td class="libelle">
+    <label>Taxe sur les ventes et les locations de vidéogrammes destinés à l’usage privé du public (CGI, art 1609 sex decies B)</label>
+  </td>
+  <td class="line_impot"></td>
+  <td class="input">&nbsp;</td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">42</td>
+  <td class="libelle"><label for="tva3517sca12_20150101_RF">Au taux de 2 %</label></td>
+  <td class="line_impot">4202</td>
+  <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RG', 'value' => $tva3517sca12_20150101['RF']))?></td>
+</tr>
+<tr class="elt">
+  <td class="line_id">43</td>
+  <td class="libelle"><label for="tva3517sca12_20150101_RG">Au taux de 10 %</label></td>
+  <td class="line_impot">4228</td>
+  <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RF', 'value' => $tva3517sca12_20150101['RG']))?></td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">44</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_qh">Taxe sur les actes des huissiers de justice (CGI, art 302 bis Y)</label>
+  </td>
+  <td class="line_impot">4206</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QH',
+                                                      'value' => $tva3517sca12_20150101['QH']))?>
+  </td>
+</tr>
+
+
+<tr class="elt">
+  <td class="line_id">45</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_qj">Taxe sur les embarquements ou débarquements de passagers en Corse (CGI, art 1599 vicies)</label>
+  </td>
+  <td class="line_impot">4204</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QJ',
+                                                      'value' => $tva3517sca12_20150101['QJ']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">46</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_vc">Taxe pour le développement de la formation professionnelle dans les métiers de la réparation de l’automobile, du cycle et du motocycle (CGI, art 1609
+      sexvicies)</label>
+  </td>
+  <td class="line_impot">4217</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VC',
+                                                      'value' => $tva3517sca12_20150101['VC']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">47</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_vq">Taxe sur les boues d’épuration urbaines et industrielles (CGI, art 302 bis ZF)</label>
+  </td>
+  <td class="line_impot">4223</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VQ',
+                                                      'value' => $tva3517sca12_20150101['VQ']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4A</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_vj">Contribution perçue au profit de l’INPES (CGI, art 1609 octovicies)</label>
+  </td>
+  <td class="line_impot">4222</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VJ',
+                                                      'value' => $tva3517sca12_20150101['VJ']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4B</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_ve">Contribution à l’audiovisuel public (ex Redevance audiovisuelle)</label>
+  </td>
+  <td class="line_impot">4219</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VE',
+                                                      'value' => $tva3517sca12_20150101['VE']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4C</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_vf">Contribution à l’audiovisuel public (ex Redevance audiovisuelle) due par les loueurs d’appareils (CGI, art.1605 et suiv)</label>
+  </td>
+  <td class="line_impot">4221</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VF',
+                                                      'value' => $tva3517sca12_20150101['VF']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4D</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_kl">Taxe sur la publicité diffusée par voie de radiodiffusion sonore et de télévision (CGI, art 302 bis KD)</label>
+  </td>
+  <td class="line_impot">4214</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KL',
+                                                      'value' => $tva3517sca12_20150101['KL']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4E</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_km">Taxe sur la publicité télévisée (CGI, art 302 bis KA)</label>
+  </td>
+  <td class="line_impot">4201</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KM',
+                                                      'value' => $tva3517sca12_20150101['KM']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4F</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_da">Taxe sur les excédents de provision des entreprises d'assurances de dommages (CGI, art. 235 ter X)</label>
+  </td>
+  <td class="line_impot">4238</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA',
+                                                      'value' => $tva3517sca12_20150101['DA']))?>
+  </td>
+</tr>
+
+
+<tr class="elt">
+  <td class="line_id">4G</td>
+  <td class="libelle"><label for="tva3517sca12_20150101_RM">Taxe sur les premières ventes en France de produits cosmétiques (art. 1600- 0-P du CGI)</label></td>
+  <td class="line_impot">4235</td>
+  <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RM', 'value' => $tva3517sca12_20150101['RM']))?></td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4H</td>
+  <td class="libelle"><label for="tva3517sca12_20150101_RH">Contribution sur les activités privées de sécurité (CGI, art. 1 609)</label></td>
+  <td class="line_impot">4230</td>
+  <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RH', 'value' => $tva3517sca12_20150101['RH']))?></td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4J</td>
+  <td class="libelle"><label for="tva3517sca12_20150101_RK">Taxe sur les 1ères ventes de dispositifs médicaux (CGI, art. 1600 -0 0)</label></td>
+  <td class="line_impot">4232</td>
+  <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RK', 'value' => $tva3517sca12_20150101['RK']))?></td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4K</td>
+  <td class="libelle"><label for="tva3517sca12_20150101_RL">Taxe annuelle due par les laboratoires de biologie médicale (CGI, art. 1600-0-R)</label></td>
+  <td class="line_impot">4233</td>
+  <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RL', 'value' => $tva3517sca12_20150101['RL']))?></td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4L</td>
+  <td class="libelle"><label for="tva3517sca12_20150101_RN">Contribution dues par les gestionnaires des réseaux publics d'électricité (article L.2224-31 du code général des collectivités territoriales)</label></td>
+  <td class="line_impot">4236</td>
+  <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RN', 'value' => $tva3517sca12_20150101['RN']))?></td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4M</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_db">Taxes sur les ordres annulés dans le cadre d'opérations à haute fréquence (CGI, art.235 ZD bis)</label>
+  </td>
+  <td class="line_impot">4239</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DB',
+                                                      'value' => $tva3517sca12_20150101['DB']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4N</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_dc">Prélèvement sur les films pornographiques ou d'incitation à la violence et sur les représentations théatrales à caractères pornographique (CGI, art. 1605 sexies)</label>
+  </td>
+  <td class="line_impot">4245</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC',
+                                                      'value' => $tva3517sca12_20150101['DC']))?>
+  </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+
+  <tr class="tab-title">
+    <th class="subtitle" colspan="4">Taxe sanitaire ou phytosanitaire</th>
+  </tr>
+<tr class="elt">
+  <td class="line_id">60</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_vv">Redevance sanitaire d'abattage et de découpage (CGI, art. 302 bis N à 302 bis W)</label>
+  </td>
+  <td class="line_impot">4246</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VV',
+                                                      'value' => $tva3517sca12_20150101['VV']))?>
+  </td>
+</tr>
+<tr class="elt">
+  <td class="line_id">61</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_vw">Redevance sanitaire pour le contrôle de certaines substances et de leurs résidus (CGI, art. 302 bis WC)</label>
+  </td>
+  <td class="line_impot">4247</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VW',
+                                                      'value' => $tva3517sca12_20150101['VW']))?>
+  </td>
+</tr>
+<tr class="elt">
+  <td class="line_id">62</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_vx">Redevance sanitaire de première mise sur le marché des produits de la pêche ou de l'aquaculture (CGI, art. 302 bis WA)</label>
+  </td>
+  <td class="line_impot">4248</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VX',
+                                                      'value' => $tva3517sca12_20150101['VX']))?>
+  </td>
+</tr>
+<tr class="elt">
+  <td class="line_id">63</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_vy">Redevance sanitaire de transformation des produits de la pêche ou de l'aquaculture (CGI, art. 302 bis WB)</label>
+  </td>
+  <td class="line_impot">4249</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VY',
+                                                      'value' => $tva3517sca12_20150101['VY']))?>
+  </td>
+</tr>
+<tr class="elt">
+  <td class="line_id">64</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_vz">Redevance pour agrément des établissements du secteur de l'alimentation animale (CGI, art. 302 bis WD à WG)</label>
+  </td>
+  <td class="line_impot">4250</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VZ',
+                                                      'value' => $tva3517sca12_20150101['VZ']))?>
+  </td>
+</tr>
+  <tr class="elt">
+  <td class="line_id">65</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_wa">Redevance phytosanitaire à la circulation intracommunautaire et à l'exportation (L 251-17-1 du code rural et de la pêche maritime)</label>
+  </td>
+  <td class="line_impot">4251</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'WA',
+                                                      'value' => $tva3517sca12_20150101['WA']))?>
+  </td>
+</tr>
+
+
+
+
+
+
+
+
+
+
+
+<tr class="elt">
+  <td class="line_id">4O</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_ke">Ligne 1 utilisable pour une nouvelle taxe assimilée créée en cours d’année</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KE',
+                                                      'value' => $tva3517sca12_20150101['KE']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4P</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_kf">Ligne 2 utilisable pour une nouvelle taxe assimilée créée en cours d’année</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KF',
+                                                      'value' => $tva3517sca12_20150101['KF']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4Q</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_kg">Ligne 3 utilisable pour une nouvelle taxe assimilée créée en cours d’année</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KG',
+                                                      'value' => $tva3517sca12_20150101['KG']))?>
+  </td>
+</tr>
+
+
+<tr class="elt">
+  <td class="line_id">4R</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_kh">Ligne 4 utilisable pour une nouvelle taxe assimilée créée en cours d’année</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KH',
+                                                      'value' => $tva3517sca12_20150101['KH']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">4S</td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_kj">Ligne 5 utilisable pour une nouvelle taxe assimilée créée en cours d’année</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KJ',
+                                                      'value' => $tva3517sca12_20150101['KJ']))?>
+  </td>
+</tr>
+
+</table>
+
+</div>
+<div class="formulaire-page" data-label="Partie IV">
+
+<table>
+<tr class="tab-title">
+  <th class="maintitle" colspan="6">V - RECAPITULATION</th>
+</tr>
+
+<tr class="tab-title">
+  <th></th>
+  <th colspan="5">CREDIT OU EXCEDENT</th>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">49</td>
+  <td class="libelle" colspan="3">
+    <label for="tva3517sca12_20150101_ra">Solde excédentaire (report de la ligne 35)</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RA',
+                                                      'value' => $tva3517sca12_20150101['RA']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">50</td>
+  <td class="libelle" colspan="3">
+    <label for="tva3517sca12_20150101_rb">Remboursement demandé sur le formulaire 3517 DDR</label>
+  </td>
+  <td class="line_impot">8002</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RB',
+                                                      'value' => $tva3517sca12_20150101['RB']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">51</td>
+  <td class="libelle" colspan="3">
+    <label for="tva3517sca12_20150101_rc">Crédit à reporter, (cette somme est à reporter ligne 24 de la prochaine</label>
+  </td>
+  <td class="line_impot">8003</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RC',
+                                                      'value' => $tva3517sca12_20150101['RC']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">52</td>
+  <td class="libelle" colspan="3">
+    <label for="tva3517sca12_20150101_re">Crédit imputé sur le ou les prochains acomptes</label>
+  </td>
+  <td class="line_impot">8004</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RE',
+                                                      'value' => $tva3517sca12_20150101['RE']))?>
+  </td>
+</tr>
+
+<tr class="tab-title">
+  <th></th>
+  <th colspan="4">SOLDE A PAYER</th>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">54</td>
+  <td class="libelle" colspan="3">
+    <label for="tva3517sca12_20150101_sa">TVA (report de la ligne 33)</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SA',
+                                                      'value' => $tva3517sca12_20150101['SA']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">55</td>
+  <td class="libelle" colspan="3">
+    <label for="tva3517sca12_20150101_sb">Taxes assimilées (tot. lgs 36 à 65)</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SB',
+                                                      'value' => $tva3517sca12_20150101['SB']))?>
+  </td>
+</tr>
+
+<tr class="tab-title">
+  <th></th>
+  <th colspan="4">Attention ! Une situation de TVA créditrice (ligne 49 servie) ne dispense pas du paiement des taxes assimilées déclarées ligne 55.</th>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">56</td>
+  <td class="libelle" colspan="3">
+    <label class="bold" for="tva3517sca12_20150101_sc">TOTAL A PAYER (lignes 54 + 55)</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SC',
+                                                      'value' => $tva3517sca12_20150101['SC']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td></td>
+  <td class="libelle" colspan="3">
+    <label for="tva3517sca12_20150101_sd">Formulaire NEANT</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SD',
+                                                      'value' => $tva3517sca12_20150101['SD']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">58</td>
+  <td colspan="4">Acomptes (cochez la case correspondante aux acomptes déduits ligne 30. Préciser l’année.)</td>
+</tr>
+
+<tr class="elt">
+  <td></td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_ta">Avril</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'TA',
+                                                      'value' => $tva3517sca12_20150101['TA']))?>
+  </td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_ua">Année</label>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'UA', 'value' => $tva3517sca12_20150101['UA']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td></td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_tb">juillet</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'TB',
+                                                      'value' => $tva3517sca12_20150101['TB']))?>
+  </td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_ub">Année</label>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'UB',
+                                                      'value' => $tva3517sca12_20150101['UB']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td></td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_tc">Octobre</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'TC',
+                                                      'value' => $tva3517sca12_20150101['TC']))?>
+  </td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_uc">Année</label>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'UC',
+                                                      'value' => $tva3517sca12_20150101['UC']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td></td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_td">décembre</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'TD',
+                                                      'value' => $tva3517sca12_20150101['TD']))?>
+  </td>
+  <td class="libelle">
+    <label for="tva3517sca12_20150101_ud">Année</label>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'UD',
+                                                      'value' => $tva3517sca12_20150101['UD']))?>
+  </td>
+</tr>
+
+<tr class="tab-title">
+  <th></th>
+  <th colspan="4">BASE DE CALCUL DES ACOMPTES DUS AU TITRE DE L’EXERCICE SUIVANT</th>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">57</td>
+  <td class="libelle" colspan="3">
+    <label for="tva3517sca12_20150101_va">TVA [lg 16 - (lgs 11+ 12 + 15 + 22)]</label>
+  </td>
+  <td class="line_impot">&nbsp;</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'VA',
+                                                      'value' => $tva3517sca12_20150101['VA']))?>
+  </td>
+</tr>
+</table>
+
+</div>

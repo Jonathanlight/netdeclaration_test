@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<box label="export" id="export_box">
+ <form>
+  <elem options="Campaign::$exports" type="radio" name="type" label="types" /> 
+  <launcher>
+   <button icon="export" tooltip="exporter" action=".go('export', this)" />
+  </launcher>
+ </form>
+</box>
+
+</kwo-interface>

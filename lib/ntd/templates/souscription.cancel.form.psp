@@ -1,0 +1,12 @@
+<form>
+  <fieldset>
+    <legend>Si vous souhaitez effectuer un remboursement, saissisez un label et un montant qui seront utilisés pour générer une facture.</legend>
+    <?=Elt::hidden(array('name' => 'id', 'value' => $souscription->getId()))?>
+    <?=Elt::text(array('label' => 'label', 'name' => 'record[label]'))?>
+    <?=Elt::text(array('label' => 'Montant', 'name' => 'record[amount]'))?>
+    <div class="launcher" style="text-align:left;">
+  <input type="image" title="Valider l'annulation" src="/app/core/pix/action/ok.png"
+         onclick="Kwo.exec('/back/ntd/souscription.set.status.cancelled', this, {callback:function(h){ Kwo.warn(h); Kwo.F('souscription').onEdit(this);  }.bind(this), confirm:'êtes-vous sûr de vouloir résilier cette souscription ?'}); return false;" />
+ </div>
+  </fieldset>  
+</form>

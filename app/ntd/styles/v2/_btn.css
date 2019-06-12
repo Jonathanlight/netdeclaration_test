@@ -1,0 +1,134 @@
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 3px;
+  font-size: 12px;
+  line-height: 1em;
+  padding: 10px 18px;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+  background-color: black;
+  color: white;
+  text-align: center; }
+  .btn:hover {
+    text-decoration: none;
+    background-color: gray; }
+  .btn:active {
+    text-decoration: none;
+    background-color: lightgray; }
+
+.btn--big {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 30px; }
+
+.btn--small {
+  padding: 12px 10px;
+  font-size: 12px; }
+
+.btn--smaller {
+  padding: 7px 10px;
+  font-size: 12px; }
+
+.btn--square {
+  padding: 0;
+  line-height: 25px;
+  width: 25px; }
+  .btn--square .fa {
+    line-height: 25px;
+    width: 25px; }
+
+.btn--color-red {
+  box-shadow: 0 1px 0 0 #ff3d54 inset, 0 -2px 0 -1px #a60e20;
+  background-color: #d81c32;
+  margin-top: 0;
+  margin-bottom: 1px;
+  vertical-align: top; }
+  .btn--color-red:hover {
+    background-color: #ee1f37; }
+  .btn--color-red:active {
+    box-shadow: 0 1px 0 0 #ee1f37 inset, 0 -2px 0 -1px #ee1f37;
+    background-color: #ee1f37;
+    margin-top: 1px;
+    margin-bottom: 0; }
+
+.btn--color-dark-blue {
+  box-shadow: 0 1px 0 0 #3a6594 inset, 0 -2px 0 -1px #002a57;
+  background-color: #002e60;
+  margin-top: 0;
+  margin-bottom: 1px;
+  vertical-align: top;
+  padding: 16px 22px;
+  font-size: 14px; }
+  .btn--color-dark-blue:hover {
+    background-color: #073c77; }
+  .btn--color-dark-blue:active {
+    box-shadow: 0 1px 0 0 #073c77 inset, 0 -2px 0 -1px #073c77;
+    background-color: #073c77;
+    margin-top: 1px;
+    margin-bottom: 0; }
+
+.btn--color-light-blue {
+  box-shadow: 0 1px 0 0 #8199c7 inset, 0 -2px 0 -1px #505e7b;
+  background-color: #5f7092;
+  margin-top: 0;
+  margin-bottom: 1px;
+  vertical-align: top; }
+  .btn--color-light-blue:hover {
+    background-color: #708bc0; }
+  .btn--color-light-blue:active {
+    box-shadow: 0 1px 0 0 #708bc0 inset, 0 -2px 0 -1px #708bc0;
+    background-color: #708bc0;
+    margin-top: 1px;
+    margin-bottom: 0; }
+  .btn--color-light-blue:hover {
+    box-shadow: 0 1px 0 0 #8199c7 inset, 0 -2px 0 -1px #7e8dab; }
+
+.btn-infos {
+  padding: 15px 22px;
+  font-size: 14px; }
+
+.btn--color-grey {
+  box-shadow: 0 1px 0 0 #f2f6ff inset, 0 -2px 0 -1px #cbcfd6;
+  background-color: #dadee6;
+  margin-top: 0;
+  margin-bottom: 1px;
+  vertical-align: top;
+  text-shadow: 0 1px 0 white;
+  color: #5f7092; }
+  .btn--color-grey:hover {
+    background-color: #dadee6; }
+  .btn--color-grey:active {
+    box-shadow: 0 1px 0 0 #dadee6 inset, 0 -2px 0 -1px #dadee6;
+    background-color: #dadee6;
+    margin-top: 1px;
+    margin-bottom: 0; }
+  .btn--color-grey:hover, .btn--color-grey:active {
+    color: #002e60; }
+
+.btn--link {
+  color: #5f7092;
+  text-decoration: none;
+  background: none repeat scroll 0 0 transparent;
+  text-decoration: none;
+  text-shadow: none; }
+  .btn--link:hover {
+    text-decoration: underline;
+    background: none repeat scroll 0 0 transparent; }
+  .btn--link.ntd-link--underline {
+    text-decoration: underline; }
+    .btn--link.ntd-link--underline:hover {
+      text-decoration: none; }
+
+.btn--color-test {
+  box-shadow: 0 1px 0 0 yellow inset, 0 -2px 0 -1px cyan;
+  background-color: red;
+  margin-top: 0;
+  margin-bottom: 1px;
+  vertical-align: top; }
+  .btn--color-test:hover {
+    background-color: blue; }
+  .btn--color-test:active {
+    box-shadow: 0 1px 0 0 green inset, 0 -2px 0 -1px green;
+    background-color: green;
+    margin-top: 1px;
+    margin-bottom: 0; }

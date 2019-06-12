@@ -1,0 +1,132 @@
+<div class="secondary">
+  <a href="javascript:void(0)"
+     onclick="$('adherent-secondary-profile-container').show(); $('adherent-secondary-ibans-container').hide(); $(this).addClassName('selected').next().removeClassName('selected');"
+     class="<?=$tab != 'ibans' ? 'selected' : ''?>"><span><?=c(l('adherent.profil'))?></span></a>
+<?php if ($adherent->isLoaded()) : ?>
+  <a href="javascript:void(0)"
+     onclick="$('adherent-secondary-profile-container').hide(); $('adherent-secondary-ibans-container').show(); $(this).addClassName('selected').previous().removeClassName('selected'); "
+     class="<?=$tab == 'ibans' ? 'selected' : ''?>"><span><?=c(l('adherent.ibans'))?></span></a>
+<?php endif; ?>
+
+  <div class="clear">&nbsp;</div>
+</div>
+<div class="clear">&nbsp;</div>
+
+<div class="adherent-secondary-box">
+  <div class="alert-box">
+  <?php if ($adherent->isLoaded() && $adherent->status != Adherent::STATUS_SUBSCRIPTION_VALIDE): ?>
+    <span style="color:red"><?=c(l('adherent.subscription.valide'))?>.</span>
+  <?php endif; ?>
+  </div>
+
+  <div id="adherent-secondary-profile-container" style="<?=$tab == 'ibans' ? 'display:none;' : ''?>">
+    <form action="javascript:void(0)" onsubmit="ntd.account.profilesSecondaries.onProfileSubmit(this); return false;"
+          onchange="ntd.account.profilesSecondaries.initProfileForm(this, '<?=Adherent::TYPE_CEC?>', '<?=Adherent::TYPE_OGA?>')" class="form-label-inline"
+          id="form-community-adherent-edit-<?=$adherent->isLoaded() ? $adherent->getId() : 0 ?>">
+      <input type="hidden" name="id" value="<?=(int) $adherent->isLoaded() ? $adherent->getId() : 0?>">
+
+
+      <h2><?=c(l('signup.step3.title'))?></h2>
+    <?php if ($adherent->isLoaded()) : ?>
+      <p><?=Adherent::$types[$adherent->type]?> </p>
+        <div style="display:none;"><?=Elt::radio(array('name' => 'adherent[type]', 'options' => Adherent::$types, 'label' => c(l('signup.step1.type')).' :', 'required' => true, 'value' => $adherent->type, 'disabled' => true, 'class' => 'adherent-types')) ?></div>
+    <?php if ($adherent->type == Adherent::TYPE_CEC && !$adherent->hasFlag(Adherent::FLAG_CEC_AVOCAT, 'cec_flags')): ?>
+      <p><?=c(l('adherent.edit.numbercec'))?> : <strong><?=$adherent->cec_ordre?></strong></p>
+    <?php elseif ($adherent->type == Adherent::TYPE_OGA): ?>
+      <p><?=c(l('adherent.edit.numberoga'))?> : <strong><?=$adherent->oga_agrement?></strong></p>
+    <?php endif; ?>
+    <?php else: ?>
+    <?=Elt::radio(array('name' => 'adherent[type]', 'options' => Adherent::$types, 'label' => c(l('signup.step1.type')).' :', 'required' => true, 'value' => $adherent->type, 'class' => 'adherent-types')) ?>
+    <?php endif; ?>
+
+    <?=Elt::radio(array('name' => 'adherent[civility]', 'options' => Adherent::$civilities, 'label' => c(l('adherent.titre')), 'required' => true, 'value' => $adherent->civility))?>
+    <?=Elt::text(array('name' => 'adherent[last_name]', 'label' => c(l('adherent.edit.firstname')), 'required' => true, 'value' => $adherent->last_name))?>
+    <?=Elt::text(array('name' => 'adherent[first_name]', 'label' => c(l('adherent.edit.lastname')), 'required' => true, 'value' => $adherent->first_name))?>
+    <?=Elt::text(array('name' => 'adherent[function]', 'label' => c(l('adherent.edit.fonction')), 'value' => $adherent->function))?>
+    <?=Elt::text(array('name' => 'adherent[company]', 'label' => c(l('adherent.edit.raison')), 'required' => true, 'value' => $adherent->company))?>
+    <?=Elt::text(array('name' => 'adherent[siret]', 'label' => c(l('adherent.edit.siret')), 'required' => true, 'value' => $adherent->siret))?>
+      <div style="display:<?=$adherent->isLoaded() ? 'none' : ''  ?>;">
+      <?=Elt::text(array('name' => 'adherent[cec_ordre]', 'label' => c(l('adherent.edit.numbercec')), 'required' => true, 'id' => 'input-cec_ordre', 'disabled' => true,
+                         'value' => $adherent->cec_ordre))?>
+      <?=Elt::text(array('name' => 'adherent[oga_agrement]', 'label' => c(l('adherent.edit.numberoga')), 'required' => true, 'id' => 'input-oga_agrement', 'disabled' => true,
+                         'value' => $adherent->oga_agrement))?>
+      </div>
+    <?php if (!$adherent->isLoaded() || $adherent->type == Adherent::TYPE_OGA): ?>
+    <?=Elt::text(array('name' => 'adherent[email_edi]', 'label' => c(l('adherent.edit.emailedi')), 'id' => 'adherent[email_edi]', 'value' => $adherent->email_edi)) ?>
+    <?php endif; ?>
+    <?=Elt::text(array('name' => 'adherent[phone]', 'label' => c(l('adherent.edit.phone')), 'required' => true, 'value' => $adherent->phone)) ?>
+    <?=Elt::text(array('name' => 'adherent[fax]', 'label' => c(l('adherent.edit.fax')), 'value' => $adherent->fax)) ?>
+    <?=Elt::text(array('name' => 'adherent[address]', 'label' => c(l('adherent.edit.address')), 'required' => true, 'value' => $adherent->address, 'rows' => 5)) ?>
+    <?=Elt::text(array('name' => 'adherent[zipbox]', 'label' => c(l('adherent.edit.postalbox')), 'value' => $adherent->zipbox)) ?>
+    <?=Elt::text(array('name' => 'adherent[zipcode]', 'label' => c(l('adherent.edit.postalcode')), 'required' => true, 'value' => $adherent->zipcode)) ?>
+    <?=Elt::text(array('name' => 'adherent[city]', 'label' => c(l('adherent.edit.city')), 'required' => true, 'value' => $adherent->city)) ?>
+    <?=Elt::select(array('name' => 'adherent[country_id]', 'label' => c(l('adherent.edit.country')), 'required' => true, 'options' => Country::collect(), 'first' => ' - ',
+                         'value' => $adherent->country_id > 0 ? $adherent->country_id : 250)) ?>
+
+      <fieldset>
+        <h2><?=c(l('adherent.coordfacturation'))?></h2>
+      <?=Elt::yesno(array('name' => 'adherent[has_no_billing_address]', 'label' => c(l('adherent.edit.coordfacturation')), 'required' => true,
+                          'class' => 'input-has-billing-address', 'value' => $adherent->has_no_billing_address))?>
+        <div class="billing-address-1st-step">
+        <?=Elt::yesno(array('name' => 'adherent[is_main_adherent_billing_address]', 'label' => c(l('adherent.edit.coordfacturation.account')),
+                            'required' => true, 'value' => $adherent->is_main_adherent_billing_address))?>
+          <div class="billing-address-2nd-step">
+          <?=Elt::text(array('name' => 'adherent[billing_company]', 'label' => c(l('adherent.edit.raison')), 'required' => true, 'id' => 'adherent[billing_address]', 'value' => $adherent->billing_company)) ?>
+          <?=Elt::text(array('name' => 'adherent[billing_address]', 'label' => c(l('adherent.edit.address')), 'required' => true, 'id' => 'adherent[billing_address]', 'rows' => 5,
+                             'value' => $adherent->billing_address)) ?>
+          <?=Elt::text(array('name' => 'adherent[billing_zipbox]', 'label' => c(l('adherent.edit.postalbox')), 'id' => 'adherent[billing_zipbox]', 'value' => $adherent->billing_zipbox)) ?>
+          <?=Elt::text(array('name' => 'adherent[billing_zipcode]', 'label' => c(l('adherent.edit.postalcode')), 'required' => true, 'id' => 'adherent[billing_zipcode]', 'value' => $adherent->billing_zipcode)) ?>
+          <?=Elt::text(array('name' => 'adherent[billing_city]', 'label' => c(l('adherent.edit.city')), 'required' => true, 'id' => 'adherent[billing_city]', 'value' => $adherent->billing_city)) ?>
+          <?=Elt::text(array('name' => 'adherent[billing_mail]', 'label' => c(l('adherent.edit.email')), 'required' => true, 'id' => 'adherent[billing_mail]', 'value' => $adherent->billing_mail)) ?>
+          <?=Elt::select(array('name' => 'adherent[billing_country_id]', 'label' => c(l('adherent.edit.country')), 'required' => true, 'options' => Country::collect(), 'first' => ' - ',
+                               'id' => 'adherent[billing_country_id]', 'value' => $adherent->billing_country_id)) ?>
+          <?=Elt::radio(array('name' => 'adherent[billing_payment_mode]', 'options' => Adherent::$billing_payment_modes, 'first' => ' - ', 'label' => c(l('adherent.edit.payment')), 'required' => true,
+                              'value' => $adherent->billing_payment_mode))?>
+          </div>
+        </div>
+      </fieldset>
+
+      <h2><?=c(l('adherent.gestion.title'))?></h2>
+    <?=Elt::yesno(array('name' => 'adherent[gestion_tva]', 'label' => c(l('adherent.gestion.tva')), 'value' => $adherent->gestion_tva))?>
+    <?=Elt::yesno(array('name' => 'adherent[gestion_tdfc]', 'label' => c(l('adherent.gestion.tdfc')), 'value' => $adherent->gestion_tdfc))?>
+    <?=Elt::yesno(array('name' => 'adherent[gestion_paiement]', 'label' => c(l('adherent.gestion.paiement')), 'value' => $adherent->gestion_paiement))?>
+    <?=Elt::yesno(array('name' => 'adherent[gestion_social]', 'label' => c(l('adherent.gestion.social')), 'value' => $adherent->gestion_social))?>
+
+      <h2><?=c(l('adherent.responsable.title'))?></h2>
+    <?=Elt::text(array('name' => 'adherent[technician_last_name]', 'label' => c(l('adherent.edit.firstname')), 'required' => true, 'value' => $adherent->technician_last_name))?>
+    <?=Elt::text(array('name' => 'adherent[technician_first_name]', 'label' => c(l('adherent.edit.lastname')), 'required' => true, 'value' => $adherent->technician_first_name))?>
+    <?=Elt::text(array('name' => 'adherent[technician_phone]', 'label' => c(l('adherent.edit.phone')), 'required' => true, 'value' => $adherent->technician_phone))?>
+    <?=Elt::text(array('name' => 'adherent[technician_mail]', 'label' => c(l('adherent.edit.email')), 'required' => true, 'value' => $adherent->technician_mail))?>
+
+
+      <span class="form-mentions"><?=c(l('adherent.mentions'))?></span>
+      <input type="submit" value="<?=c(l('save'))?>" class="ntd-button">
+    </form>
+  </div>
+
+
+  <div id="adherent-secondary-ibans-container" class="account-ibans-box" style="<?=$tab == 'ibans' ? '' : 'display:none;'?>">
+  <?php if ($adherent->isLoaded() && $adherent->status == Adherent::STATUS_SUBSCRIPTION_VALIDE): ?>
+
+    <h2><?=c(l('adherent.iban.secondary'))?></h2>
+  <?php foreach ($ibans as $index => $iban) : ?>
+    <h3><?=c(l('adherent.iban.number'))?><?=$index + 1?></h3>
+  <?=H::inc('ntd:account.iban', array('iban' => $iban->getAttributes(), 'adherent' => $adherent)) ?>
+  <?php endforeach; ?>
+
+  <?php if ($ibans->count() < Iban::MAX_IBAN_PER_ADHERENT) : ?>
+    <div class="new-iban-container" style="display:none;">
+    <?=H::inc('ntd:account.iban', array('iban' => array(), 'adherent' => $adherent)) ?>
+    </div>
+    <h3><?=l('adherent.iban.max', array('number' => Iban::MAX_IBAN_PER_ADHERENT - $ibans->count()))?></h3>
+    <a href="javascript:void(0)" onclick="$(this).previous('.new-iban-container').show(); $(this).hide().previous('h3').hide()" class="ntd-button red button-iban-add"> <?=c(l('adherent.iban.add'))?> </a>
+  <?php endif; ?>
+
+
+  <?php endif;  ?>
+  </div>
+
+</div>
+
+<img src="/app/core/pix/empty.gif"
+     onload="ntd.account.profilesSecondaries.initProfileForm($('form-community-adherent-edit-<?=(int) $adherent->isLoaded() ? $adherent->getId() : 0?>'), <?=Adherent::TYPE_CEC?>, <?=Adherent::TYPE_OGA?>)"/>

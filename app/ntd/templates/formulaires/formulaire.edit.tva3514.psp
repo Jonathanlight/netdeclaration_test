@@ -1,0 +1,702 @@
+<div class="formulaire-page" data-label="TVA 3514 Partie I">
+
+  <table>
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">MONTANT A PAYER EN CAS D'ABSENCE DE MODULATION D'ACOMPTE</th>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_aa">MONTANT À PAYER</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA',
+                                                      'value' => $tva3514['AA']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label or="tva3514_ab">Dont TVA</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AB',
+                                                      'value' => $tva3514['AB']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_ac">Dont taxes fiscales</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AC',
+                                                      'value' => $tva3514['AC']))?>
+      </td>
+    </tr>
+  </table>
+  
+  <table class="disable-for-aa">
+   
+    <tr class="tab-title">
+      <th class="subtitle" colspan="5">MONTANT A PAYER EN CAS DE SUSPENSION OU DE MODULATION D'ACOMPTE (choisir une des quatre situations suivantes)</th>
+    </tr>
+    
+    <tr class="tab-title">
+      <th colspan="3">1. TVA finalement due supérieure d'au moins 10% à celle qui a servi de base aux acomptes</th>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle" colspan="2">Je demande l'augmentation de cet acompte à la somme de</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA',
+                                                      'value' => $tva3514['DA']))?>
+      </td>
+    </tr>
+    
+    <tr class="tab-title">
+      <th colspan="3">2. Crédit ou excédent de versement dégagé sur la précédente déclaration n° CA12/CA12E</th>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle" colspan="2">
+        <label for="tva3514_db">Le crédit dégagé sur la précédente CA12/CA12E s'élève à</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DB',
+                                                      'value' => $tva3514['DB']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle" colspan="2">
+        <label for="tva3514_dc">Je demande la diminution de cet acompte à la somme de (si le crédit imputable excède le montant de l'acompte, indiquer "0" et imputer le reliquat sur le prochain acompte)</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC',
+                                                      'value' => $tva3514['DC']))?>
+      </td>
+    </tr>
+    
+    <tr class="tab-title">
+      <th colspan="3">3. TVA due au titre de l'année ou de l'exercice acquittée en totalité</th>
+    </tr>
+    
+    <tr class="elt">
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DD',
+                                                      'value' => $tva3514['DD']))?>
+      </td>
+      <td class="libelle">
+        <label for="tva3514_dd">Je demande la diminution de cet acompte à la somme de</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DF',
+                                                      'value' => $tva3514['DF']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DE',
+                                                      'value' => $tva3514['DE']))?>
+      </td>
+      <td class="libelle" colspan="2">
+        <label for="tva3514_de">Je demande la suspension du ou des acomptes restant à courir</label>
+      </td>
+    </tr>
+    
+    <tr class="tab-title">
+      <th colspan="3">4. TVA réelle inférieure d'au moins 10% à l'acompte appelé ou modulation des taxes fiscales ou création de société en cours d'année</th>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle" colspan="2"><label for="tva3514_dg">Je demande la diminution de cet acompte à la somme de Détailler obligatoirement ce montant, qui doit être identique à celui indiqué ligne 21 dans le tableau ci-dessous</label> </td>
+      <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DG', 'value' => $tva3514['DG']))?> </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle" colspan="2"><label for="tva3514_dw">Cocher quand votre montant est renseigné</label></td>
+      <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DW', 'value' => $tva3514['DW']))?> </td>
+    </tr>
+  </table>
+  
+  <table class="disable-for-aa">
+    <tr class="elt">
+      <td class="line_id">01</td>
+      <td class="libelle">
+        <label for="tva3514_ea">DÉCOMPTE DE LA TVA AU TITRE DES MOIS DU</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EA',
+                                                      'value' => $tva3514['EA']))?>
+      </td>
+      <td class="libelle" style="text-align:center;">
+        <label for="tva3514_eb">AU</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EB',
+                                                      'value' => $tva3514['EB']))?>
+      </td>
+    </tr>            
+  </table>
+  
+</div>
+<div class="formulaire-page" data-label="TVA 3514 Partie II">
+
+  <table class="disable-for-aa">
+    
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">OPERATIONS IMPOSABLES</th>
+    </tr>      
+    
+    <tr class="tab-title">
+      <th></th>
+      <th>réalisées en France Métropolitaine</th>
+      <th>Base hors taxe</th>
+      <th>Taxe due</th>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">02</td>
+      <td class="libelle">
+        <label for="tva3514_ec">Taux normal 19,6 %</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EC',
+                                                      'value' => $tva3514['EC']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ED',
+                                                      'value' => $tva3514['ED']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">03</td>
+      <td class="libelle">
+        <label for="tva3514_ee">Taux réduit 5,5%</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EE',
+                                                      'value' => $tva3514['EE']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EF',
+                                                      'value' => $tva3514['EF']))?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="line_id"></td>
+      <td class="libelle">
+        <label for="tva3514_et">Taux réduit 7,00%</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ET',
+                                                      'value' => $tva3514['ET']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EU',
+                                                      'value' => $tva3514['EU']))?>
+      </td>
+    </tr>
+    
+    <tr class="tab-title">
+      <th></th>
+      <th>réalisées dans les DOM</th>
+      <th></th>
+      <th></th>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">04</td>
+      <td class="libelle">
+        <label for="tva3514_eg">Taux normal 8,5%</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EG',
+                                                      'value' => $tva3514['EG']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EH',
+                                                      'value' => $tva3514['EH']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">05</td>
+      <td class="libelle">
+        <label for="tva3514_ej">Taux réduit 2,1%</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EJ',
+                                                      'value' => $tva3514['EJ']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EK',
+                                                      'value' => $tva3514['EK']))?>
+      </td>
+    </tr>
+    
+    <tr class="tab-title">
+      <th></th>
+      <th>à un autre taux (France métropolitaine ou DOM)</th>
+      <th></th>
+      <th></th>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">06</td>
+      <td class="libelle">
+        <label for="tva3514_el">Anciens taux</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EL',
+                                                      'value' => $tva3514['EL']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EM',
+                                                      'value' => $tva3514['EM']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">07</td>
+      <td class="libelle">
+        <label for="tva3514_en">Opérations imposables à un taux particulier</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EN',
+                                                      'value' => $tva3514['EN']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EP',
+                                                      'value' => $tva3514['EP']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">08</td>
+      <td class="libelle">
+        <label for="tva3514_eq">TVA antérieurement déduite à reverser</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EQ',
+                                                      'value' => $tva3514['EQ']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ER',
+                                                      'value' => $tva3514['ER']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">09</td>
+      <td class="libelle">&nbsp;</td>
+      <td class="libelle">
+        <label class="bold" for="tva3514_es">I. Total TVA brute</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ES',
+                                                      'value' => $tva3514['ES']))?>
+      </td>
+    </tr>
+  </table>
+  
+  <table class="disable-for-aa">
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">DEDUCTIONS</th>
+    </tr> 
+    <tr><th colspan="5">&nbsp;</th></tr>
+    
+    <tr class="elt">
+      <td class="line_id">10</td>
+      <td class="libelle" colspan="2">
+        <label for="tva3514_fa">"Taxe due TVA" Biens constituant des immobilisations</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FA',
+                                                      'value' => $tva3514['FA']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">11</td>
+      <td class="libelle" colspan="2">
+        <label for="tva3514_fb">"Taxe due TVA" Autres biens et services</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FB',
+                                                      'value' => $tva3514['FB']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">12</td>
+      <td class="libelle" colspan="2">
+        <label for="tva3514_fc">"Taxe due TVA" Omission ou complément de déductions</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FC',
+                                                      'value' => $tva3514['FC']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">13</td>
+      <td class="libelle">&nbsp;</td>
+      <td class="libelle">
+        <label class="bold" for="tva3514_fd">II. Total TVA déductible</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FD',
+                                                      'value' => $tva3514['FD']))?>
+      </td>
+    </tr>
+  </table>
+  
+  <table class="disable-for-aa">
+    
+    <tr class="tab-title">
+      <th class="maintitle" colspan="6">RECAPITULATION</th>
+    </tr> 
+
+    <tr class="tab-title">
+      <th colspan="3"></th>
+      <th>1. Crédit de TVA</th>
+      <th></th>
+      <th>2. TVA nette due</th>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">14</td>
+      <td class="libelle">
+        <label class="bold" for="tva3514_ga">A. TVA nette due (Total I. - Total II.)</label>
+      </td>
+      <td class="line_impot">&nbsp;</td>
+      <td class="input">&nbsp;</td>
+      <td class="line_impot">A</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GA',
+                                                      'value' => $tva3514['GA']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">15</td>
+      <td class="libelle">
+        <label class="bold" for="tva3514_gb">B. Crédit de TVA (Total II. - Total I.)</label>
+      </td>
+      <td class="line_impot">B</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GB',
+                                                      'value' => $tva3514['GB']))?>
+      </td>
+      <td></td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">16</td>
+      <td class="libelle">
+        <label for="tva3514_gc">C. Remboursement de TVA sur investissements (indiquer le montant du remboursement qui est sollicité dans les conditions habituelles sur le formulaire n°3519)</label>
+      </td>
+      <td class="line_impot">C</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GC',
+                                                      'value' => $tva3514['GC']))?>
+      </td>
+      <td></td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">17</td>
+      <td class="libelle">
+        <label for="tva3514_gd">D. Crédit de TVA disponible (B - C)</label>
+      </td>
+      <td class="line_impot">D</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GD',
+                                                      'value' => $tva3514['GD']))?>
+      </td>
+      <td></td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">18</td>
+      <td class="libelle">
+        <label for="tva3514_ge">E. Montant du crédit ou de l'excédent de TVA, figurant sur la précédente déclaration CA12/CA12E, à déduire du montant A de la TVA</label>
+      </td>
+      <td class="line_impot">&nbsp;</td>
+      <td></td>
+      <td class="line_impot">E</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GE',
+                                                      'value' => $tva3514['GE']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">19</td>
+      <td class="libelle">
+        <label for="tva3514_gf">F. Montant total de la TVA à payer à la place de l'acompte de TVA (A - E ou zéro en cas de crédit)</label>
+      </td>
+      <td class="line_impot">F</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GF',
+                                                      'value' => $tva3514['GF']))?>
+      </td>
+      <td class="line_impot">F</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GG',
+                                                      'value' => $tva3514['GG']))?>
+      </td>
+    </tr>
+    
+  </table>
+  
+  <table id="ancre-5" class="disable-for-aa">
+    
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">Détail des taxes fiscales</th>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_ba">Taxe sur les retransmissions sportives (CGI, art. 302 bis ZE)</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BA',
+                                                      'value' => $tva3514['BA']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_bb">Taxe d'abattage (CGI, art.1609 septvicies)</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BB',
+                                                      'value' => $tva3514['BB']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_bc">Taxe sur l'édition des ouvrages de librairie (CGI, art. 1609 undecies et suiv.)</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BC',
+                                                      'value' => $tva3514['BC']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_bd">Taxe sur les appareils de reproduction ou d'impression (CGI, art.1609 undecies et suiv.)</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BD',
+                                                      'value' => $tva3514['BD']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_be">Taxe sur les huiles alimentaires FIPSA (CGI, art. 1609 vicies)</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BE',
+                                                      'value' => $tva3514['BE']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label>Taxe sur les ventes et les locations de vidéogrammes destinés à l'usage privé du public (CGI, art. 1609 sexdecies B)</label>
+      </td>
+      <td class="input">&nbsp;</td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle"><label for="tva3514_br">Au taux de 2 %</label></td>
+      <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BR','value' => $tva3514['BR']))?></td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="tva3514_bt">Au taux de 10 %</label></td>
+      <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BT','value' => $tva3514['BT']))?></td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_bg">Taxe sur les actes des huissiers de justice (CGI, art. 302 bis Y)</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BG','value' => $tva3514['BG']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_bh">Taxe sur les embarquements ou débarquements de passagers en Corse (CGI, art.1599 vicies)</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BH',
+                                                      'value' => $tva3514['BH']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_bj">Taxe pour le développement de la formation professionnelle dans les métiers de la réparation de l'automobile, du cycle et du motocycle (CGI, art 1609 sexvicies)</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BJ',
+                                                      'value' => $tva3514['BJ']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_bp">Taxe sur la publicité diffusée par voie de radiodiffusion sonore et de télévision (CGI, art.302 bis KD)</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BP',
+                                                      'value' => $tva3514['BP']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_bq">Taxe sur la publicité télévisée (CGI, art. 302 bis KA)</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BQ',
+                                                      'value' => $tva3514['BQ']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_bk">Ligne 1 utilisable pour une nouvelle taxe assimilée créée en cours d'année</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BK',
+                                                      'value' => $tva3514['BK']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_bl">Ligne 2 utilisable pour une nouvelle taxe assimilée créée en cours d'année</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BL',
+                                                      'value' => $tva3514['BL']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_bm">Ligne 3 utilisable pour une nouvelle taxe assimilée créée en cours d'année</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BM',
+                                                      'value' => $tva3514['BM']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_bn">Ligne 4 utilisable pour une nouvelle taxe assimilée créée en cours d'année</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BN',
+                                                      'value' => $tva3514['BN']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3514_bo">Ligne 5 utilisable pour une nouvelle taxe assimilée créée en cours d'année</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BO',
+                                                      'value' => $tva3514['BO']))?>
+      </td>
+    </tr>
+  </table>
+    
+  <table class="disable-for-aa">
+    <tr class="elt">
+      <td class="line_id">20</td>
+      <td class="libelle">
+        <label class="bold" for="tva3514_gh">G. Montant total des taxes fiscales</label>
+      </td>
+      <td class="line_impot">G</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GH',
+                                                      'value' => $tva3514['GH']))?>
+      </td>
+      <td class="line_impot">G</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GJ',
+                                                      'value' => $tva3514['GJ']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="line_id">21</td>
+      <td class="libelle">
+        <label class="bold" for="tva3514_gk">MONTANT TOTAL A PAYER (F+G)</label>
+      </td>
+      <td class="line_impot">&nbsp;</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GK',
+                                                      'value' => $tva3514['GK']))?>
+      </td>
+      <td class="line_impot">&nbsp;</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GL',
+                                                      'value' => $tva3514['GL']))?>
+      </td>
+    </tr>
+  </table>
+  
+  <table>
+     
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">CADRE RESERVE A LA CORRESPONDANCE</th>
+    </tr>
+    
+    <tr class="tab-title">
+      <th class="input" colspan="4">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB',
+                                                      'value' => ($tva3514['CB1'].$tva3514['CB2'].$tva3514['CB3'].$tva3514['CB4'].$tva3514['CB5'])))?>
+      </th>
+      <th class="subtitle">
+        <label for="tva3517sca12_ac">Mention expresse</label>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CC',
+                                                      'value' => $tva3514['CC']))?>
+      </th>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="4">
+        <label for="tva3514_ca">Paiement par imputation (adresser l'imprimé 3516, téléchargeable sur www.impots.gouv.fr, à votre service des impots)</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA',
+                                                      'value' => $tva3514['CA']))?>
+      </td>
+    </tr>
+    
+  </table>
+  
+  <div style="display:none">   
+
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB1', 'value' => $tva3514['CB1']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB2', 'value' => $tva3514['CB2']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB3', 'value' => $tva3514['CB3']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB4', 'value' => $tva3514['CB4']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB5', 'value' => $tva3514['CB5']))?>       
+     </div>
+</div>

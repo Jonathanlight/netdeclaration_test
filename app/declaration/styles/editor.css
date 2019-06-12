@@ -1,0 +1,170 @@
+
+html {height:100%;}
+body {background:#fff; overflow:hidden; height:100%;}
+
+.wrapper { padding:20px; height:100%; display:-moz-box; display:-webkit-box; display:box; width:100%; -moz-box-orient:vertical; -webkit-box-orient:vertical;  }
+.wrapper  h1 { margin: 10px 0 0; float:left; }
+sup { vertical-align: super; padding:0 2px; font-size:7px }
+sub { vertical-align: sub; padding:0 2px; font-size:7px }
+* {box-sizing:border-box; -moz-box-sizing:border-box}
+img[onload] { display:none; }
+
+
+/******************* form Editor ***************/
+.form-editor {background: #7989AA; font-weight: bold; width:100%; display:-moz-box; display:-webkit-box; display:box;}
+.form-editor h2 { font-family:arial; background:#000; color:#fff; padding: 0 5px; margin-bottom:5px}
+.form-editor .editor-content { overflow: auto; padding: 10px;-moz-box-flex:1.0; -webkit-box-flex:1.0; -ms-flex:1.0; box-flex:1.0; background:#FFFFFF; font-size: 12px; display: -moz-box; -moz-box-orient:vertical; }
+.form-editor .editor-toolbar { display:-moz-box; display:-webkit-box; display:box; width:100%; -moz-box-orient:vertical; -webkit-box-orient:vertical; width: 390px; }
+.form-editor .editor-functions {height: 80px; margin: 0 0 5px 5px; background: #FFFFFF; padding:5px}
+.form-editor .editor-models  { margin: 0 0 0 5px;  background: #FFFFFF;  padding:5px; -moz-box-flex:1.0; -webkit-box-flex:1.0; -ms-flex:1.0; box-flex:1.0;  width:100%; display:-moz-box; display:-webkit-box; display:box; width:100%; -moz-box-orient:vertical; -webkit-box-orient:vertical; height: 880px; }
+.form-editor .editor-actions  {height: 65px; margin: 0 0 5px 5px;  background: #FFFFFF;  padding:5px}
+.form-editor .editor-actions  div {height: 178px; overflow-y: scroll;}
+
+.form-editor .editor-toolbar span {cursor: pointer; display: block; height: 20px; margin: 2px 2px 0 0; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;
+                                   padding:3px; text-align: center; width: 27px; font-size:11px}
+
+.form-editor .editor-functions div {display:-moz-box; display:-webkit-box; display:box;}
+.form-editor .editor-functions span { height: 36px; width: 36px; margin-right:2px; background-position: 2px 2px; background-repeat: no-repeat; background-color:transparent}
+.form-editor .editor-functions span:hover {border: 1px solid #333334}
+.form-editor .editor-functions span.row-extensible {border: 1px solid red}
+.form-editor .editor-functions span.table-add { background-image:url('/app/declaration/pix/table_add.png'); }
+.form-editor .editor-functions span.table-delete { background-image:url('/app/declaration/pix/table_delete.png'); }
+.form-editor .editor-functions span.page-add { background-image:url('/app/declaration/pix/page_add.png'); }
+.form-editor .editor-functions span.cell-merge { background-image:url('/app/declaration/pix/cell_merge.png');}
+.form-editor .editor-functions span.cell-split { background-image:url('/app/declaration/pix/cell_split.png');}
+.form-editor .editor-functions span.row-duplicate { background-image:url('/app/declaration/pix/row_duplicate.png');}
+.form-editor .editor-functions span.row-delete { background-image:url('/app/declaration/pix/row_delete.png');}
+.form-editor .editor-functions span.model-new { background-image:url('/app/declaration/pix/model_add.png');}
+.form-editor .editor-functions hr.separator {margin: 2px 4px 1px 0; width: 2px;}
+
+
+.form-editor .editor-models span {width: 380px; text-align: left;}
+.form-editor .editor-models span.selected {color:#fff; background:#FCB41A}
+.form-editor span.item-field  {border:1px solid #fff; background:#D7D870; color:#000}
+
+/*.editor-content table {width:100%; border: 1px solid #7989AA}*/
+.editor-content table { width: 940px; border: 1px solid #7989AA; border-collapse: separate;}
+.editor-content table tr[row_options*=extensible] {background:#A8B9D3;}
+.editor-content table tr[row_options*=extensible] td {border: 1px dotted #fff;}
+.editor-content table tr[data-extensible_code] {background:#A8B9D3;}
+.editor-content table tr[data-extensible_code] td {border: 3px solid #4A525E;}
+.editor-content table tr[data-extensible_code]:before { border: 3px solid #4A525E; content: "Extensible " attr(data-extensible_code); display: table-cell; height: 130px; text-align: center; vertical-align: middle; width: 20px; color: #FFFFFF; text-transform: uppercase; font-size:17px;}
+/*.editor-content table td {border: 1px dotted #7989AA; padding:2px; height:20px; min-width: 80px;}*/
+.editor-content table td {  border:1px solid #7989aa; padding-right: 24px;vertical-align: top; padding-bottom: 24px; }
+.editor-content table td:hover { background: #f2fbff ; cursor: pointer;}
+.editor-content .editor-page {/*background:#F8F6FE;*/ padding:20px; border:1px solid #000; margin:0px 0 10px;  box-shadow: 0 0 3px #000000;}
+
+.editor-content .editor-page span {}
+
+.editor-content .selected {background:#F2FBFF; border:1px solid red;}
+
+
+.form-editor .editor-models div.models-container { overflow-y: scroll; padding: 5px; -moz-box-flex:1.0; -webkit-box-flex:1.0; -ms-flex:1.0; box-flex:1.0; display:-moz-box; display:-webkit-box; width:100%; -moz-box-orient:vertical; -webkit-box-orient:vertical; }
+
+.form-editor .editor-models div.models-container div.item-model {display:-moz-box; display:-webkit-box; display:box; background: none repeat scroll 0 0 #FFFFFF; margin-bottom: 5px; width: 100%; border: 1px solid #7989AA; }
+.form-editor .editor-models div.models-container div.selected { background:#FFC958;}
+.form-editor .editor-models div.models-container div.item-model span {-moz-box-flex:1.0; -webkit-box-flex:1.0; -ms-flex:1.0; box-flex:1.0; color: #666666;
+                                                                      -webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0; border-right: 1px solid #7989AA; margin:0}
+
+.form-editor .editor-models div.models-container div.item-model span.IMP {background: #EFF0F5; color: #666666; text-align: center;  width: 15px;}
+
+.form-editor .editor-models div.models-container div.item-model span.title {background-color: #EFF0F5; color: #666666;  font-weight: bold;  line-height: 1.3em;}
+.form-editor .editor-models div.models-container div.item-model input {border: 1px solid #7989AA; height: 15px; max-width:30px; }
+.form-editor .editor-models div.models-container div.item-model span.actions {width: 40px; min-width:40px;}
+
+/*
+.editor-content .editor-page div.item-model-data {display:-moz-box; display:-webkit-box; display:box; border: 1px solid #7989AA; margin: 3px 2px; border-right:none; cursor:pointer }
+.editor-content .editor-page div.item-model-data span { color: #666666; background:#fff; width:80px; display: inherit;-webkit-border-radius: 0; -moz-border-radius: 0; border-radius: 0;
+                                                        border-right: 1px solid #7989AA; margin:0; background:#fff; padding: 3px; height:20px; }
+
+.editor-content .editor-page div.item-model-data span.FD {display: table-cell; width:50px;}
+.editor-content .editor-page div.item-model-data span.LB {text-overflow: ellipsis; overflow: hidden;  white-space: nowrap; width:110px;}
+.editor-content .editor-page div.item-model-data span.IMP {background: #EFF0F5; color: #666666; text-align: center; max-width:25px; }
+.editor-content .editor-page div.item-model-data span.data {display:none}
+.editor-content .editor-page div.item-model-data span.actions {width: 22px; min-width:22px; cursor:pointer}
+.editor-content .editor-page div.item-model-data input {border: 1px solid #7989AA; max-width:60px; }
+.editor-content .editor-page div.item-model-data span.title {background-color: #EFF0F5; color: #666666;  font-weight: bold;  line-height: 1.3em;}
+*/
+.editor-content .editor-page div.item-model-data {  display: table; width: 100%;  position: relative; border-bottom: 1px dotted #cfd5e3; }
+.editor-content .editor-page div.item-model-data:hover { background: #FFEE9D; cursor: pointer; }
+.editor-content .editor-page div.item-model-data span { color: #666666; line-height: 1.3em;font-weight: normal; font-size: 12px; font-family: arial }
+.editor-content .editor-page div.item-model-data span.IMP { display: table-cell; padding: 5px; background-color: #eff0f5; text-align: center; }
+
+/*.editor-content .editor-page div.item-model-data span.IMP:before { content: "IMPOT"; font-weight: bold; padding-right: 5px; }*/
+.editor-content .editor-page div.item-model-data span.LB { border-color: #7989aa; border-style: solid; border-width: 0 0 0 1px; display: table-cell; overflow: hidden; padding: 5px; color: #666666; line-height: 1.3em; }
+/*.editor-content .editor-page div.item-model-data span.LB:before { content: "LABEL"; display: inline-block; font-weight: bold; padding-right: 5px; }*/
+.editor-content .editor-page div.item-model-data span.FD { border-color: #7989aa; border-style: solid; border-width: 0 0 0 1px; display: table-cell; padding: 5px; }
+/*.editor-content .editor-page div.item-model-data span.FD:before { content: "FIELD"; display: table-cell; font-weight: bold; padding-right: 5px; }*/
+.editor-content .editor-page div.item-model-data input { border: 1px solid #7989aa; display: inline-block; cursor: pointer; font-family: arial; font-size:12px; padding: 0 3px; text-align: right; color: #465779; height: 21px; line-height: 21px; width: 100px; }
+.editor-content .editor-page div.item-model-data span.actions { cursor: pointer; display: table-cell; height: 24px; opacity: 0.1; padding: 4px; position: absolute; right: -24px; text-align: center; top: 0; width: 24px; }
+.editor-content .editor-page div.item-model-data span.actions:hover { opacity: 1 }
+.editor-content .editor-page div.item-model-data span.data {display:none}
+.editor-content .editor-page div.item-model-data span.title { background: none repeat scroll 0 0 #eff0f5; font-weight: bold; padding: 7px; }
+.editor-content .editor-page div.item-model-data span:first-child { border-left-width: 0; }
+
+/******************* Form render *************************/
+.rendre-html { width:100%; border:0px solid #3B3232 ; background:#fff; padding:10px; /*height:630px;*/ overflow:auto; display: -moz-box; -moz-box-flex: 1; height: 900px; }
+.rendre-html .formulaire-page {border:1px solid #DFE2EC; padding:20px; margin-bottom:20px; width: 950px;}
+
+/*
+.rendre-html .formulaire-page table {margin-bottom: 10px; width: 100%;}
+.rendre-html .formulaire-page table tr.elt td.libelle { border: 1px solid #7989AA; color: #666666; text-align: left; vertical-align: middle;}
+.rendre-html .formulaire-page table tr.elt td.input input { border: 1px solid #7989AA;  color: #465779;  font-size: 12px; height: 21px; margin: 0;  padding: 0 5px; vertical-align: middle;}
+.rendre-html .formulaire-page table tr.elt td.input input { float: right;  width: 125px;}
+.rendre-html .formulaire-page table tr td { border: 1px solid #475779; font-size: 12px; padding: 7px; vertical-align: middle; }
+.rendre-html .formulaire-page table tr th { border: 1px solid #475779; font-size: 12px; padding: 7px; vertical-align: middle; }
+.rendre-html .formulaire-page table tr.elt td.line_impot {background: #EFF0F5; color: #666666; text-align: center;  width: 30px;}
+.rendre-html .formulaire-page table td.title {background-color: #EFF0F5; color: #666666;  font-weight: bold;  line-height: 1.3em;}
+  */
+
+.rendre-code { width:100%; border:0px solid #3B3232 ; background:#EEEEEE; /*height:600px;*/ overflow:auto; font-size:13px; margin:0; color:#333334; -moz-box-flex: 1;}
+
+/* ----- add new CSS STYLE ----- */
+.rendre-html .form-declaration-edit  * { font-family:arial }
+
+
+/******************* Dialog *************************/
+.dialog-shadow { background: #FFFFFF;}
+.dialog-content {padding:10px}
+.dialog-content table {width:100%;}
+.dialog-content table th {border:1px solid #7989AA; background:#000; color:#fff}
+.dialog-content table td {border:1px solid #7989AA}
+
+.dialog-content table td div.field {background:#CFCFCF/*B4D8E8*/; border-bottom:1px solid #7989AA; padding: 2px 3px;}
+.dialog-content table td div.field label { font-size: 16px; font-weight: bold; line-height: 25px; display: block; width: 75px; }
+.dialog-content table td div.options label {display: block; line-height:18px; font-size:12px;}
+
+.dialog-content input:focus { box-shadow: 0 0 5px #FF0000; }
+/*.dialog-content table td div.field input.upper {text-transform: uppercase;}*/
+.dialog-content table td div.options {background:#EFF0F5; padding: 2px 3px;}
+.dialog-content table td div.options select,
+.dialog-content table td div.options input {width: 100%; border: 1px solid #7989AA; margin:2px 0; max-width:120px}
+.dialog-content table td div.options label.click-label { }
+.dialog-content table td div.options .elt-checkbox {   }
+.dialog-content table#model-data td div.options label input { width: auto;}
+
+.dialog-content table#model-data td input {width: 100%; border: 1px solid #7989AA; /*max-width:100px; */ font-size:12px; padding:5px; }
+.dialog-content table#model-data td input.text {width:60px}
+.dialog-content .editor-fields {padding: 5px;  width: 100%; background:#EEEEEE; border: 1px solid #0E7EB6}
+.dialog-content .editor-fields a {background:#0B3058; border: 1px solid #C0C7D9;color: #fff; display: inline-table; text-align:center;  margin: 1px;  padding: 2px 5px ;  text-align: center; text-decoration: none; line-height: 20px; font-size:12px;}
+.dialog-content .editor-fields a:hover { background: #051221; }
+.dialog-content .editor-fields a:active { color: #FF9999; }
+.dialog-content .editor-fields a.used {background: #E43F00;}
+.dialog-content p {font-size: 12px;   line-height: 20px;}
+
+.dialog-content .model-opts { margin-bottom: 10px; }
+.dialog-content .model-opts label { font-size:12px; }
+.dialog-content input[type="submit"] { font-size:12px;  }
+
+
+/********************* Tabs ************************/
+.tabs {width:100%; -moz-box-flex:1.0; -webkit-box-flex:1.0; -ms-flex:1.0; box-flex:1.0; display:-moz-box; display:-webkit-box; display:box; -moz-box-orient:vertical; -webkit-box-orient:vertical; }
+.tabs .tabs-nav {float:right; border: 5px solid #7989AA; border-bottom:0;}
+.tabs .tabs-nav .tab-nav {float:left;}
+.tabs .tabs-nav .tab-nav a { border-left: 5px solid #7989AA; color: #666666; display: block; font-size: 18px; line-height: 40px; padding: 0 20px; text-decoration: none; vertical-align: middle;}
+.tabs .tabs-nav .tab-nav:first-child a{ border-left: 0}
+.tabs .tabs-nav .tab-nav a.selected { background:#EEEEEE; font-weight: normal;}
+.tabs .tabs-content { -moz-box-flex:1.0; -webkit-box-flex:1.0; -ms-flex:1.0; box-flex:1.0; display:-moz-box; display:-webkit-box; display:box; -moz-box-orient:vertical; -webkit-box-orient:vertical; border: 5px solid #7989AA;; }
+.tabs .tabs-content .tab-content { -moz-box-flex:1.0; -webkit-box-flex:1.0; -ms-flex:1.0; box-flex:1.0; display:-moz-box; display:-webkit-box; display:box; -moz-box-orient:vertical; -webkit-box-orient:vertical; }
+.tabs .tabs-content .tab-content > form { -moz-box-flex:1.0; -webkit-box-flex:1.0; -ms-flex:1.0; box-flex:1.0; display:-moz-box; display:-webkit-box; display:box; -moz-box-orient:vertical; -webkit-box-orient:vertical; }
+.tabs .tabs-content .tab-content > form .form-editor { -moz-box-flex:1.0; -webkit-box-flex:1.0; -ms-flex:1.0; box-flex:1.0; display:-moz-box; display:-webkit-box; display:box; -moz-box-orient:horizontal; -webkit-box-orient:horizontal; height: 900px; overflow-y: scroll; overflow-x: hidden; }

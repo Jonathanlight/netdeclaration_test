@@ -1,0 +1,250 @@
+﻿<form class="form-ntd" name="tva3310terversoverso" action="javascript:void(0)" onsubmit="NTD.Control.onValid(this, this.next('.confirm-container'))">
+<input class="form-code" name="form_code" type="hidden" value="<?=$form_code?>">
+
+
+	<div class="list-ancre">
+	<h1 id="ancre-0">INDEX</h1>
+    <ul>
+      <li><h2><a href="#ancre-1">NO NAME</a></h2></li>
+		</ul>
+	</div>
+
+<fieldset id="ancre-1" class="triple">
+<a href="#ancre-0"><input class="return" type="button" value="sommaire"></a>
+	
+<label class="tva3310terversotriple1 ">Complément de TVA déductible</label>	
+<label class="tva3310terversotriple2 ">TOTAL</label>	
+<label class="tva3310terversotriple3">TVA NETTE</label>
+	
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_na">Secteur 1</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'NA',
+														  'value' => $cvae1330['NA']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'PA',
+														  'value' => $cvae1330['PA']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'QA',
+														  'value' => $cvae1330['QA']))?>
+</div>	
+														  														  
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_nb">Secteur 2</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'NB',
+														  'value' => $cvae1330['NB']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'PB',
+														  'value' => $cvae1330['PB']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'QB',
+														  'value' => $cvae1330['QB']))?>
+</div>	
+													  
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_nc">Secteur 3</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'NC',
+														  'value' => $cvae1330['NC']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'PC',
+														  'value' => $cvae1330['PC']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'QC',
+														  'value' => $cvae1330['QC']))?>
+</div>	
+
+  
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_nd">Secteur 4</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'ND',
+														  'value' => $cvae1330['ND']))?> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'PD',
+														  'value' => $cvae1330['PD']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'QD',
+														  'value' => $cvae1330['QD']))?>
+</div>		
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_ne">Secteur 5</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'NE',
+														  'value' => $cvae1330['NE']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'PE',
+														  'value' => $cvae1330['PE']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'QE',
+														  'value' => $cvae1330['QE']))?>
+</div>		
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_nf">Secteur 6</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'NF',
+														  'value' => $cvae1330['NF']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'PF',
+														  'value' => $cvae1330['PF']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'QF',
+														  'value' => $cvae1330['QF']))?>
+</div>		
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_ng">Secteur 7</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'NG',
+														  'value' => $cvae1330['NG']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'PG',
+														  'value' => $cvae1330['PG']))?> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'QG',
+														  'value' => $cvae1330['QG']))?>
+</div>	
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_nh">Secteur 8</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'NH',
+														  'value' => $cvae1330['NH']))?> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'PH',
+														  'value' => $cvae1330['PH']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'QH',
+														  'value' => $cvae1330['QH']))?>
+</div>	
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_nj">Secteur 9</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'NJ',
+														  'value' => $cvae1330['NJ']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'PJ',
+														  'value' => $cvae1330['PJ']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'QJ',
+														  'value' => $cvae1330['QJ']))?>
+</div>		
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_nk">Secteur 10</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'NK',
+														  'value' => $cvae1330['NK']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'PK',
+														  'value' => $cvae1330['PK']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'QK',
+														  'value' => $cvae1330['QK']))?>
+</div>	
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_nl">Ensemble des Secteurs Complément de TVA déductible</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'NL',
+														  'value' => $cvae1330['NL']))?> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'PL',
+														  'value' => $cvae1330['PL']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'QL',
+														  'value' => $cvae1330['QL']))?>
+</div>	
+
+
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_qm">TVA nette due ou crédit de TVA de l ensemble des secteurs</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'QM',
+														  'value' => $cvae1330['QM']))?>
+</div>	
+	
+
+</fieldset> 
+
+<fieldset id="ancre-2">
+<a href="#ancre-0"><input class="return" type="button" value="sommaire"></a>
+
+<label class="tva3310terversodouble1">Crédit de TVA</label>
+<label class="tva3310terversodouble2">dont crédit non restituable</label>
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_ra">Secteur 1</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'RA',
+														  'value' => $cvae1330['RA']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'SA',
+														  'value' => $cvae1330['SA']))?>
+</div>	
+														  
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_rb">Secteur 2</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'RB',
+														  'value' => $cvae1330['RB']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'SB',
+														  'value' => $cvae1330['SB']))?>
+</div>	
+														  
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_rc">Secteur 3</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'RC',
+														  'value' => $cvae1330['RC']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'SC',
+														  'value' => $cvae1330['SC']))?>
+</div>	
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_rd">Secteur 4</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'RD',
+														  'value' => $cvae1330['RD']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'SD',
+														  'value' => $cvae1330['SD']))?>
+</div>		
+
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_re">Secteur 5</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'RE',
+														  'value' => $cvae1330['RE']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'SE',
+														  'value' => $cvae1330['SE']))?>
+</div>	
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_rf">Secteur 6</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'RF',
+														  'value' => $cvae1330['RF']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'SF',
+														  'value' => $cvae1330['SF']))?>
+</div>
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_rg">Secteur 7</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'RG',
+														  'value' => $cvae1330['RG']))?> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'SG',
+														  'value' => $cvae1330['SG']))?>
+</div>	
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_rh">Secteur 8</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'RH',
+														  'value' => $cvae1330['RH']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'SH',
+														  'value' => $cvae1330['SH']))?>
+</div>	
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_rj">Secteur 9</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'RJ',
+														  'value' => $cvae1330['RJ']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'SJ',
+														  'value' => $cvae1330['SJ']))?>
+</div>
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_rk">Secteur 10</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'RK',
+														  'value' => $cvae1330['RK']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'SK',
+														  'value' => $cvae1330['SK']))?>
+</div>	
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_rl">Ensemble des Secteurs Crédit de TVA (si col. 11 - col. 3 > 0)col. 13</label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'RL',
+														  'value' => $cvae1330['RL']))?>
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'SL',
+														  'value' => $cvae1330['SL']))?>
+</div>
+
+<div class="elt">
+			<label class="libelle" for="tva3310terverso_rm">TVA nette due (10) ou crédit de TVA (11) de l ensemble des secteurs </label> 
+			<?=Formulaire::getHTMLField($form_code, array('field_name' => 'RM',
+														  'value' => $cvae1330['RM']))?>
+</div>	
+											
+</fieldset>
+													  
+ <div class="elt">
+        <input type="button" value="JS" onclick="NTD.Control.checkForm();">
+        <input type="submit" value="Valider">
+    </div>  
+</form>
+
+<div class="confirm-container"></div>

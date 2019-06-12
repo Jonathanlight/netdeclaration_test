@@ -1,0 +1,7 @@
+phrase:
+  - code: cgu.label
+      fr:
+        - message: Condition d’utilisation
+  - code: cgu.submit.button
+      fr:
+        - message: Valider les nouvelles conditions d’utilisation

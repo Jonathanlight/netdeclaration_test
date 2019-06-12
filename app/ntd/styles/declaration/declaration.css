@@ -1,0 +1,154 @@
+
+.print-footer { display:none; }
+h1.name-form,
+span.periode { font-family: Georgia; color: #002d62; font-size: 20px; line-height: 23px; margin-top: 20px; font-weight: normal; }
+span.periode { display: block; margin-top: 0; margin-bottom: 20px; color: #7889aa; }
+
+/* ----- wrapper ----- */
+.wrapper { width: 100%; font-family: arial; font-size: 12px; background: #ffffff; }
+
+.wrapper .wrapper-header {height:30px; background: url("/app/ntd/pix/wrapper/header_menu.png") repeat-x scroll left top transparent; }
+.wrapper .wrapper-header .wrapper-header-bandeau { width:960px; height: 30px; margin: 0 auto; }
+.wrapper .wrapper-header .wrapper-header-bandeau img { float: left; margin-top: 6px; }
+.wrapper .wrapper-header .wrapper-header-bandeau span { color: #c3c8da; }
+.wrapper .wrapper-header .wrapper-header-bandeau span.title { float: left; line-height: 30px; font-style: italic; font-family: Georgia; font-size: 13px; margin-left: 40px; }
+.wrapper .wrapper-header .wrapper-header-bandeau div.identity { float: right; font-size: 11px; line-height: 30px; }
+.wrapper .wrapper-header .wrapper-header-bandeau div.identity span.name { border-right: 1px solid #c0c7d9; padding-right: 10px; }
+.wrapper .wrapper-header .wrapper-header-bandeau div.identity span.siret { padding-left: 7px; }
+
+.wrapper .wrapper-content { width: 960px; margin: 0 auto 40px auto; }
+
+/* ----- Steps box ----- */
+.declaration-steps { width: 960px; height: 42px; background: transparent none no-repeat top left; overflow:hidden; }
+.declaration-steps.steps-count-9 { background-image:url("/app/ntd/pix/declaration_steps_9.png"); background-size: 960px;}
+.declaration-steps.steps-count-8 { background-image:url("/app/ntd/pix/declaration_steps_8.png"); background-size: 960px;}
+.declaration-steps.steps-count-7 { background-image:url("/app/ntd/pix/declaration_steps_7.png"); }
+.declaration-steps.steps-count-6 { background-image:url("/app/ntd/pix/declaration_steps_6.png"); }
+.declaration-steps.steps-count-5 { background-image:url("/app/ntd/pix/declaration_steps_5.png"); }
+.declaration-steps.steps-count-4 { background-image:url("/app/ntd/pix/declaration_steps_4.png"); }
+.declaration-steps.steps-count-3 { background-image:url("/app/ntd/pix/declaration_steps_3.png"); }
+.declaration-steps.steps-count-2 { background-image:url("/app/ntd/pix/declaration_steps_2.png"); }
+
+.declaration-steps.current-step-1 { background-position: 0 0;}
+.declaration-steps.current-step-2 { background-position: 0 -42px;}
+.declaration-steps.current-step-3 { background-position: 0 -84px;}
+.declaration-steps.current-step-4 { background-position: 0 -126px;}
+.declaration-steps.current-step-5 { background-position: 0 -168px;}
+.declaration-steps.current-step-6 { background-position: 0 -210px;}
+.declaration-steps.current-step-7 { background-position: 0 -252px;}
+.declaration-steps.current-step-8 { background-position: 0 -294px;}
+.declaration-steps.current-step-9 { background-position: 0 -326px;}
+
+.declaration-steps.steps-count-8.current-step-2 { background-position: 0 -45px;}
+.declaration-steps.steps-count-8.current-step-3 { background-position: 0 -90px;}
+.declaration-steps.steps-count-8.current-step-4 { background-position: 0 -134px;}
+.declaration-steps.steps-count-8.current-step-5 { background-position: 0 -178px;}
+.declaration-steps.steps-count-8.current-step-6 { background-position: 0 -222px;}
+.declaration-steps.steps-count-8.current-step-7 { background-position: 0 -266px;}
+.declaration-steps.steps-count-8.current-step-8 { background-position: 0 -310px;}
+
+.declaration-steps.steps-count-9.current-step-2 { background-position: 0 -44px;}
+.declaration-steps.steps-count-9.current-step-3 { background-position: 0 -88px;}
+.declaration-steps.steps-count-9.current-step-4 { background-position: 0 -132px;}
+.declaration-steps.steps-count-9.current-step-5 { background-position: 0 -176px;}
+.declaration-steps.steps-count-9.current-step-6 { background-position: 0 -220px;}
+.declaration-steps.steps-count-9.current-step-7 { background-position: 0 -264px;}
+.declaration-steps.steps-count-9.current-step-8 { background-position: 0 -308px;}
+.declaration-steps.steps-count-9.current-step-9 { background-position: 0 -352px;}
+
+.declaration-steps .step-name { display: block; float: left; text-align: center; text-shadow: 1px 1px #ffffff; font-family: Georgia; font-size: 16px; line-height: 42px; color: #7889aa;}
+
+.declaration-steps.steps-count-9 .step-1 { width: 104px; }
+.declaration-steps.steps-count-9 .step-2 { width: 107px; }
+.declaration-steps.steps-count-9 .step-3 { width: 107px; }
+.declaration-steps.steps-count-9 .step-4 { width: 107px; }
+.declaration-steps.steps-count-9 .step-5 { width: 107px; }
+.declaration-steps.steps-count-9 .step-6 { width: 107px; }
+.declaration-steps.steps-count-9 .step-7 { width: 107px; }
+.declaration-steps.steps-count-9 .step-8 { width: 107px; }
+.declaration-steps.steps-count-9 .step-9 { width: 107px; }
+
+
+.declaration-steps.steps-count-8 .step-1 { width: 120px; }
+.declaration-steps.steps-count-8 .step-2 { width: 120px; }
+.declaration-steps.steps-count-8 .step-3 { width: 120px; }
+.declaration-steps.steps-count-8 .step-4 { width: 120px; }
+.declaration-steps.steps-count-8 .step-5 { width: 120px; }
+.declaration-steps.steps-count-8 .step-6 { width: 120px; }
+.declaration-steps.steps-count-8 .step-7 { width: 120px; }
+.declaration-steps.steps-count-8 .step-8 { width: 120px; }
+
+.declaration-steps.steps-count-7 .step-1 { width: 137px; }
+.declaration-steps.steps-count-7 .step-2 { width: 137px; }
+.declaration-steps.steps-count-7 .step-3 { width: 137px; }
+.declaration-steps.steps-count-7 .step-4 { width: 137px; }
+.declaration-steps.steps-count-7 .step-5 { width: 137px; }
+.declaration-steps.steps-count-7 .step-6 { width: 137px; }
+.declaration-steps.steps-count-7 .step-7 { width: 138px; }
+
+.declaration-steps.steps-count-6 .step-1 { width: 160px; }
+.declaration-steps.steps-count-6 .step-2 { width: 160px; }
+.declaration-steps.steps-count-6 .step-3 { width: 160px; }
+.declaration-steps.steps-count-6 .step-4 { width: 160px; }
+.declaration-steps.steps-count-6 .step-5 { width: 160px; }
+.declaration-steps.steps-count-6 .step-6 { width: 160px; }
+
+.declaration-steps.steps-count-5 .step-1 { width: 192px; }
+.declaration-steps.steps-count-5 .step-2 { width: 192px; }
+.declaration-steps.steps-count-5 .step-3 { width: 192px; }
+.declaration-steps.steps-count-5 .step-4 { width: 192px; }
+.declaration-steps.steps-count-5 .step-5 { width: 192px; }
+
+.declaration-steps.steps-count-4 .step-1 { width: 230px; }
+.declaration-steps.steps-count-4 .step-2 { width: 233px; }
+.declaration-steps.steps-count-4 .step-3 { width: 227px; }
+.declaration-steps.steps-count-4 .step-4 { width: 270px; }
+
+.declaration-steps.steps-count-3 .step-1 { width: 332px; }
+.declaration-steps.steps-count-3 .step-2 { width: 313px; }
+.declaration-steps.steps-count-3 .step-3 { width: 315px; }
+
+.declaration-steps.steps-count-2 .step-1 { width: 480px; }
+.declaration-steps.steps-count-2 .step-2 { width: 480px; }
+
+
+.declaration-steps.current-step-1 .step-1,
+.declaration-steps.current-step-2 .step-2,
+.declaration-steps.current-step-3 .step-3,
+.declaration-steps.current-step-4 .step-4,
+.declaration-steps.current-step-5 .step-5,
+.declaration-steps.current-step-6 .step-6,
+.declaration-steps.current-step-7 .step-7 { color: #ffffff; text-shadow: none; }
+
+
+.form-ntd { padding:9px; border:1px solid #dfe2ec; border-top:0; }
+.form-ntd .bold { font-weight: bold; }
+.form-ntd .super_bold { font-weight: bolder; }
+.form-ntd .no-margin {margin:0}
+.form-ntd .altern-msg {background:#EFF0F5; color: #666666; font-size: 12px; font-weight: bold; padding:8px; margin-bottom: 10px;}
+
+.form-ntd table { width: 100%; margin-bottom: 10px; }
+.form-ntd table.buttons-container { margin-bottom:0; }
+
+.form-ntd table tr td { border: 1px solid #475779; padding: 7px; font-size: 12px; vertical-align: middle; }
+
+.formulairetype-annexes-box { overflow:hidden; padding:10px;margin-bottom:10px; }
+.formulairetype-annexes-box .elt-wrapper { overflow:hidden; float:left; margin-right:30px; }
+.formulairetype-annexes-box .elt-wrapper div.elt label.elt { float:left; color: #666666; margin-right: 10px; cursor: pointer; font-weight:bold; line-height:30px;}
+.formulairetype-annexes-box .elt-wrapper div.elt-control { float:left; color: #465779; margin-right: 10px; cursor: pointer; }
+.formulairetype-annexes-box .ntd-button { width:100px; float:left; }
+.formulairetype-annexes-box .input { vertical-align:middle; }
+.formulairetype-annexes-box .click-label { float: left; line-height: 30px; }
+
+.formulaire-page .elt-radio .elt-options .click-label { display: block; line-height: 1.3em; overflow: hidden; margin:10px 0; cursor:pointer; }
+.formulaire-page .elt-radio .elt-options .click-label input { float: left; margin-right: 5px; width: auto; }
+.formulaire-header .row { overflow:hidden; padding:10px; }
+.formulaire-header .ftype-code { float:right; }
+.formulaire-header .millesime { float:left; }
+.formulaire-header .big-text { text-transform:uppercase; }
+.big-text  { color: #002E5F; font-family: Georgia; font-size: 1.8em; font-weight: normal; line-height: 1.5em; margin: 0; }
+.ftype-title { text-align:center;}
+
+.align-left {
+    text-align: left !important;
+}

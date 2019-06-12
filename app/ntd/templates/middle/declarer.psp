@@ -1,0 +1,81 @@
+<div class="tabs-holder" data-on-load="new ntd.middle.tabs(this)">
+  <ul class="tabs-nav" data-tab-nav="taxes">
+    <?php foreach ($services as $service): ?>
+      <li>
+        <a href="#<?= String::urlify($service->getProperty('btn_label')) ?>"
+           class="<?= $service->getId() == $service_selected_id ? 'active' : '' ?> <?= !in_array($service->getId(), $available_service_ids) ? 'disabled' : '' ?>">
+          <span>
+            <?= !in_array($service->getId(), $available_service_ids) ? '' : '' ?>
+            <?= $service->getProperty('btn_label') ?>
+          </span>
+        </a>
+      </li>
+    <?php endforeach; ?>
+  </ul>
+
+  <div class="tabs__content" data-tabs="taxes">
+
+    <?php foreach ($services as $service): ?>
+      <div id="<?= String::urlify($service->getProperty('btn_label')) ?>"
+           class="tab <?= $service->getId() == $service_selected_id ? 'selected' : '' ?>">
+        <?php if (!in_array($service->getId(), $available_service_ids)): ?>
+          <div class="flashinfo clear-float margin-bottom">
+            <p><a class="btn btn--color-red float-right"
+                  href="/middle/services.purchasables">Souscrire au service</a>
+              Vous n'avez actuellement pas accès à ces déclarations.<br>
+              Souscrivez au service <?= $service->getProperty('title') ?> de NetDeclaration.
+            </p>
+          </div>
+        <?php endif; ?>
+        <table class="table table--ntd table--ntd--even-odd">
+          <tbody>
+          <?php foreach ($services_dectypes[$service->getId()] as $dectype): ?>
+            <tr>
+              <td class="table-cell--w65">
+
+                <p class="font-weight-bold  font--darkblue">
+                  <?= $dectype->getProperty('title') ?>
+                  <a href="javascript:void(0)"
+                     class="fa fa-chevron-circle-down"
+                     style="font-size: 14px"
+                     title="Afficher la liste des formulaires associés"
+                     onclick="$(this).up().next('.declaration__formulaires-list').toggle()"></a>
+                </p>
+                <p><?= $dectype->getProperty('description') ?></p>
+                <small class="declaration__formulaires-list" style="display:none">
+                  <?=implode(', ', $dectype->getFormulairetypes(array('order' => array('position' => 'ASC')))->asSet('code'))?>
+                </small>
+
+              </td>
+              <td class="table-cell--vt">
+                <?= $dectype->getMillesime()->name ?>
+              </td>
+              <?php if (in_array($service->getId(), $available_service_ids)): ?>
+                <td class="table-cell--vt">
+                  <a class="color--green"
+                     href="/account/ntd/account.declaration.edit/-/dectype_id/<?= $dectype->getId() ?>/adherent_id/<?= $_current_adherent->getId() ?>"
+                     onclick="ntd.displayLoader(this)">
+                    <span class="text-spin">Déclarer</span>
+                    <i class="fa fa-spinner fa-spin"></i>
+                  </a>
+                </td>
+              <?php endif; ?>
+            </tr>
+          <?php endforeach; ?>
+          </tbody>
+
+        </table>
+        <?php if (!in_array($service->getId(), $available_service_ids)): ?>
+          <div class="flashinfo clear-float margin-bottom">
+            <p><a class="btn btn--color-red float-right"
+                  href="/middle/services.purchasables">Souscrire au service</a>
+              Vous n'avez actuellement pas accès à ces déclarations.<br>
+              Souscrivez au service <?= $service->getProperty('title') ?> de NetDeclaration.
+            </p>
+          </div>
+        <?php endif; ?>
+      </div>
+    <?php endforeach; ?>
+  </div>
+
+</div>

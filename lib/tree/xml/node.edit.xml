@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<fieldset label="$fieldset_label">
+<notebook>
+
+<page label="définition">
+ <form>
+  <elem field="name" label="nom" />
+  <hbox>
+   <vbox width="40%">
+    <elem field="code" />
+   </vbox>
+   <vbox>
+    <elem field="item" models="$models" built="$has_model_id" />
+   </vbox>
+  </hbox>
+  <elem field="flags" />
+  <elem field="value" label="valeur" />
+  <elem field="url" />
+  <elem field="description" rows="4" />
+  <launcher />
+ </form>
+</page>
+
+<page label="opérations" built="$is_loaded">
+ <hbox>
+  <vbox width="26%">
+   <box label="actions">
+    <link icon="details" />
+    <link icon="duplicate" />
+   </box>
+  </vbox>
+  <vbox><deck /></vbox>
+ </hbox> 
+</page>
+
+</notebook>
+</fieldset>
+
+</kwo-interface>

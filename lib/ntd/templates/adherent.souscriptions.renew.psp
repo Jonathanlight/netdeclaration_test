@@ -1,0 +1,8 @@
+<?php foreach ($rapport['days'] as $day => $rapport_days): ?>
+<strong><?=H::date($day)?></strong>
+<?=$rapport_days['facture'] ?>
+<?php foreach ($rapport_days['souscriptions'] as $souscription_id => $rapport_souscription): ?>
+<?=$rapport_souscription['fatal'] ?>
+<?php endforeach; ?>
+<?php endforeach; ?>
+

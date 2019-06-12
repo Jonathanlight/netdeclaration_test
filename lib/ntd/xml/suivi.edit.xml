@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+  <fieldset>
+
+    <notebook>
+      <page>
+        <form>
+          <hbox>
+            <vbox>
+              <box label="Cache">
+                <elem field="adherent_declarant_id"/>
+                <elem field="adherent_emetteur_id"/>
+                <elem field="flags"/>
+              </box>
+              <elem field="declaration_id" label="Déclaration lié"/>
+            </vbox>
+            <vbox>
+              <box label="Détails du suivi">
+                <elem field="ref_message"/>
+                <elem field="intervenant"/>
+                <elem field="message"/>
+                <elem field="origine"/>
+                <elem field="date_depot"/>
+                <elem field="sens"/>
+                <elem field="no_interchange"/>
+                <elem field="no_message"/>
+              </box>
+
+
+              <box label="Déclaration détails">
+                <elem field="type_doc"/>
+                <elem field="type_mess"/>
+                <elem field="type_decl"/>
+                <elem field="liste_formulaire"/>
+                <elem field="debut_periode"/>
+                <elem field="fin_periode"/>
+              </box>
+
+            </vbox>
+            <vbox>
+              <box label="Emetteur">
+                <elem field="siret_emetteur"/>
+              </box>
+              <box label="Déclarant">
+                <elem field="siret_decl"/>
+                <elem field="nom_decl"/>
+              </box>
+              <box label="Destinataires">
+                <elem field="list_dest"/>
+              </box>
+            </vbox>
+          </hbox>
+          <launcher/>
+        </form>
+      </page>
+      <page>
+        <hbox>
+          <vbox width="150px">
+            <box label="actions">
+              <link icon="details"/>
+              <link icon="hasmany" model="destinataire" />
+            </box>
+          </vbox>
+          <vbox>
+            <deck/>
+          </vbox>
+        </hbox>
+      </page>
+    </notebook>
+
+  </fieldset>
+</kwo-interface>

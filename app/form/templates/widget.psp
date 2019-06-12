@@ -1,0 +1,57 @@
+
+<!-- FORM[<?=$form->name?>]-->
+
+<div class="kwo-form<?=$form->style ? ' '.$form->style : ''?>">
+
+ <h2><?=ucfirst($form->title)?></h2>
+
+<div id="kwo-form-<?=$form->id?>-fields" class="content">
+
+<?php if (strlen($form->header) > 1): ?>
+  <p class="header"><?=nl2br($form->header)?></p>
+<?php endif; ?>
+
+<div style="display:none" id="kwo-form-<?=$form->id?>-error" class="error"></div>
+
+<?php
+$onsubmit = empty($form->onsubmit) ? 'Kwo.Form.onSubmit(this)' : $form->onsubmit;
+?>
+
+<form id="kwo-form-<?=$form->id?>" onsubmit="<?=$onsubmit?>; return false;">
+ <input type="hidden" name="itemid" value="<?=$form->id?>" />
+ <input type="hidden" id="kwo-form-<?=$form->id?>-errors" value="0" />
+ <div class="fields">
+  <?=$form->asHtml()?>
+ </div>
+
+<table class="fixed action"><tr>
+ <td class="left">
+ <p class="footer">
+  <?=nl2br($form->footer)?>
+ </p>
+ </td>
+ <td class="center">
+  <img src="/<?=APP_PATH?>/core/pix/throbber.gif"
+       style="display:none;" id="kwo-form-throbber-<?=$form->id?>" />
+ </td>
+ <td class="right">
+<?php if ($form->hasFlag(Form::FLAG_CAPTCHA)): ?>
+  <?=W::captcha()?>
+<?php endif; ?>
+  <input type="submit" class="button" value="<?=empty($form->button) ? l('send') : $form->button?>" />
+ </td>
+</tr></table>
+
+</form>
+
+</div>
+
+<?php if ($form->hasFlag(Form::FLAG_ACK_SHOW)): ?>
+  <div style="display:none" id="kwo-form-<?=$form->id?>-confirmation" class="confirmation">
+   <?=nl2br($form->ack_content)?>
+  </div>
+<?php endif; ?>
+
+</div>
+
+<!-- FORM[/<?=$form->name?>]-->

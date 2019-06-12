@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="id desc" >
+ <filters>
+  <filter name="id" />
+  <filter name="destinataire" type="select" options="Suivipayant::$destinataires" label="Destinataire" />
+  <filter name="edimessagetype_id" />
+  <filter name="adherent_type" type="radio" options="Adherent::$types" label="Type adherent" />
+  <filter name="sens" type="radio" options="Suivipayant::$sens" label="Sens"/>
+  <filter name="type_doc" label="Type document" options="Suivipayant::$types_doc" />
+ </filters>
+ <cols>
+  <col name="edimessagetype_name" label="Message" />
+  <col name="destinataire" label="Destinataire" />
+  <col name="adherent_type" label="Type adherent" />
+  <col name="type_doc" label="Type document"/>
+  <col name="sens"  label="Sens"/>
+ </cols>
+</finder>
+
+</kwo-interface>

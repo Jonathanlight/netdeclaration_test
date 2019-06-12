@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="app desc">
+ <filters>
+  <filter name="id" />
+  <filter name="name" />
+  <filter name="|%%|cache" label="valeur" />
+  <filter name="app" />
+ </filters>
+ <cols>
+  <col name="name" width="280px" />
+  <col name="app" />
+  <col name="cache" label="valeur - FR" />
+  <col name="locales" />
+ </cols>
+ <actions>
+  <action name="destroy" label="supprimer"
+          confirm="êtes vous sûr de vouloir procéder à la suppression ?" />
+ </actions>
+ <orders>
+  <order cols="name asc" label="nom" />
+  <order cols="app desc, name asc" label="app" />
+ </orders>
+</finder>
+
+</kwo-interface>

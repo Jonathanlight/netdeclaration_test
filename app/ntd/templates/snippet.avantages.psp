@@ -1,0 +1,9 @@
+<?php $snippet_avantages = Snippet::getInstance('global.avantages'); ?>
+<?= H::inc('_aside__title', array('label' =>$snippet_avantages->getProperty('title'),
+                                  'icon' => 'fa-thumbs-o-up',
+                                  'color' => 'blue')) ?>
+<div class="wysiwyg  wysiwyg--aside"><?=$snippet_avantages->getProperty('content')?></div>
+<a href="<?=NtdFrontManager::route('signup')?>" class="btn btn--color-red btn--big">Adhérer au service</a>
+<div class="logo-edi">
+  <img src="/app/ntd/pix/general/logo_partenaire_edi.png" alt="Partenaire edi - Logo" >
+</div>

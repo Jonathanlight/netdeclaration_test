@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+ <notebook>
+
+  <page>
+   <finder/>
+  </page>
+
+  <page label="opérations">
+   <hbox>
+    <vbox width="250px">
+     <box label="actions">
+      <link icon="export" label="Exporter les factures" model="facture" action="$('export_factures-box').raise()" />
+      <link icon="export" label="Exporter Chèques" action="$('remise_cheque-box').raise()" />
+      <link icon="export" label="EBP - Exporter Ecritures" action="$('export_ecriture-box').raise()" />
+      <link icon="export" label="EBP - Exporter Comptes" action="$('export_comptes-box').raise()" />
+      <link icon="export" label="Exporter les factures en PDF" model="facture" action="$('export_pdf_factures-box').raise()" />
+     </box>
+    </vbox>
+    <vbox>
+     <deck>
+      <box label="Export des remises de chèques" id="remise_cheque-box">
+       <form>
+        <hbox>
+         <vbox width="300px">
+          <elem type="date" name="date" label="Date" value="Date::today()"/>
+          <launcher>
+           <button icon="ok" tooltip="Exporter les remises de chèques" action="Kwo.F('facture').go('remise_cheque', this, {target:'blank'})"/>
+          </launcher>
+         </vbox>
+         <vbox>
+         </vbox>
+        </hbox>
+       </form>
+      </box>
+      <box label="EBP - Export des écritures" id="export_ecriture-box">
+       <form>
+        <hbox>
+         <vbox width="300px">
+          <elem type="date" name="begin_at" label="Date de début" value="Date::today()"/>
+          <elem type="date" name="end_at" label="Date de fin" value="Date::today()"/>
+          <elem type="yesno" name="all" label="Export de test (ne marque pas les factures comme 'exportée')" value="1"/>
+          <elem type="checkbox" name="export_types" label="Type d'export" options="ExportEBP::$export_ecritures_types" checkall="true"/>
+          <launcher>
+           <button icon="store" tooltip="Exporter les Ecritures pour EBP" action=".go('ebp.ecritures.export', this)"/>
+          </launcher>
+         </vbox>
+         <vbox>
+         </vbox>
+        </hbox>
+       </form>
+      </box>
+      <box label="EBP - Export des comptes" id="export_comptes-box">
+       <form>
+        <hbox>
+         <vbox width="300px">
+          <elem type="date" name="begin_at" label="Date de début" value="Date::today()"/>
+          <elem type="date" name="end_at" label="Date de fin" value="Date::today()"/>
+          <launcher>
+           <button icon="store" tooltip="Exporter les Comptes pour EBP" action=".go('ebp.comptes.export', this)"/>
+          </launcher>
+         </vbox>
+         <vbox>
+         </vbox>
+        </hbox>
+       </form>
+      </box>
+      <box label="EBP - Export des factures" id="export_factures-box">
+       <form>
+        <hbox>
+         <vbox width="300px">
+          <elem type="date" name="begin_at" label="Date de début" value="Date::today()"/>
+          <elem type="date" name="end_at" label="Date de fin" value="Date::today()"/>
+          <launcher>
+           <button icon="store" tooltip="Exporter les Factures" action=".go('export', this)"/>
+          </launcher>
+         </vbox>
+        </hbox>
+       </form>
+       <form>
+        <hbox>
+         <vbox>
+          <elem type="date" name="paid_begin_at" label="Date de paiement début" value="Date::today()"/>
+          <elem type="date" name="paid_end_at" label="Date de paiement fin" value="Date::today()"/>
+          <launcher>
+           <button icon="store" tooltip="Exporter les Factures" action=".go('export', this)"/>
+          </launcher>
+         </vbox>
+        </hbox>
+       </form>
+      </box>
+      <box label="Export des factures en PDF" id="export_pdf_factures-box">
+       <form>
+        <hbox>
+         <vbox width="300px">
+          <elem type="date" name="begin_at" label="Date de début" value="Date::today()"/>
+          <elem type="date" name="end_at" label="Date de fin" value="Date::today()"/>
+          <elem type="select" name="status" label="Statuts voulus" options="Facture::$bo_export_statuses" />
+          <launcher>
+           <button icon="store" tooltip="Exporter les Factures" action=".go('export.pdf', this)"/>
+          </launcher>
+         </vbox>
+         <vbox>
+         </vbox>
+        </hbox>
+       </form>
+      </box>
+     </deck>
+    </vbox>
+   </hbox>
+  </page>
+
+ </notebook>
+
+</kwo-interface>

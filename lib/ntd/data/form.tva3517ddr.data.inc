@@ -1,0 +1,87 @@
+<?php
+
+$operations = array(
+  'data-addition-ac' => array('func' => 'data-addition',
+                              'opt' => array('results' => array('AC'),
+                                             'operands' => array('AA', 'AB'))),
+  'data-soustraction-ae' => array('func' => 'data-soustraction',
+                                  'opt' => array('results' => array('AE'),
+                                                 'operands' => array('AD'),
+                                                 'value' => 'AC'))
+);
+
+
+$form["tva3517ddr"] = array(
+
+  'AA' => array('type' => 'number',
+                'operations' => array($operations['data-addition-ac'],
+                array('func' => 'data-paiement_3517ddr')),
+  ),
+  'AB' => array('type' => 'number',
+                'operations' => array($operations['data-addition-ac']),
+  ),
+  'AC' => array('type' => 'number',
+                'operations' => array($operations['data-soustraction-ae']),
+  ),
+  'AD' => array('type' => 'number',
+                'operations' => array($operations['data-soustraction-ae'],
+                                      array('func' => 'data-must_be_strictly_positive'),
+                                      array('func' => 'data-must_be_inferior_or_egal', 'opt' => array('field' => 'AC'))),
+  ),
+  'AE' => array('type' => 'number',
+                'operations' => array(array('func' => 'data-integrity_3517ddr_ae')),
+  ),
+  'AF1' => array('length' => 35,
+                'required' => true
+  ),
+  'AF2' => array('length' => 35,
+  ),
+  'AG' => array('type' => 'number',
+                'operations' => array(array('func' => 'data-must_be_strictly_positive'))
+  ),
+  'AH' => array('type' => 'checkbox',
+                'value' => '1',
+                'operations' => array(array('func' => 'data-integrity_3517ddr_ah_aj')),
+  ),
+  'AJ' => array('type' => 'checkbox',
+                'value' => '1',
+                'operations' => array(array('func' => 'data-integrity_3517ddr_ah_aj')),
+  ),
+  'AK1' => array('type' => 'alphabetic',
+                 'length' => 27,
+                 'operations' => array(array('func' => 'data-check_iban')),
+  ),
+  'AK2' => array('type' => 'alphabetic',
+                 'length' => 11,
+                 'operations' => array(array('func' => 'data-check_bic')),
+  ),
+  'AK3' => array('type' => '',
+                 'length' => 35,
+  ),
+  'AK4' => array('type' => '',
+                 'length' => 35,
+  ),
+  'AF3' => array('type' => '',
+                'length' => 35,
+  ),
+  'AL' => array('type' => 'comments',
+                'length' => 2560
+  ),
+  'AL1' => array('type' => 'hidden',
+                 'length' => 512,
+  ),
+  'AL2' => array('type' => 'hidden',
+                 'length' => 512,
+  ),
+  'AL3' => array('type' => 'hidden',
+                 'length' => 512,
+  ),
+  'AL4' => array('type' => 'hidden',
+                 'length' => 512,
+  ),
+  'AL5' => array('type' => 'hidden',
+                 'length' => 512,
+  )
+);
+
+  

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+ <fieldset>
+
+  <notebook>
+   <page>
+    <form>
+     <hbox>
+      <vbox>
+        <elem field="name"/>
+        <elem field="status"/>
+        <elem field="type" label="Type" />
+        <elem field="adherent_types" options="Adherent::$types" type="checkbox" label="Adhérents associés"/>
+       <elem field="servicetype_id" label="Catégorie de service" precision="accès EDI, accès E-Liasse, ..." />
+       <elem field="service_id" label="Service requis" precision="accès E-Liasse, ..." />
+
+
+       <elem field="flags" cols="1" />
+       <elem field="position_catalogue" label="Position dans la page Services (ordre croissant)" />
+
+      </vbox>
+      <vbox>
+
+       <elem field="code" label="ancien code" built="false"/>
+       <elem type="relations" models="suivipayant" label="Suivis Payants" height="500px" />
+      </vbox>
+      <vbox>
+       <elem field="document_code" label="Type de document associé" options="Formulairetype::$document_codes" addfirst="-"
+               built="false"/>
+        <elem type="relations" models="dectype" label="Type de Déclarations associées" built="$is_service_formulaire" />
+
+       <elem field="flags_export_adherent"
+             options="Service::$flags_export_adherent"
+             type="checkbox"
+             label="Flags Service EDI"
+             precision="Utilisé dans l'export des adhérents"
+             cols="4"/>
+
+       <elem field="flags_export_adherent_reception"
+             options="Service::$flags_export_adherent_reception"
+             type="checkbox"
+             label="Flags Reception EDI"
+             precision="Utilisé dans l'export des adhérents pour les services EDI autorisés en réception"
+             cols="4"/>
+
+       <elem field="type_doc_edi"
+             options="Service::$type_doc_edis_code"
+             addfirst="-"
+             label="Type Doc EDI"
+             precision="Utilisé pour faire le comptage des Suivis EDI"
+             type="checkbox" built="false" />
+
+      </vbox>
+     </hbox>
+     <launcher/>
+    </form>
+   </page>
+    <page label="Contenu de la Page">
+      <form>
+        <hbox>
+          <vbox>
+            <box localized="true">
+              <elem field="title" label="Titre" />
+              <elem field="subtitle" label="Sous-titre" />
+              <elem field="btn_label" label="Titre du bouton (page nouvelle déclaration)" />
+              <elem field="description" label="Description" rows="3" />
+              <elem field="content" rows="20" mode="rich" label="Contenu HTML de la page associée" />
+              <elem field="aside_content" rows="5" label="Boîte 'À retenir'" />
+            </box>
+          </vbox>
+        </hbox>
+        <launcher/>
+      </form>
+    </page>
+   <page>
+    <hbox>
+     <vbox width="150px">
+      <box label="actions">
+       <link icon="details"/>
+       <link icon="hasmany" model="tarif" />
+      </box>
+     </vbox>
+     <vbox>
+      <deck/>
+     </vbox>
+    </hbox>
+   </page>
+  </notebook>
+
+ </fieldset>
+</kwo-interface>

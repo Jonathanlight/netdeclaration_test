@@ -1,0 +1,49 @@
+<div class="dialog-content" >
+  <h1>Aide</h1>
+  <br/>
+  <div style="overflow-x: hidden; overflow-y: auto; height:300px">
+    <h2>Les pages</h2>
+    <div>
+      <p>
+        Description : la page est un élément contenant un ensemble de tables. 
+        Il suffit de cliquer sur <img src="/app/declaration/pix/page_add.png" width="20px" /> afin d'ajouter une page. 
+      </p>
+    </div>
+    <br/>
+    <h2>Les tables</h2>
+    <div>
+      <p>
+        Description : la table est un élément contenant un ensemble cellules et de modèles. 
+        Il suffit de cliquer sur <img src="/app/declaration/pix/table_add.png" width="20px" /> afin d'ajouter une table dans une page. 
+        Note : La sélection d'un page est obligatoire pour l'ajout d'une table.
+        <u>Création d'une table :</u> <br/>
+        <u>Suppression d'une table :</u> <br/>
+        <u>Duplication d'une ligne :</u> <br/>
+        <u>Suppression d'une ligne :</u> <br/>
+        <u>Copie d'une ou de plusieurs lignes :</u> <br/>
+        <u>Fusion de cellules :</u> <br/>
+        <u>Division d'une cellule :</u> <br/>
+      </p>
+    </div>
+    <br/>
+    <h2>Les modèles</h2>
+    <div>
+      <p>
+        Description : le modèle est un . 
+        Il suffit de cliquer sur <img src="/app/declaration/pix/model_add.png" width="20px" /> afin d'ajouter un modèle à la librairie des modèles.<br/>
+        <u>Création d'un modèle :</u> <br/>
+        <u>Modification d'un modèle :</u> <br/>
+        <u>Suppression d'un modèle :</u> <br/>
+        <u>Insertion d'un modèle :</u> <br/>
+      </p>
+    </div>
+    <br/>
+    <h2>Astuces</h2>
+    <div>
+      <p>
+        <u>Annuler une modification :</u> Ctrl+Z <br/>
+        <u>Rétablir une modification  :</u> Ctrl+Y <br/>
+      </p>
+    </div>
+  </div>
+</div>

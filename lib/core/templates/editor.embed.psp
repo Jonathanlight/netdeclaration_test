@@ -1,0 +1,12 @@
+<h1>Elément multimédia</h1>
+<div>
+ <form>
+  <?=Elt::text(array('rows' => 21,
+                     'style' => 'width:100%;'))?>
+  <div style="text-align:right; margin-top:6px;">
+    <?=Elt::button(array('label' => 'insérer le code HTML',
+                         'type' => 'button'))?>
+  </div>
+ </form>
+</div>
+

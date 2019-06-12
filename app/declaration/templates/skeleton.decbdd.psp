@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DecBdd</title>
+
+  <!-- Bootstrap -->
+  <link href="/app/declaration/styles/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="/app/declaration/scripts/angular.min.js"></script>
+  <script type="text/javascript" src="/app/declaration/scripts/angular-ui-router.min.js"></script>
+  <script type="text/javascript" src="/app/declaration/scripts/vendor/diff_match_patch.js"></script>
+  <script type="text/javascript" src="/app/declaration/scripts/vendor/difflib.js"></script>
+  <script type="text/javascript" src="/app/declaration/scripts/vendor/diffview.js"></script>
+  <script type="text/javascript" src="/app/declaration/scripts/differ.js"></script>
+
+</head>
+<body ng-app="differModule" ng-controller="mainController">
+
+<nav class="navbar navbar-default" ng-controller="MenuController" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">DecBdd</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+        <li ng-repeat="model in models" ui-sref-active="active">
+          <a ui-sref="model({model: model.name})">
+            {{model.name}}
+            <span class="badge bg-danger"
+                  ng-show="model.count > 0">{{model.count}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>
+<div ui-view class="container-fluid"></div>
+
+<div class="modal fade" id="modal--main" tabindex="-1" role="dialog" aria-labelledby="ModalMainLabel"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="ModalMainLabel"></h4>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/app/declaration/scripts/bootstrap.min.js"></script>
+</body>
+</html>

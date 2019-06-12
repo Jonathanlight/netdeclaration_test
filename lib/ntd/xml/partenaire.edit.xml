@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+<fieldset>
+
+<notebook>
+<page>
+ <form>
+  <hbox>
+   <vbox>
+    <elem field="name" />
+    <elem field="code" />
+    <elem field="status" />
+    <elem field="commission" label="commission" precision="en %" />
+   </vbox>
+   <vbox>
+     <elem type="relations" model="service" label="services liés" />
+   </vbox>
+  </hbox>
+  <launcher/>
+ </form>
+</page>
+<page>
+ <hbox>
+  <vbox width="150px">
+   <box label="actions">
+    <link icon="details" />
+   </box>
+  </vbox>
+  <vbox><deck /></vbox>
+ </hbox> 
+</page>
+</notebook>
+
+</fieldset>
+</kwo-interface>

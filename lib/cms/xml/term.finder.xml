@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kwo-interface>
+ <finder order="letter asc, name asc">
+  <filters>
+   <filter name="id" />
+   <filter name="name" />
+  </filters>
+  <cols>
+   <col name="letter" width="50px" label="lettre" />
+   <col name="name" />
+  </cols>
+ </finder>
+</kwo-interface>

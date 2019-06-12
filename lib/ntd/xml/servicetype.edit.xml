@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+<fieldset>
+
+<notebook>
+<page>
+ <form>
+  <hbox>
+   <vbox>
+     <elem field="name" />
+     <elem field="code" />
+     <elem field="locales" />
+     <elem field="image" />
+     <elem field="status" />
+   </vbox>
+   <vbox localized="true">
+     <elem field="title" label="Titre" />
+     <elem field="description" label="Description" rows="3" />
+     <elem field="content" rows="20" mode="rich" label="Contenu HTML de la page associée" />
+     <elem field="aside_content" rows="5" label="Boîte 'À retenir'" />
+   </vbox>
+  </hbox>
+  <launcher/>
+ </form>
+</page>
+<page>
+ <hbox>
+  <vbox width="150px">
+   <box label="actions">
+    <link icon="details" />
+   </box>
+  </vbox>
+  <vbox><deck /></vbox>
+ </hbox> 
+</page>
+</notebook>
+
+</fieldset>
+</kwo-interface>

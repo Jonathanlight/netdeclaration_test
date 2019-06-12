@@ -1,0 +1,382 @@
+<div class="formulaire-page page-form" data-label="TVA 3519 Partie I">
+<table id="ancre-1">
+
+<tr class="tab-title">
+  <th class="maintitle" colspan="10">I. Coordonnées de Représentant Fiscal ou du Liquidateur judiciaire</th>
+</tr>
+
+<tr class="tab-title">
+  <th class="subtitle" colspan="4">Adresse de correspondance ou Nom, prénoms ou dénomination et adresse du représentant fiscal ou du liquidateur judiciaire</th>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3"><label for="tva_3519_dc1">Nom</label></td>
+  <td class="input input_35">
+    <div class="line_impot">100250</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC1', 'value' => $tva3519_20170101['DC1']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3"><label for="tva_3519_dc2">Qualité</label></td>
+  <td class="input input_35">
+    <div class="line_impot">100251</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC2', 'value' => $tva3519_20170101['DC2']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_dc3">Forme juridique ou titre</label>
+  </td>
+  <td class="input input_35">
+    <div class="line_impot">100252</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC3',
+                                                        'value' => $tva3519_20170101['DC3']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_dc4">N°, Type, nom voie</label>
+  </td>
+  <td class="input input_35">
+    <div class="line_impot">100253</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC4',
+                                                        'value' => $tva3519_20170101['DC4']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_dc5">Complément distribution</label>
+  </td>
+  <td class="input input_35">
+    <div class="line_impot">100254</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC5',
+                                                        'value' => $tva3519_20170101['DC5']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_dc6">Localité</label>
+  </td>
+  <td class="input input_35">
+    <div class="line_impot">100255</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC6',
+                                                        'value' => $tva3519_20170101['DC6']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_dc7">Code postal</label>
+  </td>
+  <td class="input input_10">
+    <div class="line_impot">100256</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC7',
+                                                        'value' => $tva3519_20170101['DC7']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3"><label for="tva_3519_dc8">Pays</label></td>
+  <td class="input input_10">
+    <div class="line_impot">100257</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC8', 'value' => $tva3519_20170101['DC8']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_dc9">Tél :</label>
+  </td>
+  <td class="input input_70">
+    <div class="line_impot">100258</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC9',
+                                                        'value' => $tva3519_20170101['DC9']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_dc10">Email :</label>
+  </td>
+  <td class="input input_70">
+    <div class="line_impot">100259</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC10',
+                                                        'value' => $tva3519_20170101['DC10']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_dd">Entreprise française</label>
+  </td>
+  <td class="input">
+    <div class="line_impot">100230</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DD',
+                                                        'value' => $tva3519_20170101['DD']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_de">Entreprise non établie en France n'ayant pas l'obligation de désigner un représentant fiscal</label>
+  </td>
+  <td class="input">
+    <div class="line_impot">100231</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DE',
+                                                        'value' => $tva3519_20170101['DE']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_df">Entreprise non établie en France ayant l'obligation de désigner un réprésentant fiscale</label>
+  </td>
+  <td class="input">
+    <div class="line_impot">100232</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DF',
+                                                        'value' => $tva3519_20170101['DF']))?>
+  </td>
+</tr>
+</table>
+
+<table>
+<tr class="tab-title">
+  <th class="maintitle" colspan="10">II. Demande de Remboursement</th>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_dn"><strong>Remboursement demandé</strong></label>
+  </td>
+  <td class="input" style="padding:0;">
+    <table style="padding:0; margin:0;">
+      <tr>
+        <td class="libelle" style="border:none; border-right:1px solid #7989aa"><strong>R</strong></td>
+        <td style="border:none;">
+          <div class="line_impot no-print" style="text-align: center; background: rgb(239, 240, 245) none repeat scroll 0% 0%; margin: -7px -7px 7px; color: rgb(102, 102, 102); height: 22px; padding-top: 10px;">
+            100238
+          </div>
+          <div class="line_impot print-only">
+            100238
+          </div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DN',
+                                                              'value' => $tva3519_20170101['DN']))?>
+        </td>
+      </tr>
+    </table>
+  </td>
+</tr>
+
+<tr class="tab-title">
+  <th class="subtitle" colspan="4">Le soussigné (titre, nom prénom, qualité) du demandeur</th>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_dg1">Titre</label>
+  </td>
+  <td class="input">
+    <div class="line_impot">100229</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DG1',
+                                                        'value' => $tva3519_20170101['DG1']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_dg2">Nom prénom</label>
+  </td>
+  <td class="input">
+    <div class="line_impot">100178</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DG2',
+                                                        'value' => $tva3519_20170101['DG2']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_dg3">Qualité</label>
+  </td>
+  <td class="input">
+    <div class="line_impot">100179</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DG3',
+                                                        'value' => $tva3519_20170101['DG3']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_dg4">A (lieu de la demande)</label>
+  </td>
+  <td class="input">
+    <div class="line_impot">100184</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DG4',
+                                                        'value' => $tva3519_20170101['DG4']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle" colspan="3">
+    <label for="tva_3519_dh">Montant du Remboursement demandé</label>
+  </td>
+  <td class="input">
+    <div class="line_impot">100180</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DH',
+                                                        'value' => $tva3519_20170101['DH']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle">
+    <label for="tva_3519_fk">A créditer au compte désigné</label>
+  </td>
+  <td class="input">
+    <div class="line_impot">100189</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FK',
+                                                        'value' => $tva3519_20170101['FK']))?>
+  </td>
+  <td colspan="2"></td>
+</tr>
+
+<tr class="elt">
+  <td class="libelle">
+    <label for="tva_3519_fl">A imputer sur échéance future</label>
+  </td>
+  <td class="input">
+    <div class="line_impot">100186</div>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FL',
+                                                        'value' => $tva3519_20170101['FL']))?>
+  </td>
+  <td class="libelle" colspan="2">(utiliser l’imprimé papier 3516 disponible sur le portail www.impots.gouv.fr)</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="formulaire-page page-form" data-label="TVA 3519 Partie II">
+  <table id="ancre-2">
+    <tr class="tab-title">
+      <th class="maintitle" colspan="4">S’agissant d’une 1ère demande de remboursement ou de l’utilisation d’un compte financier nouveau par rapport à celui précédemment désigné pour procéder à ce type
+        d’opération, la référence du compte financier à utiliser est :
+      </th>
+    </tr>
+    <tr class="tab-title">
+      <th class="subtitle" colspan="4">Référence bancaire</th>
+    </tr>
+    <tr class="elt">
+      <td class="libelle" colspan="3"><label for="tva_3519_aa1">BIC (SEPA)</label></td>
+      <td class="input">
+        <div class="line_impot">902409</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA1', 'value' => $tva3519_20170101['AA1']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="3"><label for="tva_3519_aa2">IBAN (SEPA)</label></td>
+      <td class="input">
+        <div class="line_impot">902429</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA2', 'value' => $tva3519_20170101['AA2']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="3"><label for="tva_3519_aa3">Titulaire du compte</label></td>
+      <td class="input">
+        <div class="line_impot">100187</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA3', 'value' => $tva3519_20170101['AA3']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="3"><label for="tva_3519_aa4">Complément</label></td>
+      <td class="input">
+        <div class="line_impot">100188</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA4', 'value' => $tva3519_20170101['AA4']))?>
+      </td>
+    </tr>
+
+    <tr class="tab-title">
+      <th class="subtitle" colspan="4">Demande déposée suite à</th>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva_3519_di">Premiere demande</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">100233</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DI',
+                                                            'value' => $tva3519_20170101['DI']))?>
+      </td>
+      <td class="libelle">
+        <label for="tva_3519_dl">création le :</label>
+      <?=Elt::tooltip(array('tooltip' => 'Format jj/mm/aaaa'))?>
+      </td>
+      <td class="input">
+        <div class="line_impot">100236</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DL',
+                                                            'value' => $tva3519_20170101['DL']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva_3519_dj">Cession, cessation, décès, entrée dans un groupe TVA</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">100234</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DJ',
+                                                            'value' => $tva3519_20170101['DJ']))?>
+      </td>
+      <td class="libelle">
+        <label for="tva_3519_dm">le</label>
+      <?=Elt::tooltip(array('tooltip' => 'Format jj/mm/aaaa'))?>
+      </td>
+      <td class="input">
+        <div class="line_impot">100237</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DM',
+                                                            'value' => $tva3519_20170101['DM']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva_3519_dk">Autres</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">100235</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DK',
+                                                            'value' => $tva3519_20170101['DK']))?>
+      </td>
+      <td colspan="2"></td>
+    </tr>
+
+  </table>
+
+  <table id="ancre-4">
+    <tr class="tab-title">
+      <th class="maintitle" colspan="7">COMMENTAIRES</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th class="input" colspan="7">
+        <div class="line_impot">100447 100547 100548 100549 100550</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FJ',
+                                                            'value' => $tva3519_20170101['FJ1'].$tva3519_20170101['FJ2'].$tva3519_20170101['FJ3'].$tva3519_20170101['FJ4'].$tva3519_20170101['FJ5']))?>
+      </th>
+    </tr>
+  </table>
+  <div style="display:none">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FJ1', 'value' => $tva3519_20170101['FJ1']))?>
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FJ2', 'value' => $tva3519_20170101['FJ2']))?>
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FJ3', 'value' => $tva3519_20170101['FJ3']))?>
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FJ4', 'value' => $tva3519_20170101['FJ4']))?>
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FJ5', 'value' => $tva3519_20170101['FJ5']))?>
+  </div>
+</div>

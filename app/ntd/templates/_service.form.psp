@@ -1,0 +1,163 @@
+<form onsubmit="ntd.middle.services.onValidatePurchase(this); return false;"
+      method="post"
+      class="form--ntd"
+      action="/middle/services.purchasables.validation">
+  <input type="hidden" name="form[service_id]" value="<?= $service->getId() ?>"/>
+
+  <?php
+  $prices = array();
+  $tips = array();
+
+  if ($service->service_id > 0) {
+    $required_service = $service->getService();
+    if ($required_service->hasFlag(Service::FLAG_ONLY_ONE_BY_USER)) {
+      $opts = array('filters' => array('service_id' => $required_service->getId(),
+                                       array(
+                                         array('|IN|status' => array(Souscription::STATUS_ACTIVE, Souscription::STATUS_CANCELLING_ASKED),
+                                               '|<=|start_at' => Date::today(),
+                                               '|>=|finish_at' => Date::today()),
+                                         array('OR' => array('status' => Souscription::STATUS_WAITING_PAIEMENT))
+                                       )));
+      $main_adherent = Adherent::getCurrentPrimaryAdherent();
+      $main_adherent_souscription = $main_adherent->getSouscriptions($opts);
+      if ($main_adherent_souscription->count() < 1) {
+        $tarif_forfait = $required_service->getTarif($main_adherent, Tarif::PRICE_TYPE_FORFAIT);
+      }
+    }
+  }
+  else {
+    $tarif_forfait = $service->getTarif($_current_adherent, Tarif::PRICE_TYPE_FORFAIT);
+  }?>
+  <div class="table">
+    <div class="table-cell block--middle-service-purchasable__content--left">
+
+  <?php if ($service->code == 'GREFFE') : ?>
+    <div data-on-load="new ntd.middle.greffeEligibilityDialog(this)">
+      <a class="color--red" href="/middle/services.purchasables.eligibility/-/id/<?=$service->getId() ?>" target="_blank">
+        <span class="fa fa-warning"></span>
+        <?=c(l('greffe.service.check.eligibility')) ?>
+      </a>
+    </div>
+    <br /><br />
+  <?php endif; ?>
+
+  <?php if ($tarif_forfait) : ?>
+    <p>
+      <?php if ($service_tab == 'formulaire'): ?>
+        Forfait annuel pour
+      <?php else: ?>
+        <?=c(l('services.purchasables.forfait.annuel')) ?>
+      <?php endif ?>
+      <span class="color--darkblue font-weight-bold"> <?=$_current_adherent->company?></span>
+    </p>
+    <?php if($tarif_forfait->price > 0) $prices[] = H::amount($tarif_forfait->price); ?>
+  <?php endif; ?>
+
+  <?php if ($service->hasFlag(Service::FLAG_MANY_SOUSCRIPTIONS_PROCESS)): ?>
+    <?php $prices[] = H::amount($service->getTarif(Adherent::getCurrentPrimaryAdherent(), Tarif::PRICE_TYPE_UNITAIRE, 1)->price). ' / Adhérent *' ?>
+    <?php $tips[] = '* tarif dégressif en fonction du nombre d\'adhérents'?>
+    <?php if ($adherents->count() == 1) : $adherent = $adherents->first(); ?>
+      <p>Souscription pour l'adhérent <span class="color--darkblue font-weight-bold"> <?=$adherent->company?></span></p>
+            <input name="form[adherents][]" value="<?= $adherent->getId() ?>" type="hidden"/>
+    <?php else: ?>
+      <div class="elt">
+        <label class="elt">Choisissez les adhérents concernés : </label>
+        <div class="elt-control">
+          <?php foreach ($adherents as $adherent):
+            $has_souscription = $adherent->hasCurrentSouscription($service->getId(),
+                                                                  array('filters' => array(array('OR' => array('adherent_id' => $adherent->getId(),
+                                                                                                               'service_id' => $service->getId(),
+                                                                                                               'status' => Souscription::STATUS_WAITING_PAIEMENT)))));
+            ?>
+            <label class="click-label <?=$adherent->getId() == $_current_adherent->getId() ? 'font-weight-bold' : ''?>">
+              <input name="form[adherents][]" value="<?= $adherent->getId() ?>"
+                     type="checkbox" <?= $has_souscription ? 'disabled="disabled" checked="checked"' : '' ?> />
+              <?= $adherent->company ?>
+            </label>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    <?php endif; ?>
+
+  <?php elseif ($service->hasTarif($_current_adherent, Tarif::PRICE_TYPE_UNITAIRE)): ?>
+    <?=
+    Elt::text(array('name' => 'form[quantity]',
+                    'label' => 'Nombre de '.($service->isDossier() ? 'dossiers' : 'télédéclarations').' prévues par an pour <span class="color--darkblue font-weight-bold">'.$_current_adherent->company.'</span>',
+                    //c(l('account.services.purchasables.nombre'))
+              )) ?>
+    <?php $prices[] = 'à partir de '.H::amount($service->getTarif($_current_adherent, Tarif::PRICE_TYPE_UNITAIRE)->price) . ' / ' . ($service->isDossier() ? 'Dossier' : 'Télédéclaration') ; ?>
+  <?php endif; ?>
+
+  <?php if ($service->hasTarif($_current_adherent, Tarif::PRICE_TYPE_SIRET)): ?>
+    <?=
+    Elt::text(array('name' => 'form[quantity]',
+                    'label' => 'Nombre de SIRET prévus par an pour <span class="color--darkblue font-weight-bold">'.$_current_adherent->company.'</span>',
+                    //c(l('account.services.purchasables.nombre'))
+              )) ?>
+    <?php $prices[] = H::amount($service->getTarif($_current_adherent, Tarif::PRICE_TYPE_SIRET)->price)
+      . ' / ' . ($service->isDossier() ? 'Dossier' : 'SIRET / An') ; ?>
+  <?php endif; ?>
+
+  <?php if ($service->hasTarif($_current_adherent, Tarif::PRICE_TYPE_SIREN)): ?>
+    <?=
+    Elt::text(array('name' => 'form[quantity]',
+                    'label' => 'Nombre de SIREN prévus par an pour <span class="color--darkblue font-weight-bold">'.$_current_adherent->company.'</span>',
+                    //c(l('account.services.purchasables.nombre'))
+              )) ?>
+    <?php $prices[] = H::amount($service->getTarif($_current_adherent, Tarif::PRICE_TYPE_SIREN)->price)
+      . ' / ' . ($service->isDossier() ? 'Dossier' : 'SIREN / An') ; ?>
+  <?php endif; ?>
+
+      <?php if ($service->hasTarif($_current_adherent, Tarif::PRICE_TYPE_NO_FISCAL)): ?>
+    <?=
+    Elt::text(array('name' => 'form[quantity]',
+                    'label' => 'Nombre de N° fiscaux prévus par an pour <span class="color--darkblue font-weight-bold">'.$_current_adherent->company.'</span>',
+              )) ?>
+    <?php $prices[] = H::amount($service->getTarif($_current_adherent, Tarif::PRICE_TYPE_NO_FISCAL)->price)
+      . ' / ' . ($service->isDossier() ? 'Dossier' : 'N° fiscal / An') ; ?>
+  <?php endif; ?>
+
+  <?php if ($service->hasTarif($_current_adherent, Tarif::PRICE_TYPE_LOYER)): ?>
+    <?=
+    Elt::text(array('name' => 'form[quantity]',
+                    'label' => 'Nombre de loyer déclarés prévus par an pour <span class="color--darkblue font-weight-bold">'.$_current_adherent->company.'</span>',
+                    //c(l('account.services.purchasables.nombre'))
+              )) ?>
+    <?php $prices[] = H::amount($service->getTarif($_current_adherent, Tarif::PRICE_TYPE_LOYER)->price).' / Loyer' ?>
+  <?php endif; ?>
+
+  <?php if ($service->hasTarif($_current_adherent, Tarif::PRICE_TYPE_GREFFE)) : ?>
+    <?php
+      $quantity = 1;
+      $souscription_quantity = GreffeManager::getSouscriptionQuantityForCurrentDossier();
+      echo Elt::hidden(array('name' => 'form[quantity]', 'value' => $quantity));
+
+      if ($service->service_id > 0 && GreffeManager::isFirstSouscriptionConditionForCurrentDossier()) {
+        $required_service = $service->getService();
+        if ($required_service->hasTarif($_current_adherent, Tarif::PRICE_TYPE_GREFFE, $souscription_quantity)) {
+          $prices[] = H::amount($required_service->getTarif($_current_adherent, Tarif::PRICE_TYPE_GREFFE, $souscription_quantity)->price) . ' *';
+        }
+      }
+
+      $tarif_greffe = $service->getTarif($_current_adherent, Tarif::PRICE_TYPE_GREFFE, $souscription_quantity)->price;
+      $prices[] = ($tarif_greffe > 0 ? H::amount($tarif_greffe) : 'Gratuit') . ' Frais de greffe';
+
+      $tips = array('*gratuité pour adhérent utilisant E-LIASSE');
+    ?>
+  <?php endif ?>
+
+    </div>
+    <div class="table-cell block--middle-service-purchasable__content--right">
+      <?php if (empty($prices)) : ?>
+        <p class="color--darkblue font-weight-bold">Gratuit</p>
+      <?php else : ?>
+        <p class="color--darkblue font-weight-bold"><?=implode('<br>+<br>', $prices)?></p>
+      <?php endif ?>
+
+      <?php if(count($tips) > 0) : ?>
+        <p class="color--darkblue font-size--11px"><?=implode('<br>', $tips)?></p>
+      <?php endif; ?>
+      <button type="submit" class="btn btn--color-red">Souscrire</button>
+    </div>
+  </div>
+</form>

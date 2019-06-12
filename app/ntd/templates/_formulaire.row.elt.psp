@@ -1,0 +1,6 @@
+<tr class="elt">
+  <td class="line_impot"><?=$ligne?></td>
+  <td class="libelle"><label for="<?=$formulaire?>_<?=$field?>"><?=$label?></label></td>
+  <td class="line_id"><?=$code?></td>
+  <td class="input"> <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => $field, 'value' => $value)) ?> </td>
+</tr>

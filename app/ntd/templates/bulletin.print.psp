@@ -1,0 +1,99 @@
+<div class="main-content">
+  <div class="inner">
+    <div class="generic-block">
+      <h2 class="title">Adhérent</h2>
+      <dl class="first-list">
+          <dt>Raison sociale</dt>
+          <dd><strong><?=$adherent->company?></strong></dd>
+          <dt>Adresse</dt>
+          <dd>
+            <?=$adherent->address?><br>
+            <?php if ($adherent->address_1): ?>
+              <?=$adherent->address_1?>
+            <?php endif; ?>
+            <?php if ($adherent->address_2): ?>
+              <?=$adherent->address_2?>
+            <?php endif; ?>
+            <?php if ($adherent->zipbox): ?>
+              <?=$adherent->zipbox?><br>
+            <?php endif; ?>
+            <?=$adherent->zipcode?> <?=$adherent->city?><br>
+            <?=Country::exists($adherent->country_id) ? Country::getInstance($adherent->country_id)->name : ''?>
+          </dd>
+          <dt>Type</dt>
+          <dd>
+            <?=Adherent::$types_shorts[$adherent->type]?>
+            <?php if ($adherent->isAvocat()): ?>
+              Avocat
+            <?php endif; ?>
+          </dd>
+          <dt>SIRET</dt>
+          <dd><?=$adherent->siret?></dd>
+      </dl>
+      <dl class="second-list">
+          <dt>contact</dt>
+          <dd><?=Adherent::$civilities_abreges[$adherent->civility]?> <?=$adherent->last_name?> <?=$adherent->first_name?></dd>
+          <dt>Fonction</dt>
+          <dd><?=$adherent->function?></dd>
+          <dt>Téléphone</dt>
+          <dd><?=$adherent->phone?></dd>
+          <dt>e-mail</dt>
+          <dd><a href="mailto:<?=$adherent->getEmail()?>"><?=$adherent->getEmail()?></a></dd>
+      </dl>
+      <div class="n-adherent">
+          <p><i>N° d'adhérent</i><br><b><?=$adherent->siret?>/<?=$adherent->id?></b></p>
+      </div>
+      <h2 class="title title-facturation">Facturation</h2>
+      <dl class="first-list">
+          <dt>Raison sociale</dt>
+          <dd><strong><?=$adherent->billing_company?></strong></dd>
+          <dt>Adresse</dt>
+          <dd>
+            <?=$adherent->billing_address?><br>
+            <?php if ($adherent->billing_zipbox): ?>
+              <?=$adherent->billing_zipbox?><br>
+            <?php endif; ?>
+            <?=$adherent->billing_zipcode?> <?=$adherent->billing_city?><br>
+            <?=Country::exists($adherent->billing_country_id) ? Country::getInstance($adherent->billing_country_id)->name : ''?>
+          </dd>
+          <dt>e-mail</dt>
+          <dd><?=$adherent->billing_mail?></dd>
+          <dt>Mode de paiement</dt>
+          <dd><?=Adherent::$billing_payment_modes[$adherent->billing_payment_mode]?></dd>
+      </dl>
+      <dl class="second-list">
+          <dt>Responsable tech.</dt>
+          <dd><?=$adherent->technician_last_name?> <?=$adherent->technician_first_name?></dd>
+          <dt>Téléphone</dt>
+          <dd><?=$adherent->technician_phone?></dd>
+          <dt>e-Mail</dt>
+          <dd><a href="mailto:<?=$adherent->technician_mail?>"><?=$adherent->technician_mail?></a></dd>
+      </dl>
+    </div>
+
+    <?php if($adherent->status >= Adherent::STATUS_SUBSCRIPTION_SIGNATURE) : ?>
+    <div class="generic-block generic-block-small block-conditions">
+      <label>
+        <input type="checkbox" checked="true">
+        <span>Le souscripteur/signataire déclare être le représentant légal de l'Entreprise ou son délégant.</span>
+      </label>
+      <label>
+        <input type="checkbox" checked="true">
+        <span>Le souscripteur/signataire déclare avoir pris connaissance et accepter les Conditions Générales d'adhésion & d'utilisation, et les Conditions décrites dans la charte de protection des données.</span>
+      </label>
+    </div>
+    <?php endif; ?>
+    <?php if (!empty($adherent->sign_key)): ?>
+      <div class="generic-block generic-block-small block-signature">
+        <p>
+          <span>Signé électroniquement </span><span>par <?=$adherent->first_name?> <?=$adherent->last_name?></span><br>
+          Le <?=date('d/m/Y', strtotime($adherent->sign_at))?> à <?=date('H:i', strtotime($adherent->sign_at))?> CEST
+        </p><br>
+        <p>
+          <?=$adherent->sign_key?>
+        </p>
+      </div>
+    <?php endif; ?>
+    <div style="clear:both"></div>
+  </div>
+</div>

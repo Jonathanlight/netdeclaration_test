@@ -1,0 +1,28 @@
+<div class="account-service-subscribe-box">
+  <h2><?= c(l('account.services.subscribe.title2')) ?></h2>
+  <p><?= c(l('account.services.subscribe.text',
+             array('souscription_id' => $souscription->getId(),
+                   'service_name' => $souscription->getService()->name))) ?> </p>
+  <p><?= l('snippet:ntd.service.subscription') ?></p>
+  <br/>
+  <h3><?= c(l('account.services.subscribe.details')) ?> : </h3>
+  <p><?= c(l('account.services.subscribe.adherent')) ?>
+    : <?= $souscription->getAdherent()->first_name ?> <?= $souscription->getAdherent()->last_name ?></p>
+  <p><?= c(l('account.services.subscribe.service')) ?> : <?= $souscription->getService()->name ?></p>
+  <p><?= c(l('account.services.subscribe.price')) ?> : <?= H::amount($souscription->price) ?> HT</p>
+  <br/>
+  <div class="actions">
+    <?php if($facture->getId() > 0): ?>
+    <a class="btn btn--color-red"
+       href="/middle/payment/-/facture_id/<?= $facture->getId() ?>"><?= c(l('pay.now')) ?></a>
+    <?php endif; ?>
+
+    <?php if ($souscription->getService()->code == 'GREFFE') : ?>
+      <a href="/middle/greffe"
+         class="btn btn--link"><?= c(l('go.back.greffe.list')) ?></a>
+    <?php else : ?>
+      <a href="/middle/services"
+         class="btn btn--link"><?= c(l('go.back.services.list')) ?></a>
+    <?php endif ?>
+  </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="tabs-holder" data-on-load="new ntd.middle.tabs(this)">
+  <ul class="tabs-nav" data-tab-nav="services.purchasables">
+    <li><a href="#services-efi" class="active"> <span class="tabs-nav--width-278px"> Formulaire en ligne</span> </a></li>
+    <li><a href="#services-edi"> <span class="tabs-nav--width-278px"> EDI </span> </a></li>
+  </ul>
+  <div class="tabs__content" data-tabs="taxes">
+    <div id="services-efi"
+         class="tab selected">
+      <?php foreach ($service_efis as $service): ?>
+        <?php if ($service->getId() == 38 && $_current_adherent->type == Adherent::TYPE_PRO_SANTE) { continue; } // TODO: à corriger mieux que ça ?>
+        <section class="block--middle-service-purchasable">
+          <header class="block--middle-service-purchasable__header">
+            <span class="block--middle-service-purchasable__type block--middle-service-purchasable--multirow">
+              Formulaires<br>en ligne
+            </span>
+            <h2 class="block--middle-service-purchasable__title"><?= $service->getProperty('title') ?></h2>
+          </header>
+          <div class="hideable-box block--middle-service-purchasable__content">
+            <?=
+            H::inc('_service.form', array('service'           => $service,
+                                          'adherents'         => $adherents,
+                                          '_current_adherent' => $_current_adherent,
+                                          'service_tab'       => 'formulaire'))?>
+          </div>
+        </section>
+      <?php endforeach; ?>
+    </div>
+    <div id="services-edi"
+         class="tab">
+      <?php foreach ($service_edis as $service): ?>
+        <section class="block--middle-service-purchasable">
+          <header class="block--middle-service-purchasable__header">
+            <span class="block--middle-service-purchasable__type">
+              EDI
+            </span>
+            <h2 class="block--middle-service-purchasable__title"><?= $service->getProperty('title') ?></h2>
+          </header>
+          <div class="hideable-box block--middle-service-purchasable__content">
+            <?=
+            H::inc('_service.form', array('service'           => $service,
+                                          'adherents'         => $adherents,
+                                          '_current_adherent' => $_current_adherent,
+                                          'service_tab'       => 'edi'))?>
+          </div>
+        </section>
+      <?php endforeach; ?>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,209 @@
+$form--ntd__label-width: 170px
+$form--ntd__label-margin: 15px
+$form--ntd__box-shadow: 0 1px 1px #e7e7e7 inset
+$form--ntd__line-height: 34px
+
+@mixin inputTextView()
+  border: 1px solid $color--bordergrey-1
+  color: $color--darkblue
+  box-shadow: $form--ntd__box-shadow
+  &:focus
+    border: 1px solid $color--borderlightblue
+    box-shadow: 0px 0px 3px 1px $color--shadow-blue
+
+
+.form--ntd
+
+  .elt-label
+    color: $color--text-default
+    font-size: 14px
+
+  // Form
+  .form-field
+    label
+      color: #5F6165
+      font-size: 14px
+    textarea
+      box-shadow: $form--ntd__box-shadow
+
+  .form--ntd-header
+    color: $color--darkblue
+    font-weight: bold
+    margin-bottom: 60px
+  .form-footer
+    font-size: 10px
+    margin-top: 100px
+
+
+
+
+
+  .warning-information
+    float: right
+    color: $color--darkred
+    margin-top: 15px
+    font-size: 12px    
+
+  .elt-text, .elt-select
+    .elt-label
+      line-height: $form--ntd__line-height
+
+  .elt
+    @include clearFloat()
+    margin-bottom: 4px
+
+    .elt-control
+      width: 390px
+
+
+    .label-check
+      width: 171px
+      text-align: right
+      margin-right: 12px
+
+    .elt-legend
+      font-size: 11px
+      display: block
+      margin-top: 4px
+
+    .click-label
+      color: $color--darkblue
+      margin-right: 30px
+
+    select
+      width: 300px
+      height: $form--ntd__line-height
+      box-shadow: $form--ntd__box-shadow
+
+    .text
+      @include inputTextView()
+      height: $form--ntd__line-height
+      width: 300px
+
+
+  .adherent-types
+    margin-bottom: 7px 
+        
+  .elt-textarea
+    label
+      padding-top: 5px
+      vertical-align: top !important
+    textarea
+      width: 390px !important
+      height: auto !important
+  .form-field-failure
+    .text
+      border: 1px solid $color--borderred-1
+      box-shadow: 0px 0px 3px 1px $color--shadow-red
+      color: $color--darkred
+
+
+.form--ntd--label-inline
+  .elt-label
+    float: left
+    width: $form--ntd__label-width
+    margin-right: $form--ntd__label-margin
+    text-align: right
+
+  .form-field // Form->asHTML()
+    label
+      float: left
+      width: 170px
+      margin-right: 15px
+      text-align: right
+      line-height: $form--ntd__line-height
+    textarea
+      width: 390px
+      height: 200px
+
+.elt-two-line
+  .elt-label
+    line-height: 17px !important
+
+.elt-yesno
+  .elt.elt-label
+    width: 100%
+    text-align: left
+    float: none
+  .elt-control
+    margin-left: 185px
+
+
+
+
+
+
+
+
+
+.billing-address-1st-step
+  hr
+    margin: 20px 0
+
+.star-required
+  color: $color--darkred
+  font-size: 16px
+  font-weight: bold
+
+.adherent-types
+  .click-label
+    display: block
+    margin-bottom: 5px 
+
+.password-forget
+  margin-right: 100px
+  line-height: 23px
+
+.kwo-captcha-box
+  #kwo-captcha-
+    height: 34px
+    width: 100px
+    margin-right: 10px
+    box-shadow: $form--ntd__box-shadow
+  img
+    vertical-align: middle !important   
+
+.form-field-asterisk
+  color: #d81c32
+  margin-left: 4px
+
+.margin-left--label-width
+  margin-left:  $form--ntd__label-width + $form--ntd__label-margin
+
+.information-contact
+  p
+    padding: 0 25px 25px 25px
+  .block-contact
+    display: block
+    border-top: 1px solid #dadee6
+    padding: 6px 0
+    font-size: 14px
+    color: $color--darkblue
+    overflow: hidden
+
+    span
+      float: left
+      margin-top: 5px
+    a
+      float: left
+      margin-top: 3px
+    img
+      float: left
+      margin: 0 25px 0 25px
+  .block-contact.mail
+    border-bottom: 1px solid #dadee6  
+
+.logo-edi
+  margin-top: 60px
+  text-align: center   
+
+.form__destinataire
+  .elt-select
+    margin-bottom: 10px
+  .elt-label
+    width: 95px
+  select
+    width: 250px 
+
+.form--suivi__nav
+  vertical-align: top

@@ -1,0 +1,130 @@
+<div class="main-content edi-message">
+  <h2>
+    <span class="font--darkblue font-family--georgia font-size-big">Message</span>
+    <a class="float-right btn btn--color-light-blue btn--smaller" href="/middle/suivi.edimessage.print/-/id/<?=$edimessage->getId() ?>">Imprimer</a>
+  </h2>
+
+  <div class="inner">
+    <ul class="tabs-nav" data-tab-nav="edimessagerows">
+      <li>
+        <a id="message-link" href="#message" class="active">
+          <span>Message</span>
+        </a>
+      </li>
+      <li>
+        <a id="local-link" href="#local">
+          <span>Locaux</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="tabs__content" data-tabs="edimessagerows">
+      <div class="generic-block-edi block-summary-edi">
+        <div id="message" class="tab selected">
+          <table class="table table--ntd table--suivi-details">
+            <tbody>
+              <tr>
+                <th><?= c(l('account.suivi.ref')) ?></th>
+                <td><?= $edimessage->ref_message ?></td>
+              </tr>
+              <tr>
+                <th>Origine</th>
+                <td><?= $edimessage->site == '1' ? 'NetDeclaration' : 'EDI'?></td>
+              </tr>
+              <tr>
+                <th>Date de réception du message   </th>
+                <td><?= H::date($edimessage->date_reception )?></td>
+              </tr>
+              <tr>
+                <th>Type de la réponse</th>
+                <td><?= $edimessage->type_doc ?></td>
+              </tr>
+              <tr>
+                <th>Siret Emetteur</th>
+                <td><?= $edimessage->siret_emetteur ?></td>
+              </tr>
+              <tr>
+                <th>Email où la réponse a été envoyée</th>
+                <td><?= $edimessage->email_envoi ?></td>
+              </tr>
+              <tr>
+                <th>Siren du Declarant</th>
+                <td><?= $edimessage->siret_decl ?></td>
+              </tr>
+              <tr>
+                <th>Nom du declarant</th>
+                <td><?= $edimessage->nom_decl ?></td>
+              </tr>
+              <tr>
+                <th>ROF obligation CFE</th>
+                <td><?= $edimessage->rof ?></td>
+              </tr>
+              <tr>
+                <th>Code activité</th>
+                <td><?= $edimessage->code_activite ?></td>
+              </tr>
+              <tr>
+                <th>Numéro d'interchange DGI</th>
+                <td><?= $edimessage->no_interchange ?></td>
+              </tr>
+              <tr>
+                <th>Numéro de message DGI</th>
+                <td><?= $edimessage->no_message ?></td>
+              </tr>
+              <tr>
+                <th>Numéro de la réponse</th>
+                <td><?= $edimessage->no_reponse ?></td>
+              </tr>
+              <tr>
+                <th>Nombre de données</th>
+                <td><?= $edimessage->nb_donnees ?></td>
+              </tr>
+              <tr>
+                <th>État du traitement</th>
+                <td><?= $edimessage->statut ?></td>
+              </tr>
+              <tr>
+                <th>Informations complémentaires</th>
+                <td><?= $edimessage->info?></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="page-break"></div>
+
+      <div id="local" class="tab">
+        <?php foreach ($edimessagerows as $i => $row) : ?>
+          <?php if ($print) : ?>
+            <div>&nbsp;</div>
+          <?php endif ?>
+          <div class="generic-block-edi block-summary-edi">
+            <table class="table table--ntd table--suivi-details" data-row="<?=$row->getId() ?>" style="<?=$i>0 && !$print ? 'display:none;' : '' ?>">
+              <tbody>
+                <?php foreach ($row->getAttributes() as $key => $value) : ?>
+                  <?php if (in_array($key, array('id', 'edimessage_id'))) continue ?>
+                  <tr>
+                    <th><?=c(str_replace('_', ' ', $key)) ?></th>
+                    <td><?=$value ?></td>
+                  </tr>
+                <?php endforeach ?>
+              </tbody>
+            </table>
+          </div>
+          <?php if ($i < count($edimessagerows)-1) : ?>
+            <div class="page-break"></div>
+          <?php endif ?>
+        <?php endforeach ?>
+
+        <div class="page-selector">
+          <br />
+          <div class="acenter">
+            <?=Elt::select(array('id'      => 'select-local',
+                                 'label'   => 'Page',
+                                 'options' => $edimessagerows->asHash('id', 'no_donnees') )) ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

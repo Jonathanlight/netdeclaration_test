@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kwo-interface>
+
+<finder order="id DESC">
+ <filters>
+  <filter name="id" />
+  <filter type="checkbox" options="Comment::models()" name="model_id" label="type" />
+  <filter name="status" />
+  <filter type="user" />
+ </filters>
+ <cols>
+  <col name="model_id" />
+  <col name="user" width="200px" />
+  <col name="comment" label="commentaire"/>
+  <col name="created_at" />
+ </cols>
+ <actions>
+  <action name="validate" label="valider"
+          confirm="êtes vous sûr de vouloir procéder à la validation ?" />
+  <action name="destroy" label="supprimer"
+          confirm="êtes vous sûr de vouloir procéder à la suppression ?" />
+ </actions>
+</finder>
+
+</kwo-interface>

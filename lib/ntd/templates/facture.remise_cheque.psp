@@ -1,0 +1,69 @@
+<?=H::head(array()) ?>
+
+<style media="screen, print">
+  table {
+    width:100%;
+    border:1px solid #000000;
+    border-collapse: separate; /*changed from collapse*/
+    border-spacing: 0;
+    border-width: 0 0 1px 1px; /*draw bottom and left borders*/
+  }
+  tfoot {
+    display: table-row-group;
+  }
+  td, th {
+    border:1px solid #000000;
+    border-width: 1px 1px 0 0; /*draw top and right borders*/
+    padding:5px;
+  }
+</style>
+
+<style media="print">
+  .button-print {
+    display: none;
+  }
+</style>
+
+<div class="wrapper">
+  <div class="wrapper-content">
+
+    <table>
+      <caption>
+        <span>Remise du <?=date('d/m/Y', strtotime($date))?></span>
+        <span><?=l('export.remise.cheque.title')?></span>
+      </caption>
+      <thead>
+        <tr>
+          <th>Emetteur</th>
+          <th>Banque</th>
+          <th>Montant</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      <?php foreach ($rows as $row): ?>
+        <tr>
+          <td><?=$row['Emetteur']?></td>
+          <td><?=$row['Banque']?></td>
+          <td><?=$row['Montant']?></td>
+        </tr>
+      <?php endforeach; ?>
+
+
+      </tbody>
+      <tfoot>
+        <tr>
+          <td align="right" colspan="2" style="font-weight:bold">TOTAL</td>
+          <td><?=$total?></td>
+        </tr>
+      </tfoot>
+
+    </table>
+    <div class="wrapper-facture-box">
+      <a href="javascript:print()" class="ntd-button button-print" title="Imprimer ">
+        <img src="/app/ntd/pix/buttons/icon_print.png" alt="imprimer"> Imprimer
+      </a>
+    </div>
+  </div>
+</div>
+<?=H::foot() ?>

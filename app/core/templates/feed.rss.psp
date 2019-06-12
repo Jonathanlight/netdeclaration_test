@@ -1,0 +1,33 @@
+<?='<?xml version="1.0" encoding="UTF-8"?>'?>
+<rss version="2.0">
+ <channel>
+  <title><?=$channel['title']?></title>
+  <description><?=$channel['description']?></description>
+  <language><?=$channel['language']?></language>
+  <link><?=$channel['link']?></link>
+  <generator><?=$channel['generator']?></generator>
+  <ttl><?=$channel['ttl']?></ttl>
+  <copyright><?=$channel['copyright']?></copyright>
+<lastBuildDate><?=date(DATE_RSS)?></lastBuildDate>
+<?php if (!empty($channel['image'])): ?>
+  <image>
+   <url><?=$channel['image']?></url>
+   <title><?=$channel['title']?></title>
+   <link><?=$channel['link']?></link>
+  </image>
+<?php endif; ?>
+<?php foreach ($entries as $entry): ?>
+  <item>
+   <title><?=$entry['title']?></title>
+   <description><?=$entry['description']?></description>
+   <category><?=$entry['category']?></category>
+   <link><?=$entry['link']?></link>
+   <comments><?=$entry['comments']?></comments>
+   <author><?=$entry['author']?></author>
+   <category><?=$entry['category']?></category>
+   <guid isPermaLink="false"><?=$entry['guid']?></guid>
+   <pubDate><?=date(DATE_RSS, $entry['updated_at'])?></pubDate>
+  </item>  
+<?php endforeach; ?>
+ </channel>
+</rss>

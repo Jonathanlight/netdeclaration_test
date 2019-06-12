@@ -1,0 +1,9 @@
+<div data-container="">
+  <p>
+    <?=c(l('snippet:greffe.folder')) ?>
+  </p>
+
+  <form action="/middle/greffe.folder.save">
+    <button type="submit" class="btn btn--color-red margin-top-30"><?=c(l('greffe.folder.new')) ?></button>
+  </form>
+</div>

@@ -1,0 +1,129 @@
+<a href="/middle/bulletin" class="btn btn--color-grey ">Accéder à mon bulletin d'adhésion</a>
+<form action="/middle/adherent.store"
+      data-on-load="new ntd.middle.adherentForm(this)"
+      class="form--ntd form--ntd--label-inline">
+  <div class="block__inscription" style="margin-top: 20px">
+    <h2 class="block__title">Coordonnées </h2>
+
+    <p class="margin-bottom"><?= Adherent::$types[$_current_adherent->type] ?></p>
+    <?php if ($_current_adherent->type == Adherent::TYPE_CEC && !$_current_adherent->isAvocat()): ?>
+      <p class="margin-bottom">Numéro d'inscription ordre des CEC : <strong><?= $_current_adherent->cec_ordre ?></strong></p>
+    <?php elseif ($_current_adherent->type == Adherent::TYPE_OGA): ?>
+      <p class="margin-bottom">Numéro d'agrément OGA : <strong><?= $_current_adherent->oga_agrement ?></strong></p>
+    <?php endif; ?>
+
+
+    <?= Elt::radio(array('name' => 'adherent[civility]', 'options' => Adherent::$civilities, 'label' => 'Titre', 'required' => true, 'value' => $_current_adherent->civility)) ?>
+    <?= Elt::text(array('name' => 'adherent[last_name]', 'label' => 'Nom', 'required' => true, 'value' => $_current_adherent->last_name, 'maxlength' => 35)) ?>
+    <?= Elt::text(array('name' => 'adherent[first_name]', 'label' => 'Prénom', 'required' => true, 'value' => $_current_adherent->first_name, 'maxlength' => 35)) ?>
+    <?= Elt::text(array('name' => 'adherent[function]', 'label' => 'Fonction', 'value' => $_current_adherent->function, 'maxlength' => 35)) ?>
+    <?= Elt::text(array('name' => 'adherent[company]', 'label' => 'Raison sociale', 'required' => true, 'value' => $_current_adherent->company, 'maxlength' => 35)) ?>
+    <?= Elt::text(array('name' => 'adherent[company_bis]', 'label' => 'Complément raison sociale', 'value' => $_current_adherent->company_bis, 'maxlength' => 35)) ?>
+    <?= Elt::text(array('name' => 'adherent[forme_juridique]', 'label' => 'Forme juridique', 'value' => $_current_adherent->forme_juridique, 'maxlength' => 35)) ?>
+    <?= Elt::text(array('name' => 'adherent[siret]', 'label' => 'Siret', 'required' => true, 'value' => $_current_adherent->siret, 'tooltip' => l('adherent.edit.tooltip.siret'), 'maxlength' => 14)) ?>
+
+    <?= Elt::text(array('name' => 'adherent[phone]', 'label' => 'Téléphone', 'required' => true, 'value' => $_current_adherent->phone)) ?>
+    <?= Elt::text(array('name' => 'adherent[fax]', 'label' => 'Fax', 'value' => $_current_adherent->fax)) ?>
+    <?= Elt::text(array('name' => 'adherent[email]', 'label' => 'Email', 'value' => $_current_adherent->email)) ?>
+    <?= Elt::text(array('name' => 'adherent[address]', 'label' => 'Adresse', 'required' => true, 'value' => $_current_adherent->address, 'maxlength' => 35)) ?>
+    <?= Elt::text(array('name' => 'adherent[address_1]', 'label' => 'Complément d\'adresse 1', 'value' => $_current_adherent->address_1, 'maxlength' => 35)) ?>
+    <?= Elt::text(array('name' => 'adherent[address_2]', 'label' => 'Complément d\'adresse 2', 'value' => $_current_adherent->address_2, 'maxlength' => 35)) ?>
+    <?= Elt::text(array('name' => 'adherent[zipbox]', 'label' => 'Boite postale', 'value' => $_current_adherent->zipbox, 'maxlength' => 35)) ?>
+    <?= Elt::text(array('name' => 'adherent[zipcode]', 'label' => 'Code postal', 'required' => true, 'value' => $_current_adherent->zipcode, 'maxlength' => 5)) ?>
+    <?= Elt::text(array('name' => 'adherent[city]', 'label' => 'Ville', 'required' => true, 'value' => $_current_adherent->city, 'maxlength' => 35)) ?>
+    <?=
+    Elt::select(array('name' => 'adherent[country_id]', 'label' => 'Pays', 'required' => true, 'options' => Country::collect(array('order' => array('name'))), 'first' => ' - ',
+                      'value' => $_current_adherent->country_id > 0 ? $_current_adherent->country_id : Country::FR)) ?>
+  </div>
+  <div class="block__inscription">
+    <h2 class="block__title">Vos coordonnées de facturation</h2>
+
+    <?=
+    Elt::yesno(array('name' => 'adherent[has_no_billing_address]', 'label' => 'Vos coordonnées de facturation sont-elles les mêmes que vos coordonnées ?', 'required' => true,
+                     'class' => $_current_adherent->adherent_id > 0  ? 'input-has-not-billing-address secondary-account' : 'input-has-not-billing-address main-account', 'value' => $_current_adherent->has_no_billing_address))?>
+    <div class="billing-address-1st-step">
+       <?php if ($_current_adherent->adherent_id > 0): ?>
+        <?=
+        Elt::yesno(array('name' => 'adherent[is_main_adherent_billing_address]', 'label' => 'Vos coordonnées de facturation sont elles les mêmes que vos coordonnées Compte principal ?',
+            'required' => false, 'value' => $_current_adherent->is_main_adherent_billing_address))?>
+      <?php endif; ?>
+      <hr>
+    <div class="billing-address-2nd-step">
+      <?= Elt::text(array('name' => 'adherent[billing_company]', 'label' => 'Raison sociale', 'required' => true, 'id' => 'adherent[billing_address]', 'value' => $_current_adherent->billing_company)) ?>
+      <?= Elt::text(array('name' => 'adherent[billing_address]', 'label' => 'Adresse', 'required' => true, 'id' => 'adherent[billing_address]', 'rows' => 5, 'value' => $_current_adherent->billing_address)) ?>
+      <?= Elt::text(array('name' => 'adherent[billing_zipbox]', 'label' => 'Boite postale', 'id' => 'adherent[billing_zipbox]', 'value' => $_current_adherent->billing_zipbox)) ?>
+      <?= Elt::text(array('name' => 'adherent[billing_zipcode]', 'label' => 'Code postal', 'required' => true, 'id' => 'adherent[billing_zipcode]', 'value' => $_current_adherent->billing_zipcode)) ?>
+      <?= Elt::text(array('name' => 'adherent[billing_city]', 'label' => 'Ville', 'required' => true, 'id' => 'adherent[billing_city]', 'value' => $_current_adherent->billing_city)) ?>
+      <?= Elt::text(array('name' => 'adherent[billing_mail]', 'label' => 'Email', 'required' => true, 'id' => 'adherent[billing_mail]', 'value' => $_current_adherent->billing_mail)) ?>
+      <?=
+      Elt::select(array('name' => 'adherent[billing_country_id]', 'label' => 'Pays', 'required' => true, 'options' => Country::collect(array('order' => array('name'))), 'first' => ' - ', 'id' => 'adherent[billing_country_id]',
+                        'value' => $_current_adherent->billing_country_id > 0 ? $_current_adherent->billing_country_id : Country::FR)) ?>
+    </div>
+
+    </div>
+  </div>
+  <div class="block__inscription">
+
+    <?php if ($show_gestion): ?>
+      <h2 class="block__title">Gestion</h2>
+      <?= Elt::yesno(array('name' => 'adherent[gestion_tva]', 'label' => 'TVA Email collaborateur', 'value' => $_current_adherent->gestion_tva)) ?>
+      <?= Elt::yesno(array('name' => 'adherent[gestion_tdfc]', 'label' => 'TDFC  Email collaborateur', 'value' => $_current_adherent->gestion_tdfc)) ?>
+      <?= Elt::yesno(array('name' => 'adherent[gestion_paiement]', 'label' => 'PAIEMENT Email collaborateur', 'value' => $_current_adherent->gestion_paiement)) ?>
+      <?= Elt::yesno(array('name' => 'adherent[gestion_social]', 'label' => 'SOCIAL Email collaborateur', 'value' => $_current_adherent->gestion_social)) ?>
+      <?= Elt::yesno(array('name' => 'adherent[gestion_requete]', 'label' => 'REQUETE Email collaborateur', 'value' => $_current_adherent->gestion_requete)) ?>
+      <?= Elt::yesno(array('name' => 'adherent[gestion_dsi]', 'label' => 'DSI Email collaborateur', 'value' => $_current_adherent->gestion_dsi)) ?>
+      <?= Elt::yesno(array('name' => 'adherent[gestion_ir]', 'label' => 'IR Email collaborateur', 'value' => $_current_adherent->gestion_ir)) ?>
+      <?= Elt::yesno(array('name' => 'adherent[gestion_dsn]', 'label' => 'DSN email collaborateur', 'value' => $_current_adherent->gestion_dsn)) ?>
+      <?= Elt::yesno(array('name' => 'adherent[gestion_decloyer]', 'label' => 'DECLOYER email collaborateur', 'value' => $_current_adherent->gestion_decloyer)) ?>
+      <?= Elt::yesno(array('name' => 'adherent[gestion_part]', 'label' => 'PART email collaborateur', 'value' => $_current_adherent->gestion_part)) ?>
+    <?php endif; ?>
+
+  </div>
+  <div class="block__inscription">
+    <h2 class="block__title">Identifiant Net-Entreprises</h2>
+    <?=c(l('snippet:adherent.coordonnees.netentreprise')) ?>
+    <?= Elt::text(array('name' => 'adherent[netentreprise_siret]', 'label' => 'Siret', 'required' => true, 'value' => $_current_adherent->netentreprise_siret, 'maxlength' => 14)) ?>
+    <?= Elt::text(array('name' => 'adherent[netentreprise_last_name]', 'label' => 'Nom', 'required' => true, 'value' => $_current_adherent->netentreprise_last_name, 'maxlength' => 35)) ?>
+    <?= Elt::text(array('name' => 'adherent[netentreprise_first_name]', 'label' => 'Prénom', 'required' => true, 'value' => $_current_adherent->netentreprise_first_name, 'maxlength' => 35)) ?>
+  </div>
+  <div class="block__inscription">
+    <h2 class="block__title">Responsable Technique</h2>
+    <?= Elt::text(array('name' => 'adherent[technician_last_name]', 'label' => 'Nom', 'required' => true, 'value' => $_current_adherent->technician_last_name, 'maxlength' => 35)) ?>
+    <?= Elt::text(array('name' => 'adherent[technician_first_name]', 'label' => 'Prénom', 'required' => true, 'value' => $_current_adherent->technician_first_name, 'maxlength' => 35)) ?>
+    <?= Elt::text(array('name' => 'adherent[technician_phone]', 'label' => 'Téléphone', 'required' => true, 'value' => $_current_adherent->technician_phone)) ?>
+    <?= Elt::text(array('name' => 'adherent[technician_mail]', 'label' => 'Mail', 'required' => true, 'value' => $_current_adherent->technician_mail)) ?>
+  </div>
+  <div class="block__inscription">
+    <h2 class="block__title">Partenaire</h2>
+    <?= Elt::text(array('name' => 'adherent[partenaire_code]', 'label' => 'Code partenaire', 'value' => $_current_adherent->partenaire_code, 'maxlength' => 35)) ?>
+  </div>
+  <div class="block__inscription">
+    <div class="email-declaration-3nd-step">
+      <h2 class="block__title">Messagerie électronique</h2>
+      <?= Elt::text(array('name' => 'adherent[email_edi]',
+                          'label' => c(l('adherent.edit.emailedi')),
+                          'class' => 'elt-two-line',
+                          'id' => 'adherent[email_edi]',
+                          'value' => $_current_adherent->email_edi)) ?>
+      <?php if (false && $_current_adherent->type != Adherent::TYPE_ENTREPRISE): ?>
+        <?= Elt::yesno(array('name' => 'adherent[has_email_declaration]', 'label' => c(l('adherent.edit.emailcreate')), 'class' => 'adherent-has_email_declaration', 'value' => $_current_adherent->has_email_declaration)) ?>
+      <?php endif; ?>
+      <h2 class="block__title">Email de Réponse EDI</h2>
+      <?= Elt::text(array('name' => 'adherent[email_edimessage]',
+                          'label' => 'Recevoir les messages à la suite d\'une Requête DGFIP',//c(l('adherent.edit.emailedi')),
+                          'class' => 'elt-two-line',
+                          'id' => 'adherent[email_edimessage]',
+                          'value' => $_current_adherent->email_edimessage)) ?>
+    </div>
+  </div>
+  <div class="block__send">
+
+    <button type="submit" class="btn  btn--color-red  margin-left--label-width">
+      <?= c(l('save')) ?>
+    </button>
+
+    <p class="warning-information">
+      <?= c(l('signup.mentions')) ?>
+    </p>
+  </div>
+</form>

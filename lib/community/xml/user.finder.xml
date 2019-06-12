@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kwo-interface>
+  <finder order="id desc">
+    <filters>
+      <filter name="id" />
+      <filter name="email" />
+      <filter name="name" label="pseudo"/>          
+      <filter name="status" />
+    </filters>
+    <cols>
+      <col name="email" />
+      <col name="name" width="200px" label="pseudo"/>
+      <col name="created_at" />
+    </cols>
+  </finder>
+</kwo-interface>

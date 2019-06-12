@@ -1,0 +1,14 @@
+<!--[if gte IE 5.5]>
+<span id="hp" style="behavior:url(#default#homepage)"></span>
+<script>
+if (!hp.isHomePage('http://<?=$_host?>/')) {
+ document.write("<a href='javascript:void(0)' onclick=\"style.behavior='url(#default#homepage)';setHomePage('http://<?=Request::host.name()?>');window.location.href=window.location.href;return false;\">"+"<?=ucfirst($label)?>"+"</a>");
+}
+</script>
+<![endif]-->
+<script>
+if (Prototype.Browser.Gecko) {
+  document.write("<a href='javascript:void(0)' onclick=\"Kwo.openMessage('ff_set_homepage')\"><?=ucfirst($label)?>");
+}
+</script>
+

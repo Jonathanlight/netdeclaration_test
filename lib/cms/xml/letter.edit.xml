@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<kwo-interface>
+<fieldset label="$fieldset_label">
+
+<notebook>
+
+<page label="définition">
+ <form>
+  <hbox>
+   <vbox width="35%">
+    <elem field="code" required="true" />
+    <elem field="app" />
+    <elem field="description" label="à propos" />
+    <hbox>
+     <vbox><elem field="status" type="yesno" label="en cours d’utilisation" /></vbox>
+     <vbox><elem field="extension_id" options="Extension::asHash()" label="extension associée" /></vbox>
+     <vbox><elem field="locales" /></vbox>
+    </hbox>
+    <elem field="from_name" label="from name" />
+    <elem field="from_email" label="from email" />
+    <hbox>
+     <vbox><elem field="cc_set" label="cc" /></vbox>
+     <vbox><elem field="bcc_set" label="bcc" /></vbox>
+    </hbox>
+   </vbox>
+   <vbox localized="true">
+    <elem field="subject" label="sujet" />
+    <elem field="body" mode="rich" rows="15" label="corps" />
+   </vbox>
+  </hbox>
+  <launcher />
+ </form>
+</page>
+
+<page label="opérations" built="$is_loaded">
+ <hbox>
+  <vbox width="10%">
+   <box label="actions">
+    <link icon="details" />
+    <link icon="note" />
+   </box>
+  </vbox>
+  <vbox>
+   <deck />
+  </vbox>
+ </hbox> 
+</page>
+
+</notebook>
+
+</fieldset>
+</kwo-interface>

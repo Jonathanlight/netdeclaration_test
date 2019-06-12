@@ -1,0 +1,223 @@
+<?=
+H::head(array(
+          'doctype' => 'HTML5',
+          'styles' => array(
+            '/app/ntd/styles/vendor/font-awesome.css',
+            '/app/ntd/styles/vendor/material-design-iconic-font.min.css',
+            '/app/ntd/styles/v2/reset.css',
+            '/app/ntd/styles/v2/master.css',
+            //'/app/ntd/styles/v2/pdf.css',
+          ),
+          'no_scripts' => false
+        )) ?>
+
+<script>
+ document.createElement("header");
+ document.createElement("footer");
+ document.createElement("section");
+ document.createElement("aside");
+ document.createElement("nav");
+ document.createElement("article");
+ document.createElement("figure");
+ </script>
+
+  <script type="text/javascript" src="/app/ntd/scripts/tarteaucitron/tarteaucitron.js"></script>
+ <script type="text/javascript">
+  tarteaucitron.init({
+  "privacyUrl": "", /* Privacy policy url */
+
+  "hashtag": "#tarteaucitron", /* Open the panel with this hashtag */
+  "cookieName": "tartaucitron", /* Cookie name */
+
+  "orientation": "bottom", /* Banner position (top - bottom) */
+  "showAlertSmall": true, /* Show the small banner on bottom right */
+  "cookieslist": true, /* Show the cookie list */
+
+  "adblocker": false, /* Show a Warning if an adblocker is detected */
+  "AcceptAllCta" : true, /* Show the accept all button when highPrivacy on */
+  "highPrivacy": false, /* Disable auto consent */
+  "handleBrowserDNTRequest": false, /* If Do Not Track == 1, accept all */
+
+  "removeCredit": false, /* Remove credit link */
+  "moreInfoLink": true, /* Show more info link */
+
+  //"cookieDomain": ".my-multisite-domaine.fr" /* Shared cookie for subdomain */
+  });
+</script>
+
+<script type="text/javascript">
+  tarteaucitron.user.gajsUa = 'UA-40708958-1';
+  tarteaucitron.user.gajsMore = function () { /* add here your optionnal _ga.push() */ };
+  (tarteaucitron.job = tarteaucitron.job || []).push("gajs");
+</script>
+
+<div class="wrapper <?= NetDeclarationManager::isDomtom() ? 'wrapper--domtom' : '' ?>">
+  <header class="wrapper__header  wrapper-width">
+    <a href="/"
+       class="wrapper__header__logo">
+       <?php if (NetDeclarationManager::isDomtom()): ?>
+        <img class="logo-domtom" src="/app/ntd/pix/general/logo-domtom.png"
+             alt="NetDeclaration - DomTom - Logo"/>
+           <?php else: ?>
+        <img class="logo" src="/app/ntd/pix/general/logo.png"
+             alt="NetDeclaration - Logo"/>
+           <?php endif; ?>
+    </a>
+
+    <div class="wrapper__header__user">
+      <?php if ($_user['id'] > 0) : ?>
+        <a href="/middle" class="btn btn--color-light-blue">Espace adhérent</a>
+        <a href="/account/ntd/email" class="btn btn--color-grey">
+          <span
+            class="font-weight-bold ellipsis"><?= $_current_primary_adherent->first_name ?> <?= $_current_primary_adherent->last_name ?></span>
+          <span class="ellipsis"> / <?= $_current_primary_adherent->company ?></span></a>
+        <button onclick="ntd.onLeave(this)"
+                data-confirm="Êtes-vous sûr de vouloir vous déconnecter ?"
+                title="Déconnexion"
+                class="btn  btn--color-grey btn-deconnexion"><i class="fa fa-power-off"></i></button>
+      <?php else: ?>
+        <a href="<?= NtdFrontManager::route('signup') ?>" class="btn  btn--color-red">Adhérer au service</a>
+        <a href="<?= NtdFrontManager::route('login') ?>" class="btn btn--color-light-blue">Se connecter</a>
+      <?php endif; ?>
+    </div>
+
+<form action="/search/results" class="wrapper__header__search-form">
+
+
+<div class="elt elt-text wrapper__header__search-form__elem">
+<div class="elt-control">
+<div class="elt-text-border"><input name="query" class="text" value="" type="text" data-placeholder="Rechercher sur le site" placeholder="Rechercher sur le site">
+<button type="submit" class="wrapper__header__search-form__elem  btn btn--color-dark-blue-search"><i class="fa fa-search"></i></button></div>
+<div class="clear"></div>
+</div>
+</div>
+
+
+    </form>
+
+    <div class="absolute-bottom-right">
+      <div class="wrapper__header__partenaire-edi">
+        <i class="fa fa-check"></i> Partenaire EDI agréé par l’état<? //=l('accroche-partenaire-edi')?>
+      </div>
+
+      <div class="wrapper__header__accroche">
+        <?= l('accroche-netdeclaration') ?>
+      </div>
+    </div>
+  </header>
+
+  <nav class="wrapper__menu">
+    <ul class="wrapper__menu__lvl1  wrapper-width">
+      <?php foreach (NetDeclaration::getTreeContent() as $node): ?>
+        <?php if ($node['node']['code'] == 'services'): ?>
+          <li class="menu-teletransmi wrapper__menu__lvl1__elem wrapper-dropdown-menu">
+            <a class="wrapper__menu__lvl1__link" href="/#services">
+              <?=$node['node']['name'] ?></a>
+            <ul class="wrapper__menu__lvl2 big-menu">
+              <?php foreach (Servicetype::collect(array('filters' => array('status' => 1))) as $servicetype): ?>
+                <a href="<?= $servicetype->asUrl() ?>">
+                  <li class="wrapper__menu__lvl2__elem no-border">
+                    <p class="wrapper__menu__lvl2__link"><?= $servicetype->getProperty('title') ?> <i
+                        class="fa fa-caret-right"></i></p>
+                    <i class="fa fa-<?= $servicetype->code ?>"></i>
+                  </li>
+                </a>
+              <?php endforeach; ?>
+            </ul>
+          </li>
+        <?php else: ?>
+          <li class="menu-adhesion wrapper__menu__lvl1__elem wrapper-dropdown-menu">
+            <a class="wrapper__menu__lvl1__link" href="<?= $node['item']['url'] ?>">
+              <?= $node['node']['name'] ?> </a>
+            <?php if (count($node['children']) > 0): ?>
+              <ul class="wrapper__menu__lvl2 small-menu">
+                <?php foreach ($node['children'] as $child): ?>
+                  <li class="wrapper__menu__lvl2__elem">
+                    <a class="wrapper__menu__lvl2__link"
+                       href="<?= $child['item']['url'] ?>">
+                      <?= $child['node']['name'] ?> <i class="fa fa-caret-right"></i>
+                    </a>
+                  </li>
+                <?php endforeach; ?>
+              </ul>
+            <?php endif; ?>
+          </li>
+        <?php endif; ?>
+      <?php endforeach; ?>
+    </ul>
+  </nav>
+
+  <?php if ($_scope == 'front' && !in_array($_action, array('home', 'home.v2'))): ?>
+    <div class="wrapper__content  wrapper__content--2col">
+      <div class="wrapper-width">
+        <?= $_content ?>
+      </div>
+    </div>
+  <?php else: ?>
+    <div class="wrapper__content "><?= $_content ?></div>
+  <?php endif; ?>
+
+
+
+  <footer class="wrapper__footer">
+    <div class="wrapper__footer__border-top">&nbsp;</div>
+    <div class="wrapper__footer__menu">
+      <div class="wrapper-width">
+        <?php foreach (NetDeclaration::getTreeFooter() as $root_node): ?>
+          <ul class="wrapper__footer__menu__lvl1">
+            <li class="wrapper__footer__menu__lvl1__elem  wrapper__footer__menu__lvl1__elem--first"><a
+                href="<?= $root_node['item']['url'] ?>"><?= $root_node['node']['name'] ?></a></li>
+            <?php foreach ($root_node['children'] as $node): ?>
+              <li class="wrapper__footer__menu__lvl1__elem"><a
+                  href="<?= $node['item']['url'] ?>"><?= $node['node']['name'] ?></a></li>
+            <?php endforeach; ?>
+          </ul>
+        <?php endforeach; ?>
+      </div>
+    </div>
+
+    <div class="wrapper__footer__bottom">
+      <div class="wrapper-width">
+        <img src="/app/ntd/pix/general/logo_white.png"
+             alt="NetDeclaration - Logo Blanc"
+             class="wrapper__footer__bottom__logo"/>
+        <?= l('skeleton.footer.copyright') ?>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Loader -->
+  <div class="loader-wrapper">
+    <!-- Add class loader-show -->
+    <div class="loader-content">
+      <div class="loader">
+        <div class="roller"></div>
+        <div class="roller"></div>
+      </div>
+      <div id="loader2" class="loader">
+        <div class="roller"></div>
+        <div class="roller"></div>
+      </div>
+      <div id="loader3" class="loader">
+        <div class="roller"></div>
+        <div class="roller"></div>
+      </div>
+    </div>
+  </div>
+  <?=H::inc('_aside.help')?>
+
+  <button type="button"
+          class="btn btn--backtop"
+          data-on-load="new ntd.BtnScrollTop(this)"> &nbsp; </button>
+</div>
+<script type="text/javascript" src="/app/core/scripts/prototype.js<?=$head_suffix = P('app.head.version') > 0 ? '?' . P('app.head.version') : ''?>"></script>
+<script type="text/javascript" src="/app/core/scripts/kwo.js<?=$head_suffix = P('app.head.version') > 0 ? '?' . P('app.head.version') : ''?>"></script>
+<script type="text/javascript" src="/app/ntd/scripts/master.js<?=$head_suffix = P('app.head.version') > 0 ? '?' . P('app.head.version') : ''?>"></script>
+<script type="text/javascript" src="/app/ntd/scripts/front.js<?=$head_suffix = P('app.head.version') > 0 ? '?' . P('app.head.version') : ''?>"></script>
+
+<?php if ($_scope == 'account'): ?>
+  <script type="text/javascript" src="/app/ntd/scripts/account.js<?=$head_suffix = P('app.head.version') > 0 ? '?' . P('app.head.version') : ''?>"></script>
+<?php elseif ($_scope == 'middle'): ?>
+  <script type="text/javascript" src="/app/ntd/scripts/middle.js<?=$head_suffix = P('app.head.version') > 0 ? '?' . P('app.head.version') : ''?>"></script>
+<?php endif; ?>
+<?= H::foot(array('debug' => false)) ?>

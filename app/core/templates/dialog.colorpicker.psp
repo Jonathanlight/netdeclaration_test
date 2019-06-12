@@ -1,0 +1,23 @@
+<div style="width:220px;">
+
+ <img src="/<?=PIX_PATH?>/colorpicker.jpg" style="cursor:crosshair;" id="color_picker" 
+      onclick="Kwo.col.getColor(event)" 
+      onmousedown="Kwo.col.is_mouse_down = true; return false;"
+      onmouseup="Kwo.col.is_mouse_down = false;"
+      onmousemove="if (Kwo.col.is_mouse_down && Kwo.col.is_mouse_over) Kwo.col.getColor(event); return false;"
+      onmouseover="Kwo.col.is_mouse_over = true;"
+      onmouseout="Kwo.col.is_mouse_over = false;" />
+
+ <div id="show_color" 
+      style="height:10px; width:220px; margin:2px 0 4px 0;"></div>
+
+ <div style="text-align:right;">
+  <input type="text" id="color_hex" value="" style="width:6em; float:left;" class="text"
+         onchange="if(!this.value.blank()) Kwo.col.updateHexa(this.value)" />
+  <input type="button" value="sélectionner" class="button" 
+         onclick="Kwo.getDialog().put($F('color_hex'))">
+ </div>
+
+ <div style="clear:both;"></div>
+
+</div>

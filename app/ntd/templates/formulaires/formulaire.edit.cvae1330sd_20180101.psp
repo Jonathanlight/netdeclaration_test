@@ -1,0 +1,170 @@
+<div class="formulaire-page page-form" data-label="CVAE 1330SD I">
+  <table>
+    <tr class="tab-title">
+      <th colspan="3">Déclarant</th>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="cvae1330sd_AE">Date</label></td>
+      <td class="line_id">&nbsp;</td>
+      <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AE', 'value' => $cvae1330sd_20180101['AE']))?> </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="cvae1330sd_AF1">Nom du signataire</label></td>
+      <td class="line_id">&nbsp;</td>
+      <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AF02', 'value' => $cvae1330sd_20180101['AF02']))?> </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="cvae1330sd_AF2">Qualité du signataire</label></td>
+      <td class="line_id">&nbsp;</td>
+      <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AF03', 'value' => $cvae1330sd_20180101['AF03']))?> </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="cvae1330sd_AF3">Lieu</label></td>
+      <td class="line_id">&nbsp;</td>
+      <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AF08', 'value' => $cvae1330sd_20180101['AF08']))?> </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">I - Montant de la valeur ajoutée</th>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="cvae1330sd_ab">VALEUR AJOUTEE SOUMISE A LA CVAE</label></td>
+      <td class="line_id">A2</td>
+      <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AB', 'value' => $cvae1330sd_20180101['AB']))?> </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="cvae1330sd_ac">CHIFFRE D'AFFAIRES DE REFERENCE</label></td>
+      <td class="line_id">A3</td>
+      <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AC', 'value' => $cvae1330sd_20180101['AC']))?> </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="cvae1330sd_ag">CHIFFRE D'AFFAIRES DE REFERENCE DU GROUPE</label></td>
+      <td class="line_id">B6</td>
+      <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AG', 'value' => $cvae1330sd_20180101['AG']))?> </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="cvae1330sd_ah">DATE DE CESSATION DE L'ENTREPRISE</label></td>
+      <td class="line_id"></td>
+      <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AH', 'value' => $cvae1330sd_20180101['AH']))?> </td>
+    </tr>
+  </table>
+
+</div>
+
+<div class="formulaire-page page-form" data-label="CVAE 1330SD II">
+  <table class="cvae1330sd">
+    <tbody>
+      <tr class="tab-title">
+        <th class="maintitle" colspan="6">II - Répartition des salariés</th>
+      </tr>
+      <tr class="tab-title">
+        <th class="subtitle" colspan="6">A- LISTE DES ETABLISSEMENTS DE L'ENTREPRISE</th>
+      </tr>
+      <tr class="tab-title">
+        <th>Code NIC
+        <?=Elt::tooltip(array('tooltip' => 'Mentionner les 5 derniers chiffres du numéro SIRET de l\'établissement'))?>
+        </th>
+        <th>Numéro du département</th>
+        <th>Commune de localisation</th>
+        <th>Code INSEE de la commune</th>
+        <th>Nombre de salariés</th>
+        <th>&nbsp;</th>
+      </tr>
+
+      <tr class="elt">
+        <td class="line_id">A4</td>
+        <td class="line_id">A5</td>
+        <td class="line_id">A6</td>
+        <td class="line_id">A7</td>
+        <td class="line_id">A8</td>
+        <td class="line_id">&nbsp;</td>
+      </tr>
+    <?php $rows_count = 0;
+    foreach ($cvae1330sd_20180101 as $field => $value) {
+      if (strpos($field, 'BA1') !== false) $rows_count++;
+    }
+    $rows_count = max(1, $rows_count);
+    for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :
+      ?>
+        <tr class="elt cvae1330sd-dynamic-row-etablissement">
+          <td class="input small-input" data-field="BA1">
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BA1', 'field_name' => 'BA1/' . $tr_index, 'value' => empty($cvae1330sd_20180101['BA1/' . $tr_index]) ? $cvae1330sd_20180101['BA1' . $tr_index] : $cvae1330sd_20180101['BA1/' . $tr_index]))?>
+          </td>
+          <td class="input" data-field="CA">
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CA', 'field_name' => 'CA/' . $tr_index, 'value' => empty($cvae1330sd_20180101['CA/' . $tr_index]) ? $cvae1330sd_20180101['CA' . $tr_index] : $cvae1330sd_20180101['CA/' . $tr_index]))?>
+          </td>
+          <td class="input" data-field="BA8">
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BA8', 'field_name' => 'BA8/' . $tr_index, 'value' => empty($cvae1330sd_20180101['BA8/' . $tr_index]) ? $cvae1330sd_20180101['BA8' . $tr_index] : $cvae1330sd_20180101['BA8/' . $tr_index]))?>
+          </td>
+          <td class="input small-input" data-field="DA">
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DA', 'field_name' => 'DA/' . $tr_index, 'value' => empty($cvae1330sd_20180101['DA/' . $tr_index]) ? $cvae1330sd_20180101['DA' . $tr_index] : $cvae1330sd_20180101['DA/' . $tr_index]))?>
+          </td>
+          <td class="input small-input" data-field="EA">
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EA', 'field_name' => 'EA/' . $tr_index, 'value' => empty($cvae1330sd_20180101['EA/' . $tr_index]) ? $cvae1330sd_20180101['EA' . $tr_index] : $cvae1330sd_20180101['EA/' . $tr_index]))?>
+          </td>
+          <td style="text-align:center; padding:0;">
+            <a href="javascript:void(0)" onclick="ntd.tableRowManager.removeTableRow($(this).up('tr'), 'cvae1330sd-dynamic-row-etablissement')" title="Supprimer la ligne" style="padding:10px;">
+              <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png"/></a></td>
+        </tr>
+      <?php endfor; ?>
+      <tr class="no-print">
+        <td colspan="6"><a class="link-puce" href="javascript:void(0)" onclick="ntd.tableRowManager.addTableRow('cvae1330sd-dynamic-row-etablissement')">Ajouter une ligne</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  <table class="cvae1330sd">
+    <tbody>
+      <tr class="tab-title">
+        <th class="subtitle" colspan="5">B- LISTE DES CHANTIERS ET DES LIEUX D'EXERCICE DES SALARIES EMPLOYES PLUS DE TROIS MOIS HORS DE L'ENTREPRISE</th>
+      </tr>
+      <tr class="tab-title">
+        <th>Numéro du département</th>
+        <th>Commune de localisation</th>
+        <th>Code INSEE de la commune</th>
+        <th>Nombre de salariés</th>
+        <th>&nbsp;</th>
+      </tr>
+      <tr class="elt">
+        <td class="line_id">B1</td>
+        <td class="line_id">B2</td>
+        <td class="line_id">B3</td>
+        <td class="line_id">B4</td>
+        <td class="line_id">&nbsp;</td>
+      </tr>
+    <?php $rows_count = 0;
+    foreach ($cvae1330sd_20180101 as $field => $value) {
+      if (strpos($field, 'CH') !== false) $rows_count++;
+    }
+    $rows_count = max(1, $rows_count);
+    for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :
+      ?>
+        <tr class="elt cvae1330sd-dynamic-row-chantiers">
+          <td class="input" data-field="CH">
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CH', 'field_name' => 'CH/' . $tr_index, 'value' => empty($cvae1330sd_20180101['CH/' . $tr_index]) ? $cvae1330sd_20180101['CH' . $tr_index] : $cvae1330sd_20180101['CH/' . $tr_index]))?>
+          </td>
+          <td class="input" data-field="BH">
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BH', 'field_name' => 'BH/' . $tr_index, 'value' => empty($cvae1330sd_20180101['BH/' . $tr_index]) ? $cvae1330sd_20180101['BH' . $tr_index] : $cvae1330sd_20180101['BH/' . $tr_index]))?>
+          </td>
+          <td class="input small-input" data-field="DH">
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DH', 'field_name' => 'DH/' . $tr_index, 'value' => empty($cvae1330sd_20180101['DH/' . $tr_index]) ? $cvae1330sd_20180101['DH' . $tr_index] : $cvae1330sd_20180101['DH/' . $tr_index]))?>
+          </td>
+          <td class="input small-input" data-field="EH">
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EH', 'field_name' => 'EH/' . $tr_index, 'value' => empty($cvae1330sd_20180101['EH/' . $tr_index]) ? $cvae1330sd_20180101['EH' . $tr_index] : $cvae1330sd_20180101['EH/' . $tr_index]))?>
+          </td>
+          <td style="text-align:center; padding:0;">
+            <a href="javascript:void(0)" onclick="ntd.tableRowManager.removeTableRow($(this).up('tr'), 'cvae1330sd-dynamic-row-chantiers')" title="Supprimer la ligne" style="padding:10px;">
+              <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png"/></a></td>
+        </tr>
+      <?php endfor; ?>
+      <tr class="no-print">
+        <td colspan="5"><a class="link-puce" href="javascript:void(0)" onclick="ntd.tableRowManager.addTableRow('cvae1330sd-dynamic-row-chantiers')">Ajouter une ligne</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

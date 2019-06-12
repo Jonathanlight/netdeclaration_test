@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kwo-interface>
+
+<finder order="heading_id, code, locale">
+ <filters>
+  <filter name="id" />
+  <filter name="code" />
+  <filter name="name" />
+  <filter name="heading_id" />
+  <filter name="locale" />
+ </filters>
+ <cols>
+  <col name="heading_id" />
+  <col name="locale" />
+  <col name="code" />
+  <col name="name" />
+  <col name="created_at" />
+ </cols>
+</finder>
+
+</kwo-interface>

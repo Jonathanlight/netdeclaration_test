@@ -1,0 +1,2111 @@
+<div class="formulaire-page page-form" data-label="2777 I">
+    <table class="rcm2777_20180101">
+        <thead>
+            <tr class="tab-title">
+                <th class="maintitle" colspan="10">
+                    PRELEVEMENTS
+                </th>
+            </tr>
+        </thead>
+    </table>
+
+    <table class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ1'] ? 'no-print' : ''?>">
+        <thead>
+            <tr class="tab-title">
+                <th class="maintitle">&nbsp;</th>
+                <th class="maintitle" colspan="3">
+                    Prélèvement sur les intérêts, arrérages et produits de toute nature servis à des personnes fiscalement domiciliées en France (Art 125 A CGI)
+                </th>
+                <th class="maintitle vertical-middle folding-action">
+                    <label  for="rcm2777_20180101_ZZ1" class="no-print">
+                        <i class="fa fa-chevron-up <?=$rcm2777_20180101['ZZ1'] ? 'hidden' : ''?>"></i>
+                        <i class="fa fa-chevron-down <?=$rcm2777_20180101['ZZ1'] ? '' : 'hidden'?>"></i>
+                        <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ZZ1', 'field_name' => 'ZZ1', 'value' => $rcm2777_20180101['ZZ1'])) ?>
+                    </label>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ1'] ? 'hidden' : ''?>">
+            <tr class="tab-title">
+                <th colspan="2">&nbsp;</th>
+                <th >Base imposable</th>
+                <th >Taux</th>
+                <th >Impôt</th>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">AB</td>
+                <td class="libelle">Intérêts, arrérages et produits de toute nature</td>
+                <td class="input" >
+                    <div class="line_impot">909090</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AB', 'field_name' => 'AB', 'value' => $rcm2777_20180101['AB'])) ?>
+                </td>
+                <td class="line_impot">12,8%</td>
+                <td class="input" >
+                    <div class="line_impot">909089</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BB', 'field_name' => 'BB', 'value' => $rcm2777_20180101['BB'])) ?>
+                </td>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">CO</td>
+                <td class="libelle">Produits versés dans un Etat ou territoire non coopératif</td>
+                <td class="input" >
+                    <div class="line_impot">909479</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AV', 'field_name' => 'AV', 'value' => $rcm2777_20180101['AV'])) ?>
+                </td>
+                <td class="line_impot">75%</td>
+                <td class="input" >
+                    <div class="line_impot">909480</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BV', 'field_name' => 'BV', 'value' => $rcm2777_20180101['BV'])) ?>
+                </td>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">DC</td>
+                <td class="libelle">Produits d'épargne solidaire de partage</td>
+                <td class="input" >
+                    <div class="line_impot">909109</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AK', 'field_name' => 'AK', 'value' => $rcm2777_20180101['AK'])) ?>
+                </td>
+                <td class="line_impot">5%</td>
+                <td class="input" >
+                    <div class="line_impot">909110</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BK', 'field_name' => 'BK', 'value' => $rcm2777_20180101['BK'])) ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ2'] ? 'no-print' : ''?>">
+        <thead>
+            <tr class="tab-title">
+                <th class="maintitle">&nbsp;</th>
+                <th class="maintitle" colspan="3">
+                    Prélèvement sur les intérêts des bons et contrats de capitalisation et assimilés "assurance-vie" (Art 125-0 A CGI)
+                </th>
+                <th class="maintitle vertical-middle folding-action">
+                    <label  for="rcm2777_20180101_ZZ2" class="no-print">
+                        <i class="fa fa-chevron-up <?=$rcm2777_20180101['ZZ2'] ? 'hidden' : ''?>"></i>
+                        <i class="fa fa-chevron-down <?=$rcm2777_20180101['ZZ2'] ? '' : 'hidden'?>"></i>
+                        <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ZZ2', 'field_name' => 'ZZ2', 'value' => $rcm2777_20180101['ZZ2'])) ?>
+                    </label>
+                </th>
+            </tr>
+        </thead>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ2'] ? 'hidden' : ''?>">
+            <tr class="tab-title">
+                <th>&nbsp;</th>
+                <th colspan="3">
+                    Primes versées avant le 27-09-17
+                </th>
+                <th>&nbsp;</th>
+            </tr>
+            <tr class="tab-title">
+                <th>&nbsp;</th>
+                <th >Bons émis à compter du 01-01-90 :</th>
+                <th >Base imposable</th>
+                <th >Taux</th>
+                <th >Impôt</th>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">DE</td>
+                <td class="libelle">- de moins de 4 ans</td>
+                <td class="input" >
+                    <div class="line_impot">909111</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AL', 'field_name' => 'AL', 'value' => $rcm2777_20180101['AL'])) ?>
+                </td>
+                <td class="line_impot">35%</td>
+                <td class="input" >
+                    <div class="line_impot">909112</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BL', 'field_name' => 'BL', 'value' => $rcm2777_20180101['BL'])) ?>
+                </td>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">DF</td>
+                <td class="libelle">- de 4 à moins de 8 ans</td>
+                <td class="input" >
+                    <div class="line_impot">909113</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AM', 'field_name' => 'AM', 'value' => $rcm2777_20180101['AM'])) ?>
+                </td>
+                <td class="line_impot">15%</td>
+                <td class="input" >
+                    <div class="line_impot">909114</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BM', 'field_name' => 'BM', 'value' => $rcm2777_20180101['BM'])) ?>
+                </td>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">DK</td>
+                <td class="libelle">- de 8 ans et plus</td>
+                <td class="input" >
+                    <div class="line_impot">909115</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AN', 'field_name' => 'AN', 'value' => $rcm2777_20180101['AN'])) ?>
+                </td>
+                <td class="line_impot">7,5%</td>
+                <td class="input" >
+                    <div class="line_impot">909116</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BN', 'field_name' => 'BN', 'value' => $rcm2777_20180101['BN'])) ?>
+                </td>
+            </tr>
+            <tr class="tab-title">
+                <th>&nbsp;</th>
+                <th >Bons émis entre le 01-01-83 et le 31-12-89 :</th>
+                <th >Base imposable</th>
+                <th >Taux</th>
+                <th >Impôt</th>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">DG</td>
+                <td class="libelle">- de moins de 2 ans</td>
+                <td class="input" >
+                    <div class="line_impot">909117</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AO', 'field_name' => 'AO', 'value' => $rcm2777_20180101['AO'])) ?>
+                </td>
+                <td class="line_impot">45%</td>
+                <td class="input" >
+                    <div class="line_impot">909118</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BO', 'field_name' => 'BO', 'value' => $rcm2777_20180101['BO'])) ?>
+                </td>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">DH</td>
+                <td class="libelle">- de 2 à moins de 4 ans</td>
+                <td class="input" >
+                    <div class="line_impot">909119</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AP', 'field_name' => 'AP', 'value' => $rcm2777_20180101['AP'])) ?>
+                </td>
+                <td class="line_impot">25%</td>
+                <td class="input" >
+                    <div class="line_impot">909120</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BP', 'field_name' => 'BP', 'value' => $rcm2777_20180101['BP'])) ?>
+                </td>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">DI</td>
+                <td class="libelle">- de 4 à moins de 6 ans</td>
+                <td class="input" >
+                    <div class="line_impot">909121</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AQ', 'field_name' => 'AQ', 'value' => $rcm2777_20180101['AQ'])) ?>
+                </td>
+                <td class="line_impot">15%</td>
+                <td class="input" >
+                    <div class="line_impot">909122</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BQ', 'field_name' => 'BQ', 'value' => $rcm2777_20180101['BQ'])) ?>
+                </td>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">DL</td>
+                <td class="libelle">- de 6 ans et plus</td>
+                <td class="input" >
+                    <div class="line_impot">909123</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AR', 'field_name' => 'AR', 'value' => $rcm2777_20180101['AR'])) ?>
+                </td>
+                <td class="line_impot">7,5%</td>
+                <td class="input" >
+                    <div class="line_impot">909124</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BR', 'field_name' => 'BR', 'value' => $rcm2777_20180101['BR'])) ?>
+                </td>
+            </tr>
+            <tr class="tab-title">
+                <th>&nbsp;</th>
+                <th >Primes versées à compter du 27-09-17</th>
+                <th >Base imposable</th>
+                <th >Taux</th>
+                <th >Impôt</th>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">DP</td>
+                <td class="libelle">Bons émis entre le 01-01-83 et le 31-12-89 pour une durée de 6 ans et plus ou bons émis à compter du 01-01-90 pour une durée de 8 ans :</td>
+                <td class="input" >
+                    <div class="line_impot">909481</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AS', 'field_name' => 'AS', 'value' => $rcm2777_20180101['AS'])) ?>
+                </td>
+                <td class="line_impot">7,5%</td>
+                <td class="input" >
+                    <div class="line_impot">909482</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BS', 'field_name' => 'BS', 'value' => $rcm2777_20180101['BS'])) ?>
+                </td>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">DQ</td>
+                <td class="libelle">Autres cas</td>
+                <td class="input" >
+                    <div class="line_impot">909483</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AT', 'field_name' => 'AT', 'value' => $rcm2777_20180101['AT'])) ?>
+                </td>
+                <td class="line_impot">12,8%</td>
+                <td class="input" >
+                    <div class="line_impot">909484</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BT', 'field_name' => 'BT', 'value' => $rcm2777_20180101['BT'])) ?>
+                </td>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">DO</td>
+                <td class="libelle">Produits bénéficiant à des personnes domiciliées fiscalement ou établies dans un Etat ou territoire non coopératif </td>
+                <td class="input" >
+                    <div class="line_impot">909127</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AU', 'field_name' => 'AU', 'value' => $rcm2777_20180101['AU'])) ?>
+                </td>
+                <td class="line_impot">75%</td>
+                <td class="input" >
+                    <div class="line_impot">909128</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BU', 'field_name' => 'BU', 'value' => $rcm2777_20180101['BU'])) ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="rcm2777_20180101">
+        <thead>
+            <tr class="tab-title">
+                <th class="maintitle">&nbsp;</th>
+                <th class="maintitle" colspan="4">
+                    Prélèvement sur les revenus distribués (Art 117 quater CGI)
+                </th>
+            </tr>
+        </thead>
+        <tbody class="rcm2777_20180101">
+            <tr class="tab-title">
+                <th colspan="2">&nbsp;</th>
+                <th >Base imposable</th>
+                <th >Taux</th>
+                <th >Impôt</th>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">EA</td>
+                <td class="libelle">Revenus distribués</td>
+                <td class="input" >
+                    <div class="line_impot">909485</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA', 'field_name' => 'AA', 'value' => $rcm2777_20180101['AA'])) ?>
+                </td>
+                <td class="line_impot">12,8%</td>
+                <td class="input" >
+                    <div class="line_impot">909486</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BA', 'field_name' => 'BA', 'value' => $rcm2777_20180101['BA'])) ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="rcm2777_20180101 page-break <?=$rcm2777_20180101['ZZ3'] ? 'no-print' : ''?>">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle">&nbsp;</th>
+            <th class="maintitle" colspan="3">
+                Autres produits soumis à prélèvements
+            </th>
+            <th class="maintitle vertical-middle folding-action">
+                <label  for="rcm2777_20180101_ZZ3" class="no-print">
+                    <i class="fa fa-chevron-up <?=$rcm2777_20180101['ZZ3'] ? 'hidden' : ''?>"></i>
+                    <i class="fa fa-chevron-down <?=$rcm2777_20180101['ZZ3'] ? '' : 'hidden'?>"></i>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ZZ3', 'field_name' => 'ZZ3', 'value' => $rcm2777_20180101['ZZ3'])) ?>
+                </label>
+            </th>
+        </tr>
+        </thead>
+        <?php
+        $rows_count = 0;
+        foreach ($rcm2777_20180101 as $field => $value) {
+            if (strpos($field, 'AG') !== false) $rows_count++;
+        }
+        $rows_count = max(1, $rows_count);
+        ?>
+        <?php for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :?>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ3'] ? 'hidden' : ''?>">
+            <tr class="tab-title">
+                <th colspan="2">&nbsp;</th>
+                <th >Base imposable</th>
+                <th >Taux</th>
+                <th >Impôt</th>
+            </tr>
+        </tbody>
+        <tbody class="rcm2777_20180101-dynamic-row-1 <?=$rcm2777_20180101['ZZ3'] ? 'hidden' : ''?>">
+            <tr class="elt">
+                <td class="line_impot" data-ligne_number="((row_index))"><?=$tr_index ?></td>
+                <td class="libelle"></td>
+                <td class="input"  data-field="AG">
+                    <div class="line_impot">909487</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG', 'field_name' => 'AG/' . $tr_index, 'value' => $rcm2777_20180101['AG/' . $tr_index])) ?>
+                </td>
+                <td class="input"  data-field="HB">
+                    <div class="line_impot">909488</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'HB', 'field_name' => 'HB/' . $tr_index, 'value' => $rcm2777_20180101['HB/' . $tr_index])) ?>
+                </td>
+                <td class="input"  data-field="BG">
+                    <div class="line_impot">909489</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BG', 'field_name' => 'BG/' . $tr_index, 'value' => $rcm2777_20180101['BG/' . $tr_index])) ?>
+                </td>
+                <td style="text-align:center; padding:0; width:25px;" class="no-print">
+                    <a href="javascript:void(0)"
+                       onclick="ntd.tableRowManager.removeTableRow($(this).up('tbody'), 'rcm2777_20180101-dynamic-row-1', 'tbody')"
+                       title="Supprimer la ligne" style="padding:10px;">
+                        <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png"/>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+        <?php endfor; ?>
+        <tfoot class="<?=$rcm2777_20180101['ZZ3'] ? 'hidden' : ''?>">
+            <tr class="no-print">
+                <td colspan="5">
+                    <a class="link-puce" href="javascript:void(0)"
+                       onclick="ntd.tableRowManager.addTableRow('rcm2777_20180101-dynamic-row-1', 'tbody')">Ajouter une ligne</a>
+                </td>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">CL</td>
+                <td class="libelle">Total des autres produits soumis à prélèvements</td>
+                <td class="input" >
+                    <div class="line_impot">909490</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AH', 'field_name' => 'AH', 'value' => $rcm2777_20180101['AH'])) ?>
+                </td>
+                <td class="libelle center">&nbsp;</td>
+                <td class="input" >
+                    <div class="line_impot">909491</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BH', 'field_name' => 'BH', 'value' => $rcm2777_20180101['BH'])) ?>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+
+</div>
+
+<div class="formulaire-page page-form" data-label="2777 II">
+    <table class="rcm2777_20180101">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle" colspan="10">
+                RETENUE A LA SOURCE
+            </th>
+        </tr>
+        </thead>
+    </table>
+    <table class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ4'] ? 'no-print' : ''?>">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle" rowspan="2">&nbsp;</th>
+            <th class="maintitle" colspan="7">
+                Retenue à la source sur les bénéfices réalisés en France par les sociétés étrangères (art 115 quinquies, 1673 bis  et 119 bis 2 du CGI)
+            </th>
+            <th class="maintitle vertical-middle folding-action">
+                <label  for="rcm2777_20180101_ZZ4" class="no-print">
+                    <i class="fa fa-chevron-up <?=$rcm2777_20180101['ZZ4'] ? 'hidden' : ''?>"></i>
+                    <i class="fa fa-chevron-down <?=$rcm2777_20180101['ZZ4'] ? '' : 'hidden'?>"></i>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ZZ4', 'field_name' => 'ZZ4', 'value' => $rcm2777_20180101['ZZ4'])) ?>
+                </label>
+            </th>
+        </tr>
+        </thead>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ4'] ? 'hidden' : ''?>">
+            <tr class="tab-title">
+                <th rowspan="4">&nbsp;</th>
+                <th colspan="8">
+                    Bénéficiaire personne morale :
+                </th>
+            </tr>
+            <tr class="tab-title">
+                <th rowspan="3">&nbsp;</th>
+                <th colspan="5">NATURE DES PRODUITS OU DES SOMMES A DEDUIRE</th>
+                <th >Taux</th>
+                <th >Impôt</th>
+            </tr>
+            <tr class="tab-title">
+                <th colspan="2">Bénéfices et plus-values </th>
+                <th rowspan="2">IS dû pour l'exercice (c)</th>
+                <th rowspan="2">Bénéfices ou plus-values antérieurs, compris dans la base de l'IS (d)</th>
+                <th rowspan="2">Base d'imposition de la retenue à la source (a+b)-(c+d)</th>
+                <th rowspan="2">&nbsp;</th>
+                <th rowspan="2">&nbsp;</th>
+            </tr>
+            <tr class="tab-title">
+                <th>retenus pour l'assiette de l'IS (a)</th>
+                <th>de l'exercice, non compris dans la base de l'IS (b)</th>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">CQ</td>
+                <td class="libelle">Taux légal <br>en France</td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909492</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'JA', 'field_name' => 'JA', 'value' => $rcm2777_20180101['JA'])) ?>
+                </td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909493</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'KA', 'field_name' => 'KA', 'value' => $rcm2777_20180101['KA'])) ?>
+                </td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909494</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'LA', 'field_name' => 'LA', 'value' => $rcm2777_20180101['LA'])) ?>
+                </td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909495</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'MA', 'field_name' => 'MA', 'value' => $rcm2777_20180101['MA'])) ?>
+                </td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909496</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FA', 'field_name' => 'FA', 'value' => $rcm2777_20180101['FA'])) ?>
+                </td>
+                <td class="line_impot">30%</td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909497</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GA', 'field_name' => 'GA', 'value' => $rcm2777_20180101['GA'])) ?>
+                </td>
+            </tr>
+        </tbody>
+        <?php
+        $rows_count = 0;
+        foreach ($rcm2777_20180101 as $field => $value) {
+            if (strpos($field, 'JB') !== false) $rows_count++;
+        }
+        $rows_count = max(1, $rows_count);
+        ?>
+        <?php for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :?>
+            <tbody class="rcm2777_20180101-dynamic-row-2 <?=$rcm2777_20180101['ZZ4'] ? 'hidden' : ''?>">
+            <tr class="elt">
+                <td class="line_impot" data-ligne_number="((row_index))"><?=$tr_index ?></td>
+                <td class="libelle">Taux <br>conven<br>tionnel</td>
+                <td class="input medium-input"  data-field="JB">
+                    <div class="line_impot">909504</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'JB', 'field_name' => 'JB/' . $tr_index, 'value' => $rcm2777_20180101['JB/' . $tr_index])) ?>
+                </td>
+                <td class="input medium-input"  data-field="KB">
+                    <div class="line_impot">909505</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'KB', 'field_name' => 'KB/' . $tr_index, 'value' => $rcm2777_20180101['KB/' . $tr_index])) ?>
+                </td>
+                <td class="input medium-input"  data-field="LB">
+                    <div class="line_impot">909506</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'LB', 'field_name' => 'LB/' . $tr_index, 'value' => $rcm2777_20180101['LB/' . $tr_index])) ?>
+                </td>
+                <td class="input medium-input"  data-field="MB">
+                    <div class="line_impot">909507</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'MB', 'field_name' => 'MB/' . $tr_index, 'value' => $rcm2777_20180101['MB/' . $tr_index])) ?>
+                </td>
+                <td class="input medium-input"  data-field="FB">
+                    <div class="line_impot">909508</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FB', 'field_name' => 'FB/' . $tr_index, 'value' => $rcm2777_20180101['FB/' . $tr_index])) ?>
+                </td>
+                <td class="input small-input"  data-field="HA">
+                    <div class="line_impot">909509</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'HA', 'field_name' => 'HA/' . $tr_index, 'value' => $rcm2777_20180101['HA/' . $tr_index])) ?>
+                </td>
+                <td class="input medium-input"  data-field="GB">
+                    <div class="line_impot">909510</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GB', 'field_name' => 'GB/' . $tr_index, 'value' => $rcm2777_20180101['GB/' . $tr_index])) ?>
+                </td>
+                <td style="text-align:center; padding:0; width:25px;" rowspan="5" class="no-print">
+                    <a href="javascript:void(0)"
+                       onclick="ntd.tableRowManager.removeTableRow($(this).up('tbody'), 'rcm2777_20180101-dynamic-row-2', 'tbody')"
+                       title="Supprimer la ligne" style="padding:10px;">
+                        <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png"/>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+        <?php endfor; ?>
+        <tbody class="<?=$rcm2777_20180101['ZZ4'] ? 'hidden' : ''?>">
+            <tr class="no-print">
+                <td colspan="9">
+                    <a class="link-puce" href="javascript:void(0)"
+                       onclick="ntd.tableRowManager.addTableRow('rcm2777_20180101-dynamic-row-2', 'tbody')">Ajouter une ligne</a>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ4'] ? 'hidden' : ''?>">
+            <tr class="elt">
+                <td class="line_impot">CZ</td>
+                <td class="libelle_right" colspan="5">TOTAL Retenue à la source (taux conventionnel) bénéficiaire personne morale</td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909511</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FC', 'field_name' => 'FC', 'value' => $rcm2777_20180101['FC'])) ?>
+                </td>
+                <td>&nbsp;</td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909512</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GC', 'field_name' => 'GC', 'value' => $rcm2777_20180101['GC'])) ?>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ4'] ? 'hidden' : ''?>">
+            <tr class="tab-title">
+                <th rowspan="4">&nbsp;</th>
+                <th colspan="8">
+                    Bénéficiaire personne physique :
+                </th>
+            </tr>
+            <tr class="tab-title">
+                <th rowspan="3">&nbsp;</th>
+                <th colspan="5">NATURE DES PRODUITS OU DES SOMMES A DEDUIRE</th>
+                <th >Taux</th>
+                <th >Impôt</th>
+            </tr>
+            <tr class="tab-title">
+                <th colspan="2">Bénéfices et plus-values </th>
+                <th rowspan="2">IS dû pour l'exercice (c)</th>
+                <th rowspan="2">Bénéfices ou plus-values antérieurs, compris dans la base de l'IS (d)</th>
+                <th rowspan="2">Base d'imposition de la retenue à la source (a+b)-(c+d)</th>
+                <th rowspan="2">&nbsp;</th>
+                <th rowspan="2">&nbsp;</th>
+            </tr>
+            <tr class="tab-title">
+                <th>retenus pour l'assiette de l'IS (a)</th>
+                <th>de l'exercice, non compris dans la base de l'IS (b)</th>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">CC</td>
+                <td class="libelle">Taux légal <br>en France</td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909498</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'JE', 'field_name' => 'JE', 'value' => $rcm2777_20180101['JE'])) ?>
+                </td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909499</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'KE', 'field_name' => 'KE', 'value' => $rcm2777_20180101['KE'])) ?>
+                </td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909500</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'LE', 'field_name' => 'LE', 'value' => $rcm2777_20180101['LE'])) ?>
+                </td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909501</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ME', 'field_name' => 'ME', 'value' => $rcm2777_20180101['ME'])) ?>
+                </td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909502</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FE', 'field_name' => 'FE', 'value' => $rcm2777_20180101['FE'])) ?>
+                </td>
+                <td class="line_impot">12,8%</td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909503</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GE', 'field_name' => 'GE', 'value' => $rcm2777_20180101['GE'])) ?>
+                </td>
+            </tr>
+        </tbody>
+        <?php
+        $rows_count = 0;
+        foreach ($rcm2777_20180101 as $field => $value) {
+            if (strpos($field, 'JF') !== false) $rows_count++;
+        }
+        $rows_count = max(1, $rows_count);
+        ?>
+        <?php for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :?>
+        <tbody class="rcm2777_20180101-dynamic-row-3 <?=$rcm2777_20180101['ZZ4'] ? 'hidden' : ''?>">
+            <tr class="elt">
+                <td class="line_impot" data-ligne_number="((row_index))"><?=$tr_index ?></td>
+                <td class="libelle">Taux <br>conven<br>tionnel</td>
+                <td class="input medium-input"  data-field="JF">
+                    <div class="line_impot">909535</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'JF', 'field_name' => 'JF/' . $tr_index, 'value' => $rcm2777_20180101['JF/' . $tr_index])) ?>
+                </td>
+                <td class="input medium-input"  data-field="KF">
+                    <div class="line_impot">909536</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'KF', 'field_name' => 'KF/' . $tr_index, 'value' => $rcm2777_20180101['KF/' . $tr_index])) ?>
+                </td>
+                <td class="input medium-input"  data-field="LF">
+                    <div class="line_impot">909537</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'LF', 'field_name' => 'LF/' . $tr_index, 'value' => $rcm2777_20180101['LF/' . $tr_index])) ?>
+                </td>
+                <td class="input medium-input"  data-field="MF">
+                    <div class="line_impot">909538</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'MF', 'field_name' => 'MF/' . $tr_index, 'value' => $rcm2777_20180101['MF/' . $tr_index])) ?>
+                </td>
+                <td class="input medium-input"  data-field="FF">
+                    <div class="line_impot">909539</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FF', 'field_name' => 'FF/' . $tr_index, 'value' => $rcm2777_20180101['FF/' . $tr_index])) ?>
+                </td>
+                <td class="input small-input"  data-field="HC">
+                    <div class="line_impot">909540</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'HC', 'field_name' => 'HC/' . $tr_index, 'value' => $rcm2777_20180101['HC/' . $tr_index])) ?>
+                </td>
+                <td class="input medium-input"  data-field="GF">
+                    <div class="line_impot">909541</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GF', 'field_name' => 'GF/' . $tr_index, 'value' => $rcm2777_20180101['GF/' . $tr_index])) ?>
+                </td>
+                <td style="text-align:center; padding:0; width:25px;" rowspan="5" class="no-print">
+                    <a href="javascript:void(0)"
+                       onclick="ntd.tableRowManager.removeTableRow($(this).up('tbody'), 'rcm2777_20180101-dynamic-row-3', 'tbody')"
+                       title="Supprimer la ligne" style="padding:10px;">
+                        <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png"/>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+        <?php endfor; ?>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ4'] ? 'hidden' : ''?>">
+            <tr class="no-print">
+                <td colspan="9">
+                    <a class="link-puce" href="javascript:void(0)"
+                       onclick="ntd.tableRowManager.addTableRow('rcm2777_20180101-dynamic-row-3', 'tbody')">Ajouter une ligne</a>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ4'] ? 'hidden' : ''?>">
+            <tr class="elt">
+                <td class="line_impot">CY</td>
+                <td class="libelle_right" colspan="5">TOTAL Retenue à la source (taux conventionnel) bénéficiaire personne physique</td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909542</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FG', 'field_name' => 'FG', 'value' => $rcm2777_20180101['FG'])) ?>
+                </td>
+                <td>&nbsp</td>
+                <td class="input medium-input" >
+                    <div class="line_impot">909543</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GG', 'field_name' => 'GG', 'value' => $rcm2777_20180101['GG'])) ?>
+                </td>
+            </tr>
+            <tr class="tab-title">
+                <th colspan="9">&nbsp;</th>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">CT</td>
+                <td class="libelle" colspan="7">Total (CQ + CC + CZ + CY)</td>
+                <td class="input medium-input">
+                    <div class="line_impot">909513</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GD', 'field_name' => 'GD', 'value' => $rcm2777_20180101['GD'])) ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ5'] ? 'no-print' : ''?>">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle">&nbsp;</th>
+            <th class="maintitle" colspan="3">
+                Retenue à la source sur les intérêts des bons de caisse  (Art 1678 bis et 119 bis 1 CGI)
+            </th>
+            <th class="maintitle vertical-middle folding-action">
+                <label  for="rcm2777_20180101_ZZ5" class="no-print">
+                    <i class="fa fa-chevron-up <?=$rcm2777_20180101['ZZ5'] ? 'hidden' : ''?>"></i>
+                    <i class="fa fa-chevron-down <?=$rcm2777_20180101['ZZ5'] ? '' : 'hidden'?>"></i>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ZZ5', 'field_name' => 'ZZ5', 'value' => $rcm2777_20180101['ZZ5'])) ?>
+                </label>
+            </th>
+        </tr>
+        </thead>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ5'] ? 'hidden' : ''?>">
+            <tr class="tab-title">
+                <th>&nbsp;</th>
+                <th>Intérêts, prime de remboursement :</th>
+                <th>Base imposable</th>
+                <th>Taux</th>
+                <th>Impôt</th>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">GH</td>
+                <td class="libelle">- bénéficiaire personne morale</td>
+                <td class="input" >
+                    <div class="line_impot">909180</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FH', 'field_name' => 'FH', 'value' => $rcm2777_20180101['FH'])) ?>
+                </td>
+                <td class="line_impot">15%</td>
+                <td class="input" >
+                    <div class="line_impot">909181</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GH', 'field_name' => 'GH', 'value' => $rcm2777_20180101['GH'])) ?>
+                </td>
+            </tr>
+            <tr class="elt">
+                <td class="line_impot">GI</td>
+                <td class="libelle">- bénéficiaire personne physique</td>
+                <td class="input" >
+                    <div class="line_impot">909514</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FI', 'field_name' => 'FI', 'value' => $rcm2777_20180101['FI'])) ?>
+                </td>
+                <td class="line_impot">12,8%</td>
+                <td class="input" >
+                    <div class="line_impot">909515</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GI', 'field_name' => 'GI', 'value' => $rcm2777_20180101['GI'])) ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="formulaire-page page-form" data-label="2777 III">
+    <table class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ6'] ? 'no-print' : ''?>">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle" rowspan="2">&nbsp</th>
+            <th class="maintitle" colspan="3">
+                Retenue à la source sur les revenus distribués à des non-résidents (Art 119 bis 2 CGI)
+            </th>
+            <th class="maintitle vertical-middle folding-action">
+                <label  for="rcm2777_20180101_ZZ6" class="no-print">
+                    <i class="fa fa-chevron-up <?=$rcm2777_20180101['ZZ6'] ? 'hidden' : ''?>"></i>
+                    <i class="fa fa-chevron-down <?=$rcm2777_20180101['ZZ6'] ? '' : 'hidden'?>"></i>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ZZ6', 'field_name' => 'ZZ6', 'value' => $rcm2777_20180101['ZZ6'])) ?>
+                </label>
+            </th>
+        </tr>
+        </thead>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ6'] ? 'hidden' : ''?>">
+        <tr class="tab-title">
+            <th>&nbsp;</th>
+            <th>
+                Dividendes et autres revenus distribués (taux légaux en France) 
+            </th>
+            <th>
+                Base imposable
+            </th>
+            <th>
+                Taux
+            </th>
+            <th>
+                Impôt
+            </th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">HA</td>
+            <td class="libelle">- taux 75% "Personnes morales"</td>
+            <td class="input" >
+                <div class="line_impot">909182</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FJ', 'field_name' => 'FJ', 'value' => $rcm2777_20180101['FJ'])) ?>
+            </td>
+            <td class="line_impot">
+                75 %
+            </td>
+            <td class="input" >
+                <div class="line_impot">909183</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GJ', 'field_name' => 'GJ', 'value' => $rcm2777_20180101['GJ'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">HF</td>
+            <td class="libelle">- taux 75% "Personnes physiques"</td>
+            <td class="input" >
+                <div class="line_impot">909187</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FK', 'field_name' => 'FK', 'value' => $rcm2777_20180101['FK'])) ?>
+            </td>
+            <td class="line_impot">
+                75 %
+            </td>
+            <td class="input" >
+                <div class="line_impot">909188</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GK', 'field_name' => 'GK', 'value' => $rcm2777_20180101['GK'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">HB</td>
+            <td class="libelle">- taux 30%</td>
+            <td class="input" >
+                <div class="line_impot">909184</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FL', 'field_name' => 'FL', 'value' => $rcm2777_20180101['FL'])) ?>
+            </td>
+            <td class="line_impot">
+                30 %
+            </td>
+            <td class="input" >
+                <div class="line_impot">909185</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GL', 'field_name' => 'GL', 'value' => $rcm2777_20180101['GL'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">HD</td>
+            <td class="libelle">- taux 15%</td>
+            <td class="input" >
+                <div class="line_impot">909189</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FM', 'field_name' => 'FM', 'value' => $rcm2777_20180101['FM'])) ?>
+            </td>
+            <td class="line_impot">
+                15 %
+            </td>
+            <td class="input" >
+                <div class="line_impot">909190</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GM', 'field_name' => 'GM', 'value' => $rcm2777_20180101['GM'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">HE</td>
+            <td class="libelle">- taux 12,8% "Personnes physiques"</td>
+            <td class="input">
+                <div class="line_impot">909516</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FN', 'field_name' => 'FN', 'value' => $rcm2777_20180101['FN'])) ?>
+            </td>
+            <td class="line_impot">
+                12,8%
+            </td>
+            <td class="input" >
+                <div class="line_impot">909517</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GN', 'field_name' => 'GN', 'value' => $rcm2777_20180101['GN'])) ?>
+            </td>
+        </tr>
+        <tr class="tab-title">
+            <th>&nbsp;</th>
+            <th>
+                Dividendes et autres revenus distribués (taux légaux en France) 
+            </th>
+            <th>
+                Base imposable
+            </th>
+            <th>
+                Taux
+            </th>
+            <th>
+                Impôt
+            </th>
+        </tr>
+        </tbody>
+        <?php
+        $rows_count = 0;
+        foreach ($rcm2777_20180101 as $field => $value) {
+            if (strpos($field, 'FO') !== false) $rows_count++;
+        }
+        $rows_count = max(1, $rows_count);
+        ?>
+        <?php for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :?>
+            <tbody class="rcm2777_20180101-dynamic-row-4 <?=$rcm2777_20180101['ZZ6'] ? 'hidden' : ''?>">
+            <tr class="elt">
+                <td class="line_impot" data-ligne_number="((row_index))"><?=$tr_index ?></td>
+                <td class="libelle"></td>
+                <td class="input"  data-field="FO">
+                    <div class="line_impot">909191</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FO', 'field_name' => 'FO/' . $tr_index, 'value' => $rcm2777_20180101['FO/' . $tr_index])) ?>
+                </td>
+                <td class="input"  data-field="HD">
+                    <div class="line_impot">909192</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'HD', 'field_name' => 'HD/' . $tr_index, 'value' => $rcm2777_20180101['HD/' . $tr_index])) ?>
+                </td>
+                <td class="input"  data-field="GO">
+                    <div class="line_impot">909193</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GO', 'field_name' => 'GO/' . $tr_index, 'value' => $rcm2777_20180101['GO/' . $tr_index])) ?>
+                </td>
+                <td style="text-align:center; padding:0; width:25px;" rowspan="5" class="no-print">
+                    <a href="javascript:void(0)"
+                       onclick="ntd.tableRowManager.removeTableRow($(this).up('tbody'), 'rcm2777_20180101-dynamic-row-4', 'tbody')"
+                       title="Supprimer la ligne" style="padding:10px;">
+                        <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png"/>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        <?php endfor; ?>
+        <tbody class="<?=$rcm2777_20180101['ZZ6'] ? 'hidden' : ''?>">
+            <tr class="no-print">
+                <td colspan="5">
+                    <a class="link-puce" href="javascript:void(0)"
+                       onclick="ntd.tableRowManager.addTableRow('rcm2777_20180101-dynamic-row-4', 'tbody')">Ajouter une ligne</a>
+                </td>
+            </tr>
+            <tr class="elt">
+                <td class="">&nbsp;</td>
+                <td class="libelle">Total des dividendes et autres revenus distribués (taux légaux en France)</td>
+                <td class="input" >
+                    <div class="line_impot">909529</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FP', 'field_name' => 'FP', 'value' => $rcm2777_20180101['FP'])) ?>
+                </td>
+                <td class="libelle">&nbsp;</td>
+                <td class="input" >
+                    <div class="line_impot">909530</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GP', 'field_name' => 'GP', 'value' => $rcm2777_20180101['GP'])) ?>
+                </td>
+            </tr>
+        </tbody>
+        <tbody class="<?=$rcm2777_20180101['ZZ6'] ? 'hidden' : ''?>">
+        <tr class="tab-title">
+            <th>&nbsp;</th>
+            <th>
+                Dividendes et autres revenus distribués supportant une retenue à la source inférieure au taux légal en application des conventions internationales            </th>
+            <th>
+                Base imposable
+            </th>
+            <th>
+                Taux
+            </th>
+            <th>
+                Impôt
+            </th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">H1</td>
+            <td class="libelle">- taux 5 %</td>
+            <td class="input" >
+                <div class="line_impot">909216</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FQ', 'field_name' => 'FQ', 'value' => $rcm2777_20180101['FQ'])) ?>
+            </td>
+            <td class="line_impot">
+                5 %
+            </td>
+            <td class="input" >
+                <div class="line_impot">909217</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GQ', 'field_name' => 'GQ', 'value' => $rcm2777_20180101['GQ'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">H2</td>
+            <td class="libelle">- taux 10 %</td>
+            <td class="input" >
+                <div class="line_impot">909218</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FR', 'field_name' => 'FR', 'value' => $rcm2777_20180101['FR'])) ?>
+            </td>
+            <td class="line_impot">
+                10 %
+            </td>
+            <td class="input" >
+                <div class="line_impot">909219</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GR', 'field_name' => 'GR', 'value' => $rcm2777_20180101['GR'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">H3</td>
+            <td class="libelle">- taux 12 %</td>
+            <td class="input" >
+                <div class="line_impot">909220</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FS', 'field_name' => 'FS', 'value' => $rcm2777_20180101['FS'])) ?>
+            </td>
+            <td class="line_impot">
+                12 %
+            </td>
+            <td class="input" >
+                <div class="line_impot">909221</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GS', 'field_name' => 'GS', 'value' => $rcm2777_20180101['GS'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">H4</td>
+            <td class="libelle">- taux 12,5 %</td>
+            <td class="input" >
+                <div class="line_impot">909222</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FT', 'field_name' => 'FT', 'value' => $rcm2777_20180101['FT'])) ?>
+            </td>
+            <td class="line_impot">
+                12,5 %
+            </td>
+            <td class="input" >
+                <div class="line_impot">909223</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GT', 'field_name' => 'GT', 'value' => $rcm2777_20180101['GT'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">H5</td>
+            <td class="libelle">- taux 15 %</td>
+            <td class="input" >
+                <div class="line_impot">909224</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FU', 'field_name' => 'FU', 'value' => $rcm2777_20180101['FU'])) ?>
+            </td>
+            <td class="line_impot">
+                15 %
+            </td>
+            <td class="input" >
+                <div class="line_impot">909225</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GU', 'field_name' => 'GU', 'value' => $rcm2777_20180101['GU'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">H6</td>
+            <td class="libelle">- taux 20 %</td>
+            <td class="input" >
+                <div class="line_impot">909226</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FV', 'field_name' => 'FV', 'value' => $rcm2777_20180101['FV'])) ?>
+            </td>
+            <td class="line_impot">
+                20 %
+            </td>
+            <td class="input" >
+                <div class="line_impot">909227</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GV', 'field_name' => 'GV', 'value' => $rcm2777_20180101['GV'])) ?>
+            </td>
+        </tr>
+        <tr class="tab-title">
+            <th>&nbsp;</th>
+            <th>
+                Dividendes et autres revenus distribués supportant une retenue à la source inférieure au taux légal en application des conventions internationales            </th>
+            <th>
+                Base imposable
+            </th>
+            <th>
+                Taux
+            </th>
+            <th>
+                Impôt
+            </th>
+        </tr>
+        </tbody>
+        <?php
+        $rows_count = 0;
+        foreach ($rcm2777_20180101 as $field => $value) {
+            if (strpos($field, 'FW') !== false) $rows_count++;
+        }
+        $rows_count = max(1, $rows_count);
+        ?>
+        <?php for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :?>
+            <tbody class="rcm2777_20180101-dynamic-row-5 <?=$rcm2777_20180101['ZZ6'] ? 'hidden' : ''?>">
+            <tr class="elt">
+                <td class="line_impot" data-ligne_number="((row_index))"><?=$tr_index ?></td>
+                <td class="libelle">&nbsp;</td>
+                <td class="input"  data-field="FW">
+                    <div class="line_impot">909228</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FW', 'field_name' => 'FW/' . $tr_index, 'value' => $rcm2777_20180101['FW/' . $tr_index])) ?>
+                </td>
+                <td class="input"  data-field="HE">
+                    <div class="line_impot">909229</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'HE', 'field_name' => 'HE/' . $tr_index, 'value' => $rcm2777_20180101['HE/' . $tr_index])) ?>
+                </td>
+                <td class="input"  data-field="GW">
+                    <div class="line_impot">909230</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GW', 'field_name' => 'GW/' . $tr_index, 'value' => $rcm2777_20180101['GW/' . $tr_index])) ?>
+                </td>
+                <td style="text-align:center; padding:0; width:25px;" rowspan="5" class="no-print">
+                    <a href="javascript:void(0)"
+                       onclick="ntd.tableRowManager.removeTableRow($(this).up('tbody'), 'rcm2777_20180101-dynamic-row-5', 'tbody')"
+                       title="Supprimer la ligne" style="padding:10px;">
+                        <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png"/>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        <?php endfor; ?>
+        <tbody class="<?=$rcm2777_20180101['ZZ6'] ? 'hidden' : ''?>">
+        <tr class="no-print">
+            <td colspan="5">
+                <a class="link-puce" href="javascript:void(0)"
+                   onclick="ntd.tableRowManager.addTableRow('rcm2777_20180101-dynamic-row-5', 'tbody')">Ajouter une ligne</a>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="">&nbsp;</td>
+            <td class="libelle">
+                Total des dividendes et autres revenus distribués supportant une retenue à la source inférieure au taux légal en application des conventions internationales
+            </td>
+            <td class="input" >
+                <div class="line_impot">909531</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FX', 'field_name' => 'FX', 'value' => $rcm2777_20180101['FX'])) ?>
+            </td>
+            <td class="libelle">&nbsp;</td>
+            <td class="input" >
+                <div class="line_impot">909532</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GX', 'field_name' => 'GX', 'value' => $rcm2777_20180101['GX'])) ?>
+            </td>
+        </tr>
+        </tbody>
+        <tbody class="<?=$rcm2777_20180101['ZZ6'] ? 'hidden' : ''?>">
+        <tr class="tab-title">
+            <th>&nbsp;</th>
+            <th>&nbsp;<th>
+                Base imposable
+            </th>
+            <th>
+                Taux
+            </th>
+            <th>
+                Impôt
+            </th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">HG</td>
+            <td class="libelle">
+                Sous total retenue à la source bénéficiaire personne physique
+            </td>
+            <td class="input" >
+                <div class="line_impot">909518</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FY', 'field_name' => 'FY', 'value' => $rcm2777_20180101['FY'])) ?>
+            </td>
+            <td class="libelle">&nbsp;</td>
+            <td class="input" >
+                <div class="line_impot">909519</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GY', 'field_name' => 'GY', 'value' => $rcm2777_20180101['GY'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">HH</td>
+            <td class="libelle">
+                Sous total retenue à la source bénéficiaire personne morale
+            </td>
+            <td class="input" >
+                <div class="line_impot">909520</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FZ', 'field_name' => 'FZ', 'value' => $rcm2777_20180101['FZ'])) ?>
+            </td>
+            <td class="libelle">&nbsp;</td>
+            <td class="input" >
+                <div class="line_impot">909521</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GZ', 'field_name' => 'GZ', 'value' => $rcm2777_20180101['GZ'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">HI</td>
+            <td class="libelle">
+                TOTAL des lignes HG et HH
+            </td>
+            <td class="input" >
+                <div class="line_impot">909242</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'NA', 'field_name' => 'NA', 'value' => $rcm2777_20180101['NA'])) ?>
+            </td>
+            <td class="libelle">&nbsp;</td>
+            <td class="input" >
+                <div class="line_impot">909243</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'OA', 'field_name' => 'OA', 'value' => $rcm2777_20180101['OA'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">HJ</td>
+            <td class="libelle">
+                Montant des produits visés aux articles 108 à 117 bis du CGI ayant bénéficié de l'exonération de retenue à la source sur le fondement du 2 de l'article 119 bis du CGI
+            </td>
+            <td class="input" >
+                <div class="line_impot">909235</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'NB', 'field_name' => 'NB', 'value' => $rcm2777_20180101['NB'])) ?>
+            </td>
+            <td class="libelle" colspan="2">&nbsp;</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="formulaire-page page-form" data-label="2777 IV">
+    <table class="rcm2777_20180101">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle">&nbsp;</th>
+            <th class="maintitle" colspan="4">
+                TOTAL BRUT AVANT REGULARISATIONS
+            </th>
+        </tr>
+        </thead>
+        <tbody class="rcm2777_20180101">
+        <tr class="tab-title">
+            <th colspan="2">&nbsp;</th>
+            <th>Base imposable</th>
+            <th>&nbsp;</th>
+            <th>Impôt</th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">IL</td>
+            <td class="libelle">Total brut (1)</td>
+            <td class="input" >
+                <div class="line_impot">909233</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EG', 'field_name' => 'EG', 'value' => $rcm2777_20180101['EG'])) ?>
+            </td>
+            <td class="line_impot">&nbsp;</td>
+            <td class="input" >
+                <div class="line_impot">909234</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EH', 'field_name' => 'EH', 'value' => $rcm2777_20180101['EH'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">(1)</td>
+            <td class="libelle" colspan="4">IL est la somme des rubriques "Prélèvements" et "Retenue à la source" sauf ligne HJ</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ7'] ? 'no-print' : ''?>">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle" rowspan="2">&nbsp;</th>
+            <th class="maintitle" colspan="6">
+                Régularisations
+            </th>
+            <th class="maintitle vertical-middle folding-action">
+                <label  for="rcm2777_20180101_ZZ7" class="no-print">
+                    <i class="fa fa-chevron-up <?=$rcm2777_20180101['ZZ7'] ? 'hidden' : ''?>"></i>
+                    <i class="fa fa-chevron-down <?=$rcm2777_20180101['ZZ7'] ? '' : 'hidden'?>"></i>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ZZ7', 'field_name' => 'ZZ7', 'value' => $rcm2777_20180101['ZZ7'])) ?>
+                </label>
+            </th>
+        </tr>
+        </thead>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ7'] ? 'hidden' : ''?>">
+        <tr class="tab-title">
+            <th>&nbsp;</th>
+            <th colspan="6">A partir de la déclaration n° 2777 créditrice</th>
+            <th>Impôt</th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">JK</td>
+            <td class="libelle" colspan="6">Report du ou des montant(s) excédentaire(s) "ligne QT"  dégagés sur la (les) précédente(s) déclaration(s) 2777 (2)</td>
+            <td class="input center">
+                <div class="line_impot">909170</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'IA', 'field_name' => 'IA', 'value' => $rcm2777_20180101['IA'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">(2)</td>
+            <td class="libelle" colspan="7">Exception : Si la déclaration en cours concerne la période de janvier, alors le montant excédentaire dégagé au titre de la période décembre N-1  doit être reporté sur la ligne TC de la présente déclaration. </td>
+        </tr>
+        <tr class="tab-title">
+            <th rowspan="2">&nbsp;</th>
+            <th colspan="7">Au titre des formulaires 5000 et 5001 (à joindre en annexe). Si ce cadre se révèle insuffisant, joindre un état établi selon le même modèle.</th>
+        </tr>
+        <tr class="tab-title">
+            <th>
+                Déclaration n° 2777 du mois de versement (col.1)
+            </th>
+            <th colspan="2">
+                Régularisation hors PFU (col.2)
+            </th>
+            <th colspan="2">
+                Régularisation PFU (col.3)
+            </th>
+            <th colspan="2">
+                Total Col. 4 = col.2 + col.3
+            </th>
+        </tr>
+        </tbody>
+        <?php
+        $rows_count = 0;
+        foreach ($rcm2777_20180101 as $field => $value) {
+            if (strpos($field, 'IB') !== false) $rows_count++;
+        }
+        $rows_count = max(1, $rows_count);
+        ?>
+        <?php for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :?>
+            <tbody class="rcm2777_20180101-dynamic-row-6 <?=$rcm2777_20180101['ZZ7'] ? 'hidden' : ''?>">
+            <tr class="elt">
+                <td class="line_impot" data-ligne_number="((row_index))"><?=$tr_index ?></td>
+                <td class="input center small"  data-field="IB">
+                    <div class="line_impot">909260</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'IB', 'field_name' => 'IB/' . $tr_index, 'value' => $rcm2777_20180101['IB/' . $tr_index])) ?>
+                </td>
+                <td class="input center" colspan="2"  data-field="IC">
+                    <div class="line_impot">909174</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'IC', 'field_name' => 'IC/' . $tr_index, 'value' => $rcm2777_20180101['IC/' . $tr_index])) ?>
+                </td>
+                <td class="input center" colspan="2" data-field="ID">
+                    <div class="line_impot">909175</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ID', 'field_name' => 'ID/' . $tr_index, 'value' => $rcm2777_20180101['ID/' . $tr_index])) ?>
+                </td>
+                <td class="input center" colspan="2" data-field="IE">
+                    <div class="line_impot">909176</div>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'IE', 'field_name' => 'IE/' . $tr_index, 'value' => $rcm2777_20180101['IE/' . $tr_index])) ?>
+                </td>
+                <td style="text-align:center; padding:0; width:25px;" rowspan="5" class="no-print">
+                    <a href="javascript:void(0)"
+                       onclick="ntd.tableRowManager.removeTableRow($(this).up('tbody'), 'rcm2777_20180101-dynamic-row-6', 'tbody')"
+                       title="Supprimer la ligne" style="padding:10px;">
+                        <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png"/>
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        <?php endfor; ?>
+        <tbody class="<?=$rcm2777_20180101['ZZ7'] ? 'hidden' : ''?>">
+        <tr class="no-print">
+            <td colspan="8">
+                <a class="link-puce" href="javascript:void(0)"
+                   onclick="ntd.tableRowManager.addTableRow('rcm2777_20180101-dynamic-row-6', 'tbody')">Ajouter une ligne</a>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="">&nbsp;</td>
+            <td class="libelle">
+                TOTAL (*)
+            </td>
+            <td class="line_impot">
+                KY
+            </td>
+            <td class="input medium-input">
+                <div class="line_impot">909129</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'IF', 'field_name' => 'IF', 'value' => $rcm2777_20180101['IF'])) ?>
+            </td>
+            <td class="line_impot">
+                KX
+            </td>
+            <td class="input medium-input">
+                <div class="line_impot">909130</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'IG', 'field_name' => 'IG', 'value' => $rcm2777_20180101['IG'])) ?>
+            </td>
+            <td class="line_impot">
+                LM
+            </td>
+            <td class="input medium-input">
+                <div class="line_impot">909099</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'IH', 'field_name' => 'IH', 'value' => $rcm2777_20180101['IH'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="libelle">(*)</td>
+            <td class="libelle" colspan="7">Les données KY, KX et LM doivent correspondre au cumul des sommes figurant dans les colonnes 2, 3 et 4 avec celles indiquées sur l'éventuel état joint en annexe.</td>
+        </tr>
+        <tr class="tab-title">
+            <th colspan="8">
+                Autres régularisations 
+            </th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">MM</td>
+            <td class="libelle" colspan="6">Régularisation portant sur le prélèvement forfaitaire unique</td>
+            <td class="input">
+                <div class="line_impot">909177</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'II', 'field_name' => 'II', 'value' => $rcm2777_20180101['II'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">NP</td>
+            <td class="libelle" colspan="6">Régularisation hors prélèvement forfaitaire unique</td>
+            <td class="input">
+                <div class="line_impot">909178</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'IJ', 'field_name' => 'IJ', 'value' => $rcm2777_20180101['IJ'])) ?>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <table class="rcm2777_20180101">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle">&nbsp;</th>
+            <th class="maintitle" colspan="4">
+                TOTAL NET APRES REGULARISATIONS
+            </th>
+        </tr>
+        </thead>
+        <tbody class="rcm2777_20180101">
+        <tr class="tab-title">
+            <th colspan="2">&nbsp;</th>
+            <th>Impôt</th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">OP1</td>
+            <td class="libelle">Montant dû (3)</td>
+            <td class="input" >
+                <div class="line_impot">909545</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EI', 'field_name' => 'EI', 'value' => $rcm2777_20180101['EI'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">OP2</td>
+            <td class="libelle">Montant excédentaire (3)</td>
+            <td class="input" >
+                <div class="line_impot">909250</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EJ', 'field_name' => 'EJ', 'value' => $rcm2777_20180101['EJ'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot" rowspan="2">(3)</td>
+            <td class="libelle" colspan="2">OP1 = Max[ 0;  IL - (JK + LM + MM + NP)] avec  IL - (JK + LM + MM + NP) >= 0</td>
+        </tr>
+        <tr class="elt">
+            <td class="libelle" colspan="2">OP2 = Max[ 0 ; (JK + LM + MM + NP)-IL] avec IL-(JK + LM + MM + NP) < 0</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="formulaire-page page-form" data-label="2777 V">
+    <table class="rcm2777_20180101">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle">
+                CONTRIBUTIONS ET PRELEVEMENTS SOCIAUX
+            </th>
+        </tr>
+        </thead>
+    </table>
+
+    <table class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ8'] ? 'no-print' : ''?>">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle">&nbsp;</th>
+            <th class="maintitle" colspan="3">
+                Contributions et prélèvements sociaux
+            </th>
+            <th class="maintitle vertical-middle folding-action">
+                <label  for="rcm2777_20180101_ZZ8" class="no-print">
+                    <i class="fa fa-chevron-up <?=$rcm2777_20180101['ZZ8'] ? 'hidden' : ''?>"></i>
+                    <i class="fa fa-chevron-down <?=$rcm2777_20180101['ZZ8'] ? '' : 'hidden'?>"></i>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ZZ8', 'field_name' => 'ZZ8', 'value' => $rcm2777_20180101['ZZ8'])) ?>
+                </label>
+            </th>
+        </tr>
+        </thead>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ8'] ? 'hidden' : ''?>">
+        <tr class="tab-title">
+            <th>&nbsp;</th>
+            <th>Contribution sociale généralisée </th>
+            <th>Base imposable</th>
+            <th>Taux</th>
+            <th>Impôt</th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">PP</td>
+            <td class="libelle">Produits soumis au taux applicable entre le 01-01-1997 et le 31-12-1997</td>
+            <td class="input" >
+                <div class="line_impot">909141</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CJ', 'field_name' => 'CJ', 'value' => $rcm2777_20180101['CJ'])) ?>
+            </td>
+            <td class="line_impot">3,4%</td>
+            <td class="input" >
+                <div class="line_impot">909142</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DJ', 'field_name' => 'DJ', 'value' => $rcm2777_20180101['DJ'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">PW</td>
+            <td class="libelle">Produits soumis au taux applicable entre le 01-01-1998 et le 31-12-2004</td>
+            <td class="input" >
+                <div class="line_impot">909143</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CK', 'field_name' => 'CK', 'value' => $rcm2777_20180101['CK'])) ?>
+            </td>
+            <td class="line_impot">7,5%</td>
+            <td class="input" >
+                <div class="line_impot">909144</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DK', 'field_name' => 'DK', 'value' => $rcm2777_20180101['DK'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">PN</td>
+            <td class="libelle">Produits soumis au taux applicable  entre le 01-01-2005 et le 31-12-2017</td>
+            <td class="input" >
+                <div class="line_impot">909145</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CL', 'field_name' => 'CL', 'value' => $rcm2777_20180101['CL'])) ?>
+            </td>
+            <td class="line_impot">8,2%</td>
+            <td class="input" >
+                <div class="line_impot">909146</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DL', 'field_name' => 'DL', 'value' => $rcm2777_20180101['DL'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">QE</td>
+            <td class="libelle">Produits soumis au taux applicable depuis le 1er janvier 2018</td>
+            <td class="input" >
+                <div class="line_impot">909522</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CA', 'field_name' => 'CA', 'value' => $rcm2777_20180101['CA'])) ?>
+            </td>
+            <td class="line_impot">9,9%</td>
+            <td class="input" >
+                <div class="line_impot">909523</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DA', 'field_name' => 'DA', 'value' => $rcm2777_20180101['DA'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">PQ</td>
+            <td class="libelle center">TOTAL LIGNES PP+PW+PN+QE</td>
+            <td class="input" >
+                <div class="line_impot">909557</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CM', 'field_name' => 'CM', 'value' => $rcm2777_20180101['CM'])) ?>
+            </td>
+            <td class="line_impot">&nbsp;</td>
+            <td class="input" >
+                <div class="line_impot">909147</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DM', 'field_name' => 'DM', 'value' => $rcm2777_20180101['DM'])) ?>
+            </td>
+        </tr>
+        <tr class="tab-title">
+            <th>&nbsp;</th>
+            <th>Prélèvement social</th>
+            <th>Base imposable</th>
+            <th>Taux</th>
+            <th>Impôt</th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">PY</td>
+            <td class="libelle">Produits soumis au taux applicable avant le 01-01-2011</td>
+            <td class="input">
+                <div class="line_impot">909148</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CN', 'field_name' => 'CN', 'value' => $rcm2777_20180101['CN'])) ?>
+            </td>
+            <td class="line_impot">2%</td>
+            <td class="input" >
+                <div class="line_impot">909149</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DN', 'field_name' => 'DN', 'value' => $rcm2777_20180101['DN'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">QA</td>
+            <td class="libelle">Produits soumis au taux applicable entre le 01-01-2011 et le 30-09-2011</td>
+            <td class="input" >
+                <div class="line_impot">909150</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CO', 'field_name' => 'CO', 'value' => $rcm2777_20180101['CO'])) ?>
+            </td>
+            <td class="line_impot">2,2%</td>
+            <td class="input" >
+                <div class="line_impot">909151</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DO', 'field_name' => 'DO', 'value' => $rcm2777_20180101['DO'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">QB</td>
+            <td class="libelle">Produits soumis au taux applicable entre le 01-10-2011 et le 30-06-2012</td>
+            <td class="input" >
+                <div class="line_impot">909152</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CP', 'field_name' => 'CP', 'value' => $rcm2777_20180101['CP'])) ?>
+            </td>
+            <td class="line_impot">3,4%</td>
+            <td class="input" >
+                <div class="line_impot">909153</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DP', 'field_name' => 'DP', 'value' => $rcm2777_20180101['DP'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">QC</td>
+            <td class="libelle">Produits soumis au taux applicable entre le 01-07-2012 et le 31-12-2012</td>
+            <td class="input" >
+                <div class="line_impot">909154</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CQ', 'field_name' => 'CQ', 'value' => $rcm2777_20180101['CQ'])) ?>
+            </td>
+            <td class="line_impot">5,4%</td>
+            <td class="input" >
+                <div class="line_impot">909155</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DQ', 'field_name' => 'DQ', 'value' => $rcm2777_20180101['DQ'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">QD</td>
+            <td class="libelle">Produits soumis au taux applicable depuis le 01-01-2013</td>
+            <td class="input" >
+                <div class="line_impot">909156</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CC', 'field_name' => 'CC', 'value' => $rcm2777_20180101['CC'])) ?>
+            </td>
+            <td class="line_impot">4,5%</td>
+            <td class="input" >
+                <div class="line_impot">909157</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DC', 'field_name' => 'DC', 'value' => $rcm2777_20180101['DC'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">PS</td>
+            <td class="libelle center">TOTAL LIGNES PY+QA+QB+QC+QD</td>
+            <td class="input" >
+                <div class="line_impot">909558</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CR', 'field_name' => 'CR', 'value' => $rcm2777_20180101['CR'])) ?>
+            </td>
+            <td class="line_impot">&nbsp;</td>
+            <td class="input" >
+                <div class="line_impot">909158</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DR', 'field_name' => 'DR', 'value' => $rcm2777_20180101['DR'])) ?>
+            </td>
+        </tr>
+        <tr class="tab-title">
+            <th>&nbsp;</th>
+            <th>Contribution additionnelle au prélèvement social </th>
+            <th>Base imposable</th>
+            <th>Taux</th>
+            <th>Impôt</th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">PR</td>
+            <td class="libelle">Produits soumis au taux applicable depuis le 01-07-2004</td>
+            <td class="input">
+                <div class="line_impot">909159</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CE', 'field_name' => 'CE', 'value' => $rcm2777_20180101['CE'])) ?>
+            </td>
+            <td class="line_impot">0,3%</td>
+            <td class="input" >
+                <div class="line_impot">909160</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DE', 'field_name' => 'DE', 'value' => $rcm2777_20180101['DE'])) ?>
+            </td>
+        </tr>
+        <tr class="tab-title">
+            <th>&nbsp;</th>
+            <th>Contribution additionnelle 1,1 % et prélèvement de solidarité</th>
+            <th>Base imposable</th>
+            <th>Taux</th>
+            <th>Impôt</th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">PF</td>
+            <td class="libelle">Produits soumis au taux applicable entre le 01-01-2009 et le 31-12-2012</td>
+            <td class="input">
+                <div class="line_impot">909161</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CS', 'field_name' => 'CS', 'value' => $rcm2777_20180101['CS'])) ?>
+            </td>
+            <td class="line_impot">1,1%</td>
+            <td class="input" >
+                <div class="line_impot">909162</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DS', 'field_name' => 'DS', 'value' => $rcm2777_20180101['DS'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">QF</td>
+            <td class="libelle">Produits soumis au taux applicable depuis le 01-01-2013</td>
+            <td class="input">
+                <div class="line_impot">909163</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CG', 'field_name' => 'CG', 'value' => $rcm2777_20180101['CG'])) ?>
+            </td>
+            <td class="line_impot">2%</td>
+            <td class="input" >
+                <div class="line_impot">909164</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DG', 'field_name' => 'DG', 'value' => $rcm2777_20180101['DG'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">PG</td>
+            <td class="libelle center">TOTAL LIGNES PF+QF</td>
+            <td class="input">
+                <div class="line_impot">909559</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CT', 'field_name' => 'CT', 'value' => $rcm2777_20180101['CT'])) ?>
+            </td>
+            <td class="line_impot">&nbsp;</td>
+            <td class="input" >
+                <div class="line_impot">909165</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DT', 'field_name' => 'DT', 'value' => $rcm2777_20180101['DT'])) ?>
+            </td>
+        </tr>
+        <tr class="tab-title">
+            <th>&nbsp;</th>
+            <th>Contribution pour le remboursement de la dette sociale</th>
+            <th>Base imposable</th>
+            <th>Taux</th>
+            <th>Impôt</th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">AAA</td>
+            <td class="libelle">Intérêts sur livrets</td>
+            <td class="input">
+                <div class="line_impot">909166</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CU', 'field_name' => 'CU', 'value' => $rcm2777_20180101['CU'])) ?>
+            </td>
+            <td class="line_impot" rowspan="9">0,5%</td>
+            <td class="input" >
+                <div class="line_impot">909167</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DU', 'field_name' => 'DU', 'value' => $rcm2777_20180101['DU'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">AAB</td>
+            <td class="libelle">Revenus obligataires</td>
+            <td class="input">
+                <div class="line_impot">909168</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CV', 'field_name' => 'CV', 'value' => $rcm2777_20180101['CV'])) ?>
+            </td>
+            <td class="input" >
+                <div class="line_impot">909169</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DV', 'field_name' => 'DV', 'value' => $rcm2777_20180101['DV'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">AAC</td>
+            <td class="libelle">Revenus distribués entrant dans le champ de l'article 117 quater du CGI</td>
+            <td class="input">
+                <div class="line_impot">909171</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CI', 'field_name' => 'CI', 'value' => $rcm2777_20180101['CI'])) ?>
+            </td>
+            <td class="input" >
+                <div class="line_impot">909172</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DI', 'field_name' => 'DI', 'value' => $rcm2777_20180101['DI'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">AAD</td>
+            <td class="libelle">Produits des plans et comptes épargne logement (PEL et CEL)</td>
+            <td class="input">
+                <div class="line_impot">909173</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CW', 'field_name' => 'CW', 'value' => $rcm2777_20180101['CW'])) ?>
+            </td>
+            <td class="input" >
+                <div class="line_impot">909194</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DW', 'field_name' => 'DW', 'value' => $rcm2777_20180101['DW'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">AAE</td>
+            <td class="libelle">Gains sur plans d'épargne en actions (PEA et PEA-PME)</td>
+            <td class="input">
+                <div class="line_impot">909195</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CX', 'field_name' => 'CX', 'value' => $rcm2777_20180101['CX'])) ?>
+            </td>
+            <td class="input" >
+                <div class="line_impot">909196</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DX', 'field_name' => 'DX', 'value' => $rcm2777_20180101['DX'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">AAF</td>
+            <td class="libelle">Produits de la participation ou de l'épargne salariale (PEE, PEI, Perco)</td>
+            <td class="input">
+                <div class="line_impot">909197</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CY', 'field_name' => 'CY', 'value' => $rcm2777_20180101['CY'])) ?>
+            </td>
+            <td class="input" >
+                <div class="line_impot">909198</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DY', 'field_name' => 'DY', 'value' => $rcm2777_20180101['DY'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">AAG</td>
+            <td class="libelle">Produits des contrats de capitalisation ou assimilés multi-supports ou en UC</td>
+            <td class="input">
+                <div class="line_impot">909199</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CZ', 'field_name' => 'CZ', 'value' => $rcm2777_20180101['CZ'])) ?>
+            </td>
+            <td class="input" >
+                <div class="line_impot">909200</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DZ', 'field_name' => 'DZ', 'value' => $rcm2777_20180101['DZ'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">AAH</td>
+            <td class="libelle">Produits des contrats de capitalisation ou assimilés en euros</td>
+            <td class="input">
+                <div class="line_impot">909201</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'PA', 'field_name' => 'PA', 'value' => $rcm2777_20180101['PA'])) ?>
+            </td>
+            <td class="input" >
+                <div class="line_impot">909202</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'QA', 'field_name' => 'QA', 'value' => $rcm2777_20180101['QA'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">AAI</td>
+            <td class="libelle">Autres produits</td>
+            <td class="input">
+                <div class="line_impot">909203</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'PB', 'field_name' => 'PB', 'value' => $rcm2777_20180101['PB'])) ?>
+            </td>
+            <td class="input" >
+                <div class="line_impot">909204</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'QB', 'field_name' => 'QB', 'value' => $rcm2777_20180101['QB'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">PU</td>
+            <td class="libelle center">TOTAL LIGNES AAA+AAB+AAC+AAD+AAE+AAF+AAG+AAH+AAI</td>
+            <td class="input">
+                <div class="line_impot">909560</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'PC', 'field_name' => 'PC', 'value' => $rcm2777_20180101['PC'])) ?>
+            </td>
+            <td>&nbsp;</td>
+            <td class="input" >
+                <div class="line_impot">909205</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'QC', 'field_name' => 'QC', 'value' => $rcm2777_20180101['QC'])) ?>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="formulaire-page page-form page-break" data-label="2777 VI">
+    <table class="rcm2777_20180101">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle">
+                VERSEMENT ET IMPUTATION DES ACOMPTES
+            </th>
+        </tr>
+        </thead>
+    </table>
+    <table class="rcm2777_20180101  <?=$rcm2777_20180101['ZZ9'] ? 'no-print' : ''?>">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle">&nbsp;</th>
+            <th class="maintitle" colspan="3">
+                VERSEMENT DES ACOMPTES : DECLARATION RELATIVE AU MOIS DE SEPTEMBRE
+            </th>
+            <th class="maintitle vertical-middle folding-action">
+                <label  for="rcm2777_20180101_ZZ9" class="no-print">
+                    <i class="fa fa-chevron-up <?=$rcm2777_20180101['ZZ9'] ? 'hidden' : ''?>"></i>
+                    <i class="fa fa-chevron-down <?=$rcm2777_20180101['ZZ9'] ? '' : 'hidden'?>"></i>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ZZ9', 'field_name' => 'ZZ9', 'value' => $rcm2777_20180101['ZZ9'])) ?>
+                </label>
+            </th>
+        </tr>
+        </thead>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ9'] ? 'hidden' : ''?>">
+        <tr class="tab-title">
+            <th>&nbsp;</th>
+            <th>Acompte d'impôt sur le revenu :</th>
+            <th>Base imposable</th>
+            <th class="line_impot">&nbsp;</th>
+            <th>Impôt (Base x 90 %)</th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">RY</td>
+            <td class="libelle">Prélèvements forfaitaires et retenues à la source dus au titre de décembre de l'année précédente</td>
+            <td class="input" >
+                <div class="line_impot">909100</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RC', 'field_name' => 'RC', 'value' => $rcm2777_20180101['RC'])) ?>
+            </td>
+            <td class="line_impot">&nbsp;</td>
+            <td class="input" >
+                <div class="line_impot">909107</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RF', 'field_name' => 'RF', 'value' => $rcm2777_20180101['RF'])) ?>
+            </td>
+        </tr>
+        <tr class="tab-title">
+            <th>&nbsp;</th>
+            <th>Acompte sur les prélèvements sociaux :</th>
+            <th>Base imposable</th>
+            <th class="line_impot">Taux</th>
+            <th>Impôt (Base × 17,2% × 90%)</th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">ABA</td>
+            <td class="libelle">Dû au titre de décembre de l'année précédente</td>
+            <td class="input" >
+                <div class="line_impot">909244</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RA', 'field_name' => 'RA', 'value' => $rcm2777_20180101['RA'])) ?>
+            </td>
+            <td class="line_impot">17,2%</td>
+            <td class="input" >
+                <div class="line_impot">909137</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RG', 'field_name' => 'RG', 'value' => $rcm2777_20180101['RG'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">ABB</td>
+            <td class="libelle">Dû au titre de janvier de l'année en cours</td>
+            <td class="input" >
+                <div class="line_impot">909245</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RB', 'field_name' => 'RB', 'value' => $rcm2777_20180101['RB'])) ?>
+            </td>
+            <td class="line_impot">17,2%</td>
+            <td class="input" >
+                <div class="line_impot">909207</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RH', 'field_name' => 'RH', 'value' => $rcm2777_20180101['RH'])) ?>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="rcm2777_20180101  <?=$rcm2777_20180101['ZZ10'] ? 'no-print' : ''?>">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle">&nbsp;</th>
+            <th class="maintitle" colspan="2">
+                IMPUTATION DES ACOMPTES VERSES: DECLARATION RELATIVE AU MOIS DE DECEMBRE
+            </th>
+            <th class="maintitle vertical-middle folding-action">
+                <label  for="rcm2777_20180101_ZZ10" class="no-print">
+                    <i class="fa fa-chevron-up <?=$rcm2777_20180101['ZZ10'] ? 'hidden' : ''?>"></i>
+                    <i class="fa fa-chevron-down <?=$rcm2777_20180101['ZZ10'] ? '' : 'hidden'?>"></i>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ZZ10', 'field_name' => 'ZZ10', 'value' => $rcm2777_20180101['ZZ10'])) ?>
+                </label>
+            </th>
+        </tr>
+        </thead>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ10'] ? 'hidden' : ''?>">
+        <tr class="tab-title">
+            <th colspan="3">Partie I : Si vous avez déclaré un acompte à la rubrique "Versement des acomptes" de votre déclaration relative au mois de septembre, veuillez reporter ci-dessous les éléments déclarés en cases RY et ABA de cette déclaration :</th>
+            <th>Impôt</th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">RY</td>
+            <td class="libelle" colspan="2">Acompte d'impôt sur le revenu</td>
+            <td class="input" >
+                <div class="line_impot">909140</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RT', 'field_name' => 'RT', 'value' => $rcm2777_20180101['RT'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">ABA</td>
+            <td class="libelle" colspan="2">Acompte sur les prélèvements sociaux</td>
+            <td class="input" >
+                <div class="line_impot">909232</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RU', 'field_name' => 'RU', 'value' => $rcm2777_20180101['RU'])) ?>
+            </td>
+        </tr>
+        <tr class="tab-title">
+            <th colspan="3">Partie II : Déclaration déposée en janvier de l'année en cours au titre des revenus de décembre de l'année précédente</th>
+            <th>Impôt</th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">SE1</td>
+            <td class="libelle" colspan="2">OP1-OP2+QF sous déduction des acomptes versés : situation payante</td>
+            <td class="input" >
+                <div class="line_impot">909524</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RI', 'field_name' => 'RI', 'value' => $rcm2777_20180101['RI'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">SE2</td>
+            <td class="libelle" colspan="2">OP1-OP2+QF sous déduction des acomptes versés : situation créditrice</td>
+            <td class="input" >
+                <div class="line_impot">909588</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RJ', 'field_name' => 'RJ', 'value' => $rcm2777_20180101['RJ'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">SI1</td>
+            <td class="libelle" colspan="2">PQ+PS+PR+PF+PU sous déduction des acomptes versés : situation payante</td>
+            <td class="input" >
+                <div class="line_impot">909525</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RK', 'field_name' => 'RK', 'value' => $rcm2777_20180101['RK'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">SI2</td>
+            <td class="libelle" colspan="2">PQ+PS+PR+PF+PU sous déduction des acomptes versés : situation créditrice</td>
+            <td class="input" >
+                <div class="line_impot">909589</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RL', 'field_name' => 'RL', 'value' => $rcm2777_20180101['RL'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">SF1</td>
+            <td class="libelle" colspan="2">Total après imputations : situation payante</td>
+            <td class="input" >
+                <div class="line_impot">909526</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RM', 'field_name' => 'RM', 'value' => $rcm2777_20180101['RM'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">SF2</td>
+            <td class="libelle" colspan="2">Total après imputations : situation créditrice</td>
+            <td class="input" >
+                <div class="line_impot">909590</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RN', 'field_name' => 'RN', 'value' => $rcm2777_20180101['RN'])) ?>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="rcm2777_20180101  <?=$rcm2777_20180101['ZZ11'] ? 'no-print' : ''?>">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle">&nbsp;</th>
+            <th class="maintitle" colspan="2">
+                IMPUTATION DES ACOMPTES VERSES : DECLARATION RELATIVE AU MOIS DE JANVIER
+            </th>
+            <th class="maintitle vertical-middle folding-action">
+                <label  for="rcm2777_20180101_ZZ11" class="no-print">
+                    <i class="fa fa-chevron-up <?=$rcm2777_20180101['ZZ11'] ? 'hidden' : ''?>"></i>
+                    <i class="fa fa-chevron-down <?=$rcm2777_20180101['ZZ11'] ? '' : 'hidden'?>"></i>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ZZ11', 'field_name' => 'ZZ11', 'value' => $rcm2777_20180101['ZZ11'])) ?>
+                </label>
+            </th>
+        </tr>
+        </thead>
+        <tbody class="rcm2777_20180101 <?=$rcm2777_20180101['ZZ11'] ? 'hidden' : ''?>">
+        <tr class="tab-title">
+            <th colspan="3">
+                Partie I : Si vous avez déclaré un acompte à la rubrique "Versement des acomptes" de votre déclaration relative au mois de septembre de l'année précédente, veuillez reporter ci-dessous les éléments déclarés en case ABB de cette déclaration :
+            </th>
+            <th>Impôt</th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">ABB</td>
+            <td class="libelle" colspan="2">Acompte sur les prélèvements sociaux</td>
+            <td class="input" >
+                <div class="line_impot">909179</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RV', 'field_name' => 'RV', 'value' => $rcm2777_20180101['RV'])) ?>
+            </td>
+        </tr>
+        <tr class="tab-title">
+            <th colspan="3">Partie II : Déclaration déposée en février  de l'année en cours au titre des revenus de janvier  de l'année en cours</th>
+            <th>Impôt</th>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">TJ1</td>
+            <td class="libelle" colspan="2">PQ+PS+PR+PF+PU sous déduction des acomptes versés : situation payante</td>
+            <td class="input" >
+                <div class="line_impot">909527</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RO', 'field_name' => 'RO', 'value' => $rcm2777_20180101['RO'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">TJ2</td>
+            <td class="libelle" colspan="2">PQ+PS+PR+PF+PU sous déduction des acomptes versés : situation créditrice</td>
+            <td class="input" >
+                <div class="line_impot">909591</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RP', 'field_name' => 'RP', 'value' => $rcm2777_20180101['RP'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">TC</td>
+            <td class="libelle" colspan="2">Report de la ligne QT de décembre de l'année précdente (4)</td>
+            <td class="input" >
+                <div class="line_impot">909214</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RQ', 'field_name' => 'RQ', 'value' => $rcm2777_20180101['RQ'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">TG1</td>
+            <td class="libelle" colspan="2">Total après imputations : situation payante</td>
+            <td class="input" >
+                <div class="line_impot">909528</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RR', 'field_name' => 'RR', 'value' => $rcm2777_20180101['RR'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">TG2</td>
+            <td class="libelle" colspan="2">Total après imputations : situation créditrice</td>
+            <td class="input" >
+                <div class="line_impot">909592</div>
+                <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RS', 'field_name' => 'RS', 'value' => $rcm2777_20180101['RS'])) ?>
+            </td>
+        </tr>
+        <tr class="elt">
+            <td class="line_impot">(4)</td>
+            <td class="libelle" colspan="3">Report du montant excédentaire dégagé sur la déclaration 2777 de décembre N-1.</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="formulaire-page page-form" data-label="2777 VII">
+    <table class="rcm2777_20180101">
+        <thead>
+        <tr class="tab-title">
+            <th class="maintitle">
+                MONTANT A PAYER ET EXCEDENT
+            </th>
+        </tr>
+        </thead>
+    </table>
+    <table class="rcm2777_20180101">
+       <tbody>
+       <tr class="tab-title">
+           <th colspan="4">TOTAL A PAYER</th>
+       </tr>
+       <tr class="elt">
+           <td class="line_impot">QR1</td>
+           <td class="libelle">MONTANT A PAYER (5)</td>
+           <td class="input" >
+               <div class="line_impot">909237</div>
+               <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EA', 'field_name' => 'EA', 'value' => $rcm2777_20180101['EA'])) ?>
+           </td>
+       </tr>
+       <tr class="elt">
+           <td class="line_impot">QR2</td>
+           <td class="libelle">MONTANT EXCEDENTAIRE (5)</td>
+           <td class="input" >
+               <div class="line_impot">909238</div>
+               <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EB', 'field_name' => 'EB', 'value' => $rcm2777_20180101['EB'])) ?>
+           </td>
+       </tr>
+       <tr class="elt">
+           <td class="line_impot">(5)</td>
+           <td class="libelle" colspan="3">
+               SI déclaration au titre du mois de janvier<br>
+               &nbsp; QR1 = Max[ 0 ; TG1 - TG2 ]<br>
+               &nbsp; QR2 = Max[ 0 ; TG2 - TG1 ]<br>
+               SI déclaration au titre des mois autres que décembre et janvier<br>
+               &nbsp; Si OP2 ≤ QF<br>
+               &nbsp; &nbsp; QR1 = Max [ 0 ; (OP1 - OP2) + PQ + PS + PR + PG + PU + (RY + ABA + ABB) ]<br>
+               &nbsp; &nbsp; QR2 = 0<br>
+               &nbsp; Sinon OP2 > QF<br>
+               &nbsp; &nbsp; QR1 = Max [ 0 ; PQ + PS + PR + PF + PU + (RY + ABA + ABB) ]<br>
+               &nbsp; &nbsp; QR2 = Max [ 0 ; OP2 - QF ]<br>
+               SI déclaration au titre du mois de décembre<br>
+               &nbsp; QR1 = Max [ 0 ; SF1 - SF2 ]<br>
+               &nbsp; QR2 = Max [ 0 ; SF2 - SF1 ]
+           </td>
+       </tr>
+       <tr class="tab-title">
+           <th colspan="4">DEMANDE DE REMBOURSEMENT</th>
+       </tr>
+       <tr class="elt">
+           <td>&nbsp;</td>
+           <td class="libelle">Si vous souhaitez demander la restitution du montant excédentaire QR2 - cochez la case (*)</td>
+           <td class="input" >
+               <div class="line_impot">909259</div>
+               <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EC', 'field_name' => 'EC', 'value' => $rcm2777_20180101['EC'])) ?>
+           </td>
+       </tr>
+       <tr class="elt">
+           <td class="line_impot">QS</td>
+           <td class="libelle">Montant du remboursement demandé</td>
+           <td class="input" >
+               <div class="line_impot">909257</div>
+               <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ED', 'field_name' => 'ED', 'value' => $rcm2777_20180101['ED'])) ?>
+           </td>
+       </tr>
+       <tr class="elt">
+           <td>(*)</td>
+           <td class="libelle" colspan="2">
+               Si la case est cochée alors QS = QR2<br>
+               Important : le remboursement du montant excédentaire de la période de janvier ne peut pas être reporté, cochez la case ci-dessus
+           </td>
+       </tr>
+       <tr class="tab-title">
+           <th colspan="4">REPORT DE L'EXCEDENT</th>
+       </tr>
+       <tr class="elt">
+           <td class="line_impot">QT</td>
+           <td class="libelle">Montant de l'excédent reporté</td>
+           <td class="input" >
+               <div class="line_impot">909258</div>
+               <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EE', 'field_name' => 'EE', 'value' => $rcm2777_20180101['EE'])) ?>
+           </td>
+       </tr>
+       <tr class="elt">
+           <td class="libelle" colspan="3">
+               Si excédent reporté alors QT = QR2
+           </td>
+       </tr>
+       </tbody>
+    </table>
+</div>

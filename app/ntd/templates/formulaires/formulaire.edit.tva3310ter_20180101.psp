@@ -1,0 +1,441 @@
+<div class="formulaire-page page-form" data-label="TVA 3310TER">
+  <div style="display:none">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA1',
+                                                            'value' => $tva3310ter_20180101['AA1']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA2',
+                                                            'value' => $tva3310ter_20180101['AA2']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA3',
+                                                            'value' => $tva3310ter_20180101['AA3']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA4',
+                                                            'value' => $tva3310ter_20180101['AA4']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA5',
+                                                            'value' => $tva3310ter_20180101['AA5']))?>
+  </div>
+
+  <table>
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">COMMENTAIRES</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th class="input" colspan="4">
+        <div class="line_impot">100431</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA',
+                                                            'value' => $tva3310ter_20180101['AA']))?>
+      </th>
+      <th class="subtitle">
+        <label for="tva3517sca12_ac">Mention expresse</label>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AC',
+                                                            'value' => $tva3310ter_20180101['AC']))?>
+        <div class="line_impot">100499</div>
+      </th>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="4">
+        <label class="bold" for="tva3310ter_20180101_ab">Pourcentage de déduction général de l'entreprise (1)</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">100054</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AB',
+                                                            'value' => $tva3310ter_20180101['AB']))?>
+      </td>
+    </tr>
+  </table>
+
+  <table class="tva3310ter_20180101">
+    <tr class="tab-title">
+      <th>&nbsp;</th>
+      <th class="subtitle" style="width: 680px;">
+        Secteurs distincts d'activité<br />
+        (en particulier identification des immeubles dont une partie des loyers est soumise à la TVA par option ou à titre obligatoire)
+      </th>
+      <th class="subtitle">
+        % de déduction propre à chaque secteur (2)
+      </th>
+    </tr>
+
+    <?php $rows_count = 0 ?>
+    <?php foreach ($tva3310ter_20180101 as $field => $value): ?>
+      <?php if (strpos($field, 'BM') !== false) $rows_count++ ?>
+    <?php endforeach ?>
+
+    <?php $rows_count = max(1, $rows_count) ?>
+    <?php for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++): ?>
+      <tr class="elt tva3310ter_20180101_01-dynamic-row" data-secteur="<?=$tr_index ?>">
+        <td class="libelle">
+          <label for="tva3310ter_20180101_bm" data-ligne_number="Secteur N°((row_index))">Secteur N°<?=$tr_index ?></label>
+        </td>
+        <td class="input" data-field="BM">
+          <div class="line_impot">908467</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BM',
+                                                              'field_name' => 'BM/' . $tr_index,
+                                                              'style'      => "width:680px;",
+                                                              'value'      => empty($tva3310ter_20180101['BM/' . $tr_index]) ? $tva3310ter_20180101['BM' . $tr_index] : $tva3310ter_20180101['BM/' . $tr_index])) ?>
+        </td>
+        <td class="input" data-field="CM">
+          <div class="line_impot">908468</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CM',
+                                                              'field_name' => 'CM/' . $tr_index,
+                                                              'value'      => empty($tva3310ter_20180101['CM/' . $tr_index]) ? $tva3310ter_20180101['CM' . $tr_index] : $tva3310ter_20180101['CM/' . $tr_index])) ?>
+        </td>
+        <td style="text-align:center; padding:0; width:30px;">
+          <a href="javascript:void(0)" onclick="formulaires.helpers.delete('tva3310ter_20180101', this)" title="Supprimer la ligne" style="padding:10px;">
+            <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png" />
+          </a>
+        </td>
+      </tr>
+    <?php endfor ?>
+    <tr class="no-print">
+      <td colspan="5">
+        <a class="link-puce" href="javascript:void(0)" onclick="formulaires.helpers.duplicate('tva3310ter_20180101')">Ajouter une ligne</a>
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <td>
+        <div>
+          (1) Ce pourcentage de déduction résulte du rapport :<br />
+          <br />
+          <div style="width: 500px; margin-left: 20px;">
+            total du chiffre d'affaires HT, ouvrant droit à déduction, de l'entreprise<br />
+            <hr />
+            total du chiffre d'affaires HT de l'entreprise entrant dans le champ d'application de la TVA
+          </div>
+        </div>
+        <br />
+        <div>
+          (2) Ce pourcentage de déduction est déterminé pour chaque secteur à partir du rapport suivant :<br />
+          <br />
+          <div style="width: 350px; margin-left: 20px;">
+            chiffre d'affaires HT ouvrant droit à déduction du secteur<br />
+            <hr />
+            total du chiffre d'affaires HT du secteur
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <table class="tva3310ter_20180101">
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">TVA BRUTE</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th class="subtitle" colspan="2">TVA brute</th>
+      <th class="subtitle">TVA à reverser</th>
+      <th class="subtitle">Total (col. 1 + 2)</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th>&nbsp;</th>
+      <th>col. 1</th>
+      <th>col. 2</th>
+      <th>col. 3</th>
+    </tr>
+
+    <?php $rows_count = 0 ?>
+    <?php foreach ($tva3310ter_20180101 as $field => $value): ?>
+      <?php if (strpos($field, 'DM') !== false) $rows_count++ ?>
+    <?php endforeach ?>
+
+    <?php $rows_count = max(1, $rows_count) ?>
+    <?php for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++): ?>
+      <tr class="elt tva3310ter_20180101_02-dynamic-row" data-secteur="<?=$tr_index ?>">
+        <td class="libelle">
+          <label for="tva3310ter_20180101_dm" data-ligne_number="Secteur N°((row_index))">Secteur N°<?=$tr_index ?></label>
+        </td>
+        <td class="input" data-field="DM">
+          <div class="line_impot">908469</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DM',
+                                                              'field_name' => 'DM/' . $tr_index,
+                                                              'value'      => empty($tva3310ter_20180101['DM/' . $tr_index]) ? $tva3310ter_20180101['DM' . $tr_index] : $tva3310ter_20180101['DM/' . $tr_index])) ?>
+        </td>
+        <td class="input" data-field="EM">
+          <div class="line_impot">908470</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EM',
+                                                              'field_name' => 'EM/' . $tr_index,
+                                                              'value'      => empty($tva3310ter_20180101['EM/' . $tr_index]) ? $tva3310ter_20180101['EM' . $tr_index] : $tva3310ter_20180101['EM/' . $tr_index])) ?>
+        </td>
+        <td class="input" data-field="FM">
+          <div class="line_impot">908471</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FM',
+                                                              'field_name' => 'FM/' . $tr_index,
+                                                              'value'      => empty($tva3310ter_20180101['FM/' . $tr_index]) ? $tva3310ter_20180101['FM' . $tr_index] : $tva3310ter_20180101['FM/' . $tr_index])) ?>
+        </td>
+      </tr>
+    <?php endfor ?>
+
+    <tr class="elt">
+      <td class="libelle">
+        <div class="center"><label for="tva3310ter_20180101_dl">ENSEMBLE DES SECTEURS</label></div>
+        <div class="center">(à reporter sur les lignes de la déclaration CA 3)<div>
+      </td>
+      <td class="input">
+        <div class="line_impot">100433</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DL',
+                                                            'value' => $tva3310ter_20180101['DL']))?>
+        <div class="center input">(lignes 8 à 14)<div>
+      </td>
+      <td class="input">
+        <div class="line_impot">100434</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EL',
+                                                            'value' => $tva3310ter_20180101['EL']))?>
+        <div class="center input">(ligne 15)<div>
+      </td>
+      <td class="input">
+        <div class="line_impot">100435</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FL',
+                                                            'value' => $tva3310ter_20180101['FL']))?>
+        <div class="center input">(ligne 16 = col. 3)<div>
+      </td>
+    </tr>
+  </table>
+
+  <table id="tva3310ter_determination_tva_deductible" class="tva3310ter">
+    <tr class="tab-title">
+      <th class="maintitle" colspan="7">DÉTERMINATION DE LA TVA DÉDUCTIBLE</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th rowspan="4">&nbsp;</th>
+      <th class="subtitle" colspan="3">Tva déductible sur immobilisations</th>
+      <th class="subtitle" colspan="3">Tva déductible sur autres biens et services</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th colspan="2">affecté à un secteur déterminé</th>
+      <th class="important" rowspan="2">Total (col 4 + 5)</th>
+      <th colspan="2">Concourant dans le secteur à la réalisation d'opérations ouvrant droit à déduction</th>
+      <th class="important" rowspan="2">Total (col 7 + 8)</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th>exclusivement</th>
+      <th>non exclusivement</th>
+      <th>exclusivement</th>
+      <th>non exclusivement</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th>col. 4</th>
+      <th>col. 5</th>
+      <th>col. 6</th>
+      <th>col. 7</th>
+      <th>col. 8</th>
+      <th>col. 9</th>
+    </tr>
+
+    <?php $rows_count = 0 ?>
+    <?php foreach ($tva3310ter_20180101 as $field => $value): ?>
+      <?php if (strpos($field, 'GM') !== false) $rows_count++ ?>
+    <?php endforeach ?>
+
+    <?php $rows_count = max(1, $rows_count) ?>
+    <?php for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++): ?>
+      <tr class="elt tva3310ter_20180101_03-dynamic-row" data-secteur="<?=$tr_index ?>">
+        <td class="libelle w250">
+          <label for="tva3310ter_20180101_gm" data-ligne_number="Secteur N°((row_index))">Secteur N°<?=$tr_index ?></label>
+        </td>
+        <td class="input" data-field="GM">
+          <div class="line_impot">908472</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GM',
+                                                              'field_name' => 'GM/' . $tr_index,
+                                                              'value'      => empty($tva3310ter_20180101['GM/' . $tr_index]) ? $tva3310ter_20180101['GM' . $tr_index] : $tva3310ter_20180101['GM/' . $tr_index])) ?>
+        </td>
+        <td class="input" data-field="HM">
+          <div class="line_impot">908473</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'HM',
+                                                              'field_name' => 'HM/' . $tr_index,
+                                                              'value'      => empty($tva3310ter_20180101['HM/' . $tr_index]) ? $tva3310ter_20180101['HM' . $tr_index] : $tva3310ter_20180101['HM/' . $tr_index])) ?>
+        </td>
+        <td class="input" data-field="JM">
+          <div class="line_impot">908474</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'JM',
+                                                              'field_name' => 'JM/' . $tr_index,
+                                                              'value'      => empty($tva3310ter_20180101['JM/' . $tr_index]) ? $tva3310ter_20180101['JM' . $tr_index] : $tva3310ter_20180101['JM/' . $tr_index])) ?>
+        </td>
+
+         <td class="input" data-field="KM">
+           <div class="line_impot">908475</div>
+           <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'KM',
+                                                               'field_name' => 'KM/' . $tr_index,
+                                                               'value'      => empty($tva3310ter_20180101['KM/' . $tr_index]) ? $tva3310ter_20180101['KM' . $tr_index] : $tva3310ter_20180101['KM/' . $tr_index])) ?>
+        </td>
+        <td class="input" data-field="LM">
+          <div class="line_impot">908476</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'LM',
+                                                              'field_name' => 'LM/' . $tr_index,
+                                                              'value'      => empty($tva3310ter_20180101['LM/' . $tr_index]) ? $tva3310ter_20180101['LM' . $tr_index] : $tva3310ter_20180101['LM/' . $tr_index])) ?>
+        </td>
+        <td class="input" data-field="MM">
+          <div class="line_impot">908477</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'MM',
+                                                              'field_name' => 'MM/' . $tr_index,
+                                                              'value'      => empty($tva3310ter_20180101['MM/' . $tr_index]) ? $tva3310ter_20180101['MM' . $tr_index] : $tva3310ter_20180101['MM/' . $tr_index])) ?>
+        </td>
+      </tr>
+    <?php endfor ?>
+
+    <tr class="elt">
+      <td class="libelle">
+        <div class="center"><label for="tva3310ter_20180101_gl">Ensemble des secteurs</label></div>
+        <div class="center">(à reporter sur les lignes de la déclaration CA 3)</div>
+      </td>
+      <td class="input">
+        <div class="line_impot">100436</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GL',
+                                                            'value' => $tva3310ter_20180101['GL']))?>
+        <div class="center input">&nbsp;</div>
+      </td>
+      <td class="input">
+        <div class="line_impot">100437</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HL',
+                                                            'value' => $tva3310ter_20180101['HL']))?>
+        <div class="center input">&nbsp;</div>
+      </td>
+      <td class="input">
+        <div class="line_impot">100438</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JL',
+                                                            'value' => $tva3310ter_20180101['JL']))?>
+        <div class="center input">(ligne 19)</div>
+      </td>
+      <td class="input">
+        <div class="line_impot">100439</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KL',
+                                                            'value' => $tva3310ter_20180101['KL']))?>
+        <div class="center input">&nbsp;</div>
+      </td>
+      <td class="input">
+        <div class="line_impot">100440</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LL',
+                                                            'value' => $tva3310ter_20180101['LL']))?>
+        <div class="center input">&nbsp;</div>
+      </td>
+      <td class="input">
+        <div class="line_impot">100441</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ML',
+                                                            'value' => $tva3310ter_20180101['ML']))?>
+        <div class="center input">(ligne 20)</div>
+      </td>
+    </tr>
+  </table>
+
+  <table class="tva3310ter_20180101">
+    <tr class="tab-title">
+      <th rowspan="4">&nbsp;</th>
+      <th class="maintitle" colspan="2">TVA DÉDUCTIBLE</th>
+      <th class="maintitle" colspan="2">RESULTAT NET</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th rowspan="2">Complément de Tva déductible</th>
+      <th class="important" rowspan="2">TOTAL (col. 6 + 9 + 10)</th>
+      <th rowspan="2">TVA NETTE (col. 3 - 11 si > 0)</th>
+      <th>CREDIT DE TVA</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th class="important">Crédit de Tva (col. 11 - 3 si > 0)</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th>col. 10</th>
+      <th>col. 11</th>
+      <th>col. 12</th>
+      <th>col. 13</th>
+    </tr>
+
+    <?php $rows_count = 0 ?>
+    <?php foreach ($tva3310ter_20180101 as $field => $value): ?>
+      <?php if (strpos($field, 'NM') !== false) $rows_count++ ?>
+    <?php endforeach ?>
+
+    <?php $rows_count = max(1, $rows_count) ?>
+    <?php for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++): ?>
+      <tr class="elt tva3310ter_20180101_04-dynamic-row" data-secteur="<?=$tr_index ?>">
+        <td class="libelle">
+          <label for="tva3310ter_20180101verso_nm" data-ligne_number="Secteur N°((row_index))">Secteur N°<?=$tr_index ?></label>
+        </td>
+        <td class="input" data-field="NM">
+          <div class="line_impot">908478</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'NM',
+                                                              'field_name' => 'NM/' . $tr_index,
+                                                              'value'      => empty($tva3310ter_20180101['NM/' . $tr_index]) ? $tva3310ter_20180101['NM' . $tr_index] : $tva3310ter_20180101['NM/' . $tr_index])) ?>
+        </td>
+        <td class="input" data-field="PM">
+          <div class="line_impot">908479</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'PM',
+                                                              'field_name' => 'PM/' . $tr_index,
+                                                              'value'      => empty($tva3310ter_20180101['PM/' . $tr_index]) ? $tva3310ter_20180101['PM' . $tr_index] : $tva3310ter_20180101['PM/' . $tr_index])) ?>
+        </td>
+        <td class="input" data-field="QN">
+          <div class="line_impot">908480</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'QN',
+                                                              'field_name' => 'QN/' . $tr_index,
+                                                              'value'      => empty($tva3310ter_20180101['QN/' . $tr_index]) ? $tva3310ter_20180101['QN' . $tr_index] : $tva3310ter_20180101['QN/' . $tr_index])) ?>
+        </td>
+        <td class="input" data-field="RN">
+          <div class="line_impot">908481</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'RN',
+                                                              'field_name' => 'RN/' . $tr_index,
+                                                              'value'      => empty($tva3310ter_20180101['RN/' . $tr_index]) ? $tva3310ter_20180101['RN' . $tr_index] : $tva3310ter_20180101['RN/' . $tr_index])) ?>
+        </td>
+      </tr>
+    <?php endfor ?>
+
+    <tr class="elt">
+      <td class="libelle">
+        <div class="center"><label for="tva3310ter_20180101verso_nl">Ensemble des Secteurs</label></div>
+        <div class="center">(à reporter sur les lignes de la déclaration CA 3)</div>
+      </td>
+      <td class="input">
+        <div class="line_impot">100442</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NL',
+                                                            'value' => $tva3310ter_20180101['NL']))?>
+        <div class="center input">[ligne 21 et/ou 22]</div>
+      </td>
+      <td class="input">
+        <div class="line_impot">100443</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PL',
+                                                            'value' => $tva3310ter_20180101['PL']))?>
+        <div class="center input">(ligne 23)</div>
+      </td>
+      <td class="input">
+        <div class="line_impot">100444</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QL',
+                                                            'value' => $tva3310ter_20180101['QL']))?>
+        <div class="center input">&nbsp;</div>
+      </td>
+      <td class="input">
+        <div class="line_impot">100445</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RL',
+                                                            'value' => $tva3310ter_20180101['RL']))?>
+        <div class="center input">&nbsp;</div>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="3">
+        <label for="tva3310ter_20180101verso_qm">
+          TVA nette due ou crédit de TVA de l'ensemble des secteurs .<br />
+          Ce montant doit être reporté ligne 25 (crédit) ou ligne 28 (TVA nette due) de la déclaration de la CA 3
+        </label>
+      </td>
+      <td class="input">
+        <div class="line_impot">100069</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QM',
+                                                            'value' => $tva3310ter_20180101['QM']))?>
+      </td>
+      <td class="input">
+        <div class="line_impot">100070</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RM',
+                                                            'value' => $tva3310ter_20180101['RM']))?>
+      </td>
+    </tr>
+  </table>
+
+</div>

@@ -1,0 +1,4 @@
+parameters:
+  - code: cgu.version
+    - valeur: "v1 (la version voulue par le client)"
+    - description: "Détermine la version des conditions générales d'utilisation"

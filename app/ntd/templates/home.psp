@@ -1,0 +1,130 @@
+<section class="page--home">
+
+  <div class="block  block--introduction block-advertising-head">
+    <div class="wrapper-width">
+      <?php if($snippet_flashinfo) :?>
+        <div class="flashinfo flashinfo--with-button" data-on-load="new ntd.FlashInfoManager(this)">
+          <span class="flashinfo__label"><?=$snippet_flashinfo->getProperty('title')?> : </span>
+          <span><?=$snippet_flashinfo->getProperty('description')?></span>
+          <button class="flashinfo__button" data-method="close">Cacher</button>
+        </div>
+      <?php endif; ?>
+    </div>
+    <?php if ($advertising_enable): ?>
+      <div class="wrapper-width wysiwyg">
+        <div class="content">
+          <h2><span class="kwo-block__title--darkblue"><?=Snippet::content('advertising', null, 'title') ?></span></h2>
+          <p><?=Snippet::content('advertising', null, 'content') ?>
+          </p>
+
+          <?php $description = Snippet::content('advertising', null, 'description') ?>
+          <?php if (!empty($description)): ?>
+            <a href="<?=$description ?>" target="_blank" class="btn btn--big  btn--color-red">Découvrir la vidéo</a>
+          <?php endif; ?>
+        </div>
+      </div>
+    <?php endif; ?>
+  </div>
+
+  <div class="block  block--introduction">
+
+    <div class="wrapper-width clear-float margin-top-30">
+      <div class="block--introduction__left  float-left">
+        <div class="wysiwyg">
+          <?= $snippet_introduction->getProperty('content') ?>
+        </div>
+        <a href="<?=NtdFrontManager::route('signup')?>"
+           class="btn  btn--big  btn--color-red"><?= c(l('ntd.signup.button')) ?></a>
+      </div>
+
+      <div class="block--introduction__right float-left">
+        <div class="service-types-container">
+          <?php $i = 0; foreach ($servicetypes as $servicetype): ?>
+            <?php if ($i++ >= 3) break; ?>
+            <a class="btn  btn--servicetype"
+               href="<?= $servicetype->asUrl() ?>">
+              <?= $servicetype->getProperty('title') ?>
+            </a>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="block block--padding-bottom  block--padding-top">
+    <a name="services"></a>
+    <div class="wrapper-width">
+      <h2 class="block__title"><?= $snippet_services->getProperty('title') ?></h2>
+      <div class="block__description"><?= $snippet_services->getProperty('description') ?></div>
+      <div class="btn-services-container" style="height: 88px; overflow: hidden">
+        <?php foreach ($services as $service): ?>
+          <a class="btn  btn--service" href="<?= $service->asUrl() ?>"><?= $service->getProperty('title') ?><span class="service-information"><?= $service->getProperty('subtitle') ?></span></a>
+        <?php endforeach; ?>
+      </div>
+      <button class="btn  btn--color-dark-blue btn-home-margin-top" onclick="$(this).previous().setStyle('height:auto')">Voir tous les services</button>
+    </div>
+  </div>
+
+  <div class="block  block--pourqui block--padding-bottom  block--padding-top">
+    <div class="wrapper-width">
+      <h2 class="block__title"><?= $snippet_forwho->getProperty('title') ?></h2>
+      <div class="block__description"><?= $snippet_forwho->getProperty('description') ?></div>
+      <div class="cols block--pourqui__cols">
+        <?php foreach ($forwho_pages as $key => $page): ?>
+          <div class="col block--pourqui__cols__col">
+            <div class="block--pourqui__cols__col__img-container">
+              <?php if (NetDeclarationManager::isDomtom()): ?>
+                <img src="<?= $page->image_domtom ?>" alt="<?= $page->title ?>">
+              <?php else: ?>
+                <img src="<?= $page->image ?>" alt="<?= $page->title ?>">
+              <?php endif; ?>
+            </div>
+            <div class="block">
+              <h2 class="font--darkblue font-size--22px font-family--georgia margin-bottom-15 margin-top-25"><?= $page->title ?></h2>
+
+              <p><?= $page->description ?></p>
+              <a href="<?= $page->asUrl() ?>" class="btn  btn--color-light-blue btn-infos btn-home-margin-top "><?= c(l('home.moreinfos')) ?></a>
+            </div>
+          </div>
+        <?php endforeach; ?>
+      </div>
+    </div>
+  </div>
+
+  <div class="block block--snippets block--padding-bottom  block--padding-top">
+    <div class="wrapper-width">
+      <div class="cols">
+        <div class="col col--2 block">
+          <h2 class="block__title"><?= $snippet_partenaires->getProperty('title') ?></h2>
+          <div class="block__description"><?= $snippet_partenaires->getProperty('description') ?></div>
+          <div class="snippet__content"><?= $snippet_partenaires->getProperty('content') ?></div>
+        </div>
+        <div class="col col--2 block">
+          <h2 class="block__title"><?= $snippet_payment->getProperty('title') ?></h2>
+          <div class="block__description"><?= $snippet_payment->getProperty('description') ?></div>
+          <div class="snippet__content"><?= $snippet_payment->getProperty('content') ?></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block block--newsletter block--padding-bottom  block--padding-top">
+    <div class="wrapper-width">
+      <div class="cols">
+        <div class="col col--2 block">
+          <h2 class="block__title block__title-newsletter"><?= c(l('newsletter.title')) ?></h2>
+          <div class="block__description block__description-newletter"><?= c(l('newsletter.text')) ?></div>
+        </div>
+        <div class="col col--2 block">
+          <form class="form-newsletter" onsubmit="new ntd.front.NewsletterPublique(this); return false;" action="/newsletter.subscribe" method="post">
+            <?=Elt::text(array('name' => 'email', 'placeholder' => c(l('newsletter.btn')))) ?>
+            <button type="submit" class="btn  btn--color-dark-blue"><?= c(l('newsletter.btn')) ?></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

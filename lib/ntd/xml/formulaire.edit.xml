@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+<fieldset>
+
+<notebook>
+<page>
+ <form>
+  <hbox>
+   <vbox>
+    <elem field="declaration_id" editable="false" />
+    <elem field="formulairetype_id"  editable="false"/>
+    <elem field="position"  editable="false"/>
+    <elem field="status" />
+    <grid value="$opts" label="Options" />
+   </vbox>
+   <vbox>
+    <grid value="$data" label="Données" />
+    </vbox>
+   <vbox>
+    <grid value="$fields_values" label="Valeurs des champs" />
+   </vbox>
+  </hbox>
+  <launcher/>
+ </form>
+</page>
+<page>
+ <hbox>
+  <vbox width="150px">
+   <box label="actions">
+    <link icon="details" />
+   </box>
+  </vbox>
+  <vbox><deck /></vbox>
+ </hbox>
+</page>
+</notebook>
+
+</fieldset>
+</kwo-interface>

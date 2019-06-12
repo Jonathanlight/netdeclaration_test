@@ -1,0 +1,25 @@
+<fieldset><legend>Accès</legend>
+
+<table class="hbox"><tbody>
+<tr>
+ <td>
+
+<ul class="elts">
+<?php foreach ($items as $date => $item): ?>
+ <li>
+  <img src="/<?=PIX_PATH?>/bullets/delete.png"
+       class="action"
+       data-confirm="êtes vous sûr ?"
+       data-item="<?=$item->getKey()?>"
+       onclick="Kwo.ACL.onUserRemove(this)" /> 
+   <?=$date?> - <?=$item->getModel()?> : <?=$item?> (<?=$item->getId()?>)
+ </li>
+<?php endforeach; ?>
+</ul>
+
+ </td>
+ <td></td>
+</tr>
+</tbody></table>
+
+</fieldset>

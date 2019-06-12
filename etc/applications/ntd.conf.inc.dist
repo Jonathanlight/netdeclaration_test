@@ -1,0 +1,137 @@
+<?php
+
+$register['app.name'] = 'ntd'; // meme nom que l ext principale
+$register['app.label'] = 'Net Declaration';
+$register['app.domain'] = 'www.netdeclaration.net';
+$register['app.regex'] = '/netdeclaration/';
+$register['app.extension'] = 'ntd';
+$register['app.manager'] = 'NetDeclarationManager';
+$register['app.locales'] = array(I18N::LOCALE_FR/*, I18N::LOCALE_EN, I18N::LOCALE_DE,  I18N::LOCALE_ES*/);
+$register['app.scopes'] = array('account', 'api', 'back', 'front', 'middle');
+$register['app.head.version'] = '15-06-01-1';
+$register['app.url.secure'] = true;
+$register['app.state'] = 'prod';
+
+$register['front.allowed.ips'] = array('92.103.81.138', '80.8.95.66', '127.0.0.1', '81.248.170.33');
+$register['front.offline'] = false;
+
+$register['app.offline'] = false;
+
+
+$register['front.template'] = 'ntd:skeleton.front';
+$register['front.home'] = 'home';
+$register['front.templates'] = array(
+  'community' => array('signup' => 'ntd:signup',
+                       //'email' => 'ntd:community.email',
+                       //'password' => 'ntd:community.password'
+					   ),
+  'cms' => array('page' => 'ntd:page',
+                 'article' => 'ntd:article'),
+  'search' => array('results' => 'ntd:search.results'),
+  'core' => array('date.select' => 'ntd:core.date.select',
+				  'server.error' => 'ntd:server.error'),
+);
+
+
+
+$register['front.metas'] = array('google-site-verification' => 'nbEXAp3v8HdKYqcRcGuB71Ay7EZ7nspBVic67TgL7zw');
+$register['front.routes'] = array(
+  'page-(.*)-(?P<id>\d+)' => array('ntd', 'page'),
+  'article-(.*)-(?P<id>\d+)' => array('ntd', 'article'),
+  'servicetype-(.*)-st(?P<servicetype_id>\d+)/(.*)-s(?P<id>\d+)' => array('ntd', 'service'),
+  'servicetype-(.*)-st(?P<id>\d+)' => array('ntd', 'servicetype'),
+  //'page-(.*)-(?P<code>.*)$' => array('cms', 'page'),
+  //'contact' => array('form', 'form', array('code' => 'ntd.form.contact')),
+  '\.asp$' => array('ntd', 'home')
+);
+
+
+
+$register['account.template'] = 'ntd:skeleton.account';
+$register['account.modules'] = array(
+  array('code' => 'email',
+        'label' => 'account.email',
+        'group' => 'account.person',
+        'action' => '/account/ntd/email'),
+  array('code' => 'password',
+        'label' => 'account.password',
+        'group' => 'account.person',
+        'action' => '/account/community/password'),
+  array('code' => 'adherents.secondaries',
+        'label' => 'account.adherents.secondaries',
+        'group' => 'account.person',
+        'action' => '/account/ntd/adherents.secondaries'),
+  array('code' => 'account.adherent.main.cancel',
+        'label' => 'account.adherent.cancel',
+        'group' => 'account.person',
+        'action' => '/account/ntd/account.main.adherent.cancel'));
+
+$register['middle.modules'] = array(array('action' => 'home'));
+
+
+$register['mail.template'] = 'ntd:skeleton.mail';
+$register['mail.smtp.default'] = 'localhost';
+$register['mail.from.email'] = 'info@netdeclaration.net';
+$register['mail.from.name'] = 'NET DECLARATION';
+
+$register['auth.level'] = 1;
+$register['auth.sso'] = true;
+
+$register['profile.user'] = 'adherent';
+
+$register['contact.admin'] = 'npinchon+admin-test@kernix.com';
+$register['contact.devel'] = 'npinchon+devel-test@kernix.com';
+$register['contact.bounce'] = 'direction@netdeclaration.net';
+
+$register['extension.search.models'] = array('page');
+
+$register['shop.psp'] = array(
+  'paybox' => array(
+    'mode' => 'production', // test
+    'params' => array(
+      'site' => '3833132',
+      'rang' => '01',
+      'identifiant' => '531507455',
+      'cle' => '%paybox_hmac%'
+)));
+
+$register['front.breadcrumb'] = true;
+
+
+//$register['auth.login'] = 'ntd';
+//$register['auth.password'] = 'adminntdpass';
+//$register['front.feeds'] = array('Dernières marchandises' => '/test/marchandises.feed');
+//$register['profile.customer'] = 'iban';
+
+//$register['extension.tracker.ignore'] = array('test.com');
+
+//$register['api.key.google.maps'] = 'ABQIAAAAexSBnJm-'.
+//                                   'KfVd_tNL7dJPTBTMGjX7bTG0pjIhnwt'.
+//                                   'fqxmJuYRcDBQMEun-'.
+//                                   'srMTMJ1YVs3Oe8b9tLZ4JA';
+
+
+  /***
+
+  $register['user.quota.hard'] = false;
+  $register['user.quota.soft'] = false;
+
+  $register['app.url.secure'] = false;
+  $register['app.url.port'] = 80;
+
+  $register['back.url'] = 'myback';
+  $register['back.locales'] = array(I18N::LOCALE_FR, I18N::LOCALE_EN, I18N::LOCALE_ES);
+
+  $register['front.routes'] = array('flash/(.*)/(?P<id>\d+)/(.*)' => array('uad', 'produit.fixed'),
+  'catalogue/(.*)/(?P<id>\d+)/(.*)' => array('uad', 'produit.custom'),
+  'contactez-nous.html' => array('uad', 'contact'),
+  '(?P<shortcode>.+)\.html' => array('uad', 'page'));
+  $register['front.templates'] = array('shop' => array('catalog.view' => 'test:catalog.alternate'));
+
+  $register['account.template'] = 'test:skeleton.account';
+
+  $register['auth.identity'] = 'name' | 'login';
+  $register['auth.login'] = 'name' | 'login';
+  $register['auth.password'] = 'name' | 'login';
+
+   ***/

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+  <fieldset label="$fieldset_label">
+    <notebook>
+
+      <page label="définition">
+        <form>
+
+          <notebook>
+            <page label="propriété">
+              <hbox>
+                <vbox width="30%">
+                  <elem field="code"/>
+                  <elem field="heading_id"/>
+                  <elem field="locale"/>
+                </vbox>
+                <vbox width="40%">
+                  <elem field="name"/>
+                  <elem field="title" label="titre"/>
+                  <elem field="description" rows="5"/>
+                </vbox>
+                <vbox>
+                  <elem field="image" type="file" label="image"/>
+                  <elem field="image_domtom" type="file" label="image (domtom)"/>
+                  <elem field="thumbnail" type="file" label="picto"/>
+                </vbox>
+              </hbox>
+            </page>
+
+            <page label="contenu">
+              <hbox>
+                <vbox>
+                  <elem field="content" mode="rich" rows="30" label="contenu"/>
+                </vbox>
+                <vbox width="300px">
+                  <elem field="aside_content" rows="15" label="colonne de droite"/>
+                </vbox>
+              </hbox>
+            </page>
+          </notebook>
+
+          <launcher/>
+        </form>
+      </page>
+
+      <page label="opérations" built="$is_loaded">
+        <hbox>
+          <vbox width="10%">
+            <box label="actions">
+              <link icon="details"/>
+              <link icon="note"/>
+              <link icon="seo"/>
+              <link icon="timeline" built="false"/>
+            </box>
+          </vbox>
+          <vbox>
+            <deck/>
+          </vbox>
+        </hbox>
+      </page>
+
+    </notebook>
+  </fieldset>
+</kwo-interface>

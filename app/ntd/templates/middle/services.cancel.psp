@@ -1,0 +1,16 @@
+<form action="/middle/services.cancel.confirm"
+      class="form--ntd form--ntd--label-inline"
+      method="post">
+  <?=
+  Elt::select(array('name' => 'form[souscription_id]',
+                    'options' => $souscriptions->asHash('id', 'service_name'),
+                    'label' => c(l('account.services.cancel.select')) . ' : ',
+              'class' => 'elt-two-line'))?>
+  <div class="form--ntd__actions">
+    <button type="submit"
+            class="btn btn--color-red margin-left--label-width"><?= c(l('account.services.cancel.submit')) ?></button>
+    <a class="btn btn--link"
+       href="/middle/services"><?= c(l('cancel')) ?></a>
+  </div>
+</form>
+

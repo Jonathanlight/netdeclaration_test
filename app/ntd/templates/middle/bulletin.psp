@@ -1,0 +1,14 @@
+<?php if ($_current_adherent->status == Adherent::STATUS_SUBSCRIPTION_VALIDE) : ?>
+  <a href="/middle/bulletin.pdf" class="btn btn--color-light-blue">Télécharger le bulletin d'adhésion</a>
+<?php else: ?>
+  <div class="wrapper-pdf ">
+    <?= H::inc('bulletin.print', array('adherent' => $_current_adherent)) ?>
+  </div>
+  <form action="/middle/bulletin.validate" method="post">
+    <input type="hidden" name="form[sign]" value="yes"/>
+    <button type="submit"
+            class="btn btn--color-red btn--valid-pdf">
+      <?=$_current_adherent->status == Adherent::STATUS_SUBSCRIPTION_PENDING ? l('btn.bulletin.validate.1') : l('btn.bulletin.validate.2')?>
+    </button>
+  </form>
+<?php endif; ?>

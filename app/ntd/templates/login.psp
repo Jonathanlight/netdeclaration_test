@@ -1,0 +1,52 @@
+<main class="table-cell table-padding-right table-cell--main block wrapper__footer-padding-bottom">
+  <?= H::breadcrumb($_breadcrumb) ?>
+  <h1 class="font--darkblue font-size-big font-family--georgia margin-bottom-20"><?= $page->title ?></h1>
+
+
+  <form class="form--ntd form--ntd--label-inline"
+        action="/user.login"
+        autocomplete="on"
+        onsubmit="ntd.onLogIn(this); return false;">
+    <?=
+    Elt::text(array('label' => 'Email',
+                    'name' => 'login'))?>
+    <?=
+    Elt::text(array('label' => 'Mot de passe',
+                    'name' => 'password',
+                    'password' => true))?>
+    <label class="remember_me margin-left-185">
+      <input type="checkbox" checked="" value="1" class="remember_me " name="remember_me">Mémoriser
+    </label>
+    <div class="clear">&nbsp;</div>
+    <div class="block__send">
+      <button type="submit" class="btn btn--color-light-blue btn-infos btn-send"> Se connecter</button>
+      <button type="button"
+              onclick="$(this).up('form').hide().next('form').show()"
+              class="btn btn--link float-right password-forget font-size--12px ">Mot de passe oublié ?
+      </button>
+    </div>
+  </form>
+
+
+  <form action="/password.send"
+        onsubmit="ntd.onPasswordRequest(this); return false;"
+        style="display:none;"
+        class="form--ntd form--ntd--label-inline">
+    <?= Elt::text(array('name' => 'email', 'label' => c(l('input.youremail')))) ?>
+
+    <div class="block__send">
+      <button type="submit"
+              class="btn btn--color-light-blue btn-infos btn-send"><?= c(l('send')) ?></button>
+      <button class="btn btn--link password-forget font-size--12px "
+              type="button"
+              onclick="$(this).up('form').hide().previous('form').show()"><?= c(l('back')) ?></button>
+
+  </div>
+  </form>
+
+
+</main>
+<aside class="table-cell  table-cell--aside  wrapper__footer-padding-bottom">
+  <div class="block__height">&nbsp;</div>
+  <?= l('snippet:login') ?>
+</aside>

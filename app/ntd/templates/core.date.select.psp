@@ -1,0 +1,179 @@
+<div class="core-date-select-box">
+<?php $time_value = ($has_time ? ' + \' \' + $F($(this).up(\'.date-layout\').down(\'._h\')) + \':\' +  $F($(this).up(\'.date-layout\').down(\'._mn\'))' : ''); ?>
+  <h1>
+  <?=c(l('calendar.title'))?>
+  </h1>
+
+  <div class="layout-hbox-content date-layout">
+
+    <table class="fixed select-year-month">
+      <tr>
+        <th style="width:10%; text-align:left;">
+          <a href="javascript:void(0)">
+            <img src="/app/ntd/pix/buttons/calendar_previous.png"
+                 onclick="$(this).writeAttribute('data-change', '01/' + (<?=$month?> - 1) + '/' + <?=$year . $time_value?>)"/>
+          </a>
+        </th>
+        <th style="width:40%">
+          <select onchange="$(this).writeAttribute('data-change', '01/' + $F(this) + '/' + <?=$year . $time_value?>)" class="month">
+          <?php foreach (I18N::$months[I18N::LOCALE_FR]['long'] as $k => $v): ?>
+            <option value="<?=$k?>"<?=$k == $month ? 'selected="selected"' : ''?>><?=c($v)?></option>
+          <?php endforeach; ?>
+          </select>
+        </th>
+        <th style="width:40%">
+          <select onchange="$(this).writeAttribute('data-change', '01/' + <?=$month?> + '/' + $F(this)<?=$time_value?>)" class="year">
+          <?php for ($i = $year - 100; $i <= $year + 50; $i++) : ?>
+            <option value="<?=$i?>"<?=$i == $year ? 'selected="selected"' : ''?>><?=$i?></option>
+          <?php endfor; ?>
+          </select>
+        </th>
+        <th style="width:10%; text-align:right;">
+          <a href="javascript:void(0)">
+            <img src="/app/ntd/pix/buttons/calendar_next.png"
+                 onclick="$(this).writeAttribute('data-change', '01/' + <?=($month + 1)?> + '/' + <?=$year . $time_value?>)"/>
+          </a>
+        </th>
+      </tr>
+    </table>
+
+    <table class="fixed calendar">
+      <colgroup>
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+      </colgroup>
+    <?php foreach ($lines as $i => $week): ?>
+      <tr>
+      <?php foreach ($week as $d): ?>
+      <?php if ($i === 0): ?>
+        <th><?=c($d)?></th>
+      <?php elseif ($d['num'] === 0): ?>
+        <td class="empty">&nbsp;</td>
+      <?php  else: ?>
+      <?php if ($d['type'] == 'deny'): ?>
+        <td><span<?=(count($d['className']) > 0 ? ' class="' . implode(' ', $d['className']) . '"' : '')?>><?=$d['num']?></span></td>
+      <?php else: ?>
+        <td>
+          <a href="javascript:void(0)"
+             data-date="<?=$d['date']?>"<?=(count($d['className']) > 0 ? ' class="' . implode(' ', $d['className']) . '"' : '')?>><?=$d['num']?></a>
+        </td>
+      <?php endif; ?>
+      <?php endif; ?>
+      <?php endforeach; ?>
+      </tr>
+    <?php endforeach; ?>
+    </table>
+
+  <?php if ($has_time) : ?>
+    <div style="float:left">
+      <input type="text" style="width:9em;" class="_datetime" name="datetime" class="text" readonly="readonly" value="<?="$day/$month/$year"?>"/>
+      <select class="_h" style="width:5em; padding:0;">
+      <?php for ($i = 0; $i < 24; $i++): ?>
+        <option value="<?=str_pad($i, 2, '0', STR_PAD_LEFT)?>"<?=($i == $hour) ? ' selected' : ''?>><?=str_pad($i, 2, '0', STR_PAD_LEFT)?></option>
+      <?php endfor; ?>
+      </select> H
+      <select class="_mn" style="width:5em; padding:0;">
+      <?php for ($i = 0; $i < 60; $i++): ?>
+        <option value="<?=str_pad($i, 2, '0', STR_PAD_LEFT)?>"<?=($i == $minute) ? ' selected' : ''?>><?=str_pad($i, 2, '0', STR_PAD_LEFT)?></option>
+      <?php endfor; ?>
+      </select>
+    </div>
+  <?php endif; ?>
+
+    <div class="actions" style="padding-top:5px">
+    <?php if ($empty_button) : ?>
+      <a href="javascript:void(0)" class="elt-link link-puce" data-date=""/><?=c(l('empty'))?></a> &nbsp;
+    <?php endif; ?>
+      <span style="display:none;">
+    <?php if ($has_time) : ?>
+      <input type="button" onclick="$(this).writeAttribute('data-datetime', $F($(this).up('.date-layout').down('._datetime')) <?=$time_value?>);"
+             value="<?=c(l('place'))?>" class="button"/>
+    <?php else: ?>
+      <input type="button" data-date="<?=date('d/m/Y')?>" value="<?=c(l('today'))?>" class="button"/>
+    <?php endif; ?>
+        </span>
+    </div>
+
+  </div>
+
+</div>
+<style type="text/css">
+
+  .core-date-select-box {
+    padding: 10px;
+    background-color: #ffffff;
+  }
+
+  .core-date-select-box h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .core-date-select-box select {
+    border: 1px solid #CECECE;
+    box-shadow: 0 0 2px 1px #CECECE inset;
+    color: #465779;
+    float: left;
+    font-size: 12px;
+    padding: 4px;
+  }
+
+  .core-date-select-box select.month {
+    width: 95px;
+    margin: 0 5px;
+  }
+
+  .core-date-select-box select.year {
+    width: 69px;
+  }
+
+  table.select-year-month {
+    margin: 0 auto 15px;
+    width: 217px;
+  }
+
+  table.select-year-month th {
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  table.calendar {
+    width: 217px;
+    margin: 0 auto;
+  }
+
+  table.calendar th {
+    color: #465779;
+    padding-bottom: 5px;
+  }
+
+  table.calendar td {
+    width: 30px;
+    border: 1px solid #c3c8da;
+  }
+
+  table.calendar td.empty {
+    background-color: #dfe2ec;
+  }
+
+  table.calendar td a {
+    color: #465779;
+    text-decoration: none;
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  table.calendar td a.selected,
+  table.calendar td a:hover {
+    color: #ffffff;
+    background-color: #465779;
+  }
+</style>

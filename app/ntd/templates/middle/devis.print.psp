@@ -1,0 +1,81 @@
+<div class="main-content main-content--devis">
+  <div class="inner">
+    <div class="generic-block block-summary row">
+      <div class="col-6">
+        <p>
+          <?php if ($estimation->hasFlag(Estimation::FLAG_DOMTOM)): ?>
+            <?= l('snippet:ntd.facture.informations.domtom', I18N::LOCALE_FR) ?>
+          <?php else: ?>
+            <?= l('snippet:ntd.facture.informations', I18N::LOCALE_FR) ?>
+          <?php endif; ?>
+        </p>
+      </div>
+      <div class="col-6">
+        <p>
+          <span>Information Demandeur</span><br>
+          <?= $estimation->demandeur_name ?><br>
+          <?= nl2br($estimation->demandeur_details) ?>
+        </p>
+      </div>
+    </div>
+    <div class="generic-block block-facture">
+      <table class="facturation-table">
+        <thead>
+        <tr>
+          <th class="col-1">Services</th>
+          <th class="col-3">Type</th>
+          <th class="col-3">Qté</th>
+          <th class="col-4">P.U. HT</th>
+          <th class="col-5">Total HT</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php foreach ($tarifs as $tarif): ?>
+          <tr>
+            <td class="col-1"><?= $tarif->getService()->getProperty('title')?></td>
+            <td class="col-3"><?= Tarif::$price_types[$tarif->price_type]?></td>
+            <td class="col-3"><?= $tarif->estimation_quantity ?></td>
+            <td class="col-4"><?= H::amount($tarif->estimation_amount_unitary) ?></td>
+            <td class="col-5"><?= H::amount($tarif->estimation_amount_total) ?></td>
+          </tr>
+        <?php endforeach; ?>
+        </tbody>
+      </table>
+      <div class="facture-info">
+        <p>
+          Émise le <?= H::date($estimation->getMeta('updated_at')) ?><br>
+          Echéance le <?= H::date($estimation->expire_at) ?><br>
+        </p>
+      </div>
+      <div class="facture-total">
+        <p>TOTAL HT <span><?= H::amount($estimation->total_amount_ht) ?></span></p>
+        <p>TVA <?= number_format(100 * $estimation->tax_percent, 2) ?> %
+          <span><?= H::amount($estimation->tax_amount) ?></span></p>
+        <p class="total">TOTAL TTC <span><?= H::amount($estimation->total_amount_ttc) ?></span></p>
+      </div>
+      <div class="facture-note">
+        <p>
+          <small class="note-text">
+            <?php if ($estimation->hasFlag(Estimation::FLAG_DOMTOM)): ?>
+              <?= l('snippet:devis.footer.domtom',
+                    array(
+                      'devis' => $estimation->getId(),
+                      'date_creation_devis' => date('d/m/Y', strtotime($estimation->getMeta('created_at'))),
+                      'date_creation_devis_lettre' => strftime('%e %B %Y', strtotime($estimation->getMeta('created_at'))),
+                      'nom_demandeur' => $estimation->demandeur_name),
+                    I18N::LOCALE_FR) ?>
+            <?php else: ?>
+              <?= l('snippet:devis.footer',
+                    array(
+                      'devis' => $estimation->getId(),
+                      'date_creation_devis' => date('d/m/Y', strtotime($estimation->getMeta('created_at'))),
+                      'date_creation_devis_lettre' => strftime('%e %B %Y', strtotime($estimation->getMeta('created_at'))),
+                      'nom_demandeur' => $estimation->demandeur_name),
+                    I18N::LOCALE_FR) ?>
+            <?php endif; ?>
+          </small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

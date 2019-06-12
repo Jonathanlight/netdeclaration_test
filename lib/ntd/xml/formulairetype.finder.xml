@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="prefix_export asc">
+ <filters>
+  <filter name="id" />
+  <filter name="|%%|name" label="Nom" />
+  <filter name="|%%|code" label="Code" />
+  <filter name="document_code" options="Formulairetype::$document_codes" />
+  <filter name="flags" />
+ </filters>
+ <cols>  
+  <col name="title" />
+  <col name="name" />
+  <col name="code" />
+  <col name="document_code" />
+  <col name="prefix_export" />
+  <col name="ifields_count" />
+  <col name="itemplates_count" />
+  <col name="operations_count" />
+  <col name="flag_repetable" />
+ </cols>
+</finder>
+
+</kwo-interface>

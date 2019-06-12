@@ -1,0 +1,168 @@
+@mixin btnTopBorder($inner-color, $outer-color)
+  box-shadow: 0 1px 0 0 $inner-color inset, 0 -2px 0 -1px $outer-color
+
+@mixin ntd--btn($background-color, $background-hover-color, $background-active-color, $reflet-color, $shadow-color)
+  @include btnTopBorder($reflet-color, $shadow-color)
+  background-color: $background-color
+  margin-top: 0
+  margin-bottom: 1px
+  vertical-align: top
+  &:hover
+    background-color: $background-hover-color
+  &:active
+    @include btnTopBorder($background-active-color, $background-active-color)
+    background-color: $background-active-color
+    margin-top: 1px
+    margin-bottom: 0
+
+
+.btn
+  display: inline-block
+  border: 0
+  border-radius: 3px
+  font-size: 12px
+  line-height: 15px
+  padding: 10px 18px
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3)
+  background-color: black
+  color: $color--white
+
+  text-align: center
+  &:hover
+    text-decoration: none
+    background-color: grey
+  &:active
+    text-decoration: none
+    background-color: lightgrey
+
+.btn--big
+  font-size: 20px
+  font-weight: bold
+  padding: 20px 30px
+
+
+
+.btn--small
+  padding: 12px 10px
+  font-size: 12px
+
+.btn--smaller
+  padding: 7px 10px
+  font-size: 12px
+
+.btn--square
+  padding: 0
+  line-height: 25px
+  width: 25px
+  .fa
+    line-height: 25px
+    width: 25px
+
+
+.btn-home-margin-top
+  margin-top: 23px !important
+
+.btn-home-big
+  @include font-family--georgia()
+  margin-top: 23px !important
+  width: 46%
+  text-align: left
+  font-size: 20px !important
+  float: left
+  margin-right: 35px
+  position: relative
+
+
+.btn-home-big-no-margin
+  @include font-family--georgia()
+  margin-top: 23px !important
+  width: 46%
+  text-align: left
+  font-size: 20px !important
+  float: left
+  position: relative
+
+.btn-home-big:after, .btn-home-big-no-margin:after
+  content: "\f0da"
+  font-family: "fontawesome"
+  padding-top: 3px
+  position: absolute
+  right: 12px
+  top: 12px
+
+.btn-deconnexion
+  padding: 10px 12px
+
+.btn--color-red
+  @include ntd--btn($color--darkred, $color--lightred, $color--lightred, $color--borderred, #a60e20)
+
+.btn--color-red.disabled 
+  background-color: rgba(216, 28, 50, 0.8)
+  cursor: default
+  pointer-events: none
+  color: #ddd
+
+.btn--color-red.disabled:hover 
+  background-color: rgba(216, 28, 50, 0.8)
+  pointer-events: none
+  cursor: default
+  color: #ddd
+  
+.btn--color-green
+  @include ntd--btn(#3dac5d, #338f4d, #4bd473, #4bd473, #338f4d)
+
+.btn--color-red.margin-bottom
+  margin-bottom: 20px
+
+.btn--color-dark-blue
+  @include ntd--btn($color--darkblue, $color--classicblue, $color--classicblue, #3a6594, #002a57)
+  padding: 16px 22px
+  font-size: 14px
+
+.btn--color-light-blue
+  @include ntd--btn($color--lightblue, #708bc0, #708bc0, #8199c7, #505e7b)
+  &:hover
+    @include btnTopBorder(#8199c7, #7e8dab)
+
+
+.btn-infos
+  padding: 14px 22px !important
+  font-size: 14px
+
+.btn-send
+  padding: 15px 35px 
+  margin-left: 185px
+
+.btn--color-grey
+  line-height: 15px  
+  @include ntd--btn($color--grey, $color--grey, $color--grey, #f2f6ff, #cbcfd6)
+  text-shadow: 0 1px 0 #ffffff
+  color: $color--lightblue
+  &:hover,
+  &:active
+    color: $color--darkblue
+
+
+.btn--link
+  color: $color--lightblue
+  text-decoration: none
+  background: none repeat scroll 0 0 transparent
+  text-decoration: none
+  text-shadow: none
+  &:hover
+    text-decoration: underline
+    background: none repeat scroll 0 0 transparent
+  &.ntd-link--underline
+    text-decoration: underline
+    &:hover
+      text-decoration: none
+
+.btn--valid-pdf
+  float: right
+
+.btn--color-test
+  @include ntd--btn(red, blue, green, yellow, cyan)
+
+.btn--big-big
+  padding: 19px 20px
+  font-size: 28px

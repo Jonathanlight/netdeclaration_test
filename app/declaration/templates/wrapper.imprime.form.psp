@@ -1,0 +1,94 @@
+<form class="imprime-<?=$model ? 'model' : 'box'?>"
+      data-code="<?=$formulairetype->code?>"
+      data-index="<?=$imprime->getIndex()?>"
+      data-state="<?=$imprime->getFormulaire() ? 'saved' : 'new'?>"
+      data-required="<?=(int) $declaration->getDectype()->isFormulairetypeRequired($imprime->getFormulairetype())?>"
+      data-ftype_required="<?=implode(',', $formulairetype->formulairetype_required)?>"
+      <?=$model ? 'style="display:none;"' : ''?>>
+
+  <input type="hidden" name="declaration_key" value="<?=$declaration->getKey()?>">
+  <input type="hidden" name="declaration_id" value="<?=$declaration->getId()?>">
+  <input type="hidden" name="formulairetype_id" value="<?=$formulairetype->getId()?>">
+  <input type="hidden" name="index" value="<?=$imprime->getIndex()?>">
+
+  <div class="imprime-controls imprime-header">
+    <span class="formulaire-state"><?=$imprime->getFormulaire() ? 'Formulaire enregistré.' : 'Formulaire vide (non enregistré).'?></span>
+    <img src="/app/core/pix/throbber.gif" alt="" class="throbber" style="display:none;"/>
+    <input type="button"
+           class="ntd-button white"
+           value="Télécharger ce formulaire"
+           data-key="<?=$declaration->getKey()?>"
+           data-btn="download-formulaire"/>
+    <input type="button"
+           data-btn="formulaire.validate"
+           class="ntd-button white <?=$declaration->getDectype()->hasFlag(Dectype::FLAG_STEP_DISPLAY) ? 'muck' : ''?>"
+           value="Valider le formulaire"/>&nbsp;
+    <input type="submit"
+           class="ntd-button submit red"
+           value="Enregistrer les modifications"
+           data-confirm="<?=c(l('store.formulaire'))?>"/>
+  </div>
+
+  <div class="formulaire-header">
+    <div class="row">
+      <p class="big-text millesime"><?=$imprime->getMillesime()?></p>
+      <p class="big-text ftype-code"><?=$formulairetype->title_code?></p>
+    </div>
+    <div class="row">
+      <p class="big-text ftype-title"><?=$formulairetype->title?></p>
+    </div>
+  </div>
+
+
+  <div class="formulaire-page-buttons" style="display:none;"></div>
+
+  <div class="float-right" style="float: right; margin: 10px;">
+    <input type="button"
+           class="ntd-button red no-print"
+           value="Vider le formulaire"
+           data-btn="page-reset"
+           data-confirm="Êtes-vous sûr de vouloir vider le formulaire ? Cette action est irréversible"
+           data-confirm-success="Formulaire vidé" />
+  </div>
+
+  <?=$itemplate->asHtml(array('imprime' => $imprime)) ?>
+
+  <div class="formulaire-page-buttons" style="display:none;"></div>
+
+
+  <?php if ($declaration->status <= Declaration::STATUS_EDITABLE): ?>
+    <div style="display:none;">
+      <ul class="operation-box">
+        <?php foreach ($imprime->getOperations() as $operation) : ?>
+          <li data-operation='<?=json_encode(array('method' => $operation->method_name,
+                                                   'args' => $operation->method_args))?>'>&nbsp;</li>
+        <?php endforeach; ?>
+      </ul>
+      <ul class="ifields-box">
+        <?php foreach ($imprime->getFields() as $ifield) : ?>
+          <li data-code='<?=$ifield->name?>'
+              data-extensible='<?=(int) $ifield->isExtensible($imprime->getMillesime())?>'>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+    </div>
+  <?php endif; ?>
+
+  <div class="imprime-controls imprime-footer">
+    <img src="/app/core/pix/throbber.gif" alt="" class="throbber" style="display:none;"/>
+    <input type="button"
+           class="ntd-button white"
+           value="Télécharger ce formulaire"
+           data-key="<?=$declaration->getKey()?>"
+           data-btn="download-formulaire"/>
+
+    <input type="button"
+           data-btn="formulaire.validate"
+           class="ntd-button white <?=$declaration->getDectype()->hasFlag(Dectype::FLAG_STEP_DISPLAY) ? 'muck' : ''?>"
+           value="Valider le formulaire"/>&nbsp;
+    <input type="submit"
+           class="ntd-button submit red"
+           value="Enregistrer les modifications"
+           data-confirm="<?=c(l('store.formulaire'))?>"/>
+  </div>
+</form>

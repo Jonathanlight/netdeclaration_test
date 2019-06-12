@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Portail déclaratif sécurisé télétransmissions fiscales</title>
+  <meta http-equiv="Content-Language" content="fr_FR"/>
+  <meta http-equiv="Content-Script-Type" content="text/javascript"/>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <script type="text/javascript">var _user_id = 0;
+    var _locale = 1;
+    var _scope = "front";</script>
+  <meta name="title" content="Portail déclaratif sécurisé télétransmissions fiscales"/>
+  <meta name="description"
+        content="Net Declaration partenaire de la Direction Générale des Finances Publiques et de la Banque de France vous propose la télétransmission sécurisée de vos déclarations Fiscales, Comptables et Sociales"/>
+  <meta name="google-site-verification" content="nbEXAp3v8HdKYqcRcGuB71Ay7EZ7nspBVic67TgL7zw"/>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-40708958-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+  <link rel="stylesheet" href="/app/ntd/styles/front.css?13-04-23" type="text/css"/>
+  <link rel="stylesheet" href="/app/ntd/styles/print.css?13-04-23" type="text/css" media="print"/>
+  <!--[if IE 8]>
+  <link rel="stylesheet" href="/app/ntd/styles/ie8.css?13-04-23" type="text/css"/>
+  <![endif]-->
+  <!--[if lt IE 8]>
+  <link rel="stylesheet" href="/app/ntd/styles/ie.css?13-04-23" type="text/css"/>
+  <![endif]-->
+  <!--[if IE 7]>
+  <link rel="stylesheet" href="/app/ntd/styles/ie7.css?13-04-23" type="text/css"/>
+  <![endif]-->
+  <!--[if IE 6]>
+  <link rel="stylesheet" href="/app/ntd/styles/ie6.css?13-04-23" type="text/css"/>
+  <![endif]-->
+  <link rel="icon" href="/app/ntd/pix/favicon.png" type="image/png"/>
+</head>
+
+<body class="scope-front extension-ntd action-home">
+
+<div class="wrapper offline">
+
+  <div class="wrapper-header" style="text-align: center;">
+    <div class="wrapper-header-top">
+      <a href="http://www.netdeclaration.net" class="logo"><img src="/app/ntd/pix/logo.png" alt="logo"/></a>
+      <p class="wrapper-header-description"><strong>Portail déclaratif sécurisé des télétransmissions Fiscales, Comptables & Sociales</strong></p>
+    </div>
+
+    <div class="wrapper-header-menu">
+      <ul class="menu-root"></ul>
+    </div>
+  </div>
+
+  <div class="wrapper-content">
+    <div class="wrapper-content-middle">
+      <div class="home-box">
+        <div class="introduction-box" style="float:none; width:100%;">
+          <div class="introduction-phrase">
+            <h2 style="text-align:center;">Maintenance</h2>
+            <p style="text-align: center;">
+              Bonjour<br/>
+              Suite à la mise à jour de nos serveurs entre 12h00 à 14h00, le portail ne sera pas accessible durant cette plage horaire.<br/>
+              Veuillez nous excuser pour la gène occasionnée.<br/>
+              Merci de votre compréhension<br/>
+            </p>
+          </div>
+        </div>
+        <div class="clear">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

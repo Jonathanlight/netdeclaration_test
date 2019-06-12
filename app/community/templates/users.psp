@@ -1,0 +1,22 @@
+<style>
+  .users > div.user { padding:4px 8px; border-bottom:1px solid #aaa; clear:both; }
+  .users > div.user > div.actions { float:right; }
+  .users > div.user > div.actions a { text-decoration:none; }
+</style>
+
+<div class="users">
+  <?php foreach ($users as $user): ?>
+    <div class="user">
+      <?=$user->avatar()?>
+      <?=$user?>
+      <div class="actions">
+        <?=W::fan($user)?> |
+        <a href="javascript:void(0)" data-item="<?=$user->getKey()?>"
+           onclick="new Kwo.Class.Connection(this)">ajouter comme ami</a> |
+        <a href="javascript:void(0)" data-item="<?=$user->getKey()?>"
+           onclick="new Kwo.Composer.Message(this)">envoyer un message</a>
+      </div>
+      <div class="clear"></div>
+    </div>
+  <?php endforeach; ?>
+</div>

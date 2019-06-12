@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="id desc">
+ <filters>
+  <filter name="id" />
+  <filter name="declaration_id" type="text" />
+ </filters>
+ <cols>
+  <col name="declaration_id" />
+  <col name="date_depot" />
+ </cols>
+</finder>
+
+</kwo-interface>

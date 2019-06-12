@@ -1,0 +1,192 @@
+// ----- Account / Middle style (shared)
+
+
+// ----- wrapper__content--2cols--bluewhite
+.wrapper__content--2cols--bluewhite
+  background: $color--lightgrey /* Old browsers */
+  background: -moz-linear-gradient(left, $color--lightgrey 0%, $color--lightgrey 50%, #FFFFFF 50%, #FFFFFF 100%) /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,$color--lightgrey), color-stop(50%,$color--lightgrey), color-stop(50%,#FFFFFF), color-stop(100%,#FFFFFF)) /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, $color--lightgrey 0%,$color--lightgrey 50%,#FFFFFF 50%,#FFFFFF 100%) /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, $color--lightgrey 0%,$color--lightgrey 50%,#FFFFFF 50%,#FFFFFF 100%) /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, $color--lightgrey 0%,$color--lightgrey 50%,#FFFFFF 50%,#FFFFFF 100%) /* IE10+ */
+  background: linear-gradient(to right, $color--lightgrey 0%,$color--lightgrey 50%,#FFFFFF 50%,#FFFFFF 100%) /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color--lightgrey', endColorstr='#FFFFFF',GradientType=1 ) /* IE6-9 */
+
+.wrapper__content--2cols--bluewhite__col-white
+  background: #FFFFFF
+  vertical-align: top
+
+.wrapper__content--2cols--bluewhite__col-blue
+  width: 270px
+  background: $color--lightgrey
+  color: #5f7092
+  font-size: 13px
+  padding-right: 30px
+  vertical-align: top
+  padding-top: 60px
+
+
+// ----- .white-nav (middle & account)
+.white-nav
+  border-bottom: 1px solid $color--bordergrey
+  margin-top: 13px
+  margin-bottom: 13px
+
+  .white-nav__link
+    display: block
+    background: #ffffff
+    color: $color--darkblue
+    font-size: 14px
+    border: 1px solid $color--bordergrey
+    border-bottom: 0
+    line-height: 41px
+    padding-left: 17px
+    text-decoration: none
+
+    .white-nav__link__icon
+      float: right
+      margin: 11px 11px 0 0
+      font-size: 18px
+
+    &:hover .white-nav__link__icon
+      color: $color--red
+
+  .white-nav__link--selected
+    color: $color--red
+    font-weight: bold
+
+.btn--nav-account
+  margin-bottom: 30px
+  width: 100%
+
+// ----- nav page
+.list-arrow
+  border-top: 1px solid $color--grey
+  .list-arrow__item
+    color: $color--darkblue
+    padding: 11px 0 11px 8px
+    border-bottom: 1px solid $color--grey
+    font-size: 14px
+
+  .list-arrow__item--selected
+    color: $color--red
+
+//---- Block-suivi
+.results_count
+  color: $color--darkblue 
+
+// ----- BLock middle (right)
+.block--middle-content
+  padding-top: 0 //75px
+  padding-left: 50px
+  min-height: 470px
+
+  .block__middle-title
+    @include font--darkblue()
+    @include font-size-big()
+    @include font-family--georgia()
+    text-transform: none
+    margin-bottom: 25px
+
+  .block__middle-description
+    margin-bottom: 30px
+    font-size: 16px
+    color: #5f7092
+
+  .block__middle-content
+    margin-bottom: 20px
+
+
+
+
+.block__actions
+  @include clearFloat()
+  margin-bottom: 25px
+
+  .block__actions__link
+    margin-top: 18px
+
+// ----- .block--adherent-selector
+.block--adherent-selector
+  margin-bottom: 25px
+
+  .block--adherent-selector__adherent-company
+    color: $color--darkblue
+    font-size: 16px
+    font-weight: bold
+    width: 145px
+
+  .block--adherent-selector__btn-show-form
+    background: none
+    border: none
+    color: $color--lightblue
+    padding: 0
+
+    .block--adherent-selector__btn-show-form__icon
+      font-size: 14px
+      margin-right: 5px
+
+  .block--adherent-selector__form
+    display: none
+  &.block--adherent-selector__shown
+    .block--adherent-selector__form
+      display: block
+
+    .block--adherent-selector__btn-show-form
+      display: none
+
+#middle-help-dialog
+  .wrapper-width
+    position: relative
+
+  .dialog-overlay
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: #000000
+    opacity: 0.45
+    z-index: 2
+
+  .absolutize
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 2
+
+  .help-box
+    background: #fff661
+    color: #4c4c4c
+    font-size: 14px
+    padding: 5px 10px
+    position: absolute
+
+  .help-box__arrow-left
+    position: absolute
+    left: -114px
+    background: url(/app/ntd/pix/v2/help-arrow-3.png)
+    top: 12px
+    width: 97px
+    height: 21px
+
+  .help-box__arrow-righttop
+    position: absolute
+    right: -46px
+    background: url(/app/ntd/pix/v2/help-arrow-1.png)
+    top: -10px
+    width: 34px
+    height: 39px
+
+  .help-box__arrow-lefttop
+    position: absolute
+    left: -46px
+    background: url(/app/ntd/pix/v2/help-arrow-2.png)
+    top: -10px
+    width: 34px
+    height: 39px
+
+.middle-help-dialog-btn__shown
+  z-index: 3

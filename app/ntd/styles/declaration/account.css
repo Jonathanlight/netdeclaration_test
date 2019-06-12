@@ -1,0 +1,222 @@
+
+.account-wrapper { }
+.account-wrapper .account-wrapper-left { float:left; width: 210px; padding-right: 20px; }
+
+.account-wrapper .account-panel { overflow:hidden; }
+.account-wrapper .account-panel .tip { color: #7889AA; font-size: 1.2em; }
+.account-wrapper .account-panel .tip strong { font-weight:bold; }
+.account-wrapper .account-panel .toolbar-panel {  }
+.account-wrapper .account-panel .toolbar-panel .primary { overflow:hidden; border:1px solid #dfe2ec; border-radius: 5px 5px 0 0; }
+.account-wrapper .account-panel .toolbar-panel .primary a { float:left; padding:10px; text-decoration:none; color:#7889aa; font-size:1.2em; border-right: 1px solid #DFE2EC; }
+.account-wrapper .account-panel .toolbar-panel .primary a:hover { color: #193e66; }
+.account-wrapper .account-panel .toolbar-panel .primary a.selected { background:#dfe2ec; color: #193e66; }
+
+.account-wrapper .account-panel .toolbar-panel .secondary { overflow:hidden; border:1px solid #dfe2ec; border-bottom:0; border-top:0; padding: 20px 20px 10px; }
+.account-wrapper .account-panel .toolbar-panel .secondary a { float:left; text-decoration:none; color:#7889aa; font-size:1.2em; background:transparent none no-repeat center bottom; padding-bottom:6px; margin-right:7px; }
+.account-wrapper .account-panel .toolbar-panel .secondary a.selected { background-image:url(/app/ntd/pix/account/menu-secondary-arrow.png); }
+.account-wrapper .account-panel .toolbar-panel .secondary a span { background-color: #eff0f5; padding:10px; display:block; border-radius: 5px;  }
+.account-wrapper .account-panel .toolbar-panel .secondary a:hover span { color: #193e66; }
+.account-wrapper .account-panel .toolbar-panel .secondary a.selected span { background:#dfe2ec; color: #193e66; }
+
+.account-wrapper .account-panel .body-panel { border:1px solid #dfe2ec; border-top-width:0; padding: 15px 20px 20px; margin-bottom: 40px; }
+
+.account-wrapper .account-panel .body-panel.no-toolbar-panel { border-top-width:1px; border-radius: 5px 5px 0 0; padding-top:15px; }
+.account-wrapper .account-panel.no-menu .body-panel { border-top-width:1px; border-radius: 5px 5px 0 0; }
+.account-wrapper .account-warnings { color: #7889AA; font-size: 1.2em; line-height: 1.3em; margin-bottom:10px; }
+.account-wrapper .account-warnings strong { font-weight:bold; }
+
+
+/* ----- community.profile.edit ----- */
+.adherent-edit-box .form-label-inline p { color:#808080; font-size:1.2em; line-height:1.3em; margin:10px 0; }
+.adherent-edit-box .form-label-inline div.elt label.elt { width:248px; }
+.adherent-edit-box .form-label-inline div.elt .text { width: 248px; }
+.adherent-edit-box .form-label-inline div.elt select { width:260px; }
+.adherent-edit-box .form-label-inline .ntd-button{ float: right; margin-right: 80px; }
+.adherent-edit-box .form-mentions { color:#e73348; font-size:1.1em; line-height: 30px; }
+/*.adherent-edit-box .form-label-inline .elt-radio label.elt { float:none; display:block; text-align:left; }*/
+
+/* ----- account-iban ----- */
+.account-iban-box { margin:20px 0; }
+.account-iban-box .ntd-button { float: right;margin-right: 170px; }
+.account-iban-box .ntd-button.white { margin-right: 10px; }
+.account-iban-box .form-label-inline div.elt label.elt { width:248px; }
+.account-iban-box .text { width:248px; }
+
+/* ----- account-ibans ----- */
+.account-ibans-box {  }
+.account-ibans-box .button-iban-add { margin: 30px auto 0; width: 200px;}
+
+/* ----- adherent-secondary-box ----- */
+.adherent-secondary-box .form-label-inline p { color:#808080; font-size:1.2em; line-height:1.3em; margin:10px 0; }
+.adherent-secondary-box .form-label-inline div.elt label.elt { width:340px; }
+.adherent-secondary-box .form-label-inline div.elt .text { width: 248px; }
+.adherent-secondary-box .form-label-inline div.elt select { width:260px; }
+.adherent-secondary-box .form-label-inline .ntd-button{ float: right; margin-right: 80px; }
+.adherent-secondary-box .form-mentions { color:#e73348; font-size:1.1em; line-height: 30px; }
+.adherent-secondary-box .form-label-inline .elt-radio label.elt { float:none; display:block; text-align:left; }
+.adherent-secondary-box .form-label-inline div.adherent-types label.click-label { text-transform:uppercase; white-space: nowrap; }
+
+/* ----- community-email-box ----- */
+/* ----- community-password-box ----- */
+.community-email-box h2,
+.community-password-box h2 { margin-bottom:10px; }
+
+.community-email-box .form-label-inline div.elt .text,
+.community-password-box .form-label-inline div.elt .text { width: 248px; }
+.community-email-box .form-label-inline div.elt label.elt,
+.community-password-box .form-label-inline div.elt label.elt { width:40%; }
+
+
+/* ----- account-services-purchasables-box ----- */
+.account-services-purchasables-box { }
+.account-services-purchasables-box .service-purchasable-container .handler { display: block; line-height: 30px; background-color: #eff0f5; margin-bottom: 1px; padding-left: 20px; text-decoration:none; color: #002E5F; font-family: georgia; font-size: 1.3em; }
+.account-services-purchasables-box .service-purchasable-container.selected .handler,
+.account-services-purchasables-box .service-purchasable-container .handler:hover { text-decoration:underline;  }
+.account-services-purchasables-box .service-purchasable-container .arrow { width:9px; height:9px; background:transparent url(/app/ntd/pix/account/services-arrow.png) top left no-repeat; float: left; margin-top: 11px; margin-right: 5px; }
+.account-services-purchasables-box .service-purchasable-container.selected .arrow { background-position:left bottom; }
+.account-services-purchasables-box .service-purchasable-container .hideable-box { display:none; padding: 20px 0; }
+.account-services-purchasables-box .service-purchasable-container.selected .hideable-box { display:block;}
+.account-services-purchasables-box .service-purchasable-container .hideable-box .ntd-button { float:right; margin-right:214px;}
+.account-services-purchasables-box p { color:#666666; font-size:1.2em; line-height:1.3em; margin: 0 20px 10px; }
+.account-services-purchasables-box .form-label-inline div.elt label.click-label { display:block; line-height:1.3em; padding-top:6px; }
+.account-services-purchasables-box .form-label-inline div.elt label.click-label input { vertical-align:sub; }
+.account-services-purchasables-box .form-label-inline div.elt .elt-control { overflow: hidden; }
+.account-wrapper .account-panel.account-account\.services\.purchasables .body-panel { padding-left:0; padding-right:0; }
+.account-wrapper .account-panel.account-account\.services\.purchasables .body-panel h2 { padding-left:20px; }
+
+
+
+.account-service-validation-box  { overflow:hidden; padding:10px}
+.account-service-validation-box ul { margin: 20px 0; }
+.account-service-validation-box ul li { color: #808080; font-size: 1.2em; line-height: 1.3em; overflow:hidden; }
+.account-service-validation-box ul li label { float: left; width: 50%; text-align: right; margin-right: 10px; }
+.account-service-validation-box ul li .price { color: red; }
+.account-service-validation-box ul li strong { font-weight: bold }
+.account-service-validation-box .submit { float:right; }
+
+/* ----- account-services-cancel-box ----- */
+.account-services-cancel-box .form-label-inline div.elt select { width:260px }
+.account-services-cancel-box .form-label-inline .ntd-button{ float: right; margin-right: 74px; }
+
+.account-factures-box .facture .elt-tooltip { width:350px; }
+.account-factures-box .facture .facture-status { line-height:30px; }
+.account-factures-box .facture .facture-status-0 { color:#E71E3F; }
+.account-factures-box .facture .facture-status-1 { color:#1EAE69; }
+.account-factures-box .facture .facture-status-2 { color:#002D62; }
+
+
+/* ----- account-suivi-box ----- */
+.account-suivi-box { }
+.account-suivi-box h2 { margin: 20px 0 10px; }
+.account-suivi-box .form-label-inline { background-color: #eff0f5; border-radius: 5px; }
+.account-suivi-box .form-label-inline h2 { margin: 5px 10px 10px; }
+.account-suivi-box .form-label-inline fieldset { border-bottom: 1px solid #ffffff; padding: 10px; }
+.account-suivi-box .form-label-inline fieldset.col-left { border-right: 1px solid #ffffff; width: 323px; float: left; }
+.account-suivi-box .form-label-inline fieldset legend { font-size: 1.2em; font-weight: bold; color: #002d62; }
+.account-suivi-box .form-label-inline fieldset div.elt-date label.elt { width: auto; text-align: left; font-weight: normal; }
+.account-suivi-box .form-label-inline fieldset div.elt { margin: 0; }
+.account-suivi-box .form-label-inline fieldset div.elt-select { float:left; width:50%; }
+.account-suivi-box .form-label-inline fieldset div.elt select { width:47%; }
+.account-suivi-box .form-label-inline fieldset div.elt-date { float: left; margin: 0; }
+.account-suivi-box .form-label-inline fieldset div.elt-date .elt-control { float: left; margin-right: 5px; }
+.account-suivi-box .form-label-inline .btn-calendar { font-size: 0; background: transparent url('/app/ntd/pix/tooltip-calendar_blue.png') no-repeat center center; float: left; width: 17px; height: 21px; margin: 3px 15px 3px 3px; }
+.account-suivi-box .ntd-table td[valign="top"] { padding:2px 5px;; line-height: 17px; }
+.account-suivi-box .ntd-table strong { font-weight:bold; }
+.account-suivi-box .ntd-table a { color:#E73348; text-decoration: none; }
+.account-suivi-box .ntd-table a:hover { text-decoration: underline; }
+.account-suivi-box .ntd-table a.green { color:green; }
+.account-suivi-box .pagination { float: right; }
+.account-suivi-box .ntd-table td img { vertical-align: top; }
+.account-suivi-box .ntd-table td.bright { border-right-style: solid;  }
+
+.account-suivi-box .ntd-table td,
+.account-suivi-box .ntd-table th { height: inherit; line-height: 1.3em; vertical-align: top;}
+.account-suivi-box .ntd-table th { border-bottom-color: #fff; padding:5px 5px; border-top-color: #fff; }
+.account-suivi-box .ntd-table th:last-child { border-right-color: #fff; }
+.account-suivi-box .ntd-table th.last-rowcell { border-right-color: #dfe2ec; }
+.account-suivi-box .pagination-container { margin-top:15px; overflow:hidden }
+.account-suivi-box .pagination .pagination-page.pagination-number { width: auto; padding: 0 5px; }
+.account-suivi-box .text-ellipsis { text-overflow: ellipsis;  overflow: hidden; white-space: nowrap; display: block; cursor: help; }
+
+.account-suivi-details-box { background-color:#ffffff; }
+.account-suivi-details-box .details { padding:10px; line-height:1.3em; font-size:1.2em; color:#002d62; }
+.account-suivi-details-box .details p { margin-bottom:5px; }
+.account-suivi-details-box .details h3 { margin-bottom:5px; }
+.account-suivi-details-box .details strong { font-weight:bold; }
+.action-account-suivi .dialog-shadow { overflow-x:hidden; }
+
+/* ----- wrapper-facture-box ----- */
+.wrapper-facture-box { overflow:hidden; }
+.wrapper-facture-box h3 { color: #002d62; background-color: #dfe2ec; font-weight: bold; font-size: 1.2em; line-height: 1.75em; font-family: arial; padding: 0 5px; }
+.wrapper-facture-box .snippet-content,
+.wrapper-facture-box p { color: #7889aa; font-size: 1.2em; line-height: 1.3em; }
+.wrapper-facture-box .btn-back { margin-bottom:20px; float:left; }
+.wrapper-facture-box .actions { margin-top:20px; overflow:hidden; }
+.wrapper-facture-box .actions > .ntd-button{ float:right; margin-left:10px; }
+.wrapper-facture-box .button-print { width: 180px;  }
+.wrapper-facture-box .button-print img { margin-right: 10px; vertical-align: middle; }
+
+.wrapper-facture-box .wrapper-facture-header { overflow: hidden; }
+.wrapper-facture-box .wrapper-facture-header .content { padding: 5px; }
+.wrapper-facture-box .wrapper-facture-header .col-left { width: 230px; float: left; }
+.wrapper-facture-box .wrapper-facture-header .col-left .logo { margin-bottom: 20px; }
+.wrapper-facture-box .wrapper-facture-header .col-right { width: 230px; float: right; }
+
+.wrapper-facture-box table.ntd-table { border: 0; }
+.wrapper-facture-box .wrapper-facture-content { border-top: 1px solid #dfe2ec; border-bottom: 1px solid #dfe2ec; margin-bottom:10px; }
+.wrapper-facture-box .wrapper-facture-content .facture-periode-box { margin-bottom:5px; }
+.wrapper-facture-box .wrapper-facture-content table.ntd-table tfoot td { border: 0; }
+.wrapper-facture-box .wrapper-facture-content table.ntd-table tfoot td.align-right { text-align: right; }
+.wrapper-facture-box .wrapper-facture-content table.ntd-table tfoot td,
+.wrapper-facture-box .wrapper-facture-content table.ntd-table tfoot th { height: 20px; }
+.wrapper-facture-box .wrapper-facture-content table.ntd-table tfoot td strong { font-weight: bold; }
+/*.wrapper-facture-box .wrapper-facture-content table.ntd-table tfoot tr:first-child td { padding-top: 10px; height: 30px; }*/
+.wrapper-facture-box .wrapper-facture-content table.ntd-table td.snippet { padding:5px; }
+.wrapper-facture-box .wrapper-facture-content table.ntd-table tfoot td { padding:2px 5px; height:auto; }
+
+.wrapper-facture-box .purchases-table td { height: auto; line-height: 20px; padding: 5px; text-align: left; vertical-align: top;}
+
+/* ----- account-bulletin-adhesion-box ----- */
+.account-bulletin-adhesion-box {  }
+.account-bulletin-adhesion-header { font-size:1.2em; color: #666666; line-height: 1.3em;}
+
+
+/* ----- adherents-secondaries-account-cancel-box ----- */
+.adherents-secondaries-account-cancel-box  { overflow:hidden; }
+.adherents-secondaries-account-cancel-box ul { margin: 20px 0; }
+.adherents-secondaries-account-cancel-box ul li { color: #808080; font-size: 1.2em; line-height: 1.3em; }
+.adherents-secondaries-account-cancel-box ul li label { float: left; width: 40%; text-align: right; margin-right: 10px; }
+.adherents-secondaries-account-cancel-box ul li .price { color: red; }
+.adherents-secondaries-account-cancel-box ul li strong { font-weight: bold }
+.adherents-secondaries-account-cancel-box .submit { float:right; }
+
+.declarer-box .form-label-inline div.elt select { font-weight:bold; width: 250px; }
+
+
+
+.account-declaration-validate-box.form-label-up div.elt .text { padding:5px; color:#808080; } 
+
+
+/* ----- account-paiement ----- */
+.account-paiement { }
+.account-paiement .snippet { margin-top:10px; }
+.account-paiement .cgv { font-size:1em; }
+.account-paiement form {margin-top: 20px;}
+.account-paiement .methods { overflow: hidden; width: 100%; }
+.account-paiement .methods li { float: left; width: 25%; text-align: center; }
+.account-paiement .methods label { display: block; background: #f3f4f8; padding: 10px 0; margin: 0 10px; cursor: pointer; border-radius: 5px 5px 5px 5px; color:#808080; font-size:1.1em; font-style:italic; }
+.account-paiement .methods label:hover,
+.account-paiement .methods label.selected { background: #dfe2ec; }
+.account-paiement .methods li:first-child label { margin-left: 0; }
+.account-paiement .methods li:last-child label { margin-right: 0; }
+.account-paiement .methods label > * { margin: 5px 0; }
+.account-paiement .methods-content { background: #01264E; padding: 10px 20px; color: #ffffff; font-size: 1.2em; line-height: 1.3em; margin: 20px 0 30px; border-radius: 5px 5px 5px 5px; }
+.account-paiement form > .actions { margin-bottom: 50px; }
+
+.actions { overflow: hidden;  }
+.actions > * { float: right; margin-left:20px; }
+.actions > a.link { font-size: 1.4em; color: #666666; line-height: 30px; text-decoration: none; }
+.actions > a.link:hover { text-decoration: underline; }
+
+.account-paiement-prelevement .snippet.iban { margin-top:30px; }
+.account-paiement-prelevement .snippet.method { margin:10px 0 30px; }

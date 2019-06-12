@@ -1,0 +1,466 @@
+
+.wrapper-width
+  width: $main-width
+  margin-left: auto
+  margin-right: auto
+
+// ----- Wrapper Body
+body
+  background: none repeat scroll 0 0 $color--lightblue
+
+.wrapper
+  background: none repeat scroll 0 0 $color--white
+// ----- Header
+.wrapper__header
+  @include clearFloat()
+  position: relative
+
+  .wrapper__header__logo
+    float: left
+
+  .wrapper__header__user
+    float: right
+    margin-top: 15px
+    .ellipsis
+      display: inline-block
+      vertical-align: top
+      width: 100px
+    .btn--color-light-blue, .btn--color-red
+      line-height: 15px
+
+    .header-nav__user
+      display: inline-block
+      margin-right: 20px
+
+  .wrapper__header__search-form
+    float: right
+    margin-top: 15px
+    margin-right: 5px
+    width: 300px
+    position: relative
+
+    .wrapper__header__search-form__elem
+      float: right
+      .text
+        float: right
+        height: 35px
+        padding-left: 34px
+        background: #FFF url("/app/ntd/pix/logo_seach_input.png") no-repeat 9px center
+        border-radius: 3px
+
+      &.btn--color-dark-blue-search
+        @include ntd--btn($color--darkblue, $color--darkblue, $color--darkblue, #f2f6ff, #cbcfd6)
+        text-shadow: 0 1px 0 #000000
+        color: $color--lightblue
+        float: right
+        box-shadow: none
+        border-radius: 0 3px 3px 0
+        line-height: 15px
+        display: none
+        position: absolute
+        right: 0
+        z-index: 2
+        &:hover,
+        &:active
+          color: $color--classicblue
+        .fa
+          color: #FFF
+      .text
+        height: 35px
+        width: 175px
+        -webkit-transition: all .7s
+        -moz-transition: all .7s
+        transition: width .7s ease
+        &:focus
+          background: none
+          padding-left: 5px
+          width: 230px
+        &:focus + .wrapper__header__search-form__elem.btn.btn--color-dark-blue-search
+          display: block
+          position: absolute
+          z-index: 3
+
+
+
+  .absolute-bottom-right
+    position: absolute
+    right: 0
+    bottom: 22px
+
+  .wrapper__header__partenaire-edi
+    clear: right
+    float: right
+    @include font-family--georgia()
+    color: $color--borderred-1
+    font-size: 12px
+    font-style: italic
+
+  .wrapper__header__accroche
+    clear: right
+    float: right
+    @include font-family--georgia()
+    color: $color--darkergrey
+    font-size: 18px
+    font-style: italic
+
+// ----- Menu
+.wrapper__menu
+  background: $color--darkblue
+
+.wrapper__menu__lvl1
+  @include clearFloat()
+  z-index: 1
+  position: relative
+
+  .wrapper-dropdown-menu
+    text-align: center
+    &:hover
+      background: $color--white
+      color: $color--darkblue
+      text-decoration: none
+      .wrapper__menu__lvl1__link
+        &:after
+          content: ""
+          border: 1px solid #002e60
+          border-bottom: none
+          position: absolute
+          width: 100%
+          height: 3px
+          background: white
+          left: -1px
+          top: -2px
+          box-sizing: content-box
+      .wrapper__menu__lvl1__link
+        color: $color--darkblue
+
+    .wrapper__menu__lvl1__link
+      position: relative
+      &:hover
+        background: $color--white
+        color: $color--darkblue
+        text-decoration: none
+        position: relative
+        &:after
+          content: ""
+          border: 1px solid $color--darkblue
+          border-bottom: none
+          position: absolute
+          width: 100%
+          height: 3px
+          background: $color--white
+          left: -1px
+          top: -2px
+          box-sizing: content-box
+  .wrapper__menu__lvl1__elem
+    float: left
+    text-align: center
+    width: 19.6666%
+    // =100 / 6 : dépend du nombre d'items dans le menu (lvl 1)
+    .small-menu
+      border: 1px solid $color--darkblue
+      border-bottom-width: 3px
+      border-top: none
+      margin: 0 0 0 -1px
+      padding: 0
+      text-align: left
+      .wrapper__menu__lvl2__elem
+        background: $color--white
+        .wrapper__menu__lvl2__link
+          border-bottom: 1px solid $color--grey
+          color: $color--darkblue
+          font-family: Georgia, serif
+          font-size: 17px
+          font-weight: bold
+          line-height: 24px
+          padding: 20px 80px 20px 25px
+          position: relative
+          width: 280px
+
+          &:hover
+            background: $color--lightgrey
+            text-decoration: none
+
+          .fa
+            color: $color--red
+            position: absolute
+            right: 22px
+            top: 24px
+
+    .big-menu
+      border: 1px solid $color--darkblue
+      border-bottom-width: 3px
+      border-top: none
+      margin: 0
+      padding: 0
+      left: 0
+      width: 100%
+      text-align: left
+      //width: 960px
+      //margin-left: -100px
+
+      .wrapper__menu__lvl2__elem
+        background: $color--white
+        border-bottom: 1px solid $color--grey
+        border-left: 1px solid $color--grey
+        float: left
+        padding: 15px 0 0 15px
+        position: relative
+        width: 20%
+        height: 84px
+
+        &:hover
+          background-color: $color--lightgrey
+
+        &:before
+          content: ""
+          position: absolute
+          bottom: -1px
+          left: -1px
+          top: 0
+          width: 1px
+          @include gradient-grey()
+
+        &:before
+          content: none
+
+      .reverse-border
+        &:before
+          @include gradient-grey-reverse()
+
+      .wrapper__menu__lvl2__elem
+        .wrapper__menu__lvl2__link
+          @include font-family--georgia()
+          color: $color--darkblue
+          font-size: 15px
+          font-weight: bold
+          margin-bottom: 16px
+          text-decoration: none
+          position: relative
+          z-index: 1
+
+          .fa
+            color: $color--red
+            font-size: 17px
+            margin-left: 2px
+
+        > .fa
+          color: $color--grey
+          font-size: 30px
+          position: absolute
+          bottom: 15px
+          right: 10px
+        > .fa-folder-open ,.fa-suitcase, .fa-archive
+          font-size: 28px
+        > .fa-home
+          font-size: 32px
+
+        p
+          color: $color--lightblue
+          font-size: 13px
+          float: left
+          width: 158px
+
+    .wrapper__menu__lvl1__link
+      display: block
+      color: $color--white
+      font-size: 15px
+      line-height: 38px
+
+    .wrapper__menu__lvl2
+      display: none
+      background: $color--darkblue
+      position: absolute
+      box-shadow: 0px 2px 0px #DADEE6
+
+      .wrapper__menu__lvl2__link
+        display: block
+        color: $color--white
+        font-size: 13px
+        line-height: 22px
+
+    &:hover
+      .wrapper__menu__lvl2
+        display: block
+
+// ----- Wrapper Content (2 col <main> & <aside>)
+.wrapper__content--2col
+  background: $color--white
+  /* Old browsers */
+  background: -moz-linear-gradient(left, $color--white 0%, $color--white 50%, $color--lightgrey 50%, $color--lightgrey 100%)
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, $color--white), color-stop(50%, $color--white), color-stop(50%, $color--lightgrey), color-stop(100%, $color--lightgrey))
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, $color--white 0%, $color--white 50%, $color--lightgrey 50%, $color--lightgrey 100%)
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, $color--white 0%, $color--white 50%, $color--lightgrey 50%, $color--lightgrey 100%)
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, $color--white 0%, $color--white 50%, $color--lightgrey 50%, $color--lightgrey 100%)
+  /* IE10+ */
+  background: linear-gradient(to right, $color--white 0%, $color--white 50%, $color--lightgrey 50%, $color--lightgrey 100%)
+  /* W3C */
+
+  .table-cell--main
+    background: $color--white
+
+  .table-cell--aside
+    width: 300px
+    background: $color--lightgrey
+    color: $color--lightblue
+    font-size: 13px
+
+// ----- Aside
+.aside__title
+  $aside__title__left_width: 6px
+  @include font-family--georgia()
+  @include clearFloat()
+  font-size: 18px
+  font-weight: bold
+  color: $color--white
+  line-height: 40px
+  margin-left: -$aside__title__left_width
+
+  .aside__title__left
+    float: left
+
+  .aside__title__center
+    float: left
+
+    .aside__title__center__icon
+      margin-right: 12px
+
+  .aside__title__right
+    float: left
+
+  .aside__title__left--blue
+    background: url(/app/ntd/pix/general/aside_title_blue_left.png) no-repeat top left
+    width: $aside__title__left_width
+    height: 46px
+
+  .aside__title__center--blue
+    background: $color--darkblue
+    height: 40px
+    padding-right: 30px
+    padding-left: 10px
+
+  .aside__title__right--blue
+    background: url(/app/ntd/pix/general/aside_title_blue_right.png) no-repeat top left
+    width: 11px
+    height: 40px
+
+  .aside__title__left--red
+    background: url(/app/ntd/pix/general/aside_title_red_left.png) no-repeat top left
+    width: $aside__title__left_width
+    height: 46px
+
+  .aside__title__center--red
+    background: $color--darkred
+    border-bottom: 1px solid $color--darkerred
+    height: 41px
+    padding-right: 30px
+    padding-left: 10px
+
+  .aside__title__right--red
+    background: url(/app/ntd/pix/general/aside_title_red_right.png) no-repeat top left
+    width: 12px
+    height: 41px
+
+// ----- Footer
+$wrapper__footer__border-top-height: 11px
+.wrapper__footer-padding-bottom
+  padding-bottom: (139+$wrapper__footer__border-top-height)
+
+.wrapper__footer__border-top
+  background: transparent url(/app/ntd/pix/general/footer_border_top.png) repeat-x top left
+  height: $wrapper__footer__border-top-height
+  margin-top: -$wrapper__footer__border-top-height
+
+.wrapper__footer__menu
+  background: $color--darkblue
+  @include clearFloat()
+  padding: 60px 0 70px
+
+  .wrapper__footer__menu__lvl1
+    float: left
+    width: 20%
+    // =100 / 5 : dépend du nombre d'items dans le menu (lvl 1)
+
+    .wrapper__footer__menu__lvl1__elem
+      color: $color--white
+      font-size: 13px
+
+    .wrapper__footer__menu__lvl1__elem--first
+      @include font-family--georgia()
+      font-size: 20px
+      margin-bottom: 12px
+
+.wrapper__footer__bottom
+  background: $color--lightblue
+  padding: 23px 0 28px
+  font-size: 11px
+  color: $color--white
+
+  .wrapper__footer__bottom__logo
+    margin-right: 30px
+
+// ---- Search Result
+.pagination-container
+  .pagination
+    float: right
+
+.pagination-nbresults
+  line-height: 32px
+
+// ----- Components
+.btn--backtop
+  background-color: $color--darkred
+  border: 1px solid transparent
+  border-radius: 100%
+  bottom: 15px
+  color: $color--white
+  height: 45px
+  padding: 0
+  padding-left: 7px
+  position: fixed
+  right: 15px
+  vertical-align: middle
+  width: 45px
+  transition: bottom 0.3s ease 0s
+  bottom: -45px
+  &.btn--backtop--shown
+    bottom: 15px
+  &:hover
+    background-color: $color--lightred
+  &:active
+    background-color: $color--lightred
+    padding-bottom: 2px
+  &:before
+    content: url("/app/ntd/pix/v2/back-top.png")
+    margin-right: 2px
+
+// Ad
+.page--home
+  .block-advertising-head
+    padding: 50px 0 0 0
+    overflow: hidden
+    background: #fffff
+
+  .block-advertising-head.block--introduction
+    .flashinfo
+      margin-top: -20px
+
+.block-advertising-head
+  .img
+    width:225px
+    margin: 0 55px 0 0
+    float: left
+  .content
+    width: 680px
+    float: left
+    p
+      margin-bottom: 30px
+      font-size: 13px
+    h2
+    margin-bottom: 30px
+
+      span
+      font-size: 24px

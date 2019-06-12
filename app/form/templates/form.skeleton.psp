@@ -1,0 +1,40 @@
+<form action="<?=$action?>" method="post"
+      class="form form-<?=$form->code?><?=$class?>"
+      data-form-id="<?=$form->getId()?>">
+
+<?=$hidden?>
+
+<div class="form-content">
+
+<?php if (!empty($form->title)): ?>
+<div class="form-title"><?=$form->title?></div>
+<?php endif; ?>
+
+<?php if (!empty($form->header)): ?>
+ <div class="form-header"><?=nl2br($form->header)?></div>
+<?php endif; ?>
+
+<div class="form-fields">
+
+<?=$fields?>
+
+</div>
+
+<?php if (!empty($form->footer)): ?>
+<div class="form-footer"><?=nl2br($form->footer)?></div>
+<?php endif; ?>
+
+<div class="form-button">
+ <input type="submit" class="button"
+        value="<?=empty($form->button) ? l('send') : $form->button?>" />
+</div>
+
+</div>
+
+</form>
+
+<img src="/app/core/pix/empty.gif" onload="new Kwo.Class.Form($(this).previous())" />
+
+<?php if ($form->hasFlag(Form::FLAG_ACK_SHOW)): ?>
+<div class="form-ack" style="display:none"></div>
+<?php endif; ?>

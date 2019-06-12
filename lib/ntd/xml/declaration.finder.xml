@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="id desc" >
+ <filters>
+  <filter name="id" />
+  <filter name="dectype_id" label="Type" />
+  <filter name="adherent_id" label="Adhérent" />
+  <filter name="status" label="Statut" />
+ </filters>
+ <cols>
+  <col name="id" label="ID" width="70px" />
+  <col name="dectype_name" label="Type" />
+  <col name="dectype_millesime_name" label="Millesime" width="100px" />
+  <col name="updated_at" label="Date de modification" />
+  <col name="status" width="200px" />
+  <col name="adherent_siret" label="Siret" width="110px" />
+  <col name="adherent_company" label="Raison sociale" />
+ </cols>
+</finder>
+
+</kwo-interface>

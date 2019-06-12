@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="id desc" include="visit">
+ <filters>
+  <filter name="|>=|pfm_conversion.created_at" label="depuis" />
+  <filter name="|ioe|pfm_conversion.created_at" label="jusqu’à" />
+  <filter name="model_id" options="Conversion::types()" label="type" />
+  <filter name="id" />
+  <filter name="source" />
+  <filter name="term" />
+  <filter name="campaign" />
+  <filter name="ip" label="IP" />
+  <filter type="user" />
+ </filters>
+ <cols>
+  <col name="type" width="100px" />
+  <col name="record_id" label="id" width="70px" />
+  <col name="name" width="200px" />
+  <col name="worth" label="valeur" width="70px" />
+  <col name="media" width="80px" />
+  <col name="medium" />
+  <col name="source" />
+  <col name="term" />
+  <col name="campaign" />
+  <col name="created_at" />
+ </cols>
+ <actions>
+  <action name="destroy" label="supprimer"
+          confirm="êtes vous sûr de vouloir procéder à la suppression ?" />
+ </actions>
+</finder>
+
+</kwo-interface>

@@ -1,0 +1,22 @@
+<form action="/middle/services.cancelize"
+      class="form--ntd"
+      method="post">
+  <input type="hidden" name="form[souscription_id]" value="<?= $souscription->getId() ?>">
+  <ul>
+    <li>
+      <label><?= c(l('account.services.subscribe.adherent')) ?> : </label>
+      <strong><?= $_current_adherent->first_name ?> <?= $_current_adherent->last_name ?></strong>
+    </li>
+    <li>
+      <label><?= c(l('account.services.subscribe.service')) ?> : </label>
+      <strong><?= $service->getProperty('title') ?></strong>
+    </li>
+  </ul>
+  <div class="form--ntd__actions">
+    <button type="submit"
+            class="btn btn--color-red"><?= c(l('account.services.cancel.submit')) ?></button>
+    <a class="btn btn--link"
+       href="/middle/services"><?= c(l('cancel')) ?></a>
+  </div>
+
+</form>

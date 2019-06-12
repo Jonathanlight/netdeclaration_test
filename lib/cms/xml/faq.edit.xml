@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+<fieldset label="$fieldset_label">
+
+<notebook>
+
+<page label="définition">
+ <form>
+  <hbox>
+   <vbox>
+    <elem field="name" />
+    <elem field="app" />
+    <hbox>
+     <vbox><elem field="code" /></vbox>
+     <vbox><elem field="locale" /></vbox>
+    </hbox>
+    <hbox>
+     <vbox>
+      <elem field="status" type="yesno" />
+     </vbox>
+     <vbox>
+      <elem field="position" />
+     </vbox>
+    </hbox>
+    <elem field="title" />
+    <elem field="flags" />
+   </vbox>
+   <vbox>
+    <elem field="email" label="email du responsable" />
+   </vbox>
+  </hbox>
+  <launcher/>
+ </form>
+</page>
+
+<page label="opérations" built="$is_loaded">
+ <hbox>
+  <vbox width="10%">
+   <box label="actions">
+    <link icon="details" />
+    <link icon="seo" />
+    <link icon="hasmany" model="component" />
+   </box>
+  </vbox>
+  <vbox><deck /></vbox>
+ </hbox> 
+</page>
+
+</notebook>
+
+</fieldset>
+</kwo-interface>

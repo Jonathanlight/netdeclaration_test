@@ -1,0 +1,12 @@
+<?php if ($has_current_souscription): ?>
+
+  <form action="/account/ntd/resiliate"
+        onsubmit="return confirm('<?= c(l('account.adherent.cancel.confirm')) ?>')"
+
+        method="post">
+    <button type="submit"
+            class="btn  btn--color-red"><?= l('account.adherent.cancel') ?></button>
+  </form>
+<?php else: ?>
+  <div><?= l('snippet:account.adherent.cancel.inprogress') ?></div>
+<?php endif; ?>

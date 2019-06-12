@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="start_at desc, status asc" include="adherent,service">
+ <filters>
+  <filter name="id" />
+  <filter name="ntd_adherent.company" label="Raison sociale" />
+  <filter name="ntd_adherent.siret" label="SIRET" />
+  <filter name="ntd_souscription.adherent_id" options="Adherent::collect()->asHash('id', 'identity')" label="Adhérents" />
+  <filter name="ntd_souscription.service_id" options="Service::collect(array('order' => array('name' => 'asc')))->asHash('id', 'name')" label="Service"  />
+  <filter name="status" />
+  <filter name="ntd_adherent.type" label="Type d'adhérent" options="Adherent::$types" />
+  <filter name="sign_at" label="Signée le" />
+  <filter name="start_at" label="Commence le" />
+  <filter name="finish_at" label="Finie le" />
+  <filter name="is_renew_auto" label="Renouvellé automatiquement" type="yesno" />
+ </filters>
+ <cols>  
+  <col name="adherent_identity" label="Adhérent" />
+  <col name="siret" label="SIRET" />
+  <col name="service_name" label="Service" />
+  <col name="status"  />
+  <col name="sign_at" label="Signée le"  />
+  <col name="start_at" label="Commence le"  />
+  <col name="finish_at" label="Finit le" />
+  <col name="price" label="Prix" />
+  <col name="is_renewable" label="Renouvellable ?"  />
+  <col name="is_renew_auto" label="Auto"  />
+ </cols>
+ <actions>
+   <action name="destroy" label="supprimer"
+           confirm="êtes vous sûr de vouloir procéder à la suppression ?" />
+  </actions>
+ 
+</finder>
+
+</kwo-interface>

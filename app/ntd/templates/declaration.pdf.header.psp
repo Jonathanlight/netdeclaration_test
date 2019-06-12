@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link rel="stylesheet" href="<?=H::url('/app/ntd/styles/declaration/master.css')?>" type="text/css" />
+  <link rel="stylesheet" href="<?=H::url('/app/ntd/styles/declaration/declaration.pdf.css')?>" type="text/css" />
+</head>
+<body>
+  <div class="pdf-header">
+    <?=Dectype::name($declaration->dectype_id)?>
+  </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+body { width:100%; text-align:center; }
+.wrapper { width:100%;text-align:left }
+
+.wrapper .wrapper-header .wrapper-header-top .wrapper-header-top-right { width: 512px; }
+
+.wrapper .wrapper-header .wrapper-header-top .wrapper-header-description { font-size: 1.5em; }
+.wrapper .wrapper-header .wrapper-header-top .wrapper-header-description strong { font-weight:normal; }
+
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-home:hover a ul.menu-branch,
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-home a:hover ul.menu-branch { width: 100px !important; overflow:hidden; }
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-company:hover a ul.menu-branch,
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-company a:hover ul.menu-branch { width: 120px !important; overflow:hidden; }
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-teletransmi:hover a ul.menu-branch,
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-teletransmi a:hover ul.menu-branch { width: 270px !important; overflow:hidden; }
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-tarifs:hover a ul.menu-branch,
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-tarifs a:hover ul.menu-branch { width: 110px !important; overflow:hidden; }
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-adhesion:hover a ul.menu-branch,
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-adhesion a:hover ul.menu-branch { width: 200px !important; overflow:hidden; }
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-avantages:hover a ul.menu-branch,
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-avantages a:hover ul.menu-branch { width: 158px !important; overflow:hidden; }
+
+.wrapper-content { text-align:left; overflow:hidden; }
+.introduction-box { overflow:hidden; }
+
+#kwo-search-query-input { line-height:29px; }

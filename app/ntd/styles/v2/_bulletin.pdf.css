@@ -1,0 +1,120 @@
+.wrapper-pdf h1, .wrapper-pdf h2, .wrapper-pdf h3, .wrapper-pdf h4 {
+  color: #002e60;
+  font-family: Georgia, serif;
+  font-weight: bold; }
+.wrapper-pdf h2 {
+  font-size: 16px; }
+.wrapper-pdf dl {
+  margin: 16px 0 0;
+  overflow: hidden;
+  width: 282px; }
+.wrapper-pdf dt {
+  color: #828282;
+  float: left;
+  font-size: 9px;
+  margin-top: 2px;
+  padding-right: 15px;
+  text-align: right;
+  text-transform: uppercase;
+  width: 115px; }
+.wrapper-pdf dd {
+  float: left;
+  margin: 0;
+  width: 164px; }
+.wrapper-pdf dd a {
+  color: black;
+  text-decoration: none; }
+.wrapper-pdf small,
+.wrapper-pdf small a {
+  color: #8d8d8d;
+  font-size: 9px; }
+.wrapper-pdf header {
+  margin-bottom: 35px; }
+.wrapper-pdf .inner {
+  width: 638px;
+  margin: 0 auto; }
+.wrapper-pdf .page-title {
+  float: right;
+  font-size: 30px;
+  margin: 54px 0 0; }
+.wrapper-pdf .logo {
+  margin-top: 34px; }
+
+.generic-block {
+  background: white;
+  border: 1px solid #dfdfe4;
+  border-bottom-width: 3px;
+  overflow: hidden;
+  padding: 42px 34px 36px 34px; }
+
+.generic-block .title {
+  border-bottom: 1px solid #dedee1;
+  clear: both;
+  margin: 0;
+  padding: 5px 0 12px 5px; }
+
+.generic-block .title-facturation {
+  padding-top: 39px; }
+
+.generic-block-small {
+  margin-top: 25px; }
+
+.generic-block-small {
+  float: left;
+  width: 310px;
+  padding: 22px 14px 16px 14px; }
+
+.block-conditions {
+  float: left; }
+
+.block-signature {
+  float: right; }
+
+.first-list, .second-list {
+  float: left;
+  position: relative; }
+
+.first-list {
+  left: -10px; }
+
+.second-list {
+  right: -23px; }
+
+.n-adherent {
+  border: 1px solid #002e60;
+  color: #002e60;
+  float: right;
+  margin: 26px 36px 0 0;
+  padding-bottom: 3px;
+  text-align: center;
+  width: 171px;
+  height: 46px; }
+
+.block-conditions label {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 25px; }
+
+.block-conditions input {
+  float: left; }
+
+.block-conditions span {
+  display: block;
+  float: left;
+  font-style: italic;
+  margin: 0 0 0 10px;
+  width: 255px; }
+
+.block-signature {
+  background: white url(/app/ntd/pix/print/stamp.png) 96% 96% no-repeat; }
+
+.block-signature p:first-child {
+  background: url(/app/ntd/pix/print/pen.png) 0 0 no-repeat; }
+
+.block-signature p:first-child span {
+  color: #002e60;
+  font-weight: bold; }
+
+.block-signature p {
+  margin: 0 0 0 -4px;
+  padding-left: 23px; }

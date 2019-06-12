@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="id desc">
+ <filters>
+  <filter name="id" />
+
+ </filters>
+ <cols>
+  <col name="type_dest" />
+  <col name="nom_dest" />
+ </cols>
+</finder>
+
+</kwo-interface>

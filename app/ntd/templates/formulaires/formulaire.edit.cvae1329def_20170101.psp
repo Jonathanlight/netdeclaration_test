@@ -1,0 +1,615 @@
+<div class="formulaire-page page-form cvae1329def_20170101 page-1" data-label="Partie I">
+  <table id="ancre-1">
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">I. DONNEE DE CHIFFRE D AFFAIRES</th>
+    </tr>
+    <tr class="tab-title">
+      <th class="subtitle" colspan="5">Montant du chiffre d'affaire</th>
+    </tr>
+    <tr class="elt">
+      <td class="line_impot">1</td>
+      <td class="libelle">
+        <label for="cvae1329def_AA">
+          Montant du CA de la période de référence
+        </label>
+      </td>
+      <td class="line_id">A1</td>
+      <td class="input">
+        <div class="line_impot">901229</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA', 'value' => $cvae1329def_20170101['AA'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="line_impot">2</td>
+      <td class="libelle">
+        <label for="cvae1329def_AB">
+          Montant du CA réel si la période de référence est différente de 12 mois
+        </label>
+      </td>
+      <td class="line_id">A2</td>
+      <td class="input">
+        <div class="line_impot">901230</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AB', 'value' => $cvae1329def_20170101['AB'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="line_impot">3</td>
+      <td class="libelle">
+        <label for="cvae1329def_AD">
+          Montant du Chiffre d'affaires de référence du groupe (si société membre - intégration fiscale)
+        </label>
+      </td>
+      <td class="line_id">A3</td>
+      <td class="input">
+        <div class="line_impot">901470</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AD', 'value' => $cvae1329def_20170101['AD'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="line_impot">03Bis</td>
+      <td class="libelle">
+        <label for="cvae1329def_AE">
+          SIREN de la société tête de groupe
+        </label>
+      </td>
+      <td class="line_id">A4</td>
+      <td class="input">
+        <div class="line_impot">908881</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AE', 'value' => $cvae1329def_20170101['AE'])) ?>
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tbody>
+    <tr class="tab-title">
+      <th class="subtitle" colspan="4">Calcul du pourcentage de la valeur ajoutée correspondante</th>
+    </tr>
+    </tbody>
+    <tbody>
+    <tr class="tab-title">
+      <th colspan="2">Si le montant de votre CA est :</th>
+      <th colspan="2">Alors, le taux à porter cadre B sera calculé comme suit :</th>
+    </tr>
+    <tr class="elt">
+      <td colspan="2" class="libelle">
+        <label>
+          &lt; 500 000 €
+        </label>
+      </td>
+      <td colspan="2" class="libelle">
+        <label>
+          0
+        </label>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td colspan="2" class="libelle">
+        <label>
+          500 000 € &lt; CA &lt; 3 000 000 €
+        </label>
+      </td>
+      <td colspan="2" class="libelle">
+        <label>
+          [0,5 x (CA-500 000)] / 2 500 000
+        </label>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td colspan="2" class="libelle">
+        <label>
+          3 000 000 € &lt; CA &lt; 10 000 000 €
+        </label>
+      </td>
+      <td colspan="2" class="libelle">
+        <label>
+          [ 0,9 x (CA– 3 000 000) / 7 000 000 ] + 0,5
+        </label>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td colspan="2" class="libelle">
+        <label>
+          10 000 000 € &lt; CA &lt; 50 000 000 €
+        </label>
+      </td>
+      <td colspan="2" class="libelle">
+        <label>
+          [ 0,1 X (CA – 10 000 000) / 40 000 000 ] + 1,4
+        </label>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td colspan="2" class="libelle" style="border-bottom: 0 none;">
+        <label>
+          Supérieur à 50 000 000 €
+        </label>
+      </td>
+      <td colspan="2" class="libelle" style="border-bottom: 0 none;">
+        <label>
+          1,5
+        </label>
+      </td>
+    </tr>
+    </tbody>
+    <tbody>
+    <tr class="elt">
+      <td class="line_impot">4</td>
+      <td class="libelle">
+        <label for="cvae1329def_AC">
+          Pourcentage de la valeur ajoutée
+        </label>
+      </td>
+      <td class="line_id">B</td>
+      <td class="input">
+        <div class="line_impot">901236</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AC', 'value' => $cvae1329def_20170101['AC'])) ?>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">II. DONNEES DE LA VALEUR AJOUTEE</th>
+    </tr>
+    <tr class="tab-title">
+      <th class="subtitle" colspan="5">Valeur ajoutée produite</th>
+    </tr>
+    <tr class="elt">
+      <td class="line_impot">5</td>
+      <td class="libelle">
+        <label for="cvae1329def_ba">
+          Valeur ajoutée produite
+        </label>
+      </td>
+      <td class="line_id">C</td>
+      <td class="input">
+        <div class="line_impot">901231</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BA', 'value' => $cvae1329def_20170101['BA'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="line_impot">&nbsp;</td>
+      <td class="libelle">
+        <label for="cvae1329def_BC">
+          Pour certaines entreprises à caractère financier, (cf notice) cochez la case ci-contre et ne remplissez pas la zone D "limitation de la valeur ajoutée"
+        </label>
+      </td>
+      <td class="line_id">D0</td>
+      <td class="input">
+        <div class="line_impot">901233</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BC', 'value' => $cvae1329def_20170101['BC'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="line_impot">6</td>
+      <td class="libelle">
+        <label for="cvae1329def_BB">
+          Limitation de la valeur ajoutée (si D0 n'est pas coché D = (80 % de A1 ou A2) ou (85 % de A1 ou A2))
+        </label>
+      </td>
+      <td class="line_id">D</td>
+      <td class="input">
+        <div class="line_impot">901234</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BB', 'value' => $cvae1329def_20170101['BB'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle" colspan="5">
+        <label>
+          Si CA 7 600 000 €, le montant à porter dans le cadre D correspond à 80% du chiffre d'affaires porté au cadre A1 ou A2 si celui-ci est servi.
+        </label>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle" colspan="5">
+        <label>
+          Si CA > 7 600 000 €, le montant à porter dans le cadre D correspond à 85% du chiffre d'affaires porté au cadre A1 ou A2 si celui-ci est servi.
+        </label>
+      </td>
+    </tr>
+    <tr class="tab-title">
+      <th class="subtitle" colspan="5">Montant de la CVAE Brute</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th colspan="5">Le montant de la cotisation sur la valeur ajoutée à porter dans le cadre E, est obtenu par le calcul suivant :</th>
+    </tr>
+    <tr class="elt">
+      <td class="libelle" colspan="5">
+        <label>
+          - Si C < D, alors le montant de la cotisation sur la valeur ajoutée est égal à C multiplié par B
+        </label>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle" colspan="5">
+        <label>
+          - Si C > D, alors le montant de la cotisation sur la valeur ajoutée est égal à D multiplié par B
+        </label>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle" colspan="5">
+        <label>
+          - Si vous avez coché la case X, alors le montant de la cotisation sur la valeur ajoutée est égal à C multiplié par B
+        </label>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_impot">7</td>
+      <td class="libelle">
+        <label for="cvae1329def_CA">
+          Montant de la CVAE Brute (cf notice)
+        </label>
+      </td>
+      <td class="line_id">E</td>
+      <td class="input">
+        <div class="line_impot">901253</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA', 'value' => $cvae1329def_20170101['CA'])) ?>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<div class="formulaire-page page-form cvae1329def_20170101 page-2" data-label="Partie II">
+
+
+<div class="break"></div>
+
+<table>
+  <tr class="tab-title">
+    <th class="maintitle" colspan="5">III. CALCUL DE LA COTISATION ET DES FRAIS</th>
+  </tr>
+  <tr class="tab-title">
+    <th class="subtitle" colspan="6">Calcul de la cotisation avant réduction</th>
+  </tr>
+
+  <tr class="tab-title">
+    <th colspan="2">MONTANT DU CA (CADRE A1)</th>
+    <th colspan="2">CADRE E</th>
+    <th colspan="2">MONTANT A REPORTER CADRE F</th>
+  </tr>
+  <tr class="elt">
+    <td class="libelle" colspan="2" rowspan="2">
+      <label>CA < 2 000 000 €</label>
+    </td>
+    <td class="libelle" colspan="2">
+      <label>E < 1000 €</label>
+    </td>
+    <td class="libelle" colspan="3">
+      <label>0 €</label>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="libelle" colspan="2">
+      <label>E > 1000 €</label>
+    </td>
+    <td class="libelle" colspan="3">
+      <label>(E - 1000 €)</label>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="libelle" colspan="2">
+      <label>CA >= 2 000 000 €</label>
+    </td>
+    <td class="libelle" colspan="2">
+      <label>TOUT MONTANT</label>
+    </td>
+    <td class="libelle" colspan="3">
+      <label>E</label>
+    </td>
+  </tr>
+</table>
+
+
+<table>
+
+  <tr class="elt">
+    <td class="line_impot">8</td>
+    <td class="libelle">
+      <label for="cvae1329def_CB">
+        Cotisation avant réductions (cf notice)
+      </label>
+    </td>
+    <td class="line_id">F</td>
+    <td class="input">
+      <div class="line_impot">901240</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB', 'value' => $cvae1329def_20170101['CB'])) ?>
+    </td>
+  </tr>
+
+  <tr class="tab-title">
+    <th class="subtitle" colspan="5">Minoration</th>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_impot">9</td>
+    <td class="libelle">
+      <label for="cvae1329def_DA">
+        Exonération
+      </label>
+    </td>
+    <td class="line_id">G</td>
+    <td class="input">
+      <div class="line_impot">902902</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA', 'value' => $cvae1329def_20170101['DA']))?>
+    </td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_impot">10</td>
+    <td class="libelle">
+      <label for="cvae1329def_DB">
+        Réductions supplémentaires
+      </label>
+    </td>
+    <td class="line_id">H</td>
+    <td class="input">
+      <div class="line_impot">902903</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DB', 'value' => $cvae1329def_20170101['DB'])) ?>
+    </td>
+  </tr>
+
+  <tr class="tab-title">
+    <th class="subtitle" colspan="5">CVAE</th>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_impot">11</td>
+    <td class="libelle">
+      <label for="cvae1329def_EA">
+        CVAE due (I1 = F - G - H) ou cotisation minimum (cf notice)
+      </label>
+    </td>
+    <td class="line_id">I1</td>
+    <td class="input">
+      <div class="line_impot">902688</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EA', 'value' => $cvae1329def_20170101['EA'])) ?>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">12</td>
+    <td class="libelle">
+      <label for="cvae1329def_EB">
+        Acomptes de CVAE versés
+      </label>
+    </td>
+    <td class="line_id">I2</td>
+    <td class="input">
+      <div class="line_impot">902689</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EB', 'value' => $cvae1329def_20170101['EB'])) ?>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">13</td>
+    <td class="libelle">
+      <label for="cvae1329def_EC">
+        Solde de CVAE à payer (I3 = I1 -I2 si résultat positif)
+      </label>
+    </td>
+    <td class="line_id">I3</td>
+    <td class="input">
+      <div class="line_impot">902690</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EC', 'value' => $cvae1329def_20170101['EC'])) ?>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">14</td>
+    <td class="libelle">
+      <label for="cvae1329def_ED">
+        Montant d'excédent de CVAE constaté (I4= I2 - I1 si résultat positif)
+      </label>
+    </td>
+    <td class="line_id">I4</td>
+    <td class="input">
+      <div class="line_impot">902691</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ED', 'value' => $cvae1329def_20170101['ED'])) ?>
+    </td>
+  </tr>
+
+  <tr class="tab-title">
+    <th class="subtitle" colspan="5">Taxe additionnelle</th>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot"></td>
+    <td class="libelle">
+      <label for="cvae1329def_GA">
+        Si vous êtes exonéré du paiement de la taxe additionnelle, cocher la case ci-contre
+      </label>
+    </td>
+    <td class="line_id">J0</td>
+    <td class="input">
+      <div class="line_impot">902682</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GA', 'value' => $cvae1329def_20170101['GA'])) ?>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">15</td>
+    <td class="libelle">
+      <label for="cvae1329def_GB">
+        Taxe additionnelle due (si J0 n'est pas cochée J1 = I1 x 3,22 %)
+      </label>
+    </td>
+    <td class="line_id">J1</td>
+    <td class="input">
+      <div class="line_impot">902907</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GB', 'value' => $cvae1329def_20170101['GB'])) ?>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">16</td>
+    <td class="libelle">
+      <label for="cvae1329def_GC">
+        Acomptes de taxe additionnelle versés
+      </label>
+    </td>
+    <td class="line_id">J2</td>
+    <td class="input">
+      <div class="line_impot">902717</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GC', 'value' => $cvae1329def_20170101['GC'])) ?>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">17</td>
+    <td class="libelle">
+      <label for="cvae1329def_GD">
+        Solde de la taxe additionnelle à payer (J3 = J1 - J2 si résultat positif)
+      </label>
+    </td>
+    <td class="line_id">J3</td>
+    <td class="input">
+      <div class="line_impot">902720</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GD', 'value' => $cvae1329def_20170101['GD'])) ?>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">18</td>
+    <td class="libelle">
+      <label for="cvae1329def_GE">
+        Excédent de taxe additionnelle constaté (J4 = J2 - J1 si résultat positif)
+      </label>
+    </td>
+    <td class="line_id">J4</td>
+    <td class="input">
+      <div class="line_impot">902721</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GE', 'value' => $cvae1329def_20170101['GE'])) ?>
+    </td>
+  </tr>
+
+
+  <tr class="tab-title">
+    <th class="subtitle" colspan="5">Frais de gestion</th>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">20</td>
+    <td class="libelle">
+      <label for="cvae1329def_HA">
+        Frais de gestion dus (L1 = (I1 + J1) x 1%)
+      </label>
+    </td>
+    <td class="line_id">L1</td>
+    <td class="input">
+      <div class="line_impot">902900</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HA', 'value' => $cvae1329def_20170101['HA'])) ?>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">21</td>
+    <td class="libelle">
+      <label for="cvae1329def_HB">
+        Acomptes des frais de gestion versés
+      </label>
+    </td>
+    <td class="line_id">L2</td>
+    <td class="input">
+      <div class="line_impot">902722</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HB', 'value' => $cvae1329def_20170101['HB'])) ?>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">22</td>
+    <td class="libelle">
+      <label for="cvae1329def_HC">
+        Solde des frais de gestion à payer (L3 = L1 -L2 si résultat positif)
+      </label>
+    </td>
+    <td class="line_id">L3</td>
+    <td class="input">
+      <div class="line_impot">902764</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HC', 'value' => $cvae1329def_20170101['HC'])) ?>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">23</td>
+    <td class="libelle">
+      <label for="cvae1329def_HD">
+        Excédent de frais de gestion constaté (L4 = L2 - L1 si résultat positif)
+      </label>
+    </td>
+    <td class="line_id">L4</td>
+    <td class="input">
+      <div class="line_impot">902765</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HD', 'value' => $cvae1329def_20170101['HD'])) ?>
+    </td>
+  </tr>
+
+  <tr class="tab-title">
+    <th class="subtitle" colspan="5">Récapitulatif</th>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">24</td>
+    <td class="libelle">
+      <label for="cvae1329def_JA">
+        Total des acomptes versés (M = I2 + J2 + L2)
+      </label>
+    </td>
+    <td class="line_id">M</td>
+    <td class="input">
+      <div class="line_impot">902904</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JA', 'value' => $cvae1329def_20170101['JA'])) ?>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">25</td>
+    <td class="libelle">
+      <label for="cvae1329def_JK">
+        TOTAL (N = I3 + J3 + L3)
+      </label>
+    </td>
+    <td class="line_id">N</td>
+    <td class="input">
+      <div class="line_impot">906746</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JK', 'value' => $cvae1329def_20170101['JK'])) ?>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">26</td>
+    <td class="libelle">
+      <label for="cvae1329def_JE">
+        Total des EXCEDENTS (O = I4 + J4 + L4)
+      </label>
+    </td>
+    <td class="line_id">O</td>
+    <td class="input">
+      <div class="line_impot">902894</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JE', 'value' => $cvae1329def_20170101['JE'])) ?>
+    </td>
+  </tr>
+
+  <tr class="tab-title">
+    <th class="subtitle" colspan="5">IV - PAIEMENT OU EXCEDENT</th>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">27</td>
+    <td class="libelle">
+      <label for="cvae1329def_KA">
+        CVAE DUE (Y = N - O si résultat positif)
+      </label>
+    </td>
+    <td class="line_id">Y</td>
+    <td class="input">
+      <div class="line_impot">902905</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KA', 'value' => $cvae1329def_20170101['KA'])) ?>
+    </td>
+  </tr>
+  <tr class="elt">
+    <td class="line_impot">28</td>
+    <td class="libelle">
+      <label for="cvae1329def_KB">
+        EXCEDENT DE VERSEMENT (Z = O - N si résultat positif)
+      </label>
+    </td>
+    <td class="line_id">Z</td>
+    <td class="input">
+      <div class="line_impot">902906</div>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KB', 'value' => $cvae1329def_20170101['KB'])) ?>
+    </td>
+  </tr>
+
+</table>
+
+</div>

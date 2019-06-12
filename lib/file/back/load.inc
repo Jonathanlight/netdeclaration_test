@@ -1,0 +1,3 @@
+<?php
+
+$res->sendRedirect('dir');

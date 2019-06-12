@@ -1,0 +1,52 @@
+<div class="kwo-search-results">
+<main class="table-cell table-padding-right table-cell--main block  wrapper__footer-padding-bottom">
+<h1 class="font--darkblue font-size-big font-family--georgia margin-top-75 margin-bottom">Résultat de recherche</h1>
+<div class="font--lightblue font-size--22px margin-bottom-20">
+<?php if ($found_rows >= 1): ?>
+ <span><?=$found_rows?> <?=l('results')?></span>
+<?php else: ?>
+ <?=ucfirst(l('no_result'))?> 
+<?php endif; ?>
+<?php if ($query != '*'): ?>
+ <?=l('search.for')?> <em>&laquo;<?=h($query)?>&raquo;</em>
+<?php endif; ?>
+</div>
+
+<?php foreach ($results as $key => $result): ?>
+<div class="result"<?=isset($result['onclick'])?' onclick="'.$result['onclick'].'"':''?>>
+<?php /* if (strlen($result['image']) >= 3): ?>
+ <img src="<?=$result['image']?>" style="float:right; margin-right:4px; width:100px"
+      onerror="this.src='/app/core/pix/error48.gif'" />
+<?php endif; */?>
+ <a class="font--darkblue" href="<?=$result['url']?>"><?=$result['title']?></a>
+ <p class="description"><?=$result['description']?></p>
+ <div style="clear:both"></div>
+</div>
+<hr class="margin-top-13 margin-bottom-13">
+<?php endforeach; ?>
+
+<script>
+window.query = "<?=H::escapeJs($query)?>";
+</script>
+<?php if($found_rows > ((($offset == 0)? 1 : $offset)*$limit)): ?>
+  <div class="pagination-container">
+    
+  <?php $pagination_options = array('href'        => 'javascript:ntd.Search.results(query, ((offset)))',
+                                    'window_size' => 6,
+                                    'first'       => '&nbsp;',
+                                    'last'        => '&nbsp;',
+                                    'prev'        => '&nbsp;',
+                                    'next'        => '&nbsp;',
+                                    'sep'         => '&nbsp;');?>
+  <?=Pagination::getInstance(array('limit' => $limit, 
+                                   'found_rows' => $found_rows, 
+                                   'offset' => $offset))->asHtml($pagination_options)?>
+    <div class="pagination-nbresults results_count "><?=l('pagination.page', array('start' => $start, 'end' => $end))?></div>
+  </div>
+<?php endif; ?>
+</main>
+  <aside class="table-cell  table-cell--aside  wrapper__footer-padding">
+    <div class="block__height">&nbsp;</div>
+  </aside>
+</div>
+

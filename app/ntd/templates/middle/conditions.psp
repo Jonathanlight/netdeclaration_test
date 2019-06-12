@@ -1,0 +1,19 @@
+<h1 class="block__middle-title"><?= c(l('cgu.label')) ?></h1>
+<p class="explanation-text"><?= c(l('snippet:signup.accept.tos.explanation')) ?></p>
+<form action="/middle/conditions.validate" method="post" data-on-load="new ntd.front.AdherentForm(this)" class="form-accept-cgu">
+    <input type="hidden" name="form[sign_cgu]" value="yes"/>
+    <div class="elt elt-checkbox">
+        <label class="elt label-check">
+        <label class="elt">
+            <input type="checkbox" class="terms_of_use" data-confirm="<?= l('error.terms') ?>"/>
+            <span class="form-field-asterisk">*</span>
+            <?= c(l('snippet:signup.accept.tos')) ?>
+        </label>
+    </div>
+    <div class="block__send">
+        <button type="submit" class="btn btn--color-red">
+            <?= c(l('cgu.submit.button')) ?>
+        </button>
+        <span class="warning-information"><?= c(l('cgu.field.required')) ?></span>
+    </div>
+</form>

@@ -1,0 +1,33 @@
+.payment__label
+  display: block
+  background: #f3f4f8
+  padding: 10px 0
+  margin: 0 10px
+  cursor: pointer
+  border-radius: 5px 5px 5px 5px
+  color: #808080
+  font-style: italic
+  text-align: center
+  min-height: 123px
+
+  & > *
+    margin: 5px 0
+
+  &:hover,
+  &.selected
+    background: #dfe2ec
+
+  li:last-child &
+    margin-right: 0
+  li:first-child &
+    margin-left: 0
+
+
+.payment__snippet
+  background: $color--darkblue
+  padding: 10px 20px
+  color: #ffffff
+  font-size: 12px
+  margin: 20px 0 30px
+  border-radius: 5px 5px 5px 5px
+

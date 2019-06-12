@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+ <fieldset>
+
+  <notebook>
+   <page>
+    <form>
+     <hbox>
+      <vbox>
+       <box label="Informations générales">
+        <elem field="status" label="Etat de la facture" disabled="true"/>
+        <elem field="method_id" label="Moyen de paiement" type="select" addfirst="-" options="Method::collect()->asHash('id', 'name')" />
+        <elem field="start_at" type="text" disabled="true"/>
+        <elem field="finish_at" type="text" disabled="true"/>
+
+        <hbox>
+         <vbox>
+          <elem field="is_recovery" type="yesno" disabled="true" label="Recouvrement envoyé" />
+         </vbox>
+         <vbox>
+          <elem field="recovery_at" disabled="true" label="Date de recouvrement" />
+         </vbox>
+        </hbox>
+       </box>
+
+       <box width="50%" label="Montants">
+        <elem field="price_ht" type="text" disabled="true" label="Prix HT"/>
+        <elem field="price_tva" type="text" disabled="true" label="Taxes"/>
+        <elem field="percent_tva" type="text" disabled="true" label="Taxes (%)"/>
+        <elem field="price_ttc" type="text" disabled="true" label="Prix TTC"/>
+       </box>
+      </vbox>
+
+      <vbox>
+       <grid value="$datas_adherent" label="Informations Adhérent"/>
+       <grid value="$datas_address" label="Adresse de facturation"/>
+      </vbox>
+
+      <vbox>
+       <box label="Souscription">
+        <elem type="relations" models="souscription" height="250px" disabled_add="true" label="Services liés"/>
+        <elem type="relations" models="payment" height="150px" label="Paiement liés" editable="true"/>
+       </box>
+      </vbox>
+     </hbox>
+     <launcher/>
+    </form>
+   </page>
+   <page>
+    <hbox>
+     <vbox width="300px">
+      <box label="actions">
+       <link icon="details"/>
+       <link icon="purge" label="Résilier la facture" action=".onExec('resiliate', this, {callback:true, confirm:'êtes-vous sûr de vouloir résilier cette facture ?'})" built="$item->isResiliable()" />
+       <link icon="ok" label="Valider le paiement de la facture" action="$('validate_facture-box').raise()" built="$can_validate"/>
+       <link icon="ok" label="Repasser la facture en non-payé" action=".onExec('setstatusbacktopending', this, {callback:true, confirm:'êtes-vous sûr de vouloir repasser cette facture en non payée ?Les souscriptions liées seront également repassées en attente de paiement'})" built="$can_setpending"/>
+       <link icon="run" label="Envoyer la facture par email" action=".onExec('send.email', this, {callback:true, confirm:'êtes-vous sûr de vouloir envoyer cette facture par email ?'})"/>
+       <link icon="print" label="Imprimer la facture" action="Kwo.F('facture').go('print', this, {target:'blank'}); return false;"/>
+       <link icon="run" label="Passer le montant de la facture à 0 Euros" action=".onExec('set.zero', this, {callback:true, confirm:'êtes-vous sûr de vouloir passer cette facture à ZERO euros ?'})"/>
+      </box>
+     </vbox>
+     <vbox>
+      <deck>
+       <box label="Valider le paiement de la facture" id="validate_facture-box">
+        <form>
+         <hbox>
+          <vbox width="300px">
+           <elem built="false" type="select" name="method_id" options="Model::asHash('method','name')" label="Moyen de paiement" addfirst="--" value="$method_id"/>
+           <elem built="false" type="text" name="method_details" label="Description" value="$method_description"/>
+           <elem built="false" type="date" name="method_date" label="Date" />
+           <launcher>
+            <button icon="ok" tooltip="Valider le paiement de cette facture" action=".onExec('set.status.paye', this, {callback:true, confirm:'êtes-vous sûr de vouloir valider cette facture ?'})"/>
+           </launcher>
+          </vbox>
+          <vbox>
+          </vbox>
+         </hbox>
+        </form>
+       </box>
+
+      </deck>
+     </vbox>
+    </hbox>
+   </page>
+  </notebook>
+
+ </fieldset>
+</kwo-interface>

@@ -1,0 +1,25 @@
+<div class="table">
+  <main class="table-cell table-padding-right table-cell--main block  wrapper__footer-padding-bottom">
+  	<nav class="breadcrumb"><a class="breadcrumb__elem" href="/">Page d'accueil</a> &gt; <span class="breadcrumb__elem">Erreur</span></nav>
+  	<?= H::breadcrumb($_breadcrumb) ?>
+    <div class="error-box">
+      <!-- <img src="/app/core/pix/error48.gif" class="error-picto" /> -->
+      <div class="error-content">
+      	<h1 class="font--darkblue font-size-big font-family--georgia margin-bottom-20">Document non trouvé</h1>
+        <? /*<strong>Attention ! (
+          <?=$code?>)</strong>
+        <br/>
+        <?php if (strlen($_error_msg) < 4): ?>
+        <!-- <?=$msg?> -->
+        <?=ucfirst(l( 'snippet:page.failure'))?>
+          <?php else: ?>
+          <?=ucfirst($_error_msg)?>
+            <?php endif; ?>*/?>
+            <a href="/" class="btn  btn--color-red margin-top-20">Retour à la page d'accueil</a>
+      </div>
+    </div>
+  </main>
+  <aside class="table-cell  table-cell--aside  wrapper__footer-padding-bottom">
+    <div class="block__height">&nbsp;</div>
+  </aside>
+</div>

@@ -1,0 +1,140 @@
+<div class="kwo-login">
+
+  <table id="login-panel" class="login-panel"<?=$_mode==='signup'?' style="display:none;"':''?>>
+    <tr>
+      <td class="kwo-login-box">
+        <div>
+          <h2><?=c(l('signup.account.yes'))?></h2>
+          <form onsubmit="Kwo.Auth.onLogIn(this); return false;" autocomplete="on">
+            <ul>
+              <li>
+                <label><?=c(l('email'))?></label>
+                <input type="text" name="login" class="text" />
+              </li>
+              <li>
+                <label><?=c(l('password'))?></label>
+                <input type="password" name="password" class="text" />
+              </li>
+              <li class="padded-left">
+                <input type="checkbox" name="remember_me" class="remember_me"
+                       value="1"<?=P('auth.sso')===true?' checked':''?> />
+                <?=c(l('remember'))?>
+             </li>
+             <li class="padded-left">
+               <?=H::button(l('log_in'))?>
+             </li>
+             <li class="padded-left">
+               <a href="javascript:void(0)" class="elt-link"
+                  onclick="$(this).up('FORM').hide().next().show()"><?=c(l('forgot_passord'))?></a>
+             </li>
+           </ul>
+          </form>
+
+          <form style="display:none;" onsubmit="Kwo.Auth.onPasswordRequest(this); return false;">
+            <ul>
+              <li>
+                <label><?=c(l('input.youremail'))?></label>
+                <input type="text" name="email" class="text" />
+              </li>
+              <li class="padded-left">
+                <?=H::button(l('send'))?>
+              </li>
+              <li class="padded-left">
+                <a href="javascript:void(0)" class="elt-link"
+                   onclick="$(this).up('FORM').hide().previous().show()"><?=c(l('back'))?></a>
+              </li>
+            </ul>
+          </form>
+        </div>
+      </td>
+      <td class="kwo-signup-box">
+        <div>
+          <h2><?=c(l('signup.account.no'))?></h2>
+          <p><?=l('snippet:signup.about')?></p>
+          <div class="kwo-signup-button">
+            <input type="button" value="<?=c(l('create_account'))?>" class="button"
+                   onclick="$(this).up('TABLE').hide().next().show()" />
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <form autocomplete="off" class="signup-panel" style="display:<?=$_mode==='signup'?'block':'none'?>"
+        onsubmit="Kwo.Auth.onSignUp(this); return false;">
+    <div>
+      <h2><?=c(l('account_creation'))?></h2>
+      <p class="kwo-signup-header"><?=l('snippet:signup.header')?></p>
+      <ul>
+        <li>
+          <label class="required"><?=c(l('email'))?></label>
+          <input type="text" name="user[email]" class="text" />
+        </li>
+        <li>
+          <label class="required"><?=c(l('password'))?></label>
+          <input type="password" name="user[password]" class="text short" maxlength="16" autocomplete="off" />
+        </li>
+        <li>
+          <label class="required"><?=c(l('confirm'))?> <?=l('password')?></label>
+          <input type="password" name="user[password_confirm]" class="text short" maxlength="16" autocomplete="off" />
+        </li>
+        <li>
+          <label class="required"><?=c(l('nick_name'))?></label>
+          <input type="text" name="user[name]" class="text short" />
+        </li>
+        <li>
+          <label class="required"><?=c(l('birth_date'))?></label>
+          <?=H::birthdate(null, array('name' => 'user[birth_date]'))?>
+        </li>
+        <li class="options">
+          <label class="required"><?=c(l('gender'))?></label>
+          <div>
+            <label class="click-label"><input type="radio" name="user[gender]" value="0" /><?=c(l('gender.0'))?></label>
+            <label class="click-label"><input type="radio" name="user[gender]" value="1" /><?=c(l('gender.1'))?></label>
+          </div>
+        </li>
+        <li>
+          <label>&nbsp;</label>
+          <select name="origin_id">
+            <option value="0"><?=String::capitalize(l('signup.origin'))?></option>
+            <?php foreach ($_origins as $origin): ?>
+              <option value="<?=$origin->getId()?>"><?=$origin->label?></option>
+            <?php endforeach; ?>
+          </select>
+        </li>
+        <li>
+          <label class="required"><?=c(l('captcha'))?></label>
+          <?=W::captcha()?>
+        </li>
+        <?php if ($_notices->count() >= 1): ?>
+          <li class="options padded-left">
+            <div>
+              <?php foreach ($_notices as $_notice): ?>
+                <label>
+                  <input type="checkbox" name="notices[<?=$_notice->getId()?>]" value="1" />
+                  <?=c($_notice->getProperty('title'))?>.<br/>
+                </label>
+              <?php endforeach ; ?>
+            </div>
+          </li>
+        <?php endif; ?>
+        <li class="options padded-left">
+          <div>
+            <input type="checkbox" class="terms_of_use" data-confirm="<?=l('error.terms')?>" />
+            <a href="javascript:void(0)"
+               onclick="new Kwo.Class.Snippet('terms.of.use')"><?=c(l('snippet:signup.accept.tos'))?></a>.
+          </div>
+        </li>
+        <li class="padded-left">
+          <?=H::button(l('continue'))?>
+        </li>
+        <li class="padded-left">
+          <a href="javascript:void(0)" class="elt-link"
+             onclick="$(this).up('FORM').hide().previous().show()"><?=c(l('cancel'))?></a>
+        </li>
+      </ul>
+      <p class="kwo-signup-footer"><?=l('snippet:signup.footer')?></p>
+    </div>
+  </form>
+
+</div>

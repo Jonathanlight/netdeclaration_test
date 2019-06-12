@@ -1,0 +1,117 @@
+<table _moz_resizing="true">
+  <tbody>
+    <tr>
+      <td rowspan="1" colspan="13" class="selected">
+        <div contenteditable="false" class="item-model-data" opts="" data="C &ndash; LOGEMENTS SECTEURS SOCIAL ET TRES SOCIAL&amp;CS=&amp;RS=&amp;CSS%5B0%5D=title" data-item="4"><span
+            class="LB title">C &ndash; LOGEMENTS SECTEURS SOCIAL ET TRES SOCIAL</span><span class="actions"><img src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:4;C &ndash;
+          LOGEMENTS SECTEURS SOCIAL ET TRES SOCIAL&amp;CS=&amp;RS=&amp;CSS%5B0%5D=title]</span></div>
+      </td>
+      <td class="empty" rowspan="2">
+        <div contenteditable="false" class="item-model-data" opts="" data="&amp;CS=&amp;RS=&amp;CSS%5B0%5D=empty" data-item="5"><span class="LB ">Label</span><span class="actions"><img
+            class="delete-btn" src="/app/declaration/pix/delete.png"></span><span class="data">[Model:5;&amp;CS=&amp;RS=&amp;CSS%5B0%5D=empty]</span></div>
+      </td>
+    </tr>
+    <tr>
+      <td rowspan="1" colspan="13" class=""><br>
+        <div contenteditable="false" class="item-model-data" opts=""
+             data="Lieu de situation&amp;CS=2&amp;RS=&amp;CSS%5B0%5D=title&amp;CSS%5B1%5D=ta-center;Nombre de logements de type&amp;CS=2&amp;RS=&amp;CSS%5B0%5D=title&amp;CSS%5B1%5D=ta-center;En cas de financement par souscription&amp;CS=2&amp;RS=&amp;CSS%5B0%5D=title&amp;CSS%5B1%5D=ta-center;Préciser si les logements sont acquis (A), construits (C) ou réhabilités (R)&amp;CS=&amp;RS=&amp;CSS%5B0%5D=title&amp;CSS%5B1%5D=ta-center;&amp;CS=2&amp;RS=&amp;CSS%5B0%5D=title&amp;CSS%5B1%5D=ta-center;Prix de revient total HT&amp;CS=4&amp;RS=&amp;CSS%5B0%5D=title&amp;CSS%5B1%5D=ta-center"
+             data-item="44"><span class="LB ">Lieu de situation</span><span class="LB ">Nombre de logements de type</span><span class="LB ">En cas de financement par souscription</span><span
+            class="LB ">Préciser si les logements sont acquis (A), construits (C) ou réhabilités (R)</span><span class="LB ">Label</span><span class="LB ">Prix de revient total HT</span><span
+            class="actions"><img class="delete-btn" src="/app/declaration/pix/delete.png"></span><span class="data">[Model:44;Lieu de situation&amp;CS=2&amp;RS=&amp;CSS%5B0%5D=title&amp;CSS%5B1%5D=ta-center;Nombre de logements de type&amp;CS=2&amp;RS=&amp;CSS%5B0%5D=title&amp;CSS%5B1%5D=ta-center;En cas de financement par souscription&amp;CS=2&amp;RS=&amp;CSS%5B0%5D=title&amp;CSS%5B1%5D=ta-center;Préciser si les logements sont acquis (A), construits (C) ou réhabilités (R)&amp;CS=&amp;RS=&amp;CSS%5B0%5D=title&amp;CSS%5B1%5D=ta-center;&amp;CS=2&amp;RS=&amp;CSS%5B0%5D=title&amp;CSS%5B1%5D=ta-center;Prix de revient total HT&amp;CS=4&amp;RS=&amp;CSS%5B0%5D=title&amp;CSS%5B1%5D=ta-center]</span>
+        </div>
+      </td>
+    </tr>
+    <tr row_options="extensible">
+      <td class="" colspan="14"><br>
+        <div contenteditable="false" class="item-model-data" opts="" data="DOM COM (1)&amp;CS=&amp;RS=&amp;CSS=;EA&amp;CS=&amp;RS=&amp;CSS=;F1&amp;CS=&amp;RS=&amp;CSS=;EE&amp;CS=&amp;RS=&amp;CSS="
+             data-item="20"><span class="LB ">DOM COM (1)</span><span class="FD "><input value="EA"></span><span class="LB ">F1</span><span class="FD "><input value="EE"></span><span
+            class="actions"><img src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:20;DOM COM (1)&amp;CS=&amp;RS=&amp;CSS=;EA&amp;CS=&amp;RS=&amp;CSS=;F1&amp;CS=&amp;RS=&amp;CSS=;EE&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+        <div contenteditable="false" class="item-model-data" opts="" data="Date de la souscription&amp;CS=&amp;RS=&amp;CSS=;ET&amp;CS=&amp;RS=&amp;CSS=;EK&amp;CS=&amp;RS=&amp;CSS=" data-item="58">
+          <span class="LB ">Date de la souscription</span><span class="FD "><input value="ET"></span><span class="FD "><input value="EK"></span><span class="actions"><img
+            src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:58;Date de la souscription&amp;CS=&amp;RS=&amp;CSS=;ET&amp;CS=&amp;RS=&amp;CSS=;EK&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+        <div contenteditable="false" class="item-model-data" opts="" data="date d'achèvement des fondations&amp;CS=&amp;RS=&amp;CSS=;EL&amp;CS=&amp;RS=&amp;CSS=;EP&amp;CS=4&amp;RS=&amp;CSS="
+             data-item="58"><span class="LB ">date d'achèvement des fondations</span><span class="FD "><input value="EL"></span><span class="FD "><input value="EP"></span><span class="actions"><img
+            src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:58;date d'achèvement des fondations&amp;CS=&amp;RS=&amp;CSS=;EL&amp;CS=&amp;RS=&amp;CSS=;EP&amp;CS=4&amp;RS=&amp;CSS=]</span>
+        </div>
+      </td>
+    </tr>
+    <tr row_options="extensible">
+      <td class="" colspan="14">
+        <div contenteditable="false" data-item="14" data="Code postal&amp;CS=&amp;RS=&amp;CSS=;EB09&amp;CS=&amp;RS=&amp;CSS=" opts="" class="item-model-data"><span class="LB ">Code postal</span><span
+            class="FD "><input value="EB09"></span><span class="actions"><img src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:14;Code postal&amp;CS=&amp;RS=&amp;CSS=;EB09&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+        <div contenteditable="false" data-item="14" data="F2&amp;CS=&amp;RS=&amp;CSS=;EF&amp;CS=&amp;RS=&amp;CSS=" opts="" class="item-model-data"><span class="LB ">F2</span><span class="FD "><input
+            value="EF"></span><span class="actions"><img src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:14;F2&amp;CS=&amp;RS=&amp;CSS=;EF&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+        <div contenteditable="false" class="item-model-data" opts="" data="Montant de la souscription&amp;CS=&amp;RS=&amp;CSS=;EU&amp;CS=&amp;RS=&amp;CSS=" data-item="14"><span class="LB ">Montant de la souscription</span><span
+            class="FD "><input value="EU"></span><span class="actions"><img src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:14;Montant de la souscription&amp;CS=&amp;RS=&amp;CSS=;EU&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+        <div contenteditable="false" class="item-model-data" opts=""
+             data="&amp;CS=&amp;RS=4&amp;CSS=;Date de Livraison ou d’achèvement de l’immeuble&amp;CS=&amp;RS=&amp;CSS=;EM&amp;CS=&amp;RS=&amp;CSS=" data-item="47"><span class="LB ">Label</span><span
+            class="LB ">Date de Livraison ou d’achèvement de l’immeuble</span><span class="FD "><input value="EM"></span><span class="actions"><img src="/app/declaration/pix/delete.png"
+                                                                                                                                                    class="delete-btn"></span><span class="data">[Model:47;&amp;CS=&amp;RS=4&amp;CSS=;Date de Livraison ou d’achèvement de l’immeuble&amp;CS=&amp;RS=&amp;CSS=;EM&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+      </td>
+    </tr>
+    <tr row_options="extensible">
+      <td class="" colspan="14">
+        <div contenteditable="false" class="item-model-data" opts="" data="Ville&amp;CS=&amp;RS=&amp;CSS=;EB08&amp;CS=&amp;RS=&amp;CSS=" data-item="14"><span class="LB ">Ville</span><span class="FD "><input
+            value="EB08"></span><span class="actions"><img src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:14;Ville&amp;CS=&amp;RS=&amp;CSS=;EB08&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+        <div contenteditable="false" class="item-model-data" opts="" data="F3&amp;CS=&amp;RS=&amp;CSS=;EG&amp;CS=&amp;RS=&amp;CSS=" data-item="14"><span class="LB ">F3</span><span class="FD "><input
+            value="EG"></span><span class="actions"><img src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:14;F3&amp;CS=&amp;RS=&amp;CSS=;EG&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+        <div contenteditable="false" class="item-model-data" opts=""
+             data="&amp;CS=3&amp;RS=3&amp;CSS=;date de mise en location du dernier logement&amp;CS=&amp;RS=&amp;CSS=;EN&amp;CS=&amp;RS=&amp;CSS=" data-item="47"><span class="LB ">Label</span><span
+            class="LB ">date de mise en location du dernier logement</span><span class="FD "><input value="EN"></span><span class="actions"><img src="/app/declaration/pix/delete.png"
+                                                                                                                                                 class="delete-btn"></span><span class="data">[Model:47;&amp;CS=3&amp;RS=3&amp;CSS=;date de mise en location du dernier logement&amp;CS=&amp;RS=&amp;CSS=;EN&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+        <br></td>
+    </tr>
+    <tr row_options="extensible">
+      <td class="" colspan="14">
+        <div contenteditable="false" data-item="14" data="Superficie totale habitable en m²&amp;CS=&amp;RS=&amp;CSS=;ED&amp;CS=&amp;RS=&amp;CSS=" opts="" class="item-model-data"><span class="LB ">Superficie totale habitable en m²</span><span
+            class="FD "><input value="ED"></span><span class="actions"><img src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:14;Superficie totale habitable en m²&amp;CS=&amp;RS=&amp;CSS=;ED&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+        <div contenteditable="false" data-item="14" data="F4&amp;CS=&amp;RS=&amp;CSS=;EH&amp;CS=&amp;RS=&amp;CSS=" opts="" class="item-model-data"><span class="LB ">F4</span><span class="FD "><input
+            value="EH"></span><span class="actions"><img src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:14;F4&amp;CS=&amp;RS=&amp;CSS=;EH&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+        <div contenteditable="false" data-item="14" data="Logements situés en ZUS&amp;CS=&amp;RS=&amp;CSS=;EV&amp;CS=&amp;RS=&amp;CSS=" opts="" class="item-model-data"><span class="LB ">Logements situés en ZUS</span><span
+            class="FD "><input value="EV"></span><span class="actions"><img src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:14;Logements situés en ZUS&amp;CS=&amp;RS=&amp;CSS=;EV&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+        <br></td>
+    </tr>
+    <tr row_options="extensible" data-extensible_code="5">
+      <td class="" colspan="14">
+        <div contenteditable="false" class="item-model-data" opts="extensible_code=0"
+             data="Respect de la condition prévue au 5° du I de l'art. 199 undecies C du CGI&amp;CS=&amp;RS=&amp;CSS=;EC&amp;CS=&amp;RS=&amp;CSS=" data-item="14"><span class="LB ">Respect de la condition prévue au 5° du I de l'art. 199 undecies C du CGI</span><span
+            class="FD "><input value="EC"></span><span class="actions"><img src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:14;Respect de la condition prévue au 5° du I de l'art. 199 undecies C du CGI&amp;CS=&amp;RS=&amp;CSS=;EC&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+        <div contenteditable="false" data-item="14" data="F5 et +&amp;CS=&amp;RS=&amp;CSS=;EJ&amp;CS=&amp;RS=&amp;CSS=" opts="extensible_code=0" class="item-model-data"><span
+            class="LB ">F5 et +</span><span class="FD "><input value="EJ"></span><span class="actions"><img src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:14;F5 et +&amp;CS=&amp;RS=&amp;CSS=;EJ&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+        <div contenteditable="false" data-item="14" data="logements comportent des équipements d’énergie renouvelable&amp;CS=&amp;RS=&amp;CSS=;EW&amp;CS=&amp;RS=&amp;CSS=" opts=""
+             class="item-model-data"><span class="LB ">logements comportent des équipements d’énergie renouvelable</span><span class="FD "><input value="EW"></span><span class="actions"><img
+            src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:14;logements comportent des équipements d’énergie renouvelable&amp;CS=&amp;RS=&amp;CSS=;EW&amp;CS=&amp;RS=&amp;CSS=]</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td class="" rowspan="1" colspan="12">
+        <div contenteditable="false" class="item-model-data" opts="" data="TOTAL&amp;CS=&amp;RS=&amp;CSS%5B0%5D=title&amp;CSS%5B1%5D=ta-right" data-item="4"><span class="LB title">TOTAL</span><span
+            class="actions"><img class="delete-btn" src="/app/declaration/pix/delete.png"></span><span class="data">[Model:4;TOTAL&amp;CS=&amp;RS=&amp;CSS%5B0%5D=title&amp;CSS%5B1%5D=ta-right]</span>
+        </div>
+        <br></td>
+      <td class="">
+        <div contenteditable="false" class="item-model-data" opts="" data="EQ&amp;CS=&amp;RS=&amp;CSS=" data-item="7"><span class="FD "><input value="EQ"></span><span class="actions"><img
+            src="/app/declaration/pix/delete.png" class="delete-btn"></span><span class="data">[Model:7;EQ&amp;CS=&amp;RS=&amp;CSS=]</span></div>
+      </td>
+      <td class="empty">
+        <div contenteditable="false" class="item-model-data" opts="" data="&amp;CS=&amp;RS=&amp;CSS%5B0%5D=empty" data-item="5"><span class="LB ">Label</span><span class="actions"><img
+            class="delete-btn" src="/app/declaration/pix/delete.png"></span><span class="data">[Model:5;&amp;CS=&amp;RS=&amp;CSS%5B0%5D=empty]</span></div>
+      </td>
+    </tr>
+  </tbody>
+</table>

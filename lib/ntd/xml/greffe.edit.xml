@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+<fieldset>
+
+<notebook>
+<page>
+ <form>
+  <hbox>
+   <vbox>
+    <elem field="greffedossier_id" disabled="true" label="Dossier de greffe" />
+    <elem field="adherent_id" disabled="true" />
+    <elem field="email_deposit" />
+    <elem field="code_insee" disabled="true" />
+    <elem field="code_greffe" disabled="true" />
+
+    <elem field="compte_type" options="GreffeManager::$types_compte" />
+    <elem field="forme_juridique" options="GreffeManager::$formes_juridique" />
+    <elem field="mode_direction" options="GreffeManager::$modes_direction" />
+    <elem field="start_at" label="Date de début de l'exercice" />
+    <elem field="closed_at" label="Date de clôture des comptes" />
+    <elem field="is_gerant" type="yesno" label="L'associé unique, personne physique est il gérant ?" />
+    <elem field="is_public" type="yesno" label="Comptes publics" />
+    <elem field="status" options="Greffe::getStatuses()" disabled="true" />
+   </vbox>
+   <vbox>
+    <elem field="send_at" type="date" disabled="true" precision="récupéré par Amitel" label="Envoyé le" />
+    <elem field="response_at" type="date" disabled="true" precision="envoyé par Amitel" label="Reçu le" />
+   </vbox>
+   <vbox>
+    <box class="grid" value="$documents" />
+    <box class="grid" value="$documents_reponse" />
+   </vbox>
+  </hbox>
+  <launcher/>
+ </form>
+</page>
+<page>
+ <hbox>
+  <vbox width="150px">
+   <box label="actions">
+    <link icon="details" />
+   </box>
+  </vbox>
+  <vbox><deck /></vbox>
+ </hbox>
+</page>
+</notebook>
+
+</fieldset>
+</kwo-interface>

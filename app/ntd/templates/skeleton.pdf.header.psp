@@ -1,0 +1,14 @@
+<header>
+  <div class="inner">
+    <?php if ($domtom): ?>
+      <img class="logo" src="<?=H::url('/app/ntd/pix/general/logo-domtom.png')?>" alt="NetDeclaration DOM-TOM" style="max-height: 100px">
+    <?php else: ?>
+      <img class="logo" src="<?=H::url('/app/ntd/pix/print/logo.png')?>" alt="NetDeclaration">
+    <?php endif; ?>
+    <h1 class="page-title">
+      <?=$title?><?php if($topage > 1) : ?><br><p class="pagination">Page <?=$page?> sur <?=$topage?></p>
+      <?php endif; ?>
+    </h1>
+
+  </div>
+</header>

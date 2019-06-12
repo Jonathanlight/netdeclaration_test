@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+<fieldset>
+
+<notebook>
+<page>
+ <form>
+  <hbox>
+   <vbox>
+    <elem field="name" />
+    <elem field="description" label="Description" precision="Dans le cas d'un chèque, correspond à l'émetteur" />
+    <elem field="amount" label="Montant total" />
+    <elem field="method_id" label="Moyen de paiement" />
+    <elem field="paid_at" label="Payé le" />
+    <elem field="status" built="$is_loaded" />
+
+   </vbox>
+   <vbox>
+    <elem type="relations" model="facture" label="Factures liées" editable="true"/>
+   </vbox>
+   <vbox>
+    <elem field="placed_at" label="Crée le" disabled="true" type="text" />
+    <grid value="$datas" label="Données de paiement" built="$show_datas" />
+   </vbox>
+  </hbox>
+  <launcher/>
+ </form>
+</page>
+<page>
+ <hbox>
+  <vbox width="150px">
+   <box label="actions">
+    <link icon="details" />
+   </box>
+  </vbox>
+  <vbox><deck /></vbox>
+ </hbox> 
+</page>
+</notebook>
+
+</fieldset>
+</kwo-interface>

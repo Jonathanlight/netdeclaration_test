@@ -1,0 +1,58 @@
+<table class="table  table--ntd table--ntd--even-odd">
+  <thead>
+  <tr>
+    <th>N°</th>
+    <th>&Eacute;mise le</th>
+    <th>Prix HT</th>
+    <th>Etat</th>
+    <th>Détails</th>
+    <th>Voir</th>
+  </tr>
+  </thead>
+  <?php foreach ($factures as $facture): ?>
+    <tr class="facture">
+      <td class="table--ntd__bold">#<?= $facture->getId() ?></td>
+      <td><?= H::date($facture->getMeta('created_at')) ?></td>
+      <td class="nowrap"><?= H::amount($facture->getPriceHT()) ?></td>
+      <td>
+        <?php if ($facture->type == Facture::TYPE_FACTURE): ?>
+          <?php if (!in_array($facture->status, array(Facture::STATUS_PAYE, Facture::STATUS_RESILIE))): ?>
+            <span class="color--red"><?= $statuses[$facture->status] ?></span>
+            <a href="/middle/payment/-/facture_id/<?= $facture->getId() ?>"
+               class="btn btn--color-red btn--smaller float-right"
+               title="Payer">Paiement</a>
+          <?php else: ?>
+            <span class="color--green"><?= $statuses[$facture->status] ?></span>
+          <?php endif; ?>
+        <?php else: ?>
+          <span class="color--green">Avoir</span>
+        <?php endif; ?>
+      </td>
+
+      <td align="center">
+        <div class="kwo-tooltip elt-tooltip" style="display:none;">
+          <div class="elt-tooltip-content">
+            <h3>Détails de <?= $facture->getType(true) ?> : </h3>
+            <ul class="list-puce">
+              <?php foreach ($facture->data_purchases as $purchase): ?>
+                <?php if ($purchase['price_total_ht'] > 0) : ?>
+                  <li><?= $purchase['name'] ?></li>
+                <?php endif; ?>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+        </div>
+        <i class="fa fa-question-circle tooltip-handle"
+           onmouseout="Kwo.Tooltip.hide()"
+           onmouseover="Kwo.Tooltip.show($(this), $(this).up().previous('.kwo-tooltip'))"></i>
+      </td>
+      <td align="center">
+        <a href="/middle/facture/-/id/<?= $facture->getId() ?>"
+           class="btn btn--square btn--color-grey">
+          <i class="fa fa-eye"></i>
+        </a>
+      </td>
+    </tr>
+  <?php endforeach; ?>
+</table>
+

@@ -1,0 +1,54 @@
+<div class="formulaire-page page-form" data-label="TS 2501">
+  <table>
+    <!-- Taxe sur les Salaires : Relevé de versement provisionnel -->
+
+
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">VERSEMENT DE LA TAXE AU TITRE DU MOIS OU DU TRIMESTRE</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th>&nbsp;</th>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">01</td>
+      <td class="libelle">
+        <label for="ts2501_aa">Montant de la taxe due au titre du mois ou du trimestre</label>
+      </td>
+      <td class="line_impot">902412</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA',
+                                                            'value'      => $ts2501_201512['AA']))?>
+      </td>
+      <td class="line_id">A</td>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">02</td>
+      <td class="libelle">
+        <label for="ts2501_ab">Excédent de versement résultant du report de l'année précédente à imputer (s'il y a lieu)</label>
+      </td>
+      <td class="line_impot">902413</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AB',
+                                                            'value'      => $ts2501_201512['AB']))?>
+      </td>
+      <td class="line_id">B</td>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">03</td>
+      <td class="libelle tab-title-style">
+        <label for="ts2501_ac">Montant net de la taxe due au titre du mois ou du trimestre (A – B)</label>
+      </td>
+      <td class="line_impot">902414</td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AC',
+                                                            'value'      => $ts2501_201512['AC']))?>
+      </td>
+      <td class="line_id">C</td>
+    </tr>
+
+  </table>
+</div>

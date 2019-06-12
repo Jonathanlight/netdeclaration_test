@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+ <fieldset>
+
+  <notebook>
+   <page>
+    <form>
+     <hbox>
+      <vbox>
+       <box label="détails">
+        <elem field="name"/>
+        <elem field="banque"/>        
+        <elem field="type" />
+        <elem field="adherent_id" type="hidden" />
+       </box>
+      </vbox>
+      <vbox>
+       <box label="Identification">
+        <elem field="code_banque"/>
+        <elem field="code_guichet"/>
+        <elem field="numero_compte"/>
+        <elem field="cle_iban"/>
+        <elem field="numero_iban"/>
+        <elem field="numero_bic"/>
+       </box>
+      </vbox>
+     </hbox>
+     <launcher/>
+    </form>
+   </page>
+   <page>
+    <hbox>
+     <vbox width="150px">
+      <box label="actions">
+       <link icon="details"/>
+      </box>
+     </vbox>
+     <vbox>
+      <deck/>
+     </vbox>
+    </hbox>
+   </page>
+  </notebook>
+
+ </fieldset>
+</kwo-interface>

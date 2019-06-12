@@ -1,0 +1,49 @@
+<h1><?=$title?></h1>
+<div style="padding:0;">
+
+<div class="nav">
+<form>
+<input type="hidden" name="offset" value="0" />
+<select name="model"<?=count($models) == 1 ? 'readonly' : ''?>>
+<?php foreach ($models as $mdl): ?>
+ <option value="<?=$mdl?>"<?=$mdl==$model?' selected="selected"':''?>><?=Model::name($mdl)?></option>
+<?php endforeach; ?>
+</select>
+<input type="text" name="query" value="<?=h($query)?>" />
+<img src="/<?=PIX_PATH?>/back.search.gif" class="item-search-button" />
+<img src="/<?=PIX_PATH?>/action/item.add.png" class="item-editor-button" />
+</form>
+<div class="clear"></div>
+</div>
+
+
+<div class="items">
+<?php if ($items instanceof Collection): ?>
+
+<?php if ($items->count() < 1): ?>
+Aucun résultat
+<?php else: ?>
+
+
+<ul>
+<?php foreach ($items as $item): ?>
+ <li title="ID <?=$item->getId()?>"
+     data-id="<?=$item->getId()?>"
+     data-model-id="<?=$item->getModelId()?>"><?=$item->asPickerRow()?></li>
+<?php endforeach; ?>
+</ul>
+
+<?php endif; ?>
+
+
+<?php endif; ?>
+</div>
+
+
+<?php if ($items instanceof Collection && $items->hasPagination()): ?>
+
+<div class="pagination"><?=$items->getPagination()?></div>
+
+<?php endif; ?>
+
+</div>

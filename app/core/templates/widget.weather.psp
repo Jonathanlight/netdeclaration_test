@@ -1,0 +1,28 @@
+<div id="Weather">
+<?php if (!empty($icon) && !empty($name) && !empty($temp)): ?>
+ <img src="/<?=APP_PATH?>/core/pix/weather/30/<?=$icon?>.gif" align="absmiddle"> <?=$name?>, <?=$temp?> |
+<?php endif; ?>
+ <a href="javascript:void(0)" onclick="Kwo.Weather.toggle();" title="<?=ucfirst(l('choose_other_town'))?>"><?=ucfirst(l('other_town'))?></a>
+</div>
+
+<div id="WeatherError" style="display:none;"></div>
+
+<form autocomplete="off" action="javascript:Kwo.Weather.search($F('WeatherCity'))">
+<table id="WeatherSearch" style="display:none;margin:0 auto 5px auto"><tr>
+ <td style="border:0">
+  <div class="barSearch">
+   <input id="WeatherCity" class="text" type="text">
+   <input src="/<?=APP_PATH?>/<?=CORE?>/pix/empty.gif" class="image" type="image">
+  </div>
+ </td>
+ <td style="padding-left:28px;border:0">
+  <span class="weatherLink">Powered by<br/><a href="http://www.weather.com/" target="_blank">The Weather Channel&copy;</a></span>
+ </td>
+</tr></table>
+</form>
+
+<div id="WeatherSelect" style="display:none">
+ <select id="WeatherCode"></select>
+ <a href="javascript:void(0)" onclick="javascript:Kwo.Weather.fetch($F('WeatherCode'))" class="btnLink" style="float:right"><?=l('send')?></a>
+ <div style="clear:both;"></div>
+</div>

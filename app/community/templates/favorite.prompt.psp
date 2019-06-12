@@ -1,0 +1,18 @@
+<h1>
+  <img src="/app/community/pix/favorite.title.png" />
+  <?=c(l('favorite.widget.title'))?>
+</h1>
+
+<div class="layout-hbox-content">
+  <?=H::identity($item)?>
+  <form onsubmit="Kwo.getDialog().onSave(this); return false;">
+    <ul class="hbox">
+      <li><?=Elt::text(array('name' => 'comment',
+                             'rows' => '2',
+                             'wide' => true,
+                             'label' => l('favorite.comment')))?></li>
+      <li style="text-align:right;">
+        <?=Elt::button(array('label' => l('save')))?></li>
+    <ul>
+  </form>
+</div>

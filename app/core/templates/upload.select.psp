@@ -1,0 +1,28 @@
+<div class="kwo-uploader" style="padding:10px 12px;">
+
+<?php if ($filter == 'image'): ?>
+ <div style="background:#eee; border:1px solid #bbb; padding:4px;
+             font-family:arial; margin:4px 0 12px 0; line-height:1.2em; font-size:0.8em;" class="rounded"><?=l('snippet:upload.image')?></div>
+<?php endif; ?>
+
+ <form enctype="multipart/form-data" method="post"
+       action="/core/upload" target="upload-box"
+       onsubmit="Kwo.getDialog().onBeforeSubmit(this); return false;">
+  <div style="float:right;"><?=H::button(l('send'))?></div>
+  <input type="hidden" name="filter" />
+  <input type="file" name="file" style="margin-bottom:6px;" /><br/>
+  <label style="display:none;" class="upload-crush">
+   <input type="checkbox"
+          name="replace" value="1" /> <?=ucfirst(l('upload.crush'))?>
+  </label>
+  <div class="form-error"></div>
+ </form>
+
+ <div id="loading-box" style="display:none;">
+  <img src="/<?=PIX_PATH?>/throbber.gif" />
+ </div>
+
+ <iframe frameborder="no" name="upload-box" id="upload-box" 
+         src="about:blank" style="display:none;"></iframe>
+
+</div>

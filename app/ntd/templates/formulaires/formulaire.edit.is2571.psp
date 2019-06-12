@@ -1,0 +1,65 @@
+<div class="formulaire-page" data-label="IS 2571">
+
+  <table class="is2571">
+    <col span="5">
+    <col>
+    <col width="80" align="center">
+    <tr class="tab-title">
+      <th class="big" colspan="9"><h3>VERSEMENT D'IS ET CONTRIBUTIONS ASSIMILÉES</h3></th>
+    </tr>
+
+    <tr class="elt">
+      <td>&nbsp;</td>
+      <td colspan="2" class="line_impot">Montants <br/>Indicatifs</td>
+      <td colspan="2" class="line_impot">Imputations</td>
+      <td colspan="2" class="line_impot">Montants à payer</td>
+      <td colspan="2" class="line_impot">Minoration<br/>(art. 1668 du CGI)</td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">Impôts sur les sociétés</td>
+      <td class="line_id">AA</td>
+      <td class="input"><input class="field field-type-number" onchange="NTD.Control.checkValue(this);" onmouseout="NTD.Control.hideError(this);" onmouseover="NTD.Control.displayError(this);"></td>
+      <td class="line_id">01</td>
+      <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BA', 'value' => $is2571['BA'])) ?></td>
+      <td class="line_id">03</td>
+      <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA', 'value' => $is2571['CA'])) ?></td>
+      <td class="line_id">04</td>
+      <td align="center"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA', 'value' => $is2571['DA'])) ?></td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">Imposition Forfaitaire Annuelle de l'Année</td>
+      <td colspan="2">&nbsp;</td>
+      <td colspan="2">&nbsp;</td>
+      <td class="line_id">05</td>
+      <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB', 'value' => $is2571['CB'])) ?></td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">Contribution sur les Revenus Locatifs</td>
+      <td class="line_id">AC</td>
+      <td class="input"><input class="field field-type-number" onchange="NTD.Control.checkValue(this);" onmouseout="NTD.Control.hideError(this);" onmouseover="NTD.Control.displayError(this);"></td>
+      <td colspan="2">&nbsp;</td>
+      <td class="line_id">07</td>
+      <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CC', 'value' => $is2571['CC'])) ?></td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">Contribution Sociale</td>
+      <td class="line_id">AD</td>
+      <td class="input"><input class="field field-type-number" onchange="NTD.Control.checkValue(this);" onmouseout="NTD.Control.hideError(this);" onmouseover="NTD.Control.displayError(this);"></td>
+      <td colspan="2">&nbsp;</td>
+      <td class="line_id">08</td>
+      <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CD', 'value' => $is2571['CD'])) ?></td>
+      <td class="line_id">09</td>
+      <td align="center"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DB', 'value' => $is2571['DB'])) ?></td>
+    </tr>
+    <tr class="elt">
+      <td colspan="5" style="text-align:right;"><label class="bold" for="is2571_CE">MONTANT TOTAL A PAYER</label></td>      
+      <td class="line_id">10</td>
+      <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CE', 'value' => $is2571['CE'])) ?></td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+
+    </table>
+
+</div>

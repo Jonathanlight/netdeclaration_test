@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<fieldset label="$fieldset_label">
+<notebook>
+
+ <page label="définition">
+  <form>
+   <hbox>
+    <vbox width="30%">
+     <elem field="name" label="nom" />
+     <hbox>
+      <vbox><elem field="status" /></vbox>
+      <vbox><elem field="locale" /></vbox>
+     </hbox>
+     <elem field="heading_id" options="Model::headings('article')" label="rubrique" />
+     <elem field="published_at" type="datetime" label="date de publication" />
+     <elem field="is_flash_infos" label="Flash Info ?" type="yesno" />
+    </vbox>
+    <vbox width="50%">
+     <elem field="description" mode="rich" rows="5" />
+     <elem field="content" mode="rich" rows="16" label="contenu" />
+     <elem field="image" type="image" label="Image" />
+    </vbox>
+   </hbox>
+   <launcher/>
+  </form>
+ </page>
+
+ <page label="opérations" built="$is_loaded">
+  <hbox>
+   <vbox width="10%">
+    <box label="actions">
+     <link icon="details" />
+     <link icon="note" />
+     <link icon="seo" />
+     <link icon="timeline" />
+     <link icon="hasmany" model="chapter" />
+    </box>
+   </vbox>
+   <vbox><deck/></vbox>
+  </hbox> 
+ </page>
+
+</notebook>
+</fieldset>
+
+</kwo-interface>

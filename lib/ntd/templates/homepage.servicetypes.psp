@@ -1,0 +1,6 @@
+<ul class="sortable">
+  <?php foreach ($servicetypes as $servicetype): ?>
+    <li data-id="<?= $servicetype->getId() ?>"><span draggable="true" class="handle">=</span> <span
+        class="content"><?= $servicetype->name ?></span></li>
+  <?php endforeach; ?>
+</ul>

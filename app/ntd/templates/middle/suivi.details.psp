@@ -1,0 +1,122 @@
+<?php if (!$destinataire): ?>
+
+  <h2 class="font--darkblue font-family--georgia font-size-big"> <?= c(l('account.suivi.details')) ?> </h2>
+  <table class="table table--ntd table--suivi-details">
+    <tbody>
+    <tr>
+      <th><?= c(l('account.suivi.ref')) ?></th>
+      <td><?= $suivi->ref_message ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.date')) ?></th>
+      <td><?= $suivi->date_depot ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.doc')) ?></th>
+      <td><?= $suivi->type_doc ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.sens')) ?></th>
+      <td><?= $suivi->sens ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.siret.tiers.declarant')) ?></th>
+      <td><?= $suivi->siret_emetteur ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.siret.declarant')) ?></th>
+      <td><?= $suivi->siret_decl ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.name.declarant')) ?></th>
+      <td><?= $suivi->nom_decl ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.num.interchange')) ?></th>
+      <td><?= $suivi->no_interchange ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.ref.message')) ?></th>
+      <td><?= $suivi->no_message ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.type.message')) ?></th>
+      <td><?= $suivi->type_mess ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.message')) ?></th>
+      <td><?= $suivi->message ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.type.declaration')) ?></th>
+      <td><?= $suivi->type_decl ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.list.form')) ?></th>
+      <td><?= $suivi->liste_formulaire ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.begin')) ?></th>
+      <td><?= $suivi->debut_periode ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.end')) ?></th>
+      <td><?= $suivi->fin_periode ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.list.dest')) ?></th>
+      <td><?= $suivi->list_dest ?></td>
+    </tr>
+
+    </tbody>
+  </table>
+
+<?php else: ?>
+
+  <h2 class="font--darkblue font-family--georgia font-size-big">
+    <?= c(l('account.suivi.details.send')) ?>
+  </h2>
+  <table class="table table--ntd table--suivi-details">
+    <tbody>
+    <tr>
+      <th><?= c(l('account.suivi.ref')) ?></th>
+      <td><?= $destinataire->ref_message ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.num.interchange')) ?></th>
+      <td><?= $destinataire->no_interchange ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.ref.message')) ?></th>
+      <td><?= $destinataire->no_message ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.destinataire')) ?></th>
+      <td><?= $destinataire->type_dest ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.name.destinataire')) ?></th>
+      <td><?= $destinataire->nom_dest ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.siret.destinataire')) ?></th>
+      <td><?= $destinataire->siret ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.status.send')) ?></th>
+      <td><?= $destinataire->status ?> (<?= $destinataire->status() ?>)</td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.date.acquittement')) ?></th>
+      <td><?= H::date($destinataire->date_ack) ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.suivi.lib.error')) ?></th>
+      <td><?= $destinataire->message ?></td>
+    </tr>
+
+    </tbody>
+  </table>
+
+<?php endif; ?>
+

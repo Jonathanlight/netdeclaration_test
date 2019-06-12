@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="id desc">
+ <filters>
+  <filter name="id" />
+  <filter name="name" />
+  <filter name="method_id" />
+  <filter name="status" />
+ </filters>
+ <cols>
+  <col name="name" />
+  <col name="method_id" />
+  <col name="amount" />
+  <col name="placed_at" label="Crée le" />
+  <col name="paid_at" label="Payé le" />  
+  <col name="status" />
+ </cols>
+</finder>
+
+</kwo-interface>

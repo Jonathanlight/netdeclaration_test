@@ -1,0 +1,32 @@
+<div class="table">
+  <main class="table-cell table-padding-right table-cell--main block  wrapper__footer-padding-bottom">
+    <?php if(!$partial): ?>
+    <?= H::breadcrumb($_breadcrumb) ?>
+    <?php endif; ?>
+    <h1 class="font--darkblue font-size-big font-family--georgia margin-bottom"><?= $page->title ?></h1>
+    <div class="page__description"><?= $page->description ?></div>
+    <div class="page__content wysiwyg"><?= $page->content ?></div>
+  </main>
+  <?php if(!$partial): ?>
+  <aside class="table-cell  table-cell--aside  wrapper__footer-padding-bottom">
+    <div class="block__height">&nbsp;</div>
+    <?php if (strlen($page->aside_content) > 0): ?>
+      <div>
+        <h2><?= H::inc('ntd:_aside__title', array('label' => 'À retenir', 'icon' => 'fa-pencil', 'color' => 'red')) ?></h2>
+        <div class="wysiwyg wysiwyg--aside">
+          <?php $rows = explode('<br />', nl2br($page->aside_content)); ?>
+          <?php foreach ($rows as $index => $row) : ?>
+            <p class="wysiwyg--aside__list-item">
+              <i class="fa fa-caret-right wysiwyg--aside__list-item__icon"></i>
+              <span class="wysiwyg--aside__list-item__content"><?= trim($row) ?></span>
+            </p>
+            <?php if ($index < count($rows) - 1): ?>
+              <hr>
+            <?php endif; ?>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    <?php endif; ?>
+  </aside>
+  <?php endif; ?>
+</div>

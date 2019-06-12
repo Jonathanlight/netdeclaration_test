@@ -1,0 +1,35 @@
+<div class="table">
+  <main class="table-cell  table-cell--main block  wrapper__footer-padding-bottom wrapper-plan">
+    <?= H::breadcrumb($_breadcrumb) ?>
+    <h1 class="font--darkblue font-size-big font-family--georgia"><?= c(l('plan.title')) ?></h1>
+
+    <h2 class="font--lightblue">URLS</h2>
+    <ul>
+      <?php foreach ($urls as $url => $title): ?>
+        <li class="plan-level">
+          <a class="link-puce"
+             href="<?= $url ?>"><?= $title ?></a></li>
+      <?php endforeach; ?>
+    </ul>
+    <h2 class="font--lightblue">Nos Services</h2>
+    <ul>
+      <?php foreach ($servicetypes as $servicetype): ?>
+        <li class="plan-level">
+          <a class="link-puce"
+             href="<?= $servicetype['url'] ?>"><?= $servicetype['title'] ?></a>
+          <ul>
+            <?php foreach ($servicetype['services'] as $service): ?>
+              <li class="plan-level">
+                <a class="link-puce"
+                   href="<?= $service['url'] ?>"><?= $service['title'] ?></a>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  </main>
+  <aside class="table-cell  table-cell--aside  wrapper__footer-padding-bottom">
+    &nbsp;
+  </aside>
+</div>

@@ -1,0 +1,45 @@
+.block--middle-home
+  border: 1px solid $color--grey
+  margin-bottom: 20px
+  box-shadow: 1px 2px 0 0 $color--grey
+
+.block--middle-home__header
+  @include clearFloat()
+  background: $color--lightgrey
+  border-bottom: 1px solid $color--grey
+  line-height: 52px
+  padding: 0 20px
+
+.block--middle-home__title
+  @include font-family--georgia()
+  font-size: 20px
+  color: $color--darkblue
+  font-weight: bold
+  text-transform: uppercase
+
+.block--middle-home__link
+  float: right
+  color: $color--darkblue
+  font-size: 12px
+
+//.block--middle-home__list
+.block--middle-home__list__item
+  padding: 18px 7px 14px
+  margin: 0 11px
+  border-bottom: 1px solid $color--bordergrey
+  &:last-child
+    border-bottom: none
+
+.block--middle-home__list__item__btn
+  margin: 3px 0 3px 10px
+
+.block--middle-home__list__item__content
+  width: 100%
+  padding-right: 10px
+  border-right: 1px solid $color--bordergrey
+
+.declaration__formulaires-list
+  margin: 10px auto 0 0
+  display: block
+  width: 350px
+  text-transform: uppercase

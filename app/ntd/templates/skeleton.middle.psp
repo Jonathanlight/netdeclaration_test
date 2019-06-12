@@ -1,0 +1,114 @@
+<div class="wrapper__content--2cols--bluewhite">
+  <div class="wrapper-width">
+    <div class="table">
+      <nav class="wrapper__content--2cols--bluewhite__col-blue  table-cell  wrapper__footer-padding-bottom">
+
+        <hr>
+
+
+
+
+        <div class="block--adherent-selector" data-on-load="new ntd.middle.AdherentSelector(this)">
+          <p class="block--adherent-selector__adherent-company float-left"><?= $_current_adherent->company ?></p>
+          <form action="/middle/set.current_adherent"
+            class="block--adherent-selector__form">
+            <?php
+            $_adherents = Adherent::getAllAdherent($_user['id'], array(
+              'filters' => array('|!=|id' => $_current_adherent->id),
+              'order' => array('company' => 'asc')))
+            ->asHash('id', 'company');
+            ?>
+            <?php if (count($_adherents) > 0): ?>
+              <?=Elt::select(array(
+                  'options' => Adherent::getAllAdherent($_user['id'], array('filters' => array('|!=|id' => $_current_adherent->id), 'order' => array('company' => 'asc')))->asHash('id', 'company'),
+                  'value'   => '',
+                  'name'    => 'id', 'class' => 'margin-bottom',
+                  'first'   => "- Changer d'adhérent -"
+                ))?>
+            <?php endif; ?>
+          </form>
+        </div>
+        <div class="clear"></div>
+        <a class="btn btn--color-dark-blue" href="/middle/declarer">Nouvelle déclaration</a>
+        <nav class="white-nav">
+          <?php foreach (NtdMiddleManager::$modules as $module_code => $module_hash) : ?>
+            <?php if (!NtdMiddleManager::isModuleAllowed($module_code)) continue; ?>
+            <a href="/middle/<?= $module_hash['url'] ?>"
+               class="white-nav__link  <?= $module_code == NtdMiddleManager::getCurrentModule('code') ? 'white-nav__link--selected' : '' ?>">
+              <?= $module_hash['title'] ?>
+              <i class="fa  fa-caret-right  white-nav__link__icon"></i>
+            </a>
+
+          <?php endforeach; ?>
+        </nav>
+
+        <a class="btn btn--small btn--color-grey margin-bottom btn--nav-account" href="/account">Mon compte</a>
+
+        <h2 class="font--lightblue  font-size-big" style="margin-top: 20px;">Documentation</h2>
+        <ul class="list-arrow">
+          <?php foreach (NtdMiddleManager::getNavPages() as $page) : ?>
+            <li class="list-arrow__item <?= ($_action == 'page' && S('req')->code == $page->code) ? 'list-arrow__item--selected' : '' ?>">
+              <a href="/middle/page/-/code/<?= $page->code ?>">
+                <i class="fa  fa-caret-right list-arrow__item__icon "></i>
+                <?= $page->title ?>
+              </a>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+        <button type="button"
+                style="margin-top: 10px; font-size: 14px; padding-left: 7px;"
+                class="btn btn--link  middle-help-dialog-btn"
+                onclick="ntd.helpOverlay.show(this)"
+                data-dialog="middle-help-dialog">
+          <i class="fa fa-question-circle"></i> Voir l'aide
+        </button>
+
+
+
+      </nav>
+
+      <main class="wrapper__content--2cols--bluewhite__col-white  table-cell  wrapper__footer-padding-bottom">
+
+        <?php if (!empty($_warnings)): ?>
+          <div class="flashinfo">
+            <?php foreach ($_warnings as $warning): ?>
+              <div><?=$warning?></div>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+        <?php if (is_array($_tip)): ?>
+          <div class="flashinfo">
+            <strong><?= String::capitalize($_tip['title']) ?> : </strong>
+            <?= $_tip['content'] ?>
+          </div>
+        <?php endif; ?>
+
+
+        <div class="block  block--middle-content">
+          <?= H::breadcrumb(array('separator' => '<i class="fa fa-angle-right breadcrumb__separator"></i>')) ?>
+          <?php if($_current_adherent->status != Adherent::STATUS_SUBSCRIPTION_VALIDE): ?>
+            <div class="flashinfo flashinfo--yellow" style="margin-bottom: 20px; padding: 20px">
+              <?=l('infobox.bulletin_not_signed')?>
+              <a class="btn btn--color-red"
+                 href="/middle/bulletin"
+                style="vertical-align: middle; margin-left: 20px">
+                Signer le bulletin
+              </a>
+            </div>
+          <?php endif; ?>
+          <?php if($_skeleton_middle_title) : ?>
+          <h1 class="block__middle-title"><?=$_skeleton_middle_title?> - <?= $_current_adherent->company ?></h1>
+          <div class="margin-bottom-20"><?=$_skeleton_middle_description?></div>
+          <?php endif; ?>
+
+          <?= $_content ?>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+</div>
+<?=H::inc('_overlay.help')?>

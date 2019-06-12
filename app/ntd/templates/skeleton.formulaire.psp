@@ -1,0 +1,126 @@
+<?=H::head(array(
+  'scripts' => array('/app/ntd/scripts/formulaire/formulaire.main.js',
+                     '/app/ntd/scripts/formulaire/assert.js',
+                     '/app/ntd/scripts/formulaire/assert_2015.js',
+                     '/app/ntd/scripts/formulaire/assert_2016.js',
+                     '/app/ntd/scripts/formulaire/assert_2017.js',
+                     '/app/ntd/scripts/formulaire/assert_2018.js',
+                     '/app/ntd/scripts/formulaire/assert_2019.js',
+                     '/app/ntd/scripts/formulaire/formulaire.generic.js',
+                     '/app/ntd/scripts/formulaire/formulaire.cvae.js',
+                     '/app/ntd/scripts/formulaire/formulaire.is.js',
+                     '/app/ntd/scripts/formulaire/formulaire.ts.js',
+                     '/app/ntd/scripts/formulaire/formulaire.tva.js',
+                     '/app/ntd/scripts/formulaire/formulaire.tva3310ca3.js',
+                     '/app/ntd/scripts/formulaire/formulaire.tva3310ter.js',
+                     '/app/ntd/scripts/formulaire/formulaire.tva3514.js',
+                     '/app/ntd/scripts/formulaire/formulaire.tva3517bisca.js',
+                     '/app/ntd/scripts/formulaire/formulaire.tva3517sca.js',
+                     '/app/ntd/scripts/formulaire/formulaire.tva3519.js',
+                     '/app/ntd/scripts/formulaire/formulaire.tva3515sd.js',
+                     '/app/ntd/scripts/formulaire/formulaire.tva3525bis.js',
+                     '/app/ntd/scripts/formulaire/formulaire.t_identif.js',
+                     '/app/ntd/scripts/formulaire/formulaire.t_identif_20151020.js',
+                     '/app/ntd/scripts/formulaire/formulaire.t_identif_20160101.js',
+                     '/app/ntd/scripts/formulaire/formulaire.t_identif_20170101.js',
+                     '/app/ntd/scripts/formulaire/formulaire.f_identif.js',
+                     '/app/ntd/scripts/formulaire/formulaire.f_identif_20140320.js',
+                     '/app/ntd/scripts/formulaire/formulaire.f_identif_20160101.js',
+                     '/app/ntd/scripts/formulaire/formulaire.p_identif.js',
+                     '/app/ntd/scripts/formulaire/formulaire.p_identif_20151020.js',
+                     '/app/ntd/scripts/formulaire/formulaire.identif.js',
+                     '/app/ntd/scripts/formulaire/formulaire.calcul.js',
+                     '/app/ntd/scripts/formulaire/formulaire.cvae1329ac.js',
+                     '/app/ntd/scripts/formulaire/formulaire.cvae1329def.js',
+                     '/app/ntd/scripts/formulaire/formulaire.tva3310ca3g.js',
+                     '/app/ntd/scripts/formulaire.js',
+                     '/app/ntd/scripts/api/geo.api.gouv.js',
+                     '/app/core/scripts/scriptaculous/scriptaculous.js?load=effects,dragdrop,controls',
+                     '/app/ntd/scripts/moment-with-locales.min.js'
+  ),
+
+  'styles' => array(
+    '/app/ntd/styles/declaration/master.css',
+    '/app/ntd/styles/declaration/front.css',
+    '/app/ntd/styles/declaration/account.css',
+    '/app/ntd/styles/declaration/formulaire.css',
+    '/app/ntd/styles/declaration/declaration.css',
+    '/app/ntd/styles/declaration/print.v1.css',
+    '/app/ntd/styles/vendor/font-awesome.css'
+  ),
+
+  'autoscripts_disabled' => true,
+  'autostyles_disabled' => true,
+))?>
+
+
+
+
+<div class="wrapper">
+  <div class="wrapper-header">
+    <div class="wrapper-header-bandeau">
+      <img src="/app/ntd/pix/logo-form.png" alt="logo"/>
+      <span class="title"><?=c(l('form.title'))?>.</span>
+
+      <div class="identity">
+        <span class="name"><?=$adherent->company?></span>
+        <span class="siret">N° SIRET : <?=$adherent->siret?></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper-content">
+
+
+    <div style="padding-bottom:20px"><?=$_content?></div>
+
+    <div id="debug">
+      <div class="toolbar">Debug</div>
+      <input id="clear-messages" type="button" value="Effacer les messages" onclick="NTD.Debug.clear()"/>
+
+      <div class="content"></div>
+      <br/>
+    </div>
+    <style type="text/css">
+      /*------------------------------------- Debug --------------------------------*/
+
+      #debug {
+        padding: 0 !important;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        color: maroon;
+        border: 1px solid maroon;
+        font-size: 15px;
+      <?=(false && P('app.domain') == 'dev.ntd-dev.li.kernix.net') ? '' : 'display:none;'?>
+      }
+
+      div.toolbar {
+        height: 20px;
+        background: red;
+        padding: 2px;
+        color: #ffffff;
+        cursor: pointer;
+      }
+
+      div.content {
+        padding: 10px 15px;
+      }
+
+      input#clear-messages {
+        float: right;
+        margin: 5px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+    </style>
+  </div>
+</div>
+
+<?=H::inc('ntd:_aside.help')?>
+<script type="text/javascript" src="/app/ntd/scripts/formulaire/help.form.js"></script>
+
+<?=H::foot() ?>

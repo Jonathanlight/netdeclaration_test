@@ -1,0 +1,32 @@
+<div class="hbox renew-form-box">
+
+    <form>
+        <input type="hidden" name="record[adherent_id]" value="<?=$adherent->getId()?>" />
+        <table class="hbox " style="width:400px">
+            <tbody>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>Voulez vous écraser la dernière version des CGAU par l'avant dernière ?</legend>
+                        <div class="box">
+                            <div>
+                                <h1>Dernière version des CGAU: </h1>
+                                <p><?=$adherent->cgu_sign_infos?></p><br>
+                                <h1>Avant dernière version des CGAU: </h1>
+                                <p><?=$adherent->last_cgu_sign_infos?></p>
+                            </div>
+                        </div>
+
+                        <div class="launcher" style="">
+                            <input type="image" title="Ecraser les CGAU" src="/app/core/pix/action/store.png"
+                                   onclick="Kwo.F('adherent').onExec('cgau.replace', this, { callback: true}); return false;"/>
+                        </div>
+                    </fieldset>
+                </td>
+            </tr>
+            </tbody>
+
+        </table>
+
+    </form>
+</div>

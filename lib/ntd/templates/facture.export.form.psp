@@ -1,0 +1,21 @@
+<form>
+
+  <fieldset>
+    <legend>Export des factures</legend>
+
+    <table class="columns" style="margin:4px 2px;">
+      <tbody>
+        <tr>          
+          <td>
+            <div class="launcher" style="text-align:left;">
+              <input type="image" title="exporter" src="/app/core/pix/action/export.png"
+                     onclick="Kwo.F('facture').go('export', this); return false;"/>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </fieldset>
+
+</form>

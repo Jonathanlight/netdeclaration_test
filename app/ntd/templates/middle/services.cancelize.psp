@@ -1,0 +1,5 @@
+<a href="/middle/services"
+   class="btn btn--link"><?= c(l('adherents.secondaries.cancelize.button')) ?></a>
+
+
+

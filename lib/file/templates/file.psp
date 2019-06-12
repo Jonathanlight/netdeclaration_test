@@ -1,0 +1,100 @@
+<script>
+ var _file_path = "<?=$file->getName()?>";
+ var _path      = "<?=$file->getPath()?>";
+ var _filename = "<?=$file->getBaseName()?>";
+</script>
+<script src="/app/file/back.js" type="text/javascript"></script>
+
+<table class="layout"><tr><td width="40%" class="vBoxLeft">
+
+<fieldset class="list"><legend>Propriétés du fichier</legend>
+<table class="grid auto">
+<?php
+foreach ($info_arr as $k => $v) {
+  print("<tr".(($i++%2)?' class="alt"':'')."><td style='width:20%;'>$k</td><td id='$k'>$v</td></tr>\n");
+}
+?>
+</table>
+</fieldset>
+
+<fieldset class="list"><legend>Actions</legend>
+ <a href="javascript:Kwo.File.rename()">renommer</a><br/>
+
+<?php if (File::isImage($file)): ?>
+
+ <a href="javascript:$('rotate_box').raise()">réaliser une rotation</a><br/>
+ <a href="javascript:$('resize_box').raise()">changer les dimensions</a><br/>
+ <a href="javascript:file.cropselect()" style="display:none;">selectionner une zone</a>
+
+<?php 
+elseif ($file->getExtension() === 'zip'):
+
+  $zip = new ZipArchive;
+  $ret = $zip->open($file->getName());
+  $zip->numFiles;
+  //  $z = new PclZip($file->getName());
+  //  $zip_arr = $z->listContent();
+  print(" <a href='javascript:Kwo.File.unzip()'>décompresser (".$zip->numFiles." fichiers)</a>\n");
+
+elseif ($file->isText() && $file->isWritable($file->getName())):
+
+  print(' <a href="javascript:Kwo.File.edit()">éditer le contenu</a><br />'."\n");
+
+
+endif;
+if (in_array($file->getExtension(), array('csv', 'txt'))):
+
+  print(' <a href="javascript:Kwo.File.encode()">encoder le fichier en UTF-8</a>'."\n");
+
+endif;
+?>
+</fieldset>
+
+<div class="deck">
+
+<fieldset style="display:none;" id="rotate_box">
+ <legend>Effectuer une rotation</legend>
+ <input type="radio" id="angle90" checked="checked" /> 90° - 
+ <input type="radio" id="angle180" /> 180°<br/><br/>
+ <img src="/<?=PIX_PATH?>/action/exec.png"
+      onclick="Kwo.File.rotate()" class="button" />
+</fieldset>
+
+<fieldset style="display:none;" id="resize_box">
+ <legend>Nouvelles dimensions</legend>
+ <table class="layout"><tr>
+  <td style="width:50%;">
+   largeur<br/><input type="text" id="width" class="text" />
+  </td>
+  <td>
+   hauteur<br/><input type="text" id="height" class="text" />
+  </td>
+ </tr></table>
+ <img src="/<?=PIX_PATH?>/action/exec.png"
+      onclick="Kwo.File.resize()" class="button" />
+</fieldset>
+
+</div>
+
+</td><td class="vBoxRight">
+
+<?php if (File::isImage($file)): ?>
+<fieldset><legend>Aperçu</legend>
+ <div style="height:377px; width:100%; overflow-x:auto; overflow-y:auto;">
+ <a href="/<?=$file->getName()?>"
+    target="_blank"><img src='/<?=$file->getName()?>?time=<?=time()?>' /></a>
+</div>
+</fieldset>
+<?php elseif ($file->getExtension() === 'mp3'): ?>
+<fieldset><legend>Aperçu</legend>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="22" height="22" id="player" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="/app/file/swf/mp3_player.swf?mp3=<?=urlencode('/'.$file->getName())?>&col=0xBBBBBB" />
+<param name="quality" value="high" />
+<param name="wmode" value="transparent" />
+<embed src="/app/file/swf/mp3_player.swf?mp3=<?=urlencode('/'.$file->getName())?>&col=0xBBBBBB" quality="high" wmode="transparent" width="22" height="22" name="player" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+</fieldset>
+<?php endif; ?>
+
+</td></tr></table>

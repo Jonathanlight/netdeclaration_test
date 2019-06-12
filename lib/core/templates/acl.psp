@@ -1,0 +1,47 @@
+<fieldset data-model="<?=MODEL?>">
+ <legend>Responsable(s)</legend>
+
+<table class="columns"><tbody><tr><td style="width:60%;">
+
+<ul class="elts">
+<?php foreach ($users as $user): ?>
+<li><table class="fixed"><tr>
+
+<td>
+ <a href="javascript:void(0)"
+    data-id="<?=$user->getId()?>"
+    onclick="new Kwo.USR(this)"><?=$user->email?></a>
+  <?=$user?> (<?=$user->getId()?>) - <?=$user->created_at?>
+</td>
+
+<td style="text-align:right;">
+ <a href="javascript:void(0)"
+    data-confirm="êtes vous sûr ?"
+    data-id="<?=$user->getId()?>"
+    onclick="Kwo.ACL.onRemove(this)">supprimer</a>
+</td>
+
+</tr></table></li>
+<?php endforeach ; ?>
+</ul>
+
+</td><td>
+
+<form autocomplete="off"
+      onsubmit="Kwo.ACL.onAdd(this); return false;">
+
+<div class="elem">
+ <label>Adresse email ou user_id</label>
+ <input type="text" name="user" />
+</div>
+
+<div class="launcher">
+ <input type="image"
+        src="/app/core/pix/action/add.png"/>
+</div>
+
+</form>
+
+</td></tr></tbody></table>
+
+</fieldset>

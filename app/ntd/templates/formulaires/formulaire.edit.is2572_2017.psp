@@ -1,0 +1,1157 @@
+<div class="formulaire-page is2572_2017" data-label="IS 2572">
+  <table class="is2572_2017">
+
+
+  </table>
+  <table>
+
+    <tr class="tab-title">
+      <th class="maintitle" colspan="6">I - IS Brut</th>
+    </tr>
+    <tr class="tab-title">
+      <th class="subtitle">I - A impôt sur les sociétés dû au titre de l'exercice</th>
+      <th class="subtitle">Base</th>
+      <th class="subtitle"></th>
+      <th class="subtitle">Taux</th>
+      <th class="subtitle"></th>
+      <th class="subtitle">Montant à payer</th>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_TA">Impôt sur les Sociétés (au taux normal)</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">906443</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RA', 'value' => $is2572_2017['RA'])) ?>
+      </td>
+      <td class="line_id">101</td>
+      <td class="libelle libelle_right">33,33%</td>
+      <td class="line_id">102</td>
+      <td class="input">
+        <div class="line_impot">906576</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'TA', 'value' => $is2572_2017['TA'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_TB">Impôt sur les Sociétés (au taux réduit)</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">906444</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RB', 'value' => $is2572_2017['RB'])) ?>
+      </td>
+      <td class="line_id">103</td>
+      <td class="libelle libelle_right">15%</td>
+      <td class="line_id">104</td>
+      <td class="input">
+        <div class="line_impot">906577</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'TB', 'value' => $is2572_2017['TB'])) ?>
+      </td>
+    </tr>
+
+
+    <tr class="elt">
+      <td class="libelle" colspan="4">
+        <label for="is2572_GC">Impôt sur les plus values nettes</label>
+      </td>
+      <td class="line_id">105</td>
+      <td class="input">
+        <div class="line_impot">902418</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GC', 'value' => $is2572_2017['GC'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="4">
+        <label for="is2572_GD">Autre impôt à taux particulier</label>
+      </td>
+      <td class="line_id">106</td>
+      <td class="input">
+        <div class="line_impot">902419</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GD', 'value' => $is2572_2017['GD'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="4">
+        <label class="bold" for="is2572_GE">Total de l'IS brut ( = case 102 + 104 + 105 + 106)</label>
+      </td>
+      <td class="line_id">15</td>
+      <td class="input">
+        <div class="line_impot">500027</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GE', 'value' => $is2572_2017['GE'])) ?>
+      </td>
+    </tr>
+  </table>
+
+
+  <table>
+
+    <tr class="tab-title">
+      <th class="maintitle" colspan="3">II - Créances</th>
+    </tr>
+    <tr class="elt">
+      <td colspan="2" class="libelle">
+        Si vous avez des créances à déclarer cochez « OUI » pour accéder au pavé déclaratif sinon cochez « NON »
+      </td>
+      <td style="width: 140px">
+        <?= Elt::yesno(array('name' => 'is2572_2017_opts[toggle_1]', 'value' => (int) $is2572_2017_opts['toggle_1'],
+                             'id' => 'is2572_2017_opts[toggle_1]',
+                             'events' => array('click' => "$('is2572_2017_opts[toggle_1][1]').checked ? $('is2572_2017_opts_toggle_1').show() : $('is2572_2017_opts_toggle_1').hide()"))) ?>
+      </td>
+    </tr>
+
+    <tbody style="<?= $is2572_2017_opts['toggle_1'] > 0 ? '' : 'display:none' ?>" id="is2572_2017_opts_toggle_1">
+
+    <tr class="tab-title">
+      <th class="subtitle" colspan="3">II - A - Créances non reportables et non restituables</th>
+    </tr>
+
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_JA">Crédits d'impôts sur valeurs mobilières imputable sur l'IS</label>
+      </td>
+      <td class="line_id">16</td>
+      <td class="input">
+        <div class="line_impot">500028</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JA', 'value' => $is2572_2017['JA'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_MA">Crédits d'impôts étrangers, autres que sur valeurs mobilières, imputés sur IS</label>
+      </td>
+      <td class="line_id">17</td>
+      <td class="input">
+        <div class="line_impot">500029</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MA', 'value' => $is2572_2017['MA'])) ?>
+      </td>
+    </tr>
+
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_MH">VEL - Réduction d'impôt pour mise à disposition d'une flotte de vélos</label>
+      </td>
+      <td class="line_id">18</td>
+      <td class="input">
+        <div class="line_impot">908549</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MH', 'value' => $is2572_2017['MH'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_MD">Nouvelles créances non répertoriées ci-dessus</label>
+      </td>
+      <td class="line_id">44</td>
+      <td class="input">
+        <div class="line_impot">500048</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MD', 'value' => $is2572_2017['MD'])) ?>
+      </td>
+    </tr>
+
+
+    <tr class="elt">
+      <td class="libelle libelle_right">
+        <label for="is2572_RG">
+          <span class="bold">Sous total</span> (total des lignes II-A ; cases 16 + 17 + 18 + 44)
+        </label>
+      </td>
+      <td class="line_id">107</td>
+      <td class="input">
+        <div class="line_impot">906449</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RG', 'value' => $is2572_2017['RG'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle libelle_right">
+        <label for="is2572_RH">IS dû après imputation des créances non reportables et non restituables
+          <span class="bold">dans la limite de l'impôt dû</span> (Case 15 - 107)
+        </label>
+      </td>
+      <td class="line_id">108</td>
+      <td class="input">
+        <div class="line_impot">906450</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RH', 'value' => $is2572_2017['RH'])) ?>
+      </td>
+    </tr>
+
+
+    <tr class="tab-title">
+      <th class="subtitle" colspan="3">II-B – Créances reportables au titre de l'exercice pour leur montant total et
+                                       solde des créances reportables des exercices antérieurs
+      </th>
+    </tr>
+
+    <tr class="tab-title">
+      <th class="subtitle" colspan="3">Créances reportables et non restituables</th>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_LC">MEC - Réduction d'impôt au titre du mécénat au titre de N</label>
+      </td>
+      <td class="line_id">35</td>
+      <td class="input">
+        <div class="line_impot">500038</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LC', 'value' => $is2572_2017['LC'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="is2572_LD">dont UE ou EEE</label></td>
+      <td class="line_id">40</td>
+      <td class="input">
+        <div class="line_impot">901364</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LD', 'value' => $is2572_2017['LD'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle"><label for="is2572_RJ">MEC - Solde de créance des exercices antérieurs (Exercices N-5 à
+                                                 N-1)</label></td>
+      <td class="line_id">109</td>
+      <td class="input">
+        <div class="line_impot">906451</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RJ', 'value' => $is2572_2017['RJ'])) ?>
+      </td>
+    </tr>
+
+    <tr class="tab-title">
+      <th class="subtitle" colspan="3">Créances reportables et restituables</th>
+    </tr>
+
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_LF">CIC - Crédit d'impôt Compétitivité Emploi au titre de N</label>
+      </td>
+      <td class="line_id">64</td>
+      <td class="input">
+        <div class="line_impot">904112</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LF', 'value' => $is2572_2017['LF'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_LE">Montant du préfinancement</label>
+      </td>
+      <td class="line_id">65</td>
+      <td class="input">
+        <div class="line_impot">904111</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LE', 'value' => $is2572_2017['LE'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_OH">CIC - Crédit d'impôt Compétitivité Emploi, uniquement exercices > 12 mois au titre de N-1</label>
+      </td>
+      <td class="line_id">136</td>
+      <td class="input">
+        <div class="line_impot">907017</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'OH', 'value' => $is2572_2017['OH'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_OJ">Montant du préfinancement</label>
+      </td>
+      <td class="line_id">135</td>
+      <td class="input">
+        <div class="line_impot">907018</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'OJ', 'value' => $is2572_2017['OJ'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_RN">CIC - Solde de créance des exercices antérieurs (Exercices N-3 à N-1)</label>
+      </td>
+      <td class="line_id">110</td>
+      <td class="input">
+        <div class="line_impot">906455</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RN', 'value' => $is2572_2017['RN'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_OB">COR - Crédit d'impôt pour investissement en Corse au titre de N</label>
+      </td>
+      <td class="line_id">33</td>
+      <td class="input">
+        <div class="line_impot">500036</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'OB', 'value' => $is2572_2017['OB'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_RK">COR - Solde de créance des exercices antérieurs (Exercices N-10 à N-1)</label>
+      </td>
+      <td class="line_id">111</td>
+      <td class="input">
+        <div class="line_impot">906452</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RK', 'value' => $is2572_2017['RK'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_LB">RAD - Report en arrière de déficits au titre de N</label>
+      </td>
+      <td class="line_id">34</td>
+      <td class="input">
+        <div class="line_impot">500037</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LB', 'value' => $is2572_2017['LB'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_RL">RAD - Solde de créance des exercices antérieurs (Exercices N-5 à N-1)</label>
+      </td>
+      <td class="line_id">112</td>
+      <td class="input">
+        <div class="line_impot">906453</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RL', 'value' => $is2572_2017['RL'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_LA">CIR - Crédit impôt recherche au titre de N</label>
+      </td>
+      <td class="line_id">31</td>
+      <td class="input">
+        <div class="line_impot">500034</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LA', 'value' => $is2572_2017['LA'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_RM">CIR - Solde de créance des exercices antérieurs (Exercices N-3 à N-1)</label>
+      </td>
+      <td class="line_id">113</td>
+      <td class="input">
+        <div class="line_impot">906454</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RM', 'value' => $is2572_2017['RM'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_OC">Nouvelles créances non répertoriées</label>
+      </td>
+      <td class="line_id">50</td>
+      <td class="input">
+        <div class="line_impot">500054</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'OC', 'value' => $is2572_2017['OC'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_RR">Type de créance portée dans la case 50</label>
+      </td>
+      <td class="line_id">114</td>
+      <td class="input">
+        <div class="line_impot">906481</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RR', 'value' => $is2572_2017['RR'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle libelle_right">
+        <label for="is2572_RP"><span class="bold">Sous total (total des lignes II-B (hors case 40 et 34 et déduire les cases 65 et 135 dans la limite des cases 64 et 136);</span><br>
+          soit cases (35+109+64+136+110+33+111+112+31+113+50) - 65 - 135)
+        </label>
+      </td>
+      <td class="line_id">115</td>
+      <td class="input">
+        <div class="line_impot">906456</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RP', 'value' => $is2572_2017['RP'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_RS">IS dû après imputation des créances reportables et restituables dans la limite de l'impôt
+                               dû (Cases 108-115 )</label>
+      </td>
+      <td class="line_id">116</td>
+      <td class="input">
+        <div class="line_impot">906457</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RS', 'value' => $is2572_2017['RS'])) ?>
+      </td>
+    </tr>
+
+
+    <tr class="tab-title">
+      <th class="subtitle" colspan="3">II-C – Créances non reportables et restituables au titre de l'exercice</th>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_KA">FOR - Crédit d'impôt formation des dirigeants d'entreprise</label>
+      </td>
+      <td class="line_id">22</td>
+      <td class="input">
+        <div class="line_impot">500031</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KA', 'value' => $is2572_2017['KA'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_NA">RAC - Crédit pour le rachat d'une entreprise par ses salariés</label>
+      </td>
+      <td class="line_id">23</td>
+      <td class="input">
+        <div class="line_impot">500032</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NA', 'value' => $is2572_2017['NA'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_NA">FAM - Crédit d'impôt famille</label>
+      </td>
+      <td class="line_id">24</td>
+      <td class="input">
+        <div class="line_impot">500033</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KB', 'value' => $is2572_2017['KB'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_NB">CIN - Crédit d'impôt pour dépenses de production d'oeuvre cinématographiques</label>
+      </td>
+      <td class="line_id">25</td>
+      <td class="input">
+        <div class="line_impot">500042</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NB', 'value' => $is2572_2017['NB'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_KC">APR - Crédit d'impôt en faveur de l'apprentissage</label>
+      </td>
+      <td class="line_id">26</td>
+      <td class="input">
+        <div class="line_impot">500043</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KC', 'value' => $is2572_2017['KC'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_NC">EXP - Crédit d'impôt pour dépenses de prospection commerciale</label>
+      </td>
+      <td class="line_id">27</td>
+      <td class="input">
+        <div class="line_impot">500044</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NC', 'value' => $is2572_2017['NC'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_ND">PTZ - Crédit d'impôt en faveur de la premiére accession à la propriété</label>
+      </td>
+      <td class="line_id">30</td>
+      <td class="input">
+        <div class="line_impot">500047</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ND', 'value' => $is2572_2017['ND'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_NE">BIO - Crédit d'impôt biologique</label>
+      </td>
+      <td class="line_id">45</td>
+      <td class="input">
+        <div class="line_impot">500049</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NE', 'value' => $is2572_2017['NE'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_NF">PHO - Crédit d'impôt pour production d'oeuvre phonographique</label>
+      </td>
+      <td class="line_id">48</td>
+      <td class="input">
+        <div class="line_impot">500052</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NF', 'value' => $is2572_2017['NF'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_NG">MAI - Crédit d'impôt en faveur des maîtres restaurateurs</label>
+      </td>
+      <td class="line_id">52</td>
+      <td class="input">
+        <div class="line_impot">900763</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NG', 'value' => $is2572_2017['NG'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_RC">AUD - Crédit d'impôt pour dépense de production d'œuvres audiovisuelles</label>
+      </td>
+      <td class="line_id">53</td>
+      <td class="input">
+        <div class="line_impot">900764</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RC', 'value' => $is2572_2017['RC'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_NJ">ART - Crédit d'impôt en faveur des métiers d'art</label>
+      </td>
+      <td class="line_id">56</td>
+      <td class="input">
+        <div class="line_impot">900767</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NJ', 'value' => $is2572_2017['NJ'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_NK">CJV - Crédit d'impôt en faveur des créateurs de jeux vidéo</label>
+      </td>
+      <td class="line_id">58</td>
+      <td class="input">
+        <div class="line_impot">900769</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NK', 'value' => $is2572_2017['NK'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_NL">CAI - Crédit d'impôt en faveur de l'intéressement</label>
+      </td>
+      <td class="line_id">59</td>
+      <td class="input">
+        <div class="line_impot">900770</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NL', 'value' => $is2572_2017['NL'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_NM">CPE - Crédit d'impôt pour travaux d'amélioration de la performance énergétique</label>
+      </td>
+      <td class="line_id">60</td>
+      <td class="input">
+        <div class="line_impot">900771</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NM', 'value' => $is2572_2017['NM'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle"><label for="is2572_NN">CCI - Crédit d'impôt cinéma international</label></td>
+      <td class="line_id">61</td>
+      <td class="input">
+        <div class="line_impot">900772</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NN', 'value' => $is2572_2017['NN'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle"><label for="is2572_OD">PTR - Crédit d'impôt prêt à un taux 0 renforcé PTZ+</label></td>
+      <td class="line_id">62</td>
+      <td class="input">
+        <div class="line_impot">902447</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'OD', 'value' => $is2572_2017['OD'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle"><label for="is2572_KD">CIO - Crédit d'impôt Outre mer Productif</label></td>
+      <td class="line_id">63</td>
+      <td class="input">
+        <div class="line_impot">904110</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KD', 'value' => $is2572_2017['KD'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle"><label for="is2572_OE">Montant du préfinancement</label></td>
+      <td class="line_id">67</td>
+      <td class="input">
+        <div class="line_impot">906507</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'OE', 'value' => $is2572_2017['OE'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle"><label for="is2572_OF">COL - Crédit d'impôt Outre mer Logement</label></td>
+      <td class="line_id">66</td>
+      <td class="input">
+        <div class="line_impot">906508</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'OF', 'value' => $is2572_2017['OF'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle"><label for="is2572_OG">Montant du préfinancement</label></td>
+      <td class="line_id">68</td>
+      <td class="input">
+        <div class="line_impot">906506</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'OG', 'value' => $is2572_2017['OG'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle"><label for="is2572_OK">CSV - Crédit d'impôt spectacle vivant</label></td>
+      <td class="line_id">70</td>
+      <td class="input">
+        <div class="line_impot">908550</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'OK', 'value' => $is2572_2017['OK'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_NO">Nouvelles créances non répertoriées ci-dessous</label>
+      </td>
+      <td class="line_id">49</td>
+      <td class="input">
+        <div class="line_impot">500053</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NO', 'value' => $is2572_2017['NO'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_RD">Type de créance portée dans la case 49</label>
+      </td>
+      <td class="line_id">117</td>
+      <td class="input">
+        <div class="line_impot">906482</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RD', 'value' => $is2572_2017['RD'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle libelle_right">
+        <label for="is2572_RE">
+          <span class="bold">Sous total ((total des lignes II-C et déduire les cases 67 et 68 dans la limite des cases 63 et 66);</span>
+          soit cases (22+23+24+25+26+27+30+45+48+52+53+56+58+59+60+61+62+49+63+66)-67-68+70)
+        </label>
+      </td>
+      <td class="line_id">118</td>
+      <td class="input">
+        <div class="line_impot">906459</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RE', 'value' => $is2572_2017['RE'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle libelle_right">
+        <label for="is2572_RF">IS dû après imputation des créances non reportables et restituables <span class="bold">dans la limite de l'impôt dû</span>
+                               (Cases 116 - 118 )</label>
+      </td>
+      <td class="line_id">119</td>
+      <td class="input">
+        <div class="line_impot">906460</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RF', 'value' => $is2572_2017['RF'])) ?>
+      </td>
+    </tr>
+
+    <tr class="tab-title">
+      <th class="subtitle" colspan="3">II-D – Acomptes de l'exercice</th>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_RT">Versements effectués (acomptes et/ou soldes) moins remboursements déjà obtenus</label>
+      </td>
+      <td class="line_id">69</td>
+      <td class="input">
+        <div class="line_impot">906461</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RT', 'value' => $is2572_2017['RT'])) ?>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        L'IS à payer (Case 119 - 69) est reporté automatiquement en case 01. De même pour l'excédent d'IS (69 – 119) en
+        case 06
+
+      </td>
+    </tr>
+
+    <tr class="tab-title">
+      <th class="subtitle" colspan="3">II-E Données utiles au calcul des acomptes de l'exercice suivant</th>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_IA">Montant d'impôt exclu du calcul des acomptes IS</label>
+      </td>
+      <td class="line_id">38</td>
+      <td class="input">
+        <div class="line_impot">500041</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'IA', 'value' => $is2572_2017['IA'])) ?>
+      </td>
+    </tr>
+    </tbody>
+
+    <tr class="tab-title">
+      <th class="maintitle" colspan="3">III - Montant de la contribution exceptionnelle sur l'IS (CE – art. 235 ter ZA)
+      </th>
+    </tr>
+
+    <tr class="elt">
+      <td colspan="2" class="libelle">
+        Si vous avez des créances à déclarer cochez « OUI » pour accéder au pavé déclaratif sinon cochez « NON »
+      </td>
+      <td style="width: 140px">
+        <?= Elt::yesno(array('name' => 'is2572_2017_opts[toggle_2]', 'value' => (int) $is2572_2017_opts['toggle_2'],
+                             'id' => 'is2572_2017_opts[toggle_2]',
+                             'events' => array('click' => "$('is2572_2017_opts[toggle_2][1]').checked ? $('is2572_2017_opts_toggle_2').show() : $('is2572_2017_opts_toggle_2').hide()"))) ?>
+      </td>
+    </tr>
+
+    <tbody style="<?= $is2572_2017_opts['toggle_2'] > 0 ? '' : 'display:none' ?>" id="is2572_2017_opts_toggle_2">
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_RU">Base de la Contribution Exceptionnelle sur l’IS au titre de l'exercice</label>
+      </td>
+      <td class="line_id">120</td>
+      <td class="input">
+        <div class="line_impot">906474</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RU', 'value' => $is2572_2017['RU'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="is2572_RV">Montant de la contribution exceptionnelle au titre de
+                                                 l'exercice (Case 120 x 10,7%)</label></td>
+      <td class="line_id">41</td>
+      <td class="input">
+        <div class="line_impot">906462</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RV', 'value' => $is2572_2017['RV'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_ME">Crédits d'impôt étrangers, autres que sur valeurs mobilières</label>
+      </td>
+      <td class="line_id">20</td>
+      <td class="input">
+        <div class="line_impot">903442</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ME', 'value' => $is2572_2017['ME'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_RX">Montant de la Contribution exceptionnelle <span class="bold">due</span> au titre de
+                               l’exercice (case 41 - 20)</label>
+      </td>
+      <td class="line_id">121</td>
+      <td class="input">
+        <div class="line_impot">906505</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RX', 'value' => $is2572_2017['RX'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_RY">Versements effectués (acomptes et/ou soldes) moins remboursements déjà obtenus</label>
+      </td>
+      <td class="line_id">122</td>
+      <td class="input">
+        <div class="line_impot">906463</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RY', 'value' => $is2572_2017['RY'])) ?>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        Le solde de CE à payer (cases 121 - 122) est reporté automatiquement en case 02. De même pour l'excédent de CE
+        (cases 122 - 121) en case 07.
+      </td>
+    </tr>
+    </tbody>
+
+    <tr class="tab-title">
+      <th class="maintitle" colspan="3">IV - Montant de la contribution sociale sur l'IS (CSB – art. 235 ter ZC)</th>
+    </tr>
+
+    <tr class="elt">
+      <td colspan="2" class="libelle">
+        Si vous avez des créances à déclarer cochez « OUI » pour accéder au pavé déclaratif sinon cochez « NON »
+      </td>
+      <td style="width: 140px">
+        <?= Elt::yesno(array('name' => 'is2572_2017_opts[toggle_3]', 'value' => (int) $is2572_2017_opts['toggle_3'],
+                             'id' => 'is2572_2017_opts[toggle_3]',
+                             'events' => array('click' => "$('is2572_2017_opts[toggle_3][1]').checked ? $('is2572_2017_opts_toggle_3').show() : $('is2572_2017_opts_toggle_3').hide()"))) ?>
+      </td>
+    </tr>
+
+    <tbody style="<?= $is2572_2017_opts['toggle_3'] > 0 ? '' : 'display:none' ?>" id="is2572_2017_opts_toggle_3">
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_RW">Base de la Contribution Sociale sur l’IS</label>
+      </td>
+      <td class="line_id">123</td>
+      <td class="input">
+        <div class="line_impot">906475</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RW', 'value' => $is2572_2017['RW'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_RZ">Montant de la Contribution Sociale sur l'IS (case 123 x 3,3%)</label>
+      </td>
+      <td class="line_id">36</td>
+      <td class="input">
+        <div class="line_impot">906504</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RZ', 'value' => $is2572_2017['RZ'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_MB">Crédits d'impôt étrangers, autres que sur valeurs mobilières</label>
+      </td>
+      <td class="line_id">19</td>
+      <td class="input">
+        <div class="line_impot">500030</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MB', 'value' => $is2572_2017['MB'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PA">Montant de la Contribution Sociale sur l’IS due au titre de l’exercice (Case 36 -
+                               19)</label>
+      </td>
+      <td class="line_id">124</td>
+      <td class="input">
+        <div class="line_impot">906464</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PA', 'value' => $is2572_2017['PA'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PB">Versements effectués (acomptes et/ou soldes) moins remboursements déjà obtenus</label>
+      </td>
+      <td class="line_id">125</td>
+      <td class="input">
+        <div class="line_impot">906465</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PB', 'value' => $is2572_2017['PB'])) ?>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        Le solde de CSB à payer (cases 124 - 125) est reporté automatiquement en case 03. De même l'excédent de CSB
+        (cases 125 - 124) est reporté en case 08.
+      </td>
+    </tr>
+    </tbody>
+
+    <tr class="tab-title">
+      <th class="maintitle" colspan="3">V - Montant de la contribution annuelle sur les revenus locatifs (CRL)</th>
+    </tr>
+
+    <tr class="elt">
+      <td colspan="2" class="libelle">
+        Si vous avez des créances à déclarer cochez « OUI » pour accéder au pavé déclaratif sinon cochez « NON »
+      </td>
+      <td style="width: 140px">
+        <?= Elt::yesno(array('name' => 'is2572_2017_opts[toggle_4]', 'value' => (int) $is2572_2017_opts['toggle_4'],
+                             'id' => 'is2572_2017_opts[toggle_4]',
+                             'events' => array('click' => "$('is2572_2017_opts[toggle_4][1]').checked ? $('is2572_2017_opts_toggle_4').show() : $('is2572_2017_opts_toggle_4').hide()"))) ?>
+      </td>
+    </tr>
+    <tbody style="<?= $is2572_2017_opts['toggle_4'] > 0 ? '' : 'display:none' ?>" id="is2572_2017_opts_toggle_4">
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PC">Montant du chiffre d'affaire soumis à la contribution annuelle sur les Revenus
+                               Locatifs</label>
+      </td>
+      <td class="line_id">126</td>
+      <td class="input">
+        <div class="line_impot">906466</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PC', 'value' => $is2572_2017['PC'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PM">Montant de la contribution annuelle sur les Revenus Locatifs (Case 126 x 2,5 %) </label>
+      </td>
+      <td class="line_id">37</td>
+      <td class="input">
+        <div class="line_impot">906565</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PM', 'value' => $is2572_2017['PM'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PD">Versements effectués (acomptes et/ou soldes) moins remboursements déjà obtenus</label>
+      </td>
+      <td class="line_id">127</td>
+      <td class="input">
+        <div class="line_impot">906467</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PD', 'value' => $is2572_2017['PD'])) ?>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="3">
+        Le solde de CRL à payer (Cases 37 - 127) est reporté automatiquement en case 04. De même, l'excédent de CRL
+        (Cases 127 - 37) est reporté en case 09.
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+
+  <div class="break"></div>
+
+  <table>
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">RECAPITULATIF DES ELEMENTS DECLARES D'IS ET DES CONTRIBUTIONS ASSIMILEES</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th></th>
+      <th></th>
+      <th>Montants restant à payer</th>
+      <th></th>
+      <th>Excédents constatés</th>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PN">Impôt sur les sociétés</label>
+      </td>
+      <td class="line_id">01</td>
+      <td class="input">
+        <div class="line_impot">906566</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PN', 'value' => $is2572_2017['PN'])) ?>
+      </td>
+      <td class="line_id">06</td>
+      <td class="input">
+        <div class="line_impot">906567</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PQ', 'value' => $is2572_2017['PQ'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle"><label for="is2572_PR">Contribution exceptionnelle</label></td>
+      <td class="line_id">02</td>
+      <td class="input">
+        <div class="line_impot">906568</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PR', 'value' => $is2572_2017['PR'])) ?>
+      </td>
+      <td class="line_id">07</td>
+      <td class="input">
+        <div class="line_impot">906569</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PS', 'value' => $is2572_2017['PS'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PT">Contributions sociales</label>
+      </td>
+      <td class="line_id">03</td>
+      <td class="input">
+        <div class="line_impot">906570</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PT', 'value' => $is2572_2017['PT'])) ?>
+      </td>
+      <td class="line_id">08</td>
+      <td class="input">
+        <div class="line_impot">906571</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PU', 'value' => $is2572_2017['PU'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PV">Contributions annuelles sur les revenus locatifs</label>
+      </td>
+      <td class="line_id">04</td>
+      <td class="input">
+        <div class="line_impot">906572</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PV', 'value' => $is2572_2017['PV'])) ?>
+      </td>
+      <td class="line_id">09</td>
+      <td class="input">
+        <div class="line_impot">906573</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PW', 'value' => $is2572_2017['PW'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label class="bold" for="is2572_AD">Totaux</label>
+      </td>
+      <td class="line_id">05</td>
+      <td class="input">
+        <div class="line_impot">500021</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AD', 'value' => $is2572_2017['AD'])) ?>
+      </td>
+      <td class="line_id">10</td>
+      <td class="input">
+        <div class="line_impot">500022</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BD', 'value' => $is2572_2017['BD'])) ?>
+      </td>
+    </tr>
+
+
+    <tr class="elt elt-special boldback no-border-bottom">
+      <td class="libelle_right">
+        <label class="bold" for="is2572_CA">Montant total à payer (= (case 05 - case 10) ou 0 si montant négatif )
+                                            :</label>
+      </td>
+      <td class="line_id">11</td>
+      <td class="input">
+        <div class="line_impot">500023</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA', 'value' => $is2572_2017['CA'],
+                                                             'message' => '2572_CA =2572_AD - 2572_BD ou =0 si montant négatif - si 2572_CA > 0 alors 2572_DA = 0 ou absente')) ?>
+      </td>
+      <td colspan="2"></td>
+    </tr>
+
+
+    <tr class="elt">
+
+      <td class="libelle" colspan="5">
+        Paiement de l'IS par imputation d'une autre taxe : (si vous souhaitez utiliser un trop versé d'une taxe pour
+        acquitter le montant de l'IS et des contributions assimilées complétez les cases ci-dessous :
+      </td>
+
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PH">Contribution visée (TVA ou TS ou TVS)</label>
+      </td>
+      <td colspan="2"></td>
+      <td class="line_id">131</td>
+      <td class="input">
+        <div class="line_impot">906471</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PH', 'value' => $is2572_2017['PH'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PJ">Date limite de paiement</label>
+      </td>
+      <td colspan="2"></td>
+      <td class="line_id">132</td>
+      <td class="input">
+        <div class="line_impot">906472</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PJ', 'value' => $is2572_2017['PJ'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PK">Montant à Imputer</label>
+      </td>
+      <td colspan="2"></td>
+      <td class="line_id">133</td>
+      <td class="input">
+        <div class="line_impot">906473</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PK', 'value' => $is2572_2017['PK'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PL">Montant à payer après imputation d'une autre taxe (case 11 - case 133)</label>
+      </td>
+      <td colspan="2"></td>
+      <td class="line_id">134</td>
+      <td class="input">
+        <div class="line_impot">906564</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PL', 'value' => $is2572_2017['PL'])) ?>
+      </td>
+    </tr>
+
+
+    <tr class="elt elt-special boldback">
+
+      <td class="libelle_right" colspan="3">
+        <label class="super_bold">OU</label>
+        <label class="super_bold" for="is2572_DA">Montant total de l'excédent (= (case 10 - case 05) ou 0 si montant
+                                                  négatif )</label>
+      </td>
+      <td class="line_id">12</td>
+      <td class="input">
+        <div class="line_impot">500024</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA', 'value' => $is2572_2017['DA'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_EA">Montant de l'excédent imputé sur le premier acompte de l'exercice suivant</label>
+      </td>
+      <td colspan="2"></td>
+      <td class="line_id">13</td>
+      <td class="input">
+        <div class="line_impot">500025</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EA', 'value' => $is2572_2017['EA'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="5">
+        <label>Demande d'imputation sur échéance future (impôt ou taxe réglé par cette modalité) de l'excédent de l'IS
+               :</label>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PE">Contribution visée (TVA ou TS ou TVS ou FPC ou PEEC ou TA)</label>
+      </td>
+      <td colspan="2"></td>
+      <td class="line_id">128</td>
+      <td class="input">
+        <div class="line_impot">906468</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PE', 'value' => $is2572_2017['PE'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PF">Date limite de paiement</label>
+      </td>
+      <td colspan="2"></td>
+      <td class="line_id">129</td>
+      <td class="input">
+        <div class="line_impot">906469</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PF', 'value' => $is2572_2017['PF'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_PG">Montant à Imputer</label>
+      </td>
+      <td colspan="2"></td>
+      <td class="line_id">130</td>
+      <td class="input">
+        <div class="line_impot">906470</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PG', 'value' => $is2572_2017['PG'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="is2572_EB">Remboursement d'excédent de versement demandé (= case 12 - case 13 - case 130)</label>
+      </td>
+      <td colspan="2"></td>
+      <td class="line_id">14</td>
+      <td class="input">
+        <div class="line_impot">500026</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EB', 'value' => $is2572_2017['EB'])) ?>
+      </td>
+    </tr>
+
+  </table>
+
+</div>

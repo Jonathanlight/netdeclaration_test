@@ -1,0 +1,147 @@
+<div class="formulaire-page" data-label="TVA 3514 Partie I">
+
+  <table>
+
+    <tr class="tab-title">
+      <th class="subtitle" colspan="5">1. JE SOUHAITE M'ACQUITTER DU MONTANT DE L'ACOMPTE ATTENDU, LE MODULER OU LE
+                                       SUSPENDRE ET IMPUTER LE CAS ECHEANT UN EVENTUEL CREDIT DE TVA
+      </th>
+    </tr>
+    <tr class="elt">
+      <td class="line_id">01</td>
+      <td class="libelle" colspan="3">
+        <label for="tva3514_20160101_ha">Montant de l'acompte attendu ou modulé</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">903949</div>
+        <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HA',
+                                                             'value' => $tva3514_20160101['HA'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="line_id">02</td>
+      <td class="libelle" colspan="3">
+        <label for="tva3514_20160101_hb">Montant du crédit ou de l'excédent de TVA, figurant sur lé précédente
+                                         déclaration CA12/CA12E, et à déduire éventuellement du montant de l'acompte
+                                         attendu ou modulé</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">903950</div>
+        <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HB',
+                                                             'value' => $tva3514_20160101['HB'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="line_id">03</td>
+      <td class="libelle" colspan="3">
+        <label for="tva3514_20160101_hc">Montant total de la TVA à payer à la place de l'acompte de TVA (ligne 01 -
+                                         ligne 02)</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">903951</div>
+        <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HC',
+                                                             'value' => $tva3514_20160101['HC'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="line_id">04</td>
+      <td class="libelle" colspan="3">
+        <label for="tva3514_20160101_de">Je demande la suspension du ou des acomptes restant à courir</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">100307</div>
+        <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DE',
+                                                             'value' => $tva3514_20160101['DE'])) ?>
+      </td>
+    </tr>
+
+    <tr class="tab-title">
+      <th class="subtitle" colspan="5">2. JE SOUHAITE BENEFICIER D'UN REMBOURSEMENT DE CREDIT DE TVA SUR
+                                       INVESTISSEMENTS
+      </th>
+    </tr>
+    <tr class="elt">
+      <td class="line_id">05</td>
+      <td class="libelle" colspan="3">
+        <label for="tva3514_20160101_ia">Montant de la TVA collectée au titre du semestre</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">903952</div>
+        <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'IA',
+                                                             'value' => $tva3514_20160101['IA'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="line_id">06</td>
+      <td class="libelle" colspan="3">
+        <label for="tva3514_20160101_ib">Montant de la TVA déductible au titre du semestre</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">903953</div>
+        <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'IB',
+                                                             'value' => $tva3514_20160101['IB'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="line_id">07</td>
+      <td class="libelle" colspan="3">
+        <label for="tva3514_20160101_ic">Crédit de TVA dégagé au titre du semestre (ligne 06 - ligne 05)</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">903954</div>
+        <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'IC',
+                                                             'value' => $tva3514_20160101['IC'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="line_id">08</td>
+      <td class="libelle" colspan="3">
+        <label for="tva3514_20160101_id">Remboursement de la TVA sur investissements (indiquez le montant du
+                                         remboursement qui est sollicité dans les conditions habituelles sur le
+                                         formulaire n°3519)</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">903955</div>
+        <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ID',
+                                                             'value' => $tva3514_20160101['ID'])) ?>
+      </td>
+    </tr>
+
+
+
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">CADRE RESERVE A LA CORRESPONDANCE</th>
+    </tr>
+    <tr class="tab-title">
+      <th class="input" colspan="4">
+        <div class="line_impot">100447 100547 100548 100549 100550</div>
+        <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB',
+                                                             'value' => ($tva3514_20160101['CB1'] . $tva3514_20160101['CB2'] . $tva3514_20160101['CB3'] . $tva3514_20160101['CB4'] . $tva3514_20160101['CB5']))) ?>
+      </th>
+      <th class="subtitle">
+        <label for="tva3517sca12_ac">Mention expresse</label>
+        <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CC',
+                                                             'value' => $tva3514_20160101['CC'])) ?>
+        <div class="line_impot">100124</div>
+      </th>
+    </tr>
+    <tr class="elt">
+      <td class="libelle" colspan="4">
+        <label for="tva3514_20160101_ca">Paiement par imputation (adresser l'imprimé 3516, téléchargeable sur
+                                         www.impots.gouv.fr, à votre service des impots)</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">100123</div>
+        <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA',
+                                                             'value' => $tva3514_20160101['CA'])) ?>
+      </td>
+    </tr>
+  </table>
+  <div style="display:none">
+    <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB1', 'value' => $tva3514_20160101_20140101['CB1'])) ?>
+    <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB2', 'value' => $tva3514_20160101_20140101['CB2'])) ?>
+    <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB3', 'value' => $tva3514_20160101_20140101['CB3'])) ?>
+    <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB4', 'value' => $tva3514_20160101_20140101['CB4'])) ?>
+    <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB5', 'value' => $tva3514_20160101_20140101['CB5'])) ?>
+  </div>
+</div>

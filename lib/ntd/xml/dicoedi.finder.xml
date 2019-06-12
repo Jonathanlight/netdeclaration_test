@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="id desc">
+ <filters>
+  <filter name="code_table" options="Dicoedi::collect()->asHash('code_table', 'code_table')" />
+  <filter name="name" />
+  <filter name="value" />
+  <filter name="id" />
+ </filters>
+ <cols>
+  <col name="code_table"  />
+  <col name="name" />
+  <col name="value" />
+ </cols>
+</finder>
+
+</kwo-interface>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kwo-interface>
+<finder order="app desc, code asc">
+
+<filters>
+ <filter name="id" />
+ <filter name="code" />
+ <filter name="|%%|cache" label="valeur" />
+ <filter name="extension_id" type="radio"
+         options="Snippet::extensions()" label="extension"/>
+ <filter name="app" />
+</filters>
+
+<cols>
+ <col name="code" />
+ <col name="app" />
+ <col name="extension_id" />
+ <col name="locales" />
+ <col name="description" />
+</cols>
+
+</finder>
+</kwo-interface>

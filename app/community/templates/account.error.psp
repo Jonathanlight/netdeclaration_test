@@ -1,0 +1,13 @@
+<div class="error-box">
+  <img src="/app/core/pix/error48.gif" class="error-picto" />
+  <div class="error-content">
+    <strong><?=empty($_error_label)?'Attention !':$_error_label?></strong>
+    <?php if (strlen($_error_msg) < 4): ?>
+      <!-- <?=$msg?> -->
+      <?=c(l('snippet:page.failure'))?>
+    <?php else: ?>
+      <?=c($_error_msg)?>
+    <?php endif; ?>
+ </div>
+ <div style="clear:both;"></div>
+</div>

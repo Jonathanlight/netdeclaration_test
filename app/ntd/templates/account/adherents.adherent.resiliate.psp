@@ -1,0 +1,2 @@
+<a class="btn btn--link" href="/account/ntd/adherents"><?= c(l('adherents.secondaries.cancelize.button')) ?></a>
+

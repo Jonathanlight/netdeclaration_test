@@ -1,0 +1,191 @@
+<?=
+H::head(array('scripts' => array(
+    '/app/core/scripts/scriptaculous/scriptaculous.js?load=effects,dragdrop,controls',
+    '/app/declaration/scripts/wrapper.js',
+    '/app/declaration/scripts/operation.js',
+    '/app/declaration/scripts/field.js'
+  ),
+  'styles' => array(
+    '/app/ntd/styles/declaration/master.css',
+    '/app/ntd/styles/declaration/front.css',
+    '/app/ntd/styles/declaration/account.css',
+    '/app/ntd/styles/declaration/declaration.css',
+    '/app/declaration/styles/wrapper.css',
+    '/app/declaration/styles/imprime.css',
+    '/app/ntd/styles/declaration/print.css'
+  ),
+)) ?>
+
+<div class="wrapper <?=P('app.domain') == 'dev.ntd-dev.li.kernix.net' ? 'pulsar' : ''?>" data-return_link="<?=$return_link?>" data-declaration_id="<?=$declaration->getId()?>"
+     data-rcm="<?=$declaration->getDectype()->document_code == Formulairetype::DOCUMENT_CODE_RCM ? l('account.declaration.edit.declaration.submit') : ''?>">
+
+  <div class="wrapper-header">
+    <div class="wrapper-header-bandeau">
+      <img src="/app/ntd/pix/logo-form.png" alt="logo"/>
+      <span class="title"><?=c(l('form.title'))?>.</span>
+      <div class="identity">
+        <span class="name"><?=$adherent->company?></span>
+        <span class="siret">N° SIRET : <?=$adherent->siret?></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper-content <?=$dectype->hasFlag(Dectype::FLAG_PRINT_ONE_PAGE) ? 'no-page-break' : ''?>">
+
+
+    <div class="button-back">
+      <input type="button" class="ntd-button"
+             value="Revenir à la liste"
+             data-btn="leave"
+             data-confirm="Êtes-vous sûr de vouloir quitter cette déclaration ?"
+      />
+      <input type="button" class="ntd-button white" value="Télécharger la déclaration" data-key="<?=$declaration->getKey()?>" data-btn="download" style="float:right; margin-right:0;"/>
+<!--
+      <input type="button" class="ntd-button white" value="Imprimer la déclaration" data-btn="print" style="float:right; margin-right:0;"/>
+-->
+    <?php if ($declaration->canDuplicate()): ?>
+      <input type="button" class="ntd-button white fleft" data-btn="duplicate" value="Modifier"/>
+    <?php endif; ?>
+    </div>
+
+    <h1 class="name-form">Déclaration : <?=$declaration->getDectype()->name?></h1>
+  <?php if ($declaration->getDectype()->hasFlag(Dectype::FLAG_STEP_DISPLAY)): ?>
+    <tr>
+      <div class="declaration-steps" id="declaration-steps-box"></div>
+    </tr>
+  <?php endif; ?>
+
+    <div class="declaration-content">
+      <?=H::inc('declaration:wrapper.pagination.buttons') ?>
+
+      <div class="formulaires-pagines">
+        <?php if (!$declaration->getDectype()->hasFlag(Dectype::FLAG_STEP_DISPLAY)): ?>
+        <div class="imprime-page home no-print" data-code="" style="display:none;">
+
+          <table class="ntd-table" style="width:600px; margin:0 auto;">
+            <thead>
+              <tr>
+                <th>Formulaire</th>
+                <th style="width:260px;" align="center">État</th>
+              </tr>
+            </thead>
+
+          <?php foreach ($ftypes_imprimes as $ftype_imprimes): ?>
+            <tbody data-ftype_code="<?=$ftype_imprimes['ftype']->code?>">
+            <?php if (!$ftype_imprimes['ftype']->isRepetable($ftype_imprimes['millesime'])) : ?>
+              <tr>
+                <td>
+                  <span class="label"><?=$ftype_imprimes['ftype']->code?> </span>
+                </td>
+                <td>
+                  <span class="formulaire-state <?=$ftype_imprimes['imprimes'][0]->getFormulaire() ? 'saved' : 'new'?>">
+                  <?=$ftype_imprimes['imprimes'][0]->getFormulaire() ? 'Formulaire enregistré.' : 'Formulaire vide (non enregistré).'?>
+                  </span>
+                </td>
+              </tr>
+            <?php else: ?>
+              <tr>
+                <td>
+                  <p class="formulaire-title">
+                    <span class="label"><?=$ftype_imprimes['ftype']->code?> </span>
+                  </p>
+                </td>
+                <td align="center"><?=c(l('form.rajoutable'))?></td>
+              </tr>
+            <?php foreach ($ftype_imprimes['imprimes'] as $imprime) : ?>
+              <tr data-index="<?=$imprime->getIndex()?>">
+                <td>
+                  <p class="formulaire-single">
+                    <span class="label"><?=$ftype_imprimes['ftype']->code?> - Occurence N°<?=($imprime->getIndex() + 1)?></span>
+                  </p>
+                </td>
+                <td>
+                  <span class="formulaire-state <?=$imprime->getFormulaire() ? 'saved' : 'new'?>"><?=$imprime->getFormulaire() ? 'Formulaire enregistré.' : 'Formulaire vide (non enregistré).'?></span>
+                </td>
+              </tr>
+            <?php endforeach; ?>
+            <?php endif; ?>
+            </tbody>
+          <?php endforeach; ?>
+
+          </table>
+        </div>
+      <?php endif; ?>
+      <?php foreach ($ftypes_imprimes as $ftype_imprimes):
+
+        if ($ftype_imprimes['ftype']->isRepetable($ftype_imprimes['millesime'])) :
+          $options = array();
+          foreach ($ftype_imprimes['imprimes'] as $imprime) {
+            $options[$imprime->getIndex()] = 'Occurence N°' . ($imprime->getIndex() + 1);
+          }
+          ?>
+
+            <div class="imprime-page formulaire-repetable"
+                 data-code="<?=$ftype_imprimes['ftype']->code?>"
+                 data-required="<?=(int) $declaration->getDectype()->isFormulairetypeRequired($ftype_imprimes['ftype'])?>"
+                 style="display:none;">
+              <div class="formulaire-repetable-select">
+              <?=Elt::select(array('options' => $options,
+                                   'first' => 'Séléctionnez un formulaire',
+                                   'value' => -1,
+                                   'label' => 'Formulaires répétables : '))?>
+                <a href="javascript:void(0)" class="btn-add ntd-button white"><span>Ajouter</span></a>
+                <a href="javascript:void(0)" class="btn-delete ntd-button white"
+                   data-declaration_id="<?=$declaration->getId()?>"
+                   data-formulairetype_id="<?=$ftype_imprimes['ftype']->getId()?>"><span>Supprimer</span></a>
+              </div>
+              <div class="default-page">
+                Page par défaut..
+                Vous pouvez ajouter ou sélectionner vos formulaires avec la liste déroulante ...
+              </div>
+              <div class="panels">
+              <?php foreach ($ftype_imprimes['imprimes'] as $imprime): ?>
+              <?=H::inc('declaration:wrapper.imprime.form', array('imprime' => $imprime,
+                                                                  'formulairetype' => $ftype_imprimes['ftype'],
+                                                                  'itemplate' => $ftype_imprimes['itemplate'],
+                                                                  'millesime' => $ftype_imprimes['millesime'],
+                                                                  'declaration' => $declaration)) ?>
+              <?php endforeach; ?>
+              </div>
+
+            <?=H::inc('declaration:wrapper.imprime.form', array('imprime' => $ftype_imprimes['model'],
+                                                                'formulairetype' => $ftype_imprimes['ftype'],
+                                                                'millesime' => $ftype_imprimes['millesime'],
+                                                                'itemplate' => $ftype_imprimes['itemplate'],
+                                                                'declaration' => $declaration,
+                                                                'model' => true))?>
+            </div>
+
+          <?php else: ?>
+
+        <?php foreach ($ftype_imprimes['imprimes'] as $imprime): ?>
+          <div class="imprime-page" data-code="<?=$ftype_imprimes['ftype']->code?>" style="display:none;">
+          <?=H::inc('declaration:wrapper.imprime.form', array('formulairetype' => $ftype_imprimes['ftype'],
+                                                              'itemplate' => $ftype_imprimes['itemplate'],
+                                                              'imprime' => $imprime,
+                                                              'millesime' => $ftype_imprimes['millesime'],
+                                                              'declaration' => $declaration)) ?>
+          </div>
+        <?php endforeach; ?>
+        <?php endif; ?>
+        <?php endforeach; ?>
+      </div>
+
+      <?=H::inc('declaration:wrapper.pagination.buttons')?>
+    </div>
+  </div>
+
+  <div class="print-footer">
+    <span class="declaration-number">Declaration N°<?=$declaration->getId()?></span> -
+    <span class="adherent-company"><?=$adherent->company?></span> -
+    <span class="adherent-siret">N° SIRET : <?=$adherent->siret?></span> -
+    <span class="exercice-dates"></span>
+  </div>
+
+</div>
+
+<?=H::inc('ntd:_aside.help')?>
+
+<script type="text/javascript">document.observe('dom:loaded', $D)</script>
+<script type="text/javascript" src="/app/ntd/scripts/formulaire/help.form.js"></script>
+<?=H::foot() ?>

@@ -1,0 +1,303 @@
+<div class="formulaire-page page-form" data-label="IS 2573 I">
+  <table class="is2573_2017">
+    <tr class="elt">
+      <td class="libelle">
+        Société bénéficiant du régime fiscal des groupes de sociétés
+      </td>
+      <td class="input center">
+        <div class="line_impot">903956</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA', 'field_name' => 'AA', 'value' => $is2573_2017['AA'])) ?>
+      </td>
+    </tr>
+  </table>
+
+  <table class="is2573_2017">
+    <thead>
+      <tr class="tab-title">
+        <th class="maintitle" colspan="10">
+          I - DEMANDE DE REMBOURSEMENT DE CREANCES
+        </th>
+      </tr>
+    </thead>
+    <?php
+      $rows_count = 0;
+      foreach ($is2573_2017 as $field => $value) {
+        if (strpos($field, 'AB') !== false) $rows_count++;
+      }
+      $rows_count = max(1, $rows_count);
+    ?>
+    <?php for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++) : ?>
+      <tbody class="is2573_2017-dynamic-row-1">
+        <tr class="tab-title">
+          <th colspan="9" class="subtitle" data-ligne_number="Ligne N°((row_index))">Ligne N°<?= $tr_index ?></th>
+        </tr>
+
+        <tr class="elt">
+          <td class="line_impot" rowspan="2">Nature de la créance ou du crédit d'impôt</td>
+          <td class="line_impot" rowspan="2">Année ou exercice d'origine de la créance</td>
+          <td class="line_impot" rowspan="2">Montant de l'intérêt légal à déduire (Uniquement pour les RAD en procédure
+            collective)
+          </td>
+          <td class="line_impot" rowspan="2">Montant du remboursement sollicité</td>
+          <td class="line_impot" colspan="2">Demande formulée suite à l'ouverture d'une procédure collective</td>
+          <td style="text-align:center; padding:0; width:25px;" rowspan="5" class="no-print">
+            <a href="javascript:void(0)"
+               onclick="ntd.tableRowManager.removeTableRow($(this).up('tbody'), 'is2573_2017-dynamic-row-1', 'tbody')"
+               title="Supprimer la ligne" style="padding:10px;">
+              <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png"/>
+            </a>
+          </td>
+        </tr>
+
+        <tr class="elt">
+          <td class="line_impot">Nature de la procédure</td>
+          <td class="line_impot">Date d'ouverture de la procédure</td>
+        </tr>
+
+        <tr class="elt">
+          <td class="input small-input center" data-field="AB">
+            <div class="line_impot">903930</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AB', 'field_name' => 'AB/' . $tr_index, 'value' => $is2573_2017['AB/' . $tr_index])) ?>
+          </td>
+          <td class="input small-input center" data-field="AC">
+            <div class="line_impot">903931</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AC', 'field_name' => 'AC/' . $tr_index, 'value' => $is2573_2017['AC/' . $tr_index])) ?>
+          </td>
+          <td class="input small-input center" data-field="AF">
+            <div class="line_impot">903934</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AF', 'field_name' => 'AF/' . $tr_index, 'value' => $is2573_2017['AF/' . $tr_index])) ?>
+          </td>
+          <td class="input small-input center" data-field="AG">
+            <div class="line_impot">903935</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG', 'field_name' => 'AG/' . $tr_index, 'value' => $is2573_2017['AG/' . $tr_index])) ?>
+          </td>
+          <td class="input small-input center" data-field="AH">
+            <div class="line_impot">903936</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AH', 'field_name' => 'AH/' . $tr_index, 'value' => $is2573_2017['AH/' . $tr_index])) ?>
+          </td>
+          <td class="input small-input center" data-field="AI">
+            <div class="line_impot">903937</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AI', 'field_name' => 'AI/' . $tr_index, 'value' => $is2573_2017['AI/' . $tr_index])) ?>
+          </td>
+        </tr>
+
+        <tr class="elt">
+          <td class="line_impot" colspan="2">
+            Motif de la demande<br> (Jeune entreprise innovante (JEI), ou PME au sens communautaire (PME), ou entreprise nouvelle (ENN))
+          </td>
+          <td class="line_impot" colspan="2">
+            Utilisation de la créance - Contribution utilisée<br> IEF - Typologie d'impôt ou taxe
+          </td>
+          <td class="line_impot">
+            IEF - Date de l’échéance
+          </td>
+          <td class="line_impot">
+            IEF – Montant à utiliser
+          </td>
+        </tr>
+
+        <tr class="elt">
+          <td colspan="2" class="input small-input center" data-field="KA">
+            <div class="line_impot">906479</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'KA', 'field_name' => 'KA/' . $tr_index, 'value' => $is2573_2017['KA/' . $tr_index])) ?>
+          </td>
+          <td colspan="2" class="input small-input center" data-field="KB">
+            <div class="line_impot">906476</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'KB', 'field_name' => 'KB/' . $tr_index, 'value' => $is2573_2017['KB/' . $tr_index])) ?>
+          </td>
+          <td class="input small-input center" data-field="KC">
+            <div class="line_impot">906477</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'KC', 'field_name' => 'KC/' . $tr_index, 'value' => $is2573_2017['KC/' . $tr_index])) ?>
+          </td>
+          <td class="input small-input center" data-field="KD">
+            <div class="line_impot">906478</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'KD', 'field_name' => 'KD/' . $tr_index, 'value' => $is2573_2017['KD/' . $tr_index])) ?>
+          </td>
+        </tr>
+      </tbody>
+    <?php endfor ?>
+    <tfoot>
+      <tr class="no-print">
+        <td colspan="9">
+          <a class="link-puce" href="javascript:void(0)"
+             onclick="ntd.tableRowManager.addTableRow('is2573_2017-dynamic-row-1', 'tbody')">Ajouter une ligne</a>
+        </td>
+      </tr>
+      <tr class="elt">
+        <td class="libelle" colspan="4">
+          Total du montant des remboursements sollicités
+        </td>
+        <td class="input" colspan="2">
+          <div class="line_impot">908576</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AJ', 'field_name' => 'AJ', 'value' => $is2573_2017['AJ'])) ?>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<div class="formulaire-page page-form" data-label="IS 2573 II">
+  <table class="is2573_2017">
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">
+        II. - CESSION DE CREANCE LORS DE L'ENTREE DANS UN GROUPE DE SOCIETES (ART 223 A du CGI)
+        <br>A remplir par la société membre du groupe et par la société mère
+        <br>A déposer auprès du service des impôts dont elles dépendent
+      </th>
+    </tr>
+    <tr class="elt">
+      <td class="libelle" colspan="3">
+        SIREN de la société tête de groupe
+      </td>
+      <td class="input" colspan="2">
+        <div class="line_impot">903938</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BA', 'field_name' => 'BA', 'value' => $is2573_2017['BA'])) ?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle" colspan="5">
+        Créance née du report en arrière des déficits (RAD)
+      </td>
+    </tr>
+    <tbody>
+      <tr class="tab-title">
+        <th>Date de clôture de l'exercice de détermination du crédit, de la créance ou de la réduction d'impôt</th>
+        <th>Date de cession</th>
+        <th>SIREN de la société à l'origine de la créance</th>
+        <th>Montant de la cession</th>
+        <th class="no-print">&nbsp;</th>
+      </tr>
+      <?php
+        $rows_count = 0;
+        foreach ($is2573_2017 as $field => $value) {
+          if (strpos($field, 'BB') !== false) $rows_count++;
+        }
+        $rows_count = max(1, $rows_count);
+      ?>
+      <?php for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++) : ?>
+        <tr class="elt is2573_2017-dynamic-row-2">
+          <td class="input small-input center" data-field="BB">
+            <div class="line_impot">903939</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BB', 'field_name' => 'BB/' . $tr_index, 'value' => $is2573_2017['BB/' . $tr_index])) ?>
+          </td>
+          <td class="input small-input center" data-field="BC">
+            <div class="line_impot">903940</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BC', 'field_name' => 'BC/' . $tr_index, 'value' => $is2573_2017['BC/' . $tr_index])) ?>
+          </td>
+          <td class="input small-input center" data-field="BD">
+            <div class="line_impot">903941</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BD', 'field_name' => 'BD/' . $tr_index, 'value' => $is2573_2017['BD/' . $tr_index])) ?>
+          </td>
+          <td class="input small-input center" data-field="BE">
+            <div class="line_impot">903942</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BE', 'field_name' => 'BE/' . $tr_index, 'value' => $is2573_2017['BE/' . $tr_index])) ?>
+          </td>
+          <td style="text-align:center; padding:0; width:25px;" class="no-print">
+            <a href="javascript:void(0)"
+               onclick="ntd.tableRowManager.removeTableRow($(this).up('tr'), 'is2573_2017-dynamic-row-2')"
+               title="Supprimer la ligne" style="padding:10px;">
+              <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png"/>
+            </a>
+          </td>
+        </tr>
+      <?php endfor ?>
+      <tr class="no-print">
+        <td colspan="5">
+          <a class="link-puce" href="javascript:void(0)"
+             onclick="ntd.tableRowManager.addTableRow('is2573_2017-dynamic-row-2')">Ajouter une ligne</a>
+        </td>
+      </tr>
+      <tr class="elt">
+        <td class="libelle" colspan="3">
+          Total du montant des cessions de créances demandées
+        </td>
+        <td class="input" colspan="2">
+          <div class="line_impot">908577</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BF', 'field_name' => 'BF', 'value' => $is2573_2017['BF'])) ?>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="is2573_2017">
+    <tr class="tab-title">
+      <th class="maintitle" colspan="6">
+        III. - TRANSFERT DE CREANCE A LA SOCIETE ABSORBANTE OU BENEFICIAIRE D'UN APPORT
+        <br>A remplir par la société absorbante ou bénéficiaire d'un apport et par la société absorbée ou apporteuse
+        <br>A déposer auprès du service des impôts dont elles dépendent
+      </th>
+    </tr>
+    <tr class="elt">
+      <td class="libelle" colspan="4">
+        SIREN de la société absorbante ou bénéficiaire des apports
+      </td>
+      <td class="input" colspan="2">
+        <div class="line_impot">903943</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CA', 'field_name' => 'CA', 'value' => $is2573_2017['CA'])) ?>
+      </td>
+    </tr>
+    <tbody>
+      <tr class="tab-title">
+        <th>Nature du crédit, de la créance ou de la réduction d'impôt Sauf RAD</th>
+        <th>Date de clôture de l'exercice de détermination du crédit, de la créance ou de la réduction d'impôt</th>
+        <th>Date du transfert</th>
+        <th>SIREN de la société à l'origine de la créance</th>
+        <th>Montant du transfert</th>
+        <th class="no-print">&nbsp;</th>
+      </tr>
+      <?php
+        $rows_count = 0;
+        foreach ($is2573_2017 as $field => $value) {
+          if (strpos($field, 'CB') !== false) $rows_count++;
+        }
+        $rows_count = max(1, $rows_count);
+      ?>
+      <?php for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++) : ?>
+        <tr class="elt is2573_2017-dynamic-row-3">
+          <td class="input small-input center" data-field="CB">
+            <div class="line_impot">903944</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CB', 'field_name' => 'CB/' . $tr_index, 'value' => $is2573_2017['CB/' . $tr_index])) ?>
+          </td>
+          <td class="input small-input center" data-field="CC">
+            <div class="line_impot">903945</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CC', 'field_name' => 'CC/' . $tr_index, 'value' => $is2573_2017['CC/' . $tr_index])) ?>
+          </td>
+          <td class="input small-input center" data-field="CD">
+            <div class="line_impot">903946</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CD', 'field_name' => 'CD/' . $tr_index, 'value' => $is2573_2017['CD/' . $tr_index])) ?>
+          </td>
+          <td class="input center" data-field="CE">
+            <div class="line_impot">903947</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CE', 'field_name' => 'CE/' . $tr_index, 'value' => $is2573_2017['CE/' . $tr_index])) ?>
+          </td>
+          <td class="input small-input center" data-field="CF">
+            <div class="line_impot">903948</div>
+            <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CF', 'field_name' => 'CF/' . $tr_index, 'value' => $is2573_2017['CF/' . $tr_index])) ?>
+          </td>
+          <td style="text-align:center; padding:0; width:25px;" class="no-print">
+            <a href="javascript:void(0)"
+               onclick="ntd.tableRowManager.removeTableRow($(this).up('tr'), 'is2573_2017-dynamic-row-3')"
+               title="Supprimer la ligne" style="padding:10px;">
+              <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png"/>
+            </a>
+          </td>
+        </tr>
+      <?php endfor ?>
+      <tr class="no-print">
+        <td colspan="6">
+          <a class="link-puce" href="javascript:void(0)"
+             onclick="ntd.tableRowManager.addTableRow('is2573_2017-dynamic-row-3')">Ajouter une ligne</a>
+        </td>
+      </tr>
+      <tr class="elt">
+        <td class="libelle" colspan="4">
+          Total du montant des transferts de créances
+        </td>
+        <td class="input" colspan="2">
+          <div class="line_impot">908578</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CG', 'field_name' => 'CG', 'value' => $is2573_2017['CG'])) ?>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

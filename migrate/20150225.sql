@@ -1,0 +1,1 @@
+ALTER TABLE `ntd_service` ADD `position_catalogue` INT UNSIGNED NOT NULL DEFAULT '0' AFTER `position` ;

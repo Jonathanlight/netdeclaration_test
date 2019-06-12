@@ -1,0 +1,323 @@
+<div class="formulaire-page" data-label="Partie I">
+  <table>
+    <tr class="tab-title">
+      <th class="subtitle" colspan="5">A – MONTANT DE LA VALEUR AJOUTEE DES UNITES DE PRODUCTION D’ÉLECTRICITÉ</th>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="cvae1330epe_AA">Valeur ajoutée globale (2059-E et 2033-E)</label></td>
+      <td class="line_id">B7</td>
+      <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA', 'value' => $cvae1330epe['AA']))?> </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="cvae1330epe_AB">Ratio Montant des charges afférentes à l’activité de production d’électricité / Montant total des charges de l’entreprise</label></td>
+      <td class="line_id">R1</td>
+      <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AB', 'value' => $cvae1330epe['AB']))?> </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="cvae1330epe_AC"> Puissance installée totale des seuls établissements décrit aux articles 1519-F et 1519-D / </br> Puissance installée totale de l'ensemble des
+        établissements </label></td>
+      <td class="line_id">R2</td>
+      <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AC', 'value' => $cvae1330epe['AC']))?> </td>
+    </tr>
+    <tr class="elt">
+      <td class="libelle"><label for="cvae1330epe_AD">Valeur Ajoutée correspondant uniquement à celle créée par les unités de production d’électricité (B7 x R1 x R2)</label></td>
+      <td class="line_id">C1</td>
+      <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AD', 'value' => $cvae1330epe['AD']))?> </td>
+    </tr>
+  </table>
+</div>
+
+<div class="formulaire-page break" data-label="Partie II">
+  <table class="cvae1330epe">
+    <tr class="tab-title">
+      <th class="subtitle" colspan="7">B - LISTE DES ÉTABLISSEMENTS COMPRENANT DES INSTALLATIONS DE PRODUCTION D’ÉLECTRICITÉ D’ORIGINE PHOTOVOLTAIQUE OU EOLIOENNE MENTIONNÉES AUX ARTICLES 1519 F ET
+        1519
+        D DU CGI
+      </th>
+    </tr>
+    <tbody>
+      <tr class="tab-title">
+        <th>NIC de l'établissement
+        <?=Elt::tooltip(array('tooltip' => 'Mentionner les 5 derniers chiffres du numéro SIRET de l\'établissement'))?>
+        <th>Commune de localisation de l'établissement</th>
+        <th>Code INSEE du département</th>
+        <th>Code INSEE de la commune</th>
+        <th>Etablissement multi commune</th>
+        <th>Capacité de production en KW</th>
+        <th>&nbsp;</th>
+      </tr>
+
+      <tr class="elt">
+        <td class="line_id">C8</td>
+        <td class="line_id">C9</td>
+        <td class="line_id">D3</td>
+        <td class="line_id">D1</td>
+        <td class="line_id">D2</td>
+        <td class="line_id">D4</td>
+        <td class="line_id">&nbsp;</td>
+      </tr>
+    <?php $rows_count = 0;
+      foreach($cvae1330epe as $field => $value) {
+        if(strpos($field, 'BA1') !== false) $rows_count++;
+      }
+      $rows_count = max(1, $rows_count);
+      for($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :
+    ?>
+      <tr class="elt cvae1330epe-dynamic-row1">
+        <td class="input small-input" data-field="BA1">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BA1', 'field_name' => 'BA1/' . $tr_index, 'value' => empty($cvae1330epe['BA1/' . $tr_index]) ? $cvae1330epe['BA1' . $tr_index] : $cvae1330epe['BA1/' . $tr_index]))?>
+        </td>
+        <td class="input input_70 full" data-field="BA2"> 
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BA2', 'field_name' => 'BA2/' . $tr_index, 'value' => empty($cvae1330epe['BA2/' . $tr_index]) ? $cvae1330epe['BA2' . $tr_index] : $cvae1330epe['BA2/' . $tr_index]))?>
+        </td>
+        <td class="input small-input" data-field="FA">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FA', 'field_name' => 'FA/' . $tr_index, 'value' => empty($cvae1330epe['FA/' . $tr_index]) ? $cvae1330epe['FA' . $tr_index] : $cvae1330epe['FA/' . $tr_index]))?>
+        </td>
+        <td class="input small-input" data-field="DA">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DA', 'field_name' => 'DA/' . $tr_index, 'value' => empty($cvae1330epe['DA/' . $tr_index]) ? $cvae1330epe['DA' . $tr_index] : $cvae1330epe['DA/' . $tr_index]))?>
+        </td>
+        <td class="input small-input center" data-field="HA"> 
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'HA', 'field_name' => 'HA/' . $tr_index, 'value' => empty($cvae1330epe['HA/' . $tr_index]) ? $cvae1330epe['HA' . $tr_index] : $cvae1330epe['HA/' . $tr_index]))?>
+        </td>
+        <td class="input small-input" data-field="EA">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EA', 'field_name' => 'EA/' . $tr_index, 'value' => empty($cvae1330epe['EA/' . $tr_index]) ? $cvae1330epe['EA' . $tr_index] : $cvae1330epe['EA/' . $tr_index]))?>
+        </td>
+        <td style="text-align:center; padding:0;">
+          <a href="javascript:void(0)" onclick="ntd.tableRowManager.removeTableRow($(this).up('tr'), 'cvae1330epe-dynamic-row1')" title="Supprimer la ligne" style="padding:10px;">
+          <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png" /></a></td>
+      </tr>
+      <?php endfor; ?>
+      <tr class="no-print">
+        <td colspan="7"><a class="link-puce" href="javascript:void(0)" onclick="ntd.tableRowManager.addTableRow('cvae1330epe-dynamic-row1')">Ajouter une ligne</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+<div class="formulaire-page" data-label="Partie III">
+  <table class="cvae1330epe">
+    <tr class="tab-title">
+      <th class="subtitle" colspan="5">
+        C - REPARTITION DE LA VALEUR AJOUTEE DES ETABLISSEMENTS MENTIONNES AU B SITUES SUR PLUSIEURS COMMUNES A L'EXCEPTION DES OUVRAGES HYDROELECTRIQUES CONCEDES OU D'UNE PUISSANCE SUPERIEURE A 500 KW VISES A L'ARTICLE 1475 DU CGI 
+      </th>
+    </tr>
+    <tbody>
+      <tr class="tab-title">
+        <th>
+          NIC de <br/> l'établissement
+          <?=Elt::tooltip(array('tooltip' => 'Mentionner les 5 derniers chiffres du numéro SIRET de l\'établissement'))?>
+        </th>
+        <th>Libellé de l'établissement</th>
+        <th>Valeur ajoutée</th>
+        <th>Somme des bases CFE</th>
+        <th>&nbsp;</th>
+      </tr>
+    <?php $rows_count = 0;
+      foreach($cvae1330epe as $field => $value) {
+        if(strpos($field, 'CA1') !== false) $rows_count++;
+      }
+      $rows_count = max(1, $rows_count);
+      for($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :
+    ?>
+      <tr class="elt cvae1330epe-dynamic-row2">
+        <td class="input small-input" data-field="CA1">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CA1', 'field_name' => 'CA1/' . $tr_index, 'value' => empty($cvae1330epe['CA1/' . $tr_index]) ? $cvae1330epe['CA1' . $tr_index] : $cvae1330epe['CA1/' . $tr_index]))?>
+        </td>
+        <td class="input input_70 full" data-field="CA2">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CA2', 'field_name' => 'CA2/' . $tr_index, 'value' => empty($cvae1330epe['CA2/' . $tr_index]) ? $cvae1330epe['CA2' . $tr_index] : $cvae1330epe['CA2/' . $tr_index]))?>
+        </td>
+        <td class="input" data-field="CB">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CB', 'field_name' => 'CB/' . $tr_index, 'value' => empty($cvae1330epe['CB/' . $tr_index]) ? $cvae1330epe['CB' . $tr_index] : $cvae1330epe['CB/' . $tr_index]))?>
+        </td>
+        <td class="input" data-field="CD">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CD', 'field_name' => 'CD/' . $tr_index, 'value' => empty($cvae1330epe['CD/' . $tr_index]) ? $cvae1330epe['CD' . $tr_index] : $cvae1330epe['CD/' . $tr_index]))?>
+        </td>
+        <td style="text-align:center; padding:0; width:25px;">
+          <a href="javascript:void(0)" onclick="ntd.tableRowManager.removeTableRow($(this).up('tr'), 'cvae1330epe-dynamic-row2')" title="Supprimer la ligne" style="padding:10px;">
+            <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png" />
+          </a>
+        </td>
+      </tr>
+      <?php endfor; ?>
+      <tr class="no-print">
+        <td colspan="5">
+          <a class="link-puce" href="javascript:void(0)" onclick="ntd.tableRowManager.addTableRow('cvae1330epe-dynamic-row2')">Ajouter une ligne</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="cvae1330epe">
+    <tbody>
+      <tr class="tab-title">
+        <th>
+          NIC de l'établissement
+          <?=Elt::tooltip(array('tooltip' => 'Mentionner les 5 derniers chiffres du numéro SIRET de l\'établissement'))?>
+        </th>
+        <th>Commune de localisation</th>
+        <th>Code INSEE de la commune</th>
+        <th>Type d'installation *</th>
+        <th>Base CFE</th>
+        <th>Valeur ajoutée correspondante</th>
+        <th>&nbsp;</th>
+      </tr>
+      <tr class="elt">
+        <td class="line_id">D6</td>
+        <td class="line_id">D7</td>
+        <td class="line_id">D8</td>
+        <td class="line_id">D9</td>
+        <td class="line_id">E1</td>
+        <td class="line_id">E2</td>
+        <td class="line_id">&nbsp;</td>
+      </tr>
+    <?php $rows_count = 0;
+      foreach($cvae1330epe as $field => $value) {
+        if(strpos($field, 'GA1') !== false) $rows_count++;
+      }
+      $rows_count = max(1, $rows_count);
+      for($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :
+    ?>
+      <tr class="elt cvae1330epe-dynamic-row3">
+        <td class="input small-input" data-field="GA1">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GA1', 'field_name' => 'GA1/' . $tr_index, 'value' => empty($cvae1330epe['GA1/' . $tr_index]) ? $cvae1330epe['GA1' . $tr_index] : $cvae1330epe['GA1/' . $tr_index]))?>
+        </td>
+        <td class="input input_70 full" data-field="GA2">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GA2', 'field_name' => 'GA2/' . $tr_index, 'value' => empty($cvae1330epe['GA2/' . $tr_index]) ? $cvae1330epe['GA2' . $tr_index] : $cvae1330epe['GA2/' . $tr_index]))?>
+        </td>
+        <td class="input small-input" data-field="GB">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GB', 'field_name' => 'GB/' . $tr_index, 'value' => empty($cvae1330epe['GB/' . $tr_index]) ? $cvae1330epe['GB' . $tr_index] : $cvae1330epe['GB/' . $tr_index]))?>
+        </td>
+        <td class="input small-input" data-field="GC">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GC', 'field_name' => 'GC/' . $tr_index, 'value' => empty($cvae1330epe['GC/' . $tr_index]) ? $cvae1330epe['GC' . $tr_index] : $cvae1330epe['GC/' . $tr_index]))?>
+        </td>
+        <td class="input small-input" data-field="GD">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GD', 'field_name' => 'GD/' . $tr_index, 'value' => empty($cvae1330epe['GD/' . $tr_index]) ? $cvae1330epe['GD' . $tr_index] : $cvae1330epe['GD/' . $tr_index]))?>
+        </td>
+        <td class="input" data-field="GE">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'GE', 'field_name' => 'GE/' . $tr_index, 'value' => empty($cvae1330epe['GE/' . $tr_index]) ? $cvae1330epe['GE' . $tr_index] : $cvae1330epe['GE/' . $tr_index]))?>
+        </td>
+        <td style="text-align:center; padding:0;">
+          <a href="javascript:void(0)" onclick="ntd.tableRowManager.removeTableRow($(this).up('tr'), 'cvae1330epe-dynamic-row3')" title="Supprimer la ligne" style="padding:10px;">
+            <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png" />
+          </a>
+        </td>
+      </tr>
+      <?php endfor; ?>
+      <tr class="no-print">
+        <td colspan="7">
+          <a class="link-puce" href="javascript:void(0)" onclick="ntd.tableRowManager.addTableRow('cvae1330epe-dynamic-row3')">Ajouter une ligne</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="precision">
+    * Production d’électricité (centrale nucléaire ou à flamme) article 1519 E du CGI : indiquer « E » ; Production hydroélectrique ou photovoltaïque article 1519 F du CGI : indiquer « F »
+  </div>
+</div>
+
+<div class="formulaire-page break" data-label="Partie IV">
+  <table class="cvae1330epe">
+    <tr class="tab-title">
+      <th class="subtitle" colspan="4">
+        D - REPARTITION DE LA VALEUR AJOUTEE DES OUVRAGES HYDROELECTRIQUES CONCEDES OU D'UNE PUISSANCE SUPERIEURE A 500 KW VISES A L'ARTICLE 1475 DU CGI MENTIONNES AU B SITUES SUR PLUSIEURS COMMUNES
+      </th>
+    </tr>
+    <tbody>
+      <tr class="tab-title">
+        <th>
+          NIC de l'établissement
+          <?=Elt::tooltip(array('tooltip' => 'Mentionner les 5 derniers chiffres du numéro SIRET de l\'établissement'))?>
+        </th>
+        <th>Libellé de l'établissement</th>
+        <th>Valeur ajoutée</th>
+        <th>&nbsp;</th>
+      </tr>
+    <?php $rows_count = 0;
+      foreach($cvae1330epe as $field => $value) {
+        if(strpos($field, 'JA1') !== false) $rows_count++;
+      }
+      $rows_count = max(1, $rows_count);
+      for($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :
+    ?>
+      <tr class="elt cvae1330epe-dynamic-row4">
+        <td class="input small-input" data-field="JA1">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'JA1', 'field_name' => 'JA1/' . $tr_index, 'value' => empty($cvae1330epe['JA1/' . $tr_index]) ? $cvae1330epe['JA1' . $tr_index] : $cvae1330epe['JA1/' . $tr_index]))?>
+        </td>
+        <td class="input input_70 full" data-field="JA2">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'JA2', 'field_name' => 'JA2/' . $tr_index, 'value' => empty($cvae1330epe['JA2/' . $tr_index]) ? $cvae1330epe['JA2' . $tr_index] : $cvae1330epe['JA2/' . $tr_index]))?>
+        </td>
+        <td class="input full" data-field="JB">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'JB', 'field_name' => 'JB/' . $tr_index, 'value' => empty($cvae1330epe['JB/' . $tr_index]) ? $cvae1330epe['JB' . $tr_index] : $cvae1330epe['JB/' . $tr_index]))?>
+        </td>
+        <td style="text-align:center; padding:0; width:25px;">
+          <a href="javascript:void(0)" onclick="ntd.tableRowManager.removeTableRow($(this).up('tr'), 'cvae1330epe-dynamic-row4')" title="Supprimer la ligne" style="padding:10px;">
+            <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png" />
+          </a>
+        </td>
+      </tr>
+      <?php endfor; ?>
+      <tr class="no-print">
+        <td colspan="4">
+          <a class="link-puce" href="javascript:void(0)" onclick="ntd.tableRowManager.addTableRow('cvae1330epe-dynamic-row4')">Ajouter une ligne</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="cvae1330epe">
+    <tbody>
+      <tr class="tab-title">
+        <th>
+          NIC de l'établissement
+          <?=Elt::tooltip(array('tooltip' => 'Mentionner les 5 derniers chiffres du numéro SIRET de l\'établissement'))?>
+        </th>
+        <th>Commune de localisation</th>
+        <th>Code INSEE de la commune</th>
+        <th>Pourcentage de répartition</th>
+        <th>Valeur ajoutée correspondante</th>
+        <th>&nbsp;</th>
+      </tr>
+      <tr class="elt">
+        <td class="line_id">D6</td>
+        <td class="line_id">D7</td>
+        <td class="line_id">D8</td>
+        <td class="line_id">D9</td>
+        <td class="line_id">E2</td>
+        <td class="line_id">&nbsp;</td>
+      </tr>
+    <?php $rows_count = 0;
+      foreach($cvae1330epe as $field => $value) {
+        if(strpos($field, 'KA1') !== false) $rows_count++;
+      }
+      $rows_count = max(1, $rows_count);
+      for($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :
+    ?>
+      <tr class="elt cvae1330epe-dynamic-row5">
+        <td class="input small-input" data-field="KA1">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'KA1', 'field_name' => 'KA1/' . $tr_index, 'value' => empty($cvae1330epe['KA1/' . $tr_index]) ? $cvae1330epe['KA1' . $tr_index] : $cvae1330epe['KA1/' . $tr_index]))?>
+        </td>
+        <td class="input input_70 full" data-field="KA2">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'KA2', 'field_name' => 'KA2/' . $tr_index, 'value' => empty($cvae1330epe['KA2/' . $tr_index]) ? $cvae1330epe['KA2' . $tr_index] : $cvae1330epe['KA2/' . $tr_index]))?>
+        </td>
+        <td class="input small-input" data-field="KB">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'KB', 'field_name' => 'KB/' . $tr_index, 'value' => empty($cvae1330epe['KB/' . $tr_index]) ? $cvae1330epe['KB' . $tr_index] : $cvae1330epe['KB/' . $tr_index]))?>
+        </td>
+        <td class="input small-input" data-field="KC">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'KC', 'field_name' => 'KC/' . $tr_index, 'value' => empty($cvae1330epe['KC/' . $tr_index]) ? $cvae1330epe['KC' . $tr_index] : $cvae1330epe['KC/' . $tr_index]))?>
+        </td>
+        <td class="input input_35" data-field="KD">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'KD', 'field_name' => 'KD/' . $tr_index, 'value' => empty($cvae1330epe['KD/' . $tr_index]) ? $cvae1330epe['KD' . $tr_index] : $cvae1330epe['KD/' . $tr_index]))?>
+        </td>
+        <td style="text-align:center; padding:0; width:25px;">
+          <a href="javascript:void(0)" onclick="ntd.tableRowManager.removeTableRow($(this).up('tr'), 'cvae1330epe-dynamic-row5')" title="Supprimer la ligne" style="padding:10px;">
+            <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png" />
+          </a>
+        </td>
+      </tr>
+      <?php endfor; ?>
+      <tr class="no-print">
+        <td colspan="6">
+          <a class="link-puce" href="javascript:void(0)" onclick="ntd.tableRowManager.addTableRow('cvae1330epe-dynamic-row5')">Ajouter une ligne</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

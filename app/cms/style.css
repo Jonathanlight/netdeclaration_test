@@ -1,0 +1,6 @@
+.kwo-glossary .kwo-letters { margin-bottom:15px; }
+.kwo-glossary .kwo-letters a { background: none repeat scroll 0 0 #F5F5F5; border: 1px solid #CCCCCC; color: #666666; font-size: 16px; padding: 2px 6px; text-decoration: none; text-transform: uppercase; }
+.kwo-glossary .kwo-letters a.empty { color:#ccc; cursor:default; }
+.kwo-glossary .kwo-letters a.selected { background:#fff; font-weight:bold; border:1px solid #666666; }
+
+.kwo-terms ul li a { font-size:12px; }

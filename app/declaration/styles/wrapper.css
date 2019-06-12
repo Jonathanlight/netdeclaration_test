@@ -1,0 +1,51 @@
+.declaration-content { border: 1px solid #dfe2ec; }
+.formulaires-pagines { border: 1px solid #dfe2ec; border-width: 1px 0; }
+.buttons-container { border: 0 none; width: 100%; }
+.buttons-container tr td { padding: 9px; border: 0 none; vertical-align: top; }
+.buttons-container tr td .buttons-box { overflow: hidden; }
+.buttons-container tr td .buttons-box .ntd-button { float: left; }
+.buttons-container select { border: 1px solid #7989AA; display: block; height: 30px; padding: 5px; width: 100%; }
+.buttons-container select > option { border-bottom: 1px solid #DFE2EC; padding: 10px 5px; }
+.buttons-container select > option.saved { background-color: #a2d7a2; }
+.buttons-container select > option.new {  }
+.buttons-container select > option.changed { background-color: #ffcccc; }
+/*.declaration-steps { border: 1px solid #dfe2ec; height: auto; width: 958px; }
+.declaration-steps .step-name { cursor: pointer; padding: 5px; }
+.declaration-steps .step-name.selected { background: red; }
+.declaration-steps .step-name:hover { background: #c40000; }*/
+.formulairetype-annexes-box { background-color: #EFF0F5; }
+.account-declaration-edit-box .cancel { float: right; margin-right: 10px; }
+.account-declaration-edit-box .submit { float: right; }
+.account-declaration-edit-box .button-back .cancel { float: none; }
+.btn-remove-container { text-align: center; padding: 0; }
+.btn-remove { padding: 10px; }
+.imprime-box .imprime-controls { padding: 10px; overflow: hidden; zoom:1; text-align:right; }
+.imprime-box .imprime-controls:after { content:""; display:table; clear:both; }
+.imprime-box .imprime-controls .throbber { margin-right:5px; }
+.imprime-box .imprime-controls input { display:inline; margin-left:10px; }
+.imprime-box .imprime-controls input.muck { display:none; }
+.imprime-box .imprime-controls input.submit.hidden { opacity: 0.1; }
+.imprime-box .imprime-controls input.submit:hover { opacity: 1; }
+.imprime-box .imprime-header { border-bottom: 1px solid #DFE2EC; }
+.imprime-box .imprime-footer { border-top: 1px solid #DFE2EC; }
+.imprime-box .formulaire-page { padding: 0 9px; }
+.imprime-box .formulaire-page .formulaire-header { display:none; }
+.formulaire-repetable-select { border-bottom: 1px solid #dfe2ec; overflow: hidden; }
+.formulaire-repetable-select > .elt-select { }
+.formulaire-repetable-select > .elt-select label { line-height: 48px; padding-right: 10px; float: left; text-align: right; width: 277px; }
+.formulaire-repetable-select > .elt-select > .elt-control { padding: 9px; float: left; width: 275px; }
+.formulaire-repetable-select > .elt-select > .elt-control > select { border: 1px solid #7989AA; display: block; height: 30px; padding: 5px; width: 100%; }
+.formulaire-repetable-select > .ntd-button { float: left; margin: 9px 10px; }
+.formulaire-repetable-select > .ntd-button > span { display: block; line-height: 28px; }
+.formulaire-repetable .default-page { color: #666666; padding: 40px; text-align: center; }
+.button-back { overflow:hidden; }
+.button-back > * { float:left; margin-right: 10px; }
+.print-footer { display:none; }
+.formulaire-header .row { overflow:hidden; padding:10px; }
+.formulaire-header .ftype-code { float:right; }
+.formulaire-header .millesime { float:left; }
+.big-text  { color: #002E5F; font-family: Georgia; font-size: 1.8em; font-weight: normal; line-height: 1.5em; margin: 0; }
+.ftype-title { text-align:center;}
+.autocomplete-container { background-color: white; border: 1px solid silver; line-height: 1.5; max-height:200px; overflow:auto; }
+.autocomplete-container ul { cursor: pointer; }
+.autocomplete-container li:hover { background-color: #EFF0F5; }

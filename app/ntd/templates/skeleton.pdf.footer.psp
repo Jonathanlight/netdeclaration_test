@@ -1,0 +1,9 @@
+<footer>
+  <p>
+    <?php if ($domtom): ?>
+      <?=l('snippet:bulletin-facture.pdf.footer.domtom', I18N::LOCALE_FR)?>
+    <?php else: ?>
+      <?=l('snippet:bulletin-facture.pdf.footer', I18N::LOCALE_FR)?>
+    <?php endif; ?>
+  </p>
+</footer>

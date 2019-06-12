@@ -1,0 +1,15 @@
+
+<table style="width:100%;" class="layout popup popup-files">
+<tr style="background:#eee;">
+ <td class="header"><?=$_title?></td>
+ <td class="quit">
+  <img src="/<?=APP_PATH?>/<?=CORE?>/pix/action/close.png" 
+       onclick="if (window.top.name!='_navig') window.close();" />
+ </td>
+</tr><tr>
+ <td colspan="2" class="content">
+<?=$_content?>
+ </td>
+</tr>
+</table>
+

@@ -1,0 +1,158 @@
+<div class="formulaire-page page-form" data-label="DAS2-T" data-position="<?=$occurence?>">
+    <table class="das2t_20190101">
+        <tbody class="das2t_20190101">
+            <tr class="tab-title">
+                <th class="maintitle" rowspan="11" colspan="2" style="vertical-align: middle;">
+                Renvoyez au plus tard le 1er mai un exemplaire de votre déclaration au service dont vous obtiendrez les coordonnées en consultant le site internet www.import.gouv.fr à la rubrique Partenaire/Tiers déclarants. Les déclarants qui ont souscrit au cours de l'année précédente une déclaration comportant au moins deux cents bénéficiaires (salaires et/ou honoraires) doivent transmettre leur déclaration selon un procédé informatique (art. 89 A du code Général de impôts)
+                </th>
+                <th class="maintitle" colspan="2">
+                    Identification de l'établissement déclarant
+                </th>
+                <th class="maintitle" colspan="3">
+                    Nom ou raison sociale
+                </th>
+            </tr>
+
+            <tr class="elt">
+                <td class="input input-lg" colspan="5">
+                     <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA02', 'field_name' => 'AA02', 'value' => $das2t_20190101['AA02'])); ?>
+                </td>
+            </tr>
+
+            <tr class="tab-title">
+                <th class="maintitle" colspan="5">Prénom et complément de nom</th>
+            </tr>
+
+            <tr class="elt">
+                <td class="input input-lg" colspan="5">
+                     <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA03', 'field_name' => 'AA03', 'value' => $das2t_20190101['AA03'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">N° rue</td>
+                <td class="libelle">Suffixe (Bis, Ter, Quater, )</td>
+                <td class="libelle" colspan="3">Rue</td>
+            </tr>
+
+            <tr class="elt">
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA16', 'field_name' => 'AA16', 'value' => $das2t_20190101['AA16'], 'class' => 'align-left')) ?>
+                </td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA17', 'field_name' => 'AA17', 'value' => $das2t_20190101['AA17'])) ?>
+                </td>
+                <td class="input input-lg" colspan="3">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA05', 'field_name' => 'AA05', 'value' => $das2t_20190101['AA05'])) ?>
+                </td>
+            </tr>
+
+            <tr class="tab-title">
+                <th class="maintitle" colspan="5">Complément d'adresse</th>
+            </tr>
+
+            <tr class="elt">
+                <td class="input input-lg" colspan="5">
+                     <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA06', 'field_name' => 'AA06', 'value' => $das2t_20190101['AA06'])); ?>
+                </td>
+            </tr>
+
+            <tr class="tab-title">
+                <th class="maintitle" colspan="2">Code postal</th>
+                <th class="maintitle" colspan="3">Commune</th>
+            </tr>
+
+            <tr class="elt">
+                <td class="input input-lg" colspan="2">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA09', 'field_name' => 'AA09', 'value' => $das2t_20190101['AA09'], 'class' => 'align-left')); ?>
+                </td>
+                <td class="input input-lg" colspan="3">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA08', 'field_name' => 'AA08', 'value' => $das2t_20190101['AA08'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="maintitle" colspan="2">Numéro de Siret de l’établissement</th>
+                <td class="input input-lg" colspan="3">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA01', 'field_name' => 'AA01', 'value' => $das2t_20190101['AA01'], 'class' => 'align-left')); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <td class="libelle" colspan="2">Code commune Insee</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA14', 'field_name' => 'AA14', 'value' => $das2t_20190101['AA14'], 'class' =>  'print-data-value', 'data-value' => $das2t_20190101['AA14'])); ?>
+                </td>
+                <td class="libelle">Commune Insee</td>
+                <td class="input input-lg" colspan="3">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA15', 'field_name' => 'AA15', 'value' => $das2t_20190101['AA15'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="maintitle" colspan="2">Date de clôture de l’exercice (société soumise à l’IS)</th>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AD', 'field_name' => 'AD', 'value' => $das2t_20190101['AD'])); ?>
+                </td>
+                <th class="maintitle">Code APE</th>
+                <td class="input input-lg" colspan="3">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AB', 'field_name' => 'AB', 'value' => $das2t_20190101['AB'], 'class' => 'align-left')); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="libelle maintitle">Profession ou activité</th>
+                <td class="input input-lg" colspan="2">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AC', 'field_name' => 'AC', 'value' => $das2t_20190101['AC'])); ?>
+                </td>
+                <th class="maintitle">Numéro de Siret de l’établissement au 01/01/N</th>
+                <td class="input input-lg" colspan="3">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AE', 'field_name' => 'AE', 'value' => $das2t_20190101['AE'], 'class' => 'align-left')); ?>
+                </td>
+            </tr>
+
+            <?php $rows_count = 0;
+            foreach ($das2t_20190101 as $field => $value) {
+                if (strpos($field, 'UA') !== false) $rows_count++;
+            }
+            $rows_count = max(1, $rows_count);
+            for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :
+            ?>
+            <tr class="elt tab-title das2t-20190101-dynamic-row-1" data-max="8">
+                <th class="libelle maintitle" colspan="2">Nature des Rémunérations versées selon la lettre (Cases 4 et 5)</th>
+                <td class="input input-lg" data-field="UA">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'UA', 'field_name' => 'UA/' . $tr_index, 'value' =>  empty($das2t_20190101['UA/' . $tr_index]) ? $das2t_20190101['UA' . $tr_index] : $das2t_20190101['UA/' . $tr_index])); ?>
+                </td>
+                <th class="libelle maintitle" colspan="2">Totaux pour les rémunérations versées (Cases 4 et 5)</th>
+                <td class="input input-lg" data-field="TA">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'TA', 'field_name' => 'TA/' . $tr_index, 'value' => empty($das2t_20190101['TA/' . $tr_index]) ? $das2t_20190101['TA' . $tr_index] : $das2t_20190101['TA/' . $tr_index])); ?>
+                </td>
+                <td class="no-print" style="text-align:center; padding:0;">
+                    <a href="javascript:void(0)" onclick="ntd.tableRowManager.removeTableRow($(this).up('tr'), 'das2t-20190101-dynamic-row-1')" title="Supprimer la ligne" style="padding:10px;">
+                        <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png"/></a></td>
+            </tr>
+            <?php endfor; ?>
+
+            <tr class="elt tab-title no-print">
+                <td class="libelle maintitle" colspan="7">
+                    <a class="link-puce" href="javascript:void(0)" onclick="ntd.tableRowManager.addTableRow('das2t-20190101-dynamic-row-1', 'tr')">Ajouter une ligne</a>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="libelle maintitle">Total des avantages en nature (Case 6)</th>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'TC', 'field_name' => 'TC', 'value' => $das2t_20190101['TC'])); ?>
+                </td>
+                <th class="libelle maintitle">Total des indemnités et remboursements (Case 7)</th>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'TB', 'field_name' => 'TB', 'value' => $das2t_20190101['TB'])); ?>
+                </td>
+                <th class="libelle maintitle">Total des retenues à la source (Case 9)</th>
+                <td class="input input-lg" colspan="2">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'TD', 'field_name' => 'TD', 'value' => $das2t_20190101['TD'])); ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

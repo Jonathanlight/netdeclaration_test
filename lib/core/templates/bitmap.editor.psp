@@ -1,0 +1,59 @@
+
+<table id="bitmap-editor" class="fixed"><tbody><tr><td id="bitmap-sidebar">
+
+<div id="bitmap-buttons">
+<ul>
+ <li id="bitmap-button-crop">recadrer</li>
+ <li id="bitmap-button-dimensions" data-panel="bitmap-panel-dimensions">dimensions</li>
+ <li id="bitmap-button-rotate" data-panel="bitmap-panel-rotate">rotation</li>
+</ul>
+</div>
+
+<div id="bitmap-panels">
+ <div id="bitmap-panel-dimensions" class="bitmap-panel" style="display:none;">
+
+<form>
+<input type="hidden" name="operation" value="resize" />
+<ul>
+ <li><label>Larg</label><input type="text" name="width" /></li>
+ <li><label>Haut</label><input type="text" name="height" /></li>
+</ul>
+<a href="">go</a>
+</form>
+
+ </div>
+ <div id="bitmap-panel-rotate" class="bitmap-panel" style="display:none;">
+
+<form>
+<input type="hidden" name="operation" value="rotate" />
+<ul>
+ <li><label><input type="radio" name="angle" value="90" checked="checked" />90°</label></li>
+ <li><label><input type="radio" name="angle" value="180" />180°</label></li>
+ <li><label><input type="radio" name="angle" value="270" />-90°</label></li>
+ <a href="">go</a>
+</ul>
+</form>
+
+ </div>
+
+</div>
+
+<div id="bitmap-infos">
+<ul>
+ <li>L : <span id="bitmap-width" title="largeur"></span></li>
+ <li>H : <span id="bitmap-height" title="hauteur"></span></li>
+ <li>S : <span title="poids"><?=$file_size?></span></li>
+ <li>Z : <span id="bitmap-zoom" data-zoom="" title="zoom"></span></li>
+</ul>
+</div>
+
+</td><td id="bitmap-wrapper">
+ 
+ <img src="<?=String::dataImage()?>" id="bitmap" data-file-path="<?=$file_path?>" style="display:none;" />
+
+</td></tr></tbody></table>
+
+
+
+<script src="/app/core/scripts/bitmap.js" type="text/javascript"></script>
+

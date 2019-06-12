@@ -1,0 +1,235 @@
+<div class="formulaire-page page-form" data-label="Identification" data-position="first" data-identif="<?=$formulaire_code ?>">
+  <h3>Identification du redevable</h3>
+  <fieldset class="formulaire-fieldset left">
+    <div class="field-container">
+      <label for="p_identif_20151020_KD">Référence obligatoire fiscale</label>
+
+    <?=Elt::select(array('options' => Rof::collect(array('filters' => array('document_code' => $declaration_dectype->document_code),
+                                                         'order' => array('id' => 'asc')))->asHash('name', 'name'),
+                         'value' => $p_identif_20151020['KD'],
+                         'name' => 'p_identif_20151020[KD][]'))?>
+    </div>
+    <div class="field-container">
+      <label for="p_identif_20151020_AA1">N° SIREN</label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA1', 'value' => $p_identif_20151020['AA1'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="p_identif_20151020_AA2">Nom ou désignation de l'entreprise</label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA2', 'value' => $p_identif_20151020['AA2'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="p_identif_20151020_AA3">Complément nom ou désignation</label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA3', 'value' => $p_identif_20151020['AA3'])) ?>
+    </div>
+
+    <div class="field-container">
+      <label for="p_identif_20151020_AA4">Qualité , profession ou complément de désignation</label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA4', 'value' => $p_identif_20151020['AA4'])) ?>
+    </div>
+        </fieldset>
+  <fieldset class="formulaire-fieldset right">
+    <div class="field-container">
+      <label for="p_identif_20151020_AA5">Forme juridique ou titre</label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA5', 'value' => $p_identif_20151020['AA5'])) ?>
+    </div>
+
+    <div class="field-container">
+      <label for="p_identif_20151020_AA6">Adresse</label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA6', 'value' => $p_identif_20151020['AA6'])) ?>
+    </div>
+
+    <div class="field-container">
+      <label for="p_identif_20151020_AA7">Complément de distribution</label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA7', 'value' => $p_identif_20151020['AA7'])) ?>
+    </div>
+
+    <div class="field-container">
+      <label for="p_identif_20151020_AA8">Localité </label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA8', 'value' => $p_identif_20151020['AA8'])) ?>
+    </div>
+
+    <div class="field-container">
+      <label for="p_identif_20151020_AA9">Code postal</label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA9', 'value' => $p_identif_20151020['AA9'])) ?>
+    </div>
+  </fieldset>
+  <div class="clear">&nbsp;</div>
+
+  <h3><?= ($declaration_dectype->document_code == Formulairetype::DOCUMENT_CODE_RCM || (isset($declaration) && $declaration->dectype_id == Declaration::RCM_2777_2018_DECTYPE_ID) || $declaration_dectype->document_code == Formulairetype::DOCUMENT_CODE_TS ) ? 'Éléments impactant la période du dépôt' : 'Cession / Cessation'?></h3>
+  <table>
+    <tr class="elt">
+      <td class="libelle"><label for="p_identif_20151020_BB">Date de cession / cessation</label> <?=Elt::tooltip(array('tooltip' => 'Format jj/mm/aaaa'))?></td>
+      <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BB', 'value' => $p_identif_20151020['BB'])) ?></td>
+    </tr>
+  </table>
+
+  <?php // id 11 => Millesime 2017 ; id 8 => Millesime 2015 ?>
+  <?php if ((isset($declaration) && $declaration->dectype_id != Declaration::RCM_2777_2018_DECTYPE_ID) && !(($declaration_dectype->millesime_id >= 11 || $declaration_dectype->millesime_id == 8)
+            && in_array($declaration_dectype->document_code, array(Formulairetype::DOCUMENT_CODE_CVAE, Formulairetype::DOCUMENT_CODE_RCM)))
+            ): ?>
+    <h3><?= $declaration_dectype->document_code == Formulairetype::DOCUMENT_CODE_TS ? 'Période du dépôt' : 'Période de déclaration' ?></h3>
+    <table>
+      <tr class="elt">
+        <td class="libelle">
+          <label for="p_identif_20151020_CA">Début de période de la déclaration</label>
+        <?=Elt::tooltip(array('tooltip' => 'Format jj/mm/aaaa'))?>
+        </td>
+        <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA', 'value' => $p_identif_20151020['CA'])) ?></td>
+        <td class="libelle">
+          <label for="p_identif_20151020_CB">Fin de période de la déclaration</label>
+        <?=Elt::tooltip(array('tooltip' => 'Format jj/mm/aaaa'))?>
+        </td>
+        <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB', 'value' => $p_identif_20151020['CB'])) ?>
+        </td>
+      </tr>
+    </table>
+  <?php endif ?>
+
+  <h3><?=($declaration_dectype->document_code == Formulairetype::DOCUMENT_CODE_RCM || (isset($declaration) && $declaration->dectype_id == Declaration::RCM_2777_2018_DECTYPE_ID)) ? 'Période du dépôt' : 'Échéance' ?></h3>
+  <table>
+    <tr class="elt">
+      <td class="libelle"><label for="p_identif_20151020_KF"><?=($declaration_dectype->document_code == Formulairetype::DOCUMENT_CODE_RCM || (isset($declaration) && $declaration->dectype_id == Declaration::RCM_2777_2018_DECTYPE_ID)) ? 'Période du dépôt' : 'Échéance' ?></label> <?=Elt::tooltip(array('tooltip' => 'Format mm/aaaa'))?></td>
+      <td class="input" style="width:300px"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KF', 'value' => $p_identif_20151020['KF'])) ?></td>
+    </tr>
+  </table>
+
+</div>
+
+
+<div class="formulaire-page page-form break" data-label="Validation" data-position="last">
+  <table id="table-p_identif_20151020_select_paiement" style="<?=!$p_identif_20151020['HA'] && $p_identif_20151020_opts['payment'] == 'nopaiement' ? '' : 'display:none;' ?>">
+
+    <tr class="tab-title">
+      <th colspan="4" class="big">Paiement</th>
+    </tr>
+    <tr class="tab-title">
+      <th class="subtitle" colspan="4">Sélection du mode de paiement</th>
+    </tr>
+
+    <tr class="elt hiddeable">
+      <td class="line_id">&nbsp;</td>
+      <td class="libelle"><label for="p_identif_20151020_EA">Paiement par télérèglement</label></td>
+      <td class="line_impot">&nbsp;</td>
+      <td class="input">
+        <input type="radio" value="tlra" onclick="NTD.p_identif_20151020.onSelectModePaiement(this)" id="select_paiement_tlra" name="p_identif_20151020_opts[payment]" <?=$p_identif_20151020_opts['payment'] == 'tlra' ? 'checked="checked"' : ''?> />
+      </td>
+    </tr>
+
+    <tr class="elt hiddeable">
+      <td class="line_id">&nbsp;</td>
+      <td class="libelle"><label for="p_identif_20151020_nopaiement">Pas de paiement (déclaration seule)</label></td>
+      <td class="line_impot">&nbsp;</td>
+      <td class="input">
+        <input type="radio" value="nopaiement" onclick="NTD.p_identif_20151020.onSelectModePaiement(this)" id="select_paiement_nopaiement" name="p_identif_20151020_opts[payment]" <?=$p_identif_20151020_opts['payment'] == 'nopaiement' ? 'checked="checked"' : ''?> />
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr class="tab-title paiement-box-tlra" style="<?=$p_identif_20151020['HA'] && $p_identif_20151020_opts['payment'] == 'tlra' ? '' : 'display:none;'?>">
+      <th class="subtitle">Compte Bancaire</th>
+      <th class="subtitle">Référence IBAN</th>
+      <th class="subtitle">Montant du prélèvement</th>
+      <th class="subtitle">Référence de paiement</th>
+    </tr>
+
+    <tr class="tab-title paiement-box-nopaiement" style="<?=!$p_identif_20151020['HA'] && $p_identif_20151020_opts['payment'] == 'nopaiement' ? '' : 'display:none;'?>">
+      <th class="subtitle" colspan="4">Pas de Paiement (Déclaration seule)</th>
+    </tr>
+    <tr class="elt paiement-box-nopaiement" style="<?=!$p_identif_20151020['HA'] && $p_identif_20151020_opts['payment'] == 'nopaiement' ? '' : 'display:none;'?>">
+      <td class="" colspan="4">
+        <strong>IMPORTANT</strong> : cette OPTION NE doit être utilisée QUE SI vous voulez transmettre une rectification moins de 3 jours avant la date limite de dépôt
+        et que les télé règlements précédents ont été acceptés, afin d’éviter d’être prélevé 2 fois.
+      </td>
+    </tr>
+
+    <tr class="elt paiement-box-tlra" style="<?=$p_identif_20151020['HA'] && $p_identif_20151020_opts['payment'] == 'tlra' ? '' : 'display:none;'?>">
+      <td class="libelle">
+        <label>1er compte bancaire à débiter </label>
+      </td>
+      <td class="input_35">
+      <?php if ($declaration->isLoaded() && $declaration->status != Declaration::STATUS_EDITABLE): ?>
+        <p><?=Iban::formatFromDb($p_identif_20151020['GA'])?></p>
+      <?php else: ?>
+      <?php if ($adherent->getIbans()->count() > 0): ?>
+      <?=Elt::select(array('first' => 'Veuillez choisir un IBAN (si montant est > 0)',
+                           'options' => $adherent->asIbansHash(),
+                           'value' => $p_identif_20151020['GA'],
+                           'name' => 'p_identif_20151020[GA][]',
+                           'id' => 'p_identif_20151020_GA',
+                           'class' => $p_identif_20151020['GA'] ? '' : 'no-print',
+                           'events' => array('mouseover' => "NTD.Control.displayError(this)", 'mouseout' => "NTD.Control.hideError(this)"))) ?>
+      <?php else: ?>
+        <p id="p_identif_20151020_GA">Compte Bancaire non renseigné. Veuillez enregistrer votre IBAN dans votre espace privatif</p>
+      <?php endif; ?>
+      <?php endif; ?>
+      </td>
+      <td class="input">
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HA', 'value' => $p_identif_20151020['HA'])) ?>
+      </td>
+      <td class="input_35">
+        <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KA', 'value' => $p_identif_20151020['KA'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt paiement-box-tlra" style="<?=$p_identif_20151020['HA'] && $p_identif_20151020_opts['payment'] == 'tlra' ? '' : 'display:none;'?>">
+      <td class="libelle input">
+        <label>2ème compte bancaire à débiter </label>
+      </td>
+      <td class="input_35">
+      <?php if ($declaration->isLoaded() && $declaration->status != Declaration::STATUS_EDITABLE): ?>
+        <p><?=Iban::formatFromDb($p_identif_20151020['GB'])?></p>
+      <?php else: ?>
+      <?php if ($adherent->getIbans()->count() > 0): ?>
+      <?=Elt::select(array('first' => 'Veuillez choisir un IBAN (si montant est > 0)',
+                           'options' => $adherent->asIbansHash(),
+                           'value' => $p_identif_20151020['GB'],
+                           'name' => 'p_identif_20151020[GB][]',
+                           'id' => 'p_identif_20151020_GB',
+                           'class' => $p_identif_20151020['GB'] ? '' : 'no-print',
+                           'events' => array('mouseover' => "NTD.Control.displayError(this)", 'mouseout' => "NTD.Control.hideError(this)"))) ?>
+      <?php else: ?>
+        <p id="p_identif_20151020_GB">Compte Bancaire non renseigné. Veuillez enregistrer votre IBAN dans votre espace privatif</p>
+      <?php endif; ?>
+      <?php endif; ?>
+      </td>
+      <td class="input">
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HB', 'value' => $p_identif_20151020['HB'])) ?>
+      </td>
+      <td class="input_35">
+        <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KB', 'value' => $p_identif_20151020['KB'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt paiement-box-tlra" style="<?=$p_identif_20151020['HA'] && $p_identif_20151020_opts['payment'] == 'tlra' ? '' : 'display:none;'?>">
+      <td class="libelle input">
+        <label>3ème compte bancaire à débiter </label>
+      </td>
+      <td class="input_35">
+      <?php if ($declaration->isLoaded() && $declaration->status != Declaration::STATUS_EDITABLE): ?>
+        <p><?=Iban::formatFromDb($p_identif_20151020['GC'])?></p>
+      <?php else: ?>
+      <?php if ($adherent->getIbans()->count() > 0): ?>
+      <?=Elt::select(array('first' => 'Veuillez choisir un IBAN (si montant est > 0)',
+                           'options' => $adherent->asIbansHash(),
+                           'value' => $p_identif_20151020['GC'],
+                           'name' => 'p_identif_20151020[GC][]',
+                           'id' => 'p_identif_20151020_GC',
+                           'class' => $p_identif_20151020['GC'] ? '' : 'no-print',
+                           'events' => array('mouseover' => "NTD.Control.displayError(this)", 'mouseout' => "NTD.Control.hideError(this)"))) ?>
+      <?php else: ?>
+        <p id="p_identif_20151020_GC">Compte Bancaire non renseigné. Veuillez enregistrer votre IBAN dans votre espace privatif</p>
+      <?php endif; ?>
+      <?php endif; ?>
+      </td>
+      <td class="input">
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HC', 'value' => $p_identif_20151020['HC'])) ?>
+      </td>
+      <td class="input_35">
+        <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KC', 'value' => $p_identif_20151020['KC'])) ?>
+      </td>
+    </tr>
+
+  </table>
+
+</div>

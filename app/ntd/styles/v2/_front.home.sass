@@ -1,0 +1,154 @@
+
+.page--home
+  .block--padding-top
+    padding-top: 60px
+
+  .block--padding-bottom
+    padding-bottom: 60px
+
+  .block--pourqui
+    background: #eceef3
+
+    .block--pourqui__cols
+      margin-left: -45px
+      margin-right: -15px
+
+    .block--pourqui__cols__col
+      margin-left: 30px
+      width: 310px
+      padding: 15px
+
+      .block--pourqui__cols__col__img-container
+        background: $color--red
+        border: 1px solid #ffffff
+        padding-bottom: 3px
+        font-size: 0
+
+    .block--pourqui__cols__col:hover
+      background: #FFFFFF
+
+  .block--introduction
+    font-size: 16px
+    background: $color--lightgrey
+    padding-top: 1px // fix background with flashinfo margin-top
+
+    .flashinfo
+      margin: 18px -18px 32px
+      position : relative
+      
+    .block--introduction__left
+      width: 510px
+      background: url(/app/ntd/pix/general/logo_partenaire_edi.png) no-repeat right 30px
+
+      .wysiwyg
+        margin-top: 30px
+
+
+    .block--introduction__right
+      width: 450px
+      // = 960 - 510
+      height: 366px
+      background: url(/app/ntd/pix/general/home_image1.png) no-repeat bottom right
+      position: relative
+
+    .service-types-container
+      background: rgba(95, 112, 146, 0.2)
+      padding: 12px 10px 6px
+      border-radius: 2px
+      right: 70px
+      bottom: 54px
+      position: absolute
+      width: 297px
+
+      > .btn
+        margin-bottom: 8px
+
+  > .block--snippets
+    background: #fcfcfd
+
+    .snippet__content__img--border-red
+      background: $color--red
+      padding-left: 3px
+      font-size: 0
+      border: 1px solid #d6d6d6
+      margin-top: 20px
+      margin-right: 15px
+
+.block--account
+  .font-weight-bold
+    color: #002E60
+    font-size: 18px
+    font-weight: bold
+  .font-compagny
+    display: block
+   
+
+.btn--servicetype
+  background-color: $color--lightblue
+  @include btnTopBorder(#8199c7, #505e7b)
+  font-family: "Georgia"
+  font-size: 20px
+  position: relative
+  text-align: left
+  width: 275px
+  height: 48px
+  padding: 15px
+  &:after
+    content: "\f0da"
+    font-family: "fontawesome"
+    padding-top: 3px
+    position: absolute
+    right: 12px
+    top: 10px
+  &:hover
+    background-color: $color--darkblue
+  &:active
+    background-color: $color--darkblue
+    &:after
+      right: 11px
+
+.btn--service
+  vertical-align: top
+  box-shadow: 0 1px 0px  0px #FFFFFF inset
+  background-color: $color--lightgrey
+  border: 1px solid
+  border-color: $color--borderlightblue-1 #f3f3f8 #f3f3f8
+  color: $color--darkblue
+  position: relative
+  font-family: "Georgia"
+  font-size: 19px
+  text-shadow: none
+  margin-bottom: 10px
+  margin-right: 10px
+  width: 178px
+  height: 86px
+  text-align: left
+  padding: 25px 15px
+  line-height: 20px
+  &:after
+    color: $color--darkred
+    content: "\f0da"
+    font-family: "fontawesome"
+    top: 35%
+    position: absolute
+    right: 10px
+  &:hover
+    background-color: $color--lightgrey
+    border-color: $color--borderlightblue-1
+    box-shadow: 0px 3px 0px 0px $color--lightgrey
+  &:active
+    background-color: $color--lightgrey
+    border-color: $color--borderlightblue-1
+    box-shadow: none
+    margin-top: 2px
+    margin-bottom: 0
+  .service-information
+    font-size: 14px
+    color: $color--lightblue 
+    display: block
+  
+.btn-home-margin-top
+  margin-top: 23px !important
+
+.btn-deconnexion
+  padding: 10px 12px

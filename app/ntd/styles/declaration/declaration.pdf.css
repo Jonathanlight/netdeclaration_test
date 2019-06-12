@@ -1,0 +1,319 @@
+@font-face { font-family:'Georgia'; src: url('/app/ntd/fonts/georgia.otf'); }
+@font-face { font-family:'Arial'; src: url('/app/ntd/fonts/arial.otf'); }
+
+* { box-sizing:content-box; text-rendering:optimizeLegibility; }
+body { padding:0;margin:0; }
+.print-only, .hidden { display:block !important; }
+.no-print { display:none; }
+.clear { clear:both; }
+.left { float:left; }
+.right { float:right; }
+.break-avoid { page-break-after:avoid; }
+.page-break { page-break-after:always; }
+.break { page-break-after:always; }
+b { font-weight:bold; }
+i { font-style:italic; }
+
+.pdf-header { font-size:9pt; text-align:center; }
+
+.pdf-content { font-family:'Arial'; font-size:7pt; line-height:1; padding:0; }
+
+.pdf-content h1 { margin-top:0; display:none; }
+.pdf-content h3 { color:#002E5F; font-family:'Georgia', serif; font-size:14pt; margin:10px 0 5px; }
+.table .pdf-content h3 { color:#000000; }
+.pdf-content table { width:99.99%; }
+.pdf-content table table { width:100%; }
+
+.pdf-content select,
+.pdf-content input { background:transparent; border:none; color:#000; padding:0; width:100%; }
+.pdf-content input[type='checkbox'] {width: auto !important;}
+.pdf-content select { appearance:none; -webkit-appearance:none; border-radius:0; -webkit-border-radius:0; }
+.pdf-content .formulaire-page:last-child { page-break-after:avoid !important; }
+.pdf-content .formulaire-header { margin-bottom:10px; }
+.pdf-content .formulaire-header .row { overflow:hidden; }
+.pdf-content .formulaire-header .ftype-code { float:right; }
+.pdf-content .formulaire-header .millesime { float:left; }
+
+/** Nouveau form **/
+.pdf-content .new-form label { font-size:7pt; }
+.pdf-content .new-form select,
+.pdf-content .new-form input { font-size:7pt; }
+.pdf-content .new-form .impot_field { font-size:7pt; text-align:center; display:block; }
+.pdf-content .new-form td { border:1pt #000000 solid; padding: 0; vertical-align:middle; }
+.pdf-content .new-form span.br { display:block; }
+.pdf-content .new-form .formulaire-repetable .imprime-box { display:block !important; }
+.pdf-content .new-form .formulaire-page.force-hidden { display:none !important; page-break-after:avoid; }
+.pdf-content .new-form .no-page-break .formulaire-page { page-break-after:avoid; }
+.pdf-content .new-form .no-page-break .formulaire-page:last-child { page-break-after:always; }
+.pdf-content .new-form .imprime-page { page-break-after:always; }
+.pdf-content .new-form .imprime-page:last-child { page-break-after:avoid; }
+.pdf-content .new-form .imprime-box.hidden { display:none !important; }
+.pdf-content .new-form .formulaire-page { page-break-after:always; }
+.pdf-content .new-form .formulaire-page td { margin:5px !important; }
+.pdf-content .new-form .formulaire-page td > * { display:block; margin:5px !important; }
+.pdf-content .new-form .formulaire-page td label { padding:0; line-height:1; display:block; }
+.pdf-content .new-form .formulaire-page td.title { color:#333333; font-weight:bold; line-height:1.3em; padding:0;}
+.pdf-content .new-form .formulaire-page td.h2 { text-transform:uppercase; font-size:16pt; text-align:center; }
+.pdf-content .new-form .formulaire-page td.h3 { color:#333333; font-size:13pt; }
+.pdf-content .new-form .formulaire-page td.ta-left { text-align:left; }
+.pdf-content .new-form .formulaire-page td.ta-center { text-align:center; }
+.pdf-content .new-form .formulaire-page td.ta-right { text-align:right; }
+.pdf-content .new-form .formulaire-page td.bold { font-weight:bold; }
+.pdf-content .new-form .formulaire-page td.impot_field { padding:0; text-align:center; }
+.pdf-content .new-form .formulaire-page td.impot_row { font-size:10pt; font-weight:bold; text-align:center; }
+.pdf-content .new-form .formulaire-page td.empty { background:#fff; border:none; }
+.pdf-content .new-form .formulaire-page .imprime-field { text-align:center; }
+.pdf-content .new-form .formulaire-page .imprime-field select { padding:0 5px; }
+.pdf-content .new-form .formulaire-page .imprime-field .elt-field { padding:0 5px; }
+.pdf-content .new-form .formulaire-page .imprime-field .elt-field input[type="text"] { min-width: 30pt; }
+.pdf-content .new-form .formulaire-page .imprime-field input.type-pcd,
+.pdf-content .new-form .formulaire-page .imprime-field input.type-qty,
+.pdf-content .new-form .formulaire-page .imprime-field input.type-moa { text-align:right; }
+.pdf-content .new-form .fidentif-rof { overflow:hidden; }
+.pdf-content .new-form .fidentif-rof select { float:left; margin-right:10pt; width:auto; }
+.pdf-content .new-form .fidentif-rof .elt-field { float:left; }
+.pdf-content .new-form .fidentif-rof .click-label input { width:auto; }
+.pdf-content .new-form .big-text { color: #000000; font-size: 1.2em; font-weight:normal; line-height:1.1em; margin:0; }
+.pdf-content .new-form .ftype-title { text-align:center; }
+.pdf-content .new-form .formulaire-page .merged_tds .merged_td { float:left; display:inline; }
+.pdf-content .new-form .formulaire-page .merged_tds .merged_td label { display:inline; }
+.pdf-content .new-form .formulaire-page td.small-size { font-size:6pt; padding:0; }
+.pdf-content .new-form .formulaire-page td.small-size.impot_field,
+.pdf-content .new-form .formulaire-page td.small-size > label { padding:0; }
+.pdf-content .new-form .formulaire-page td.small-size input { font-size:7pt; }
+.pdf-content .new-form .formulaire-page td.little-width { width:50px; }
+.pdf-content .new-form .formulaire-page td.medium-width { width:100px; }
+.pdf-content .new-form .formulaire-page td.large-width { width:200px; }
+.pdf-content .new-form .formulaire-page td.title { background-color: #EFF0F5; font-weight: bold; }
+
+
+.pdf-content .new-form .formulaire-page [data-imprime_code="2067BIS"][data-code="BA"] { width: 180px;}
+.pdf-content .new-form .formulaire-page [data-imprime_code="2067BIS"][data-code="CA"] { width: 360px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2067BIS"][data-code="DA"] { width: 180px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2067BIS"][data-code="ZZZ3"] { width: 14em; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2067BIS"][data-code="BE"],
+.pdf-content .new-form .formulaire-page [data-imprime_code="2067BIS"][data-code="CE"],
+.pdf-content .new-form .formulaire-page [data-imprime_code="2067BIS"][data-code="DE"] { width: 3em; }
+
+.pdf-content .new-form .formulaire-page [data-imprime_code="2069A"][data-code="AH"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2069A"][data-code="AK"] { width: 20px; }
+
+.pdf-content .new-form .formulaire-page [data-imprime_code="2083"][data-code="BC08"] { width: 80px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2083"][data-code="BV"] { width: 80px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2083"][data-code="BD"] { width: 80px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2083"][data-code="BE"] { width: 80px; }
+
+.pdf-content .new-form .formulaire-page [data-imprime_code="2257"][data-code="GK"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2039"][data-code="AD"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2039"][data-code="AF"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2143"][data-code="MD"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2139"][data-code="MJ"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2139E"][data-code="HN"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2031"][data-code="KV"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2031"][data-code="KW"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2058B"][data-code="EL"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2058B2"][data-code="EL"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2033D"][data-code="QL"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2033D2"][data-code="QL"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2058TS"][data-code="CC"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2035A"][data-code="GD"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2035B"][data-code="GF"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2072CA8"][data-code="AS"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2072CA8"][data-code="CS"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2072SCA2"][data-code="CR"] { width: 20px; }
+.pdf-content .new-form .formulaire-page [data-imprime_code="2072SCA2"][data-code="CS"] { width: 20px; }
+
+.pdf-content .new-form .formulaire-page [data-imprime_code="2035SUITE"][data-code="KC"] { width: 150px; }
+.pdf-content .new-form [data-code="2035SUITE"] .formulaire-page .imprime-field,
+.pdf-content .new-form [data-code="2035SUITE"] .formulaire-page .libelle,
+.pdf-content .new-form [data-code="2035SUITE"] .formulaire-page .libelle label { margin: 3px !important; padding: 0 !important; }
+.pdf-content .new-form [data-code="2035SUITE"] .formulaire-page .imprime-field .elt-field { margin: 0px !important; padding: 0 !important; }
+
+.pdf-content .new-form [data-code="2057"] .formulaire-page .imprime-field,
+.pdf-content .new-form [data-code="2057"] .formulaire-page .libelle,
+.pdf-content .new-form [data-code="2057"] .formulaire-page .libelle label { margin: 3px !important; padding: 0 !important; }
+.pdf-content .new-form [data-code="2057"] .formulaire-page .imprime-field .elt-field { margin: 0px !important; padding: 0 !important; }
+
+.pdf-content .new-form [data-code="2083"] .formulaire-page .imprime-field,
+.pdf-content .new-form [data-code="2083"] .formulaire-page .libelle,
+.pdf-content .new-form [data-code="2083"] .formulaire-page .libelle label { margin: 3px !important; padding: 0 !important; }
+.pdf-content .new-form [data-code="2083"] .formulaire-page .imprime-field .elt-field { margin: 0px !important; padding: 0 !important; }
+
+.pdf-content .new-form [data-code="2072SA2"] .formulaire-page .imprime-field,
+.pdf-content .new-form [data-code="2072SA2"] .formulaire-page .libelle,
+.pdf-content .new-form [data-code="2072SA2"] .formulaire-page .libelle label { margin: 3px !important; padding: 0 !important; }
+.pdf-content .new-form [data-code="2072SA2"] .formulaire-page .imprime-field .elt-field { margin: 0px !important; padding: 0 !important; }
+
+
+/** Ancien form **/
+.pdf-content .old-form label { font-size:10pt; }
+.pdf-content .old-form select,
+.pdf-content .old-form input { font-size:10pt; }
+.pdf-content .old-form table { margin-bottom:10px; page-break-inside:avoid; }
+.pdf-content .old-form .formulaire-header .row { padding:10px; }
+.pdf-content .old-form .formulaire-header .big-text { margin:0; color:#002E5F; font-family:'Georgia'; font-size:20pt; font-weight:normal; text-transform:uppercase; }
+.pdf-content .old-form .formulaire-header .ftype-title { text-align:center; }
+
+.pdf-content .old-form .textarea-split-comments { width:550px; max-height:150px; border:1pt #000 solid; }
+
+.pdf-content .old-form .formulaire-page td { border:1pt #000 solid; color:#666; font-size:10pt; padding:7px; text-align:left; vertical-align:middle; }
+.pdf-content .old-form .formulaire-page th { border:1pt #000 solid; color:#666; font-weight:bold; font-size:10pt; text-align:center; padding:7px; }
+.pdf-content .old-form .formulaire-page th.maintitle { border:1px solid #000000; font-size:12pt; }
+.pdf-content .old-form .formulaire-page tr.tab-title th { border:1px solid #000000; line-height:15px; color:#666; }
+.pdf-content .old-form .formulaire-page tr.tab-title th.subtitle { border:1px solid #000000; color:#666; text-align:left; vertical-align:top; }
+.pdf-content .old-form .formulaire-page tr.tab-title th.subtitle .line_impot { text-align: center; font-size: 7pt; }
+
+.pdf-content .old-form .formulaire-page tr.elt td input,
+.pdf-content .old-form .formulaire-page tr.elt td select { border: 1px dashed; padding: 5px 1px 5px 1px; margin: 0; width:100%; min-width:80px; }
+.pdf-content .old-form .formulaire-page tr.elt td.input_35 input { text-align: right; }
+.pdf-content .old-form .formulaire-page tr.elt td.input_70 input { width:400px; text-align:right; }
+.pdf-content .old-form .formulaire-page tr.elt td.line_id { font-weight:bold; text-align:center; width:20px; }
+.pdf-content .old-form .formulaire-page tr.elt td.line_impot { text-align:center; width:30px; }
+.pdf-content .old-form .formulaire-page tr.elt td.input { font-size:10pt; }
+.pdf-content .old-form .formulaire-page tr.elt td.input .line_impot { text-align: center; font-size: 7pt; margin-bottom: 5px; }
+
+.pdf-content .old-form .formulaire-page .formulaire-fieldset { width:49%; }
+.pdf-content .old-form .formulaire-page .formulaire-fieldset.left input { width:165px; }
+.pdf-content .old-form .formulaire-page .formulaire-fieldset.left select { width:165px; }
+.pdf-content .old-form .formulaire-page .formulaire-fieldset.right input { width:150px; }
+.pdf-content .old-form .formulaire-page .formulaire-fieldset.right select { width:150px; }
+.pdf-content .old-form .formulaire-page .formulaire-fieldset .field-container { margin-bottom:5px; clear:both; }
+.pdf-content .old-form .formulaire-page .formulaire-fieldset .field-container label { color:#666; float:left; font-size:9pt; line-height:1.3em; padding-top:4px; width:160px; margin-right:5px; margin-top:5px; }
+.pdf-content .old-form .formulaire-page .formulaire-fieldset .field-container input,
+.pdf-content .old-form .formulaire-page .formulaire-fieldset .field-container select { float:left; border:1px solid #000000; font-size:9pt; color:#000000; font-weight:normal; height:25px; padding:0 5px; margin-top:5px; }
+.pdf-content .old-form .formulaire-page .formulaire-fieldset .field-container .nref { position: relative; }
+.pdf-content .old-form .formulaire-page .formulaire-fieldset.left .field-container .nref .line_impot { color: rgb(102, 102, 102); position: absolute; left: 300px; top: -6px; }
+.pdf-content .old-form .formulaire-page .formulaire-fieldset.right .field-container .nref .line_impot { color: rgb(102, 102, 102); position: absolute; left: 285px; top: -6px; }
+
+.pdf-content .old-form .formulaire-page tr.paiement-box-tlra td { text-align:left !important; font-size:9pt; }
+.pdf-content .old-form .formulaire-page tr.paiement-box-tlra td.input_35,
+.pdf-content .old-form .formulaire-page tr.paiement-box-tlra td.input_35 input { width:210px !important; }
+.pdf-content .old-form .formulaire-page tr.paiement-box-tlra td.input_35 select { width:320px !important; }
+.pdf-content .old-form .formulaire-page tr.paiement-box-tlra td.input,
+.pdf-content .old-form .formulaire-page tr.paiement-box-tlra td.input input { width:80px !important; max-width:80px; }
+.pdf-content .old-form .formulaire-page .elt-ssaamm-container { width:200px; }
+.pdf-content .old-form .formulaire-page .elt-ssaamm-container > .elt-select { float:right; }
+
+
+/* ----- Exceptions Formulaires ----- */
+.pdf-content .old-form #exportateur-tva3519 table tr.elt td.input input {width:80px; }
+.pdf-content .old-form #exportateur-tva3519 table tr.elt td.input { width:80px; }
+.pdf-content .old-form table.ts2502_2013 tr.tab-title th { font-size:7pt; }
+.pdf-content .old-form table.ts2502_2013 h2 { font-size:13pt; line-height:1.2em; }
+.pdf-content .old-form table.is2571 tr.elt td.input input { width:60px !important; font-size:8pt; padding: 2px 0 2px 2px;}
+.pdf-content .old-form table.is2571 tr.elt td.input select { width:60px !important; font-size:8pt; padding: 2px 0 2px 2px;}
+.pdf-content .old-form table.is2571 tr.elt td.center { text-align:center; }
+.pdf-content .old-form table.is2571 h3 { font-size:10pt; line-height:0.5em; }
+.pdf-content .old-form table.is2571 tr td { font-size:8pt; }
+.pdf-content .old-form table.is2571 tr td label { font-size:8pt; }
+.pdf-content .old-form table.is2572_2014 tr.tab-title th.title { font-size:11px !important; padding:3px 0; }
+.pdf-content .old-form table.is2572_2014 tr.elt td.libelle { font-size:11px; }
+.pdf-content .old-form table.is2572_2014 tr.elt td.input,
+.pdf-content .old-form table.is2572_2014 tr.elt td.input input { width:80px !important; }
+.pdf-content .old-form table.is2573sd tr.elt td.small-input select { width:50px; }
+.pdf-content .old-form table.is2573sd tr.elt td.small-input input { width:60px !important; }
+.pdf-content .old-form table.is2573sd tr.elt td.small-input { width:50px !important; }
+.pdf-content .old-form table.cvae1330ee tr.elt td.small-input,
+.pdf-content .old-form table.cvae1330epe tr.elt td.small-input { width:40px; max-width:40px; padding:0 5px; }
+.pdf-content .old-form table.cvae1330ee tr.elt td.input_35 input,
+.pdf-content .old-form table.cvae1330epe tr.elt td.input_35 input { width:100px; max-width:100px; padding:0 5px; }
+.pdf-content .old-form table.cvae1330ee tr.elt td.input_35 select,
+.pdf-content .old-form table.cvae1330epe tr.elt td.input_35 select{ width:100px; max-width:100px; padding:0 5px; }
+.pdf-content .old-form table.cvae1330ee tr.elt td.input select,
+.pdf-content .old-form table.cvae1330epe tr.elt td.input select { width:60px; max-width:60px; padding:0 5px; }
+
+
+.pdf-content .old-form .formulaire-page.cvae1329def_20140101 td { padding: 5px 7px; }
+.pdf-content .old-form .formulaire-page.cvae1329def_20140101.page-2 td { padding: 4px 7px; }
+.pdf-content .old-form .formulaire-page.cvae1329ac_20140101 td { padding: 2px 7px; }
+.pdf-content .old-form .formulaire-page.cvae1329ac_20140101.page-2 td { padding: 2px 7px; }
+.pdf-content .old-form .formulaire-page.ts2502_2013 td { padding: 0 7px; }
+.pdf-content .old-form .formulaire-page.is2572_2014 td { padding: 3px 7px; }
+.pdf-content .old-form .formulaire-page.is2572_2014 tr.elt td.line_impot { width:32px; }
+
+
+.pdf-content table .sub-table > td { padding: 0px !important; }
+.pdf-content table .sub-table > td td { border-top: medium none !important; border-left: medium none !important; }
+.pdf-content table .sub-table > td td.input { border-right: medium none !important; width: 133px; }
+
+
+
+.pdf-footer { font-size:7.5px; text-align:center; }
+
+.pdf-content .imprime-controls,
+.pdf-content .buttons-container,
+.pdf-content .btn-remove-container,
+.pdf-content .btn-add-container,
+.pdf-content .img-tooltip,
+.pdf-content .imprime-page.formulaire-repetable,
+.pdf-content .imprime-page.formulaire-repetable .default-page,
+.pdf-content .load-infos,
+.pdf-content .ntd-button
+.pdf-content .formulaire-repetable-select,
+.pdf-content .declaration-steps { display:none; }
+
+.formulaire-page .paiement-box-tlra .print-payment-amount { width: 172px; }
+.formulaire-page .paiement-box-tlra .field-iban select  { font-size: 6px; }
+.formulaire-page .paiement-box-tlra input.field-ref-payment { font-size: 9px; }
+
+
+.field--code { display: none !important; }
+
+
+/* RCM 2777 2018 */
+.pdf-rcm .old-form .formulaire-page .formulaire-fieldset { width: 50%;}
+.pdf-rcm .old-form .formulaire-page .formulaire-fieldset .field-container { border: 1px solid #000; margin-bottom: 0; margin-top: -1px; padding: 0;}
+.pdf-rcm .old-form .formulaire-page .formulaire-fieldset.left { width: 50%;}
+.pdf-rcm .old-form .formulaire-page .formulaire-fieldset.right  { border-left: 0; width: 50%;}
+.pdf-rcm .old-form .formulaire-page .formulaire-fieldset.right .field-container:last-child label { height: 24px;}
+/* .pdf-rcm .old-form .formulaire-page .formulaire-fieldset.left label { width: 200px;} */
+.pdf-rcm .old-form .formulaire-page .formulaire-fieldset.right .field-container {border-left: 0;}
+.pdf-rcm .old-form .formulaire-page .formulaire-fieldset .field-container input , .pdf-rcm .old-form .formulaire-page .formulaire-fieldset .field-container select{ border: 0; font-size: 7pt; margin: 0; color: #000;     height: 20px;}
+.pdf-rcm .old-form .formulaire-page .formulaire-fieldset .field-container label { font-size: 7pt; color: #000; margin: 0; padding: 5px; border-right: 1px solid #000;}
+.pdf-rcm h3 { color: #000; font-size: 11.2px; font-family: Arial;}
+.pdf-rcm .old-form .formulaire-header .big-text { color: #000; font-size: 11.2px; font-family: Arial; }
+.pdf-rcm .old-form .formulaire-page tr.tab-title th, .pdf-rcm .old-form .formulaire-page tr.tab-title td { color: #333333; font-size: 7pt; background: #EFF0F5; font-weight: bold; text-align: center; padding: 7px;}
+.pdf-rcm .old-form .formulaire-page tr.tab-title th.subtitle, .pdf-rcm .old-form .formulaire-page tr.tab-title td.subtitle { color: #333333;}
+.pdf-rcm .old-form .formulaire-page th { padding: 5px;}
+.pdf-rcm .old-form label { font-size: 7pt;}
+.pdf-rcm .old-form .formulaire-page td { border:1pt #000 solid; color:#000; font-size:7pt; padding:5px; text-align:left; vertical-align:middle; }
+.pdf-rcm .formulaire-page h3 {border: 1px solid #000; color: #333333; font-family: Arial; border-bottom: 0; background: #EFF0F5; margin-bottom: 0; padding: 5px; text-align: left; text-transform: uppercase; font-weight: bold; font-size: 7pt;}
+.pdf-rcm  h3 { text-align: center;}
+.pdf-rcm .old-form .formulaire-page td, .pdf-rcm .old-form select, .pdf-content .old-form input, .formulaire-page .tooltip { font-size: 7pt;}
+.pdf-rcm .old-form .formulaire-page tr.elt td input, .pdf-rcm .pdf-content .old-form .formulaire-page tr.elt td select { text-align: center;}
+
+.pdf-rcm .old-form .formulaire-page tr.elt td input[type="text"], .pdf-rcm .pdf-content .old-form .formulaire-page tr.elt td select { border: 0; padding: 5px 1px 0 1px; min-width: 80px; /* margin: 0 -7.5%;  */ width: 100%;}
+.pdf-content .old-form .formulaire-page tr.elt td select {border: 0;}
+.pdf-rcm .old-form .formulaire-page tr.paiement-box-tlra td input[type="text"] {margin: 0; }
+.pdf-rcm .old-form .formulaire-page tr.elt td.input { overflow: hidden;}
+.pdf-rcm .paiement-box-tlra td input, .pdf-rcm .paiement-box-tlra td select, .pdf-rcm  .formulaire-page td.input .elt-ssaamm-container select,  .pdf-rcm  .formulaire-page td.input .elt-ssaamm-container input , .pdf-rcm .formulaire-page td.input input.field-type-date-ssaammjj {  border-top: 0 !important;}
+.pdf-rcm  .formulaire-page td.input .elt-ssaamm-container select {  padding-top: 0!important;}
+.pdf-content .old-form .formulaire-page tr.paiement-box-tlra td.input_35 {width: 25% !important;}
+.pdf-content .old-form .formulaire-page tr.paiement-box-tlra td.libelle {width: 600px !important;}
+.pdf-content .old-form .formulaire-page tr.paiement-box-tlra td.libelle label { width: 600px !important;}
+
+.pdf-content .old-form .formulaire-page .print-large {width: 255px;}
+.pdf-content .old-form .formulaire-page:last-child,
+.pdf-content .old-form,
+.declaration-content,
+.page-break:last-child { page-break-after:avoid !important; }
+
+/* .pdf-content .old-form .formulaire-page .field-type-select, */
+
+.pdf-content .old-form .formulaire-page .field-type-number {
+    direction: rtl !important;
+    text-align: right !important;
+}
+
+.pdf-content .old-form .formulaire-page input[class*="field-type-date-"],
+.pdf-content .old-form .formulaire-page .field-type-text,
+.pdf-content .old-form .formulaire-page .align-left {
+    text-align: left !important;
+    margin-left: 50px;
+}
+
+.pdf-content .old-form .formulaire-page .align-left {
+    direction: ltr !important; /* for select */
+    text-align: left !important; /* for input */
+}
+/* .pdf-rcm input[type="radio"]:checked { box-shadow: 0 0 10px #000;} */

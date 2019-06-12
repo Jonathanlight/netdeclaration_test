@@ -1,0 +1,6 @@
+<ul class="sortable">
+  <?php foreach ($services as $service): ?>
+    <li data-id="<?= $service->getId() ?>"><span draggable="true" class="handle">=</span> <span
+        class="content"><?=$service->status ? '': '[Hors ligne] '?><?= $service->name ?></span></li>
+  <?php endforeach; ?>
+</ul>

@@ -1,0 +1,43 @@
+<div class="hbox renew-form-box">
+
+  <form>
+    <input type="hidden" name="record[adherent_id]" value="<?=$adherent->getId()?>" />
+    <table class="hbox " style="width:400px">
+      <tbody>
+      <tr>
+        <td>
+
+          <fieldset>
+            <legend>Formulaire pour devenir adhérent Primaire sur un autre utilisateur</legend>
+            <div class="box">
+              <div class="elem elem-item">
+                <label>Utilisateur</label>
+                <div class="input-selector">
+                  <a onclick="kwo.ux.onInputReset(this)" href="javascript:void(0)" title="vider">x</a>
+                  <input type="hidden" value="1" class="input-record-id" name="record[user_id]">
+                  <input type="text" data-item="<?= $adherent_user ? $adherent_user->getKey() : '' ?>"
+                         onclick="kwo.ux.onItemEdit(this)" value="<?=$adherent_user ? $adherent_user->getName() : ''?>" readonly="readonly">
+                  <a data-caller-item="<?= $adherent->getKey() ?>"
+                     data-item="<?= $adherent->getKey() ?>"
+                     data-caller-model="adherent"
+                     data-models="user" onclick="new Kwo.Class.ItemPicker(this)" href="javascript:void(0)"
+                     class="item-picker-button">·</a>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="launcher" style="">
+              <input type="image" title="Changer l'utilisateur" src="/app/core/pix/action/store.png"
+                     onclick="Kwo.F('adherent').onExec('secondary.change.user', this, { callback: true}); return false;"/>
+            </div>
+
+          </fieldset>
+        </td>
+      </tr>
+      </tbody>
+
+    </table>
+
+  </form>
+</div>

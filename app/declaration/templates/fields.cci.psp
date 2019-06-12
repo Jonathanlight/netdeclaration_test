@@ -1,0 +1,5 @@
+<ul>
+  <?php foreach ($options as $value => $name): ?>
+    <li data-value="<?=$value ?>"><?=$name ?></li>
+  <?php endforeach ?>
+</ul>

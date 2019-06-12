@@ -1,0 +1,51 @@
+<div class="table">
+  <main class="table-cell table-padding-right table-cell--main block  wrapper__footer-padding-bottom">
+    <?= H::breadcrumb($_breadcrumb) ?>
+    <h1 class="font--darkblue font-size-big font-family--georgia margin-bottom"><?= $form->title ?></h1>
+
+
+    <form action="<?= $action ?>" method="post"
+          class="form form-<?= $form->code ?><?= $class ?> form--ntd  form--ntd--label-inline"
+          data-form-id="<?= $form->getId() ?>"
+          data-on-load="new Kwo.Class.Form(this)">
+
+      <?= $hidden ?>
+
+      <div class="form-ntd">
+
+        <?php if (!empty($form->header)): ?>
+          <div class="form--ntd-header"><?= nl2br($form->header) ?></div>
+        <?php endif; ?>
+
+        <div class="form-fields elt">
+          <?= $fields ?>
+          <div class="block__send">
+            <button type="submit" class="btn btn--color-light-blue btn-infos btn-send">
+              <?= empty($form->button) ? l('send') : $form->button ?>
+            </button>
+            <span class="warning-information">* Ces champs sont obligatoires</span>
+          </div>
+        </div>
+
+
+        <?php if (!empty($form->footer)): ?>
+          <div class="form-footer"><?= nl2br($form->footer) ?></div>
+        <?php endif; ?>
+      </div>
+    </form>
+
+
+    <?php if ($form->hasFlag(Form::FLAG_ACK_SHOW)): ?>
+      <div class="form-ack" style="display:none"></div>
+    <?php endif; ?>
+  </main>
+  <aside class="table-cell  table-cell--aside  wrapper__footer-padding">
+    <div class="block__height">&nbsp;</div>
+    <?php if (NetDeclarationManager::isDomtom()): ?>
+      <?=l('snippet:contact-domtom')?>
+    <?php else: ?>
+      <?=l('snippet:contact')?>
+    <?php endif; ?>
+
+  </aside>
+</div>

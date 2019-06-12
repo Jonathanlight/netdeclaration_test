@@ -1,0 +1,18 @@
+<div id="WebSearchResults" style="display:none;">
+ <div id="WebSearchTitle">
+  <table style="width:100%;"><tr>
+   <td><a href="javascript:void(0)" onclick="$('WebSearchResults').hide()" style="float:right;"><img src="/<?=PIX_PATH?>/actions/logout.png" alt="x" align="top"/></a> Résultat de votre recherche</td>
+  </tr></table></div>
+ <div id="WebSearchLinks"></div>
+ <div id="WebSearchError" style="display:none;">Aucun r&eacute;sultat.</div>
+</div>
+<form id="WebSearch" autocomplete="off" action="javascript:Kwo.WebSearch.search($('WebSearchQuery').value, Kwo.WebSearch.getType())" style="padding-top:5px">
+ <div style="float:left" id="WebSearchType">
+  <input type="radio" name="WebSearchType" id="TypeGoogle" value="google" checked="checked" /><label for="TypeGoogle" style="display:inline"><img src="/<?=APP_PATH?>/core/pix/picto-google.gif" /></label>
+  <input type="radio" name="WebSearchType" id="TypeYahoo" value="yahoo" /><label for="TypeYahoo" style="display:inline"><img src="/<?=APP_PATH?>/<?=CORE?>/pix/picto-yahoo.gif" /></label>
+ </div>
+ <div class="barSearch" style="float:right">
+  <input type="text" id="WebSearchQuery" class="text"/>
+  <input type="image" src="/<?=PIX_PATH?>/empty.gif" class="image"/>
+ </div>
+</form>

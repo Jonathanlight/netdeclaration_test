@@ -1,0 +1,175 @@
+<?php 
+
+error_reporting((E_ALL & ~E_NOTICE) | E_STRICT);
+
+setlocale(LC_COLLATE, 'fr_FR');
+setlocale(LC_CTYPE, 'fr_FR');
+
+define('DB_NAME', 'ntd');
+define('DB_LOGIN', 'ntd');
+define('DB_PASSWORD', 'Jm8akZ2v');
+define('DB_SERVER', 'localhost');
+//define('DB_SERVER', ':/var/lib/mysql/mysql.sock');
+
+define('MEMCACHE_SERVER', 'localhost');
+
+define('KWO_SEED', DB_NAME.DB_PASSWORD);
+define('KWO_VERSION', '4.0.0');
+
+define('LOAD_LEVEL', 0);
+
+define('CORE', 'core');
+
+define('FS', '');
+
+define('TZ', '+01:00');
+
+define('APP_PATH', 'app');
+define('DOC_PATH', 'doc');
+define('ETC_PATH', 'etc');
+define('LIB_PATH', 'lib');
+define('PUB_PATH', 'pub');
+define('USR_PATH', 'usr');
+define('VAR_PATH', 'var');
+
+define('TMP_PATH', PUB_PATH.'/tmp');
+define('PIX_PATH', APP_PATH.'/'.CORE.'/pix');
+
+define('FEATURE_INOTIFY', false);
+
+define('CLUSTER_NODE_ID', 0);
+// 0:no, 1:yes_MASTER, 2,3,n:yes
+// hosts : 127.0.0.1    www.domain.com
+
+$GLOBALS['objects'] = array();
+
+if (php_sapi_name() != 'cli') {
+  define('IS_CLI', false);
+  $blacklist = array('95.28.54.120');
+  $addr = $_SERVER['REMOTE_ADDR'] .
+          $_SERVER['HTTP_X_FORWARDED_FOR'] .
+          $_SERVER['HTTP_CLIENT_IP'];
+  foreach ($blacklist as $address) {
+    if (strpos($add, $address) !== false) die(0);
+  }
+}
+else {
+  define('IS_CLI', true);
+  $directives = array('safe_mode' => 0,
+                      'memory_limit' => '256M',
+                      'apc.enabled' => 0,
+                      'magic_quotes_runtime' => 0,
+                      'date.timezone' => 'Europe/Paris',
+                      'include_path' => '.',
+                      'default_charset' => 'UTF-8', 
+                      'mbstring.detect_order' => 'UTF-8',
+                      // 'mbstring.func_overload' => '7', 
+                      'mbstring.internal_encoding' => 'UTF-8');
+  foreach ($directives as $key => $value) {
+    ini_set($key, $value);
+    //    echo $key.':'.var_export(ini_get($key), true)."\n";
+  }
+}
+
+if (IS_CLI === false || file_exists(ETC_PATH.'/cache/platform.conf.inc')) {
+  include ETC_PATH.'/cache/platform.conf.inc';
+  include ETC_PATH.'/cache/dbcache.conf.inc';
+}
+
+function a($hash) { 
+  return H::args($hash);
+}
+
+function h($str) { 
+  return htmlspecialchars($str, ENT_QUOTES, 'UTF-8'); 
+}
+
+function c($str) { 
+  return String::capitalize($str); 
+}
+
+function l($key, $bindings=null, $locale=0) { 
+  if ($bindings === null && $locale === 0) { 
+    global $words;
+    if (!isset($words[$key])) { 
+      $words[$key] = GetText::dict($key, $bindings, $locale); 
+    }
+    return $words[$key];
+  }
+  return GetText::dict($key, $bindings, $locale);
+}
+
+
+function S($obj) {
+  return Platform::getSingleton($obj);
+}
+
+function M($model, $key) {
+  return Model::parameter($model, $key);
+}
+
+function T($model) {
+  return Model::parameter($model, 'table');
+}
+
+function N($model) {
+  return Model::parameter($model, 'name');
+}
+
+function I($model) {
+  return Model::parameter($model, 'id');
+}
+
+function P($key) {
+  return $GLOBALS['parameters'][$key];
+}
+
+function B($n) {
+  //inverse : strlen(decbin($n));
+  if (empty($n)) return 0;
+  return 1 << ($n - 1);
+}
+
+function is_ip($ip) {
+  return $_SERVER['REMOTE_ADDR'] == $ip;
+}
+
+function __autoload($class) { 
+  if (isset($GLOBALS['classes'][$class])) {
+    $extension = $GLOBALS['classes'][$class];
+  }
+  else { 
+    $extension = CORE;
+  }
+  require $path = LIB_PATH.'/'.$extension.'/class/'.$class.'.class.inc'; 
+}
+
+Platform::getInstance();
+
+function d($msg, $prefix='') { 
+  $whitelist = array('192.168.0.102', '92.103.81.138');
+  if (IS_CLI === false && !in_array($_SERVER['REMOTE_ADDR'], $whitelist)) return ;
+  if (IS_CLI) {
+    $info = join(' ', $_SERVER['argv']);
+  }
+  else {
+    $info = $_SERVER['REQUEST_URI'];
+  }
+  if ($GLOBALS['objects']['log'] === true) {
+    S('log')->debug($msg, $prefix);
+    return ;
+  } 
+  if (is_int($msg) && $msg === 0) { 
+    $msg = 'INT(0)';
+  }
+  elseif (is_null($msg)) { 
+    $msg = 'NULL';
+  }
+  elseif (is_bool($msg)) {
+    $msg = 'BOOL('.intval($msg).')';
+  }
+  elseif (is_array($msg)) { 
+    $msg = "\n".var_export($msg, true); 
+  }
+  error_log($info.' : '.$msg);
+}

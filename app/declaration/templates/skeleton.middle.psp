@@ -1,0 +1,45 @@
+<?=H::head() ?>
+<div class="wrapper-middle">
+<?php if ($_user['id'] > 0) : ?>
+  <div class="wrapper-header">
+    <ul>
+      <li><?=$_user['id']?></li>
+    <?php foreach (P('middle.modules') as $module) : ?>
+      <li>
+        <a href="/middle/core/<?=$module['action']?>"> <?=$module['label']?></a>
+      </li>
+    <?php endforeach; ?>
+    </ul>
+  </div>
+  <div class="wrapper-content"><?=$_content?></div>
+<?php else: ?>
+
+  <form autocomplete="on" action="">
+  <?=Elt::text(array('name' => 'login',
+                     'label' => 'Login'))?>
+  <?=Elt::text(array('name' => 'password',
+                     'label' => 'Mot de passe',
+                     'password' => true))?>
+    <ul>
+      <li>
+        <label>Email</label>
+        <input type="text" class="text" name="login">
+      </li>
+      <li>
+        <label>Mot de passe</label>
+        <input type="password" class="text" name="password">
+      </li>
+
+      <input type="checkbox" checked="" value="1" class="remember_me" name="remember_me">
+      Mémoriser
+
+
+      <input type="submit" value="Connexion" class="button"></li>
+
+    </ul>
+  </form>
+
+<?php endif; ?>
+</div>
+<pre><?=var_export($_user)?></pre>
+<?=H::foot() ?>

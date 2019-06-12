@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+ <meta charset="utf-8" />
+ <title>Espace d’administration</title>
+ <script src="/<?=APP_PATH?>/core/scripts/prototype.js" type="text/javascript"></script>
+ <script src="/<?=APP_PATH?>/core/scripts/kwo.js" type="text/javascript"></script>
+ <script src="/<?=APP_PATH?>/core/scripts/scriptaculous/scriptaculous.js?load=effects,dragdrop" type="text/javascript"></script>
+ <script src="/<?=APP_PATH?>/core/scripts/emile.js" type="text/javascript"></script>
+ <script src="/<?=APP_PATH?>/core/scripts/back.js" type="text/javascript"></script>
+ <script src="/<?=ConfigManager::JS_PLATFORM?>" type="text/javascript"></script>
+ <script src="/<?=APP_PATH?>/core/scripts/richtext.js" type="text/javascript"></script>
+ <script>
+  var _scope = "back";
+  var _extension = "<?=$_extension?>";
+  var _action = "<?=$_action?>";
+ </script>
+ <link href="/<?=APP_PATH?>/core/styles/back.css" rel="stylesheet" type="text/css" />
+ <link href="/<?=APP_PATH?>/core/styles/print.css" rel="stylesheet" type="text/css" media="print" />
+ <link href="/<?=PIX_PATH?>/back.favicon.png" rel="icon" type="image/png" />
+</head>
+
+<body class="scope-back">
+
+<?php if ($_is_model): ?>
+<div id="<?=strtolower(MODEL)?>-box" class="<?=strtolower(MODEL)?>-box">
+<?php endif; ?>
+
+<?=$_content?>
+
+<?php if ($_is_model): ?>
+</div>
+<?php endif; ?>
+
+</body></html>

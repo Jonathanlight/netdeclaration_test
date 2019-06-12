@@ -1,0 +1,183 @@
+<?php if ($_mode == 'login') : ?>
+  <?= l('snippet:auth.failure') ?>
+<?php else: ?>
+  <div class="kwo-login">
+    <div class="table">
+      <main class="table-cell table-padding-right table-contact table-cell--main block  wrapper__footer-padding-bottom">
+
+        <?= H::breadcrumb($_breadcrumb) ?>
+        <form autocomplete="on"
+              class="form--ntd signup-panel form-label-inline form--ntd--label-inline"
+              action="<?=NtdFrontManager::route('user.signup')?>"
+              data-on-load="new ntd.front.AdherentForm(this)">
+          <h1 class="font--darkblue font-size-big font-family--georgia  margin-bottom"><?= c(l('account_creation')) ?></h1>
+
+
+
+          <div class="block__inscription">
+            <h3 class="block__title"><?= c(l('signup.step1.title')) ?></h3>
+            <div class="elt elt-text" required="">
+              <label class="elt elt-label"><?=c(l('adherent.edit.login'))?>
+                <span class="star-required" title="champs obligatoire">*</span>
+              </label>
+              <div class="elt-control elt-required">
+                <div class="elt-text-border">
+                  <input name="user[email]" id="user[email]" class="text" type="text">
+                <i class="fa fa-question-circle tooltip-handle" onmouseover="Kwo.Tooltip.show($(this), $(this).up('div.elt').down('.elt-tooltip'))" onmouseout="Kwo.Tooltip.hide()"></i>
+             </div>
+                <div class="clear"></div>
+              </div>
+              <div class="elt-tooltip" style="top: 463px; left: 359px; display: none;">
+                <div class="elt-tooltip-content"><?=l('adherent.edit.tooltip.user_email')?></div>
+              </div>
+            </div>
+            <div class="elt elt-text" required="">
+              <label class="elt elt-label"><?=c(l('adherent.edit.password'))?>
+                <span class="star-required" title="champs obligatoire">*</span>
+              </label>
+              <div class="elt-control elt-required">
+                <div class="elt-text-border">
+                  <input name="user[password]" id="user[password]" class="text" type="password">
+                  <i class="fa fa-question-circle tooltip-handle" onmouseover="Kwo.Tooltip.show($(this), $(this).up('div.elt').down('.elt-tooltip'))" onmouseout="Kwo.Tooltip.hide()"></i>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="elt-tooltip" style="top: 537px; left: 357px; display: none;">
+                <div class="elt-tooltip-content"><?=l('adherent.edit.tooltip.user_password')?></div>
+              </div>
+            </div>
+
+
+            <?= Elt::text(array('name' => 'user[password_confirm]', 'label' => c(l('adherent.edit.password.confirm')), 'password' => true, 'required' => true, 'id' => 'user[password_confirm]', 'class' => 'elt-two-line')) ?>
+          </div>
+
+
+
+          <div class="block__inscription">
+            <h3 class="block__title"><?= c(l('signup.step3.subtitle1')) ?></h3>
+            <?= Elt::radio(array('name' => 'adherent[type]', 'options' => Adherent::$types, 'label' => c(l('signup.step1.type')) . ' :', 'required' => true, 'class' => 'adherent-types')) ?>
+            <?= Elt::radio(array('name' => 'adherent[civility]', 'options' => Adherent::$civilities, 'label' => c(l('adherent.edit.civility')), 'required' => true)) ?>
+            <?= Elt::text(array('name' => 'adherent[last_name]', 'label' => c(l('adherent.edit.firstname')), 'required' => true, 'id' => 'adherent[last_name]', 'maxlength' => 35)) ?>
+            <?= Elt::text(array('name' => 'adherent[first_name]', 'label' => c(l('adherent.edit.lastname')), 'required' => true, 'id' => 'adherent[first_name]', 'maxlength' => 35)) ?>
+            <?= Elt::text(array('name' => 'adherent[function]', 'label' => c(l('adherent.edit.fonction')), 'id' => 'adherent[function]', 'maxlength' => 35)) ?>
+            <?= Elt::text(array('name' => 'adherent[company]', 'label' => c(l('adherent.edit.raison')), 'required' => true, 'id' => 'adherent[company]', 'maxlength' => 35)) ?>
+            <?= Elt::text(array('name' => 'adherent[company_bis]', 'label' => c(l('adherent.edit.raison.bis')), 'id' => 'adherent[company_bis]', 'maxlength' => 35, 'class' => 'elt-two-line')) ?>
+            <?= Elt::text(array('name' => 'adherent[forme_juridique]', 'label' => c(l('adherent.edit.legal')), 'maxlength' => 35)) ?>
+
+            <div class="elt elt-text" required="">
+              <label class="elt elt-label"><?=c(l('adherent.edit.siret'))?>
+                <span class="star-required" title="champs obligatoire">*</span>
+              </label>
+              <div class="elt-control elt-required">
+                <div class="elt-text-border">
+                  <input name="adherent[siret]" maxlength="14" id="adherent[siret]" class="text" type="text">
+                  <i class="fa fa-question-circle tooltip-handle" onmouseover="Kwo.Tooltip.show($(this), $(this).up('div.elt').down('.elt-tooltip'))" onmouseout="Kwo.Tooltip.hide()"></i>
+                </div>
+                <div class="clear"></div>
+              </div>
+              <div class="elt-tooltip" style="top: 1037px; left: 356px; display: none;">
+                <div class="elt-tooltip-content"><?=l('adherent.edit.tooltip.siret')?></div>
+              </div>
+            </div>
+
+            <?= Elt::checkbox(array('name' => 'adherent[cec_flags]', 'options' => array(Adherent::FLAG_CEC_AVOCAT => c(l(Adherent::$cec_flags[Adherent::FLAG_CEC_AVOCAT]))), 'label' => c(l('adherent.cec.options')), 'required' => true, 'class' => 'adherent-cec-flags', 'id' => 'cec-flags')) ?>
+            <?= Elt::text(array('name' => 'adherent[cec_ordre]', 'label' => c(l('adherent.edit.numbercec')), 'required' => true, 'disabled' => true, 'id' => 'adherent[cec_ordre]', 'tooltip' => l('adherent.edit.tooltip.cec'), 'class' => 'elt-two-line')) // TODO : si CEC?>
+            <?= Elt::text(array('name' => 'adherent[oga_agrement]', 'label' => c(l('adherent.edit.numberoga')), 'required' => true, 'disabled' => true, 'id' => 'adherent[oga_agrement]', 'tooltip' => l('adherent.edit.tooltip.oga'), 'class' => 'elt-two-line')) // TODO : si OGA?>
+            <?= Elt::text(array('name' => 'adherent[phone]', 'label' => c(l('adherent.edit.phone')), 'required' => true, 'id' => 'adherent[phone]')) ?>
+            <?= Elt::text(array('name' => 'adherent[fax]', 'label' => c(l('adherent.edit.fax')), 'id' => 'adherent[fax]')) ?>
+            <?= Elt::text(array('name' => 'adherent[email]', 'label' => c(l('adherent.edit.email')), 'id' => 'adherent[email]')) ?>
+            <?= Elt::text(array('name' => 'adherent[address]', 'label' => c(l('adherent.edit.address')), 'required' => true, 'id' => 'adherent[address]', 'maxlength' => 35)) ?>
+            <?= Elt::text(array('name' => 'adherent[address_1]', 'label' => c(l('adherent.edit.addressmore')) . ' 1', 'maxlength' => 35)) ?>
+            <?= Elt::text(array('name' => 'adherent[address_2]', 'label' => c(l('adherent.edit.addressmore')) . ' 2', 'maxlength' => 35)) ?>
+            <?= Elt::text(array('name' => 'adherent[zipbox]', 'label' => c(l('adherent.edit.postalbox')), 'id' => 'adherent[zipbox]', 'maxlength' => 35)) ?>
+            <?= Elt::text(array('name' => 'adherent[zipcode]', 'label' => c(l('adherent.edit.postalcode')), 'required' => true, 'id' => 'adherent[zipcode]', 'maxlength' => 5)) ?>
+            <?= Elt::text(array('name' => 'adherent[city]', 'label' => c(l('adherent.edit.city')), 'required' => true, 'id' => 'adherent[city]', 'maxlength' => 35)) ?>
+            <?= Elt::select(array('name' => 'adherent[country_id]', 'label' => c(l('adherent.edit.country')), 'required' => true, 'options' => Country::collect(array('order' => array('name'))), 'first' => ' - ', 'id' => 'adherent[country_id]', 'value' => 250)) ?>
+          </div>
+
+
+          <div class="block__inscription">
+            <h3 class="block__title">Coordonnées de facturation</h3>
+            <?= Elt::yesno(array('name' => 'adherent[has_no_billing_address]', 'label' => c(l('adherent.edit.coordfacturation')), 'required' => true, 'class' => 'input-has-no-billing-address', 'value' => 1)) ?>
+            <div class="billing-address-1st-step">
+              <hr>
+              <?= Elt::hidden(array('name' => 'adherent[is_main_adherent_billing_address]')) ?>
+              <?= Elt::text(array('name' => 'adherent[billing_company]', 'label' => c(l('adherent.edit.raison')), 'required' => true, 'id' => 'adherent[billing_address]')) ?>
+              <?= Elt::text(array('name' => 'adherent[billing_address]', 'label' => c(l('adherent.edit.address')), 'required' => true, 'id' => 'adherent[billing_address]', 'rows' => 5)) ?>
+              <?= Elt::text(array('name' => 'adherent[billing_zipbox]', 'label' => c(l('adherent.edit.postalbox')), 'id' => 'adherent[billing_zipbox]')) ?>
+              <?= Elt::text(array('name' => 'adherent[billing_zipcode]', 'label' => c(l('adherent.edit.postalcode')), 'required' => true, 'id' => 'adherent[billing_zipcode]')) ?>
+              <?= Elt::text(array('name' => 'adherent[billing_city]', 'label' => c(l('adherent.edit.city')), 'required' => true, 'id' => 'adherent[billing_city]')) ?>
+              <?= Elt::text(array('name' => 'adherent[billing_mail]', 'label' => c(l('adherent.edit.email')), 'required' => true, 'id' => 'adherent[billing_mail]')) ?>
+              <?= Elt::select(array('name' => 'adherent[billing_country_id]', 'label' => c(l('adherent.edit.country')), 'required' => true, 'options' => Country::collect(array('order' => array('name'))), 'first' => ' - ', 'id' => 'adherent[billing_country_id]', 'value' => 250)) ?>
+            </div>
+          </div>
+
+
+
+          <div class="block__inscription">
+            <h3 class="block__title"><?= c(l('responsable.technique')) ?></h3>
+            <?= Elt::text(array('name' => 'adherent[technician_last_name]', 'label' => c(l('adherent.edit.firstname')), 'required' => true, 'id' => 'adherent[technician_last_name]', 'maxlength' => 35)) ?>
+            <?= Elt::text(array('name' => 'adherent[technician_first_name]', 'label' => c(l('adherent.edit.lastname')), 'required' => true, 'id' => 'adherent[technician_first_name]', 'maxlength' => 35)) ?>
+            <?= Elt::text(array('name' => 'adherent[technician_phone]', 'label' => c(l('adherent.edit.phone')), 'required' => true, 'id' => 'adherent[technician_phone]')) ?>
+            <?= Elt::text(array('name' => 'adherent[technician_mail]', 'label' => c(l('adherent.edit.email')), 'required' => true, 'id' => 'adherent[technician_mail]')) ?>
+          </div>
+
+
+
+          <div class="block__inscription" id="block__inscription--edi">
+            <h3 class="block__title">Services EDI</h3>
+            <div class="block__information-edi">
+            </div>
+            <?= Elt::text(array('name' => 'adherent[email_edi]', 'label' => c(l('adherent.edit.emailedi')).' EDI', 'disabled' => true, 'id' => 'adherent[email_edi]')) ?>
+            <?= Elt::yesno(array('name' => 'adherent[has_email_declaration]', 'label' => c(l('adherent.edit.emailcreate')), 'class' => 'adherent-has_email_declaration')) ?>
+          </div>
+
+          <div class="block__inscription">
+            <h3 class="block__title"><?= c(l('signup.step.newsletter')) ?></h3>
+            <div class="block__title-edi">
+              <?=c(l('signup.step.newsletter.description')) ?>
+            </div>
+            <div style="padding-top: 10px;">
+              <?= Elt::checkbox(array('name' => 'newsletter', 'options' => NetDeclaration::getNewsletterBases()->asHash('code', 'name'), 'required' => false, 'class' => 'adherent-types')) ?>
+            </div>
+          </div>
+
+
+
+          <div class="block__inscription">
+            <h3 class="block__title"><?= c(l('signup.step4.subtitle4')) ?></h3>
+            <?= Elt::text(array('name' => 'adherent[partenaire_code]', 'label' => 'Code partenaire', 'value' => $adherent['partenaire_code'], 'maxlength' => 35, 'legend' => 'un partenaire vous a recommandé ce site? Saississez son code...')) ?>
+            <div class="elt elt-checkbox">
+              <label class="elt label-check">
+                Condition d'utilisation <span class="star-required" title="champs obligatoire">*</span>
+              </label>
+              <label class="elt">
+                <input type="checkbox" class="terms_of_use" data-confirm="<?= l('error.terms') ?>"/>
+                <?= c(l('snippet:signup.accept.tos')) ?>
+              </label>
+            </div>
+            <div class="form-field form-field-captcha form-field-required signup-captcha-box elt">
+              <label class="required elt"><?= c(l('captcha')) ?> <span class="star-required" title="champs obligatoire">*</span></label> <?= W::captcha() ?>
+            </div>
+            <div class="block__send">
+              <button class="btn btn--color-light-blue btn-infos btn-send"><?= c(l('signup.valid')) ?></button>
+              <p class="warning-information"><?= c(l('signup.mentions')) ?></p>
+            </div>
+          </div>
+
+          <div style="clear:both;"></div>
+          <p class="kwo-signup-footer"><?= l('snippet:signup.footer') ?></p>
+
+        </form>
+      </main>
+      <aside class="table-cell  table-cell--aside  wrapper__footer-padding">
+        <div class="block__height">&nbsp;</div>
+        <?php if (NetDeclarationManager::isDomtom()): ?>
+          <?=l('snippet:contact-domtom')?>
+        <?php else: ?>
+          <?=l('snippet:contact')?>
+        <?php endif; ?>
+      </aside>
+    </div>
+  </div>
+<?php endif; ?>

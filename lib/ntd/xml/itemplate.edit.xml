@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+ <fieldset>
+
+  <notebook>
+   <page>
+    <form>
+     <notebook>
+      <page>
+       <hbox>
+        <vbox>
+         <elem field="name"/>
+         <elem field="millesime_id" required="true"/>
+         <elem field="version" editable="false"/>
+         <elem field="status"/>
+        </vbox>
+        <vbox>
+         <link icon="view" label="Ouvrir l'éditeur de Template"
+               action="Kwo.go(this, null, {target:'blank'})" url="$editor_url"
+               built="$is_loaded"/>
+        </vbox>
+       </hbox>
+      </page>
+      <page label="contenu">
+       <hbox>
+        <vbox>
+         <elem field="html" rows="31" label="editeur" />
+        </vbox>
+        <vbox>
+         <elem field="psp" rows="31" label="template" />
+        </vbox>
+       </hbox> 
+      </page>
+     </notebook>
+     <launcher/>
+    </form>
+   </page>   
+   <page>
+    <hbox>
+     <vbox width="150px">
+      <box label="actions">
+       <link icon="details"/>
+       <link icon="duplicate" label="Créer une nouvelle version"/>
+      </box>
+     </vbox>
+     <vbox>
+      <deck/>
+     </vbox>
+    </hbox>
+   </page>
+  </notebook>
+
+ </fieldset>
+</kwo-interface>

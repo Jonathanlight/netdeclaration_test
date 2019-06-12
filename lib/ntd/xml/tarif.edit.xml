@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+ <fieldset>
+
+  <notebook>
+   <page>
+    <form>
+     <hbox>
+      <vbox>
+        <elem field="name" editable="false" precision="généré automatiquement"/>
+        <elem field="description" rows="3"/>
+        <elem field="status"/>
+      </vbox>
+      <vbox>
+       <box label="contexte">
+        <elem field="service_id" label="Service associé"/>
+        <elem field="adherent_types" options="Adherent::$types" type="checkbox" label="Type de l'adhérents"/>
+        <elem field="adherent_level" label="Niveau de l'adhérent" options="Tarif::$adherent_levels" type="radio" />
+       </box>
+       <box label="Services">
+        <elem type="relations" models="service," table="ntd_tarif_service" editable="false" label="Services requis" />
+       </box>
+      </vbox>
+      <vbox>
+       <box label="Prix">
+        <elem field="price_type" label="Type de prix" options="Tarif::$price_types" type="radio" />
+        <elem field="price" label="prix" precision="en Euros, Hors Taxes" />
+        <elem field="qty_min" label="Seuil minimum" precision="a remplir uniquement si c'est un prix unitaire" />
+        <elem field="qty_max" label="Seuil maximum" precision="a remplir uniquement si c'est un prix unitaire" />
+       </box>
+      </vbox>
+     </hbox>
+     <launcher/>
+    </form>
+   </page>
+   <page>
+    <hbox>
+     <vbox width="150px">
+      <box label="actions">
+       <link icon="details"/>
+      </box>
+     </vbox>
+     <vbox>
+      <deck/>
+     </vbox>
+    </hbox>
+   </page>
+  </notebook>
+
+ </fieldset>
+</kwo-interface>

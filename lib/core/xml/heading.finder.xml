@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kwo-interface>
+
+<finder order="app, model_id, position">
+
+<filters>
+ <filter name="id" />
+ <filter name="name" />
+ <filter name="model_id" type="select" options="Heading::models()" label="type" />
+</filters>
+
+<cols>
+ <col name="app" />
+ <col name="model_id" />
+ <col name="position" />
+ <col name="code" />
+ <col name="name" />
+</cols>
+
+</finder>
+
+</kwo-interface>

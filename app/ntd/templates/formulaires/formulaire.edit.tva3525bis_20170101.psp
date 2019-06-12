@@ -1,0 +1,112 @@
+<div class="formulaire-page page-form" data-label="TVA 3525BIS">
+  <table id="ancre-1">
+
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">I. REGIME DES ACOMPTES TRIMESTRIELS :</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th colspan="5">
+        <p>L’acompte trimestriel déclaré sur ce bulletin est égal au cinquième de la TVA nette exigible figurant ligne 23 de la déclaration de TVA,
+          modèle CA12A, relative à l’année 2010 ou de la déclaration CA12AE relative au dernier exercice clos.</p>
+        </th>
+      </tr>
+
+      <tr class="elt">
+        <td class="line_id">02</td>
+        <td class="libelle" colspan="2">
+          <label for="tva_3525bis_bb">Montant de l’acompte</label>
+          <?=Elt::tooltip(array('tooltip' => 'Ligne 02 Portez le montant de l’acompte égal, au minimum, au cinquième de l’impôt dû au titre de l’année précédente, à la ligne « TVA NETTE » (ligne 23 de la déclaration CA12A, CA12AE). Cette règle n’est toutefois pas applicable :
+                                              <br/>– aux nouveaux redevables qui, durant la première année d’imposition, sont autorisés à déterminer approximativement leurs acomptes qui devront toutefois correspondre, au minimum, à 70 % de l’impôt réellement dû au titre du trimestre correspondant ;
+                                              <br/>– aux redevables qui estiment que le total des acomptes déjà versés au titre de l’année atteint le montant de l’impôt qui sera réellement dû pour cette même année et qui sont dans ces conditions autorisés à interrompre le versement de leurs acomptes.'))?>
+        </td>
+        <td class="line_impot">0028</td>
+        <td class="input">
+          <div class="line_impot">100226</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BB',
+                                                              'value' => $tva3525bis_20170101['BB']))?>
+        </td>
+      </tr>
+
+      <tr class="elt">
+        <td class="line_id">03</td>
+        <td class="libelle" colspan="2">
+          <label for="tva_3525bis_bc">Excédents de versements antérieurs</label>
+          <?=Elt::tooltip(array('tooltip' => 'Ligne 03 Utilisez cette ligne en cas d’excédents de versement à imputer. Toutefois la somme portée et arrondie à l’unité la plus proche ne peut être supérieure à celle mentionnée à la ligne 02. Vous imputerez alors le complément sur vos prochains bulletins.'))?>
+        </td>
+        <td class="line_impot">9989</td>
+        <td class="input">
+          <div class="line_impot">100227</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BC',
+                                                              'value' => $tva3525bis_20170101['BC']))?>
+        </td>
+      </tr>
+
+      <tr class="elt">
+        <td class="line_id">04</td>
+        <td class="libelle" colspan="2">
+          <label class="bold" for="tva_3525bis_bd">Total à payer = ligne 02 – ligne 03</label>
+        </td>
+        <td class="line_impot">&nbsp;</td>
+        <td class="input">
+          <div class="line_impot">100228</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BD',
+                                                              'value' => $tva3525bis_20170101['BD']))?>
+        </td>
+      </tr>
+
+      <tr class="elt">
+        <td class="line_id">&nbsp;</td>
+        <td class="libelle" colspan="2">
+          <label for="tva_3525bis_be">Formulaire NEANT</label>
+        </td>
+        <td class="line_impot">0010</td>
+        <td class="input">
+          <div class="line_impot">100117</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BE',
+                                                              'value' => $tva3525bis_20170101['BE']))?>
+        </td>
+      </tr>
+
+      <tr class="elt">
+        <td class="line_id">&nbsp;</td>
+        <td class="libelle" colspan="2">
+          <label for="tva_3525bis_ac">Paiement par imputation (adresser l'imprimé 3516, téléchargeable sur www.impots.gouv.fr, à votre service des impots)</label>
+        </td>
+        <td class="line_impot">&nbsp;</td>
+        <td class="input">
+          <div class="line_impot">100123</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AC',
+                                                              'value' => $tva3525bis_20170101['AC']))?>
+        </td>
+      </tr>
+
+      <tr class="tab-title">
+        <th colspan="5"></th>
+      </tr>
+
+      <tr class="tab-title">
+        <th class="maintitle" colspan="5">COMMENTAIRES</th>
+      </tr>
+      <tr class="tab-title">
+        <th class="input" colspan="4">
+          <div class="line_impot">100447 100547 100548 100549 100550</div>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA',
+                                                              'value' => $tva3525bis_20170101['DA1']."\n".$tva3525bis_20170101['DA2']."\n".$tva3525bis_20170101['DA3']."\n".$tva3525bis_20170101['DA4']."\n".$tva3525bis_20170101['DA5']))?>
+        </th>
+        <th class="subtitle">
+          <label for="tva3517sca12_vk">Mention expresse</label>
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AD',
+                                                              'value' => $tva3525bis_20170101['AD']))?>
+          <div class="line_impot">100124</div>
+        </th>
+      </tr>
+    </table>
+    <div style="display:none">
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA1', 'value' => $tva3525bis_20170101['DA1']))?>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA2', 'value' => $tva3525bis_20170101['DA2']))?>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA3', 'value' => $tva3525bis_20170101['DA3']))?>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA4', 'value' => $tva3525bis_20170101['DA4']))?>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA5', 'value' => $tva3525bis_20170101['DA5']))?>
+    </div>
+  </div>

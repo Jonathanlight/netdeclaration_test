@@ -1,0 +1,21 @@
+<fieldset><legend>Conversions</legend>
+
+<table class="hbox"><tbody><tr><td>
+
+<ul class="grid">
+<?php foreach ($rows as $row): ?>
+<li>
+ <span>Objet : <?=Model::name($row['model_id'])?> (<?=$row['record_id']?>)</span>
+ <span>Valeur : <?=$row['worth']?></span>
+ <span>Date : <?=$row['created_at']?></span>
+</li>
+<?php endforeach ; ?>
+</ul>
+
+</td><td>
+
+
+
+</td></tr></tbody></table>
+
+</fieldset>

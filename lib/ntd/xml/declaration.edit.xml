@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+  <fieldset>
+
+    <notebook>
+      <page>
+        <form>
+          <hbox>
+            <vbox width="300px">
+              <elem field="adherent_id" editable="false"/>
+              <elem field="dectype_id" editable="false"/>
+              <elem field="suivi_id" editable="false"/>
+              <elem field="formulairetype_id" editable="false"/>
+              <elem field="old_declaration_id" editable="false"/>
+            </vbox>
+            <vbox width="300px">
+              <elem field="name" editable="false"/>
+              <elem field="destinataires" editable="false"/>
+              <elem field="status"/>
+            </vbox>
+            <vbox>
+            </vbox>
+          </hbox>
+          <launcher/>
+        </form>
+      </page>
+      <page>
+        <hbox>
+          <vbox width="150px">
+            <box label="actions">
+              <link icon="details"/>
+              <link icon="print" label="Générer le PDF"
+                    action="Kwo.F('declaration').go('pdf', this, {target:'blank'});"/>
+              <link icon="hasmany" model="formulaire"/>
+            </box>
+          </vbox>
+          <vbox>
+            <deck/>
+          </vbox>
+        </hbox>
+      </page>
+    </notebook>
+
+  </fieldset>
+</kwo-interface>

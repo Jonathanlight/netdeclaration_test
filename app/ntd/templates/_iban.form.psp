@@ -1,0 +1,72 @@
+<form action="/middle/iban.save"
+      data-action-delete="/middle/iban.delete"
+      data-id="<?= $iban['id'] ?>"
+      class="form--ntd  form--ntd--label-inline"
+      data-on-load="new ntd.middle.IbanForm(this)">
+  <?=
+  Elt::hidden(array('name' => 'id',
+                    'value' => $iban['id'])) ?>
+  <?=
+  Elt::hidden(array('name' => 'adherent_id',
+                    'value' => $adherent->getId())) ?>
+  <?=
+  Elt::hidden(array('name' => 'iban[type]',
+                    'value' => $iban['type'])) ?>
+  <?=
+  Elt::text(array('name' => 'iban[name]',
+                  'label' => 'Nom IBAN Service',
+                  'value' => $iban['name'])) ?>
+  <?=
+  Elt::text(array('name' => 'iban[banque]',
+                  'label' => 'Banque',
+                  'value' => $iban['banque'])) ?>
+  <?=
+  Elt::text(array('name' => 'iban[domiciliation]',
+                  'label' => 'Domiciliation',
+                  'value' => $iban['domiciliation'])) ?>
+  <?=
+  Elt::text(array('name' => 'iban[code_banque]',
+                  'label' => 'Code Banque',
+                  'required' => true,
+                  'value' => $iban['code_banque'],
+                  'tooltip' => 'Exemple : 12345')) ?>
+  <?=
+  Elt::text(array('name' => 'iban[code_guichet]',
+                  'label' => 'Code Guichet',
+                  'required' => true,
+                  'value' => $iban['code_guichet'],
+                  'tooltip' => 'Exemple : 12345')) ?>
+  <?=
+  Elt::text(array('name' => 'iban[numero_compte]',
+                  'label' => 'N° de compte',
+                  'required' => true,
+                  'value' => $iban['numero_compte'],
+                  'tooltip' => 'Exemple : abcedf12345')) ?>
+  <?=
+  Elt::text(array('name' => 'iban[cle_iban]',
+                  'label' => 'Clé RIB',
+                  'value' => $iban['cle_iban'],
+                  'tooltip' => 'Exemple : 12')) ?>
+  <?=
+  Elt::text(array('name' => 'iban[numero_iban]',
+                  'label' => 'IBAN',
+                  'required' => true,
+                  'maxlength' => 34,
+                  'value' => $iban['numero_iban'],
+                  'tooltip' => 'Exemple : FR751234512345abcedf12345123456789')) ?>
+  <?=
+  Elt::text(array('name' => 'iban[numero_bic]',
+                  'label' => 'BIC',
+                  'required' => true,
+                  'value' => $iban['numero_bic'],
+                  'tooltip' => 'Exemple : 23568425')) ?>
+
+
+  <button type="submit"
+          class="btn  btn--color-red margin-left--label-width"><?= c(l('save')) ?></button>
+  <?php if ($iban['id'] > 0): ?>
+    <button type="button"
+            data-method="destroy"
+            class="btn  btn--color-grey "><?= c(l('delete')) ?></button>
+  <?php endif; ?>
+</form>

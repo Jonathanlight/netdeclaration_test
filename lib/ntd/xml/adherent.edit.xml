@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+ <fieldset>
+
+  <notebook>
+   <page label="identité">
+    <form>
+     <hbox>
+      <vbox>
+       <box label="Identité">
+        <elem field="civility" options="Adherent::$civilities" type="radio"/>
+        <elem field="first_name"/>
+        <elem field="last_name"/>
+       </box>
+       <box label="Contact technique">
+        <elem field="technician_last_name" label="Nom"/>
+        <elem field="technician_first_name" label="Prénom"/>
+        <elem field="technician_phone" label="Téléphone"/>
+        <elem field="technician_mail" label="Email"/>
+       </box>
+       <box label="Partenaire">
+         <elem field="partenaire_id" label="partenaire" />
+       </box>
+       <box label="état">
+        <elem field="status"/>
+       </box>
+      </vbox>
+      <vbox>
+       <box label="Détails">
+        <elem field="type" disabled="true"  />
+        <elem field="cec_flags" type="checkbox" options="Adherent::getCecFlags()" disabled="true" label="Flags" built="$is_cec" />
+        <elem field="function" label="fonction"/>
+        <elem field="company" label="Raison sociale"/>
+        <elem field="siret" label="Siret"/>
+        <elem field="cec_ordre" label="Ordre CEC" built="$is_cec"/>
+        <elem field="oga_agrement" label="Agrément OGA" built="$is_oga"/>
+        <elem field="level" options="Adherent::$levels" label="Niveau de la tarification pour cet adhérent (Primaire / Secondaire)" type="radio" />
+        <elem field="sign_key" label="Signature du bulletin d'adhésion"/>
+        <elem field="cgu_sign_infos" label="Détails sur la CGU acceptée"/>
+        <elem field="last_cgu_sign_infos" label="Avant dernière CGU acceptée"/>
+       </box>
+       <box label="Coordonnées de facturation">
+        <elem field="billing_company" label="Raison sociale"/>
+        <elem field="billing_address" label="Adresse"/>
+        <elem field="billing_zipbox" label="Boite postale"/>
+        <elem field="billing_zipcode" label="Code postal"/>
+        <elem field="billing_city" label="Ville"/>
+        <elem field="billing_mail" label="Email"/>
+       </box>
+      </vbox>
+      <vbox>
+       <box label="Contact">
+        <elem field="phone" label="Téléphone"/>
+        <elem field="fax" label="FAX"/>
+        <elem field="address" label="Adresse"/>
+        <elem field="zipbox" label="Boite postale"/>
+        <elem field="zipcode" label="Code postal"/>
+        <elem field="city" label="Ville"/>
+        <elem field="country_id" label="Pays"/>
+       </box>
+      </vbox>
+     </hbox>
+     <launcher/>
+    </form>
+   </page>
+   <page label="Souscriptions aux services">
+    <form>
+     <hbox>
+      <vbox>
+       <elem type="relations" models="souscription" height="500px" disabled_add="true" />
+      </vbox>
+     </hbox>
+     <launcher/>
+    </form>
+   </page>
+   <page label="IBAN">
+    <form>
+     <hbox>
+      <vbox>
+       <elem type="relations" models="iban" height="500px" />
+      </vbox>
+     </hbox>
+     <launcher/>
+    </form>
+   </page>
+   <page label="opérations">
+    <hbox>
+     <vbox width="300px">
+      <box label="actions">
+       <link icon="details"/>
+       <link label="Valider l'inscription" action=".onExec('validate', this, {callback:true, confirm:'êtes-vous sûr de vouloir valider l\'inscription de cet adhérent ?'})" icon="ok"
+             built="$can_validate"/>
+       <link icon="hasmany" model="souscription" />
+       <link icon="hasmany" model="facture" />
+       <link label="(Admin) Renouvellement des souscriptions" action=".onExec('souscriptions.renew.form', this, {callback:true, container:'import_box'});" icon="view" />
+        <link icon="chart_organisation"
+              label="Changer l'utilisateur lié à cet Adhérent"
+              action=".onExec('change.user.form', this, {callback:true, container:'import_box'})"
+              built="$can_change_user" />
+        <link icon="chart_organisation"
+              label="Transformer cet adhérent secondaire en Adhérent Primaire sur un autre Utilisateur"
+              action=".onExec('secondary.change.user.form', this, {callback:true, container:'import_box'})"
+              built="$can_become_adherent_primary_for_user" />
+        <link icon="chart_organisation"
+              label="Passer cet adhérent en Primaire dans son groupe"
+              action=".onExec('change.adherent.to.primary', this, {callback:true, confirm:'êtes-vous sûr de vouloir rendre cet adhérent Primaire ?'})"
+              built="$can_change_to_primary" />
+       <link icon="delete"
+             label="Ecraser les dernières CGAU"
+             action=".onExec('cgau.replace.form', this, {callback: true, container:'import_box'})"  />
+
+      </box>
+     </vbox>
+     <vbox>
+      <deck>
+       <box id="import_box"></box>
+      </deck>
+     </vbox>
+    </hbox>
+   </page>
+  </notebook>
+
+ </fieldset>
+</kwo-interface>

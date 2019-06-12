@@ -1,0 +1,4 @@
+shop.psp:
+  paybox:
+    params:
+      cle: %paybox_hmac%

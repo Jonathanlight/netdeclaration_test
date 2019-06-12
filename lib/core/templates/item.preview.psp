@@ -1,0 +1,8 @@
+<h1>Aperçu</h1>
+<div style="padding:0; margin:0;">
+ <iframe src="javascript:;"
+         style="width:100%; height:550px;"
+         id="iframe-preview"
+         name="iframe-preview"
+         data-url="<?=$url?>"></iframe>
+</div>

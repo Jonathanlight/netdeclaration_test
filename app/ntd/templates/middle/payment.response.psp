@@ -1,0 +1,12 @@
+
+  <h1 class="block__middle-title"><?=c(l('account.paiement.confirmation.title'))?></h1>
+  <div class="snippet"><?=$method->snippet_response?></div>
+
+  <div class="actions">
+    <?php if($has_e_souscriptions): ?>
+        <a href="/middle/declarer" class="btn btn--color-red">Déclarez maintenant</a>
+    <?php endif; ?>
+
+    <a href="<?=$facture->asUrl()?>" class="btn btn--link">Voir la facture</a>
+  </div>
+

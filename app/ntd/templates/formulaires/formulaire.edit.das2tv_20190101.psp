@@ -1,0 +1,200 @@
+<div class=" <?= !$occurence ? 'formulaire-page page-form' : '' ?> page-form page-repetable" data-label="DAS2-TV" data-position="<?=$occurence?>">
+    <table class="das2tv_20190101">
+        <tbody class="das2tv_20190101">
+            <tr class="elt tab-title">
+                <td class="libelle" colspan="7">Identification de l’établissement déclarant</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AD', 'field_name' => 'AD', 'value' => $das2tv_20190101['AD'])); ?>
+                </td>
+            </tr>
+
+            <tr class="tab-title">
+                <th class="maintitle" colspan="8">1 - Identification du bénéficiaire</th>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="3">Nom du bénéficiaire (personne physique)</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AE02', 'field_name' => 'AE02', 'value' => $das2tv_20190101['AE02'])); ?>
+                </td>
+                <td class="libelle" colspan="3">Prénoms</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AE03', 'field_name' => 'AE03', 'value' => $das2tv_20190101['AE03'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="3">Raison sociale (désignation de l'INSEE)</td>
+                <td class="input input-lg" colspan="5">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AF02', 'field_name' => 'AF02', 'value' => $das2tv_20190101['AF02'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="3">Raison sociale suite (désignation de l'INSEE)</td>
+                <td class="input input-lg" colspan="5">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AF03', 'field_name' => 'AF03', 'value' => $das2tv_20190101['AF03'])); ?>
+                </td>
+            </tr>
+
+            <tr class="tab-title">
+                <th class="maintitle" colspan="8">2 - Adresse complète du domicile</th>
+            </tr>
+            <tr class="elt">
+                <td class="libelle" colspan="2">Etablissement étranger</td>
+                <td class="input input-lg" colspan="1"> <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ZZ1', 'field_name' => 'ZZ1', 'removeClear' => true, 'value' => $das2tv_20190101['ZZ1'])); ?></td>
+                <td class="input input-lg" colspan="5"><span class="tooltip tooltip-das2tv-zz1 <?=$das2tv_20190101['ZZ1'] ? 'no-print' : ''?>"><?=c(l('snippet:das2tv.tooltip.postalCode'))?></span></td>
+            </tr>
+            <tr class="elt">
+                <td class="libelle" colspan="2">N° Rue</td>
+                <td class="libelle" colspan="2">Suffixe</td>
+                <td class="libelle" colspan="4">Rue</td>
+            </tr>
+
+            <tr class="elt">
+                <td class="input input-lg" colspan="2">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG16', 'field_name' => 'AG16', 'value' => $das2tv_20190101['AG16'], 'class' => 'align-left')); ?>
+                </td>
+                <td class="input input-lg" colspan="2">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG17', 'field_name' => 'AG17', 'value' => $das2tv_20190101['AG17'])); ?>
+                </td>
+                <td class="input input-lg" colspan="4">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG05', 'field_name' => 'AG05', 'value' => $das2tv_20190101['AG05'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="4">Complément d'adresse</td>
+                <td class="input input-lg" colspan="4">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG06', 'field_name' => 'AG06', 'value' => $das2tv_20190101['AG06'])); ?>
+                </td>
+            </tr>
+            <tr class="elt">
+                <td class="libelle" colspan="3">Adresse 4 (1ère partie) – code postal</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG09', 'field_name' => 'AG09', 'value' => $das2tv_20190101['AG09'], 'class' => 'align-left')); ?>
+                </td>
+                <td class="libelle" colspan="3">Adresse 3 (2ème partie) – libellé commune</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG08', 'field_name' => 'AG08', 'value' => $das2tv_20190101['AG08'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="3">Code commune Insee</td>
+                <td class="input input-lg">
+                    <?php
+                        $AG14_1Class = $AG14_2Class = 'print-data-value';
+                        if ($das2tv_20190101['ZZ1']) {
+                            $AG14_2Class .= ' hidden';
+                        } else {
+                            $AG14_1Class .= ' hidden';
+                        }
+                    ?>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG14_1', 'field_name' => 'AG14_1', 'value' => $das2tv_20190101['AG14_1'], 'class' =>  $AG14_1Class, 'data-value' => $das2tv_20190101['AG14_1'])); ?>
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG14_2', 'field_name' => 'AG14_2', 'value' => $das2tv_20190101['AG14_2'], 'class' =>  $AG14_2Class . ' align-left', 'data-value' => $das2tv_20190101['AG14_2'])); ?>
+                </td>
+                <td class="libelle" colspan="3">Commune Insee</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG15', 'field_name' => 'AG15', 'value' => $das2tv_20190101['AG15'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="line_impot" colspan="3">Profession</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AH', 'field_name' => 'AH', 'value' => $das2tv_20190101['AH'])); ?>
+                </td>
+                <td class="line_impot" colspan="3">Numéro Siret du bénéficiaire</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AF01', 'field_name' => 'AF01', 'value' => $das2tv_20190101['AF01'], 'class' => 'align-left')); ?>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <table class="das2tv_20190101">
+        <tbody class="das2tv_20190101">
+            <tr class="elt tab-title">
+                <th class="maintitle" colspan="8">Montant des sommes versées (toutes taxes comprises)</th>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="4">Nature des Rémunérations versées selon la lettre (Cases 4 et 5)</td>
+                <td class="libelle" colspan="4">Rémunérations versées (Cases 4 et 5)</td>
+            </tr>
+
+            <?php $rows_count = 0;
+            foreach ($das2tv_20190101 as $field => $value) {
+                if (strpos($field, 'BA') !== false) $rows_count++;
+            }
+            $rows_count = max(1, $rows_count);
+            for ($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :
+            ?>
+            <?php if (($das2tv_20190101['CA/' . $tr_index] || $das2tv_20190101['BA/' . $tr_index]) || $rows_count == 1 || $tr_index == 1): ?>
+            <tr class="elt das2tv-20190101-dynamic-row-1 dynamic-row">
+                <td class="input input-lg" colspan="4" data-field="CA">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('index' => $occurence, 'field_code' => 'CA', 'field_name' => 'CA/' . $tr_index, 'class' => 'das2tv_20190101_CA-' . $tr_index,  'value' =>  empty($das2tv_20190101['CA/' . $tr_index]) ? $das2tv_20190101['CA' . $tr_index] : $das2tv_20190101['CA/' . $tr_index])); ?>
+                </td>
+
+                <td class="input input-lg" colspan="3" data-field="BA">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('index' => $occurence, 'field_code' => 'BA', 'field_name' => 'BA/' . $tr_index, 'class' => 'das2tv_20190101_BA-' . $tr_index, 'value' =>  empty($das2tv_20190101['BA/' . $tr_index]) ? $das2tv_20190101['BA' . $tr_index] : $das2tv_20190101['BA/' . $tr_index])); ?>
+                </td>
+
+                <td class="no-print">
+                    <a href="javascript:void(0)" onclick="ntd.tableRowManager.removeTableRow($(this).up('tr'), 'das2tv-20190101-dynamic-row-1', 'tr')" title="Supprimer la ligne"> <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png"> </a>
+                </td>
+            </tr>
+            <?php endif; ?>
+            <?php endfor; ?>
+
+            <tr class="elt tab-title no-print">
+                <td class="libelle maintitle" colspan="8">
+                    <a class="link-puce" href="javascript:void(0)" onclick="ntd.tableRowManager.addTableRow('das2tv-20190101-dynamic-row-1', 'tr', this)">Ajouter une ligne</a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <table class="das2tv_20190101">
+        <tbody class="das2tv_20190101">
+
+            <tr class="elt">
+                <td class="libelle">Avantages en nature (Case 6)</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BC', 'field_name' => 'BC', 'value' => $das2tv_20190101['BC'])); ?>
+                </td>
+                <td class="libelle">Indemnités et remboursements (Case 7)</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BB', 'field_name' => 'BB', 'value' => $das2tv_20190101['BB'])); ?>
+                </td>
+                <td class="libelle" rowspan="2">TVA nette sur droits d'auteur (Case 8)</td>
+                <td class="input input-lg" rowspan="2">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BE', 'field_name' => 'BE', 'value' => $das2tv_20190101['BE'])); ?>
+                </td>
+                <td class="libelle">Retenues à la source (Case 9)</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BD', 'field_name' => 'BD', 'value' => $das2tv_20190101['BD'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Nature des avantages en nature (Case 6)</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CC', 'field_name' => 'CC', 'value' => $das2tv_20190101['CC'])); ?>
+                </td>
+                <td class="libelle">Modalités de prise en charge des indemnités et Remboursements (Case 7)</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CB', 'field_name' => 'CB', 'value' => $das2tv_20190101['CB'])); ?>
+                </td>
+                <td class="libelle">Nature du Taux de retenue à la source (Case 9)</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CD', 'field_name' => 'CD', 'value' => $das2tv_20190101['CD'])); ?>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

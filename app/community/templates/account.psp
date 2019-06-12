@@ -1,0 +1,72 @@
+<div class="account-wrapper">
+  <div class="account-panel account-<?=$_action?>">
+    <?php if (is_array($_menu) && count($_menu) > 1): ?>
+      <div class="toolbar-panel">
+        <div class="primary">
+          <?php foreach ($_menu as $hash): ?>
+            <a href="javascript:Kwo.go('<?=$hash['action']?>');"<?=$hash['selected']==true ? ' class="selected"' : ''?>>
+              <span><?=String::capitalize($hash['label'])?></span>
+            </a>
+          <?php endforeach; ?>
+          <div class="clear"></div>
+        </div>
+        <?php if (count($_menu[$_selected_menu]['actions']) > 1): ?>
+          <div class="secondary">
+            <?php foreach ($_menu[$_selected_menu]['actions'] as $hash): ?>
+              <a href="javascript:Kwo.go('<?=$hash['action']?>');" <?=$hash['selected'] == true ? ' class="selected"' : ''?>>
+                <span><?=String::capitalize($hash['label'])?></span>
+              </a>
+            <?php endforeach; ?>
+            <div class="clear"></div>
+          </div>
+        <?php endif; ?>
+      </div>
+    <?php endif; ?>
+
+    <div class="body-panel">
+      <?php if (!empty($_title)): ?>
+        <div class="heading-panel">
+          <div style="display:none;" id="account-notice"></div>
+          <h1 class="heading-title"><?=String::capitalize($_title)?></h1>
+        </div>
+      <?php endif; ?>
+
+      <?php if (!empty($_warnings)): ?>
+        <div class="account-warnings">
+          <?php foreach($_warnings as $warning): ?>
+            <div><?=$warning?></div>
+          <?php endforeach; ?>
+        </div>
+      <?php endif; ?>
+
+      <div class="content-panel">
+        <table class="content-panel">
+          <tbody>
+            <tr>
+              <td class="main"><?=$_content?></td>
+            </tr>
+              <?php if (is_array($_tip)): ?>
+            <tr>
+                <td class="tip">
+                  <div>
+                    <strong><?=String::capitalize($_tip['title'])?></strong>
+                    <?=$_tip['content']?>
+                  </div>
+                </td>
+            </tr>
+              <?php endif; ?>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="bottombar-panel"></div>
+  </div>
+</div>
+
+<?php if (strlen($_flash) > 1): ?>
+<script>
+var _flash = "<?=String::capitalize(H::escapeJs($_flash))?>";
+Kwo.Account.setMessage(_flash);
+</script>
+<?php endif; ?>

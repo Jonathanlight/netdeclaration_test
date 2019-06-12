@@ -1,0 +1,52 @@
+.table--ntd
+
+  td, th
+    padding: 10px 9px
+    border-color: $color--bordergrey
+    border-width: 1px
+    border-style: solid
+    color: $color--text-default
+    vertical-align: middle
+
+    &.table-cell--vt
+      vertical-align: top
+
+    &:first-child
+      border-left-width: 0
+
+    &:last-child
+      border-right-width: 0
+
+  th
+    color: $color--darkblue
+    background: $color--lightblue--1
+
+  td
+    font-size: 12px
+    &.table--ntd__bold
+      font-size: 14px
+      color: $color--darkblue
+      font-weight: bold
+
+  thead td,
+  thead th
+    border-top-width: 0
+
+.table--ntd--even-odd tbody
+  tr:nth-child(even)
+    td,
+    th
+      background: $color--table-cell-even
+
+.table-padding-right
+  padding-right: 85px  
+
+
+
+
+.table-cell--aside
+  .btn--color-red
+    margin-left: 33px
+  .flashinfo  
+    margin-left: 20px
+

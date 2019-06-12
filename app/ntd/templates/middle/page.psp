@@ -1,0 +1,2 @@
+<h1 class="block__middle-title"><?=$page->title?></h1>
+<div class="wysiwyg"><?=$page->content?></div>

@@ -1,0 +1,14 @@
+<style>
+  textarea { width:100%; }
+</style>
+<h1>Zone de Copier/Coller</h1>
+<div>
+ <form>
+  <?=Elt::text(array('rows' => 21))?>
+  <div style="text-align:right; margin-top:6px;">
+    <?=Elt::button(array('label' => 'insérer', 'type' => 'button'))?>
+  </div>
+ </form>
+<i>CTRL + SHIFT + V | CMD + ALT + SHIFT + V</i>
+</div>
+

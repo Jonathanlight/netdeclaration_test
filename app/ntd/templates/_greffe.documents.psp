@@ -1,0 +1,43 @@
+<?php if (!empty($documents)) : ?>
+  <div class="margin-top-30"></div>
+
+  <div>
+    <h2 id="documents-reponse" class="block__title"><?=Snippet::content('greffe.document.reponse', null, 'title') ?></h2>
+    <div class="margin-top-30"></div>
+
+    <div>
+      <?=Snippet::content('greffe.document.reponse', null, 'content') ?>
+    </div>
+    <div class="margin-top-30"></div>
+
+    <table class="table table--ntd table--ntd--even-odd">
+      <colgroup>
+        <col width="*"></col>
+        <col width="275"></col>
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Document</th>
+          <th>Reçu le</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php foreach ($documents as $document) : ?>
+        <tr>
+          <td>
+            <a href="<?=$document['url'] ?>">
+              <span class="fa fa-file-pdf-o color--red font-size--18px"></span>
+              <?=$document['name'] ?>
+            </a>
+          </td>
+          <td>
+            <?=c(H::datenice($greffe->response_at)) ?>
+          </td>
+        </tr>
+        <?php endforeach ?>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="margin-top-30"></div>
+<?php endif ?>

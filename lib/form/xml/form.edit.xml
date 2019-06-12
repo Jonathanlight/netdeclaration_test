@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<fieldset label="$fieldset_label">
+<notebook>
+
+<page label="définition">
+<form>
+ <hbox>
+  <vbox width="40%">
+   <elem field="name" required="true" />
+   <elem field="app" />
+   <hbox>
+    <vbox>
+     <elem field="code" required="true" />
+    </vbox>
+    <vbox>
+     <elem field="locale" />
+    </vbox>
+   </hbox>
+   <elem field="title" required="true" />
+   <elem field="flags" />
+   <elem field="recipients" label="destinataires" precision="séparés par des virgules" />
+   <elem field="header" rows="3" label="en tête" />
+   <elem field="footer" rows="2" label="pied de page" />
+   <hbox>
+    <vbox>
+     <elem field="button" label="intitulé du bouton d'envoi" />
+    </vbox>
+    <vbox>
+     <elem field="style" />
+    </vbox>
+   </hbox>
+  </vbox>
+  <vbox>
+   <elem field="ack_subject" label="Mail de confirmation : sujet" />
+   <elem field="ack_body" rows="7" label="Mail de confirmation : contenu" />
+   <elem field="ack_content" rows="7" label="Message de confirmation" />   
+   </vbox>
+  </hbox>
+  <launcher />
+ </form>
+</page>
+
+<page label="champs" built="$is_loaded">
+ <box value="$workspace" />
+</page>
+
+<page label="opérations" built="$is_loaded">
+
+ <hbox>
+  <vbox width="120px">
+   <box label="actions">
+    <link icon="details" />
+    <link icon="timeline" />
+    <link icon="seo" />
+    <link icon="export" model="submission" label="export"
+          action="export.form"
+          container="deck" />
+    <link icon="hasmany" model="submission" />
+   </box>
+   </vbox>
+   <vbox><deck /></vbox>
+  </hbox>
+
+</page>
+
+</notebook>
+</fieldset>
+</kwo-interface>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+<fieldset label="$fieldset_label">
+
+<notebook>
+
+<page label="définition">
+ <form>
+  <hbox>
+   <vbox>
+    <hbox>
+     <vbox>
+      <elem field="code" />
+     </vbox>
+     <vbox>
+      <elem field="status" type="yesno" label="actif" />
+     </vbox>
+    </hbox>
+    <elem field="flags" />
+    <hbox>
+     <vbox>
+      <elem field="type" options="Field::$type_names" type="select" />
+     </vbox>
+     <vbox>
+      <elem field="size" label="taille" />
+     </vbox>
+    </hbox>
+    <elem field="options" />
+    <hbox>
+     <vbox>
+      <elem field="control_type" label="type de contrôle"
+            options="Field::$control_types" />
+     </vbox>
+     <vbox>
+      <elem field="control_value" label="valeur associée" />
+     </vbox>
+    </hbox>
+    <elem field="default" label="valeur par défaut" />
+   </vbox>
+   <vbox>
+    <elem field="name" label="intitulé" />
+    <elem field="placeholder" label="descriptif dans le champ" />
+    <elem field="description" rows="3" />
+    <elem field="help" rows="3" label="message d’aide" />
+    <elem field="error" rows="3" label="message d’erreur" />
+   </vbox>
+  </hbox>
+  <launcher/>
+ </form>
+</page>
+
+<page label="opérations" built="$is_loaded">
+ <hbox>
+  <vbox width="10%">
+   <box label="actions">
+    <link icon="details" />
+   </box>
+  </vbox>
+  <vbox><deck /></vbox>
+ </hbox>
+</page>
+
+</notebook>
+
+</fieldset>
+</kwo-interface>

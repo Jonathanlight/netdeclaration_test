@@ -1,0 +1,136 @@
+<form
+  action="/middle/services.purchasables.confirm<?= $service->hasFlag(Service::FLAG_MANY_SOUSCRIPTIONS_PROCESS) ? '.many' : '' ?>"
+
+  method="post">
+  <input type="hidden" name="form[service_id]" value="<?= $service->getId() ?>">
+  <?php if ($service->hasFlag(Service::FLAG_MANY_SOUSCRIPTIONS_PROCESS)): ?>
+    <?php foreach ($adherents as $adherent) : ?>
+      <input type="hidden" name="form[adherents][]" value="<?= $adherent ?>">
+    <?php endforeach; ?>
+  <?php else: ?>
+    <input type="hidden" name="form[quantity]" value="<?= $quantity ?>">
+  <?php endif; ?>
+
+
+  <table class="table table--ntd margin-bottom">
+    <tbody>
+    <tr>
+      <th><?= c(l('account.services.subscribe.adherent')) ?></th>
+      <td><?= $_current_adherent->first_name ?> <?= $_current_adherent->last_name ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('account.services.subscribe.service')) ?></th>
+      <td><?= $service->name ?></td>
+    </tr>
+    <tr>
+
+    </tr>
+    <?php if ($tarif_forfait): ?>
+      <tr>
+        <th><?= c(l('account.services.subscribe.forfait')) ?></th>
+        <td class="price"><?= H::amount($tarif_forfait->price) ?></td>
+      </tr>
+    <?php endif; ?>
+
+    <?php if ($tarif_unitaire): ?>
+      <tr>
+        <th><?= c(l('account.services.subscribe.unitaire')) ?></th>
+        <td class="price"><?= H::amount($tarif_unitaire->price) ?> <?= ' / ' . l('télétransmissions') ?></td>
+      </tr>
+      <tr>
+        <th><?= c(l('quantity')) ?></th>
+        <td class="price"><?= $quantity ?> <?= l('télétransmissions') ?></td>
+      </tr>
+      <!--tr>
+        <th><?= c(l('account.services.subscribe.total')) ?></th>
+        <td class="price"><?= H::amount($tarif_unitaire->price * $quantity) ?></td>
+      </tr-->
+    <?php endif; ?>
+
+    <?php if ($required_tarif_forfait): ?>
+      <tr>
+        <th><?= c(l('account.services.subscribe.forfait')) ?></th>
+        <td class="price"><?= H::amount($required_tarif_forfait->price) ?> <?= ' / ' . l('siret') ?></td>
+      </tr>
+    <?php endif; ?>
+    <?php if ($tarif_siret): ?>
+      <tr>
+        <th><?= c(l('account.services.subscribe.siret')) ?></th>
+        <td class="price"><?= H::amount($tarif_siret->price) ?></td>
+      </tr>
+      <tr>
+        <th><?= c(l('quantity')) ?> (<?= l('siret') ?>)</th>
+        <td class="price"><?= $quantity ?></td>
+      </tr>
+    <?php endif; ?>
+    <?php if ($tarif_siren): ?>
+      <tr>
+        <th><?= c(l('account.services.subscribe.siren')) ?></th>
+        <td class="price"><?= H::amount($tarif_siren->price) ?> <?= ' / ' . l('siren') ?></td>
+      </tr>
+      <tr>
+        <th><?= c(l('quantity')) ?> ( <?= l('siren') ?>)</th>
+        <td class="price"><?= $quantity ?></td>
+      </tr>
+    <?php endif; ?>
+    <?php if ($tarif_no_fiscal): ?>
+      <tr>
+        <th><?= c(l('account.services.subscribe.no_fiscal')) ?></th>
+        <td class="price"><?= H::amount($tarif_no_fiscal->price) ?> <?= ' / ' . l('no_fiscal') ?></td>
+      </tr>
+      <tr>
+        <th><?= c(l('quantity')) ?></th>
+        <td class="price"><?= $quantity ?> <?= l('no_fiscal') ?></td>
+      </tr>
+    <?php endif; ?>
+    <?php if ($tarif_loyer): ?>
+      <tr>
+        <th>Tarif par Loyer<?//= c(l('account.services.subscribe.siret')) ?></th>
+        <td class="price"><?= H::amount($tarif_loyer->price) ?> <?= ' / ' . 'loyer'//l('siret') ?></td>
+      </tr>
+      <tr>
+        <th><?= c(l('quantity')) ?></th>
+        <td class="price"><?= $quantity ?> <?= 'loyer'//l('siret') ?></td>
+      </tr>
+    <?php endif; ?>
+    <?php if ($tarif_greffe): ?>
+      <?php if ($tarif_forfait_greffe) : ?>
+        <tr>
+          <th><?=c(l('greffe.tarif.forfait')) ?></th>
+          <td class="price"><?= H::amount($tarif_forfait_greffe->price) ?></td>
+        </tr>
+      <?php endif ?>
+      <tr>
+        <th><?=c(l('greffe.tarif.costs')) ?></th>
+        <td class="price"><?= H::amount($tarif_greffe->price) ?></td>
+      </tr>
+    <?php endif; ?>
+
+    <tr>
+      <th><?= c(l('account.services.subscribe.total')) ?></th>
+      <td class="price"><?= H::amount($total_price) ?></td>
+    </tr>
+
+
+    </tbody>
+  </table>
+
+  <?php if ($service->code == 'GREFFE') : ?>
+    <div data-on-load="new ntd.middle.greffeEligibilityDialog(this)">
+      <a class="color--red" href="/middle/services.purchasables.eligibility/-/id/<?=$service->getId() ?>" target="_blank">
+        <span class="fa fa-warning"></span>
+        <?=c(l('greffe.service.check.eligibility')) ?>
+      </a>
+    </div>
+    <br /><br />
+  <?php endif ?>
+
+  <div class="form--ntd__actions">
+    <button type="submit"
+            class="btn btn--color-red margin-left--label-width"><?= c(l('account.services.subscribe.submit')) ?></button>
+    <a class="btn btn--link"
+       href="/middle/services.purchasables"><?= c(l('cancel')) ?></a>
+  </div>
+
+</form>
+

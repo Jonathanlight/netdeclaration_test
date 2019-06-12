@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+ <fieldset>
+
+  <notebook>
+   <page>
+    <form>
+     <hbox>
+      <vbox width="200px">
+       <elem field="name"/>
+       <elem field="status"/>
+      </vbox>
+      <vbox>
+       <grid value="$formulairetypes_present1"/>
+      </vbox>
+      <vbox>
+       <grid value="$formulairetypes_present2"/>
+      </vbox>
+      <vbox>
+       <grid value="$formulairetypes_present3"/>
+      </vbox>
+      <vbox>
+       <grid value="$formulairetypes_present4"/>
+      </vbox>
+      <vbox>
+       <grid value="$formulairetypes_present5"/>
+      </vbox>
+     </hbox>
+     <launcher/>
+    </form>
+   </page>
+   <page label="Edition">
+    <form>
+     <hbox>
+      <vbox width="200px">
+       <elem field="mode" value="edit" type="hidden" />
+       <elem field="millesime"
+             options="$older_millesimes"
+             type="select"
+             addfirst="-"
+             label="Millesime mis à jour"
+             precision="Obligatoire" 
+         />
+      </vbox>
+      <vbox>
+       <elem field="formulairetypes"
+             options="$formulairetypes"
+             value="$formulairetypes_belongs"
+             type="checkbox"
+             label="Formulaires type concernés par ce Millesime"
+             cols="7"/>
+      </vbox>
+     </hbox>
+     <launcher/>
+    </form>
+   </page>
+   <page>
+    <hbox>
+     <vbox width="150px">
+      <box label="actions">
+       <link icon="details"/>
+      </box>
+     </vbox>
+     <vbox>
+      <deck/>
+     </vbox>
+    </hbox>
+   </page>
+  </notebook>
+
+ </fieldset>
+</kwo-interface>

@@ -1,0 +1,61 @@
+<div class="block--help"
+       data-on-load="new ntd.BlockHelpManager(this)">
+
+  <button type="button" class="btn btn--fixed"
+          data-method="toggle">
+    <span class="need-help">Besoin d'aide ?</span>
+    <span class="close-help">Fermer l'aide</span>
+  </button>
+
+  <div class="table table--modal-aide border--left--big--darkblue">
+  <?php
+    $form = Form::getInstance(array('code' => 'ntd.form.help', 'locale' => S('res')->getLocale()));
+
+    $fields = '<br>';
+
+    foreach ($form->getFields() as $field) {
+      if (!$field->isOnline() || $field->isHidden()) continue;
+      $fields .= $field->asHtml($bindings, $failures) . "\n";
+    }
+  ?>
+
+    <div class="table-cell">
+      <form class="form--ntd form--ntd-aside"
+        action="/form/submission.save">
+        <input type="hidden"
+               value="<?= Form::getInstance(array('code' => 'ntd.form.help', 'locale' => S('res')->getLocale()))->getKey() ?>"
+               name="item_key">
+          <div class="form-fields elt">
+            <?= $fields ?>
+            <?= Field::captcha(array()) //W::captcha() ?>
+            <div class="block__send">
+              <button class="btn btn--color-light-blue btn-infos">Etre recontacté</button>
+              <span class="warning-information">* Ces champs sont obligatoires</span>
+            </div>
+          </div>
+      </form>
+      <div style="display:none" class="form-ack"></div>
+    </div>
+    <div class="table-cell table-right">
+      <div class="block__information">
+        <img src="/app/ntd/pix/modalaide/modal-phone.png" alt="modalaide" class="modal-img margin-bottom">
+        <p class="margin-bottom">
+          <?= Snippet::content('aside.help.phone', null, 'description') ?>
+        </p>
+        <span class="font--darkblue font-size--18px font-family--georgia">
+          <?= Snippet::content('aside.help.phone') ?>
+        </span>
+      </div>
+      <div>
+        <img src="/app/ntd/pix/modalaide/modal-question.png" alt="modalaide" class="modal-img margin-bottom">
+        <p class="margin-bottom">
+          <?= Snippet::content('aside.help.faq', null, 'description') ?>
+        </p>
+        <a href="/fr/page-foire-aux-questions-168" class="font--darkblue font-size--18px font-family--georgia faq">
+          <?= Snippet::content('aside.help.faq') ?>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="modal-backdrop fade in" data-method="toggle"></div>
+</div>

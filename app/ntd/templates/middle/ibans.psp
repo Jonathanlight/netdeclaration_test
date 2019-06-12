@@ -1,0 +1,21 @@
+<?php foreach ($ibans as $index => $iban) : ?>
+  <section data-iban="<?= $iban->getId() ?>">
+    <h3 class="font--lightblue font-size--22px margin-top margin-bottom">Compte IBAN N°<?= $index + 1 ?></h3>
+    <?= H::inc('ntd:_iban.form', array('iban' => $iban->getAttributes(), 'adherent' => $_current_adherent)) ?>
+  </section>
+<?php endforeach; ?>
+
+<?php if ($ibans->count() < Iban::MAX_IBAN_PER_ADHERENT) : ?>
+  <div class="new-iban-container" style="display:none;">
+    <section>
+      <?= H::inc('ntd:_iban.form', array('iban' => array('type' => Iban::TYPE_SECONDARY), 'adherent' => $_current_adherent)) ?>
+    </section>
+  </div>
+  <div class="flashinfo margin-top-20">
+    Vous pouvez encore créer <?= Iban::MAX_IBAN_PER_ADHERENT - $ibans->count() ?> Compte(s) IBAN.
+    <a href="javascript:void(0)"
+       onclick="$(this).up().hide().previous('.new-iban-container').show();"
+       class="btn btn--color-red button-iban-add"> Ajouter un IBAN </a>
+  </div>
+<?php endif; ?>
+

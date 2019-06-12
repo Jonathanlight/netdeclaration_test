@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="name asc">
+ <filters width="250px">
+  <filter name="id" />
+  <filter name="name" />
+  <filter name="type" />
+  <filter name="status" type="yesno" />
+  <filter name="|%%|adherent_types" type="checkbox" options="Adherent::$types" label="Type d'adhérent" />
+ </filters>
+ <cols>
+  <col name="name" />
+  <col name="type" />
+  <col name="code" label="Ancien code" />
+  <col name="document_code" label="Type de document associé" options="Formulairetype::$document_codes" />
+  <col name="description" />
+  <col name="adherent_types" label="Type d'adhérent" />
+  <col name="position_catalogue" label="Position catalogue" />
+ </cols>
+</finder>
+
+</kwo-interface>

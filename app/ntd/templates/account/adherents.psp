@@ -1,0 +1,37 @@
+
+<a href="/account/ntd/adherents.adherent.form"
+   class="btn btn--color-red margin-bottom "><?= c(l('adherents.secondaries.addprofile')) ?></a>
+
+<table class="table table--ntd table--ntd--even-odd">
+  <!--<col width="40">-->
+  <col width="*">
+  <col width="110">
+  <col width="110">
+  <thead>
+  <tr>
+    <!--<th><?= c(l('adherents.secondaries.id')) ?></th>-->
+    <th><?= c(l('adherents.secondaries.identity')) ?></th>
+    <th><?= c(l('siret')) ?></th>
+    <th><?//= c(l('adherents.secondaries.actions')) ?></th>
+  </tr>
+  </thead>
+  <tbody>
+  <?php foreach ($adherents_secondaries as $adherent): ?>
+    <tr>
+      <td class="table--ntd__bold"><?= $adherent->company ?></td>
+      <!--<td><?= $adherent->getId() ?></td>-->
+      <td><?= $adherent->siret ?></td>
+      <td>
+        <?php if ($adherent->hasCurrentSouscription(NetDeclarationManager::SERVICE_ADHESION_PROFILE_SECONDAIRE)): ?>
+          <a href="/account/ntd/adherents.adherent.resiliate.form/-/id/<?= $adherent->getId() ?>"
+             class="btn btn--link btn--smaller"><?= c(l('adherents.secondaries.unsubscribe')) ?></a>
+        <?php else: ?>
+          <?= c(l('adherents.secondaries.noadhesion')) ?>
+        <?php endif; ?>
+      </td>
+    </tr>
+  <?php endforeach; ?>
+  </tbody>
+</table>
+
+

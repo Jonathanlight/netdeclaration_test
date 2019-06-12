@@ -1,0 +1,1019 @@
+<div class="<?= !$occurence ? 'formulaire-page page-form' : '' ?> page-form page-repetable" data-label="2561" data-position="<?=$occurence?>">
+    <table class="ifu2561_20190101">
+        <thead>
+            <tr class="tab-title">
+                <th class="maintitle" colspan="3">
+                    Informations générales
+                </th>
+            </tr>
+        </thead>
+        <tbody class="ifu2561_20190101">
+            <tr class="elt">
+                <td class="libelle">Code bénéficiaire</td>
+                <td class="line_impot">AB</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AD', 'value' => $ifu2561_20190101['AD'])) ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Début de la période de référence (MMJJ)</td>
+                <td class="line_impot">AQ</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AN', 'value' => $ifu2561_20190101['AN'])) ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Fin de la période de référence (MMJJ)</td>
+                <td>&nbsp;</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AP', 'field_name' => 'AP', 'value' => $ifu2561_20190101['AP'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Code établissement</td>
+                <td class="line_impot">BO</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA02', 'field_name' => 'AA02', 'value' => $ifu2561_20190101['AA02'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Code guichet</td>
+                <td class="line_impot">AG</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA03', 'field_name' => 'AA03', 'value' => $ifu2561_20190101['AA03'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Numéro de compte</td>
+                <td class="line_impot">AI</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA01', 'field_name' => 'AA01', 'value' => $ifu2561_20190101['AA01'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Numéro de contrat</td>
+                <td>&nbsp;</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AM', 'field_name' => 'AM', 'value' => $ifu2561_20190101['AM'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Nature du compte</td>
+                <td class="line_impot">AH</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AB', 'field_name' => 'AB', 'value' => $ifu2561_20190101['AB'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Type de compte</td>
+                <td class="line_impot">BR</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AC', 'field_name' => 'AC', 'value' => $ifu2561_20190101['AC'])); ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="ifu2561_20190101">
+        <thead>
+            <tr class="tab-title">
+                <th class="maintitle" colspan="3">
+                    Désignation du bénéficiaire
+                </th>
+                <th class="maintitle" colspan="3">
+                    Compléments d'identification du bénéficiaire
+                </th>
+            </tr>
+        </thead>
+        <tbody class="ifu2561_20190101">
+
+            <tr class="elt">
+                <td class="libelle">Nom de famille</td>
+                <td class="line_impot">ZC</td>
+                <td class="input input-lg print-large">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AE02', 'field_name' => 'AE02', 'value' => $ifu2561_20190101['AE02'])); ?>
+                </td>
+                <td class="libelle">Date de naissance</td>
+                <td class="line_impot">AC</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AH', 'field_name' => 'AH', 'value' => $ifu2561_20190101['AH'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Prénoms</td>
+                <td class="line_impot">ZD</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AE03', 'field_name' => 'AE03', 'value' => $ifu2561_20190101['AE03'])); ?>
+                </td>
+                <td class="libelle">Ou N° SIRET</td>
+                <td class="line_impot">CU</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AF01', 'field_name' => 'AF01', 'value' => $ifu2561_20190101['AF01'], 'class' => 'align-left')); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Ou Raison sociale</td>
+                <td class="line_impot">ZE</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AF02', 'field_name' => 'AF02', 'value' => $ifu2561_20190101['AF02'])); ?>
+                </td>
+                <td class="libelle">&nbsp;</td>
+                <td class="line_impot"></td>
+                <td class="input input-lg">&nbsp;</td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Complément d'adresse</td>
+                <td class="line_impot">ZF</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG06', 'field_name' => 'AG06', 'value' => $ifu2561_20190101['AG06'])); ?>
+                </td>
+                <td class="libelle">Libellé commune de naissance</td>
+                <td class="line_impot">AE</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AE15', 'field_name' => 'AE15', 'value' => $ifu2561_20190101['AE15'])); ?>
+                </td>
+            </tr>
+            <tr class="elt">
+                <td class="libelle">N° de la voie</td>
+                <td class="line_impot" rowspan="2">ZG</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG16', 'field_name' => 'AG16', 'value' => $ifu2561_20190101['AG16'], 'class' => 'align-left')); ?>
+                </td>
+                <td class="libelle" colspan="2">Né à l'étranger</td>
+                <td class="input input-lg" colspan="1"> <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ZZ1', 'field_name' => 'ZZ1', 'removeClear' => true, 'value' => $ifu2561_20190101['ZZ1'])); ?></td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Bis,ter,quater&hellip;</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG17', 'field_name' => 'AG17', 'value' => $ifu2561_20190101['AG17'])); ?>
+                </td>
+                <td class="libelle">Code insee commune naissance</td>
+                <td class="line_impot">AF</td>
+                <td class="input input-lg">
+                    <?php
+                    $AE14_1Class = $AE14_2Class = 'print-data-value';
+                    if ($das2tv_20190101['ZZ1']) {
+                        $AE14_1Class .= ' hidden';
+                    } else {
+                        $AE14_2Class .= ' hidden';
+                    }
+                    ?>
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AE14_1', 'field_name' => 'AE14_1', 'value' => $ifu2561_20190101['AE14_1'], 'class' =>  $AE14_1Class, 'data-value' => $ifu2561_20190101['AE14_1'])); ?>
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AE14_2', 'field_name' => 'AE14_2', 'value' => $ifu2561_20190101['AE14_2'], 'class' =>  $AE14_2Class, 'data-value' => $ifu2561_20190101['AE14_2'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Adresse</td>
+                <td class="line_impot">ZH</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG05', 'field_name' => 'AG05', 'value' => $ifu2561_20190101['AG05'])); ?>
+                </td>
+                <td class="libelle">Code sexe</td>
+                <td class="line_impot">AO</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AJ', 'field_name' => 'AJ', 'value' => $ifu2561_20190101['AJ'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Commune (libellé)</td>
+                <td class="line_impot">ZI</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG08', 'field_name' => 'AG08', 'value' => $ifu2561_20190101['AG08'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Etablissement étranger</td>
+                <td class="input input-lg" colspan="1"> <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ZZ2', 'field_name' => 'ZZ2', 'removeClear' => true, 'value' => $ifu2561_20190101['ZZ2'])); ?></td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Code postal</td>
+                <td class="line_impot">ZJ</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG09', 'field_name' => 'AG09', 'value' => $ifu2561_20190101['AG09'], 'class' => 'align-left')); ?>
+                </td>
+                <td class="libelle">Code commune Insee</td>
+                <td class="line_impot"></td>
+                <td class="input input-lg">
+                    <?php
+                    $AG14_1Class = $AG14_2Class = 'print-data-value';
+                    if ($das2tv_20190101['ZZ2']) {
+                        $AG14_1Class .= ' hidden';
+                    } else {
+                        $AG14_2Class .= ' hidden';
+                    }
+                    ?>
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG14_1', 'field_name' => 'AG14_1', 'value' => $ifu2561_20190101['AG14_1'], 'class' =>  $AG14_1Class, 'data-value' => $ifu2561_20190101['AG14_1'])); ?>
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG14_2', 'field_name' => 'AG14_2', 'value' => $ifu2561_20190101['AG14_2'], 'class' =>  $AG14_2Class, 'data-value' => $ifu2561_20190101['AG14_2'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">Profession</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AK', 'field_name' => 'AK', 'value' => $ifu2561_20190101['AK'])); ?>
+                </td>
+                <td class="libelle">Commune Insee</td>
+                <td class="line_impot"></td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AG15', 'field_name' => 'AG15', 'value' => $ifu2561_20190101['AG15'])); ?>
+                </td>
+            </tr>
+        <tr class="elt">
+            <td class="libelle">Nom d'usage</td>
+            <td class="line_impot">CT</td>
+            <td class="input input-lg">
+                <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AE04', 'field_name' => 'AE04', 'value' => $ifu2561_20190101['AE04'])); ?>
+            </td>
+            <td class="libelle" colspan="2">Catégorie juridique</td>
+            <td class="input input-lg">
+                <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AL', 'field_name' => 'AL', 'value' => $ifu2561_20190101['AL'])); ?>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <table class="ifu2561_20190101">
+        <thead>
+            <tr class="tab-title">
+                <th class="maintitle maintitle-uppercase" colspan="4">
+                    Montant brut à déclarer
+                </th>
+                <th class="maintitle maintitle-uppercase" colspan="4">
+                    Produits de placement à revenu fixe
+                </th>
+            </tr>
+        </thead>
+
+        <tbody class="ifu2561_20190101">
+
+            <tr class="elt">
+                <td class="libelle">Avances, prêts ou acomptes</td>
+                <td class="line_impot">2TS</td>
+                <td class="line_impot">AW</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BE', 'field_name' => 'BE', 'value' => $ifu2561_20190101['BE'])); ?>
+                </td>
+                <td class="libelle">Produits ou Gains</td>
+                <td class="line_impot">2TR</td>
+                <td class="line_impot">AR</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CA', 'field_name' => 'CA', 'value' => $ifu2561_20190101['CA'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+
+                <td class="libelle">
+                    Distributions non éligibles à l'abattement de 40%
+                </td>
+                <td class="line_impot">2TS</td>
+                <td class="line_impot">AZ</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BF', 'field_name' => 'BF', 'value' => $ifu2561_20190101['BF'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Pertes</td>
+                <td class="line_impot">AS</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CB', 'field_name' => 'CB', 'value' => $ifu2561_20190101['CB'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <td class="libelle" colspan="2">
+                    Dont valeurs étrangères
+                </td>
+                <td class="line_impot">BA</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BG', 'field_name' => 'BG', 'value' => $ifu2561_20190101['BG'])); ?>
+                </td>
+
+                <th class="libelle maintitle maintitle-uppercase" colspan="4">
+                    Produits des minibons et des prets dans le cadre du financement participatif
+                </th>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">
+                    Jetons de présence
+                </td>
+                <td class="line_impot">2TS</td>
+                <td class="line_impot">BW</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BH', 'field_name' => 'BH', 'value' => $ifu2561_20190101['BH'])); ?>
+                </td>
+                <td class="libelle">
+                    Produits
+                </td>
+                <td class="line_impot">2TT</td>
+                <td class="line_impot">KR</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CC', 'field_name' => 'CC', 'value' => $ifu2561_20190101['CC'])); ?>
+                </td>
+
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" rowspan="2">
+                    Revenus distribués éligibles à l'abattement de 40%
+                </td>
+                <td class="line_impot"  rowspan="2">2DC</td>
+                <td class="line_impot"  rowspan="2">AY</td>
+                <td class="input input-lg"  rowspan="2">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BJ', 'field_name' => 'BJ', 'value' => $ifu2561_20190101['BJ'])); ?>
+                </td>
+                <td class="libelle">
+                    Pertes
+                </td>
+                <td class="line_impot">2TU</td>
+                <td class="line_impot">KS</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CD', 'field_name' => 'CD', 'value' => $ifu2561_20190101['CD'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="libelle maintitle maintitle-uppercase" colspan="4">Cessions de valeurs mobilières</th>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">
+                    Revenus exonérés
+                </td>
+                <td class="line_impot">BB</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BK', 'field_name' => 'BK', 'value' => $ifu2561_20190101['BK'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Montant total des cessions</td>
+                <td class="line_impot">AN</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BS', 'field_name' => 'BS', 'value' => $ifu2561_20190101['BS'])); ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+     <table class="ifu2561_20190101">
+        <tbody>
+            <tr class="tab-title">
+                <td class="maintitle" colspan="4">REVENUS SOUMIS A PRELEVEMENT LIBERATOIRE</td>
+                <td class="maintitle" colspan="4">PLAN D’EPARGNE EN ACTION</td>
+            </tr>
+        </tbody>
+
+        <tbody class="ifu2561_20190101">
+
+            <tr class="elt">
+                <td class="libelle">Base du prélèvement</td>
+                <td class="line_impot">2EE</td>
+                <td class="line_impot">BN</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BN', 'field_name' => 'BN', 'value' => $ifu2561_20190101['BN'])); ?>
+                </td>
+                <td class="libelle" rowspan="2">Produits éligibles à l’abattement de 40% des titres non cotés</td>
+                <td class="line_impot" rowspan="2">2FU</td>
+                <td class="line_impot" rowspan="2">BC</td>
+                <td class="input input-lg" rowspan="2">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EF', 'field_name' => 'EF', 'value' => $ifu2561_20190101['EF'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">Montant du prélèvement</td>
+                <td class="line_impot">BP</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BP', 'field_name' => 'BP', 'value' => $ifu2561_20190101['BP'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">Etablissement financier européen : base de la retenue à la source</td>
+                <td class="line_impot">BV</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BR', 'field_name' => 'BR', 'value' => $ifu2561_20190101['BR'])); ?>
+                </td>
+                <td class="libelle">Produits non éligibles à l’abattement de 40% des titres non cotés</td>
+                <td class="line_impot">2TS</td>
+                <td class="line_impot">BQ</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EG', 'field_name' => 'EG', 'value' => $ifu2561_20190101['EG'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="maintitle" colspan="4">PRODUITS POUR LESQUELS LES PRELEVEMENTS SOCIAUX ONT DEJA ETE APPLIQUES</th>
+                <td class="libelle">Crédit d’impôt sur titres non cotés étrangers</td>
+                <td class="line_impot">8VL</td>
+                <td class="line_impot">BT</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EH', 'field_name' => 'EH', 'value' => $ifu2561_20190101['EH'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" rowspan="2">Produits soumis à une imposition à taux forfaitaire</td>
+                <td class="line_impot" rowspan="2">2CG</td>
+                <td class="line_impot" rowspan="2">BS</td>
+                <td class="input input-lg" rowspan="2">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BT', 'field_name' => 'BT', 'value' => $ifu2561_20190101['BT'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Référence du plan</td>
+                <td class="line_impot">BD</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EA', 'field_name' => 'EA', 'value' => $ifu2561_20190101['EA'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">Date d'ouverture du plan</td>
+                <td class="line_impot">BE</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EB', 'field_name' => 'EB', 'value' => $ifu2561_20190101['EB'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" rowspan="2">Produits imposables au barème progressif</td>
+                <td class="line_impot" rowspan="2">2BH</td>
+                <td class="line_impot" rowspan="2">BU</td>
+                <td class="input input-lg" rowspan="2">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BV', 'field_name' => 'BV', 'value' => $ifu2561_20190101['BV'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Date du premier retrait</td>
+                <td class="line_impot">BF</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EC', 'field_name' => 'EC', 'value' => $ifu2561_20190101['EC'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" rowspan="2">En cas de clôture avant 5 ans ou PEA en perte</td>
+                <td class="libelle">Montant cumulé des versements</td>
+                <td class="line_impot">BI</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EE', 'field_name' => 'EE', 'value' => $ifu2561_20190101['EE'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="maintitle maintitle-uppercase" colspan="4">Frais</th>
+                <td class="libelle">Valeur liquidative</td>
+                <td class="line_impot">BH</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ED', 'field_name' => 'ED', 'value' => $ifu2561_20190101['ED'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <td class="libelle">Montant des frais</td>
+                <td class="line_impot">2CA</td>
+                <td class="line_impot">KF</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CH', 'field_name' => 'CH', 'value' => $ifu2561_20190101['CH'])); ?>
+                </td>
+                <th class="maintitle" colspan="4">EPARGNE RETRAITE</th>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="maintitle" rowspan="2" colspan="4">PRODUITS DES CONTRATS D’ASSURANCE VIE ET PRODUITS ASSIMILES</th>
+                <td class="libelle">Cotisation PERP et assimilés</td>
+                <td class="line_impot">6RS</td>
+                <td class="line_impot">CV</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EJ', 'field_name' => 'EJ', 'value' => $ifu2561_20190101['EJ'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Cotisation des contrats Madelin</td>
+                <td class="line_impot">6QS</td>
+                <td class="line_impot">CX</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EK', 'field_name' => 'EK', 'value' => $ifu2561_20190101['EK'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="line_impot" colspan="4">Produits des contrats de moins de huit ans</td>
+                <td class="libelle" colspan="2">Exercice ne coïncidant pas avec l’année civile</td>
+                <td class="line_impot">CY</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EL', 'field_name' => 'EL', 'value' => $ifu2561_20190101['EL'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <td class="libelle" rowspan="2">Produits des versements effectués avant le 27/09/17 soumis au barème</td>
+                <td class="line_impot" rowspan="2">2YY</td>
+                <td class="line_impot" rowspan="2">AV</td>
+                <td class="input input-lg" rowspan="2">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CT', 'field_name' => 'CT', 'value' => $ifu2561_20190101['CT'])); ?>
+                </td>
+                <th class="maintitle" colspan="4">CREDIT D’IMPOT</th>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Crédit d’impôt restituable</td>
+                <td class="line_impot">2CK</td>
+                <td class="line_impot">AJ</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BB', 'field_name' => 'BB', 'value' => $ifu2561_20190101['BB'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <td class="libelle" rowspan="2">Produits des versements effectués avant le 27/09/17 soumis à PLF</td>
+                <td class="line_impot" rowspan="2">2XX</td>
+                <td class="line_impot" rowspan="2">AX</td>
+                <td class="input input-lg" rowspan="2">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CU', 'field_name' => 'CU', 'value' => $ifu2561_20190101['CU'])); ?>
+                </td>
+                <td class="libelle">Crédit d’impôt non restituable</td>
+                <td class="line_impot">2AB</td>
+                <td class="line_impot">AA</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BA', 'field_name' => 'BA', 'value' => $ifu2561_20190101['BA'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Crédit d’impôt prélèvement</td>
+                <td class="line_impot">2CK</td>
+                <td class="line_impot">AD</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BC', 'field_name' => 'BC', 'value' => $ifu2561_20190101['BC'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <td class="libelle" colspan="2">Montant du PLF appliqué aux produits des versements effectués avant le 27/09/17</td>
+                <td class="line_impot">AT</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CV', 'field_name' => 'CV', 'value' => $ifu2561_20190101['CV'])); ?>
+                </td>
+                <th class="maintitle" colspan="4">PLAN D’EPARGNE POPULAIRE</th>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Produits des versements effectués à compter du 27/09/17</td>
+                <td class="line_impot">2ZZ</td>
+                <td class="line_impot">AP</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CW', 'field_name' => 'CW', 'value' => $ifu2561_20190101['CW'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Référence du PEP</td>
+                <td class="line_impot">BK</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DK', 'field_name' => 'DK', 'value' => $ifu2561_20190101['DK'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="line_impot" colspan="4">Produits des contrats de plus de huit ans</td>
+                <td class="libelle" colspan="2">Date d'ouverture du PEP</td>
+                <td class="line_impot">BL</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DL', 'field_name' => 'DL', 'value' => $ifu2561_20190101['DL'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <td class="libelle">Produits des versements effectués avant le 27/09/17 avec abattement soumis au barème</td>
+                <td class="line_impot">2CH</td>
+                <td class="line_impot">BG</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CX', 'field_name' => 'CX', 'value' => $ifu2561_20190101['CX'])); ?>
+                </td>
+                <th class="maintitle" colspan="4">FONDS COMMUNS DE PLACEMENT A RISQUES OU FONDS PROFESSIONNELS DE CAPITAL INVESTISSEMENT</th>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" rowspan="2">Produits des versements effectués avant le 27/09/17 avec abattement soumis à PLF</td>
+                <td class="line_impot" rowspan="2">2DH</td>
+                <td class="line_impot" rowspan="2">AM</td>
+                <td class="input input-lg" rowspan="2">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CY', 'field_name' => 'CY', 'value' => $ifu2561_20190101['CY'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Dénomination de fonds</td>
+                <td class="line_impot">EB</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DA', 'field_name' => 'DA', 'value' => $ifu2561_20190101['DA'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">Montant de la distribution</td>
+                <td class="line_impot">EJ</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CR', 'field_name' => 'CR', 'value' => $ifu2561_20190101['CR'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Produits des versements effectués à compter du 27/09/17 bénéficiant de l’abbatement</td>
+                <td class="line_impot">2UU</td>
+                <td class="line_impot">AL</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CZ', 'field_name' => 'CZ', 'value' => $ifu2561_20190101['CZ'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Nombre de part cédées</td>
+                <td class="line_impot">EC</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DB', 'field_name' => 'DB', 'value' => $ifu2561_20190101['DB'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="maintitle" colspan="4" rowspan="2">PROFITS REALISES SUR LES INSTRUMENTS FINANCIERS A TERME</th>
+                <td class="libelle" rowspan="2">Période de dépassement</td>
+                <td class="libelle">Du</td>
+                <td class="line_impot">EL</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DH', 'field_name' => 'DH', 'value' => $ifu2561_20190101['DH'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Au</td>
+                <td class="line_impot">EM</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DJ', 'field_name' => 'DJ', 'value' => $ifu2561_20190101['DJ'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Profits</td>
+                <td class="line_impot">3VG</td>
+                <td class="line_impot">DJ</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DM', 'field_name' => 'DM', 'value' => $ifu2561_20190101['DM'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Nombre de part détenues</td>
+                <td class="line_impot">EN</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DD', 'field_name' => 'DD', 'value' => $ifu2561_20190101['DD'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Pertes</td>
+                <td class="line_impot">3VH</td>
+                <td class="line_impot">DK</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DN', 'field_name' => 'DN', 'value' => $ifu2561_20190101['DN'])); ?>
+                </td>
+                <td class="libelle" rowspan="3">Date AAAAMMJJ</td>
+                <td class="libelle">Dissolution du fonds</td>
+                <td class="line_impot">EE</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DE', 'field_name' => 'DE', 'value' => $ifu2561_20190101['DE'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" rowspan="2">Profits imposables au taux dérogatoire de 50%</td>
+                <td class="line_impot" rowspan="2">3PI</td>
+                <td class="line_impot" rowspan="2">DL</td>
+                <td class="input input-lg" rowspan="2">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DP', 'field_name' => 'DP', 'value' => $ifu2561_20190101['DP'])); ?>
+                </td>
+                <td class="libelle">Distribution avec annulation</td>
+                <td class="line_impot">EF</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DF', 'field_name' => 'DF', 'value' => $ifu2561_20190101['DF'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt page-break">
+                <td class="libelle">Distribution sans annulation</td>
+                <td class="line_impot">ED</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DG', 'field_name' => 'DG', 'value' => $ifu2561_20190101['DG'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="maintitle" colspan="4">PLAN D’EPARGNE EN ACTION - PME</th>
+                <td class="libelle" colspan="2">Nombre de part au moment de l'opération</td>
+                <td class="line_impot">EH</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DC', 'field_name' => 'DC', 'value' => $ifu2561_20190101['DC'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" rowspan="2">Produits éligibles à l’abattement de 40 % des titres non cotés</td>
+                <td class="line_impot" rowspan="2">2FU</td>
+                <td class="line_impot" rowspan="2">GG</td>
+                <td class="input input-lg" rowspan="2">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FF', 'field_name' => 'FF', 'value' => $ifu2561_20190101['FF'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Valeur moyenne d’acquisition de la part</td>
+                <td class="line_impot">EI</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CP', 'field_name' => 'CP', 'value' => $ifu2561_20190101['CP'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">Apports en nature des titres</td>
+                <td class="line_impot">EG</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CS', 'field_name' => 'CS', 'value' => $ifu2561_20190101['CS'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" rowspan="2">Produits non éligibles à l’abattement de 40 % des titres non cotés</td>
+                <td class="line_impot" rowspan="2">2TS</td>
+                <td class="line_impot" rowspan="2">GQ</td>
+                <td class="input input-lg" rowspan="2">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FG', 'field_name' => 'FG', 'value' => $ifu2561_20190101['FG'])); ?>
+                </td>
+                <td class="libelle">Revenus exonérés</td>
+                <td class="line_impot">3VC</td>
+                <td class="line_impot">ET</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CN', 'field_name' => 'CN', 'value' => $ifu2561_20190101['CN'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="maintitle" colspan="4">FONDS DE PLACEMENT IMMOBILIER (FPI)</th>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" rowspan="2">Crédit d’impôt sur titres non cotés étrangers</td>
+                <td class="line_impot" rowspan="2">8VL</td>
+                <td class="line_impot" rowspan="2">GT</td>
+                <td class="input input-lg" rowspan="2">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FH', 'field_name' => 'FH', 'value' => $ifu2561_20190101['FH'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Dénomination du fonds</td>
+                <td class="line_impot">FA</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EY', 'field_name' => 'EY', 'value' => $ifu2561_20190101['EY'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">Recettes imposables</td>
+                <td class="line_impot">FD</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EU', 'field_name' => 'EU', 'value' => $ifu2561_20190101['EU'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">Référence du plan</td>
+                <td class="line_impot">GD</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FA', 'field_name' => 'FA', 'value' => $ifu2561_20190101['FA'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Charges déductibles</td>
+                <td class="line_impot">FY</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EV', 'field_name' => 'EV', 'value' => $ifu2561_20190101['EV'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">Date d'ouverture du plan</td>
+                <td class="line_impot">GE</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FB', 'field_name' => 'FB', 'value' => $ifu2561_20190101['FB'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Intérêts d'emprunts</td>
+                <td class="line_impot">FX</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EW', 'field_name' => 'EW', 'value' => $ifu2561_20190101['EW'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">Date du premier retrait</td>
+                <td class="line_impot">GF</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FC', 'field_name' => 'FC', 'value' => $ifu2561_20190101['FC'])); ?>
+                </td>
+                <td class="libelle">Bénéfices fonciers</td>
+                <td class="line_impot">4BA</td>
+                <td class="line_impot">FG</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EX', 'field_name' => 'EX', 'value' => $ifu2561_20190101['EX'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" rowspan="2">En cas de clôture avant 5 ans ou PEA en perte</td>
+                <td class="libelle">Montant cumulé des versements</td>
+                <td class="line_impot">GI</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FE', 'field_name' => 'FE', 'value' => $ifu2561_20190101['FE'])); ?>
+                </td>
+                <td class="libelle">Plus-values mobilières</td>
+                <td class="line_impot">3VG</td>
+                <td class="line_impot">FC</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ET', 'field_name' => 'ET', 'value' => $ifu2561_20190101['ET'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Valeur liquidative</td>
+                <td class="line_impot">GH</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FD', 'field_name' => 'FD', 'value' => $ifu2561_20190101['FD'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Plus-values immobilières (pour mémoire)</td>
+                <td class="line_impot">FB</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ES', 'field_name' => 'ES', 'value' => $ifu2561_20190101['ES'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="maintitle" colspan="4">SOCIETE DE CAPITAL RISQUE (Régime spécial)</th>
+                <td class="libelle" colspan="2">Bénéfices industriels et commerciaux</td>
+                <td class="line_impot">FS</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EP', 'field_name' => 'EP', 'value' => $ifu2561_20190101['EP'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Gains et distributions taxables</td>
+                <td class="line_impot">3VG</td>
+                <td class="line_impot">DO</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CF', 'field_name' => 'CF', 'value' => $ifu2561_20190101['CF'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Plus-values professionnelles</td>
+                <td class="line_impot">FT</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'ER', 'field_name' => 'ER', 'value' => $ifu2561_20190101['ER'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Gains et distributions exonérés</td>
+                <td class="line_impot">3VC</td>
+                <td class="line_impot">DP</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CG', 'field_name' => 'CG', 'value' => $ifu2561_20190101['CG'])); ?>
+                </td>
+                <td class="libelle" colspan="2">Amortissement comptable théorique</td>
+                <td class="line_impot">FU</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EM', 'field_name' => 'EM', 'value' => $ifu2561_20190101['EM'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="maintitle" colspan="4">« CARRIED INTEREST » (article 242 ter C du CGI)</th>
+                <td class="libelle" colspan="2">Abattement pratiqué par le fonds</td>
+                <td class="line_impot">FW</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EN', 'field_name' => 'EN', 'value' => $ifu2561_20190101['EN'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <td class="libelle" colspan="2">Gains et distributions taxées en plus-values mobilières</td>
+                <td class="line_impot">CB</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CJ', 'field_name' => 'CJ', 'value' => $ifu2561_20190101['CJ'])); ?>
+                </td>
+                <th class="maintitle" colspan="4">PRODUITS POUR LESQUELS LES PRELEVEMENTS SOCIAUX ONT DEJA ETE APPLIQUES</th>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">Gains et distributions taxées en traitements et salaires</td>
+                <td class="line_impot">CE</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CK', 'field_name' => 'CK', 'value' => $ifu2561_20190101['CK'])); ?>
+                </td>
+                <td class="libelle">Répartition des FCPR ou distribution des SCR</td>
+                <td class="line_impot">2CG</td>
+                <td class="line_impot">DQ</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BU', 'field_name' => 'BU', 'value' => $ifu2561_20190101['BU'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="maintitle" colspan="4">BON DE CAISSE ET DE CAPITALISATION AYANT DONNE LIEU A DECLARATION D’IDENTITE ET DE DOMICILE FISCAL</th>
+                <td rowspan="13" colspan="4">&nbsp;</td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">Capital remboursé</td>
+                <td class="line_impot">CI</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CM', 'field_name' => 'CM', 'value' => $ifu2561_20190101['CM'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">Capital souscrit</td>
+                <td class="line_impot">CG</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CL', 'field_name' => 'CL', 'value' => $ifu2561_20190101['CL'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt tab-title">
+                <th class="maintitle" colspan="4">CESSIONS DES BONS OU CONTRAT DE CAPITALISATION</th>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Gains attachés aux versements effectués avant le 27/09/17 soumis au barème</td>
+                <td class="line_impot">2VN</td>
+                <td class="line_impot">CL</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FJ', 'field_name' => 'FJ', 'value' => $ifu2561_20190101['FJ'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Gains attachés aux versements effectués avant le 27/09/17 soumis au PLF</td>
+                <td class="line_impot">2VM</td>
+                <td class="line_impot">CM</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FK', 'field_name' => 'FK', 'value' => $ifu2561_20190101['FK'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" colspan="2">Montant du PLF appliqué aux gains attachés aux versements effectués avant le 27/09/17</td>
+                <td class="line_impot">CN</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FL', 'field_name' => 'FL', 'value' => $ifu2561_20190101['FL'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle" rowspan="2">Gains attachés aux versements effectués avant le 27/09/17</td>
+                <td class="line_impot">2VO</td>
+                <td class="line_impot" rowspan="2">CP</td>
+                <td class="input input-lg" rowspan="2">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FM', 'field_name' => 'FM', 'value' => $ifu2561_20190101['FM'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="line_impot">2VP</td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Gains soumis aux prélèvements sociaux (sans CSG déductible)</td>
+                <td class="line_impot">2CG</td>
+                <td class="line_impot">CQ</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FP', 'field_name' => 'FP', 'value' => $ifu2561_20190101['FP'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Gains soumis aux prélèvements sociaux (avec CSG déductible)</td>
+                <td class="line_impot">2BH</td>
+                <td class="line_impot">CW</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FR', 'field_name' => 'FR', 'value' => $ifu2561_20190101['FR'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Montant du PFO appliqué au gain</td>
+                <td class="line_impot">2CK</td>
+                <td class="line_impot">CZ</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FS', 'field_name' => 'FS', 'value' => $ifu2561_20190101['FS'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Pertes</td>
+                <td class="line_impot">2VQ</td>
+                <td class="line_impot">CS</td>
+                <td class="input input-lg">
+                    <?= Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FN', 'field_name' => 'FN', 'value' => $ifu2561_20190101['FN'])); ?>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

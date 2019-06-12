@@ -1,0 +1,58 @@
+<h1>édition de lien</h1>
+
+<div>
+
+<form>
+
+<div class="elem">
+ <label>Type</label>
+ <select id="link-type" name="link-type">
+  <option value="http">page web</option>
+  <option value="download">téléchargement</option>
+  <option value="mailto">e-Mail</option>
+ </select>
+</div>
+
+<div class="elem">
+ <label>
+  Adresse
+  <img src="/<?=PIX_PATH?>/back.search.gif" id="button-lookup" class="ico" data-models="page" />
+ </label>
+ <input type="text" id="link-url" name="link-url" /> 
+</div>
+
+<div class="elem">
+ <label>Ouverture</label>
+ <select id="link-target" name="link-target">
+  <option value="0">par défaut</option>
+  <option value="_blank">nouvelle fenêtre</option>
+ </select>
+</div>
+
+<div class="elem">
+ <label>Style</label>
+ <select id="link-class" name="link-class">
+  <option value="">aucun</option>
+<?php foreach ($styles as $code => $name): ?>
+  <option value="kwo-<?=$code?>"><?=$name?></option>
+<?php endforeach; ?>
+ </select>
+</div>
+
+<div class="elem">
+ <label>Titre</label>
+ <input type="text" id="link-title" name="link-title" /> 
+</div>
+
+<div style="margin-top:10px;">
+ <input type="button"
+        id="button-insert"
+        style="float:right;" class="button"
+        value="Insérer" />
+ <a href="javascript:void(0)"
+    id="button-remove" style="display:none;" />Supprimer le lien</a>
+</div>
+
+</form>
+
+</div>

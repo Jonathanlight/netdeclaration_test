@@ -1,0 +1,8 @@
+<ul>
+  <?php foreach($docs as $doc) : ?>
+  <li>
+    <i class="fa fa-caret-right list-arrow__item__icon "></i>
+    <?=$doc ?>
+  </li>
+  <?php endforeach ?>
+</ul>

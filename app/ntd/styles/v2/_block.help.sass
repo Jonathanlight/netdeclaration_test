@@ -1,0 +1,141 @@
+.block--help
+  position: fixed
+  right: -590px
+  top: 10%
+  transition: right 0.3s ease-out 0s
+  z-index: 1
+  .faq
+    &:after
+      content: url("/app/ntd/pix/right-icon.png")
+      vertical-align: bottom
+  .form-field-captcha
+    label
+      display: none
+  &.block--help--shown
+    right: 0
+  #kwo-captcha-
+    border: 1px solid #C2C2C2
+  .table--modal-aide
+    width: 590px
+    height: 390px
+    background : #FFF
+    box-shadow: 2px 1px 1px 1px #B7BAC1
+    position: relative
+    z-index: 2
+    .block__send
+      margin-top: 10px
+    .table-cell
+      padding: 35px 30px
+      width: 50%
+      vertical-align: top
+      .block__information
+        margin-bottom: 50px
+      p
+        color: $color--darkblue
+        line-height: 15px
+        font-size: 13px
+      .form--ntd
+        .elt
+          margin-bottom: 0
+          .elt-control,.text
+            width: 100%
+          .text
+            padding: 5px 10px
+            margin-bottom: 10px
+          textarea
+            width: 100% !important
+    .table-right
+      background: #f7f7fa
+      .fa-caret-right
+        color: $color--red
+
+  .btn--fixed
+    border-radius: 3px 0 0 3px
+    font-family: "Georgia"
+    font-size: 13px
+    font-style: italic
+    font-weight: bold
+    padding: 10px 5px
+    position: absolute
+    left: -70px
+    top: 35%
+    background: $color--darkblue
+    height: 120px
+    width: 70px
+    line-height: 18px
+    z-index: 3
+    .need-help
+      display: block
+    .close-help
+      display: none
+    &:before
+      background-color: $color--white
+      border-radius: 100%
+      color: $color--darkblue
+      content: url("/app/ntd/pix/phone-help.png")
+      height: 45px
+      margin-bottom: 10px
+      padding-top: 12px
+      width: 45px
+    &:after
+      bottom: -10px
+      content: url("/app/ntd/pix/v2/fixed-background.png")
+      left: 0
+      position: absolute
+    &:hover
+      background: $color--darkblue
+      &:before
+        color: $color--darkblue
+        content: url("/app/ntd/pix/phone-ring.png")
+        display: inline-block
+        height: 45px
+        margin-bottom: 10px
+        padding-top: 10px
+        width: 45px
+    &:active
+      margin: 2px 2px 0 0
+      &:before
+        color: $color--darkblue
+        content: url("/app/ntd/pix/phone-ring.png")
+        display: inline-block
+        height: 45px
+        margin-bottom: 10px
+        padding-top: 11px
+        width: 45px
+      &:after
+        content: ""
+
+.block--help--shown
+  .modal-backdrop 
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 1
+    background-color: #000
+    opacity: 0.2
+    filter: alpha(opacity=20)
+  .need-help
+    display: none !important
+  .close-help
+    display: block !important
+  .btn--fixed
+    &:before
+      color: $color--darkblue
+      content: url("/app/ntd/pix/close-help.png")
+      display: inline-block
+      height: 45px
+      margin-bottom: 10px
+      padding-top: 14px
+      width: 45px
+    &:hover
+      background: $color--darkblue
+      &:before
+        color: $color--darkblue
+        content: url("/app/ntd/pix/close-help.png")
+        display: inline-block
+        height: 45px
+        margin-bottom: 10px
+        padding-top: 14px
+        width: 45px

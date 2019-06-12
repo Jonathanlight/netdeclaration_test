@@ -1,0 +1,175 @@
+<div class="formulaire-page page-form" data-label="Identification" data-position="first" data-identif="<?=$formulaire_code ?>">
+  <h3>Identification du redevable</h3>
+  <div class="clear"></div>
+  <fieldset class="formulaire-fieldset left">
+    <div class="field-container">
+      <label for="f_identif_20180219_KD">Référence obligatoire fiscale</label>
+      <?=Elt::select(array('options' => Rof::collect(array('filters' => array('document_code' => $declaration_dectype->document_code),
+                                                           'order' => array('id' => 'asc')))->asHash('name', 'name'),
+                           'value' => $f_identif_20180219['KD'],
+                           'name' => 'f_identif_20180219[KD][]'))?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_AA">N° SIREN</label>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA', 'value' => $f_identif_20180219['AA'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_AB">Code activité NAF</label>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AB', 'value' => $f_identif_20180219['AB'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_AA1">Nom, prénom ou désignation du déclarant</label>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA1', 'value' => $f_identif_20180219['AA1'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_AA2">Identification du déclarant désignation ou nom prénom</label>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA2', 'value' => $f_identif_20180219['AA2'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_AA3">Identification du déclarant qualité ou complément de désignation</label>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA3', 'value' => $f_identif_20180219['AA3'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_AA4">Adresse du déclarant numéro type et nom voie</label>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA4', 'value' => $f_identif_20180219['AA4'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_AA5">Adresse du déclarant complément d'adresse</label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA5', 'value' => $f_identif_20180219['AA5'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_AA6">Adresse du déclarant ville</label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA6', 'value' => $f_identif_20180219['AA6'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_AA7">Code postal </label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA7', 'value' => $f_identif_20180219['AA7'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_AA8">Code pays</label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA8', 'value' => $f_identif_20180219['AA8'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_AA13">Adresse e-mail</label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA13', 'value' => $f_identif_20180219['AA13'])) ?>
+    </div>
+  </fieldset>
+  <fieldset class="formulaire-fieldset right">
+    <div class="field-container">
+      <label for="f_identif_20180219_BA">Catégorie fiscale</label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BA', 'value' => $f_identif_20180219['BA'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_BB">Régime fiscal</label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BB', 'value' => $f_identif_20180219['BB'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_BC">Code IS/IR-BIC (si catégorie fiscale = BIC/IS)</label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BC', 'value' => $f_identif_20180219['BC'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_KD">Adherent OGA</label>
+      <?=Elt::select(array('options' => Adherent::collectByType(),
+                           'value'   => $f_identif_20180219['OGA'].','.$f_identif_20180219['IDOGA'],
+                           'first'   => '-------------',
+                           'events'  => array('change' => "NTD.Identif.f('onSelectOGA', [this])")))?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_OGA">N° Siret OGA</label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'OGA', 'value' => $f_identif_20180219['OGA'], 'readonly' => true)) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_IDOGA">N° Identification à l'OGA</label>
+    <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'IDOGA', 'value' => $f_identif_20180219['IDOGA'], 'readonly' => true)) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_BD">Cession/cessation d'activité ou Décès de l'exploitant </label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BD',  'value' => $f_identif_20180219['BD'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_BF">Dépôt provisoire (ou pas) de la déclaration </label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BF',  'value' => $f_identif_20180219['BF'])) ?>
+    </div>
+  </fieldset>
+
+  <fieldset class="formulaire-fieldset right">
+    <h3>Identification du conseil</h3>
+    <div class="field-container">
+      <label for="f_identif_20180219_AC2">
+        Dénominaion du conseil
+      </label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AC2', 'value' => $f_identif_20180219['AC2'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_AC3">
+        Complément de dénomination du conseil
+      </label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AC3', 'value' => $f_identif_20180219['AC3'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_AC4">
+        Complément 2 de dénomination du conseil
+      </label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AC4', 'value' => $f_identif_20180219['AC4'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_AC13">
+        Adresse mail du conseil
+      </label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AC13', 'value' => $f_identif_20180219['AC13'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_20180219_DC" style="width:275px;">
+        J'accepte l'utilisation de cette adresse mail pour la transmission d'information par la DGFIP
+      </label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC', 'value' => $f_identif_20180219['DC'])) ?>
+    </div>
+  </fieldset>
+  <div class="clear">&nbsp;</div>
+
+  <h3>Période de déclaration</h3>
+  <table>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="f_identif_20180219_CA"><?php if ($declaration_formulairetype->name != 'tva3514'): ?>Début de période de la déclaration<?php else: ?>Début de l'exercice<?php endif; ?></label>
+      <?=Elt::tooltip(array('tooltip' => 'Format jj/mm/aaaa'))?>
+      </td>
+      <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA', 'value' => $f_identif_20180219['CA'])) ?></td>
+      <td class="libelle">
+        <label for="f_identif_20180219_CB"><?php if ($declaration_formulairetype->name != 'tva3514'): ?>Fin de période de la déclaration<?php else: ?>Fin de l'exercice<?php endif; ?></label>
+      <?=Elt::tooltip(array('tooltip' => 'Format jj/mm/aaaa'))?>
+      </td>
+      <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB', 'value' => $f_identif_20180219['CB'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="f_identif_20180219_CC">Durée de l'exercice pour période N</label>
+      </td>
+      <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CC', 'value' => $f_identif_20180219['CC'])) ?></td>
+      <td class="libelle">
+        <label for="f_identif_20180219_CD">Date de clôture de l'exercice ou période N-1 (si catégorie fiscale = BIS-IS ou BA)</label>
+        <?=Elt::tooltip(array('tooltip' => 'Format jj/mm/aaaa'))?>
+      </td>
+      <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CD','value' => $f_identif_20180219['CD'])) ?> </td>
+    </tr>
+     <tr class="elt">
+      <td class="libelle">
+        <label for="f_identif_20180219_CE">Durée de l'exercice ou période N-1 (si catégorie fiscale = BIC-IS ou BA) </label>
+      </td>
+      <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CE', 'value' => $f_identif_20180219['CE'])) ?></td>
+      <td class="libelle">
+      </td>
+      <td class="input">  </td>
+    </tr>
+  </table>
+
+  <h3>Monnaie</h3>
+  <table>
+    <tr class="elt">
+      <td class="libelle"><label for="f_identif_20180219_DA">Code monnaie</label></td>
+      <td class="input" style="width:300px"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA', 'value' => $f_identif_20180219['DA'])) ?></td>
+    </tr>
+  </table>
+</div>

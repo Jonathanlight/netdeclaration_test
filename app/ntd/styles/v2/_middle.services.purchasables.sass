@@ -1,0 +1,67 @@
+.block--middle-service-purchasable
+  border: 1px solid $color--grey
+  margin-bottom: 20px
+  box-shadow: 1px 2px 0 0 $color--grey
+
+.block--middle-service-purchasable__header
+  @include clearFloat()
+  background: $color--lightgrey
+  border-bottom: 3px solid $color--grey
+  line-height: 40px
+  padding: 0 10px 0 0
+
+.block--middle-service-purchasable__type
+  font-size: 9px
+  color: $color--darkblue
+  text-transform: uppercase
+  background: #dadee6
+  display: inline-block
+  vertical-align: top
+  padding: 0px 15px
+  line-height: 40px
+  margin-right: 10px
+  &.block--middle-service-purchasable--multirow
+    line-height: 12px
+    padding: 9px 15px 7px
+
+
+.block--middle-service-purchasable__title
+  @include font-family--georgia()
+  font-size: 20px
+  color: $color--darkblue
+  text-transform: uppercase
+  font-weight: bold
+  display: inline-block
+  vertical-align: top
+
+.block--middle-service-purchasable__content--left
+  padding: 18px 18px 14px
+  //width: 100%
+  .form--ntd & .elt .text
+    width: 100px
+  .form--ntd & .elt .click-label
+    display: block
+    line-height: 22px
+  .form--ntd & .elt-text .elt-label,
+  .form--ntd & .elt-select .elt-label
+    line-height: 1.3em
+    margin-bottom: 10px
+
+
+.block--middle-service-purchasable__content--right
+  border-left: 1px solid $color--grey
+  padding: 14px 0 14px
+  width: 150px
+  vertical-align: middle
+  text-align: center
+  p
+    margin-bottom: 5px
+
+#services-edi,
+#services-efi
+  .elt.elt-label
+    width: 100%
+    text-align: left
+  .margin-left--label-width 
+    margin-left: 0
+   

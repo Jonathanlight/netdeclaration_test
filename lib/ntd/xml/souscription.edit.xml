@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+ <fieldset>
+
+  <notebook>
+   <page>
+    <form>
+     <hbox>
+      <vbox width="500px">
+       <elem field="adherent_id" label="Adhérent"/>
+       <box label="Création de la souscription" built="!$is_loaded">
+        <elem field="service_id" label="Service" options="$services_availables" precision="Seuls les services accessibles pour cet adhérent sont affichés." />
+        <elem field="opts_quantity" label="Quantité" precision="à remplir si le Service associé a un 'Prix unitaire' ou un 'Prix par SIRET'"/>
+        </box>
+       <box label="Caractéristiques de la souscription - modifiable">
+        <elem field="sign_at" type="date" label="Souscrite le"/>
+        <elem field="start_at" type="date" label="Commence le"/>
+        <elem field="finish_at" type="date" label="Finit le"/>
+        <elem field="status" label="État"/>
+        <elem field="is_renewable" label="Renouvellement de cette souscription ?" type="yesno" />
+        <elem field="flags" label="Flags" cols="1" disabled="true" />
+       </box>
+      </vbox>
+      <vbox>
+       <box label="Informations sur la souscription (lecture seule)">
+        <elem field="price" editable="false" label="Prix"/>
+       </box>
+      </vbox>
+      <vbox>
+       <box label="Contexte">
+        <box label="Forfait" built="$has_contexte_forfait">
+         <elem label="Prix" value="$contexte_prix_forfait" editable="false"/>
+        </box>
+        <box label="Tarif Unitaire" built="$has_contexte_unitaire">
+         <elem label="Prix Unitaire" value="$contexte_prix_unitaire" editable="false"/>
+         <elem label="Quantité" value="$contexte_qty_unitaire" editable="false"/>
+         <elem label="Unité" value="$contexte_price_type" editable="false"/>
+        </box>
+       </box>
+      </vbox>
+     </hbox>
+     <launcher/>
+    </form>
+   </page>
+   <page>
+    <hbox>
+     <vbox width="300px">
+      <box label="actions">
+       <link icon="details"/>
+       <link label="Résilier cette souscription (Seulement quand la souscription est en 'demande de résiliation')" model="souscription" action="cancel.form" container="deck" icon="ok" />
+       <link label="Nombre de télétransmissions utilisées" action=".onExec('suivis.count', this, {callback:true, });" icon="view" />
+       <link label="Cette souscription est-elle renouvelable ?" action=".onExec('is_renewable', this, {callback:true, });" icon="view" />
+       <link label="(Admin) Tracer le nombre de télétransmissions utilisées" action=".onExec('suivis.sql', this, {callback:true, });" icon="view" />
+      </box>
+     </vbox>
+     <vbox>
+      <deck/>
+     </vbox>
+    </hbox>
+   </page>
+  </notebook>
+
+ </fieldset>
+</kwo-interface>

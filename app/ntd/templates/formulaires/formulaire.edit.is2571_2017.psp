@@ -1,0 +1,240 @@
+<div class="formulaire-page page-form" data-label="IS 2571">
+
+  <table class="is2571">
+    <col span="5">
+    <col>
+    <col width="80" align="center">
+    <tr class="tab-title">
+      <th class="big" colspan="9"><h3>VERSEMENT D'IS ET CONTRIBUTIONS ASSIMILÉES</h3></th>
+    </tr>
+
+    <tr class="elt">
+      <td>&nbsp;</td>
+      <td colspan="2" class="line_impot">Imputations</td>
+      <td colspan="2" class="line_impot">Montants à payer</td>
+      <td colspan="2" class="line_impot">Minoration<br/>(art. 1668 du CGI)</td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">Impôts sur les sociétés</td>
+      <td class="line_id">01</td>
+      <td class="input">
+        <div class="line_impot">906458</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FA', 'value' => $is2571_2017['FA'])) ?>
+      </td>
+      <td class="line_id">03</td>
+      <td class="input">
+        <div class="line_impot">500003</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA', 'value' => $is2571_2017['CA'])) ?>
+      </td>
+      <td class="line_id">04</td>
+      <td class="input" align="center">
+        <div class="line_impot">500004</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA', 'value' => $is2571_2017['DA'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">Dont crédit d'impôt pour la compétitivité et l'emploi</td>
+      <td class="line_id">20</td>
+      <td class="input">
+        <div class="line_impot">906434</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FB', 'value' => $is2571_2017['FB'])) ?>
+      </td>
+      <td class="line_id"></td>
+      <td>&nbsp;</td>
+      <td class="line_id"></td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">Dont report en arrière de déficit</td>
+      <td class="line_id">21</td>
+      <td class="input">
+        <div class="line_impot">906435</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FC', 'value' => $is2571_2017['FC'])) ?>
+      </td>
+      <td class="line_id"></td>
+      <td>&nbsp;</td>
+      <td class="line_id"></td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">Dont crédit d'impôt pour investissement en Corse</td>
+      <td class="line_id">22</td>
+      <td class="input">
+        <div class="line_impot">906436</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FD', 'value' => $is2571_2017['FD'])) ?>
+      </td>
+      <td class="line_id"></td>
+      <td>&nbsp;</td>
+      <td class="line_id"></td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">Dont crédit d'impôt recherche</td>
+      <td class="line_id">23</td>
+      <td class="input">
+        <div class="line_impot">906437</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FE', 'value' => $is2571_2017['FE'])) ?>
+      </td>
+      <td class="line_id"></td>
+      <td>&nbsp;</td>
+      <td class="line_id"></td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">Dont mécénat</td>
+      <td class="line_id">24</td>
+      <td class="input">
+        <div class="line_impot">906438</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FF', 'value' => $is2571_2017['FF'])) ?>
+      </td>
+      <td class="line_id"></td>
+      <td>&nbsp;</td>
+      <td class="line_id"></td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">Dont excédent du précédent exercice</td>
+      <td class="line_id">25</td>
+      <td class="input">
+        <div class="line_impot">906439</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FG', 'value' => $is2571_2017['FG'])) ?>
+      </td>
+      <td class="line_id"></td>
+      <td>&nbsp;</td>
+      <td class="line_id"></td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">Contribution sur les Revenus Locatifs</td>
+      <td colspan="2">&nbsp;</td>
+      <td class="line_id">07</td>
+      <td class="input">
+        <div class="line_impot">500010</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CC', 'value' => $is2571_2017['CC'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">Contribution Sociale</td>
+      <td colspan="2">&nbsp;</td>
+      <td class="line_id">08</td>
+      <td class="input">
+        <div class="line_impot">500012</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CD', 'value' => $is2571_2017['CD'])) ?>
+      </td>
+      <td class="line_id">09</td>
+      <td class="input" align="center">
+        <div class="line_impot">500013</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DB', 'value' => $is2571_2017['DB'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="3">
+        Montant IS et Contributions assimilées à payer
+        <br>
+        (case 03 + case 07 + case 08)
+      </td>
+      <td class="line_id">10</td>
+      <td class="input">
+        <div class="line_impot">500014</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CE', 'value' => $is2571_2017['CE'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="3">Contribution additionnelle à l'impôt sur les sociétés sur les dividendes</td>
+      <td class="line_id">11</td>
+      <td class="input">
+        <div class="line_impot">903438</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CG', 'value' => $is2571_2017['CG'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="3">Plus-value article 208C du CGI (SIIC)</td>
+      <td class="line_id">13</td>
+      <td class="input">
+        <div class="line_impot">908548</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CL', 'value' => $is2571_2017['CL'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="3" style="text-align:right;">
+        <label class="bold" for="is2571_CH">
+          Montant total à payer (case 10 + case 11 + case 13)
+        </label>
+      </td>
+      <td class="line_id">12</td>
+      <td class="input">
+        <div class="line_impot">903439</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CH', 'value' => $is2571_2017['CH'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="3" style="text-align:right;"><label for="is2571_FH">
+          <span class="bold">(1) Dont</span> Paiement par imputation
+        </label>
+      </td>
+      <td class="line_id">31</td>
+      <td class="input">
+        <div class="line_impot">906441</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FH', 'value' => $is2571_2017['FH'])) ?>
+      </td>
+      <td colspan="2" class="line_impot">Précisions</td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="3" style="text-align:right;"><label for="is2571_FK">
+          <span class="bold">(1)</span> Contribution utilisée pour l'imputation (TS /TVA / TVS)
+        </label>
+      </td>
+      <td colspan="2">&nbsp;</td>
+      <td class="line_id">32</td>
+      <td class="input">
+        <div class="line_impot">906440</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FK', 'value' => $is2571_2017['FK'])) ?>
+      </td>
+    </tr>
+
+
+    <tr class="elt">
+      <td class="libelle" colspan="3" style="text-align:right;"><label for="is2571_FM">
+          <span class="bold">(1)</span> Date échéance de la contribution utilisée
+        </label>
+      </td>
+      <td colspan="2">&nbsp;</td>
+      <td class="line_id">33</td>
+      <td class="input">
+        <div class="line_impot">906442</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FM', 'value' => $is2571_2017['FM'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="3" style="text-align:right;"><label class="bold" for="is2571_FN">
+          Montant de l'imposition à payer après imputation
+        </label>
+      </td>
+      <td class="line_id">34</td>
+      <td class="input">
+        <div class="line_impot">906480</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FN', 'value' => $is2571_2017['FN'])) ?>
+      </td>
+      <td class="line_id"></td>
+      <td>&nbsp;</td>
+    </tr>
+
+  </table>
+
+</div>

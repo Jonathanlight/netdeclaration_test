@@ -1,0 +1,40 @@
+<div class="kwo-search-results">
+
+<div class="title">
+<?php if ($found_rows >= 1): ?>
+ <?=ucfirst(l('results'))?> 
+ <strong><?=$start?> - <?=$end?></strong> 
+ <?=l('of_about')?> <strong><?=$found_rows?></strong> 
+<?php else: ?>
+ <?=ucfirst(l('no_result'))?> 
+<?php endif; ?>
+<?php if ($query != '*'): ?>
+ <?=l('for')?> <em><?=h($query)?></em>
+<?php endif; ?>
+</div>
+
+<?php foreach ($results as $result): ?>
+<div class="result"<?=isset($result['onclick'])?' onclick="'.$result['onclick'].'"':''?>>
+<?php if (strlen($result['image']) >= 3): ?>
+ <img src="<?=$result['image']?>" style="float:left; margin-right:4px; width:100px"
+      onerror="this.src='/app/core/pix/error48.gif'" />
+<?php endif; ?>
+ <a href="<?=$result['url']?>"><?=$result['title']?></a> 
+ <em>- <?=H::date($result['created_at'])?></em>
+ <p class="description"><?=$result['description']?></p>
+ <div style="clear:both"></div>
+</div>
+<?php endforeach; ?>
+
+<script>
+window.query = "<?=H::escapeJs($query)?>";
+</script>
+
+<div class="pagination">
+<?=Pagination::getInstance(array('limit' => $limit, 
+                                 'found_rows' => $found_rows, 
+                                 'offset' => $offset))->asHtml(array('href' => 'javascript:Kwo.Search.results(query, ((offset)))'))?>
+</div>
+
+</div>
+

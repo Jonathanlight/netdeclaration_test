@@ -1,0 +1,12 @@
+User-agent: *
+
+Sitemap: http://www.netdeclaration.net/sitemapindex.xml
+
+Disallow: /*.inc
+Disallow: /*.php
+Disallow: /*.psp
+Disallow: /core/captcha
+
+Disallow: /account/*
+Disallow: /tmp/*
+

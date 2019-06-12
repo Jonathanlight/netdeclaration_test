@@ -1,0 +1,46 @@
+<h1 class="block__middle-title">Paiement</h1>
+<div data-on-load="new ntd.middle.PaymentForm(this)"
+     data-facture-update-url="/middle/facture.update">
+  <form action="/middle/payment.request">
+    <input type="hidden" value="<?= $facture->getId() ?>" name="facture_id"/>
+
+
+    <img class="margin-bottom" src="/app/ntd/pix/home/nouveau.png" alt="<?= c(l('new')) ?>"/>
+    <ul class="methods table">
+      <?php foreach ($methods as $method): ?>
+        <li class="table-cell table-cell--w25">
+          <label class="payment__label <?= $facture->method_id == $method->getId() ? 'selected' : '' ?>">
+            <img src="/app/ntd/pix/home/paiement_<?= $method->code ?>.png" alt="<?= $method->name ?>"/>
+            <p><?= $method->name ?></p>
+            <input type="radio" name="method_id"
+                   value="<?= $method->getId() ?>"
+              <?= $facture->method_id == $method->getId() ? 'checked="checked"' : '' ?>/>
+          </label>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+
+    <div class="snippets-container">
+      <div class="payment__snippet"
+           id="payment__snippet--0"
+           style="<?= $facture->method_id < 1 ? '' : 'display:none;' ?>">
+        Veuillez sélectionner un moyen de paiement ci-dessus.
+      </div>
+      <div class="snippet cgv margin-top"> <?= l('snippet:paiement.cgv') ?> </div>
+
+      <?php foreach ($methods as $method): ?>
+        <div class="payment__snippet" id="payment__snippet--<?= $method->getId() ?>"
+             style="<?= $facture->method_id == $method->getId() ? '' : 'display:none;' ?>"><?= $method->content ?></div>
+      <?php endforeach; ?>
+
+    </div>
+
+    <div class="actions" style="text-align: center">
+      <button type="submit" class="btn btn--color-red"><?= c(l('proceder.paiement')) ?></button>
+      <a href="/middle/facture/-/id/<?= $facture->getId() ?>" class="btn btn--link"><?= c(l('cancel')) ?></a>
+    </div>
+  </form>
+
+  <div id="psp-container"></div>
+
+</div>

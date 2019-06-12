@@ -1,0 +1,177 @@
+<div class="margin-top-30" data-on-load="new ntd.middle.greffeDocument(this)">
+  <h1 class="block__middle-title">Dépôt</h1>
+
+  <?=H::inc('ntd:_greffe.documents', array('documents' => $reponse_documents)) ?>
+
+  <form action="/middle/greffe.edit.documents.save" class="form--ntd form--ntd--label-inline" enctype="multipart/form-data" method="post" target="form-target">
+    <input type="hidden" name="id" value="<?=$greffe->getId() ?>" />
+    <h2 class="block__title">Mandat</h2>
+    <div class="margin-bottom-20">
+      <p class="margin-bottom-20">
+        <?=Snippet::content('greffe.document.mandat', 'content') ?>
+      </p>
+      <table class="table table--ntd table--ntd--even-odd">
+        <colgroup>
+          <col width="*"></col>
+          <col width="275"></col>
+        </colgroup>
+        <thead></thead>
+        <tbody>
+          <tr>
+            <td><?=GreffeManager::$docs[GreffeManager::DOC_MANDAT_DEPOT] ?></td>
+            <td>
+              <?php if ($greffe->hasMandat()) : ?>
+                <div class="float-left">
+                  <div class="color--green">
+                    Document enregistré
+                  </div>
+                  <em>(<?=H::datenice($registered_documents[GreffeManager::DOC_MANDAT_DEPOT]['register_at']) ?>)</em>
+                </div>
+                <div class="float-right">
+                  <a href="#" data-document="<?=GreffeManager::DOC_MANDAT_DEPOT ?>"><span class="color--red font-size--22px">&times;</span></a>
+                </div>
+                <div class="clear-float"></div>
+              <?php else : ?>
+                <?php $accept_formats = array() ?>
+                <?php foreach (GreffeManager::$authorized_mandat_formats as $format) : ?>
+                  <?php $accept_formats[] = '.'.$format ?>
+                <?php endforeach ?>
+                <input type="file" name="mandat[<?=GreffeManager::DOC_MANDAT_DEPOT ?>]" accept="<?=implode(',', $accept_formats) ?>" />
+              <?php endif ?>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <small>
+          <em>
+            Formats autorisés :
+            <?php foreach (GreffeManager::$authorized_mandat_formats as $format) : ?>
+              <?='*.'.$format ?>
+            <?php endforeach ?>
+          </em>
+        </small>
+      </div>
+    </div>
+
+    <br class="margin-bottom-20" />
+
+    <h2 class="block__title">Pièces à fournir</h2>
+    <div id="result-container" class="info flashinfo flashinfo--yellow margin-bottom margin-top" style="display:none"></div>
+    <table class="table table--ntd table--ntd--even-odd">
+      <colgroup>
+        <col width="*"></col>
+        <col width="275"></col>
+      </colgroup>
+      <thead></thead>
+      <tbody>
+        <?php $accept_formats = array() ?>
+        <?php foreach (GreffeManager::$authorized_doc_formats as $format) : ?>
+          <?php $accept_formats[] = '.'.$format ?>
+        <?php endforeach ?>
+        <?php foreach ($documents as $key => $document) : ?>
+          <tr>
+            <td><?=$document ?></td>
+            <td>
+              <?php if (isset($registered_documents[$key])) : ?>
+                <div class="float-left">
+                  <div class="color--green">
+                    Document enregistré
+                  </div>
+                  <em>(<?=H::datenice($registered_documents[$key]['register_at']) ?>)</em>
+                </div>
+                <div class="float-right">
+                  <a href="#" data-document="<?=$key ?>"><span class="color--red font-size--22px">&times;</span></a>
+                </div>
+                <div class="clear-float"></div>
+                <?php else : ?>
+                  <input type="file" name="documents[<?=$key ?>]" accept="<?=implode(',', $accept_formats) ?>" />
+                <?php endif ?>
+            </td>
+          </tr>
+        <?php endforeach ?>
+      </tbody>
+    </table>
+    <div>
+      <small>
+        <em>
+          Formats autorisés :
+          <?php foreach (GreffeManager::$authorized_doc_formats as $format) : ?>
+            <?='*.'.$format ?>
+          <?php endforeach ?>
+        </em>
+      </small>
+    </div>
+
+    <?php if (GreffeManager::hasLiasse($greffe)) : ?>
+      <br class="margin-bottom-20" />
+
+      <h2 class="block__title">Liasse</h2>
+      <div class="margin-bottom-20">
+        <table class="table table--ntd table--ntd--even-odd">
+          <colgroup>
+            <col width="*"></col>
+            <col width="275"></col>
+          </colgroup>
+          <thead></thead>
+          <tbody>
+            <tr>
+              <td>Liasse</td>
+              <td>
+                Une liasse est disponible, souhaitez vous l'ajouter à votre envoi ?
+                <a href="/declaration.pdf/-/key/<?=$liasse_declaration->getKey() ?>" target="_blank">Visualiser</a>
+                <?=Elt::yesno(array('name'  => 'link_liasse_declaration',
+                                    'value' => $greffe->link_liasse_declaration)) ?>
+                <div data-link-liasse-declaration="true" style="display:none;">
+                  <hr />
+                  <div>
+                    <?php $accept_formats = array() ?>
+                    <?php foreach (GreffeManager::$authorized_liasse_formats as $format) : ?>
+                      <?php $accept_formats[] = '.'.$format ?>
+                    <?php endforeach ?>
+                    <?php if (isset($registered_documents[GreffeManager::DOC_LIASSE])) : ?>
+                      <div class="float-left">
+                        <div class="color--green">
+                          Document enregistré
+                        </div>
+                        <em>(<?=H::datenice($registered_documents[GreffeManager::DOC_LIASSE]['register_at']) ?>)</em>
+                      </div>
+                      <div class="float-right">
+                        <a href="#" data-document="<?=GreffeManager::DOC_LIASSE ?>"><span class="color--red font-size--22px">&times;</span></a>
+                      </div>
+                    <?php else : ?>
+                      <input type="file" name="liasse[<?=GreffeManager::DOC_LIASSE ?>]" accept="<?=implode(',', $accept_formats) ?>" />
+                    <?php endif ?>
+                  </div>
+                  <div>
+                    <small>
+                      <em>
+                        Formats autorisés :
+                        <?php foreach (GreffeManager::$authorized_liasse_formats as $format) : ?>
+                          <?='*.'.$format ?>
+                        <?php endforeach ?>
+                      </em>
+                    </small>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    <?php endif ?>
+
+    <iframe id="form-target" name="form-target" style="display:none"></iframe>
+
+    <br />
+
+    <?php if ($greffe->isEditable()) : ?>
+      <div class="float-right">
+        <button type="submit" class="btn btn--color-red margin-top-30"><?=c(l('greffe.depot.btn.save')) ?></button>
+        <?php if ($greffe->status >= Greffe::STATUS_COMPLETED && $greffe->status < Greffe::STATUS_VALID) : ?>
+          <a href="/middle/greffe.validate/-/id/<?=$greffe->getId() ?>" class="btn btn--color-red margin-top-30"><?=c(l('greffe.depot.btn.valid')) ?></a>
+        <?php endif ?>
+      </div>
+    <?php endif ?>
+  </form>
+</div>

@@ -1,0 +1,9 @@
+<form onsubmit="ntd.account.onFormSubmit(this); return false;"
+      action="/account/ntd/email.save"
+      class="form--ntd form--ntd--label-inline"
+      method="post">
+  <?= Elt::code(array('value' => $user->email, 'label' => l('email.current'))) ?>
+  <?= Elt::text(array('name' => 'email', 'label' => l('email.new'))) ?>
+  <button type="submit"
+          class="btn  btn--color-red margin-left--label-width"><?= c(l('save')) ?></button>
+</form>

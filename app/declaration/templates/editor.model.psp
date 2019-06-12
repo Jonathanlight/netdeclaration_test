@@ -1,0 +1,53 @@
+<div class="dialog-content">
+  <h1>Modèle</h1>
+  <br/>
+  <div>
+    <label>Nombre de colonnes : </label>
+    <select id="cols-num" onchange="declaration.EditorObj.onModelColsChange(this)">
+      <?php for ($i=1; $i<Imodel::MAX_COLS; $i++) : ?>
+        <option value="<?=$i?>" <?=$i==$default_cols? 'selected' : '' ?>><?=$i?></option>
+      <?php endfor?>
+    </select>
+  </div>
+  <br/>
+  <form onsubmit="declaration.EditorObj.onModelStore(this); return false;">
+    <input type="hidden" name="model_id" value="<?=$model->id?>" >
+    <table id="model-cols">
+      <tr>
+        <?php for ($i=1; $i<Imodel::MAX_COLS; $i++) : ?>
+          <?php $j = 0; $cell = $cells[$i-1]; $args = $cell ? Imodel::parseStr($cell) : array(); ?>
+          <td style="<?=$i>$default_cols? 'display:none' : '' ?>" class="model-col">
+            <div class="field">
+              <select name="record[<?=$i?>][type]">
+                <option value="">------</option>
+                <?php foreach (Imodel::$types as $code => $name) : ?>
+                  <option <?=$args[0]==$code ? 'selected' : ''?> value="<?=$code?>"><?=c($name)?></option>
+                <?php endforeach;?>
+              </select>
+            </div>
+            
+            <div class="options">
+              <?php foreach (Imodel::$data_options as $code => $name) : ?>      
+                <label for="opt-<?=$i?>-<?=$j?>"><?=c($name)?> : </label> 
+                <?php if (in_array($code, array(Imodel::OPT_COLSPAN, Imodel::OPT_ROWSPAN))) : ?>
+                 <input name="record[<?=$i?>][options][<?=$code?>]" type="number" value="<?=$args[$code]? $args[$code] : ''?>" id="opt-<?=$i?>-<?=$j?>" />      
+                <?php elseif ($code == Imodel::OPT_CLASS) : ?>
+                 <select name="record[<?=$i?>][options][<?=$code?>]" id="opt-<?=$i?>-<?=$j?>" >
+                   <option value="">-------</option>
+                   <?php foreach (Imodel::$classes as $k => $v) : ?>
+                     <option value="<?=$k?>" <?=$args[$code] == $k ? 'selected' : ''?>><?=$v?></option>
+                   <?php endforeach;?>
+                 </select>       
+                <?php endif;?>
+                <br/>     
+                <?php $j++?>
+              <?php endforeach;?>
+            </div>
+          </td>
+        <?php endfor?>
+      </tr>
+    </table>
+    <br/>
+    <input type="submit" value="Enregistrer" />
+  </form>
+</div>

@@ -1,0 +1,127 @@
+<div class="row form-inline">
+  <div class="col-md-2">
+    <button class="btn btn-info" ng-click="getCheckums()">Refresh</button>
+  </div>
+  <nav class="col-md-4">
+    <div class="form-group">
+      <label>Limit</label>
+      <select ng-model="form.limit" class="form-control" ng-change="onLimitChange()">
+        <option ng-repeat="count in [10, 20, 50]" value="{{count}}">{{count}}</option>
+      </select>
+    </div>
+    <ul class="pagination">
+      <li ng-class="{'disabled': (form.page <= 1)}">
+        <a ng-click="setFormPage(form.page - 1)" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li ng-class="{active: (pageOffset) == 0}"
+          ng-repeat="pageOffset in [-2, -1, 0, 1, 2]"
+          ng-if="(0 < form.page + pageOffset) && (form.page + pageOffset <= 1 + (ids.length / form.limit))">
+        <a ng-click="setFormPage(form.page + pageOffset)">
+          Page {{form.page + pageOffset}}
+        </a>
+      </li>
+      <li ng-class="{'disabled': ids.length < form.limit * form.page}">
+        <a ng-click="setFormPage(form.page + 1)" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="form-group col-md-2">
+    <label>De</label>
+    <select name="from_app" ng-model="syncForm.from_app" class="form-control">
+      <option ng-repeat="app in apps" value="{{app}}">{{app}}</option>
+    </select>
+  </div>
+  <div class="form-group col-md-2">
+    <label class="col-md-6">Vers</label>
+    <select name="to_app" class="form-control" ng-model="syncForm.to_app">
+      <option ng-repeat="app in apps" value="{{app}}">{{app}}</option>
+    </select>
+  </div>
+  <div class="form-group col-md-2">
+    <button type="submit"
+            class="btn btn-danger"
+            ng-click="onFormSyncItemsSubmit()">Synchroniser
+    </button>
+  </div>
+</div>
+
+
+<div style="position:fixe; top:300px; left: 0; right:0; bottom: 0; overflow-y: auto; border-top: px solid">
+  <table class="table table-condensed table-bordered" ng-init="showFields = {}">
+    <colgroup>
+      <col width="*">
+      <col>
+      <col width="{{80/apps.length}}%" ng-repeat="app in apps">
+    </colgroup>
+    <thead>
+    <tr>
+      <th colspan="2">
+
+        <!--<input type="checkbox" onclick="jQuery('.checkbox--id').prop('checked', jQuery(this).prop('checked'))">*-->
+
+        <button class="btn btn-info" ng-click="checkAll()">Check All</button>
+        <button class="btn btn-info" ng-click="showAllDetails = !showAllDetails">Show All</button>
+      </th>
+      <th ng-repeat="app in apps">{{app}} <!--(last Id = {{last_id[app]}})--></th>
+    </tr>
+    </thead>
+    <tbody ng-repeat="row in rows" ng-init="showFields[row.id] = false">
+    <tr>
+      <td>
+        <label style="display: block">
+          <span ng-if="!row['are_all_same']">
+            <input type="checkbox" name="ids[]" ng-model="selectedItemIds[row.id]" value="{{row.id}}"
+                   class="checkbox--id">
+          </span>
+          ID : {{row.id}}
+        </label>
+      </td>
+      <td>
+        <a ng-click="showFields[row.id] = !showFields[row.id]" ng-if="!row['are_all_same']"
+           style="white-space: nowrap">Afficher détails ({{row['values'][reference_app] | getPropertiesCount}})</a>
+      </td>
+      <td ng-repeat="app in apps"
+          class="nopadding"
+          ng-class="{'bg-warning': row['values'][app]['name']['is_diff'], 'bg-success': !row['values'][app]['name']['is_diff'] }">
+        <pre>{{row['values'][app]['name']['value'] | limitTo: 100}}</pre>
+      </td>
+    </tr>
+    <tr ng-repeat="field in row['fields']"
+        ng-show="showAllDetails || showFields[row.id]"
+        ng-if="field != 'name'">
+      <th class="nopadding" colspan="2">
+        <pre>{{field}} = </pre>
+      </th>
+      <td ng-repeat="app in apps"
+          class="nopadding"
+          >
+        <pre><div ng-repeat="difference in row['values'][app][field]['difference'] track by $index"
+             ng-class="{'bg-danger': difference[0] == -1, 'bg-success': difference[0] == 1 }"><span>{{difference[0] == 1 ? '+' : difference[0] == -1 ? '-' : ' '}}</span>{{difference[1]}}</div></pre>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<style>
+  pre {
+    margin: 0;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    padding: 3px 6px;
+
+  }
+
+  .nopadding {
+    padding: 0 !important;
+  }
+
+  .pagination {
+    margin-top: 0;
+  }
+</style>

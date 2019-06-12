@@ -1,0 +1,123 @@
+<header class="suivi__results__header clear-float" >
+</div>
+  <div class="pagination-container first float-left">
+    <span class="results_count">Résultats <span class="font-weight-bold"><?= $destinataires->offsetFrom() ?></span>
+                            à <span class="font-weight-bold"><?= $destinataires->offsetTo() ?></span>
+                            sur  <span class="font-weight-bold"><?= $destinataires->foundRows() ?></span> </span>
+
+  </div>
+  <div class="float-left">
+  <?=
+  Elt::select(array('name' => 'form_limit',
+                    'options' => array('10' => '10', '25' => '25', '50' => '50'),
+                    //'label' => 'résultat par page',
+                    'value' => $destinataires->getLimit(),
+                    'class' => 'limit'))?>
+</div>
+  <div class="float-left">
+  <button type="button"
+          class="btn btn--color-light-blue btn--smaller"
+          data-method="export">Exporter
+  </button>
+</div>
+<div class="float-right">
+  <?php if ($destinataires->hasPagination()): ?>
+      <?=
+      $destinataires->getPagination()->asHtml(array('sep' => '&nbsp;',
+                                                    'href' => 'javascript:void(0)',
+                                                    'window_size' => '2')) ?>
+    <?php endif; ?>
+    </div>
+</header>
+
+<?php foreach ($suivis_destinataires as $suivi_id => $suivi_destinataires): ?>
+  <?php $suivi = $suivi_destinataires['suivi']; ?>
+  <section class="suivi__results"
+           data-suivi_id="<?= $suivi_id ?>">
+
+    <div class="suivi__results__suivi">
+      <p class="font-weight-bold">
+        <span class="color--red"><?= $suivi->type_doc ?> - <?= $suivi->type_decl ?></span>
+        &nbsp;
+        <span class="color--darkblue"><i class="fa fa-calendar"></i> Du <?= H::date($suivi->debut_periode) ?>
+                                                                     au <?= H::date($suivi->fin_periode) ?></span>
+        &nbsp;
+        <span class="color--darkblue">
+          <i class="fa fa-briefcase"></i> <? //= $suivi->siret_decl ?> <?= $suivi->getAdherentDeclarantName() ?>
+        </span>
+      </p>
+      <p class="suivi__results__suivi__emetteur">
+        <span><?= date('d/m/Y à H:i', strtotime($suivi->date_depot)) ?></span>
+        <span>par <? //= $suivi->siret_emetteur .' -'?> <?= $suivi->getAdherentEmetteurName() ?></span>
+      </p>
+      <a href="/middle/suivi.details/-/id/<?= $suivi->getId() ?>"
+         target="_blank"
+         title="Cliquez ici pour obtenir plus d'informations"
+         class="float-right  btn  btn--color-light-blue  btn--smaller">
+        Détails
+      </a>
+      <?php if($suivi->hasAnyEdiMessage()): ?>
+        <a href="/middle/suivi.edimessage/-/id/<?= $suivi->getEdiMessage()->getId() ?>"
+           target="_blank"
+           data-dialog="tabs"
+           title="Cliquez ici pour obtenir plus d'informations"
+           class="float-right  btn  btn--color-light-blue  btn--smaller margin-right--10">
+          Message
+        </a>
+      <?php endif; ?>
+
+      <p class="color--darkblue">
+        <?php if ($suivi->declaration_id > 0): ?>
+          <a href="/account/ntd/account.declaration.edit/-/declaration_id/<?= $suivi->declaration_id ?>" title="<?= c(l('account.declarer.view')) ?>" onclick="ntd.displayLoader(this)">
+            <i class="fa fa-file"></i>
+            <span class="font-size--11px text-spin">Voir la Déclaration N°<?= $suivi->declaration_id ?></span>
+            <i class="fa fa-spinner fa-spin"></i>
+          </a>
+        <?php else: ?>
+          <i class="fa fa-file-o"></i>
+          <span class="font-size--11px">Déclaration EDI (non consultable sur NetDeclaration)</span>
+        <?php endif; ?>
+      </p>
+    </div>
+
+    <ul class="suivi__results__destinataires">
+      <?php foreach ($suivi_destinataires['destinataires'] as $destinataire_id => $destinataire_hash): ?>
+        <?php $destinataire = $destinataire_hash['destinataire']; ?>
+        <li class="color--darkblue  suivi__results__destinataire">
+          <i class="fa  fa-long-arrow-right"></i>
+          <span><?= $destinataire->getAdherentDestinataireName() ?></span>
+          <p class="float-right">
+          <span>
+            <?php if ($destinataire->flg_depot != ''): ?>
+              <?= $destinataire->flg_depot > 0 ? '<i class="fa fa-check fa-check--green"></i>' : '<i class="fa fa-times"></i>' ?>
+              <?php if ($destinataire->flg_envoi != ''): ?>
+                <?= $destinataire->flg_envoi > 0 ? '<i class="fa fa-check fa-check--green"></i>' : '<i class="fa fa-times"></i>' ?>
+                <?php if ($destinataire->flg_ack != ''): ?>
+                  <?= $destinataire->flg_ack > 0 ? '<i class="fa fa-check fa-check--green"></i>' : '<i class="fa fa-times"></i>' ?>
+                <?php else: ?>
+                  <i class="fa fa-check fa-check"></i>
+                <?php endif; ?>
+              <?php else: ?>
+                <i class="fa fa-check fa-check"></i>
+                <i class="fa fa-check fa-check"></i>
+              <?php endif; ?>
+            <?php else: ?>
+              <i class="fa fa-check fa-check"></i>
+              <i class="fa fa-check fa-check"></i>
+              <i class="fa fa-check fa-check"></i>
+            <?php endif; ?>
+          </span>
+            <span
+              class="background-rounded"><?= in_array($destinataire->adherent_destinataire_id, $adherent_ids) ? 'RÉCEP.' : 'ENVOI' ?></span>
+            <a
+              class=" ntd-link  ntd-link--underline font-size-small"
+              href="/middle/suivi.details/-/id/<?= $destinataire->suivi_id ?>/destinataire_id/<?= $destinataire->getId() ?>"
+              target="_blank"
+              title="Cliquez ici pour obtenir plus d'informations">Détails</a>
+          </p>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+
+  </section>
+<?php endforeach; ?>

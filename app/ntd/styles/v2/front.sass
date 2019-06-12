@@ -1,0 +1,299 @@
+@import '_partial'
+
+/** Variables **/
+
+/** Général **/
+
+.wrapper-width
+  width: $main-width
+  margin: 0 auto
+
+body
+  background: none repeat scroll 0 0 #5f7092
+.wrapper
+  background: none repeat scroll 0 0 #FFFFFF
+
+/** Header **/
+
+
+
+.wrapper__header
+  @include clearFloat()
+  position: relative
+
+  .wrapper__header__logo
+    float: left
+
+  .wrapper__header__user
+    float: right
+    margin-top: 15px
+
+    .header-nav__user
+      display: inline-block
+      margin-right: 20px
+
+  .wrapper__header__search-form
+    float: right
+    margin-top: 15px
+    margin-right: 20px
+
+    .wrapper__header__search-form__elem
+      float: left
+      height: 35px
+
+      .text
+        height: 35px
+
+      &.btn--color-grey
+        box-shadow: none
+        border-radius: 0 3px 3px 0
+
+
+  .absolute-bottom-right
+    position: absolute
+    right: 0
+    bottom: 22px
+
+  .wrapper__header__partenaire-edi
+    clear: right
+    float: right
+    @include font-family--georgia()
+    color: #e1001a
+    font-size: 12px
+    font-style: italic
+
+  .wrapper__header__accroche
+    clear: right
+    float: right
+    @include font-family--georgia()
+    color: #808080
+    font-size: 18px
+    font-style: italic
+
+
+
+
+
+.wrapper__menu
+  background: $color--darkblue
+
+.wrapper__menu__lvl1
+  @include clearFloat()
+
+  .wrapper__menu__lvl1__elem
+    float: left
+    width: 16.6666%
+    // =100 / 6 : dépend du nombre d'items dans le menu (lvl 1)
+
+    .wrapper__menu__lvl1__link
+      display: block
+      color: #FFFFFF
+      font-size: 15px
+      line-height: 38px
+
+    .wrapper__menu__lvl2
+      display: none
+      background: $color--darkblue
+      position: absolute
+      $margin_inside: 5px
+      margin: 0 -$margin_inside
+      padding: 0 $margin_inside
+
+      .wrapper__menu__lvl2__link
+        display: block
+        color: #FFFFFF
+        font-size: 13px
+        line-height: 22px
+
+    &:hover
+      .wrapper__menu__lvl2
+        display: block
+
+/** Content **/
+
+//.wrapper__content
+
+.wrapper__content--2col
+  background: #ffffff /* Old browsers */
+  background: -moz-linear-gradient(left, #ffffff 0%, #ffffff 50%, $color--lightgrey 50%, $color--lightgrey 100%) /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ffffff), color-stop(50%,#ffffff), color-stop(50%,$color--lightgrey), color-stop(100%,$color--lightgrey)) /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, #ffffff 0%,#ffffff 50%,$color--lightgrey 50%,$color--lightgrey 100%) /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, #ffffff 0%,#ffffff 50%,$color--lightgrey 50%,$color--lightgrey 100%) /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, #ffffff 0%,#ffffff 50%,$color--lightgrey 50%,$color--lightgrey 100%) /* IE10+ */
+  background: linear-gradient(to right, #ffffff 0%,#ffffff 50%,$color--lightgrey 50%,$color--lightgrey 100%) /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='$color--lightgrey',GradientType=1 ) /* IE6-9 */
+
+  .table-cell--main
+    background: #FFFFFF
+
+  .table-cell--aside
+    width: 300px
+    background: $color--lightgrey
+    color: #5f7092
+    font-size: 13px
+
+    .aside__title
+      $aside__title__left_width: 6px
+      @include font-family--georgia()
+      @include clearFloat()
+      font-size: 18px
+      font-weight: bold
+      color: #FFFFFF
+      line-height: 40px
+      margin-left: -$aside__title__left_width
+
+      .aside__title__left
+        float: left
+
+      .aside__title__center
+        float: left
+
+        .aside__title__center__icon
+          margin-right: 12px
+
+      .aside__title__right
+        float: left
+
+      .aside__title__left--blue
+        background: url(/app/ntd/pix/general/aside_title_blue_left.png) no-repeat top left
+        width: $aside__title__left_width
+        height: 46px
+
+      .aside__title__center--blue
+        background: $color--darkblue
+        height: 40px
+        padding-right: 30px
+        padding-left: 10px
+
+      .aside__title__right--blue
+        background: url(/app/ntd/pix/general/aside_title_blue_right.png) no-repeat top left
+        width: 11px
+        height: 40px
+
+      .aside__title__left--red
+        background: url(/app/ntd/pix/general/aside_title_red_left.png) no-repeat top left
+        width: $aside__title__left_width
+        height: 46px
+
+      .aside__title__center--red
+        background: $color--darkred
+        border-bottom: 1px solid #b31729
+        height: 41px
+        padding-right: 30px
+        padding-left: 10px
+
+      .aside__title__right--red
+        background: url(/app/ntd/pix/general/aside_title_red_right.png) no-repeat top left
+        width: 12px
+        height: 41px
+
+
+// ----- wrapper__content--2cols--bluewhite
+.wrapper__content--2cols--bluewhite
+  background: $color--lightgrey /* Old browsers */
+  background: -moz-linear-gradient(left, $color--lightgrey 0%, $color--lightgrey 50%, #FFFFFF 50%, #FFFFFF 100%) /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,$color--lightgrey), color-stop(50%,$color--lightgrey), color-stop(50%,#FFFFFF), color-stop(100%,#FFFFFF)) /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, $color--lightgrey 0%,$color--lightgrey 50%,#FFFFFF 50%,#FFFFFF 100%) /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, $color--lightgrey 0%,$color--lightgrey 50%,#FFFFFF 50%,#FFFFFF 100%) /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, $color--lightgrey 0%,$color--lightgrey 50%,#FFFFFF 50%,#FFFFFF 100%) /* IE10+ */
+  background: linear-gradient(to right, $color--lightgrey 0%,$color--lightgrey 50%,#FFFFFF 50%,#FFFFFF 100%) /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color--lightgrey', endColorstr='#FFFFFF',GradientType=1 ) /* IE6-9 */
+
+.wrapper__content--2cols--bluewhite__col-white
+  background: #FFFFFF
+  vertical-align: top
+
+.wrapper__content--2cols--bluewhite__col-blue
+  width: 270px
+  background: $color--lightgrey
+  color: #5f7092
+  font-size: 13px
+  padding-right: 30px
+  vertical-align: top
+
+
+
+// ----- .white-nav (middle & account)
+.white-nav
+  border-bottom: 1px solid $color--bordergrey
+  margin-top: 13px
+
+  .white-nav__link
+    display: block
+    background: #ffffff
+    color: $color--darkblue
+    font-size: 14px
+    border: 1px solid $color--bordergrey
+    border-bottom: 0
+    line-height: 41px
+    padding-left: 17px
+    text-decoration: none
+
+    .white-nav__link__icon
+      float: right
+      margin: 11px 11px 0 0
+      font-size: 18px
+
+    &:hover .white-nav__link__icon
+      color: $color--red
+
+  .white-nav__link--selected
+    color: $color--red
+    font-weight: bold
+
+// ----- nav page
+.list-arrow
+  border-top: 1px solid $color--grey
+  .list-arrow__item
+    color: $color--darkblue
+    padding: 11px 0 11px 8px
+    border-bottom: 1px solid $color--grey
+    font-size: 14px
+
+  .list-arrow__item--selected
+    color: $color--red
+
+
+
+
+/** Footer **/
+$wrapper__footer__border-top-height: 11px
+.wrapper__footer-padding-bottom
+  padding-bottom: (30+$wrapper__footer__border-top-height)
+
+.wrapper__footer-padding
+  padding-bottom: (30+$wrapper__footer__border-top-height)
+  padding-top: 100px
+
+.wrapper__footer__border-top
+  background: transparent url(/app/ntd/pix/general/footer_border_top.png) repeat-x top left
+  height: $wrapper__footer__border-top-height
+  margin-top: -$wrapper__footer__border-top-height
+
+.wrapper__footer__menu
+  background: $color--darkblue
+  @include clearFloat()
+  padding: 60px 0 70px
+
+  .wrapper__footer__menu__lvl1
+    float: left
+    width: 20%
+    // =100 / 5 : dépend du nombre d'items dans le menu (lvl 1)
+
+    .wrapper__footer__menu__lvl1__elem
+      color: #FFFFFF
+      font-size: 13px
+
+    .wrapper__footer__menu__lvl1__elem--first
+      @include font-family--georgia()
+      font-size: 20px
+      margin-bottom: 12px
+
+.wrapper__footer__bottom
+  background: #5f7092
+  padding: 23px 0 28px
+  font-size: 11px
+  color: #FFFFFF
+
+  .wrapper__footer__bottom__logo
+    margin-right: 30px

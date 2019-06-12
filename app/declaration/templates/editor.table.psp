@@ -1,0 +1,27 @@
+<div class="dialog-content">
+  <h1>Tableau</h1>
+  <br/>
+  <form onsubmit="declaration.EditorObj.onTableInsert(this); return false;">
+    <table id="model-cols">
+      <tr>
+        <td>Nombre de lignes</td>
+        <td><input type="text" name="rows" /></td>
+      </tr>     
+      <tr>
+        <td>Nombre de colonnes</td>
+        <td><input type="text" name="cols" /></td>
+      </tr>
+      <tr>
+        <td>Options</td>
+        <td>
+          <input type="checkbox" name="extensible" onchange="if($(this).checked){$('extensible-opts').show();} else {$('extensible-opts').hide();}" /> <label>Extensible</label>
+          <div id="extensible-opts" style="display:none" >
+            <input type="text" name="num_rows" id="num-row" placeholder="num lignes répétables"  />
+          </div>         
+        </td>
+      </tr>
+    </table>
+    <br/>
+    <input type="submit" value="Insérer" />
+  </form>
+</div>

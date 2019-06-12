@@ -1,0 +1,99 @@
+<!-- <div class="flashinfo flashinfo--dev margin-bottom">
+  <p class="flashinfo__label">Tout doux</p>
+  <p>style : Bouton voir</p>
+  </div> -->
+<?php if (P('display.info') > 0): ?>
+  <p class="info flashinfo flashinfo--yellow margin-bottom margin-top"><?= l('snippet:display.info') ?></p>
+<?php endif; ?>
+
+<table class="table  table--ntd table--ntd--even-odd">
+  <col width="*">
+  <col width="190">
+  <col width="120">
+  <col width="130">
+
+  <thead>
+  <tr>
+    <th><?= c(l('account.declarer.type')) ?></th>
+    <th>Détails</th>
+    <th><?= c(l('account.suivi.status')) ?></th>
+    <th><?= c(l('account.declarer.action')) ?></th>
+  </tr>
+  </thead>
+  <tbody>
+  <?php if ($declarations->count() <1): ?>
+    <tr>
+      <td colspan="4" align="center">Il n'y a pas déclaration en cours</td>
+    </tr>
+  <?php endif; ?>
+  <?php foreach ($declarations as $declaration): ?>
+    <tr>
+      <td class="table--ntd__bold"><?= $declaration->getDectype()->name ?></td>
+      <td>
+        <p>N°<?= $declaration->getId() ?></p>
+        <p>Modifiée <?= NetDeclaration::datetime($declaration->getMeta('updated_at')) ?></p>
+      </td>
+      <td>
+        <?php if ($declaration->status == Declaration::STATUS_EDITABLE) : ?>
+          <span class="color--orange"><?= c($declaration->getStatus()) ?></span>
+        <?php else: ?>
+          <span class="color--green"><?= $declaration->getStatus() ?></span>
+        <?php endif; ?>
+
+
+      </td>
+      <td>
+        <?php if ($declaration->status == Declaration::STATUS_EDITABLE) : ?>
+          <a href="/account/ntd/account.declaration.edit/-/declaration_id/<?= $declaration->getId() ?>"
+            title="<?= c(l('account.declarer.edit')) ?>"
+            class="btn btn--color-light-blue  btn--square"
+            onclick="ntd.displayLoader(this)">
+             <i class="fa fa-pencil text-spin"></i>
+             <i class="fa fa-spinner fa-spin"></i>
+          </a>
+          <a href="/middle/declaration.validate.form/-/id/<?= $declaration->getId() ?>"
+             onclick="return confirm('<?= l('account.declarer.validate.declaration') ?>')"
+             title="<?= c(l('account.declarer.valide')) ?>"
+             class="btn btn--color-grey  btn--square">
+            <i class="fa fa-send"></i>
+          </a>
+          <a href="/declaration.pdf/-/key/<?= $declaration->getKey() ?>"
+             title="Imprimer la déclaration"
+             class="btn btn--color-grey  btn--square">
+            <i class="fa fa-print"></i>
+            <!--<img src="/app/core/pix/action/print.png" alt="Imprimer la déclaration"/>-->
+          </a>
+          <a href="javascript:void(0)"
+             onclick="ntd.middle.declarations.deleteDeclaration(this)"
+             title="<?= c(l('account.declarer.delete')) ?>"
+             data-confirm="<?= l('account.declarer.delete.declaration') ?>"
+             data-url="/middle/declaration.delete/-/id/<?= $declaration->getId() ?>"
+             class="btn btn--color-red  btn--square">
+            <i class="fa fa-times"></i>
+          </a>
+        <?php else : ?>
+        <a href="/account/ntd/account.declaration.edit/-/declaration_id/<?= $declaration->getId() ?>"
+           title="<?= c(l('account.declarer.view')) ?>"
+           class="btn btn--color-grey  btn--full-width"
+           onclick="ntd.displayLoader()">
+          <i class="fa fa-eye"></i>
+        <?php endif; ?>
+      </td>
+    </tr>
+  <?php endforeach; ?>
+  </tbody>
+</table>
+
+<?php if ($declarations->hasPagination()): ?>
+  <div class="pagination-container">
+
+    <?=
+    $declarations->getPagination()->asHtml(array('href' => '/middle/declarations/-/offset/((offset))',
+                                                 'window_size' => 6,
+                                                 'first' => '<span class="fa fa-caret-left"></span><span class="fa fa-caret-left"></span>',
+                                                 'last' => '<span class="fa fa-caret-right"></span><span class="fa fa-caret-right"></span>',
+                                                 'prev' => '<span class="fa fa-caret-left"></span>',
+                                                 'next' => '<span class="fa fa-caret-right"></span>',
+                                                 'sep' => '&nbsp;'))?>
+  </div>
+<?php endif; ?>

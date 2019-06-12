@@ -1,0 +1,86 @@
+/* http://meyerweb.com/eric/tools/css/reset/ */
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* classes préféfinies de kwo */
+
+HTML { height:100%; }
+
+SUP { vertical-align:text-top; }
+SUB { vertical-align:text-bottom; }
+
+TABLE.fixed { table-layout:fixed; width:100%; }
+TABLE.auto { table-layout:auto; width:100%; }
+
+TD { vertical-align:top; }
+TH { text-align:left; font-weight:normal; }
+
+LABEL.for { cursor:pointer; }
+IMG.icon { vertical-align:middle; }
+
+.clear { clear:both; display:block; font-size:0;
+         height:0; line-height:0; width:100%; margin:0;
+         min-height:0; padding:0; }
+.hidden { display:none; }
+.sub { vertical-align:sub; font-size:smaller; }
+.sup { vertical-align:super; font-size:smaller; }
+.wide { width:100%; }
+
+.inline-block { display:-moz-inline-stack; display:inline-block;
+                vertical-align: top; zoom: 1; *display: inline; }
+
+SELECT, 
+TEXTAREA,
+.text { box-sizing:border-box; -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box; -ms-box-sizing:border-box; }

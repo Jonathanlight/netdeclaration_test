@@ -1,0 +1,90 @@
+
+$main-width: 960px
+$main-font: Arial
+
+$color--lightblue: #5f7092
+$color--lighterblue: #808ea6
+$color--light-light-blue: #e8eaf0
+$color--text-default: #5f6165
+$color--darkblue: #002e60
+$color--classicblue: #073c77
+$color--lightgrey: #f7f7fa
+$color--grey: #dadee6
+$color--darkgrey: #5f6165
+$color--darkergrey: #808080
+$color--lightblue--1: #e9edf6
+$color--red: #df2b40
+$color--darkred: #d81c32
+$color--darkerred: #b31729
+$color--lightred: #ee1f37
+$color--table-cell-even: #fbfbfc
+$color--green: #00b763
+$color--orange: #ff9600
+$color--white: #ffffff
+$color--yellow: #fff495
+
+$color--bordergrey: #dadee6
+$color--bordergrey-1: #c9cdd4
+$color--borderblue: #3a6594
+$color--borderblue-1: #8199c7
+$color--borderblue-2: #9ab6ed
+$color--borderwhite: #f2f6ff
+$color--borderred: #ff3d54
+$color--borderred-1: #e1001a
+$color--borderlightblue: #b6c7e9
+$color--borderlightblue-1: #c4c9db
+
+$color--background-blue: #bac0d2
+$color--background-darkblue: #a7adbd
+
+$color--shadow-blue: #dfe5f3
+$color--shadow-red: #f7b8bf
+
+@mixin transition($prop, $duration)
+  -webkit-transition: $prop $duration
+  -moz-transition: $prop $duration
+  -ms-transition: $prop $duration
+  -o-transition: $prop $duration
+  transition: $prop $duration
+
+@mixin gradient($first, $second)
+  background-image: -webkit-gradient(linear, 0 100%, 0 0, from($first), to($second))
+  background-image: -webkit-linear-gradient($first, $second)
+  background-image: -moz-linear-gradient($first, $second)
+  background-image: -o-linear-gradient($first, $second)
+  background-image: linear-gradient($first, $second)
+
+@mixin gradient-grey()
+  @include gradient($color--grey,$color--lightgrey)
+
+@mixin gradient-grey-reverse()
+  @include gradient($color--lightgrey, $color--grey)
+
+@mixin font-family--georgia()
+  font-family: Georgia, serif
+
+@mixin font--darkblue()
+  color: $color--darkblue
+  font-weight: bold
+
+@mixin font-size-big()
+  font-size: 28px
+
+@mixin font-size-normal()
+  font-size: 14px
+
+@mixin font-size-small()
+  font-size: 12px
+
+@mixin font--lightblue()
+  @include font-family--georgia()
+  color: $color--lightblue
+  font-weight: normal
+  font-style: italic
+
+@mixin clearFloat()
+  &:after
+    display: table
+    line-height: 0
+    content: ""
+    clear: both

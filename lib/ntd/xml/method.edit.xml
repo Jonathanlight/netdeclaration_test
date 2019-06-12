@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+<fieldset>
+
+<notebook>
+<page>
+ <form>
+  <hbox>
+   <vbox width="400">
+    <elem field="code" />
+    <elem field="name" />
+    <elem field="content" rows="7" mode="rich" label="Description" precision="description sur la page Choix Paiement" />
+    <elem field="status" />
+    <elem field="position" />
+    <elem field="psp_id"  />
+   </vbox>
+   <vbox width="400">
+    <elem field="snippet_response" rows="7" mode="rich" label="Texte de confirmation de paiement" />
+    <elem field="snippet_other" rows="7" mode="rich" label="Texte qui apparait sur l'étape intermédiaire de paiement" precision="si elle existe" />
+   </vbox>
+   <vbox>
+   </vbox>
+  </hbox>
+  <launcher/>
+ </form>
+</page>
+<page>
+ <hbox>
+  <vbox width="150px">
+   <box label="actions">
+    <link icon="details" />
+   </box>
+  </vbox>
+  <vbox><deck /></vbox>
+ </hbox> 
+</page>
+</notebook>
+
+</fieldset>
+</kwo-interface>

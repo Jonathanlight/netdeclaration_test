@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="start_at desc, id desc" include="adherent">
+ <filters>
+  <filter name="id" />
+  <filter name="ntd_adherent.company" label="Raison sociale" />
+  <filter name="ntd_adherent.siret" label="SIRET" />
+  <filter name="ntd_facture.adherent_id" label="Adhérents"
+          options="Adherent::collect(array('order' => array('company' => 'asc')))->asHash('id', 'company')" />
+  <filter name="status" />
+  <filter name="ntd_facture.type" label="Type"
+          options="Facture::$types" />
+  <filter name="ntd_facture.method_id" label="Mode paiement"
+          options="array('0' => 'non choisi') + Method::collect()->asHash('id', 'name')" />
+  <filter name="ntd_adherent.type" label="Type d'adhérent"
+          options="Adherent::$types" />
+  <filter name="|%%|md.created_at" label="Émise le" />
+  <filter name="is_renew_auto" label="Renouvellement automatique ?"
+          type="yesno" />
+  <filter name="method_date_begin_at" label="Date de paiement (Début)"  />
+  <filter name="method_date_end_at" label="Date de paiement (Fin)"  />
+  <filter name="|%%|method_details" label="Détails du paiement"  />
+  <filter name="flags" />
+ </filters>
+ <cols>
+  <col name="adherent_identity" label="Adhérent" />
+  <col name="adherent_siret" label="SIRET" />
+  <col name="created_at" label="Émise le" />  
+  <col name="start_at" label="Commence le" />
+  <col name="finish_at" label="Finie le" />
+  <col name="price_ttc" label="Prix TTC" />
+  <col name="method_date" label="Date de paiement" />
+  <col name="method_details" label="Détails de paiement" />
+ </cols>
+</finder>
+
+</kwo-interface>

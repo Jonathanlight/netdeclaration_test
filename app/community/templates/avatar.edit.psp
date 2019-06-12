@@ -1,0 +1,3 @@
+<a href="javascript:void(0)"
+   title="<?=l('change')?>"
+   onclick="new Kwo.Class.Upload(Kwo.User.onAvatarSet, {filter:'image'})"><?=$user->avatar(array('refresh' => true))?></a>

@@ -1,0 +1,87 @@
+<script>
+  var homepage_editor = {
+    Sorter: Class.create({
+      parent: null,
+      initialize: function (parent) {
+        this.parent = $(parent).up('.relations');
+        this.rows = this.parent.down('.rows');
+        this.onAfterDisplay();
+      },
+      onAfterDisplay: function () {
+        new ScrollSort(this.rows.down('ul'), this.onSort.bind(this));
+      },
+      onSort: function () {
+        var args = {ids: this.rows.down("ul").select("li").pluck("dataset").pluck("id").join(",")};
+        Kwo.exec(this.parent.readAttribute('data-sort_url'), args,
+          {"callback": function (resp) {
+            Kwo.exec(this.parent.readAttribute('data-refresh_url'), null, {container: this.rows, callback: this.onAfterDisplay.bind(this)});
+          }.bind(this)});
+      }
+    })
+  };
+</script>
+
+<fieldset>
+  <legend>Edition de la page d'accueil</legend>
+  <div class="hbox">
+    <table class="hbox">
+      <tr>
+        <td>
+          <fieldset>
+            <legend>1er Bloc : Introduction</legend>
+            <p
+              class="elem"><?= Item::edit($snippet_introduction) ?></p>
+            <div class="elem elem-relations">
+              <label>Position des Catégorie de Services</label>
+              <div class="relations" data-sort_url="/back/ntd/homepage.servicetypes.sort"
+                   data-refresh_url="/back/ntd/homepage.servicetypes">
+                <div style="height:200px;" class="rows sortable">
+                  <?= H::inc('homepage.servicetypes') ?>
+                </div>
+                <img onload="new homepage_editor.Sorter(this)"
+                     src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                     class="js-loader">
+              </div>
+            </div>
+          </fieldset>
+        </td>
+        <td>
+          <fieldset>
+            <legend>2ème Bloc : Tous nos services</legend>
+            <p
+              class="elem"><?= Item::edit($snippet_services) ?></p>
+            <div class="elem elem-relations">
+              <label>Position des Services</label>
+              <div class="relations" data-sort_url="/back/ntd/homepage.services.sort"
+                   data-refresh_url="/back/ntd/homepage.services">
+                <div style="height:400px;" class="rows sortable">
+                  <?= H::inc('homepage.services') ?>
+                </div>
+                <img onload="new homepage_editor.Sorter(this)"
+                     src="data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="
+                     class="js-loader">
+              </div>
+            </div>
+          </fieldset>
+        </td>
+        <td>
+          <fieldset>
+            <legend>3ème bloc : Pour qui ?</legend>
+            <p class="elem"><?= Item::edit($snippet_forwho) ?></p>
+            <?php foreach ($forwho_pages as $page): ?>
+              <p><?= Item::edit($page, array('view' => 'item')) ?></p>
+            <?php endforeach; ?>
+          </fieldset>
+          <br>
+          <fieldset>
+            <legend>4ème bloc : partenaires & paiement</legend>
+            <p
+              class="elem"><?= Item::edit($snippet_partenaires) ?></p>
+            <p class="elem"><?= Item::edit($snippet_payment) ?></p>
+          </fieldset>
+        </td>
+      </tr>
+    </table>
+  </div>
+</fieldset>
+

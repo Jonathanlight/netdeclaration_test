@@ -1,0 +1,200 @@
+<div class="formulaire-page page-form"  data-label="Identification" data-position="first">
+    <table class="a_identif_ifu_20190101">
+        <tbody class="a_identif_ifu_20190101">
+            <tr class="elt tab-title">
+                <td class="libelle" colspan="3">Type de déclaration</th>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA', 'value' => $a_identif_ifu_20190101['DA'])); ?>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="a_identif_ifu_20190101">
+        <thead>
+            <tr class="tab-title">
+                <th class="maintitle" colspan="4">
+                    Identification de l'entreprise déclarante
+                </th>
+            </tr>
+        </thead>
+
+        <tbody class="a_identif_ifu_20190101">
+            <tr class="elt">
+                <td class="libelle">Numéro SIRET</td>
+                <td class="input input-lg ">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA01', 'field_name' => 'AA01', 'value' => $a_identif_ifu_20190101['AA01'])); ?>
+                </td>
+                <td colspan="2"></td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Raison sociale</td>
+                <td class="input input-lg print-large">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA02', 'field_name' => 'AA02', 'value' => $a_identif_ifu_20190101['AA02'])); ?>
+                </td>
+                <td colspan="2"></td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Raison sociale (Suite)</td>
+                <td class="input input-lg" >
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA03', 'field_name' => 'AA03', 'value' => $a_identif_ifu_20190101['AA03'])); ?>
+                </td>
+                <td colspan="2"></td>
+
+            <tr class="elt">
+                <td class="libelle">N° rue</td>
+                <td class="libelle" >Suffixe (Bis, Ter, Quater, )</td>
+                <td class="libelle" colspan="2">Rue</td>
+            </tr>
+
+            <tr class="elt">
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA16', 'field_name' => 'AA16', 'value' => $a_identif_ifu_20190101['AA16'], 'class' => 'align-left')); ?>
+                </td>
+                <td class="input input-lg" >
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA17', 'field_name' => 'AA17', 'value' => $a_identif_ifu_20190101['AA17'])); ?>
+                </td>
+                <td class="input input-lg" colspan="2">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA05', 'field_name' => 'AA05', 'value' => $a_identif_ifu_20190101['AA05'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Complément d'adresse</td>
+                <td class="input input-lg" >
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA06', 'field_name' => 'AA06', 'value' => $a_identif_ifu_20190101['AA06'])) ?>
+                </td>
+                <td class="libelle">Catégorie juridique</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CC', 'field_name' => 'CC', 'value' => $a_identif_ifu_20190101['CC'])); ?>
+                </td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Code postal</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA09', 'field_name' => 'AA09', 'value' => $a_identif_ifu_20190101['AA09'])) ?>
+                </td>
+                <td class="libelle">Ville</td>
+                <td class="input input-lg"><?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA08', 'field_name' => 'AA08', 'value' => $a_identif_ifu_20190101['AA08'])) ?></td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Commune insee</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA15', 'field_name' => 'AA15', 'value' => $a_identif_ifu_20190101['AA15'])); ?>
+                </td>
+                <td class="libelle">Code commune Insee</td>
+                <td class="input input-lg"><?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA14', 'field_name' => 'AA14', 'value' => $a_identif_ifu_20190101['AA14'], 'class' =>  'print-data-value', 'data-value' => $a_identif_ifu_20190101['AA14'])) ?></td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Numéro SIRET si modifiée</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'CB', 'field_name' => 'CB', 'value' => $a_identif_ifu_20190101['CB'], 'class' => 'align-left')); ?>
+                </td>
+                <td class="input input-lg">&nbsp;</td>
+                <td class="input input-lg">&nbsp;</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <table class="a_identif_ifu_20190101">
+        <thead>
+            <tr class="tab-title">
+                <th class="maintitle" colspan="4">
+                    Année de la déclaration
+                </th>
+            </tr>
+        </thead>
+        <tbody class="a_identif_ifu_20190101">
+            <tr class="elt">
+                <td class="libelle">Année de la déclaration</td>
+                <td class="input input-lg" >
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BA', 'value' => $a_identif_ifu_20190101['BA'])); ?>
+                </td>
+                <td class="input input-lg">&nbsp;</td>
+                <td class="input input-lg">&nbsp;</td>
+            </tr>
+            <tr class="elt">
+                <td class="libelle">Date d'émission de la déclaration</td>
+                <td class="input input-lg" >
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BD', 'field_name' => 'BD', 'value' => $a_identif_ifu_20190101['BD'])); ?>
+                </td>
+                <td class="input input-lg">&nbsp;</td>
+                <td class="input input-lg">&nbsp;</td>
+            </tr>
+            <tr class="elt">
+                <td class="libelle">Début période d'exercice</td>
+                <td class="input input-lg" >
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BB', 'field_name' => 'BB', 'value' => $a_identif_ifu_20190101['BB'])); ?>
+                </td>
+                <td class="libelle">Fin période d'exercice</td>
+                <td class="input input-lg">
+                    <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BC', 'field_name' => 'BC', 'value' => $a_identif_ifu_20190101['BC'])); ?>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <table class="a_identif_ifu_20190101">
+        <thead>
+            <tr class="tab-title">
+                <th class="maintitle" colspan="4">
+                    &Eacute;tablissement déposant la déclaration de résultats
+                </th>
+            </tr>
+        </thead>
+        <tbody class="a_identif_ifu_20190101">
+            <tr class="elt">
+                <td class="libelle">Numéro SIRET</td>
+                <td colspan="2"></td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Adresse</td>
+                <td colspan="2"></td>
+                <td>&nbsp;</td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Complément d'adresse</td>
+                <td colspan="2"></td>
+                <td>&nbsp;</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <table class="a_identif_ifu_20190101">
+        <thead>
+            <tr class="tab-title">
+                <th class="maintitle" colspan="4">
+                    Personne à contacter dans l'entreprise
+                </th>
+            </tr>
+        </thead>
+        <tbody class="a_identif_ifu_20190101">
+            <tr class="elt">
+                <td class="libelle">Nom et prénom</td>
+                <td class="input input-lg"><?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA11', 'field_name' => 'AA11', 'value' => $a_identif_ifu_20190101['AA11'])); ?></td>
+                <td class="input input-lg" colspan="2">&nbsp</td>
+            </tr>
+
+            <tr class="elt">
+                <td class="libelle">Téléphone</td>
+                <td class="input input-lg"><?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA12', 'field_name' => 'AA12', 'value' => $a_identif_ifu_20190101['AA12'])); ?></td>
+                <td class="libelle">Mail</td>
+                <td class="input input-lg"><?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'AA13', 'field_name' => 'AA13', 'value' => $a_identif_ifu_20190101['AA13'])); ?></td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<div class="formulaire-page page-form" data-label="Validation" data-position="last"></div>

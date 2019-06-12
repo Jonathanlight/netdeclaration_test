@@ -1,0 +1,234 @@
+<div class="formulaire-page" data-label="TVA 3515SD">
+<table>
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">TVA (et taxes assimilées) - REGIME DES ACOMPTES PROVISIONNELS</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th colspan="5"></th>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3515sd_20160101aa">REGULARISATION pour le mois de</label>
+        <?=Elt::tooltip(array('tooltip' => 'Format jj/mm/aaaa'))?>
+      </td>
+      <td class="input small">
+        <div class="line_impot">100125</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA',
+                                                            'value'      => $tva3515sd_20160101['AA']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3515sd_20160101ab">et versement de l’ACOMPTE pour le mois de</label>
+        <?=Elt::tooltip(array('tooltip' => 'Format jj/mm/aaaa'))?>
+      </td>
+      <td class="input small">
+        <div class="line_impot">100126</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AB',
+                                                            'value'      => $tva3515sd_20160101['AB']))?>
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">A - REGULARISATION DU PRECEDENT ACOMPTE</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th colspan="5"></th>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">a1</td>
+      <td class="libelle">
+        <label class="bold" for="tva3515sd_20160101be">Total de la TVA nette due (ligne 28 déterminée sans tenir compte des lignes 5B et 2C)</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">907587</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BE',
+                                                            'value'      => $tva3515sd_20160101['BE']))?>
+      </td>
+    </tr>
+    <tr class="elt">
+      <td class="line_id">a2</td>
+      <td class="libelle">
+        <label class="bold" for="tva3515sd_20160101bf">Total des taxes assimilées (ligne 29 de la déclaration CA3)</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">907589</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BF',
+                                                            'value'      => $tva3515sd_20160101['BF']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">b</td>
+      <td class="libelle">
+        <label for="tva3515sd_20160101bb">Acompte à déduire (mentionné ligne e du précédent bulletin de régularisation)</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">100128</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BB',
+                                                            'value'      => $tva3515sd_20160101['BB']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">c</td>
+      <td class="libelle">
+        <label for="tva3515sd_20160101bc">Complément à verser (a - b)</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">100129</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BC',
+                                                            'value'      => $tva3515sd_20160101['BC']))?>
+      </td>
+    </tr>
+    <tr class="elt">
+     <td class="line_id"></td>
+     <td class="libelle" colspan="3">OU</td>
+    </tr>
+    <tr class="elt">
+      <td class="line_id">d</td>
+      <td class="libelle">
+        <label for="tva3515sd_20160101bd">Excédent à imputer (b - a)</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">100130</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BD',
+                                                            'value'      => $tva3515sd_20160101['BD']))?>
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr class="tab-title">
+      <th class="maintitle" colspan="4">B - CALCUL DU VERSEMENT</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th colspan="5"></th>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">e</td>
+      <td class="libelle">
+        <label for="tva3515sd_20160101ca">
+          Titre du mois pour lequel cet acompte est versé et au moins égal à l’excédent dégagé ligne d ci-dessus
+
+       </label>
+      </td>
+      <td class="input">
+        <div class="line_impot">100131</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA',
+                                                            'value'      => $tva3515sd_20160101['CA']))?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+     <td class="line_id"></td>
+     <td class="libelle" colspan="3">
+          A ajouter : complément dégagé ligne c <br/>
+          ou <br/>
+          A déduire : excédent dégagée ligne d <br/>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="line_id">f</td>
+      <td class="libelle">
+        <label class="bold" for="tva3515sd_20160101cb">SOMME A PAYER</label>
+      </td>
+      <td class="input">
+        <div class="line_impot">100132</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB',
+                                                            'value'      => $tva3515sd_20160101['CB']))?>
+      </td>
+    </tr>
+  </table>
+
+  <table>
+    <tr class="tab-title">
+      <th class="maintitle" colspan="11">C - REPORT A EFFECTUER SUR LA DECLARATION 3310 CA3</th>
+    </tr>
+
+    <tr class="tab-title">
+      <th colspan="11">Déduire de la somme à payer dégagée ligne f ci-dessus le total de l'impôt dû mentionné ligne a</th>
+    </tr>
+
+    <tr class="tva3515sd elt">
+      <td class="line_impot">f</td>
+      <td class="input">
+        <div class="line_impot">100133</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA',
+                                                            'value'      => $tva3515sd_20160101['DA']))?>
+      </td>
+      <td class="line_id"> - </td>
+      <td class="line_impot">a</td>
+      <td class="input">
+        <div class="line_impot">100134</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DB',
+                                                            'value'      => $tva3515sd_20160101['DB']))?>
+      </td>
+
+      <td class="line_id">=</td>
+      <td class="line_impot">g + </td>
+      <td class="input">
+        <div class="line_impot">100135</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC',
+                                                            'value'      => $tva3515sd_20160101['DC']))?>
+      </td>
+      <td class="line_id">ou</td>
+      <td class="line_impot">h - </td>
+      <td class="input">
+        <div class="line_impot">100136</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DD',
+                                                            'value'      => $tva3515sd_20160101['DD']))?>
+      </td>
+    </tr>
+
+    <tr class="tab-title">
+      <td colspan="11" style="color: #666666">
+        <ul>
+          <li>REPORTER sur la déclaration CA 3 : la différence     positive (g ci-dessous) ou négative (h ci-dessus)</li>
+          <li>Lorsque la somme à payer est supérieure à l'impôt dû (a), cette différence (g) est à porter ligne 5B "Sommes à ajouter"</li>
+          <li>Lorsque la somme à payer est inférieure à l'impôt dû (a), cette différence (h) est à porter ligne 2C "Sommes à imputer"</li>
+          <li>Lorsque la somme à payer est nulle, le résultat (h) qui correspond à l'impôt dû (a) est à porter ligne 2C "Sommes à imputer"</li>
+          <li>REMARQUE IMPORTANTE : Ce bulletin doit obligatoirement être annexé à la déclaration de chiffre d'affaires correspondante</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr class="tab-title">
+      <th class="input" colspan="10">
+        <div class="line_impot">100448</div>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EA',
+                                                            'value'      => $tva3515sd_20160101['EA1'].$tva3515sd_20160101['EA2'].$tva3515sd_20160101['EA3'].$tva3515sd_20160101['EA4'].$tva3515sd_20160101['EA5']))?>
+      </th>
+      <th class="subtitle">
+        <label for="tva3517sca12_vk">Mention expresse</label>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EB',
+                                                            'value'      => $tva3515sd_20160101['EB']))?>
+        <div class="line_impot">100500</div>
+      </th>
+    </tr>
+
+</table>
+
+  <div style="display:none">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EA1',
+                                                            'value'      => $tva3515sd_20160101['EA1']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EA2',
+                                                            'value'      => $tva3515sd_20160101['EA2']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EA3',
+                                                            'value'      => $tva3515sd_20160101['EA3']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EA4',
+                                                            'value'      => $tva3515sd_20160101['EA4']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EA5',
+                                                            'value'      => $tva3515sd_20160101['EA5']))?>
+     </div>
+  </div>

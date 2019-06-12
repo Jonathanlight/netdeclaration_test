@@ -1,0 +1,148 @@
+<div class="account-bulletin-adhesion-box">
+  <div class="account-bulletin-adhesion-header">
+
+    <h2>Votre inscription a bien été prise en compte.</h2>
+    
+  <?=l('snippet:bulletin.adhesion.address')?>
+
+    <a href="javascript:print()" class="ntd-button button-print" title="Imprimer votre bulletin d'adhésion" style="width:300px; margin: 30px auto;">
+      <img src="/app/ntd/pix/buttons/icon_print.png" alt="imprimer"> Imprimer votre bulletin d'adhésion
+    </a>
+
+    <a href="/account/ntd/account.services.active" class="ntd-button" title="Choix des services" style="width:300px; margin: 30px auto;">
+      Choix des services
+    </a>
+
+  </div>
+  <div class="print-only">
+    <img src="/app/ntd/pix/logo.print.png" alt="logo" class="logo"/>
+    <h2>Bulletin d'adhésion<br/>à NET DECLARATION</h2>
+    <?php $adherents = ($main_adherent->getId() == $adherent->getId()) ? array($adherent) : array($main_adherent, $adherent); ?>
+    <?php foreach($adherents as $key => $adherent): ?>
+      <?php if($key == 1): ?>
+      <div class="page-break">&nbsp;</div>
+    <?php endif; ?>
+    <table class="ntd-table">
+      <col width="20%" />
+      <col width="20%" />
+      <col width="25%" />
+      <col width="35%" />
+
+      <tr>
+        <th colspan="4">Informations du Compte <?=($main_adherent->getId() == $adherent->getId()) ? 'Principal' : 'secondaire'?></th>
+      </tr>
+      <tr>
+        <td class="label">
+          <p><strong>Adhérent</strong></p>
+          <p>Type</p>
+          <p>Civilité</p>
+          <p>Nom</p>
+          <p>Prénom</p>
+          <p>Fonction</p>
+          <p>Adresse électronique</p>
+        </td>
+        <td>
+          <p>&nbsp;</p>
+          <p><?=Adherent::$types_shorts[$adherent->type]?>&nbsp;</p>
+          <p><?=Adherent::$civilities_abreges[$adherent->civility]?>&nbsp;</p>
+          <p><?=$adherent->last_name?>&nbsp;</p>
+          <p><?=$adherent->first_name?>&nbsp;</p>
+          <p><?=$adherent->function?>&nbsp;</p>
+          <p><?=$adherent->getEmail()?>&nbsp;</p>
+        </td>
+        <td class="label">
+          <p><strong>Coordonnées principales</strong></p>
+          <p>Adresse</p>
+          <p>Complément d'adresse 1</p>
+          <p>Complément d'adresse 2</p>
+          <p>Boite postale</p>
+          <p>Code postal</p>
+          <p>Ville</p>
+          <p>Pays</p>
+          <p>Téléphone</p>
+          <p>Fax</p>
+        </td>
+        <td>
+          <p>&nbsp;</p>
+          <p><?=$adherent->address?>&nbsp;</p>
+          <p><?=$adherent->address_1?>&nbsp;</p>
+          <p><?=$adherent->address_2?>&nbsp;</p>
+          <p><?=$adherent->zipbox?>&nbsp;</p>
+          <p><?=$adherent->zipcode?>&nbsp;</p>
+          <p><?=$adherent->city?>&nbsp;</p>
+          <p><?=Country::getInstance($adherent->country_id)->name?>&nbsp;</p>
+          <p><?=$adherent->phone?>&nbsp;</p>
+          <p><?=$adherent->fax?>&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="label">
+          <p>Raison sociale</p>
+          <p>Forme Juridique</p>
+          <p>SIRET</p>
+          <p>N° CEC</p>
+          <p>N° OGA</p>
+        </td>
+        <td>
+          <p><?=$adherent->company?>&nbsp;</p>
+          <p><?=$adherent->forme_juridique?>&nbsp;</p>
+          <p><?=$adherent->siret?>&nbsp;</p>
+          <p><?=$adherent->cec_ordre?>&nbsp;</p>
+          <p><?=$adherent->oga_agrement?>&nbsp;</p>
+        </td>
+        <td class="label">
+          <p><strong>Coordonnées de facturation</strong></p>
+          <p>Raison sociale</p>
+          <p>Adresse</p>
+          <p>Boite postale</p>
+          <p>Code postal</p>
+          <p>Ville</p>
+          <p>Pays</p>
+          <p>Adresse électronique</p>
+          <p>Mode de paiement</p>
+        </td>
+        <td>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p><?=$adherent->billing_company?>&nbsp;</p>
+          <p><?=$adherent->billing_address?>&nbsp;</p>
+          <p><?=$adherent->billing_zipbox?>&nbsp;</p>
+          <p><?=$adherent->billing_zipcode?>&nbsp;</p>
+          <p><?=$adherent->billing_city?>&nbsp;</p>
+          <p><?=Country::getInstance($adherent->billing_country_id)->name?>&nbsp;</p>
+          <p><?=$adherent->billing_mail?>&nbsp;</p>
+          <p><?=Adherent::$billing_payment_modes[$adherent->billing_payment_mode]?>&nbsp;</p>
+        </td>
+      </tr>
+      <tr>
+        <td class="label" colspan="2">
+          <p><strong>Coordonnées Responsable Technique</strong></p>
+          <p>Nom</p>
+          <p>Prénom</p>
+          <p>Téléphone</p>
+          <p>Mail</p>
+        </td>
+        <td colspan="2">
+          <p>&nbsp;</p>
+          <p><?=$adherent->technician_last_name?>&nbsp;</p>
+          <p><?=$adherent->technician_first_name?>&nbsp;</p>
+          <p><?=$adherent->technician_phone?>&nbsp;</p>
+          <p><?=$adherent->technician_mail?>&nbsp;</p>
+        </td>
+      </tr>
+    </table>
+
+    <?php endforeach; ?>
+    <div class="bulletin-adhesion-footer">
+      <div class="left">
+        <?=l('snippet:bulletin.adhesion.footer')?>
+      </div>
+      <div class="right">
+      <p>Fait à </p>
+      <p>Le </p>
+      <p>Signature et cachet</p>
+        </div>
+    </div>
+  </div>
+</div>
+

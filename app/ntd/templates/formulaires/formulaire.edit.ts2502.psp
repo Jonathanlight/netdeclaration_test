@@ -1,0 +1,528 @@
+<div class="formulaire-page page-form ts2502" data-label="TS 2502">
+<!--<h2>Déclaration annuelle de liquidation et régularisation de la taxe sur les salaires</h2> 	-->
+<table class="ts2502">
+
+<tr class="tab-title">
+  <th class="maintitle" colspan="9">I- LIQUIDATION DE LA TAXE pour l'année (ensemble des établissements)</th>
+</tr>
+
+<tr class="tab-title">
+  <th>Salaire imposable</th>
+  <th></th>
+  <th>Désignation</th>
+  <th></th>
+  <th>1er secteur</th>
+  <th>2ème secteur</th>
+  <th>3ème secteur</th>
+  <th>Personnel commun</th>
+  <th>Total des colonnes</th>
+</tr>
+
+
+<tr class="elt">
+  <th class="tab-title-style" rowspan="3">Métropole</th>
+  <td class="line_id">01</td>
+  <td class="libelle">
+    <label for="ts2502_aa">Base taux normal</label>
+  </td>
+  <td class="line_id">A</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA',
+                                                      'value' => $ts2502['AA']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BA',
+                                                      'value' => $ts2502['BA']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA',
+                                                      'value' => $ts2502['CA']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA',
+                                                      'value' => $ts2502['DA']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EA',
+                                                      'value' => $ts2502['EA']))?>
+  </td>
+</tr>
+
+<tr class="elt tab">
+  <td class="line_id">02</td>
+  <td class="libelle">
+    <label for="ts2502_ab">Base 1er taux majoré</label>
+  </td>
+  <td class="line_id">A1</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AB',
+                                                      'value' => $ts2502['AB']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BB',
+                                                      'value' => $ts2502['BB']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB',
+                                                      'value' => $ts2502['CB']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DB',
+                                                      'value' => $ts2502['DB']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EB',
+                                                      'value' => $ts2502['EB']))?>
+  </td>
+
+
+<tr class="elt tab">
+  <td class="line_id">03</td>
+  <td class="libelle">
+    <label for="ts2502_ac">Base 2nd taux majoré</label>
+  </td>
+  <td class="line_id">A2</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AC',
+                                                      'value' => $ts2502['AC']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BC',
+                                                      'value' => $ts2502['BC']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CC',
+                                                      'value' => $ts2502['CC']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC',
+                                                      'value' => $ts2502['DC']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EC',
+                                                      'value' => $ts2502['EC']))?>
+  </td>
+</tr>
+
+
+<tr class="elt">
+  <th class="tab-title-style" rowspan="2">DOM</th>
+  <td class="line_id">04</td>
+  <td class="libelle">
+    <label for="ts2502_ad">Base taux normal (Guadeloupe, Martinique, Réunion)…</label>
+  </td>
+  <td class="line_id">B</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AD',
+                                                      'value' => $ts2502['AD']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BD',
+                                                      'value' => $ts2502['BD']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CD',
+                                                      'value' => $ts2502['CD']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DD',
+                                                      'value' => $ts2502['DD']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ED',
+                                                      'value' => $ts2502['ED']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">05</td>
+  <td class="libelle">
+    <label for="ts2502_aa">Base taux normal (Guyane)…</label>
+  </td>
+  <td class="line_id">C</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AE',
+                                                      'value' => $ts2502['AE']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BE',
+                                                      'value' => $ts2502['BE']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CE',
+                                                      'value' => $ts2502['CE']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DE',
+                                                      'value' => $ts2502['DE']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EE',
+                                                      'value' => $ts2502['EE']))?>
+  </td>
+</tr>
+
+
+<tr class="elt">
+  <th class="tab-title-style" rowspan="3">Métropole</th>
+  <td class="line_id">06</td>
+  <td class="libelle">
+    <label for="ts2502_af">A X 4,25 %</label>
+  </td>
+  <td class="line_id">D0</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AF',
+                                                      'value' => $ts2502['AF']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BF',
+                                                      'value' => $ts2502['BF']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CF',
+                                                      'value' => $ts2502['CF']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DF',
+                                                      'value' => $ts2502['DF']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EF',
+                                                      'value' => $ts2502['EF']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+
+  <td class="line_id">07</td>
+  <td class="libelle">
+    <label for="ts2502_ag">A1 X 4,25 %</label>
+  </td>
+  <td class="line_id">D1</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AG',
+                                                      'value' => $ts2502['AG']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BG',
+                                                      'value' => $ts2502['BG']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CG',
+                                                      'value' => $ts2502['CG']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DG',
+                                                      'value' => $ts2502['DG']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EG',
+                                                      'value' => $ts2502['EG']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">08</td>
+  <td class="libelle">
+    <label for="ts2502_ah">A2 X 9,35 %</label>
+  </td>
+  <td class="line_id">D2</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AH',
+                                                      'value' => $ts2502['AH']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BH',
+                                                      'value' => $ts2502['BH']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CH',
+                                                      'value' => $ts2502['CH']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DH',
+                                                      'value' => $ts2502['DH']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EH',
+                                                      'value' => $ts2502['EH']))?>
+  </td>
+</tr>
+
+
+<tr class="elt">
+  <th class="tab-title-style" rowspan="2">DOM</th>
+  <td class="line_id">09</td>
+  <td class="libelle">
+    <label for="ts2502_ai">B X 2,95 %</label>
+  </td>
+  <td class="line_id">E</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AI',
+                                                      'value' => $ts2502['AI']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BI',
+                                                      'value' => $ts2502['BI']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CI',
+                                                      'value' => $ts2502['CI']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DI',
+                                                      'value' => $ts2502['DI']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EI',
+                                                      'value' => $ts2502['EI']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">10</td>
+  <td class="libelle">
+    <label for="ts2502_aj">C X 2,55 %</label>
+  </td>
+  <td class="line_id">F</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AJ',
+                                                      'value' => $ts2502['AJ']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BJ',
+                                                      'value' => $ts2502['BJ']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CJ',
+                                                      'value' => $ts2502['CJ']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DJ',
+                                                      'value' => $ts2502['DJ']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EJ',
+                                                      'value' => $ts2502['EJ']))?>
+  </td>
+</tr>
+
+
+<tr class="elt">
+  <th class="tab-title-style" rowspan="3">TOTAUX</th>
+  <td class="line_id">11</td>
+  <td class="libelle">
+    <label class="bold" for="ts2502_ak">Lignes D0 + D1 + D2 + E + F</label>
+  </td>
+  <td class="line_id">G</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AK',
+                                                      'class' => 'tab',
+                                                      'value' => $ts2502['AK']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BK',
+                                                      'class' => 'tab',
+                                                      'value' => $ts2502['BK']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CK',
+                                                      'class' => 'tab',
+                                                      'value' => $ts2502['CK']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DK',
+                                                      'class' => 'tab',
+                                                      'value' => $ts2502['DK']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EK',
+                                                      'class' => 'tab',
+                                                      'value' => $ts2502['EK']))?>
+  </td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">12</td>
+  <td class="libelle">
+    <label for="ts2502_al">Pourcentage d’imposition</label>
+  </td>
+  <td class="line_id">H</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AL',
+                                                      'value' => $ts2502['AL']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BL',
+                                                      'value' => $ts2502['BL']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CL',
+                                                      'value' => $ts2502['CL']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DL',
+                                                      'value' => $ts2502['DL']))?>
+  </td>
+  <td class="input">&nbsp;</td>
+</tr>
+
+<tr class="elt">
+  <td class="line_id">13</td>
+  <td class="libelle">
+    <label class="bold" for="ts2502_am">Total Taxe brute G X H =</label>
+  </td>
+  <td class="line_id">I</td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AM',
+                                                      'value' => $ts2502['AM']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BM',
+                                                      'value' => $ts2502['BM']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CM',
+                                                      'value' => $ts2502['CM']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DM',
+                                                      'value' => $ts2502['DM']))?>
+  </td>
+  <td class="input">
+  <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EM',
+                                                      'value' => $ts2502['EM']))?>
+  </td>
+</tr>
+
+</table>
+
+<table>
+
+  <tr class="tab-title">
+    <th class="maintitle" colspan="5">II - MESURES D ALLEGEMENT</th>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">14</td>
+    <td class="libelle">
+      <label for="ts2502_fa">Franchise (si le montant de la ligne 13 < ou = 840 € alors reporter le montant total inscrit en ligne 13</label>
+    </td>
+    <td class="line_id">J</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FA',
+                                                        'value' => $ts2502['FA']))?>
+    </td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">15</td>
+    <td class="libelle">
+      <label for="ts2502_fb">Décote [si le montant de ligne 13>840 € mais < ou = 1680 € alors calculer (1680 - montant inscrit en ligne 13) x 3/4]</label>
+    </td>
+    <td class="line_id">K</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FB',
+                                                        'value' => $ts2502['FB']))?>
+    </td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">16</td>
+    <td class="libelle">
+      <label for="ts2502_fc">Abattement [si le montant de la ligne 13 - (montant ligne 14 ou 15) < 6002€ alors porter ce montant sinon inscrire 6002€]</label>
+    </td>
+    <td class="line_id">L</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FC',
+                                                        'value' => $ts2502['FC']))?>
+    </td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">17</td>
+    <td class="libelle">
+      <label class="bold" for="ts2502_fd">Taxe nette due : ligne 13 - (ligne 14 ou ligne 15 + ligne 16) </label>
+    </td>
+    <td class="line_id">M</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FD',
+                                                        'value' => $ts2502['FD']))?>
+    </td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">18</td>
+    <td class="libelle">
+      <label class="bold" for="ts2502_aa">montant des sommes déjà versées au titre de la période</label>
+    </td>
+    <td class="line_id">N</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FE',
+                                                        'value' => $ts2502['FE']))?>
+    </td>
+  </tr>
+
+</table>
+
+
+<table>
+
+  <tr class="tab-title">
+    <th class="maintitle" colspan="5">III - PAIEMENT OU EXCEDENT</th>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">20</td>
+    <td class="libelle">
+      <label for="ts2502_ga">Montant du versement à acquitter (= (ligne 17 - ligne 18) ou (=0 si négatif)) (tous moyens de paiement)</label>
+    </td>
+    <td class="line_id">P</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GA',
+                                                        'value' => $ts2502['GA']))?>
+    </td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">21</td>
+    <td class="libelle">
+      <label for="ts2502_gb">Excédent de versement (=(ligne 18 - ligne 17) ou (=0 si négatif)). Remplir ligne 22 et/ou 23</label>
+    </td>
+    <td class="line_id">Q</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GB',
+                                                        'value' => $ts2502['GB']))?>
+    </td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">22</td>
+    <td class="libelle"><label for="ts2502_gc">Remboursement demandé</label></td>
+    <td class="line_id">R</td>
+    <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GC', 'value' => $ts2502['GC']))?> </td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">22Bis</td>
+    <td class="libelle"><label for="ts2502_gd">Demande d'imputation sur échéance future</label></td>
+    <td class="line_id">R</td>
+    <td class="input"> <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GD', 'value' => $ts2502['GD']))?> </td>
+  </tr>
+
+  <tr class="elt">
+    <td class="line_id">23</td>
+    <td class="libelle">
+      <label for="ts2502_ge">Report année suivante sur versement provisionnel 2501</label>
+    </td>
+    <td class="line_id">S</td>
+    <td class="input">
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GE',
+                                                        'value' => $ts2502['GE']))?>
+    </td>
+  </tr>
+
+</table>
+
+
+</div>

@@ -1,0 +1,56 @@
+<div id="middle-help-dialog" style="<?=$show_middle_help ?: 'display: none' ?>">
+  <div class="dialog-overlay">&nbsp;</div>
+  <div class="absolutize">
+    <div class="wrapper-width" >
+      <div class="help-box " style="left: 380px; top: 70px; text-align: right">
+        Retrouvez ici votre<br>
+        espace adhérent avec<br>
+        l’accès à vos déclarations et<br>
+        vos tableaux de bord.
+        <span class="help-box__arrow-righttop"></span>
+      </div>
+      <div class="help-box " style="left: 780px; top: 70px;">
+        Votre compte utilisateur<br>
+        (e-mail, mot de passe,<br>
+        comptes secondaires).
+        <span class="help-box__arrow-lefttop"></span>
+      </div>
+      <div class="help-box " style="top: 252px; left: 260px;">
+        Passez facilement d’un<br>
+        adhérent à l’autre.
+        <span class="help-box__arrow-left"></span>
+      </div>
+      <div class="help-box " style="top: 310px; left: 310px;">
+        Effectuez une<br>
+        nouvelle déclaration.
+        <span class="help-box__arrow-left"></span>
+      </div>
+
+      <div class="help-box " style="top: 492px; left: 250px;">
+        Souscrire à un<br>
+        nouveau service.
+        <span class="help-box__arrow-left"></span>
+      </div>
+
+      <div class="help-box " style="top: 577px; left: 250px;">
+        Gérez ici les coordonnées<br>
+        de l’adhérent.
+        <span class="help-box__arrow-left"></span>
+      </div>
+
+      <div class="help-box " style="left: 310px; top: 673px;">
+        Votre compte utilisateur<br>
+        (e-mail, mot de passe,<br>
+        comptes secondaires).
+        <span class="help-box__arrow-left"></span>
+      </div>
+      <button type="button"
+              style="position: absolute; right: 20px; top: 240px; "
+              class="btn btn--color-green  middle-help-dialog-btn"
+              onclick="ntd.helpOverlay.close(this)"
+              data-dialog="middle-help-dialog">
+        <i class="fa fa-times" style="font-size: 15px; margin-right: 10px;"></i> FERMER L'AIDE
+      </button>
+    </div>
+  </div>
+</div>

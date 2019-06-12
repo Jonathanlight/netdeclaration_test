@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kwo-interface>
+  <finder order="id desc" include="form">
+    <filters>
+      <filter type="text" name="id" label="réponse ID"/>
+      <filter type="text" name="name" label="résumé"/>
+      <filter type="select" name="form_id" options="Model::asHash('form')" label="formulaire"/>
+      <filter type="yesno" default="1" name="status" label="traitée"/>
+    </filters>
+    <cols>
+      <col name="form_name" label="formulaire associé" />
+      <col name="name" label="résumé"/>
+      <col name="created_at" />
+    </cols>
+  </finder>
+</kwo-interface>

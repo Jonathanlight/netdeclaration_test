@@ -1,0 +1,175 @@
+
+.wysiwyg
+
+
+  //h1
+  //  @include font-size-big()
+  //  @include font--darkblue()
+  //  @include font-family--georgia()
+  //h2
+  //  @include font-size-big()
+  //  @include font--lightblue()
+  //  @include font-family--georgia()
+  //h3
+  //  @include font--darkblue()
+
+  h2
+    @include font-family--georgia()
+    @include font--lightblue()
+    @include font-size-big()
+    font-size: 22px
+    //margin-top: 15px
+
+  h3
+    @include font--darkblue()
+    font-size: 16px
+    margin-top: 17px
+    margin-bottom: 0
+
+  strong
+    font-weight: bold
+
+  em
+    font-style: italic
+
+  ul li
+    margin-left: 10px
+    list-style: disc inside none
+
+  a
+    color: $color--red
+    text-decoration: none
+    &.btn
+      color: white
+      &:hover
+        text-decoration: none
+    &:hover
+      text-decoration: underline
+
+  table
+    display: table
+    padding: 0
+    width: 100%
+
+    td, th
+      padding: 10px
+      border-color: $color--bordergrey
+      border-width: 1px
+      border-style: solid
+      color: $color--text-default
+      vertical-align: middle
+      &:first-child
+        border-left-width: 0
+      &:last-child
+        border-right-width: 0
+    th
+      color: $color--darkblue
+      background: $color--lightblue--1
+    td
+      font-size: 12px
+    .table--ntd__bold
+      font-size: 14px
+      color: $color--darkblue
+      font-weight: bold
+    thead td,
+    thead th
+      border-top-width: 0
+    tbody
+      tr:nth-child(even)
+        td
+          background: $color--table-cell-even
+    th[align="center"]
+      text-align: center
+
+
+
+  .limited-cell-content
+    height: 3.9em
+    overflow: hidden
+
+
+
+  .kwo-block__title--darkblue
+    @include font-family--georgia()
+    @include font--darkblue()
+    @include font-size-big()
+
+  .kwo-block__title--lightblue
+    @include font-family--georgia()
+    @include font--lightblue()
+    @include font-size-big()
+
+  .kwo-aside__title
+    @include font-family--georgia()
+    @include font--darkblue()
+    font-size: 20px
+    margin-bottom: 5px
+    display: block
+
+  .kwo-block__information
+    margin: 14px 0 17px
+
+  hr
+    border: none
+    border-top: 1px solid $color--bordergrey
+    margin: 20px 0
+
+.box-content-article
+  border-top: 2px solid #EFF1F7
+  margin-top: 20px
+  padding-top: 25px
+
+
+.wysiwyg--aside
+  border-bottom: 4px solid #DADEE6
+  padding-bottom: 20px
+  margin-bottom: 30px
+  margin-top: 20px
+  .kwo-aside__title
+    padding-left: 25px
+    padding-right: 40px
+
+  .kwo-aside__content
+    position: relative
+    display: block
+    padding-left: 25px
+    padding-right: 40px
+
+    .fa
+      position: absolute
+      right: 0
+      bottom: 0
+      color: #dadee6
+      font-size: 36px
+      text-shadow: 0 1px 0 rgba(95, 111, 146, 0.37), 0 1px 1px #fffFFF
+
+  .wysiwyg--aside__list-item__actu
+    margin-left: 25px
+
+
+  .wysiwyg--aside__list-item, .wysiwyg--aside__list-item__actu
+    @include font-family--georgia()
+    @include clearFloat()
+    color: $color--darkblue
+    font-size: 14px
+    margin-right: 40px
+    .wysiwyg--aside__list-item__icon
+      font-size: 18px
+      width: 50px
+      text-align: center
+      float: left
+      color: $color--red
+    .wysiwyg--aside__list-item__content
+      display: block
+      overflow: hidden
+    .wysiwyg--aside__list-item__content__actu
+      padding: 10px 0
+      display: block
+      overflow: hidden
+
+.scope-front.action-article .wysiwyg h2
+  font-family: inherit
+  color: #5f6165
+  font-weight: bold
+  font-style: inherit
+  font-size: inherit

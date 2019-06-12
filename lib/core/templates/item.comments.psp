@@ -1,0 +1,41 @@
+<?php if ($comments->numRows() < 1): ?>
+  
+Aucun commentaire
+
+<?php return ; endif; ?>
+
+<fieldset><legend>Commentaire(s)</legend>
+
+<table class="hbox"><tbody><tr><td>
+
+<ul class="elts">
+<?php foreach ($comments as $comment): ?> 
+<li>
+ <div>
+
+<img src="/<?=PIX_PATH?>/bullets/delete.png"
+       class="action"
+       data-confirm="êtes vous sûr ?"
+       data-id="<?=$comment->getId()?>"
+       onclick="Kwo.CMT.onRemove(this)" />
+
+ <a href="javascript:void(0)"
+    data-id="<?=$comment->user_id?>"
+    onclick="new Kwo.USR(this)"><?=$comment->user_name?></a> - 
+  <?=H::when($comment->created_at)?> - 
+  [<?=$comment->getId()?>] 
+ </div>
+ <div class="content"><?=$comment->content?></div>
+
+</li>
+<?php endforeach ; ?>
+</ul>
+
+</td><td id="comment-details">
+ 
+ &nbsp;
+
+</td></tr></tbody></table>
+
+</fieldset>
+

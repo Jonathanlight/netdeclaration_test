@@ -1,0 +1,2 @@
+<?= H::inc('ntd:_iban.form', array('iban' => $iban,
+                                   'adherent' => $_current_adherent)) ?>

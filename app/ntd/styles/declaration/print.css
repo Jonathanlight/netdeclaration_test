@@ -1,0 +1,172 @@
+.print-only { display:block !important; }
+.no-print { display:none !important; }
+
+/* ----- FACTURE ----- */
+.wrapper-header,
+.wrapper-footer,
+.account-wrapper-left,
+.wrapper-content-right,
+.wrapper-facture-box .btn-back,
+.wrapper-facture-box .button-print { display:none; }
+
+.wrapper .wrapper-content{ width:auto; }
+.account-wrapper .account-panel .body-panel.no-toolbar-panel { border:0; }
+
+body { color: #000000; background: #ffffff; /*font-family: "Times New Roman", Times, serif;*/ font-size: 10pt; }
+.wrapper-content-left {display:none;}
+.wrapper-content-right {display:none;}
+
+.wrapper-facture-box h1 { color: #000000; }
+.wrapper-facture-box .wrapper-facture-header .col-left { width: 210pt; }
+.wrapper-facture-box .wrapper-facture-header .col-right { width: 210pt; }
+
+.wrapper-facture-box table.ntd-table td,
+.wrapper-facture-box table.ntd-table th { font-size: 1em; background: white; color: #000000; }
+.wrapper-facture-box h3 { color: #000000; background: white; font-weight: bold; font-size: 1em; line-height: 1.75em; font-family: arial; padding: 0; }
+
+.wrapper-facture-box .snippet-content,
+.wrapper-facture-box p { color: #000000; line-height: 1.3em; font-size: 1em; padding: 0; margin:0; }
+.wrapper-facture-box .wrapper-facture-header .content { padding:0 ; }
+.wrapper-facture-box .wrapper-facture-content { border-top:1pt solid #000000; border-bottom:1pt solid #000000; }
+
+table.ntd-table,
+table.ntd-table td,
+table.ntd-table th { border-width:1pt; border-color:#000000 !important; }
+
+.account-wrapper .account-panel .body-panel.no-toolbar-panel { padding:0; }
+
+.page-break { page-break-after:always; height:0; }
+span.br { display:block; }
+
+/* ----- DECLARATION ----- */
+.account-declaration-edit-box h1 {margin-top:0}
+.account-declaration-edit-box .ntd-button { display:none; }
+.account-declaration-edit-box .form-ntd {padding:0}
+.account-declaration-edit-box .form-ntd table tr td,
+.account-declaration-edit-box .form-ntd table tr.elt td.libelle{ border:1pt #000000 solid; }
+.account-declaration-edit-box .form-ntd table tr.elt td.input input,
+.account-declaration-edit-box .form-ntd table tr.elt td.input_35 input,
+.account-declaration-edit-box .form-ntd table tr.elt td.input_35 select,
+.account-declaration-edit-box .form-ntd table tr.elt td.input select{ border:0pt #000000 solid; color:#000000;  }
+.account-declaration-edit-box .form-ntd table tr td,
+.account-declaration-edit-box .form-ntd table tr.elt td.input,
+.account-declaration-edit-box .form-ntd table tr.elt td.input_35 { color:#000000; padding:1pt !important; }
+.account-declaration-edit-box .form-ntd table tr.elt td.input_35 input {text-align: right;}
+.account-declaration-edit-box .form-ntd table tr.elt td.input_70 input {width:400px; text-align: right;}
+.account-declaration-edit-box .form-ntd table tr.elt td.td-3-cols{ width:auto; }
+.account-declaration-edit-box .img-tooltip,
+.account-declaration-edit-box .declaration-steps { display:none; }
+.account-declaration-edit-box .formulaire-page { display:block !important;  }
+.account-declaration-edit-box .break { page-break-after:always; }
+
+
+.extension-declaration { font-size:7pt; line-height:1; font-family:Arial, serif; }
+.extension-declaration input { padding: 0;   }
+.extension-declaration select { padding: 0;appearance: none; -moz-appearance: none;-webkit-appearance: none; }
+.extension-declaration h1 {margin-top:0; display:none;}
+.extension-declaration .ntd-button { display:none; }
+.extension-declaration table { width:100%; border-collapse:collapse; }
+.extension-declaration td { border:1px #666666 solid; padding: 0; letter-spacing: -0.2px;}
+.extension-declaration input,
+.extension-declaration select { border:0 #000000 solid; color:#000000; width:100%; background:transparent; font-weight:bold; font-size:7pt; }
+
+.extension-declaration .imprime-controls ,
+.extension-declaration .buttons-container,
+.extension-declaration .btn-remove-container,
+.extension-declaration .btn-add-container,
+.extension-declaration .img-tooltip,
+.extension-declaration .imprime-page.formulaire-repetable,
+.extension-declaration .imprime-page.formulaire-repetable .default-page,
+.extension-declaration .load-infos,
+.extension-declaration .formulaire-repetable-select,
+.extension-declaration .declaration-steps { display:none; }
+.extension-declaration .imprime-page,
+.extension-declaration .formulaire-repetable .imprime-box { display:block !important;   }
+.extension-declaration .imprime-page.home { display:none !important; }
+.extension-declaration .formulaire-page { display:block !important; page-break-after:always; }
+.extension-declaration .formulaire-page.force-hidden { display:none !important; page-break-after:avoid; }
+.extension-declaration .no-page-break .formulaire-page { page-break-after:avoid; }
+.extension-declaration .no-page-break .formulaire-page:last-child { page-break-after:always; }
+.extension-declaration .imprime-page:last-child .formulaire-page:last-child { page-break-after:avoid; }
+.extension-declaration .imprime-box.hidden { display:none !important; }
+.extension-declaration .formulaire-page td { margin:2px !important; }
+.extension-declaration .formulaire-page td > * { display:block; margin:2px !important; }
+.extension-declaration .formulaire-page td label { padding:0; line-height:1; }
+.extension-declaration .formulaire-page td.impot_field { padding:0; }
+.extension-declaration .formulaire-page td.title { color:#333333; font-weight:bold; line-height:1.3em; padding:0;}
+.extension-declaration .formulaire-page td.h2 { text-transform:uppercase; font-size:16pt; text-align:center; }
+.extension-declaration .formulaire-page td.h3 { color:#333333; font-size:13pt; }
+.extension-declaration .formulaire-page td.ta-left { text-align:left; }
+.extension-declaration .formulaire-page td.ta-center { text-align:center; }
+.extension-declaration .formulaire-page td.ta-right { text-align:right; }
+.extension-declaration .formulaire-page td.bold { font-weight:bold; }
+.extension-declaration .formulaire-page .imprime-field input.type-moa { text-align:right; }
+.extension-declaration .print-footer { position:fixed; top:0; width:100%; text-align:center; }
+.extension-declaration .fidentif-rof { overflow:hidden; }
+.extension-declaration .fidentif-rof select { float: left; margin-right: 10pt; width: auto; }
+.extension-declaration .fidentif-rof .elt-field { float:left; }
+.extension-declaration .fidentif-rof .click-label input  { width:auto; }
+.extension-declaration .big-text  { color: #000000; font-size: 1.2em; font-weight: normal; line-height: 1.1em; margin: 0; }
+.extension-declaration .formulaire-header .row { overflow:hidden; }
+.extension-declaration .formulaire-header .ftype-code { float:right; }
+.extension-declaration .formulaire-header .millesime { float:left; }
+.extension-declaration .ftype-title { text-align:center;}
+.extension-declaration .formulaire-page br { display:none; }
+.extension-declaration .formulaire-page .merged_tds .merged_td { float:left; }
+.extension-declaration .formulaire-page .merged_tds .merged_td,
+.extension-declaration .formulaire-page .merged_tds .merged_td label { display:inline; }
+.extension-declaration .formulaire-page td.small-size { font-size: 6pt; padding:0; }
+.extension-declaration .formulaire-page td.small-size.impot_field,
+.extension-declaration .formulaire-page td.small-size > label { padding:0; }
+.extension-declaration .formulaire-page td.small-size input { font-size:7pt; }
+.extension-declaration .formulaire-page td.little-width { width:50px; }
+.extension-declaration .formulaire-page td.medium-width { width:100px; }
+.extension-declaration .formulaire-page td.large-width { width:200px; }
+
+
+
+/* Exception tva */
+.form-ntd #exportateur-tva3519 table tr.elt td.input input {width:80px}
+
+.form-ntd #exportateur-tva3519 table tr.elt td.input { width: 80px;}
+
+.account-declaration-edit-box .formulaire-page .right {width: 270px;}
+.account-declaration-edit-box .formulaire-page .right .field-container input {width:150px;  font-size:11px}
+.account-declaration-edit-box .formulaire-page .right .field-container select {width:155px;  font-size:11px}
+.account-declaration-edit-box .formulaire-page .left {width: 385px;}
+.account-declaration-edit-box .formulaire-page .left .field-container input {width:265px;  font-size:11px}
+.account-declaration-edit-box .formulaire-page .left .field-container select {width:270px;  font-size:11px}
+
+.account-declaration-edit-box .formulaire-fieldset {padding:2px}
+.account-declaration-edit-box .formulaire-fieldset .field-container label {font-weight: normal; font-size:11px; width:110px}
+
+.account-declaration-edit-box .formulaire-page:last-child { page-break-after:avoid; }
+.account-declaration-edit-box .form-ntd { border:0; }
+.account-declaration-edit-box .formulaire-page table { page-break-inside:avoid; }
+.account-declaration-edit-box .textarea-split-comments { width:350pt; border:1pt solid #000000; }
+
+
+
+/* ----- Bulletin d'adhésion ----- */
+.account-bulletin-adhesion-box { font-family: Arial; }
+.account-bulletin-adhesion-box strong { font-weight: bold; }
+.account-bulletin-adhesion-box .logo { float:left; }
+.account-bulletin-adhesion-box h2 { text-align:center; padding-top:5pt; color: #002e5f; font-weight: normal; font-size: 1.8em; margin: 0; line-height: 1.5em; font-family: Georgia; } 
+.account-bulletin-adhesion-box .ntd-table { margin-top:20pt; page-break-inside:avoid; width:100%; border-collapse:collapse;  }
+.account-bulletin-adhesion-box .ntd-table th { text-align:left; font-size:14pt; }
+.account-bulletin-adhesion-box .ntd-table,
+.account-bulletin-adhesion-box .ntd-table th,
+.account-bulletin-adhesion-box .ntd-table td { border:1pt solid #000000 !important; color: #000000; }
+.account-bulletin-adhesion-box .ntd-table td { padding: 5px; vertical-align: top; }
+.account-bulletin-adhesion-box .ntd-table td p { line-height: 1.3em; font-size:10pt; margin:0px 0;  }
+.account-bulletin-adhesion-box .ntd-table .label { background-color: #dcdcdc; text-align: right; }
+.account-bulletin-adhesion-box .bulletin-adhesion-footer { overflow:hidden; margin-top:20pt; }
+.account-bulletin-adhesion-box .bulletin-adhesion-footer .left { float:left; width:50%; }
+.account-bulletin-adhesion-box .bulletin-adhesion-footer .right { float:left; width:50%; }
+.account-bulletin-adhesion-box .bulletin-adhesion-footer p { font-size:1.2em; line-height:2.3em; font-weight:bold; }
+.account-bulletin-adhesion-box .account-bulletin-adhesion-header { display:none; }
+
+.account-declaration-edit-box .formulaire-page .formulaire-fieldset {width: 49%;}
+.account-declaration-edit-box .formulaire-page .formulaire-fieldset .field-container input,
+.account-declaration-edit-box .formulaire-page .formulaire-fieldset .field-container select {width: 200px;}
+.account-declaration-edit-box .formulaire-page .formulaire-fieldset .field-container .field-type-checkbox {width: 50px;}

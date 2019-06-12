@@ -1,0 +1,153 @@
+<script type="text/javascript">
+
+  function onSyncFormSubmit(form) {
+    if (!confirm('êtes-vous sûr ?')) {
+      return false;
+    }
+    var modal = $('#modal--main').modal();
+    jQuery.post(jQuery(form).data('action'),
+                jQuery(form).serialize(),
+                function(data) {
+                  modal.find('.modal-title').text('Result');
+                  modal.find('.modal-body').html(data)
+                  modal.show();
+                });
+    return false;
+  }
+
+</script>
+<pre><? //= var_export($rows, true) ?></pre>
+<h1><?= $model ?></h1>
+
+
+<form data-action="/decbdd.item.sync"
+      method="post"
+      onsubmit="return onSyncFormSubmit(this)">
+  <input type="hidden" name="mode" value="sync"/>
+  <input type="hidden" name="model" value="<?= $model ?>"/>
+
+
+  <div class="row">
+    <nav class="col-md-6">
+      <ul class="pagination">
+        <li class="<?= $page - 1 < 1 ? 'disabled' : '' ?>">
+          <a href="?page=<?= max(1, $page - 1) ?>" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <?php foreach (range(max(1, $page - 4), min(1 + floor($max_next_increment_id / $limit), $page + 4)) as $step): ?>
+          <li <?= $step == $page ? 'class="active"' : '' ?>>
+            <a href="?page=<?= $step ?>"><?= ($step - 1) * $limit ?> -> <?= $step * $limit ?></a>
+          </li>
+        <?php endforeach; ?>
+        <li class="<?= $max_next_increment_id / $limit < $page + 1 ? 'disabled' : '' ?>">
+          <a href="?page=<?= min($max_next_increment_id / $limit, $page + 1) ?>" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="form-group col-md-1">
+      <label>De</label>
+      <select name="from_app" class="form-control">
+        <?= H::options(array_reverse(array_combine(array_keys(DecBdd::$apps), array_keys(DecBdd::$apps)))) ?>
+      </select>
+    </div>
+    <div class="form-group col-md-1">
+      <label>Vers</label>
+      <select name="to_app" class="form-control">
+        <?= H::options(array_reverse(array_combine(array_keys(DecBdd::$apps), array_keys(DecBdd::$apps)))) ?>
+      </select>
+    </div>
+    <div class="form-group col-md-3">
+      <label>&nbsp;</label>
+      <input type="submit"
+             style="display: block;"
+             value="Synchroniser"
+             class="btn btn-danger"
+        >
+    </div>
+  </div>
+
+
+  <div style="position:fixed; top:160px; left: 0; right:0; bottom: 0; overflow-y: auto; border-top: 1px solid">
+    <table class="table table-condensed">
+      <colgroup>
+        <col width="*">
+        <col>
+        <?php foreach (DecBdd::$apps as $app => $hostname): ?>
+          <col width="<?= 80 / count(DecBdd::$apps) ?>%">
+        <?php endforeach; ?>
+      </colgroup>
+      <tr>
+        <th colspan="2">
+          <input type="checkbox" onclick="jQuery('.checkbox--id').prop('checked', jQuery(this).prop('checked'))">
+          Total : <?= count($rows) ?>
+          <a onclick="jQuery('tbody.collapse').addClass('in')">All</a>
+        </th>
+        <?php foreach (DecBdd::$apps as $app => $hostname): ?>
+          <th><?= $app ?> (last Id = <?= $last_id[$app] ?>)</th>
+        <?php endforeach; ?>
+      </tr>
+      <?php foreach ($rows as $row): ?>
+        <tr>
+          <td>
+            <label style="display: block">
+              <input type="checkbox" name="ids[]" value="<?= $row['id'] ?>" class="checkbox--id">
+              ID : <?= $row['id'] ?>
+            </label>
+          </td>
+          <td>
+            <?php if (count(current($row['values'])) - 1 > 0): ?>
+              <a href="#field-<?= $row['id'] ?>" data-toggle="collapse"
+                 style="white-space: nowrap">Afficher détails (<?= count(current($row['values'])) - 1 ?>)</a>
+            <?php endif; ?>
+          </td>
+          <?php foreach (DecBdd::$apps as $app => $hostname): ?>
+            <td class="<?= $row['values'][$app]['name']['is_diff'] ? 'bg-warning' : 'bg-success' ?> nopadding">
+                <pre
+                  style="max-width: 400px; max-height: 200px;"><?= h($row['values'][$app]['name']['value']) ?></pre>
+            </td>
+            <?php unset($row['values'][$app]['name']); ?>
+          <?php endforeach; ?>
+        </tr>
+
+
+        <tbody class="collapse" id="field-<?= $row['id'] ?>" aria-expanded="true">
+        <?php foreach ($row['fields'] as $field) : ?>
+          <?php if ($field == 'name') continue; ?>
+          <tr>
+            <th class="nopadding" colspan="2">
+              <pre><?= $field ?> = </pre>
+            </th>
+            <?php foreach (DecBdd::$apps as $app => $hostname): ?>
+              <td class="<?= $row['values'][$app][$field]['is_diff'] ? 'bg-warning' : 'bg-success' ?> nopadding">
+                <?php if (is_array($row['values'][$app][$field]['value'])) : ?>
+                  <pre
+                    style="max-width: 400px; max-height: 200px;;"><?= var_export($row['values'][$app][$field]['value'], true) ?></pre>
+                <?php else: ?>
+                  <pre
+                    style="max-width: 400px; max-height: 200px;;"><?= h($row['values'][$app][$field]['value']) ?></pre>
+                <?php endif; ?>
+              </td>
+            <?php endforeach; ?>
+          </tr>
+        <?php endforeach; ?>
+        </tbody>
+
+      <?php endforeach; ?>
+    </table>
+  </div>
+</form>
+<style>
+  pre {
+    margin: 0;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    padding: 3px 6px;
+  }
+
+  .nopadding {
+    padding: 0 !important;
+  }
+</style>

@@ -1,0 +1,322 @@
+// ----- Blocks
+
+.block-separator
+  border: none
+  border-top: 1px solid $color--bordergrey
+
+.block-separator--double
+  border-top-width: 3px
+
+.block
+  font-family: Arial
+  font-size: 14px
+  font-weight: normal
+  color: $color--text-default
+
+  .block__title
+    @include font-family--georgia()
+    @include font--lightblue()
+    @include font-size-big()
+    margin-bottom: 13px
+
+
+  .block__title--darkblue
+    @include font-family--georgia()
+    @include font--darkblue()
+
+  .block__description
+    @include font--darkblue()
+    font-size: 16px
+    margin: 0 0 14px
+
+  .block__description-sub-h2
+    @include font--darkblue()
+    font-size: 16px
+    margin-top: 17px
+    margin-bottom: 0
+
+  .block__description-margin-top
+    @include font--darkblue()
+    font-size: 16px
+    margin-top: 40px
+    margin-bottom: 0
+
+
+.block__warning
+  color: $color--red
+
+.block__bold
+  font-weight: bold
+  margin-top: 20px
+
+.block__height
+  height: 40px
+
+.block__inscription
+  margin-top: 50px
+
+
+
+.block--hidden
+  display: none
+
+.block__send
+  margin-top: 30px
+
+
+
+.block__information-edi
+  margin-bottom: 20px
+
+.block__content
+  border-top: 1px solid #EFF1F7
+  border-bottom: 3px solid #EFF1F7
+  margin-top: 25px
+
+// ----- wrapper__plan
+.wrapper-plan
+  margin-top: 10px
+  li
+    margin-left: 30px
+  .font--lightblue
+    margin-top: 10px   
+
+// ----- FlashInfo
+
+.flashinfo
+  background: #708bc0
+  border: 1px dashed #FFFFFF
+  padding: 30px 20px 30px 20px
+  color: #FFFFFF
+  font-size: 13px
+  font-family: Arial
+  .title-flashinfo
+    font-weight: bold
+    font-style: italic
+    padding-bottom: 10px
+    display: block
+
+  .flashinfo__label
+    @include font-family--georgia()
+    font-weight: bold
+    font-style: italic
+    font-size: 14px
+
+  .flashinfo__button
+    width: 13px
+    height: 13px
+    float: right
+    border: 0
+    padding: 0
+    font-size: 0
+    position: absolute
+    top: 20px
+    right: 22px
+    background: url(/app/ntd/pix/general/flashinfo__btn-close.png) no-repeat center center
+    &:hover
+      color: $color--red
+      border: 1px solid #b4c1dd
+      width:  27px
+      height: 27px
+      position: absolute
+      top: 13px
+      right: 15px
+
+.flashinfo--with-button
+  padding-right: 70px
+
+.flashinfo--yellow
+  background: $color--yellow
+  color: #002e60
+
+.flashinfo--dev
+  background: $color--red !important
+
+
+// ----- Breadcrumb
+.breadcrumb
+  color: $color--lightblue
+  font-size: 11px
+  margin: 30px 0 20px
+
+  .breadcrumb__separator
+    margin: 0 3px
+
+// ----- Links style
+
+.ntd-link
+  color: $color--lightblue
+  text-decoration: none
+  cursor: pointer
+  &:hover
+    text-decoration: underline
+  &.ntd-link--underline
+    text-decoration: underline
+    &:hover
+      text-decoration: none
+
+
+.link--background-blue
+  background-color: $color--background-blue
+  color: $color--white
+  font-size: 11px
+  padding: 3px 5px
+  display: inline-block
+  &:hover
+    background-color: $color--background-darkblue
+    text-decoration: none
+
+  .wysiwyg &
+    color: $color--white
+  .wysiwyg &:hover
+    text-decoration: none
+
+
+// ----- Pagination
+.pagination
+  display: block
+  text-align: right
+  .pagination-page
+    @include btnTopBorder(#f2f6ff, #cbcfd6)
+    background-color: $color--grey
+    border-radius: 3px
+    color: $color--lightblue
+    height: auto
+    padding: 8px 12px
+    width: auto
+    &:hover
+      @include btnTopBorder(#8199c7, #505e7b)
+      background-color: $color--lightblue
+      color: $color--white
+  .pagination-selected
+    @include btnTopBorder(#3a6594, #002a57)
+    background-color: $color--darkblue
+    color: $color--white
+
+// ------ Navigation
+.navigation
+  margin-top: 100px
+  border-bottom: 1px solid #DADEE6
+  border-top: 1px solid #DADEE6
+  padding: 10px 0
+  display: block
+  a
+    &:hover
+      color: $color--red
+      text-decoration: none  
+  .fa-long-arrow-left, .fa-th-list
+    margin-right: 10px
+  .fa-long-arrow-right
+    margin-left: 10px
+  .fa-long-arrow-left, .fa-long-arrow-right
+    color: $color--red
+  .prev
+    padding: 20px 0px 20px 10px
+    width: 176px
+    &:hover
+      color: $color--red
+  .next
+    padding: 20px 10px 20px 50px
+    &:hover
+      color: $color--red
+  .list
+    color: $color--darkblue
+    padding: 20px 30px
+    border-left: 1px solid #DADEE6
+    border-right: 1px solid #DADEE6
+    &:hover
+      color: $color--red
+
+// ----- Input
+.text
+  color: $color--darkblue 
+
+// ----- TABS
+.tab
+  display: none
+.tab.selected
+  display: block
+.tabs-holder
+  margin-bottom: 30px
+.tabs-nav
+  position: relative
+  margin: 40px 0 20px
+  &:after
+    background: $color--bordergrey
+    border-top: 1px solid $color--bordergrey-1
+    content: ""
+    position: absolute
+    left: 0
+    top: 28px
+    width: 100%
+    height: 7px
+  li
+    display: inline-block
+    margin-right: -28px
+    color: $color--lighterblue
+    a
+      display: inline-block
+      height: 29px
+      text-align: center
+      &:after, &:before
+        content: ""
+        display: inline-block
+        background: url(/app/ntd/pix/tabs/left.png) no-repeat
+        width: 27px
+        height: 29px
+        float: left
+      &:after
+        background: url(/app/ntd/pix/tabs/right.png) no-repeat
+      span
+        background: $color--lightblue--1
+        display: inline-block
+        float: left
+        font-family: Arial, sans-serif
+        font-size: 13px
+        font-weight: bold
+        line-height: 29px
+        height: 29px
+        color: $color--darkblue
+        overflow: hidden
+        &.tabs-nav--width-278px
+          width: 278px
+          padding: 0 10px
+      &:hover
+        span
+          background: $color--bordergrey
+        &:before
+          background: url(/app/ntd/pix/tabs/left_active.png) no-repeat
+        &:after
+          background: url(/app/ntd/pix/tabs/right_active.png) no-repeat
+    .active
+      position: relative
+      z-index: 1
+      &:before
+        background: url(/app/ntd/pix/tabs/left_active.png) no-repeat
+      &:after
+        background: url(/app/ntd/pix/tabs/right_active.png) no-repeat
+      span
+        background: $color--bordergrey
+        border-top: 1px solid $color--bordergrey-1
+        color: $color--darkblue
+    .disabled
+      span
+        color: $color--lighterblue
+        //background: $color--lightblue--1 !important
+        font-size: 11px
+        font-weight: normal
+      //&:before
+      //  background: url(/app/ntd/pix/tabs/left.png) no-repeat !important
+      //&:after
+      //  background: url(/app/ntd/pix/tabs/right.png) no-repeat !important
+
+//----- Modal
+.calendar
+  td
+    a
+      background: $color--lightblue
+  .selected
+    background: $color--darkblue
+
+.page__content.wysiwyg  
+  line-height: 22px

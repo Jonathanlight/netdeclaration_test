@@ -1,0 +1,19 @@
+<?php foreach ($cells as $i => $cell) : ?>
+  <td
+     <?= Imodel::$types_data[$cell['type']]['class']
+         || $cell['params'][Imodel::OPT_CLASS] ? 'class="'.Imodel::$types_data[$cell['type']]['class'].' '.implode(' ', $cell['params'][Imodel::OPT_CLASS]).'"' : '' ?>
+     <?=$cell['params'][Imodel::OPT_COLSPAN] ? 'colspan="'.$cell['params'][Imodel::OPT_COLSPAN].'"' : ""?>
+     <?=$cell['params'][Imodel::OPT_ROWSPAN] ? 'rowspan="'.$cell['params'][Imodel::OPT_ROWSPAN].'"' : ""?>
+  ><?php
+  if ($cell['type'] == Imodel::TYPE_LABEL) : ?>
+      <label><?=c($args[$i])?></label>
+  <?php elseif ($cell['type'] == Imodel::TYPE_IMPOT) :
+    echo strtoupper($args[$i]);
+
+  elseif ($cell['type'] == Imodel::TYPE_FIELD) : ?>
+    <?php if($args[$i]) : ?>
+        <?=htmlentities('<?= $imprime->renderField("'.$args[$i].'"'.($opts['extensible'] ? ', $index' : '').'); ?>')?>
+      <?php endif; ?>
+    <?php endif; ?>
+  </td>
+<?php endforeach;?>

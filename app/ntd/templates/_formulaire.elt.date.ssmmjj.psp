@@ -1,0 +1,22 @@
+<div class="elt-ssmmjj-container" id="<?=$elt['id']?>-controls-container" onmouseover="<?=$elt['onmouseover']?>" onmouseout="<?=$elt['onmouseout']?>">
+<?php
+    $days_options = array();
+    for($i = 1; $i <= 31; $i++) $days_options[$i] = $i;
+?>
+
+<?php
+    $fieldName = explode('_', $elt['id']);
+    $formName = $fieldName[0] . '_' . $fieldName[1];
+?>
+<?=Elt::select(array('id' => $elt['id'] . "-day",
+                     'options' => $days_options,
+                     'first' => '-',
+                     'value' => $value_day,
+                     'events' => array('change' => "NTD.Generic.date_ssmmjj.onSelectChange(this); asserts.run('".$formName."');")));?>
+
+<?=Elt::select(array('id' => $elt['id'] . "-month",
+                     'options' => I18n::$months[S('req')->getLocale()]['long'],
+                     'first' => '-',
+                     'value' => $value_month,
+                     'events' => array('change' => "NTD.Generic.date_ssmmjj.onSelectChange(this); asserts.run('".$formName."');")));?>
+</div>

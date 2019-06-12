@@ -1,0 +1,17 @@
+<table class="buttons-container">
+  <col width="30%"/>
+  <col/>
+  <col width="30%"/>
+  <tbody>
+
+    <tr>
+      <td align="left"><input type="button" class="ntd-button pagination-previous" value="Revenir à l'étape précédente"/></td>
+      <td align="center">
+      <?=Elt::select(array('options' => $ftypes_imprimes_options,
+                           'first' => 'Accueil',
+                           'class' => 'imprime-select'))?>
+      </td>
+      <td align="right"><input type="button" class="ntd-button pagination-next" value="Passer à l'étape suivante"/></td>
+    </tr>
+  </tbody>
+</table>

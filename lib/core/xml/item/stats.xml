@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+<box label="statistiques">
+ <grid value="$values" />
+</box>
+</kwo-interface>

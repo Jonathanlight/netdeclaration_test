@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="name desc">
+ <filters>
+  <filter name="id" />
+  <filter name="name" />
+  <filter name="price_type" options="Tarif::$price_types" label="Type de prix" />
+  <filter name="service_id"  />
+  <filter name="|%|adherent_types" options="Adherent::$types" label="Type d'adhérent" />
+ </filters>
+ <cols>
+  <col name="name" />
+  <col name="service_id" />
+  <col name="adherent_types" label="Type d'adhérent" />
+  <col name="adherent_level" label="Niveau adhérent" />   
+ </cols>
+</finder>
+
+</kwo-interface>

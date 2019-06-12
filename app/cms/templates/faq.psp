@@ -1,0 +1,29 @@
+<h1>
+ <img src="/app/faq/pix/faq.title.png" />
+ <?=String::capitalize($faq->title)?>
+</h1>
+
+<div class="layout-hbox-content">
+
+<div class="faq-questions">
+<?php foreach ($components as $component): ?>
+ <a href="javascript:void(0)"
+    onclick="Kwo.getDialog().onSelect(<?=$component->id?>)"><?=c($component->name)?></a>
+<?php endforeach; ?>
+</div>
+
+<div class="faq-components">
+<?php foreach ($components as $component): ?>
+ <div class="faq-component" id="component-<?=$component->id?>">
+  <div class="faq-question">
+   <a href="javascript:void(0)"
+     onclick="Kwo.getDialog().onRewind()">retour</a>
+   <span><?=c($component->name)?></span>
+  </div>
+  <div class="faq-answer"><?=$component->content?></div>
+ </div>
+<?php endforeach; ?>
+</div>
+
+</div>
+

@@ -1,0 +1,7 @@
+<?=
+H::inc("app/ntd/templates/formulaires/formulaire.edit.".$formulaire_type->name.'.psp',
+       array('formulaire_code' => $formulaire_type->name,
+             $formulaire_type->name => $formulaire_data,
+             'adherent' => $adherent,
+             'formulaire' => $formulaire,
+             'declaration' => $declaration))?>

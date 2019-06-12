@@ -1,0 +1,11 @@
+<div class="snippet method"><?= $method->snippet_other ?></div>
+<form action="javascript:void(0)"
+      onsubmit="Kwo.exec('/middle/payment.prelevement.submit', this, { callback:true, disable:true}); return false;"
+      class="form--ntd">
+  <?=
+  Elt::hidden(array('name' => 'item',
+                    'value' => $facture->getKey()))?>
+  <button type="submit"
+          class="btn btn--color-red margin-left--label-width"><?= c(l('btn.validate.choice')) ?></button>
+  <a class="btn btn--link" href="/middle/payment.cancel/-/item/<?= $facture->getKey() ?>"><?= c(l('cancel')) ?></a>
+</form>

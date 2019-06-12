@@ -1,0 +1,1133 @@
+<div class="formulaire-page" data-label="TVA 3310TER">
+  <div style="display:none">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA1',
+                                                      'value' => $tva3310ter['AA1']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA2',
+                                                      'value' => $tva3310ter['AA2']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA3',
+                                                      'value' => $tva3310ter['AA3']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA4',
+                                                      'value' => $tva3310ter['AA4']))?>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA5',
+                                                      'value' => $tva3310ter['AA5']))?>
+  </div>
+  
+  <table>
+    
+    <tr class="tab-title">
+      <th class="maintitle" colspan="5">COMMENTAIRES</th>
+    </tr>
+    
+    <tr class="tab-title">
+      <th class="input" colspan="4">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA',
+                                                      'value' => $tva3310ter['AA']))?>
+      </th>
+      <th class="subtitle">
+        <label for="tva3517sca12_ac">Mention expresse</label>
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AC',
+                                                      'value' => $tva3310ter['AC']))?>
+      </th>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle" colspan="4">
+        <label class="bold" for="tva3310ter_ab">Pourcentage de déduction général de l'entreprise</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AB',
+                                                      'value' => $tva3310ter['AB']))?>
+      </td>
+    </tr>
+  </table>
+
+  <table>    
+    <tr class="tab-title">
+      <th colspan="2" class="maintitle">Secteurs distincts d’activité</th>
+      <th> Coefficient de taxation propre à chaque secteur</th>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_ba">secteur n° 1</label>
+      </td>
+      <td class="input input_70">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BA',
+                                                      'value' => $tva3310ter['BA']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA',
+                                                      'value' => $tva3310ter['CA']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_bb">secteur n°2</label>
+      </td>
+      <td class="input input_70">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BB',
+                                                      'value' => $tva3310ter['BB']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB',
+                                                      'value' => $tva3310ter['CB']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_bc">secteur n° 3</label>
+      </td>
+      <td class="input input_70">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BC',
+                                                      'value' => $tva3310ter['BC']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CC',
+                                                      'value' => $tva3310ter['CC']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_bd">secteur n° 4</label>
+      </td>
+      <td class="input input_70">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BD',
+                                                      'value' => $tva3310ter['BD']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CD',
+                                                      'value' => $tva3310ter['CD']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_be">secteur n° 5</label>
+      </td>
+      <td class="input input_70">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BE',
+                                                      'value' => $tva3310ter['BE']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CE',
+                                                      'value' => $tva3310ter['CE']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_bf">secteur n° 6</label>
+      </td>
+      <td class="input input_70">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BF',
+                                                      'value' => $tva3310ter['BF']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CF',
+                                                      'value' => $tva3310ter['CF']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_bg">secteur n° 7</label>
+      </td>
+      <td class="input input_70">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BG',
+                                                      'value' => $tva3310ter['BG']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CG',
+                                                      'value' => $tva3310ter['CG']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_bh">secteur n° 8</label>
+      </td>
+      <td class="input input_70">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BH',
+                                                      'value' => $tva3310ter['BH']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CH',
+                                                      'value' => $tva3310ter['CH']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_bj">secteur n° 9</label>
+      </td>
+      <td class="input input_70">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BJ',
+                                                      'value' => $tva3310ter['BJ']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CJ',
+                                                      'value' => $tva3310ter['CJ']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_bk">secteur n°10</label>
+      </td>
+      <td class="input input_70">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BK',
+                                                      'value' => $tva3310ter['BK']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CK',
+                                                      'value' => $tva3310ter['CK']))?>
+      </td>
+    </tr>
+  </table>
+  
+  <table class="tva3310ter">
+    
+    <tr class="tab-title">
+      <th class="important" rowspan="3">Secteur</th>
+      <th class="maintitle" colspan="4">TVA BRUTE</th>
+    </tr>
+    
+    <tr class="tab-title">
+      <th class="subtitle">TVA brute</th>
+      <th class="subtitle">TVA à reverser</th>
+      <th class="subtitle">Total (col. 1 + 2)</th>
+    </tr>
+      
+    <tr class="tab-title">
+      <th>col. 1</th>
+      <th>col. 2</th>
+      <th>col. 3</th>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_da">Secteur 1</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA',
+                                                      'value' => $tva3310ter['DA']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EA',
+                                                      'value' => $tva3310ter['EA']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FA',
+                                                      'value' => $tva3310ter['FA']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_db">Secteur 2</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DB',
+                                                      'value' => $tva3310ter['DB']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EB',
+                                                      'value' => $tva3310ter['EB']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FB',
+                                                      'value' => $tva3310ter['FB']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_dc">Secteur 3</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DC',
+                                                      'value' => $tva3310ter['DC']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EC',
+                                                      'value' => $tva3310ter['EC']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FC',
+                                                      'value' => $tva3310ter['FC']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_dd">Secteur 4</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DD',
+                                                      'value' => $tva3310ter['DD']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ED',
+                                                      'value' => $tva3310ter['ED']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FD',
+                                                      'value' => $tva3310ter['FD']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_de">Secteur 5</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DE',
+                                                      'value' => $tva3310ter['DE']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EE',
+                                                      'value' => $tva3310ter['EE']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FE',
+                                                      'value' => $tva3310ter['FE']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_df">Secteur 6</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DF',
+                                                      'value' => $tva3310ter['DF']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EF',
+                                                      'value' => $tva3310ter['EF']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FF',
+                                                      'value' => $tva3310ter['FF']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_dg">Secteur 7</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DG',
+                                                      'value' => $tva3310ter['DG']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EG',
+                                                      'value' => $tva3310ter['EG']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FG',
+                                                      'value' => $tva3310ter['FG']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_dh">Secteur 8</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DH',
+                                                      'value' => $tva3310ter['DH']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EH',
+                                                      'value' => $tva3310ter['EH']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FH',
+                                                      'value' => $tva3310ter['FH']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_dj">Secteur 9</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DJ',
+                                                      'value' => $tva3310ter['DJ']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EJ',
+                                                      'value' => $tva3310ter['EJ']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FJ',
+                                                      'value' => $tva3310ter['FJ']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_dk">Secteur 10</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DK',
+                                                      'value' => $tva3310ter['DK']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EK',
+                                                      'value' => $tva3310ter['EK']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FK',
+                                                      'value' => $tva3310ter['FK']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <div class="center"><label for="tva3310ter_dl">ENSEMBLE DES SECTEURS</label></div>
+        <div class="center">(à reporter sur les lignes de la déclaration CA 3)<div>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DL',
+                                                      'value' => $tva3310ter['DL']))?>
+        <div class="center input">(lignes 8 à 14)<div>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'EL',
+                                                      'value' => $tva3310ter['EL']))?>
+        <div class="center input">(ligne 15)<div>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'FL',
+                                                      'value' => $tva3310ter['FL']))?>
+        <div class="center input">(ligne 16 = col. 3 + col. 14 si servie)<div>
+      </td>
+    </tr>
+  </table>	
+
+  <table id="tva3310ter_determination_tva_deductible" class="tva3310ter">
+    
+    <tr class="tab-title">
+      <th class="important" rowspan="5">Secteur</th>
+      <th class="maintitle" colspan="6">DÉTERMINATION DE LA TVA DÉDUCTIBLE</th>
+    </tr>
+    
+    <tr class="tab-title">
+      <th class="subtitle" colspan="3">Tva déductible sur immobilisations</th>
+      <th class="subtitle" colspan="3">Tva déductible sur autres biens et services</th>
+    </tr>
+      
+    <tr class="tab-title">
+      <th colspan="2">affecté à un secteur déterminé</th>
+      <th class="important" rowspan="2">Total (col 4 + 5)</th>
+      <th colspan="2">Concourant dans le secteur à la réalisation d'opérations ouvrant droit à déduction</th>
+      <th class="important" rowspan="2">Total (col 7 + 8)</th>
+    </tr>
+    
+    <tr class="tab-title">
+      <th>exclusivement</th>
+      <th>non exclusivement</th>
+      <th>exclusivement</th>
+      <th>non exclusivement</th>
+    </tr>
+    
+    <tr class="tab-title">
+      <th>col. 4</th>
+      <th>col. 5</th>
+      <th>col. 6</th>
+      <th>col. 7</th>
+      <th>col. 8</th>
+      <th>col. 9</th>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle w250">
+        <label for="tva3310ter_ga">Secteur 1</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GA',
+                                                      'value' => $tva3310ter['GA']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HA',
+                                                      'value' => $tva3310ter['HA']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JA',
+                                                      'value' => $tva3310ter['JA']))?>
+      </td>
+      
+       <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KA',
+                                                      'value' => $tva3310ter['KA']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LA',
+                                                      'value' => $tva3310ter['LA']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MA',
+                                                      'value' => $tva3310ter['MA']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_gb">Secteur 2</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GB',
+                                                      'value' => $tva3310ter['GB']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HB',
+                                                      'value' => $tva3310ter['HB']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JB',
+                                                      'value' => $tva3310ter['JB']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KB',
+                                                      'value' => $tva3310ter['KB']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LB',
+                                                      'value' => $tva3310ter['LB']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MB',
+                                                      'value' => $tva3310ter['MB']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_gc">Secteur 3</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GC',
+                                                      'value' => $tva3310ter['GC']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HC',
+                                                      'value' => $tva3310ter['HC']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JC',
+                                                      'value' => $tva3310ter['JC']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KC',
+                                                      'value' => $tva3310ter['KC']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LC',
+                                                      'value' => $tva3310ter['LC']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MC',
+                                                      'value' => $tva3310ter['MC']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_gd">Secteur 4</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GD',
+                                                      'value' => $tva3310ter['GD']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HD',
+                                                      'value' => $tva3310ter['HD']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JD',
+                                                      'value' => $tva3310ter['JD']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KD',
+                                                      'value' => $tva3310ter['KD']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LD',
+                                                      'value' => $tva3310ter['LD']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MD',
+                                                      'value' => $tva3310ter['MD']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_ge">Secteur 5</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GE',
+                                                      'value' => $tva3310ter['GE']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HE',
+                                                      'value' => $tva3310ter['HE']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JE',
+                                                      'value' => $tva3310ter['JE']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KE',
+                                                      'value' => $tva3310ter['KE']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LE',
+                                                      'value' => $tva3310ter['LE']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ME',
+                                                      'value' => $tva3310ter['ME']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_gf">Secteur 6</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GF',
+                                                      'value' => $tva3310ter['GF']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HF',
+                                                      'value' => $tva3310ter['HF']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JF',
+                                                      'value' => $tva3310ter['JF']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KF',
+                                                      'value' => $tva3310ter['KF']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LF',
+                                                      'value' => $tva3310ter['LF']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MF',
+                                                      'value' => $tva3310ter['MF']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_gg">Secteur 7</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GG',
+                                                      'value' => $tva3310ter['GG']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HG',
+                                                      'value' => $tva3310ter['HG']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JG',
+                                                      'value' => $tva3310ter['JG']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KG',
+                                                      'value' => $tva3310ter['KG']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LG',
+                                                      'value' => $tva3310ter['LG']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MG',
+                                                      'value' => $tva3310ter['MG']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_gh">Secteur 8</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GH',
+                                                      'value' => $tva3310ter['GH']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HH',
+                                                      'value' => $tva3310ter['HH']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JH',
+                                                      'value' => $tva3310ter['JH']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KH',
+                                                      'value' => $tva3310ter['KH']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LH',
+                                                      'value' => $tva3310ter['LH']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MH',
+                                                      'value' => $tva3310ter['MH']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_gj">Secteur 9</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GJ',
+                                                      'value' => $tva3310ter['GJ']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HJ',
+                                                      'value' => $tva3310ter['HJ']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JJ',
+                                                      'value' => $tva3310ter['JJ']))?>	
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KJ',
+                                                      'value' => $tva3310ter['KJ']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LJ',
+                                                      'value' => $tva3310ter['LJ']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MJ',
+                                                      'value' => $tva3310ter['MJ']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310ter_gk">Secteur 10</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GK',
+                                                      'value' => $tva3310ter['GK']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HK',
+                                                      'value' => $tva3310ter['HK']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JK',
+                                                      'value' => $tva3310ter['JK']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KK',
+                                                      'value' => $tva3310ter['KK']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LK',
+                                                      'value' => $tva3310ter['LK']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'MK',
+                                                      'value' => $tva3310ter['MK']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <div class="center"><label for="tva3310ter_gl">Ensemble des secteurs</label></div>
+        <div class="center">(à reporter sur les lignes de la déclaration CA 3)</div>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'GL',
+                                                      'value' => $tva3310ter['GL']))?>
+        <div class="center input">&nbsp;</div>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'HL',
+                                                      'value' => $tva3310ter['HL']))?>
+        <div class="center input">&nbsp;</div>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'JL',
+                                                      'value' => $tva3310ter['JL']))?>
+        <div class="center input">(ligne 19)</div>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'KL',
+                                                      'value' => $tva3310ter['KL']))?>
+        <div class="center input">&nbsp;</div>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'LL',
+                                                      'value' => $tva3310ter['LL']))?>
+        <div class="center input">&nbsp;</div>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ML',
+                                                      'value' => $tva3310ter['ML']))?>
+        <div class="center input">(ligne 20)</div>
+      </td>
+    </tr>
+  </table>			
+
+<!--<div class="list-ancre">
+	<h1 id="ancre-0">INDEX</h1>
+    <ul>
+      <li><h2><a href="#ancre-1">NO NAME</a></h2></li>
+		</ul>
+	</div>-->
+
+ <table class="tva3310ter">
+    
+    <tr class="tab-title">
+      <th class="important" rowspan="4">Secteur</th>
+      <th class="maintitle" colspan="2">TVA DÉDUCTIBLE</th>
+      <th class="maintitle" colspan="3">RESULTAT NET</th>
+    </tr>
+    
+    <tr class="tab-title">
+      <th rowspan="2">Complément de Tva déductible</th>
+      <th class="important" rowspan="2">TOTAL (col. 6 + 9 + 10)</th>
+      <th class="subtitle" rowspan="2">TVA NETTE (col. 3 - 11 si > 0)</th>
+      <th class="subtitle" colspan="2" >CREDIT DE TVA</th>
+    </tr>
+      
+    <tr class="tab-title">
+      <th class="important">Crédit de Tva (col. 11 - 3 si > 0)</th>
+      <th class="important">Dont crédit non restituable</th>
+    </tr>
+    
+    <tr class="tab-title">
+      <th>col. 10</th>
+      <th>col. 11</th>
+      <th>col. 12</th>
+      <th>col. 13</th>
+      <th>col. 14</th>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310terverso_na">Secteur 1</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NA',
+                                                      'value' => $tva3310ter['NA']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PA',
+                                                      'value' => $tva3310ter['PA']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QA',
+                                                      'value' => $tva3310ter['QA']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RA',
+                                                      'value' => $tva3310ter['RA']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SA',
+                                                      'value' => $tva3310ter['SA']))?>
+      </td>
+    </tr>  
+
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310terverso_nb">Secteur 2</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NB',
+                                                      'value' => $tva3310ter['NB']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PB',
+                                                      'value' => $tva3310ter['PB']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QB',
+                                                      'value' => $tva3310ter['QB']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RB',
+                                                      'value' => $tva3310ter['RB']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SB',
+                                                      'value' => $tva3310ter['SB']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310terverso_nc">Secteur 3</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NC',
+                                                      'value' => $tva3310ter['NC']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PC',
+                                                      'value' => $tva3310ter['PC']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QC',
+                                                      'value' => $tva3310ter['QC']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RC',
+                                                      'value' => $tva3310ter['RC']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SC',
+                                                      'value' => $tva3310ter['SC']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310terverso_nd">Secteur 4</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'ND',
+                                                      'value' => $tva3310ter['ND']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PD',
+                                                      'value' => $tva3310ter['PD']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QD',
+                                                      'value' => $tva3310ter['QD']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RD',
+                                                      'value' => $tva3310ter['RD']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SD',
+                                                      'value' => $tva3310ter['SD']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310terverso_ne">Secteur 5</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NE',
+                                                      'value' => $tva3310ter['NE']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PE',
+                                                      'value' => $tva3310ter['PE']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QE',
+                                                      'value' => $tva3310ter['QE']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RE',
+                                                      'value' => $tva3310ter['RE']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SE',
+                                                      'value' => $tva3310ter['SE']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310terverso_nf">Secteur 6</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NF',
+                                                      'value' => $tva3310ter['NF']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PF',
+                                                      'value' => $tva3310ter['PF']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QF',
+                                                      'value' => $tva3310ter['QF']))?>
+      </td>
+       <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RF',
+                                                      'value' => $tva3310ter['RF']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SF',
+                                                      'value' => $tva3310ter['SF']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310terverso_ng">Secteur 7</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NG',
+                                                      'value' => $tva3310ter['NG']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PG',
+                                                      'value' => $tva3310ter['PG']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QG',
+                                                      'value' => $tva3310ter['QG']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RG',
+                                                      'value' => $tva3310ter['RG']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SG',
+                                                      'value' => $tva3310ter['SG']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310terverso_nh">Secteur 8</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NH',
+                                                      'value' => $tva3310ter['NH']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PH',
+                                                      'value' => $tva3310ter['PH']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QH',
+                                                      'value' => $tva3310ter['QH']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RH',
+                                                      'value' => $tva3310ter['RH']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SH',
+                                                      'value' => $tva3310ter['SH']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310terverso_nj">Secteur 9</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NJ',
+                                                      'value' => $tva3310ter['NJ']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PJ',
+                                                      'value' => $tva3310ter['PJ']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QJ',
+                                                      'value' => $tva3310ter['QJ']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RJ',
+                                                      'value' => $tva3310ter['RJ']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SJ',
+                                                      'value' => $tva3310ter['SJ']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <label for="tva3310terverso_nk">Secteur 10</label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NK',
+                                                      'value' => $tva3310ter['NK']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PK',
+                                                      'value' => $tva3310ter['PK']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QK',
+                                                      'value' => $tva3310ter['QK']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RK',
+                                                      'value' => $tva3310ter['RK']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SK',
+                                                      'value' => $tva3310ter['SK']))?>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle">
+        <div class="center"><label for="tva3310terverso_nl">Ensemble des Secteurs</label></div>
+        <div class="center">(à reporter sur les lignes de la déclaration CA 3)</div>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'NL',
+                                                      'value' => $tva3310ter['NL']))?>
+        <div class="center input">[ligne 21 et/ou 22]</div>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'PL',
+                                                      'value' => $tva3310ter['PL']))?>
+        <div class="center input">(ligne 23)</div>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QL',
+                                                      'value' => $tva3310ter['QL']))?>
+        <div class="center input">&nbsp;</div>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RL',
+                                                      'value' => $tva3310ter['RL']))?>
+        <div class="center input">&nbsp;</div>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'SL',
+                                                      'value' => $tva3310ter['SL']))?>
+        <div class="center st">(ligne 15)</div>
+      </td>
+    </tr>
+    
+    <tr class="elt">
+      <td class="libelle" colspan="3">
+        <label for="tva3310terverso_qm">
+          TVA nette due ou crédit de TVA de l'ensemble des secteurs .<br />
+          Ce montant doit être reporté ligne 25 (crédit) ou ligne 28 (TVA nette due) de la déclaration de la CA 3
+        </label>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'QM',
+                                                      'value' => $tva3310ter['QM']))?>
+      </td>
+      <td class="input">
+        <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'RM',
+                                                      'value' => $tva3310ter['RM']))?>
+      </td>
+    </tr>
+  </table> 
+
+</div>

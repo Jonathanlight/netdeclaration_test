@@ -1,0 +1,145 @@
+<div class="formulaire-page" data-label="Identification" data-position="first" data-identif="<?=$formulaire_code ?>">
+  <h3>Identification du redevable</h3>
+  <div class="clear"></div>
+  <fieldset class="formulaire-fieldset left">
+    <div class="field-container">
+      <label for="f_identif_KD">Référence obligatoire fiscale</label>
+      <?=Elt::select(array('options' => Rof::collect(array('filters' => array('document_code' => $declaration_dectype->document_code),
+                                                           'order' => array('id' => 'asc')))->asHash('name', 'name'),
+                           'value' => $f_identif_20140320['KD'],
+                           'name' => 'f_identif_20140320[KD]'))?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_AA">n° SIRET</label>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA', 'value' => $f_identif_20140320['AA'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_AB">Code activité NAF</label>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AB', 'value' => $f_identif_20140320['AB'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_AA1">Nom, prénom ou désignation du déclarant</label>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA1', 'value' => $f_identif_20140320['AA1'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_AA2">Identification du déclarant désignation ou nom prénom</label>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA2', 'value' => $f_identif_20140320['AA2'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_AA3">Identification du déclarant qualité ou complément de désignation</label>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA3', 'value' => $f_identif_20140320['AA3'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_AA4">Adresse du déclarant numéro type et nom voie</label>
+      <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA4', 'value' => $f_identif_20140320['AA4'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_AA5">Adresse du déclarant complément d'adresse</label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA5', 'value' => $f_identif_20140320['AA5'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_AA6">Adresse du déclarant ville</label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA6', 'value' => $f_identif_20140320['AA6'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_AA7">Code postal </label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA7', 'value' => $f_identif_20140320['AA7'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_AA8">Code pays</label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA8', 'value' => $f_identif_20140320['AA8'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_AA13">Adresse e-mail</label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'AA13', 'value' => $f_identif_20140320['AA13'])) ?>
+    </div>
+  </fieldset>
+  <fieldset class="formulaire-fieldset right">
+    <div class="field-container">
+      <label for="f_identif_BA">Catégorie fiscale</label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BA', 'value' => $f_identif_20140320['BA'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_BB">Régime fiscal</label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BB', 'value' => $f_identif_20140320['BB'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_BC">Code IS/IR-BIC (si catégorie fiscale = BIC/IS)</label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BC', 'value' => $f_identif_20140320['BC'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_KD">Adherent OGA</label>
+      <?=Elt::select(array('options' => Adherent::collectByType(),
+                           'value'   => $f_identif_20140320['OGA'].','.$f_identif_20140320['IDOGA'],
+                           'first'   => '-------------',
+                           'events'  => array('change' => "NTD.Identif.f('onSelectOGA', [this])")))?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_OGA">N° Siret OGA</label>
+    <?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'OGA', 'value' => $f_identif_20140320['OGA'], 'readonly' => true)) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_IDOGA">N° Identification à l'OGA</label>
+    <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'IDOGA', 'value' => $f_identif_20140320['IDOGA'], 'readonly' => true)) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_BD">Cession/cessation d'activité ou Décès de l'exploitant </label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BD',  'value' => $f_identif_20140320['BD'])) ?>
+    </div>
+    <div class="field-container">
+      <label for="f_identif_BF">Dépôt provisoire (ou pas) de la déclaration </label>
+      <?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'BF',  'value' => $f_identif_20140320['BF'])) ?>
+    </div>
+
+  </fieldset>
+  <div class="clear">&nbsp;</div>
+
+  <h3>Période de déclaration</h3>
+  <table>
+    <tr class="elt">
+      <td class="libelle">
+        <label for="f_identif_CA"><?php if ($declaration_formulairetype->name != 'tva3514'): ?>Début de période de la déclaration<?php else: ?>Début de l'exercice<?php endif; ?></label>
+      <?=Elt::tooltip(array('tooltip' => 'Format jj/mm/aaaa'))?>
+      </td>
+      <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CA', 'value' => $f_identif_20140320['CA'])) ?></td>
+      <td class="libelle">
+        <label for="f_identif_CB"><?php if ($declaration_formulairetype->name != 'tva3514'): ?>Fin de période de la déclaration<?php else: ?>Fin de l'exercice<?php endif; ?></label>
+      <?=Elt::tooltip(array('tooltip' => 'Format jj/mm/aaaa'))?>
+      </td>
+      <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CB', 'value' => $f_identif_20140320['CB'])) ?>
+      </td>
+    </tr>
+
+    <tr class="elt">
+      <td class="libelle">
+        <label for="f_identif_CC">Durée de l'exercice pour période N</label>
+      </td>
+      <td class="input"><?=Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CC', 'value' => $f_identif_20140320['CC'])) ?></td>
+      <td class="libelle">
+        <label for="f_identif_CD">Date de clôture de l'exercice ou période N-1 (si catégorie fiscale = BIS-IS ou BA)</label>
+        <?=Elt::tooltip(array('tooltip' => 'Format jj/mm/aaaa'))?>
+      </td>
+      <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CD','value' => $f_identif_20140320['CD'])) ?> </td>
+    </tr>
+     <tr class="elt">
+      <td class="libelle">
+        <label for="f_identif_CE">Durée de l'exercice ou période N-1 (si catégorie fiscale = BIC-IS ou BA) </label>
+      </td>
+      <td class="input"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'CE', 'value' => $f_identif_20140320['CE'])) ?></td>
+      <td class="libelle">
+      </td>
+      <td class="input">  </td>
+    </tr>
+  </table>
+
+  <h3>Monnaie</h3>
+  <table>
+    <tr class="elt">
+      <td class="libelle"><label for="f_identif_DA">Code monnaie</label></td>
+      <td class="input" style="width:300px"><?= Formulaire::getHTMLField($formulaire_code, array('field_name' => 'DA', 'value' => $f_identif_20140320['DA'])) ?></td>
+    </tr>
+  </table>
+
+
+
+</div>

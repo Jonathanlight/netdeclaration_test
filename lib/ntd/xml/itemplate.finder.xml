@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<finder order="millesime_id desc, version desc">
+ <filters>
+  <filter name="id" />
+  <filter name="name" />
+  <filter name="millesime_id" />
+ </filters>
+ <cols>
+  <col name="name" />
+  <col name="version" />
+  <col name="code" />
+  <col name="millesime_id" />
+  <col name="updated_at" label="Modifié le" />
+  <col name="created_at" label="Crée le" />
+ </cols>
+</finder>
+
+</kwo-interface>

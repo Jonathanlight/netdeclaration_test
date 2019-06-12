@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+
+<box label="informations">
+ <grid value="$infos" />
+</box>
+
+<box label="social" built="$opinion">
+ <grid value="$opinion" />
+</box>
+
+<box label="évaluation" built="$valuation">
+ <grid value="$valuation" />
+</box>
+
+</kwo-interface>

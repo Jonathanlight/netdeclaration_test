@@ -1,0 +1,174 @@
+
+// ----- form
+.form--suivi
+
+  $form--suivi__line-height: 26px
+  font-size: 12px
+
+  background: $color--lightgrey
+  border: 1px solid $color--bordergrey
+
+  .block__suivi
+    overflow: hidden
+    margin-bottom: 10px
+
+  /*.elt-date
+    width: 41%
+    float: left*/
+  .elt-select, .elt-text
+    width: 50%
+    float: left
+
+  .elt-select select,
+  .elt-text .text
+    @include inputTextView()
+    width: 90%
+    height: $form--suivi__line-height
+    padding: 5px
+
+  .elt-select select option:first-child
+    color: $color--darkgrey
+    font-style: italic
+
+  .fa-calendar
+    float: left
+    margin-top: 8px
+    margin-right: 11px
+
+
+
+  .container--elt-date
+    @include clearFloat()
+    .elt-label
+      width: 50px
+      line-height: $form--suivi__line-height
+      vertical-align: top
+    .elt-date
+      float: left
+    .text
+      @include inputTextView()
+      height: $form--suivi__line-height
+      background-image: url(/app/ntd/pix/v2/calendar-blue.png)
+      background-repeat: no-repeat
+      background-position: 70px center
+      padding: 5px
+      width: 90px
+    .elt-date--first
+      margin-right: 5px
+
+
+  .form--suivi__nav__item
+    background: $color--light-light-blue
+    color: $color--lightblue
+    font-weight: bold
+    display: block
+    padding: 10px
+    border-right: 1px solid $color--bordergrey
+    border-bottom: 1px solid $color--bordergrey
+    width: 115px
+    line-height: 21px
+    &:last-child
+      border-bottom: 0
+    .fa-caret-right
+      float: right
+      margin-top: 6px
+      display: none
+    &.active
+      background: transparent
+      border-right: 0
+      color: $color--darkblue
+      .fa-caret-right
+        display: block
+  .form--suivi__fieldset
+    padding: 15px 10px 0 15px 
+    display: none
+    &.selected
+      display: block
+
+
+  .block__btn-suivi
+    width: 100px
+    text-align: center
+    vertical-align: top
+    .block__padding
+      height: 100%
+      vertical-align: top
+      margin: 15px 0
+    .btn--link
+      padding-bottom: 0
+
+// ----- Results container
+.suivi__results__header
+  background: $color--lightgrey
+  border-color: $color--bordergrey
+  border-style: solid
+  border-width: 1px 1px 3px
+  margin-bottom: 10px
+  padding: 15px 15px 10px
+  .results_count
+    margin-top: 6px
+    display: block
+  select
+    margin: 0 10px
+  .pagination
+    padding-top: 0      
+.suivi__results
+  border-style: solid
+  border-color: $color--grey
+  border-width: 1px 1px 3px
+  margin-bottom: 10px
+
+  .suivi__results__suivi
+    @include clearFloat()
+    padding: 16px 13px 10px
+    border-bottom: 1px solid $color--bordergrey
+
+    .suivi__results__suivi__emetteur
+      font-size: 11px
+      margin: 5px 0
+      color: $color--lightblue
+
+  .suivi__results__destinataires
+    padding: 16px 13px 11px
+
+    .suivi__results__destinataire
+      margin-bottom: 5px
+
+      *
+        display: inline-block
+        line-height: 22px
+        vertical-align: top
+
+      .fa-long-arrow-right
+        font-size: 18px
+
+      .fa-times,
+      .fa-check
+        font-size: 16px
+
+      .fa-times
+        color: #df2b40
+
+      .fa-check
+        color: $color--grey
+
+      .fa-check--green
+        color: #00af77
+
+      .background-rounded
+        font-size: 9px
+        background: $color--grey
+        border-radius: 11px
+        line-height: 22px
+        display: inline-block
+        padding: 0 10px
+        margin: 0 5px
+
+
+.table--suivi-details
+  &.table--ntd td,
+  &.table--ntd th
+    padding: 5px 4px
+
+
+

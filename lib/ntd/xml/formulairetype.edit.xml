@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+  <fieldset>
+
+    <notebook>
+      <page>
+        <form>
+          <hbox>
+            <vbox>
+              <box label="configuration">
+                <elem field="name" label="Code SI" precision="nom des templates PSP, data.inc, ..."/>
+                <elem field="code" precision="code CERFA"/>
+                <elem field="document_code" options="Formulairetype::$document_codes" addfirst="-"/>
+                <elem field="prefix_export" label="Prefixe" precision="Export des formulaires EDI"/>
+                <elem field="help_file" label="Fichier d'aide à télécharger" />
+                <elem field="flags"/>
+                <elem type="relations"
+                      label="Millésimes associés"
+                      model="millesime"
+                      editable="true" />
+              </box>
+            </vbox>
+            <vbox>
+              <box label="Front">
+                <elem field="title" label="Titre du Formulaire" precision="apparait dans un cartouche en haut du formulaire" rows="5"/>
+                <elem field="title_code" label="Code du Formulaire" precision="apparait dans un cartouche en haut du formulaire"/>
+              </box>
+              <box label="Détails">
+                <elem field="formulairetype_required" label="Formulaires Requis" precision="Des opérations font appel à ces formulaires" disabled="true"/>
+              </box>
+            </vbox>
+          </hbox>
+          <launcher/>
+        </form>
+      </page>
+      <page>
+        <hbox>
+          <vbox width="400px">
+            <box label="actions">
+              <link icon="details"/>
+              <link icon="hasmany" model="ifield"/>
+              <link icon="hasmany" model="operation"/>
+              <link icon="hasmany" model="itemplate"/>
+              <link icon="import" label="Ajouter un millesime" action="$('actions').raise('add-millesime-box')" />
+              <link icon="import" label="import des données (Ifields, Operations et Itemplates)" action="$('actions').raise('import-form-box')" />
+              <link icon="export" label="Export Ifields" action=".go('export.ifields', this)" />
+              <link icon="export" label="Export Operations" action=".go('export.operations', this)" />
+              <link icon="export" label="Export Itemplates" action=".go('export.itemplates', this)" />
+            </box>
+          </vbox>
+          <vbox>
+            <deck id="actions">
+              <box label="Import des données" id="import-form-box">
+                <form>
+                  <elem type="file" label="fichier CSV (Ifield)" path="/doc/kernix/imports" tooltip="1ere ligne contient le nom des colonnes" name="file_path_ifield" value="" />
+                  <elem type="file" label="fichier CSV (Operation)" path="/doc/kernix/imports" tooltip="1ere ligne contient le nom des colonnes" name="file_path_operation" value="" />
+                  <elem type="file" label="fichier CSV (Itemplate)" path="/doc/kernix/imports" tooltip="1ere ligne contient le nom des colonnes" name="file_path_itemplate" value="" />
+                  <launcher>
+                    <button icon="import" tooltip="importer" action=".onExec('import', this, {callback:true, confirm:'Cet import n\'est destiné qu\'à la CRÉATION (et non la mise à jour) des données (ifields, operations et itemplates). \n Êtes-vous sûr de faire l\'import ?'})" />
+                  </launcher>
+                </form>
+              </box>
+              <box label="Ajouter un millesime" id="add-millesime-box">
+                <form>
+                  <elem type="select"
+                        label="Choisissez le millesime précédent - Seuls les Ifields et Opérations ayant ce millesime seront mis à jour."
+                        name="old_millesime_id"
+                        addfirst="-"
+                        options="Millesime::collect(array('order' => array('name' => 'DESC')))"/>
+                  <elem type="select"
+                        label="Choisissez le nouveau millesime à ajouter au Ifields et Opérations."
+                        name="new_millesime_id"
+                        addfirst="-"
+                        options="Millesime::collect(array('order' => array('name' => 'DESC')))"/>
+                  <launcher>
+                    <button icon="ok" tooltip="Ajouter" action=".onExec('add.millesime', this, {callback:true, confirm:'Êtes-vous sûr de vouloir ajouter ce Millesime ?'})" />
+                  </launcher>
+                </form>
+              </box>
+            </deck>
+          </vbox>
+        </hbox>
+      </page>
+    </notebook>
+
+  </fieldset>
+</kwo-interface>

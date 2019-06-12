@@ -1,0 +1,7 @@
+<?=H::head(array()) ?>
+<div class="wrapper">
+  <div class="wrapper-content">
+    <label><?=$msg?></label>
+  </div>
+</div>
+<?=H::foot() ?>

@@ -1,0 +1,735 @@
+@charset "UTF-8";
+.action-account-declaration-edit {
+  overflow-y: scroll; }
+
+/* ----- content form ----- */
+.form-ntd div.precision {
+  margin: 10px 0;
+  color: #666; }
+
+.form-ntd table tr.elt td.line_impot {
+  width: 30px;
+  text-align: center;
+  background: #eff0f5;
+  color: #666666; }
+
+.form-ntd table tr.elt td.input > div.line_impot, .form-ntd table tr.tab-title th.subtitle > div.line_impot {
+  text-align: center;
+  background: #eff0f5;
+  margin: -7px -7px 7px;
+  color: #666666;
+  height: 22px;
+  padding-top: 10px; }
+
+.form-ntd table tr.tab-title th.subtitle > div.line_impot {
+  background: inherit;
+}
+
+.form-ntd table tr.elt td.libelle {
+  color: #666666;
+  text-align: left;
+  vertical-align: middle;
+  border: 1px solid #7989aa; }
+
+.form-ntd table tr.elt td.libelle.center {
+  text-align: center;
+}
+
+.form-ntd table tr.elt td.libelle label,
+.form-ntd table tr.elt td.libelle img {
+  vertical-align: middle; }
+
+.form-ntd table tr.elt td.w250 {
+  width: 250px; }
+
+.form-ntd table tr.elt td.libelle_right {
+  color: #666666;
+  text-align: right; }
+
+.form-ntd table tr.elt td.line_id {
+  width: 20px;
+  background: #475779;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center; }
+
+.form-ntd table tr.elt td.input {
+  width: 140px;
+  color: #465779; }
+
+form.form-ntd table tr.elt td.input-lg input,
+form.form-ntd table tr.elt td.input-lg select {
+  width: calc(100% - 10px); }
+
+.form-ntd table tr.elt td.input_10 {
+  width: 90px;
+  color: #465779; }
+
+.form-ntd table tr.elt td.input_35 {
+  width: 270px;
+  color: #465779; }
+
+.form-ntd table tr.elt td.input_60 {
+  width: 400px;
+  color: #465779; }
+
+.form-ntd table tr.elt td.input_70 {
+  width: 540px;
+  color: #465779; }
+
+.form-ntd table tr.elt td.area {
+  width: auto;
+  color: #465779; }
+
+.form-ntd table tr.elt td.input input {
+  width: 125px;
+  float: right; }
+
+.form-ntd table tr.elt td.input input.field-type-number, .form-ntd table tr.elt td.input input.field-type-float {
+  text-align: right; }
+
+.form-ntd table tr.elt td.input input.pourcentage {
+  background-image: url(/app/ntd/pix/formulaires/pourcent.png);
+  background-repeat: no-repeat;
+  background-position: right center; }
+
+.form-ntd table tr.elt td .center {
+  text-align: center;
+  margin-top: 5px; }
+
+.form-ntd table tr.elt td.center {
+  text-align: center; }
+
+.form-ntd table tr.elt td.center input {
+  float: none; }
+
+.form-ntd table tr.elt td .input {
+  margin-top: 30px; }
+
+.form-ntd table tr.elt td .st {
+  color: #465779; }
+
+.form-ntd table tr.elt td.input_10 input {
+  width: 75px;
+  float: right; }
+
+.form-ntd table tr.elt td.input_35 input {
+  width: 255px;
+  float: right; }
+
+.form-ntd table tr.elt td.input_60 input {
+  width: 385px;
+  float: right; }
+
+.form-ntd table tr.elt td.input_70 input {
+  width: 525px;
+  float: right; }
+
+.form-ntd table tr.elt td.input input.checked-false,
+.form-ntd table tr.elt td.input_10 input.checked-false,
+.form-ntd table tr.elt td.input_35 input.checked-false,
+.form-ntd table tr.elt td.input_60 input.checked-false,
+.form-ntd table tr.elt td.input_70 input.checked-false {
+  background-color: #FFCCAA !important; }
+
+.form-ntd table tr.elt td.input input.result,
+.form-ntd table tr.elt td.input_35 input.result {
+  background-color: #88c683; }
+
+.form-ntd table tr.elt td.input input.has-error,
+.form-ntd table tr.elt td.input_10 input.has-error,
+.form-ntd table tr.elt td.input_35 input.has-error,
+.form-ntd table tr.elt td.input_60 input.has-error,
+.form-ntd table tr.elt td.input_70 input.has-error {
+  background: #ffccaa !important; }
+
+.form-ntd table tr.tab-title th.input textarea.checked-false {
+  background-color: #ffccaa; }
+
+.form-ntd table .field-type-date-ssmmjj.has-error ~ .elt-ssmmjj-container .elt-select select {
+  background-color: #ffccaa; }
+
+.form-ntd table .has-error {
+  background: #ffccaa !important; }
+
+.form-ntd .formulaire-fieldset select.has-error,
+.form-ntd .formulaire-fieldset input.has-error {
+  background: #ffccaa !important; }
+
+.form-ntd table tr.elt td.input input,
+.form-ntd table tr.elt td.input_35 input {
+  height: 21px;
+  margin: 0;
+  padding: 0 5px;
+  vertical-align: middle;
+  color: #465779;
+  font-size: 12px;
+  border: 1px solid #7989aa; }
+
+.form-ntd table tr.elt td.input.medium-input input {
+  width:100px;
+}
+.form-ntd table tr.elt td.input.small-input input {
+  width:45px;
+}
+
+.form-ntd table tr.elt td.input input.elt--readonly,
+.form-ntd table tr.elt td.input_35 input.elt--readonly {
+  background: #EEEEEE; }
+.form-ntd table tr.tab-title th.left {
+  text-align: left;
+}
+.form-ntd table tr.elt td.input_60 input {
+  height: 21px;
+  margin: 0;
+  padding: 0 5px;
+  vertical-align: middle;
+  color: #465779;
+  font-size: 12px;
+  border: 1px solid #7989aa; }
+
+.form-ntd table tr.elt td.input select {
+  height: 23px;
+  margin: 0;
+  padding: 1px 0;
+  vertical-align: middle;
+  color: #465779;
+  font-size: 12px;
+  border: 1px solid #7989aa;
+  width: 125px;
+  float: right; }
+
+.form-ntd table tr.elt td.input_35 select {
+  height: 23px;
+  margin: 0;
+  padding: 1px 0;
+  vertical-align: middle;
+  color: #465779;
+  font-size: 12px;
+  border: 1px solid #7989aa;
+  width: 267px;
+  float: right; }
+
+.form-ntd table tr.elt td.input_60 select {
+  height: 23px;
+  margin: 0;
+  padding: 1px 0;
+  vertical-align: middle;
+  color: #465779;
+  font-size: 12px;
+  border: 1px solid #7989aa;
+  width: 267px;
+  float: right; }
+
+.form-ntd table tr.elt td.input img.tooltip-info {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  line-height: 21px;
+  vertical-align: middle;
+  margin-left: 10px; }
+
+.form-ntd table tr.elt td.small select {
+  width: 85px; }
+
+.form-ntd table tr.elt td.small {
+  width: 185px; }
+
+table tr.elt td.input div.error_php,
+table tr.elt td.input_10 div.error_php,
+table tr.elt td.input_35 div.error_php,
+table tr.elt td.input_60 div.error_php,
+table tr.elt td.input_70 div.error_php {
+  height: 25px;
+  padding: 5px;
+  position: absolute;
+  background: #ffccaa;
+  border: 1px solid #ff3334; }
+
+.tva3515sd td {
+  width: 50px; }
+
+.form-ntd table tr.elt td.full input {
+  width: 95% !important; }
+
+.form-ntd table tr.elt td.libelle strong {
+  font-weight: bold; }
+
+.form-ntd table tr.tab-title th {
+  padding: 7px;
+  font-size: 12px;
+  line-height: 15px;
+  background: #eff0f5;
+  color: #666666;
+  font-weight: bold;
+  border: 1px solid #7989aa; }
+
+.form-ntd table tr.tab-title th.maintitle {
+  padding: 7px;
+  background: #475779;
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 1.2em;
+  margin: 0;
+  text-align: center;
+  border: 1px solid #475779; }
+
+.form-ntd table tr.tab-title th.maintitle.left {
+  text-align: left;
+}
+
+.form-ntd table tr.tab-title th.maintitle.vertical-middle {
+  vertical-align: middle;
+}
+
+.form-ntd table tr.tab-title th.maintitle.vertical-middle.folding-action {
+  width: 125px;
+}
+
+.form-ntd table tr.tab-title th.maintitle.vertical-middle.folding-action input.field-type-checkbox {
+    position: absolute;
+    opacity: 0;
+}
+
+.form-ntd table tr.tab-title th.subtitle {
+  padding: 7px;
+  background: #93a1bb;
+  color: #333;
+  font-size: 1.05em;
+  font-weight: bold;
+  border: 1px solid #475779;
+  line-height: 1.05em;
+  margin: 0;
+  text-align: left;
+  vertical-align: top; }
+
+.form-ntd table tr.tab-title th.important {
+  padding: 7px;
+  background: pink;
+  color: #333;
+  font-size: 1.00em;
+  font-weight: bold;
+  line-height: 1.05em;
+  margin: 0;
+  text-align: left; }
+
+.form-ntd table tr.tab-title th.input-title {
+  padding-left: 45px; }
+
+#confirm-box.hidden {
+  display: none; }
+
+#confirm-box h1 {
+  font-size: 16px;
+  color: #ffffff;
+  background-color: maroon;
+  border: 1px maroon solid;
+  padding: 2px;
+  margin-left: 10px;
+  margin-bottom: 10px; }
+
+#confirm-box fieldset {
+  overflow: hidden;
+  padding: 40px;
+  margin: 10px;
+  border: 1px solid black;
+  margin-right: -5px; }
+
+#confirm-box fieldset input.btn {
+  padding: 5px;
+  margin: 3px;
+  width: 90px; }
+
+#confirm-box fieldset legend {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 0;
+  font-weight: bold; }
+
+/* -------- cas spéciaux -------- */
+/* 3310ter */
+table.tva3310ter td,
+table.tva3310ter th {
+  border: 1px solid #475779; }
+
+.form-ntd table#tva3310ter_determination_tva_deductible tr.elt td.input input {
+  width: 90px; }
+
+/* is 2572 */
+.form-ntd table tr.boldback {
+  background-color: #eff0f5; }
+
+.form-ntd table tr.no-border-bottom {
+  border-bottom: none; }
+
+.form-ntd table .sub-table > td {
+  padding: 0px; }
+
+.form-ntd table .sub-table > td td {
+  border-top: medium none !important;
+  border-left: medium none !important; }
+
+.form-ntd table .sub-table > td td.input {
+  border-right: medium none; }
+
+/*ts 2501*/
+.form-ntd table tr td.tab-title-style {
+  padding: 7px;
+  font-size: 12px;
+  line-height: 15px;
+  vertical-align: middle;
+  background: #eff0f5;
+  color: #666666;
+  font-weight: bold; }
+
+/*ts 2502*/
+.form-ntd .ts2502 tr.elt td.input {
+  width: 70px;
+  color: #465779; }
+
+.form-ntd .ts2502 tr.elt td.input input {
+  width: 65px;
+  float: right; }
+
+.form-ntd .ts2502 tr th.tab-title-style {
+  border: 1px solid #7989aa; }
+
+.form-ntd .ts2502_2013 tr.elt td.input {
+  width: 70px;
+  color: #465779; }
+
+.form-ntd .ts2502_2013 tr.elt td.input input {
+  width: 65px;
+  float: right; }
+
+.form-ntd .ts2502_2013 tr th.tab-title-style {
+  border: 1px solid #7989aa; }
+
+.form-ntd table tr th.tab-title-style {
+  padding: 7px;
+  font-size: 12px;
+  line-height: 15px;
+  vertical-align: middle;
+  background: #eff0f5;
+  color: #666666;
+  font-weight: bold; }
+
+/*cvae 1330epe*/
+.form-ntd table.cvae1330epe tr.elt td.small-input input {
+  width: 35px;
+  color: #465779; }
+
+.form-ntd table.cvae1330epe tr.elt td.small-input {
+  width: 36px;
+  color: #465779; }
+
+.form-ntd table td .right-container {
+  float: right;
+  margin: 5px; }
+
+/*tva 3519*/
+.form-ntd #exportateur-tva3519 table tr.elt td.input input {
+  width: 115px; }
+
+/*cvae 1330sd*/
+.form-ntd table.cvae1330sd tr.elt td.input {
+  color: #465779; }
+
+.form-ntd table.cvae1330sd tr.elt td.input input {
+  width: 210px;
+  float: right; }
+
+.form-ntd table.cvae1330sd tr.elt td.input select {
+  width: 150px;
+  float: right; }
+
+.form-ntd table.cvae1330sd tr.elt td.small-input input {
+  width: 35px;
+  color: #465779; }
+
+.form-ntd table.cvae1330sd tr.elt td.small-input select {
+  width: 55px; }
+
+.form-ntd table.cvae1330sd tr.elt td.small-input {
+  width: 45px;
+  color: #465779; }
+
+/*is 2573sd*/
+.form-ntd table.is2573sd td.small-input {
+  width: 90px !important; }
+
+.form-ntd table.is2573sd td.small-input input {
+  width: 75px !important; }
+
+.form-ntd table.is2573sd td.small-input select {
+  width: 80px !important; }
+
+/* is2573_2015 */
+.form-ntd table.is2573_2015 td.small-input {
+  width: 90px !important; }
+
+.form-ntd table.is2573_2015 td.small-input input {
+  width: 90% !important; }
+
+.form-ntd table.is2573_2015 td.small-input select {
+  width: 100% !important; }
+
+.textarea-split-comments {
+  width: 760px;
+  border: 1px solid #7989aa; }
+
+/* ----- elt generic ----- */
+.elt-ssaamm-container {
+  overflow: hidden; }
+
+.elt-ssaamm-container .elt-select {
+  float: right; }
+
+.elt-ssaamm-container .elt-select:last-child {
+  margin-right: 10px; }
+
+.form-ntd table .elt-ssaamm-container.has-error {
+  background: transparent !important; }
+
+.form-ntd table .elt-ssaamm-container.has-error .elt-select select {
+  background: none repeat scroll 0 0 #ffccaa !important; }
+
+/* ----- css loick ----- */
+/* ----- test.form.style ----- */
+.content-box {
+  width: 938px;
+  border: 1px solid #dfe2ec;
+  border-top: 0 none;
+  padding: 20px 10px 10px 10px; }
+
+.content-box h2 {
+  margin: 0 0 20px 0;
+  color: #123d6a;
+  font-size: 16px;
+  line-height: 16px;
+  font-family: georgia;
+  font-weight: normal; }
+
+.content-box .elt-wrapper {
+  padding: 0 13px;
+  background: #eff0f5; }
+
+.content-box .elt-wrapper div.elt {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 38px;
+  text-align: left;
+  padding: 0; }
+
+.content-box .elt-wrapper div.elt div.elt-control,
+.content-box .elt-wrapper div.elt div.elt-txt,
+.content-box .elt-wrapper div.elt div.elt-date {
+  display: inline-block; }
+
+.content-box .elt-wrapper div.elt div.elt-txt input,
+.content-box .elt-wrapper div.elt div.elt-date input {
+  vertical-align: middle;
+  font-size: 12px;
+  height: 23px;
+  margin: 0;
+  padding: 0 5px;
+  border: 1px solid #7889aa;
+  background: #dfe2ec;
+  color: #465779; }
+
+.content-box .elt-wrapper div.elt div.elt-date input {
+  color: #808080;
+  width: 80px; }
+
+.content-box .elt-wrapper div.elt div.elt-control input {
+  vertical-align: middle;
+  margin: 0 3px;
+  border: 0 none;
+  height: 15px; }
+
+.content-box .elt-wrapper div.elt label.elt {
+  display: inline-block;
+  color: #666;
+  margin-right: 10px;
+  cursor: pointer; }
+
+.content-box .elt-wrapper-left {
+  float: left;
+  width: 434px;
+  height: 230px;
+  padding: 13px; }
+
+.content-box .elt-wrapper-right {
+  float: right;
+  width: 434px;
+  height: 230px;
+  padding: 13px; }
+
+.content-box .elt-wrapper-right div.elt,
+.content-box .elt-wrapper-left div.elt {
+  padding: 3px 0;
+  line-height: 18px; }
+
+.content-box .elt-wrapper-right div.elt label.elt,
+.content-box .elt-wrapper-left div.elt label.elt {
+  width: 140px; }
+
+.content-box .elt-wrapper-right div.elt div.elt-txt input,
+.content-box .elt-wrapper-left div.elt div.elt-txt input {
+  width: 280px; }
+
+.content-box .comments textarea {
+  width: 938px;
+  height: 160px;
+  resize: vertical;
+  margin-bottom: 20px; }
+
+.content-box .comments div.elt {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  text-align: left;
+  padding: 0;
+  margin-bottom: 15px; }
+
+.content-box .comments div.elt div.elt-control {
+  display: inline-block; }
+
+.content-box .comments div.elt div.elt-control input {
+  vertical-align: middle;
+  margin: 0 3px;
+  border: 0 none;
+  height: 15px; }
+
+.content-box .comments label.elt {
+  color: #123d6a;
+  font-size: 16px;
+  line-height: 16px;
+  font-family: georgia;
+  font-weight: normal; }
+
+.content-box label.no-pointer,
+.content-box div.elt-checkbox label.elt,
+.content-box div.elt-radio label.elt {
+  cursor: default; }
+
+.content-box label.click-label {
+  color: #465779;
+  margin-right: 5px;
+  cursor: pointer; }
+
+.content-box div.separator-elt {
+  display: inline-block;
+  margin-left: 40px; }
+
+.content-box div.label-periode {
+  border-right: 2px solid #ffffff;
+  margin-right: 13px;
+  padding-right: 3px; }
+
+.formulaire-page .formulaire-fieldset {
+  background: none repeat scroll 0 0 #eff0f5;
+  width: 430px;
+  padding: 15px;
+  float: left; }
+
+.formulaire-page .formulaire-fieldset.right {
+  float: right; }
+
+.formulaire-fieldset .field-container {
+  overflow: hidden;
+  margin-bottom: 5px; }
+
+.formulaire-fieldset .field-container label {
+  color: #666666;
+  font-weight: bold;
+  width: 150px;
+  float: left;
+  padding-top: 4px;
+  line-height: 1.3em; }
+
+.formulaire-fieldset .field-container label.large {
+  width: 330px; }
+
+.formulaire-fieldset .field-container input {
+  width: 270px;
+  float: left;
+  border: 1px solid #778aab;
+  color: #475779;
+  height: 19px;
+  padding-left: 5px; }
+
+.formulaire-fieldset .field-container input.field-type-checkbox {
+  width: 50px; }
+
+.formulaire-fieldset .field-container input[readonly] {
+  background-color: #dfe1ed; }
+
+.formulaire-fieldset select {
+  width: 280px;
+  float: left;
+  border: 1px solid #778aab;
+  color: #475779;
+  height: 23px; }
+
+/******************* annexes onglet ****************/
+.form-ntd .toolbar-panel .primary {
+  border: 1px solid #dfe2ec;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden; }
+
+.form-ntd .toolbar-panel .primary a {
+  border-right: 1px solid #dfe2ec;
+  color: #7889aa;
+  float: left;
+  font-size: 1.2em;
+  padding: 10px;
+  text-decoration: none; }
+
+.form-ntd .toolbar-panel .primary a.selected {
+  background: none repeat scroll 0 0 #dfe2ec;
+  color: #193e66; }
+
+.label--dynamic {
+  font-size: 12px; }
+
+.field--code {
+  color: #999;
+  font-family: verdana;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-top: 2px;
+  position: absolute;
+  opacity: 0; }
+
+td:hover .field--code {
+  opacity: 1; }
+
+
+.autocomplete-container { background-color: white; border: 1px solid silver; line-height: 1.5; max-height:200px; overflow:auto; }
+.autocomplete-container ul { cursor: pointer; }
+.autocomplete-container li:hover { background-color: #EFF0F5; }
+
+.action-account-declaration-edit .formulaire-repetable-select { border-bottom: 1px solid #dfe2ec; overflow: hidden; }
+.action-account-declaration-edit  .formulaire-repetable-select > .elt-select { }
+.action-account-declaration-edit  .formulaire-repetable-select > .elt-select label { line-height: 48px; padding-right: 10px; float: left; text-align: right; width: 277px; }
+.action-account-declaration-edit  .formulaire-repetable-select > .elt-select > .elt-control { padding: 9px; float: left; width: 275px; }
+.action-account-declaration-edit  .formulaire-repetable-select > .elt-select > .elt-control > select { border: 1px solid #7989AA; display: block; height: 30px; padding: 5px; width: 100%; }
+.action-account-declaration-edit  .formulaire-repetable-select > .ntd-button { float: left; margin: 9px 10px; }
+.action-account-declaration-edit  .formulaire-repetable-select > .ntd-button > span { display: block; line-height: 28px; }
+.action-account-declaration-edit  .formulaire-repetable .default-page { color: #666666; padding: 40px; text-align: center; }
+
+
+/* custom styles for ntd form */
+.form-ntd table tr.tab-title th.maintitle.maintitle-uppercase {
+  text-transform: uppercase;
+}
+
+.field--code {
+  opacity: 1;
+}

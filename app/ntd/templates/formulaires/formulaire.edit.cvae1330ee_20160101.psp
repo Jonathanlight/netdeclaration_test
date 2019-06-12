@@ -1,0 +1,53 @@
+<div class="formulaire-page break" data-label="Partie I">
+  <table class="cvae1330ee">
+    <tbody>
+      <tr class="tab-title">
+        <th>Code INSEE du département</th>
+        <th>Commune de localisation</th>
+        <th>Code INSEE de la commune</th>
+        <th>Valeur locative de l'immeuble</th>
+        <th>&nbsp;</th>
+      </tr>
+      <tr class="elt">
+        <td class="line_id">B7</td>
+        <td class="line_id">B8</td>
+        <td class="line_id">B9</td>
+        <td class="line_id">C2</td>
+        <td class="line_id">&nbsp;</td>
+      </tr>
+    <?php $rows_count = 0;
+      foreach($cvae1330ee_20160101 as $field => $value) {
+        
+        if(strpos($field, 'FA') !== false) $rows_count++;
+      }
+      $rows_count = max(1, $rows_count);
+      for($tr_index = 1; $tr_index <= $rows_count; $tr_index++) :
+    ?>
+      <tr class="elt cvae1330ee-dynamic-row">
+        <td class="input small-input" data-field="FA">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'FA', 'field_name' => 'FA/' . $tr_index, 'value' => empty($cvae1330ee_20160101['FA/' . $tr_index]) ? $cvae1330ee_20160101['FA' . $tr_index] : $cvae1330ee_20160101['FA/' . $tr_index]))?> 
+        </td>
+        <td class="input input_70 full" data-field="BA">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'BA', 'field_name' => 'BA/' . $tr_index, 'value' => empty($cvae1330ee_20160101['BA/' . $tr_index]) ? $cvae1330ee_20160101['BA' . $tr_index] : $cvae1330ee_20160101['BA/' . $tr_index]))?>
+        </td>
+        <td class="input small-input" data-field="DA">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'DA', 'field_name' => 'DA/' . $tr_index, 'value' => empty($cvae1330ee_20160101['DA/' . $tr_index]) ? $cvae1330ee_20160101['DA' . $tr_index] : $cvae1330ee_20160101['DA/' . $tr_index]))?>
+        </td>
+        <td class="input input_35" data-field="EA">
+          <?=Formulaire::getHTMLField($formulaire_code, array('field_code' => 'EA', 'field_name' => 'EA/' . $tr_index, 'value' => empty($cvae1330ee_20160101['EA/' . $tr_index]) ? $cvae1330ee_20160101['EA' . $tr_index] : $cvae1330ee_20160101['EA/' . $tr_index]))?>
+        </td>
+        <td style="text-align:center; padding:0; width:30px;">
+          <a href="javascript:void(0)" onclick="ntd.tableRowManager.removeTableRow($(this).up('tr'), 'cvae1330ee-dynamic-row')" title="Supprimer la ligne" style="padding:10px;">
+            <img alt="Supprimer" src="/app/ntd/pix/style/link_logout.png" />
+          </a>
+        </td>
+      </tr>
+      <?php endfor; ?>
+      <tr class="no-print">
+        <td colspan="5">
+          <a class="link-puce" href="javascript:void(0)" onclick="ntd.tableRowManager.addTableRow('cvae1330ee-dynamic-row')">Ajouter une ligne</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,43 @@
+<style>
+  a.user-file, a.user-file:link { text-decoration:none; }
+  a.user-file:hover { text-decoration:underline; }
+</style>
+
+<div id="files-box">
+  <table class="fixed">
+    <tr>
+      <td style="width:80px;">
+        <ul>
+          <li><a href="javascript:void(0)" onclick="$('box-list', 'box-upload').invoke('toggle')">envoyer</a></li>
+        </ul>
+      </td>
+      <td>
+        <div id="box-list" style="border:1px solid #ccc;">
+          <?php foreach ($files as $i => $file): ?>
+            <div style="border-bottom:1px solid #ddd; background:<?=(($i%2===0)?'white':'#efefef;')?>; padding:3px;">
+              <!-- <a href="javascript:void(0)" class="user-file" onclick="Kwo.getDialog().set('<?=$file['path']?>')"><?=$file['name']?></a> -->
+              <img src="/<?=$file['path']?>" onload="if (this.src!='about:blank') { this.style.backgroundImage='url('+this.src+')';this.src='about:blank' }" style="display:block;background-repeat:no-repeat;background-image:url(/<?=PIX_PATH?>/throbber.gif);background-position:center;width:50px;height:50px;" onclick="Kwo.getDialog().set('<?=$file['path']?>')" />
+              <a href="javascript:void(0)" title="<?=l('suppress')?>" class="user-file" onclick="Kwo.User.removeFile('<?=$file['name']?>', '<?=l('confirmation')?>?')">x</a>
+              <br/>
+            </div>
+          <?php endforeach; ?>
+          <div style="clear:both;"></div>
+        </div>
+        <div id="box-upload" style="display:none;">
+          <form enctype="multipart/form-data" method="post" id="form_upload" target="upload-box" action="/community/user.add_file">
+            <input type="file" name="remote_file" accept="image/*" />
+            <input type="button" value="<?=l('send')?>" class="button" onclick="$('files-box', 'loading-box').invoke('toggle'); $(this.form).submit();" />
+          </form>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div id="loading-box" style="text-align:center; display:none;">
+  <img src="/<?=PIX_PATH?>/loading.gif" style="padding-top:60px;" alt="" />
+</div>
+
+<div style="display:none">
+  <iframe frameborder="no" name="upload-box" id="upload-box" style="width:1px; height:1px"></iframe>
+</div>

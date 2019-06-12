@@ -1,0 +1,154 @@
+<div style="margin: 25px 0">
+
+</div>
+
+<div style="margin: 25px 0">
+  <button type="button" class="btn  btn--color-test">.btn .btn--color-test</button>
+  <button type="button" class="btn btn--color-dark-blue">.btn .btn--color-dark-blue</button>
+  <button type="button" class="btn btn--color-light-blue">.btn .btn--color-light-blue</button>
+  <button type="button" class="btn btn--color-grey">.btn .btn--color-grey</button>
+  <button type="button" class="btn btn--color-red">.btn .btn--color-red</button>
+  <button type="button" class="btn btn--link">.btn .btn--link</button>
+</div>
+
+<div style="margin: 25px 0">
+  <button type="button" class="btn btn--big btn--color-dark-blue">.btn .btn--big .btn--color-dark-blue</button>
+  <button type="button" class="btn btn--big btn--color-light-blue">.btn .btn--big .btn--color-light-blue</button>
+  <button type="button" class="btn btn--big btn--color-grey">.btn .btn--big .btn--color-grey</button>
+  <button type="button" class="btn btn--big btn--color-red">.btn .btn--big .btn--color-red</button>
+</div>
+
+<div style="margin: 25px 0">
+  <button type="button" class="btn btn--small btn--color-dark-blue">.btn .btn--small .btn--color-dark-blue</button>
+  <button type="button" class="btn btn--small btn--color-light-blue">.btn .btn--small .btn--color-light-blue</button>
+  <button type="button" class="btn btn--small btn--color-grey">.btn .btn--small .btn--color-grey</button>
+  <button type="button" class="btn btn--small btn--color-red">.btn .btn--small .btn--color-red</button>
+</div>
+
+<div style="margin: 25px 0">
+  <button type="button" class="btn btn--smaller btn--color-dark-blue">.btn .btn--smaller .btn--color-dark-blue</button>
+  <button type="button" class="btn btn--smaller btn--color-light-blue">.btn .btn--smaller .btn--color-light-blue</button>
+  <button type="button" class="btn btn--smaller btn--color-grey">.btn .btn--smaller .btn--color-grey</button>
+  <button type="button" class="btn btn--smaller btn--color-red">.btn .btn--smaller .btn--color-red</button>
+</div>
+
+<div style="margin: 25px 0">
+  <a href="javascript:void(0)" class="link">.link</a>
+</div>
+
+<div style="margin: 25px 0">
+  <span class="pagination">
+    <a href="javascript:void(0)" class="pagination-prev pagination-page"><span class="fa fa-caret-left"></span></a>
+    <a href="javascript:void(0)" class="pagination-number pagination-page">2</a>
+    <a href="javascript:void(0)" class="pagination-number pagination-page">3</a>
+    <a href="javascript:void(0)" class="pagination-number pagination-page pagination-selected">4</a>
+    <a href="javascript:void(0)" class="pagination-number pagination-page">5</a>
+    <a href="javascript:void(0)" class="pagination-number pagination-page">6</a>
+    <a href="javascript:void(0)" class="pagination-number pagination-page">7</a>
+    <a href="javascript:void(0)" class="pagination-next pagination-page"><span class="fa fa-caret-right"></span></a>
+  </span>
+</div>
+
+<div style="margin: 25px 0">
+  <button type="button" class="btn btn--servicetype">.btn .btn--servicetype</button>
+</div>
+
+<div style="margin: 25px 0">
+  <button type="button" class="btn btn--service">.btn .btn--service</button>
+</div>
+
+<div style="margin: 25px 0">
+  <button type="button" class="btn btn--backtop">
+    &nbsp;
+  </button>
+</div>
+
+<div style="margin: 25px 0">
+  <button type="button" class="btn btn--fixed">
+    .btn .btn--fixed
+  </button>
+</div>
+
+<div style="margin: 25px 0">
+  <div class="form--ntd">
+    <?=Elt::text(array('label' => 'Label'))?>
+    <?=Elt::text(array('label' => 'Label + Required',
+                       'placeholder' => 'Placeholder',
+                       'required' => true))?>
+    <?=Elt::text(array('label' => 'Error Field',
+                       'value' => 'Wrong value',
+                       'class' => 'form-field-failure',
+                       'required' => true))?>
+    <?=Elt::text(array('label' => 'Textarea',
+                       'rows' => 10,
+                       'required' => true))?>
+    <?=Elt::text(array('name' => 'user[password_confirm]', 
+                       'label' => c(l('adherent.edit.password.confirm')), 
+                       'password' => true, 
+                       'required' => true, 'id' => 
+                       'user[password_confirm]'))?>
+ 
+
+                   
+  </div>
+</div>
+
+
+<hr>
+<div class="heading--1">.heading--1</div>
+<div class="heading--2">.heading--2</div>
+<div class="heading--3">.heading--3</div>
+<h1>Hache 2</h1>
+<h2>Hache 2</h2>
+<h3>Hache 3</h3>
+
+Le texte de base sans balise.
+
+<p>Un paragraphe</p>
+<span>Un span</span>
+
+<ul>
+  <li>
+    Liste à puce
+  </li>
+  <li>
+    Liste à puce
+  </li>
+</ul>
+
+<a href="javascript:void(0)">Un lien classique</a>
+<button type="button">Un bouton</button>
+
+<hr>
+<div class="block">
+  <div class="block__title">Pour qui ?</div>
+  <div class="block__description">NET DECLARATION s’adresse à tous ceux qui lorem ipsum dolor sit amet, consectetur
+                                  adipiscing elit.
+  </div>
+  <div class="block__content">
+
+    <h1>Hache 2</h1>
+    <h2>Hache 2</h2>
+    <h3>Hache 3</h3>
+
+    Le texte de base sans balise.
+
+    <p>Un paragraphe</p>
+    <span>Un span</span>
+
+    <ul>
+      <li>
+        Liste à puce
+      </li>
+      <li>
+        Liste à puce
+      </li>
+    </ul>
+
+    <a href="javascript:void(0)">Un lien classique</a>
+    <button type="button">Un bouton</button>
+
+    <hr>
+
+  </div>
+</div>

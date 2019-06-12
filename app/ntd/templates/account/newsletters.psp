@@ -1,0 +1,11 @@
+<form onsubmit="ntd.account.onFormSubmit(this); return false;" action="/account/ntd/newsletters.save" class="form--ntd form--ntd--label-inline" method="post">
+  <?=Elt::checkbox(array(
+    'name'     => 'newsletter',
+    'class'    => 'adherent-types',
+    'required' => false,
+    'options'  => NetDeclaration::getNewsletterBases()->asHash('id', 'name'),
+    'values'   => $adherent_primary->getSubscribedNewsletterBases()->asSet('id')
+  )) ?>
+
+  <button type="submit" class="btn  btn--color-red">Enregistrer</button>
+</form>

@@ -1,0 +1,80 @@
+<nav class="block__actions">
+  <a class="btn btn--color-red"
+     href="/middle/services.purchasables">Souscrire à un nouveau service</a>
+  <a class="ntd-link  ntd-link--underline font-size-small float-right block__actions__link"
+     href="/middle/services.cancel">Résilier un service</a>
+</nav>
+<table class="table  table--ntd table--ntd--even-odd">
+  <colgroup>
+    <col width="*"/>
+    <col width="150"/>
+    <col width="170"/>
+  </colgroup>
+  <thead>
+  <tr>
+    <th><?= c(l('account.services.pending.services')) ?></th>
+    <th><?= c(l('account.services.active.validity')) ?></th>
+    <th><? //= c(l('account.services.active.actions')) ?></th>
+  </tr>
+  </thead>
+  <tbody>
+  <?php if ($souscriptions->count() == 0) : ?>
+    <tr>
+      <td colspan="3" align="center"><?= c(l('account.services.active.noservices')) ?></td>
+    </tr>
+  <?php endif; ?>
+  <?php foreach ($souscriptions as $souscription):
+    $service = $souscription->getService();?>
+    <tr>
+      <td class="table--ntd__bold"><?= $service->getProperty('title') ?></td>
+      <td>
+        <p class="font-size-small">
+          <?php if ($souscription->status == Souscription::STATUS_ACTIVE): ?>
+            <span class="color--green"><?=
+              l('account.services.active.periode',
+                array('date1' => H::date($souscription->start_at),
+                      'date2' => H::date($souscription->finish_at)))?>
+              </span>
+          <?php elseif ($souscription->status == Souscription::STATUS_CANCELLING_ASKED): ?>
+            <span class="color--orange">Résiliation demandée</span>
+          <?php
+          elseif ($souscription->status == Souscription::STATUS_WAITING_PAIEMENT): ?>
+            <span class="color--red">En attente de paiement</span>
+          <?php endif; ?>
+        </p>
+      </td>
+      <td>
+        <?php if ($souscription->status == Souscription::STATUS_ACTIVE): ?>
+          <?php /*if (in_array($service->type, array(Service::TYPE_EDI, Service::TYPE_FORMULAIRE))): ?>
+            <p><a class="ntd-link  font-size-small"
+                  href="<?= SuiviManager::url(array('service_id' => $service->getId())) ?>">Voir les
+                                                                                            télétransmissions</a></p>
+          <?php endif; */ ?>
+          <?php if ($service->code == 'GREFFE') : ?>
+            <p>
+              <a class="ntd-link  font-size-small" href="/middle/greffe">
+                Faire un dépôt
+              </a>
+            </p>
+          <?php elseif (in_array($service->type, array(Service::TYPE_FORMULAIRE))): ?>
+            <p>
+              <a class="ntd-link  font-size-small" href="<?= NtdMiddleManager::actionDeclarerURL(array('service_id' => $service->getId())) ?>">
+                Faire une déclaration
+              </a>
+            </p>
+          <?php endif; ?>
+        <?php endif; ?>
+
+        <?php if ($souscription->status == Souscription::STATUS_WAITING_PAIEMENT): ?>
+          <?php foreach ($souscription->getFactures() as $facture) : ?>
+            <p><a class="ntd-link  font-size-small"
+                  href="<?= $facture->asUrl() ?>">Payer la facture N°<?= $facture->getId() ?></a></p>
+          <?php endforeach; ?>
+        <?php endif; ?>
+      </td>
+    </tr>
+  <?php endforeach; ?>
+  </tbody>
+
+</table>
+

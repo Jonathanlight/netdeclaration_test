@@ -1,0 +1,30 @@
+<form action="/account/ntd/adherents.adherent.resiliate" method="post">
+  <input type="hidden" name="id" value="<?= $adherent->getId() ?>">
+  <table class="table table--ntd ">
+    <tr>
+      <th><?= c(l('adherent.edit.firstname')) ?></th>
+      <td><?= $adherent->first_name ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('adherent.edit.lastname')) ?></th>
+      <td><?= $adherent->last_name ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('adherent.edit.raison')) ?></th>
+      <td><?= $adherent->company ?></td>
+    </tr>
+    <tr>
+      <th><?= c(l('adherent.edit.siret')) ?></th>
+      <td><?= $adherent->siret ?></td>
+    </tr>
+
+    <tr>
+      <th><?= c(l('adherents.secondaries.cancel.periode')) ?></th>
+      <td><?= H::date($current_souscription->start_at) ?> au <?= H::date($current_souscription->finish_at) ?></td>
+    </tr>
+  </table>
+
+  <button type="submit" class="btn  btn--color-red"><?= c(l('adherents.secondaries.cancel.valide')) ?></button>
+  <a class="btn btn--link" href="/account/ntd/adherents">Annuler</a>
+</form>
+

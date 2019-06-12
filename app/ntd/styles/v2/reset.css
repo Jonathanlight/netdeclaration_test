@@ -1,0 +1,383 @@
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License:none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video { margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:baseline }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section { display:block }
+body { line-height:1.3; height:100% }
+ol, ul { list-style:none outside }
+blockquote, q { quotes:none }
+blockquote:before, blockquote:after,
+q:before, q:after { content:""; content:none }
+table { border-collapse:collapse; border-spacing:0 }
+* { -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box }
+img { -webkit-box-sizing:content-box; -moz-box-sizing:content-box; box-sizing:content-box }
+
+@-moz-document url-prefix(http://) {
+  button::-moz-focus-inner,
+  input[type="reset"]::-moz-focus-inner,
+  input[type="button"]::-moz-focus-inner,
+  input[type="submit"]::-moz-focus-inner,
+  input[type="file"] > input[type="button"]::-moz-focus-inner { border:0;padding:0;margin:0 }
+}
+/*--- structure ---*/
+
+html { font-size:100.1%; height:100% }
+body { font-family:Arial, Helvetica, sans-serif; font-size:13px; background:#FFF }
+small { font-size:0.8em }
+big { font-size:1.2em }
+em { font-style:italic }
+strong { font-weight:600 }
+blockquote { border:1px solid #CCC }
+hr {
+ height:0px; overflow:hidden; display:block; width:100%; border-left:0 none; border-right:0 none; 
+ border-top:1px solid #d8dfec; border-bottom:1px solid #FFF }
+a { text-decoration:none; color:inherit }
+a:hover,
+a:active { text-decoration:underline }
+ul, ol { list-style-position:outside }
+ol { padding-left:20px }
+ol li { list-style-type:decimal }
+table.fixed { table-layout:fixed; width:100% }
+table.auto { table-layout:auto; width:100% }
+th { text-align:left; font-weight:normal }
+td { vertical-align:top }
+input[type=checkbox], input[type=radio], input[type=submit], label[for], a, *[onclick] { cursor:pointer }
+
+/*
+*::selection { background-color:#013183; color:#FF6400 }
+*::-moz-selection { background-color:#013183; color:#FF6400 }
+*/
+::-webkit-input-placeholder { color:#4d4d4d; font-weight:100; font-style:italic }
+:-ms-input-placeholder { color:#4d4d4d; font-weight:100; font-style:italic }
+::-moz-placeholder { color:#4d4d4d; font-weight:100; font-style:italic }
+input:-moz-placeholder { color:#4d4d4d; font-weight:100; font-style:italic }
+::input-placeholder { color:#4d4d4d; font-weight:100; font-style:italic }
+
+:before,
+:after { display:inline-block; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box }
+
+
+/*--- controls ---*/
+
+select, textarea, input[type=text], input[type=password], button, input.text { font-family:inherit; font-size:inherit; border:1px solid #c2c2c2 }
+select, textarea, input[type=text], input[type=password], input[type=submit], input[type=button], input[type=image], button { padding:5px 10px; resize:none }
+select, textarea, input, button { margin:0; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; max-width:100% }
+select, textarea, input[type=text], input[type=checkbox], input[type=radio], a { outline:0 none }
+input[type=checkbox], input[type=radio], input[type=image] { vertical-align:middle; margin:0 }
+input[type=checkbox], input[type=radio] { margin-right:2px; margin-bottom:3px }
+input[type=submit], input[type=button], button { cursor:pointer }
+textarea { width:100% }
+select:focus, input[type=text]:focus, input[type=password]:focus, textarea:focus {}
+button.simplified,
+textarea.simplified,
+select.simplified,
+input.simplified { border:0 none; background:none transparent; border-radius:0; -moz-border-radius:0; -webkit-border-radius:0; padding:0; -moz-appearance:none; -ms-appearance:none; -webkit-appearance:none }
+label.placeholder { display:none !important }
+
+/*--- elt ---*/
+
+div.elt label.elt,
+div.elt .elt-control { display:inline-block; vertical-align:middle; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box }
+div.elt .elt-control:first-child { display:block }
+div.elt .elt-control.elt-wide select,
+div.elt .elt-control.elt-wide .text { width:100% }
+div.elt .elt-control.elt-small select,
+div.elt .elt-control.elt-small .text { width:65px }
+
+div.elt.elt-birthdate .elt-control select,
+div.elt.elt-captcha .elt-control .text.captcha { width: auto }
+
+.form-content { /*font-size:1.4em;*/ }
+.form-fields { /*margin-bottom:20px;*/ }
+.form-fields:after { content: ""; display: table; clear: both }
+.form-fields div.elt,
+.form-fields .form-field { margin-bottom:10px; width:auto }
+.form-fields label.elt,
+.form-field > label { width:40%; display:inline-block; vertical-align:middle; margin-right:-4px }
+.form-content .form-mandatory,
+.form-content .padded-left,
+.form-fields .padded-left { margin-left:40%; padding-left:20px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; display:inline-block; vertical-align:middle }
+.form-content .form-mandatory { font-size:0.8em }
+.form-content .padded-left,
+.form-fields .padded-left { padding-left:24px }
+.form-fields > .actions,
+.form-content .form-button { text-align:right }
+.form-field > label + .form-field-control,
+.form-fields label.elt + .elt-control { width:60%; padding-left:20px; -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; display:inline-block; vertical-align:middle }
+.form-field > label + .form-field-control select,
+.form-fields label.elt + .elt-control select { max-width:100% }
+.form-field > label + .form-field-control .text { width:100% }
+.form-fields > div.form-field.form-field-date .form-field-control input.text { width:8em }
+.form-ack {}
+
+.form-field-failure { color:#C33 }
+.form-field-failure .form-field-error { display:block !important }
+.form-field-failure .form-field-error,
+.form-field-failure select,
+.form-field-failure textarea,
+.form-field-failure input[type=text],
+.form-field-failure .text { border-color:#c33 }
+
+
+.form-fields.table div.elt,
+.form-fields.table .form-field { display:table-row }
+.form-fields.table div.elt:after,
+.form-fields.table .form-field:after { display:none }
+.form-fields.table label.elt,
+.form-fields.table div.elt-control,
+.form-fields.table .form-field > label,
+.form-fields.table .form-field .form-field-control { display:table-cell; padding-bottom:10px;	}
+.form-fields.table div.elt-control,
+.form-fields.table .form-field .form-field-control { width:auto }
+
+
+/*--- font face ---*/
+
+/*
+#si OTF fournis :
+@font-face {
+  font-family:'My-Font';
+  src:url(/web/[app]/fonts/My-Font.eot);
+  src:local('My-Font'),
+      url(/web/[app]/fonts/My-Font.eot?#iefix) format('embedded-opentype'),
+      url(/web/[app]/fonts/My-Font.otf) format('opentype');
+}
+#sinon :
+@font-face {
+  font-family:'My-Font';
+  src:url(/web/[app]/fonts/My-Font.eot); <!-- ie6-8 -->
+  src:url(/web/[app]/fonts/My-Font.eot?#iefix) format('embedded-opentype'), <!-- ie6-8 -->
+      url(/web/[app]/fonts/My-Font.woff) format('woff'), <!-- FF 3.5+, chrome 4+, ie9+ -->
+      url(/web/[app]/fonts/My-Font.ttf) format('truetype'); <!-- other -->
+}
+*/
+
+/*--- kwo ---*/
+
+.clear { clear:both; display:block; font-size:0; height:0; line-height:0; width:100%; margin:0; min-height:0; padding:0 }
+.clearfix { *zoom:1 }
+.clearfix:before,
+.clearfix:after { display:table; line-height:0; content:"" }
+.clearfix:after { clear:both }
+.right { float:right }
+.left { float:left }
+.aleft { text-align:left }
+.aright { text-align:right }
+.acenter { text-align:center }
+.bold { font-weight:bold }
+.upper { text-transform:uppercase }
+.hidden { display:none !important }
+sub, .sub { vertical-align:sub; font-size:smaller }
+sup, .sup { vertical-align:super; font-size:smaller }
+.wide { width:100% }
+.inline-block { display:-moz-inline-stack; display:inline-block; vertical-align:top; zoom:1; *display:inline }
+.ellipsis { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; -o-text-overflow:ellipsis; -ms-text-overflow:ellipsis } 
+.fixFont { -webkit-font-smoothing:subpixel-antialiased !important; -webkit-backface-visibility:hidden; -moz-backface-visibility:hidden; -ms-backface-visibility:hidden; -webkit-transform:rotate3D(0,0,0,0) }
+.css-animated { -webkit-transition:all 0.5s ease-in-out; -moz-transition:all 0.5s ease-in-out; -ms-transition:all 0.5s ease-in-out; transition:all 0.5s ease-in-out }
+
+
+.pagination { display:block; margin-bottom:5px; text-align:right; font-size:0; padding-top:4px }
+.pagination .pagination-page {
+    width:15px; height:15px; display:inline-block; margin-right:3px; 
+    color:#333; line-height:15px; text-align:center; text-decoration:none; vertical-align:bottom;
+}
+.pagination .pagination-page:hover {}
+.pagination .pagination-page:active {}
+
+.pagination .pagination-first,
+.pagination .pagination-prev,
+.pagination .pagination-next,
+.pagination .pagination-last { font-size:16px; padding:2px 0 3px }
+
+.pagination .pagination-number { color:#333; font-size:14px; padding:2px 0 }
+.pagination .pagination-number:hover { text-decoration:none } 
+.pagination .pagination-selected { color:#999 }
+
+span.picto { display:inline-block; height:18px; width:18px; vertical-align:middle; margin-right:3px; background:none no-repeat center center }
+
+/*--- dialog ---*/
+
+.dialog-overlay { background-color:black }
+.dialog-shadow { 
+-webkit-box-shadow:0 0 5px 0 rgba(0,0,0,.6); -moz-box-shadow:0 0 5px 0 rgba(0,0,0,.6); box-shadow:0 0 5px 0 rgba(0,0,0,.6);
+-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;
+}
+.dialog-support {
+  overflow:auto; background-color:white; cursor:default;
+  padding:10px;
+  -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;
+}
+.dialog-close { width:30px; height:30px; cursor:pointer; top:0px; left:15px;
+                display:block; position:relative; float:right;
+                user-select:none; -moz-user-select:none; -webkit-user-select:none;
+                margin:-18px 0 -12px 0;
+                background-image:url("/web/core/images/dialog.close.png");
+                background-position:0 0 }
+.dialog-close:hover { background-position:0 30px }
+.dialog-shadow .layout-hbox > H1 { user-select:none; -moz-user-select:none; -webkit-user-select:none }
+.dialog-shadow .layout-hbox > H1:first-letter { text-transform:uppercase }
+
+
+.widget-overlay { position:fixed; top:0; bottom:0; left:0; right:0 }
+.widget-shadow { width:auto !important; height:auto !important; -moz-box-shadow:0 0 .3em #cdd1e5; -webkit-box-shadow:0 0 .5em #cdd1e5; box-shadow:0 0 .5em #cdd1e5 }
+.widget-support { padding:20px; width:auto !important; height:auto !important }
+
+/* ---- widget calendar ---- */
+.dialog-date,
+.widget-date { background:#ffffff; border:1px solid #d9d9d9; font-size:12px }
+.dialog-date select,
+.widget-date select { font-size:12px; text-transform:capitalize }
+.dialog-date tr.top-line,
+.widget-date tr.top-line { background:#f1f0f1 }
+.dialog-date tr.top-line th,
+.widget-date tr.top-line th { padding:10px 0 10px 0 }
+.dialog-date h1,
+.widget-date h1 { display:none }
+.dialog-date .date-layout,
+.widget-date .date-layout { width:260px; margin:0 auto }
+/*.widget-date .controls,
+.widget-date .actions { font-size:1.3em; width:181px; margin:0 auto }*/
+.dialog-date .controls,
+.widget-date .controls { margin-bottom:10px }
+.dialog-date .controls .btn-previous,
+.widget-date .controls .btn-previous,
+.dialog-date .controls .btn-next,
+.widget-date .controls .btn-next { border:0 none; padding:0; font-size:0; background:#828cbe no-repeat left top; width:20px; height:20px; -moz-box-shadow:0 1px 0 0 #667191; -webkit-box-shadow:0 1px 0 0 #667191; box-shadow:0 1px 0 0 #667191; -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px }
+.dialog-date .arrow-prev,
+.dialog-date .arrow-next,
+.widget-date .arrow-prev,
+.widget-date .arrow-next { display:block; margin:0 auto; width:20px; height:27px; background:#F0F left top no-repeat; font-size:0 }
+.dialog-date .arrow-next,
+.widget-date .arrow-next { background-position:right top }
+.dialog-date .arrow-prev:hover,
+.widget-date .arrow-prev:hover { background-position:left -27px }
+.dialog-date .arrow-next:hover,
+.widget-date .arrow-next:hover { background-position:right -27px }
+.dialog-date .arrow-prev:active,
+.widget-date .arrow-prev:active { background-position:left -54px }
+.dialog-date .arrow-next:active,
+.widget-date .arrow-next:active { background-position:right -54px }
+.dialog-date .controls .btn-next,
+.widget-date .controls .btn-next { background-position:right top }
+.dialog-date .time,
+.widget-date .time { font-size:12px }
+.dialog-date .actions,
+.widget-date .actions { padding-top:17px }
+.dialog-date .actions:before,
+.widget-date .actions:before,
+.dialog-date .actions:after,
+.widget-date .actions:after { content:""; display:table; clear:both }
+.dialog-date .actions a.elt-link,
+.widget-date .actions a.elt-link { float:left; font-size:12px; margin-top:1em }
+.dialog-date .actions button,
+.widget-date .actions button { float:right }
+table.calendar { width: 100% !important }
+table.calendar th,
+table.calendar td { font-size:12px; text-align:center; line-height:25px; width:25px; border:1px solid #ffffff }
+table.calendar th { color:#000000; text-transform:uppercase }
+table.calendar td { background:#F7F7FA; border:1px solid #FFF !important;}
+table.calendar td span,
+table.calendar td a { display:block; color:#ffffff; height:100%; width:100%; width: auto !important; }
+table.calendar td a:hover { text-decoration:none }
+table.calendar td span { background:#c3c2c3 }
+table.calendar td a { background:#F7F7FA }
+table.calendar td a:hover { background:#002e60; color:#58595b }
+table.select-year-month {background: #F1F0F1}
+.core-date-select-box select { border: 1px solid #ABADB3 !important;  box-shadow: none !important;}
+.core-date-select-box .elt-link.link-puce { color: #5F7092; background: none repeat scroll 0 0 rgba(0, 0, 0, 0); text-decoration: none; text-shadow: none;}
+.date-layout .btn { margin:0 }
+.dialog-date .date-layout { width: 100% !important }
+.dialog-shadow.kwo-layer {z-index: 302}
+.dialog-overlay {z-index: 301}
+/* ---- !widget calendar ---- */
+
+
+/* ---- google map inherit style ---- */
+.gm-infowindow { font-family:inherit; font-size:inherit; font-weight:inherit }
+.map img { max-width:none !important }
+/* ---- !google map inherit style ---- */
+
+
+.cols { margin-left:-5.8333% }
+.cols > .col { margin-left:5.5118%; width:44.4881%; float:left; margin-bottom:20px }
+.cols > .col.form-fields,
+.cols > .col > .form-fields { margin-right:0 }
+.cols > .col > .form-fields { font-size:1em }
+.cols > .full-col { float:none; width:100%; clear:both }
+.col img { max-width:100.1% }
+
+div.elt:after,
+.sidecol:after,
+.cols:after,
+.cols .col:after,
+.wrapper-container:after,
+.wrapper-container > .block-container:after { display:table; line-height:0; content:""; clear:both }
+
+
+.sidecol {}
+.sidecol > .col { float:left }
+.sidecol > .col-menu { width:30.83333%; margin-right:3.75% }
+.sidecol > .col-menu + .col-container { margin-right:0 }
+.sidecol > .col-container { width:65.41666%; margin-right:3.75% }
+.sidecol > .col-sidebar { width:30.83333% }
+
+
+
+.table { display:table; width:100%; padding:0 }
+.table--collapse { border-collapse:collapse }
+.table--fixed { table-layout:fixed }
+.table-row { display:table-row; padding:0; margin:0; border:0 none; float:none }
+.table-cell { display:table-cell; margin:0; float:none }
+.table-cell img { max-width:100.01% }
+.table-cell--vm { vertical-align:middle }
+.table-cell--vt { vertical-align:top }
+.table-cell--vb { vertical-align:bottom }
+.table-cell--w25 { width:25% }
+.table-cell--w33 { width:33% }
+.table-cell--w50 { width:50% }
+.table-cell--w65 { width:65% }
+.table-cell--w75 { width:75% }
+
+
+
+.box-container { margin-bottom:20px }
+.box-title { font-size:1.8em; color:#7c7c7c; text-transform:uppercase }
+.box-title.box-title-bb { border-bottom:1px solid #dfdfdf; padding-bottom:5px; padding-top:10px;  }
+.box-content { background:#ffffff; padding:20px 25px; /*font-size:1.4em;*/ }
+.box-content.padL0 { padding-left:0 }
+.box-content.padR0 { padding-right:0 }
+.box-content + .box-content { border-top:1px solid #eff1f7 }
+.box-content > .editable-content { font-size:1em }
+.box-content > .actions { padding-top:15px }
+.box-content .section-box { padding:10px 0 }
+.box-content .section-box + .section-box { border-top:1px solid #e1e0f2 }
+.box-content .section-box:first-child { padding-top:0 }
+
+
+.editable-content { font-size:1em }
+.editable-content h1 { font-size:1.25em; font-weight:bold; margin-bottom:20px }
+.editable-content h2 { font-size:1.1em; font-weight:600 }
+.editable-content h3 {}
+.editable-content ul { padding-left:20px; list-style:disc outside; margin:10px 0 }
+.editable-content p { margin:10px 0 }
+.editable-content strong { font-weight:600 }
+
+
+.kwo-tooltip { position:absolute; background:#fff; border:1px solid #c2c2c2; padding:10px; font-size:11px; max-width:250px } 
+

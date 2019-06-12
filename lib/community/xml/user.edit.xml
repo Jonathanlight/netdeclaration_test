@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+ <fieldset label="$fieldset_label">
+
+  <notebook>
+
+   <page label="définition">
+    <form>
+     <hbox>
+      <vbox width="28%">
+       <elem field="email" required="true"/>
+       <elem field="name" label="surnom"/>
+       <elem name="profiles[person][last_name]" value="$profiles['adherent']['last_name']" label="nom"/>
+       <elem name="profiles[person][first_name]" value="$profiles['adherent']['first_name']" label="prénom"/>
+      </vbox>
+      <vbox width="28%">
+       <elem field="password" value="" label="associer un nouveau mot de passe"/>
+      </vbox>
+      <vbox>
+       <elem field="flags" options="User::$flags" type="checkbox" cols="3" label="flags" />
+       <elem field="privileges" type="checkbox" cols="3" label="privileges" options="NetDeclarationManager::getNtdPrivileges()" />
+       <elem field="status" options="User::$statuses" type="radio" label="status"/>
+      </vbox>
+     </hbox>
+     <launcher actions="store"/>
+    </form>
+   </page>
+
+   <page label="opérations" built="$is_loaded">
+    <hbox>
+     <vbox width="12%">
+      <box label="actions">
+       <link icon="details"/>
+       <link icon="note"/>
+       <link icon="profile" label="Adhérent" action="Kwo.F('adherent').onEdit(this)"/>
+       <link icon="files" action="files" label="fichiers" id="user-files" built="false"/>
+       <link icon="privilege" label="privilèges" id="privilege-button"
+             action="Kwo.F('privilege').onExec('expirations', this, {container: 'privilege-box'})" built="false"/>
+      </box>
+     </vbox>
+     <vbox>
+      <deck>
+       <box class="person-box"/>
+       <box class="adherent-box"/>
+       <box class="author-box"/>
+       <box id="privilege-box"/>
+       <box id="notice-box"/>
+       <box id="acl-box"/>
+      </deck>
+     </vbox>
+    </hbox>
+   </page>
+
+  </notebook>
+
+ </fieldset>
+</kwo-interface>

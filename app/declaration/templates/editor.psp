@@ -1,0 +1,50 @@
+<?=H::head(array('controllers' => true,
+                 //'scripts' => array('/app/declaration/scripts/editor.js'),
+                 'styles' => array('/app/ntd/styles/front.css',
+                                   '/app/declaration/styles/imprime.css'))) ?>
+
+<div class="wrapper">
+
+  <div class="tabs" id="tabs">
+    <div>
+      <h1>Formulaire : <?=$ftype->name?> [ID:<?=$ftype->getId()?>] - Template <?=$itemplate->name?></h1>
+      <ul class="tabs-nav">
+        <li class="tab-nav">
+          <a href="javascript:void(0)" class="selected" rel="editor">
+          <span>Editeur
+            <img class="help" src="/app/declaration/pix/help.png" onclick="new Kwo.Dialog('/middle/core/editor.help', null, {width:650, height:400})"/>
+          </span>
+          </a>
+        </li>
+        <li class="tab-nav">
+          <a href="javascript:void(0)" class="" rel="viewer"><span>Viewer</span></a>
+        </li>
+        <li class="tab-nav">
+          <a href="javascript:void(0)" class="" rel="code"><span>Code source</span></a>
+        </li>
+      </ul>
+    </div>
+    <ul class="tabs-content">
+      <li class="tab-content" id="editor">
+        <form autocomplete="off">
+        <?=$editor->asHtml()?>
+        </form>
+      </li>
+      <li class="tab-content" id="viewer">
+        <div class="rendre-html">
+        <?=$render['html']?>
+        </div>
+      </li>
+      <li class="tab-content" id="code">
+        <textarea class="rendre-code"><?=$render['code']?></textarea>        
+      </li>
+    </ul>
+  </div>
+
+  <div class="clear"></div>
+</div>
+
+<script type="text/javascript">
+  new declaration.Tabs('tabs');
+</script>
+<?=H::foot() ?>

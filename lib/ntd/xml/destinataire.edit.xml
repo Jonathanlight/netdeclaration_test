@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+  <fieldset>
+
+    <notebook>
+      <page>
+        <form>
+          <hbox>
+            <vbox>
+
+              <elem field="suivi_id"/>
+              <box label="Cache">
+                <elem field="adherent_destinataire_id"/>
+                <elem field="adherent_declarant_id"/>
+                <elem field="adherent_emetteur_id"/>
+                <elem field="suivi_date_depot"/>
+                <elem field="flags"/>
+              </box>
+
+            </vbox>
+            <vbox>
+              <box label="Destinataire détails">
+                <elem field="ref_message"/>
+                <elem field="no_dest"/>
+                <elem field="type_dest"/>
+                <elem field="siret"/>
+                <elem field="nom_dest"/>
+                <elem field="no_interchange"/>
+                <elem field="no_message"/>
+              </box>
+
+            </vbox>
+            <vbox>
+              <box label="Retour détails">
+                <elem field="status"/>
+                <elem field="date_ack"/>
+                <elem field="message"/>
+                <elem field="flg_depot"/>
+                <elem field="flg_envoi"/>
+                <elem field="flg_ack"/>
+              </box>
+            </vbox>
+          </hbox>
+          <launcher/>
+        </form>
+      </page>
+      <page>
+        <hbox>
+          <vbox width="150px">
+            <box label="actions">
+              <link icon="details"/>
+            </box>
+          </vbox>
+          <vbox>
+            <deck/>
+          </vbox>
+        </hbox>
+      </page>
+    </notebook>
+
+  </fieldset>
+</kwo-interface>

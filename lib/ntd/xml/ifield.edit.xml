@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<kwo-interface>
+ <fieldset>
+
+  <notebook>
+   <page>
+    <form>
+     <hbox>
+      <vbox>
+       <box label="In-Formulaire">
+        <elem field="code" label="code Unique" precision="généré automatiquement" disabled="true"/>
+        <elem field="label"/>
+        <elem field="name" label="code du champ dans le formulaire"/>
+        <elem field="default_value" label="valeur par défaut"/>
+        <elem field="flags" cols="1"/>
+        <elem field="status" default="0"/>
+        <elem field="maxlength" precision="Seulement pour FTX, RFF et NAD (et dont type_simple != 3207)" />
+        <elem field="minlength" precision="Seulement pour FTX, RFF et NAD" />
+       </box>
+      </vbox>
+      <vbox>
+       <hbox>
+        <vbox>
+         <elem field="code_edi" label="Code EDI" precision="plusieurs champs peuvent avoir le même code"/>
+         <elem field="type" type="select" addfirst="Type de champ" options="Ifield::$types"/>
+         <elem field="type_segment" disabled="true"/>
+         <elem field="type_composite" disabled="true"/>
+         <elem field="type_simple" disabled="true"/>
+         <elem field="format" type="select" options="Ifieldnad::$formats" label="Controle format du champ (NAD seulement)" />
+        </vbox>
+        <vbox>
+         <elem field="no_donnee_simple" precision="dans le cas de NAD, FTX... : précise l'indice de la donnée" default="01" />
+         <elem field="table_edi" />
+        </vbox>
+       </hbox>
+      </vbox>
+      <vbox>
+       <box label="Annexes">
+        <elem type="relations"
+              label="Millésimes associés"
+              model="millesime"
+              editable="true" />
+       </box>
+      </vbox>
+     </hbox>
+     <launcher/>
+    </form>
+   </page>
+   <page>
+    <hbox>
+     <vbox width="150px">
+      <box label="actions">
+       <link icon="details"/>
+      </box>
+     </vbox>
+     <vbox>
+      <deck/>
+     </vbox>
+    </hbox>
+   </page>
+  </notebook>
+
+ </fieldset>
+</kwo-interface>

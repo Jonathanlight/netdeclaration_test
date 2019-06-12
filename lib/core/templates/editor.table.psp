@@ -1,0 +1,31 @@
+<h1>Tableau</h1>
+
+<div>
+<form>
+
+<ul class="elts">
+
+<li>
+ <label>Largeur</label>
+ <input type="text" size="5" name="width" value="100%" />
+</li>
+
+<li>
+ <label>Nb lignes</label>
+ <input type="text" size="5" name="rows" value="2" />
+</li>
+
+<li>
+ <label>Nb colonnes</label>
+ <input type="text" size="5" name="cols" value="2" />
+</li>
+
+<li class="action">
+ <input type="button" style="float:right;" value="insérer" />
+</li>
+
+</ul>
+
+</form>
+
+</div>

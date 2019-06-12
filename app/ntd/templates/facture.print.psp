@@ -1,0 +1,99 @@
+<div class="main-content">
+  <div class="inner">
+    <div class="generic-block block-summary">
+      <div>
+        <p>
+          <?php if ($user->hasFlag(User::FLAG_NTD_DOMTOM)): ?>
+            <?=l('snippet:ntd.facture.informations.domtom', I18N::LOCALE_FR)?>
+          <?php else: ?>     
+            <?=l('snippet:ntd.facture.informations', I18N::LOCALE_FR)?>
+          <?php endif; ?>
+        </p>
+      </div>
+      <div>
+        <p>
+          <span>Adresse de facturation</span><br>
+          <?=$address['company']?><br>
+          <?=$address['address']?><br>
+          <?php if (!empty($address['zipbox'])): ?>
+            <?=$address['zipbox']?><br>
+          <?php endif; ?>
+          <?=$address['zipcode']?> - <?=$address['city']?><br>
+          <?=Country::getInstance($address['country_id'])->name?>
+        </p>
+      </div>
+      <div>
+        <p>
+          <span>Adhérent</span><br>
+          <?=$adherent['siret']?><br>
+          <?=$adherent['company']?><br>
+          <?=$adherent['address']?><br>
+          <?php if (!empty($adherent['address_1'])): ?>
+            <?=$adherent['address_1']?><br>
+          <?php endif; ?>
+          <?php if (!empty($adherent['address_2'])): ?>
+            <?=$adherent['address_2']?><br>
+          <?php endif; ?>
+          <?=$adherent['zipcode']?><br>
+          <?=$adherent['city']?><br>
+          <?=$adherent['country_id'] ? Country::getInstance($adherent['country_id'])->name : ''?><br>
+          <?=Adherent::$civilities_abreges[$adherent['civility']]?> <?=$adherent['first_name']?> <?=$adherent['last_name']?><br>
+          <?=$adherent['function']?>
+        </p>
+      </div>
+    </div>
+    <div class="generic-block block-facture">
+      <table class="facturation-table">
+        <thead>
+          <tr>
+            <th class="col-1">Services</th>
+            <th class="col-2">Période</th>
+            <th class="col-3">Qté</th>
+            <th class="col-4">P.U. HT</th>
+            <th class="col-5">Total HT</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php foreach ($purchases as $purchase): ?>
+            <?php if (!($purchase['price_total_ht'] > 0) && !$purchase['force_display']) continue; ?>
+            <tr>
+              <td class="col-1"><?=$purchase['name']?></td>
+              <td class="col-2">
+                <?php if ($purchase['date_from'] && $purchase['date_to']) : ?>
+                  du <?=H::date($purchase['date_from'])?> au <?=H::date($purchase['date_to'])?>
+                <?php endif; ?>
+              </td>
+              <td class="col-3"><?=$purchase['quantity']?></td>
+              <td class="col-4"><?=H::amount($purchase['price'])?></td>
+              <td class="col-5"><?=H::amount($purchase['price_total_ht'])?></td>
+            </tr>
+          <?php endforeach; ?>
+        </tbody>
+      </table>
+      <div class="facture-info">
+        <p>
+          <span><?=String::capitalize($facture->getStatus())?></span><br>
+          Émise le <?=H::date($facture->getMeta('created_at'))?> - Echéance le <?=date('d/m/Y', Date::asTimestamp($facture->getMeta('created_at')) + 60 * 60 * 24 * 30)?><br>
+          Mode de paiement choisi : <strong><?=$facture->method_id > 0 ? $facture->getMethod()->getName() : 'Non choisi'?></strong>
+        </p>
+      </div>
+      <div class="facture-total">
+        <p>TOTAL HT <span><?=H::amount($prices['price_ht'])?></span></p>
+        <p>TVA <?=number_format(100 * $prices['percent_tva'], 2)?> % <span><?=H::amount($prices['price_tva'])?></span></p>
+        <p class="total">TOTAL TTC <span><?=H::amount($prices['price_ttc'])?></span></p> 
+      </div>
+      <div class="facture-note">
+        <p>
+          <small class="note-text">Merci de régler cette facture dès réception ou au plus tard à 30 jours. Le service sera activé à réception du règlement.<br>
+          Tout retard de paiement engendre une pénalité calculée sur la base du taux légal en vigueur ainsi qu'une indemnité<br>
+          forfaitaire pour frais de recouvrement de 40 euros. </small><br>
+          <?php if ($user->hasFlag(User::FLAG_NTD_DOMTOM)): ?>
+            <?=l('snippet:ntd.facture.reglement.ref_bancaires.domtom', I18N::LOCALE_FR)?>
+          <?php else: ?>
+            <?=l('snippet:ntd.facture.reglement.ref_bancaires', I18N::LOCALE_FR)?> 
+          <?php endif; ?>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="wrapper__content--2cols--bluewhite">
+  <div class="wrapper-width">
+    <div class="table">
+      <nav class="wrapper__content--2cols--bluewhite__col-blue  table-cell  wrapper__footer-padding-bottom">
+
+      <div class="block--account">
+        <span class="font-weight-bold"><?= $_current_primary_adherent->first_name ?> <?= $_current_primary_adherent->last_name ?></span>
+        <span class="font-compagny"><?=$_current_primary_adherent->company?></span>
+      </div>
+
+        <nav class="white-nav">
+          <?php foreach (NtdAccountManager::$modules as $module_code => $module_hash) : ?>
+            <a href="/account/ntd/<?= $module_hash['url'] ?>"
+               class="white-nav__link  <?= $module_code == NtdAccountManager::getCurrentModule('code') ? 'white-nav__link--selected' : '' ?>">
+              <?php $page_snippet = NtdAccountManager::getPageSnippet($module_hash['url']) ?>
+              <?=($page_snippet ? $page_snippet->getProperty('title') : '&nbsp;') ?>
+              <i class="fa  fa-caret-right  white-nav__link__icon"></i>
+            </a>
+          <?php endforeach; ?>
+        </nav>
+
+      </nav>
+
+      <main class="wrapper__content--2cols--bluewhite__col-white  table-cell  wrapper__footer-padding-bottom">
+
+        <?php if (!empty($_warnings)): ?>
+          <div class="flashinfo flashinfo--yellow">
+            <?php foreach ($_warnings as $warning): ?>
+              <div><?=$warning?></div>
+            <?php endforeach; ?>
+          </div>
+        <?php endif; ?>
+
+        <div class="block  block--middle-content">
+          <?= H::breadcrumb(array('separator' => '<i class="fa fa-angle-right breadcrumb__separator"></i>')) ?>
+          <?php $module_snippet = NtdAccountManager::getPageSnippet(); ?>
+          <h1 class="block__middle-title"><?=$module_snippet ? $module_snippet->getProperty('title') : ''?></h1>
+          <div class="block__middle-description"><?=$module_snippet ? $module_snippet->getProperty('description') : ''?></div>
+          <?php if(strlen($module_snippet->getProperty('content')) > 0) : ?>
+          <div class="block__middle-content"><?=$module_snippet ? $module_snippet->getProperty('content') : ''?></div>
+          <?php endif; ?>
+          <div class="block--middle-content__wrapper"><?= $_content ?></div>
+        </div>
+
+
+      </main>
+
+    </div>
+
+  </div>
+</div>

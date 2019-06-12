@@ -1,0 +1,33 @@
+<div class="margin-top-30">
+  <h1 class="block__middle-title">Dépôt</h1>
+
+  <?php if ($greffe->status < Greffe::STATUS_VALID) : ?>
+    <?=H::inc('ntd:_greffe.documents', array('greffe' => $greffe, 'documents' => $reponse_documents)) ?>
+
+    <form action="/middle/greffe.validate.save" class="form--ntd form--ntd--label-inline" method="post">
+      <input type="hidden" name="id" value="<?=$greffe->getId() ?>" />
+      <h2 class="block__title"><?=Snippet::content('greffe.depot.validate', null, 'title') ?></h2>
+      <p>
+        <?=Snippet::content('greffe.depot.validate') ?>
+      </p>
+
+      <br />
+
+      <?php if ($greffe->status == Greffe::STATUS_COMPLETED) : ?>
+        <button type="submit" class="btn btn--color-red margin-top-30">Valider</button>
+      <?php endif ?>
+    </form>
+  <?php endif ?>
+
+  <?php if ($greffe->status >= Greffe::STATUS_VALID) : ?>
+    <h2 class="block__title"><?=Snippet::content('greffe.depot.validated', null, 'title') ?></h2>
+    <p>
+      <?=Snippet::content('greffe.depot.validated', array('date' => H::datenice($greffe->status_valid_at))) ?>
+    </p>
+
+    <br />
+
+    <a href="/middle/greffe.edit/-/id/<?=$greffe->getId() ?>" class="btn btn--color-light-blue margin-top-30">Voir le détail de mon dépôt</a>
+    <a href="/middle/greffe" class="btn btn--link">Retour à la liste</a>
+  <?php endif ?>
+</div>

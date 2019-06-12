@@ -1,0 +1,96 @@
+
+.account-panel .toolbar-panel { }
+.account-panel .toolbar-panel .primary { border-bottom:1px solid #aaa; }
+.account-panel .toolbar-panel .secondary { background:#ddd; border:1px solid #aaa; border-top:none; 
+                                           clear:left; padding:1px 0 0 0; }
+.account-panel .toolbar-panel a,
+.account-panel .toolbar-panel a:link { display:block; float:left; margin-right:8px; padding:4px 8px; 
+                                       color:black; text-decoration:none; }
+.account-panel .toolbar-panel a:visited { color:black; text-decoration:none; }
+.account-panel .toolbar-panel a:hover { color:#888; }
+.account-panel .toolbar-panel .primary a { border:1px solid #aaa; border-bottom:none; 
+                                           border-top-left-radius:3px; -moz-border-radius-topleft:3px; -webkit-border-top-left-radius:3px;
+                                           border-top-right-radius:3px; -moz-border-radius-topright:3px; -webkit-border-top-right-radius:3px; }
+.account-panel .toolbar-panel .selected { background:#ddd; font-weight:bolder; }
+
+.account-panel .body-panel { padding:4px 8px; clear:both; }
+.account-panel .body-panel a:link,
+.account-panel .body-panel a:visited { color:black; }
+
+.account-panel .heading-panel { border-bottom:1px solid #ddd; margin:6px 0 0 0; }
+.account-panel h1 { font-size:2em; font-family:Arial; font-weight:bolder; }
+.account-panel h2 { background-image:url("/app/community/pix/account-h2.gif"); background-repeat:repeat-x;
+                    border:1px solid #ddd; color:#333; font-weight:bold; padding:4px 5px 5px 6px; }
+
+.account-panel #account-notice { float:right; background:#DFECB7; padding:2px 0 5px 5px; color:#465516;
+                                 border:1px solid#DFECB7; -moz-border-radius:4px; }
+
+.account-panel div.content-panel { clear:both; margin-top:16px; }
+.account-panel table.content-panel { height:200px; table-layout:auto; width:100%; }
+
+.account-panel .tip { width:20%; background:#CBE3F3; color:#133853; }
+.account-panel .tip div { padding:10px; }
+
+.account-panel span.pagination { display:block; text-align:center; padding:3px 6px; color:#aaa; }
+.account-panel span.pagination a { border-bottom:2px solid white; padding:0 2px; margin:0 2px; color:#777!important; }
+.account-panel span.pagination a.pagination-selected { border-bottom:2px solid black !important; 
+                                                       font-weight:bolder; color:black!important; }
+
+.account-panel span.actions { display:block; margin-top:4px; }
+
+.account-panel .rounded { border:1px solid #ddd; margin:8px 2px 0 2px; padding:4px 8px;
+                          border-radius:4px; -moz-border-radius:4px; -webkit-border-radius:4px; }
+.account-panel .rounded:hover { border:1px solid #bbb; }
+
+.account-panel .account-warnings div { background:#FFF9D7; color:#49480E; padding:8px 10px; margin-top:4px; font-size:1.2em; }
+
+.checkbox-grid tbody tr td:first-child { width:2%; text-align:center; padding:5px 6px; }
+.checkbox-grid tbody td { padding:8px 0; border-bottom:1px solid #eee; }
+.checkbox-grid tbody td strong { font-size:1.2em; }
+.checkbox-grid tfoot td { padding-top:8px; }
+
+.account-panel .columns { table-layout:fixed; width:100%; }
+.account-panel .column { padding:0 10px; border-left:1px dotted #ddd; }
+.account-panel .column:first-child { padding-left:0; border-left:none; }
+.account-panel .column:last-child { padding-right:0; }
+
+.account-panel .column-bloc-list { padding:12px!important; }
+.account-panel .column-bloc-list ul { max-height:200px; overflow-y:auto; }
+.account-panel .column-bloc-list li { padding:6px 6px; border-bottom:1px solid #ddd; }
+.account-panel .column-bloc-list li:first-child { border-top:1px solid #ddd; }
+.account-panel .column-bloc-list li:hover { background:#f3f3f3 url("/app/community/pix/arrow-black.png") right no-repeat; }
+.account-panel .column-bloc-list div.elt-button { margin-top:10px; }
+
+.account-panel .column-bloc-text { padding:6px; background:#f2f2f2; border:1px solid #ccc;
+                                   margin:4px 0; line-height:1.3em; color:#888; }
+.account-panel .column-bloc-text img { vertical-align:bottom; }
+.account-panel .column-bloc-text a,
+.account-panel .column-bloc-text a:link,
+.account-panel .column-bloc-text a:visited { text-decoration:none; color:#FB9D3A;
+                                             border-bottom:1px dotted #FB9D3A; }
+
+.account-panel .grid { table-layout:fixed; width:100%; }
+.account-panel .grid tbody td { border:1px solid #ccc; padding:2px; }
+.account-panel .grid tbody td.label label { margin:0 4px 0 0; display:block;
+                                            text-align:right; font-weight:bolder; }
+.account-panel .grid tbody td.label a:link,
+.account-panel .grid tbody td.label a:visited { text-decoration:none; margin:0 3px; }
+.account-panel .grid tbody td.label a img { vertical-align:middle; border-style:none; }
+.account-panel .grid tbody tr.heading td { padding:4px 0; font-size:14px; text-align:left; border:0px; }
+.account-panel .grid tbody tr.heading td:first-letter { text-transform:uppercase; }
+.account-panel .grid tbody tr.separator td { border-bottom:1px solid #777 !important;  }
+.account-panel .grid tbody tr.alt td { background:#f2f2f2;  }
+.account-panel .grid thead th { border:0px; padding:6px 6px 6px 0; text-align:left; font-size:110%; }
+.account-panel .grid tfoot td { text-align:right; border:0px solid black; padding:6px 0 0 0; }
+.account-panel .grid tfoot td .legend { font-style:italic; float:left; text-align:left; } 
+
+.account-panel .item-rows { border-top:1px solid #ccc; }
+.account-panel .item-rows table { table-layout:fixed; width:100%; }
+.account-panel .item-rows .item-row { border-bottom:1px solid #ccc; padding:4px 0; }
+.account-panel .item-rows td.icon { width:100px; text-align:right; }
+.account-panel .item-rows td.details { padding:0 8px; }
+.account-panel .item-rows td.actions { width:20%; }
+.account-panel .item-rows td.details em { display:block; font-size:0.8em; font-family:arial; }
+.account-panel .item-rows td.actions li { display:block; padding-bottom:4px; }
+.account-panel .item-rows td.actions a {  }
+.account-panel .item-rows td.actions a:hover { background:#f3f3f3; }

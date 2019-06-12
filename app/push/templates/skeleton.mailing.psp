@@ -1,0 +1,19 @@
+<html>
+<head>
+</head>
+
+<body style="background:#F2F2F2; color:#646464; font-family:lucida grande, helvetica, arial; margin:0; padding:10px 20px;">
+
+<div style="margin:18px 10px 6px 10px; padding:0;">
+ <a href="<?=H::url('/')?>">
+  <img src="<?=H::url('/app/test/pix/test-logo.png')?>" 
+       style="border:none;" />
+ </a>
+ <div style="padding:8px; background:white; border:1px solid #D9D9D9;">
+  <?=$name?>
+ </div>
+</div>
+
+</body>
+
+</html>

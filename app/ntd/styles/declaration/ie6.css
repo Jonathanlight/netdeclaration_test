@@ -1,0 +1,30 @@
+.wrapper .wrapper-header .wrapper-header-top .wrapper-header-top-right { float:right; width:513px; }
+.wrapper .wrapper-header .wrapper-header-top .wrapper-header-top-right .wrapper-header-flags { width:124px; height:30px; }
+.wrapper .wrapper-header .wrapper-header-top .wrapper-header-top-right .wrapper-header-flags li { width:24px; margin-left:2px; }
+
+
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-home:hover a ul.menu-branch,
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-home a:hover ul.menu-branch { width: 100px !important; }
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-company:hover a ul.menu-branch,
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-company a:hover ul.menu-branch { width: 120px !important; }
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-teletransmi:hover a ul.menu-branch,
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-teletransmi a:hover ul.menu-branch { width: 270px !important; }
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-tarifs:hover a ul.menu-branch,
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-tarifs a:hover ul.menu-branch { width: 110px !important; }
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-adhesion:hover a ul.menu-branch,
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-adhesion a:hover ul.menu-branch { width: 200px !important; }
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-avantages:hover a ul.menu-branch,
+.wrapper .wrapper-header .wrapper-header-menu ul li.menu-avantages a:hover ul.menu-branch { width: 158px !important; }
+
+.wrapper .wrapper-header .wrapper-header-menu ul.menu-root li.menu-tree { position:relative; }
+.wrapper .wrapper-header .wrapper-header-menu ul.menu-root li.menu-tree a:hover ul.menu-branch { left:0;  }
+
+#kwo-search-query-input { line-height:29px; }
+
+.wrapper .wrapper-header .wrapper-header-menu ul.menu-root li.menu-tree:hover ul.menu-branch,
+.wrapper .wrapper-header .wrapper-header-menu ul.menu-root li.menu-tree a:hover ul.menu-branch { z-index:10000 !important; }
+.wrapper .wrapper-header .wrapper-header-menu ul.menu-root li.menu-tree:hover a.drop,
+.wrapper .wrapper-header .wrapper-header-menu ul.menu-root li.menu-tree a.drop:hover { z-index:10000 !important; }
+.home-box .introduction-box .carousel-container #carousel-wrapper { z-index:101px !important; }
+
+.account-wrapper .account-panel { width:648px; overflow:hidden; }

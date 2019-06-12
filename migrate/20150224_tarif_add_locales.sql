@@ -1,0 +1,1 @@
+ALTER TABLE `ntd_tarif` ADD `locales` INT UNSIGNED NOT NULL DEFAULT '0' AFTER `flags` ;

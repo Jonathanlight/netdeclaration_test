@@ -1,0 +1,3 @@
+<?php foreach ($users as $user): ?>
+  <span userimg="<?=$user['image']?>" userid="<?=$user['id']?>"><?=$user['name']?></span>
+<?php endforeach; ?>
