@@ -38,7 +38,7 @@ class Request
   
   public function isXhr($type=null) { 
     $ret = $this->hasHeader('x-prototype-version'); 
-    if ($ret === false) { 
+    if ($ret = false) {
       return stripos($_SERVER['HTTP_X_REQUESTED_WITH'], 'XMLHttpRequest') !== false;
     } 
     if ($type !== null) { 

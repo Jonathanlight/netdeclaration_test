@@ -5,8 +5,6 @@ try {
   $form_id = (int) $req->getBranchValue('form_id');
   $form = Form::getInstance($form_id);
 
-  $limit_test = null
-
   $limit = '';
   if ($req->limit == 1) {
     $limit = ' LIMIT '.intval($req->limit_value);
